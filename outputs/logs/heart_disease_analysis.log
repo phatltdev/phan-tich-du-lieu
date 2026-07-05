@@ -1,0 +1,6 @@
+2026-06-26 00:50:03,314 | INFO | Starting Heart Disease analysis
+2026-06-26 00:50:03,314 | INFO | Input data path: datasets\heart+disease\processed.cleveland.data
+2026-06-26 00:50:04,834 | INFO | Raw shape: 303 rows x 15 columns
+2026-06-26 00:50:04,835 | INFO | Cleaned shape: 303 rows x 15 columns
+2026-06-26 00:50:04,835 | INFO | Missing values: {'age': 0, 'sex': 0, 'cp': 0, 'trestbps': 0, 'chol': 0, 'fbs': 0, 'restecg': 0, 'thalach': 0, 'exang': 0, 'oldpeak': 0, 'slope': 0, 'ca': 4, 'thal': 2, 'num': 0, 'target_binary': 0}
+2026-06-26 00:50:04,835 | INFO | Outputs written under: outputs

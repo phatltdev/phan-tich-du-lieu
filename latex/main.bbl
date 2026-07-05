@@ -1,0 +1,891 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nty/global//global/global}
+  \entry{Aha1991InstanceBased}{article}{}
+    \name{author}{3}{}{%
+      {{hash=ADW}{%
+         family={Aha},
+         familyi={A\bibinitperiod},
+         given={David\bibnamedelima W.},
+         giveni={D\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+      {{hash=KD}{%
+         family={Kibler},
+         familyi={K\bibinitperiod},
+         given={Dennis},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=AMK}{%
+         family={Albert},
+         familyi={A\bibinitperiod},
+         given={Marc\bibnamedelima K.},
+         giveni={M\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ADWKDAMK1}
+    \strng{fullhash}{ADWKDAMK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \verb{doi}
+    \verb 10.1007/BF00153759
+    \endverb
+    \field{pages}{37\bibrangedash 66}
+    \field{title}{Instance-based learning algorithms}
+    \field{volume}{6}
+    \field{journaltitle}{Machine Learning}
+    \field{year}{1991}
+  \endentry
+
+  \entry{Anguita2013HAR}{inproceedings}{}
+    \name{author}{5}{}{%
+      {{hash=AD}{%
+         family={Anguita},
+         familyi={A\bibinitperiod},
+         given={Davide},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=GA}{%
+         family={Ghio},
+         familyi={G\bibinitperiod},
+         given={Alessandro},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=OL}{%
+         family={Oneto},
+         familyi={O\bibinitperiod},
+         given={Luca},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=PX}{%
+         family={Parra},
+         familyi={P\bibinitperiod},
+         given={Xavier},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=ROJL}{%
+         family={Reyes-Ortiz},
+         familyi={R\bibinithyphendelim O\bibinitperiod},
+         given={Jorge\bibnamedelima L.},
+         giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AD+1}
+    \strng{fullhash}{ADGAOLPXROJL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{booktitle}{21st European Symposium on Artificial Neural Networks,
+  Computational Intelligence and Machine Learning}
+    \field{pages}{437\bibrangedash 442}
+    \field{title}{A public domain dataset for human activity recognition using
+  smartphones}
+    \field{year}{2013}
+  \endentry
+
+  \entry{Banos2014MHEALTH}{inproceedings}{}
+    \name{author}{9}{}{%
+      {{hash=BO}{%
+         family={Banos},
+         familyi={B\bibinitperiod},
+         given={Oresti},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=VC}{%
+         family={Villalonga},
+         familyi={V\bibinitperiod},
+         given={Claudia},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=GR}{%
+         family={Garcia},
+         familyi={G\bibinitperiod},
+         given={Rafael},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=SA}{%
+         family={Saez},
+         familyi={S\bibinitperiod},
+         given={Alejandro},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=DM}{%
+         family={Damas},
+         familyi={D\bibinitperiod},
+         given={Miguel},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=HTJA}{%
+         family={Holgado-Terriza},
+         familyi={H\bibinithyphendelim T\bibinitperiod},
+         given={Juan\bibnamedelima A.},
+         giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=LS}{%
+         family={Lee},
+         familyi={L\bibinitperiod},
+         given={Sungyong},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=PH}{%
+         family={Pomares},
+         familyi={P\bibinitperiod},
+         given={Hector},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=RI}{%
+         family={Rojas},
+         familyi={R\bibinitperiod},
+         given={Ignacio},
+         giveni={I\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{BO+1}
+    \strng{fullhash}{BOVCGRSADMHTJALSPHRI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{booktitle}{International Workshop on Ambient Assisted Living}
+    \field{pages}{91\bibrangedash 98}
+    \field{title}{mHealthDroid: a novel framework for agile development of
+  mobile health applications}
+    \field{year}{2014}
+  \endentry
+
+  \entry{Candanedo2017Appliances}{article}{}
+    \name{author}{3}{}{%
+      {{hash=CLM}{%
+         family={Candanedo},
+         familyi={C\bibinitperiod},
+         given={Luis\bibnamedelima M.},
+         giveni={L\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=FV}{%
+         family={Feldheim},
+         familyi={F\bibinitperiod},
+         given={Veronique},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=DD}{%
+         family={Deramaix},
+         familyi={D\bibinitperiod},
+         given={Dominique},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CLMFVDD1}
+    \strng{fullhash}{CLMFVDD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \verb{doi}
+    \verb 10.1016/j.enbuild.2017.01.083
+    \endverb
+    \field{pages}{81\bibrangedash 97}
+    \field{title}{Data driven prediction models of energy use of appliances in
+  a low-energy house}
+    \field{volume}{140}
+    \field{journaltitle}{Energy and Buildings}
+    \field{year}{2017}
+  \endentry
+
+  \entry{CDC2023BRFSS}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=C}{%
+         family={{Centers for Disease Control and Prevention}},
+         familyi={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{C1}
+    \strng{fullhash}{C1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{note}{Accessed 2026-06-26}
+    \field{title}{Behavioral Risk Factor Surveillance System}
+    \verb{url}
+    \verb https://www.cdc.gov/brfss/
+    \endverb
+    \field{year}{2023}
+  \endentry
+
+  \entry{DeMauro2021DataAnalytics}{book}{}
+    \name{author}{1}{}{%
+      {{hash=DMA}{%
+         family={De\bibnamedelima Mauro},
+         familyi={D\bibinitperiod\bibinitdelim M\bibinitperiod},
+         given={Andrea},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Packt Publishing}%
+    }
+    \strng{namehash}{DMA1}
+    \strng{fullhash}{DMA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{note}{Local course material in docments folder}
+    \field{title}{Data Analytics Made Easy}
+    \field{year}{2021}
+  \endentry
+
+  \entry{Detrano1989HeartDisease}{article}{}
+    \name{author}{9}{}{%
+      {{hash=DR}{%
+         family={Detrano},
+         familyi={D\bibinitperiod},
+         given={Robert},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=JA}{%
+         family={Janosi},
+         familyi={J\bibinitperiod},
+         given={Andras},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=SW}{%
+         family={Steinbrunn},
+         familyi={S\bibinitperiod},
+         given={Walter},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=PM}{%
+         family={Pfisterer},
+         familyi={P\bibinitperiod},
+         given={Matthias},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SJJ}{%
+         family={Schmid},
+         familyi={S\bibinitperiod},
+         given={Johann-Jakob},
+         giveni={J\bibinithyphendelim J\bibinitperiod},
+      }}%
+      {{hash=SS}{%
+         family={Sandhu},
+         familyi={S\bibinitperiod},
+         given={Sarbjit},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=GKH}{%
+         family={Guppy},
+         familyi={G\bibinitperiod},
+         given={Kern\bibnamedelima H.},
+         giveni={K\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=LS}{%
+         family={Lee},
+         familyi={L\bibinitperiod},
+         given={Stella},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=FV}{%
+         family={Froelicher},
+         familyi={F\bibinitperiod},
+         given={Victor},
+         giveni={V\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DR+1}
+    \strng{fullhash}{DRJASWPMSJJSSGKHLSFV1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \verb{doi}
+    \verb 10.1016/0002-9149(89)90524-9
+    \endverb
+    \field{number}{5}
+    \field{pages}{304\bibrangedash 310}
+    \field{title}{International application of a new probability algorithm for
+  the diagnosis of coronary artery disease}
+    \field{volume}{64}
+    \field{journaltitle}{The American Journal of Cardiology}
+    \field{year}{1989}
+  \endentry
+
+  \entry{Esteva2017Dermatologist}{article}{}
+    \name{author}{7}{}{%
+      {{hash=EA}{%
+         family={Esteva},
+         familyi={E\bibinitperiod},
+         given={Andre},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=KB}{%
+         family={Kuprel},
+         familyi={K\bibinitperiod},
+         given={Brett},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=NRA}{%
+         family={Novoa},
+         familyi={N\bibinitperiod},
+         given={Roberto\bibnamedelima A.},
+         giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=KJ}{%
+         family={Ko},
+         familyi={K\bibinitperiod},
+         given={Justin},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=SSM}{%
+         family={Swetter},
+         familyi={S\bibinitperiod},
+         given={Susan\bibnamedelima M.},
+         giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=BHM}{%
+         family={Blau},
+         familyi={B\bibinitperiod},
+         given={Helen\bibnamedelima M.},
+         giveni={H\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=TS}{%
+         family={Thrun},
+         familyi={T\bibinitperiod},
+         given={Sebastian},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{EA+1}
+    \strng{fullhash}{EAKBNRAKJSSMBHMTS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{E}
+    \field{sortinithash}{E}
+    \verb{doi}
+    \verb 10.1038/nature21056
+    \endverb
+    \field{number}{7639}
+    \field{pages}{115\bibrangedash 118}
+    \field{title}{Dermatologist-level classification of skin cancer with deep
+  neural networks}
+    \field{volume}{542}
+    \field{journaltitle}{Nature}
+    \field{year}{2017}
+  \endentry
+
+  \entry{Gennari1989CLASSIT}{article}{}
+    \name{author}{3}{}{%
+      {{hash=GJH}{%
+         family={Gennari},
+         familyi={G\bibinitperiod},
+         given={John\bibnamedelima H.},
+         giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=LP}{%
+         family={Langley},
+         familyi={L\bibinitperiod},
+         given={Pat},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=FD}{%
+         family={Fisher},
+         familyi={F\bibinitperiod},
+         given={Doug},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GJHLPFD1}
+    \strng{fullhash}{GJHLPFD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \verb{doi}
+    \verb 10.1016/0004-3702(89)90046-5
+    \endverb
+    \field{number}{1-3}
+    \field{pages}{11\bibrangedash 61}
+    \field{title}{Models of incremental concept formation}
+    \field{volume}{40}
+    \field{journaltitle}{Artificial Intelligence}
+    \field{year}{1989}
+  \endentry
+
+  \entry{Han2011DataMining}{book}{}
+    \name{author}{3}{}{%
+      {{hash=HJ}{%
+         family={Han},
+         familyi={H\bibinitperiod},
+         given={Jiawei},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=KM}{%
+         family={Kamber},
+         familyi={K\bibinitperiod},
+         given={Micheline},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=PJ}{%
+         family={Pei},
+         familyi={P\bibinitperiod},
+         given={Jian},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Morgan Kaufmann}%
+    }
+    \strng{namehash}{HJKMPJ1}
+    \strng{fullhash}{HJKMPJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{edition}{3}
+    \field{title}{Data Mining: Concepts and Techniques}
+    \field{year}{2011}
+  \endentry
+
+  \entry{Huber2009Robust}{book}{}
+    \name{author}{2}{}{%
+      {{hash=HPJ}{%
+         family={Huber},
+         familyi={H\bibinitperiod},
+         given={Peter\bibnamedelima J.},
+         giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=REM}{%
+         family={Ronchetti},
+         familyi={R\bibinitperiod},
+         given={Elvezio\bibnamedelima M.},
+         giveni={E\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wiley}%
+    }
+    \strng{namehash}{HPJREM1}
+    \strng{fullhash}{HPJREM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \verb{doi}
+    \verb 10.1002/9780470434697
+    \endverb
+    \field{edition}{2}
+    \field{isbn}{978-0-470-12990-6}
+    \field{note}{Wiley Series in Probability and Statistics}
+    \field{title}{Robust Statistics}
+    \list{location}{1}{%
+      {Hoboken, New Jersey}%
+    }
+    \field{year}{2009}
+  \endentry
+
+  \entry{Hyndman2021Forecasting}{book}{}
+    \name{author}{2}{}{%
+      {{hash=HRJ}{%
+         family={Hyndman},
+         familyi={H\bibinitperiod},
+         given={Rob\bibnamedelima J.},
+         giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=AG}{%
+         family={Athanasopoulos},
+         familyi={A\bibinitperiod},
+         given={George},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {OTexts}%
+    }
+    \strng{namehash}{HRJAG1}
+    \strng{fullhash}{HRJAG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{edition}{3}
+    \field{title}{Forecasting: Principles and Practice}
+    \verb{url}
+    \verb https://otexts.com/fpp3/
+    \endverb
+    \field{year}{2021}
+  \endentry
+
+  \entry{Joachims1998TextSVM}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=JT}{%
+         family={Joachims},
+         familyi={J\bibinitperiod},
+         given={Thorsten},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{JT1}
+    \strng{fullhash}{JT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \field{booktitle}{European Conference on Machine Learning}
+    \verb{doi}
+    \verb 10.1007/BFb0026683
+    \endverb
+    \field{pages}{137\bibrangedash 142}
+    \field{title}{Text categorization with support vector machines: Learning
+  with many relevant features}
+    \field{year}{1998}
+  \endentry
+
+  \entry{Kuhn2019FeatureEngineering}{book}{}
+    \name{author}{2}{}{%
+      {{hash=KM}{%
+         family={Kuhn},
+         familyi={K\bibinitperiod},
+         given={Max},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=JK}{%
+         family={Johnson},
+         familyi={J\bibinitperiod},
+         given={Kjell},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {CRC Press}%
+    }
+    \strng{namehash}{KMJK1}
+    \strng{fullhash}{KMJK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{title}{Feature Engineering and Selection: A Practical Approach for
+  Predictive Models}
+    \field{year}{2019}
+  \endentry
+
+  \entry{Lewis1997Reuters}{article}{}
+    \name{author}{1}{}{%
+      {{hash=LDD}{%
+         family={Lewis},
+         familyi={L\bibinitperiod},
+         given={David\bibnamedelima D.},
+         giveni={D\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LDD1}
+    \strng{fullhash}{LDD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{title}{Reuters-21578 text categorization test collection,
+  distribution 1.0}
+    \verb{url}
+    \verb http://www.daviddlewis.com/resources/testcollections/reuters21578/
+    \endverb
+    \field{journaltitle}{AT\&T Labs Research}
+    \field{year}{1997}
+  \endentry
+
+  \entry{Mangasarian1995BreastCancer}{article}{}
+    \name{author}{3}{}{%
+      {{hash=MOL}{%
+         family={Mangasarian},
+         familyi={M\bibinitperiod},
+         given={Olvi\bibnamedelima L.},
+         giveni={O\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=SWN}{%
+         family={Street},
+         familyi={S\bibinitperiod},
+         given={W.\bibnamedelima Nick},
+         giveni={W\bibinitperiod\bibinitdelim N\bibinitperiod},
+      }}%
+      {{hash=WWH}{%
+         family={Wolberg},
+         familyi={W\bibinitperiod},
+         given={William\bibnamedelima H.},
+         giveni={W\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MOLSWNWWH1}
+    \strng{fullhash}{MOLSWNWWH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \verb{doi}
+    \verb 10.1287/opre.43.4.570
+    \endverb
+    \field{number}{4}
+    \field{pages}{570\bibrangedash 577}
+    \field{title}{Breast cancer diagnosis and prognosis via linear programming}
+    \field{volume}{43}
+    \field{journaltitle}{Operations Research}
+    \field{year}{1995}
+  \endentry
+
+  \entry{NIST2013Handbook}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=N}{%
+         family={{National Institute of Standards and Technology}},
+         familyi={N\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {NIST}%
+    }
+    \strng{namehash}{N1}
+    \strng{fullhash}{N1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{N}
+    \field{sortinithash}{N}
+    \field{note}{NIST Handbook 151, jointly produced with SEMATECH. Accessed
+  2026-07-04}
+    \field{title}{NIST/SEMATECH e-Handbook of Statistical Methods}
+    \verb{url}
+    \verb https://www.itl.nist.gov/div898/handbook/
+    \endverb
+    \list{location}{1}{%
+      {Gaithersburg, Maryland}%
+    }
+    \field{year}{2013}
+  \endentry
+
+  \entry{Rousseeuw1993Alternatives}{article}{}
+    \name{author}{2}{}{%
+      {{hash=RPJ}{%
+         family={Rousseeuw},
+         familyi={R\bibinitperiod},
+         given={Peter\bibnamedelima J.},
+         giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=CC}{%
+         family={Croux},
+         familyi={C\bibinitperiod},
+         given={Christophe},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RPJCC1}
+    \strng{fullhash}{RPJCC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \verb{doi}
+    \verb 10.1080/01621459.1993.10476408
+    \endverb
+    \field{number}{424}
+    \field{pages}{1273\bibrangedash 1283}
+    \field{title}{Alternatives to the Median Absolute Deviation}
+    \field{volume}{88}
+    \field{journaltitle}{Journal of the American Statistical Association}
+    \field{year}{1993}
+  \endentry
+
+  \entry{Sahay2021Essentials}{book}{}
+    \name{author}{1}{}{%
+      {{hash=SA}{%
+         family={Sahay},
+         familyi={S\bibinitperiod},
+         given={Amar},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Business Expert Press}%
+    }
+    \strng{namehash}{SA1}
+    \strng{fullhash}{SA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{note}{Local course material in docments folder}
+    \field{title}{Essentials of Data Science and Analytics: Statistical Tools,
+  Machine Learning, and R-Statistical Software Overview}
+    \field{year}{2021}
+  \endentry
+
+  \entry{Sebastiani2002TextCategorization}{article}{}
+    \name{author}{1}{}{%
+      {{hash=SF}{%
+         family={Sebastiani},
+         familyi={S\bibinitperiod},
+         given={Fabrizio},
+         giveni={F\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SF1}
+    \strng{fullhash}{SF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \verb{doi}
+    \verb 10.1145/505282.505283
+    \endverb
+    \field{number}{1}
+    \field{pages}{1\bibrangedash 47}
+    \field{title}{Machine learning in automated text categorization}
+    \field{volume}{34}
+    \field{journaltitle}{ACM Computing Surveys}
+    \field{year}{2002}
+  \endentry
+
+  \entry{Smith2014CDCIndicators}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=SM}{%
+         family={Smith},
+         familyi={S\bibinitperiod},
+         given={Michael},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SM1}
+    \strng{fullhash}{SM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{note}{UCI Machine Learning Repository}
+    \field{title}{Diabetes Health Indicators Dataset}
+    \verb{url}
+    \verb https://archive.ics.uci.edu/dataset/891/cdc+diabetes+health+indicator
+    \verb s
+    \endverb
+    \field{year}{2014}
+  \endentry
+
+  \entry{Street1993NuclearFeatures}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=SWN}{%
+         family={Street},
+         familyi={S\bibinitperiod},
+         given={W.\bibnamedelima Nick},
+         giveni={W\bibinitperiod\bibinitdelim N\bibinitperiod},
+      }}%
+      {{hash=WWH}{%
+         family={Wolberg},
+         familyi={W\bibinitperiod},
+         given={William\bibnamedelima H.},
+         giveni={W\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=MOL}{%
+         family={Mangasarian},
+         familyi={M\bibinitperiod},
+         given={Olvi\bibnamedelima L.},
+         giveni={O\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SWNWWHMOL1}
+    \strng{fullhash}{SWNWWHMOL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{booktitle}{IS\&T/SPIE International Symposium on Electronic Imaging:
+  Science and Technology}
+    \field{pages}{861\bibrangedash 870}
+    \field{title}{Nuclear feature extraction for breast tumor diagnosis}
+    \field{year}{1993}
+  \endentry
+
+  \entry{Tschandl2018HAM10000}{article}{}
+    \name{author}{3}{}{%
+      {{hash=TP}{%
+         family={Tschandl},
+         familyi={T\bibinitperiod},
+         given={Philipp},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=RC}{%
+         family={Rosendahl},
+         familyi={R\bibinitperiod},
+         given={Cliff},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=KH}{%
+         family={Kittler},
+         familyi={K\bibinitperiod},
+         given={Harald},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TPRCKH1}
+    \strng{fullhash}{TPRCKH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \verb{doi}
+    \verb 10.1038/sdata.2018.161
+    \endverb
+    \field{pages}{180161}
+    \field{title}{The HAM10000 dataset, a large collection of multi-source
+  dermatoscopic images of common pigmented skin lesions}
+    \field{volume}{5}
+    \field{journaltitle}{Scientific Data}
+    \field{year}{2018}
+  \endentry
+
+  \entry{Tukey1977EDA}{book}{}
+    \name{author}{1}{}{%
+      {{hash=TJW}{%
+         family={Tukey},
+         familyi={T\bibinitperiod},
+         given={John\bibnamedelima W.},
+         giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Addison-Wesley}%
+    }
+    \strng{namehash}{TJW1}
+    \strng{fullhash}{TJW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{isbn}{978-0201076165}
+    \field{note}{Addison-Wesley Series in Behavioral Science}
+    \field{title}{Exploratory Data Analysis}
+    \list{location}{1}{%
+      {Reading, Massachusetts}%
+    }
+    \field{year}{1977}
+  \endentry
+\enddatalist
+\endinput

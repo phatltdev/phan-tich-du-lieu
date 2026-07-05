@@ -1,0 +1,5 @@
+variable,type,role,description
+primary_topic,categorical,target,Chủ đề chính
+word_count,discrete,feature,Số từ
+char_count,discrete,feature,Số ký tự
+topics,multi-label,metadata,Danh sách topic

@@ -1,0 +1,23 @@
+variable,type,meaning,selected_for_chapter3
+HighBP,qualitative_binary,"High blood pressure: 1 yes, 0 no",False
+HighChol,qualitative_binary,"High cholesterol: 1 yes, 0 no",False
+CholCheck,qualitative_binary,Cholesterol check in past 5 years,False
+BMI,quantitative_continuous,Body Mass Index,True
+Smoker,qualitative_binary,Smoked at least 100 cigarettes,False
+Stroke,qualitative_binary,History of stroke,False
+HeartDiseaseorAttack,qualitative_binary,Coronary heart disease or myocardial infarction,False
+PhysActivity,qualitative_binary,Physical activity in past 30 days,False
+Fruits,qualitative_binary,Consumes fruit at least once per day,False
+Veggies,qualitative_binary,Consumes vegetables at least once per day,False
+HvyAlcoholConsump,qualitative_binary,Heavy alcohol consumption,False
+AnyHealthcare,qualitative_binary,Has healthcare coverage,False
+NoDocbcCost,qualitative_binary,Could not see doctor because of cost,False
+GenHlth,ordinal,General health rating: 1 excellent to 5 poor,True
+MentHlth,quantitative_discrete,Days of poor mental health in past 30 days,True
+PhysHlth,quantitative_discrete,Days of poor physical health in past 30 days,True
+DiffWalk,qualitative_binary,Difficulty walking or climbing stairs,False
+Sex,qualitative_binary,Sex code,False
+Age,ordinal,Age group code,True
+Education,ordinal,Education level code,True
+Income,ordinal,Income level code,True
+Diabetes_binary,qualitative_binary_target,"0 no diabetes, 1 prediabetes/diabetes",False

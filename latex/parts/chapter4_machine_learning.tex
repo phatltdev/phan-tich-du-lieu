@@ -1,0 +1,152 @@
+\chapter{PHÂN TÍCH DỮ LIỆU VỚI HỌC MÁY VÀ ĐỐI SÁNH KẾT QUẢ}
+
+\startcontents[chapters]
+\printmyminitoc{
+Chương này trình bày các thực nghiệm classification, regression/time-series forecasting và clustering trên các nhóm dữ liệu A, B và C. Nội dung được tổ chức theo đúng yêu cầu trong \texttt{docments/mo\_ta\_yeu\_cau.md}: phân lớp trên nhóm A, hồi quy/dự báo trên nhóm B, gom cụm trên A/B/C và đối sánh với nghiên cứu liên quan.
+}
+
+\section{Quy trình học máy và minh chứng}
+
+Dữ liệu đưa vào mô hình là kết quả sau các bước thống kê, trực quan hóa và tiền xử lý ở Chương 3. Quy trình chung gồm năm bước:
+
+\begin{enumerate}
+    \item Xác định bài toán: classification, regression/time-series forecasting hoặc clustering.
+    \item Tách biến đầu vào và target; với clustering phải ẩn nhãn mục tiêu.
+    \item Tiền xử lý: điền khuyết, mã hóa biến định tính, chuẩn hóa thang đo khi mô hình cần.
+    \item Huấn luyện nhiều thuật toán để có đối sánh nội bộ.
+    \item Đánh giá bằng chỉ số phù hợp: Accuracy/Precision/Recall/F1 cho classification; MAE/RMSE/$R^2$ cho regression; Silhouette/Elbow và thống kê cụm cho clustering.
+\end{enumerate}
+
+Các baseline hiện có được sinh từ \texttt{src/run\_ml\_baselines.py}. Kết quả bảng nằm tại \texttt{outputs/tables/ml\_classification\_metrics.csv}, \texttt{outputs/tables/ml\_regression\_metrics.csv} và \texttt{outputs/tables/ml\_baseline\_metrics.csv}. Confusion matrix nằm trong \texttt{outputs/figures/ml\_*\_confusion\_matrix.png}.
+
+\section{Classification trên nhóm A}
+
+Theo tài liệu yêu cầu, nhóm A cần ít nhất ba target setup. Báo cáo dùng ba dataset tabular: Heart Disease, CDC Diabetes Health Indicators và Breast Cancer Wisconsin Diagnostic. Ba thuật toán baseline gồm Logistic Regression, Random Forest và SVM RBF. Train/test split được lưu trong script và bảng kết quả; với CDC Diabetes, báo cáo dùng mẫu cân bằng/giảm kích thước để thời gian chạy phù hợp.
+
+\begin{table}[H]
+\centering
+\caption[Kết quả classification nhóm A]{Kết quả classification nhóm A. Source: \texttt{outputs/tables/ml\_classification\_metrics.csv}; code: \texttt{src/run\_ml\_baselines.py}.}
+\label{tab:chapter4_classification_metrics}
+\small
+\begin{tabular}{llrrrr}
+\toprule
+Dataset & Model & Accuracy & Precision & Recall & F1 \\
+\midrule
+Heart Disease & Logistic Regression & 0.869 & 0.813 & 0.929 & 0.867 \\
+Heart Disease & Random Forest & 0.902 & 0.867 & 0.929 & 0.897 \\
+Heart Disease & SVM RBF & 0.885 & 0.818 & 0.964 & 0.885 \\
+CDC Diabetes & Logistic Regression & 0.744 & 0.730 & 0.775 & 0.752 \\
+CDC Diabetes & Random Forest & 0.724 & 0.699 & 0.787 & 0.740 \\
+CDC Diabetes & SVM RBF & 0.744 & 0.714 & 0.814 & 0.761 \\
+Breast Cancer & Logistic Regression & 0.974 & 0.976 & 0.952 & 0.964 \\
+Breast Cancer & Random Forest & 0.974 & 1.000 & 0.929 & 0.963 \\
+Breast Cancer & SVM RBF & 0.982 & 0.976 & 0.976 & 0.976 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Bảng \ref{tab:chapter4_classification_metrics} cho thấy Breast Cancer là bài toán dễ nhất trong ba bộ nhóm A: SVM RBF đạt accuracy 0.982 và F1 0.976. Điều này phù hợp với phân tích ở Chương 2--3: các đặc trưng hình học của nhân tế bào là biến liên tục, có khả năng tách lớp tốt và tương quan rõ với target. Heart Disease đạt kết quả trung bình cao; Random Forest tốt nhất với F1 0.897. CDC Diabetes khó hơn vì biến sức khỏe/hành vi có nhiễu, nhiều biến nhị phân/ordinal và quan hệ với target không tách biệt mạnh.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{../outputs/figures/ml_heart_disease_random_forest_confusion_matrix.png}
+    \caption{Heart Disease RF}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{../outputs/figures/ml_cdc_diabetes_sampled_svm_rbf_confusion_matrix.png}
+    \caption{CDC SVM}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{../outputs/figures/ml_breast_cancer_svm_rbf_confusion_matrix.png}
+    \caption{Breast Cancer SVM}
+\end{subfigure}
+\caption[Confusion matrix cho ba bài toán classification nhóm A]{Confusion matrix cho ba bài toán classification nhóm A. Python source: \texttt{src/run\_ml\_baselines.py}; figure paths: \texttt{outputs/figures/ml\_heart\_disease\_random\_forest\_confusion\_matrix.png}, \texttt{outputs/figures/ml\_cdc\_diabetes\_sampled\_svm\_rbf\_confusion\_matrix.png}, \texttt{outputs/figures/ml\_breast\_cancer\_svm\_rbf\_confusion\_matrix.png}.}
+\label{fig:chapter4_classification_confusion}
+\end{figure}
+
+Confusion matrix ở Hình \ref{fig:chapter4_classification_confusion} bổ sung thông tin mà accuracy không thể hiện hết. Với bài toán y khoa, false negative thường nguy hiểm hơn false positive vì bỏ sót bệnh. Vì vậy recall và F1 cần được đọc cùng accuracy. Ví dụ SVM trên Heart Disease có recall 0.964, cao hơn Random Forest, nên nếu ưu tiên giảm bỏ sót bệnh có thể xem SVM là lựa chọn đáng cân nhắc dù accuracy thấp hơn Random Forest.
+
+\section{Regression và dự báo trên nhóm B}
+
+Với nhóm B, tài liệu yêu cầu không tách train/test ngẫu nhiên mà dùng đặc thù thời gian. Baseline hiện có dùng Appliances Energy Prediction, chia dữ liệu theo thứ tự quan sát: 15,788 mẫu train và 3,947 mẫu test. Target là \texttt{Appliances}; đặc trưng gồm nhiệt độ, độ ẩm, ánh sáng, điều kiện thời tiết và các biến liên quan.
+
+\begin{table}[H]
+\centering
+\caption[Kết quả regression trên Appliances Energy]{Kết quả regression trên Appliances Energy. Source: \texttt{outputs/tables/ml\_regression\_metrics.csv}; code: \texttt{src/run\_ml\_baselines.py}.}
+\label{tab:chapter4_regression_metrics}
+\small
+\begin{tabular}{lrrrrr}
+\toprule
+Model & Train rows & Test rows & MAE & RMSE & $R^2$ \\
+\midrule
+Linear Regression & 15788 & 3947 & 58.71 & 89.40 & 0.036 \\
+Random Forest Regressor & 15788 & 3947 & 117.24 & 141.79 & -1.426 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Bảng \ref{tab:chapter4_regression_metrics} cho thấy Linear Regression là baseline tốt hơn Random Forest Regressor trong thực nghiệm hiện tại. $R^2$ của Linear Regression chỉ khoảng 0.036, nghĩa là mô hình mới giải thích được rất ít biến thiên của target. Random Forest có $R^2$ âm, cho thấy mô hình tổng quát kém hơn dự báo trung bình trên tập test. Kết quả này phù hợp với phân tích Chương 3: \texttt{Appliances} lệch phải mạnh, có đỉnh tiêu thụ bất thường và phụ thuộc thời gian; chỉ dùng đặc trưng tức thời chưa đủ để bắt trend, seasonality và hành vi sử dụng thiết bị.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.86\textwidth]{../outputs/figures/ml_appliances_energy_prediction_sample.png}
+\caption[So sánh giá trị thực tế và dự báo mẫu trên Appliances Energy]{So sánh giá trị thực tế và dự báo mẫu trên Appliances Energy. Python source: \texttt{src/run\_ml\_baselines.py}; figure path: \texttt{outputs/figures/ml\_appliances\_energy\_prediction\_sample.png}.}
+\label{fig:chapter4_appliances_prediction}
+\end{figure}
+
+Hình \ref{fig:chapter4_appliances_prediction} cho thấy mô hình baseline chưa bắt tốt các đỉnh tiêu thụ cao. Hướng cải thiện phù hợp với tài liệu gồm: thêm lag features, rolling mean/rolling standard deviation, đặc trưng giờ-ngày-thứ, log-transform target và thử TimeSeriesSplit hoặc mô hình chuyên cho chuỗi như ARIMA/SARIMA/XGBoost với validation theo thời gian.
+
+\section{Clustering trên nhóm A, B và C}
+
+Yêu cầu clustering trong tài liệu gồm ba điểm bắt buộc: ẩn nhãn mục tiêu, chuẩn hóa đặc trưng và so sánh ít nhất ba thuật toán như K-Means, Hierarchical Clustering và DBSCAN. Hiện tại repository chưa có bảng kết quả clustering chính thức trong \texttt{outputs/tables/}; vì vậy phần này trình bày pipeline cần triển khai và không bịa số liệu.
+
+\begin{table}[H]
+\centering
+\caption{Thiết kế clustering theo yêu cầu tài liệu}
+\label{tab:chapter4_clustering_design}
+\small
+\begin{tabular}{p{0.18\textwidth}p{0.24\textwidth}p{0.24\textwidth}p{0.22\textwidth}}
+\toprule
+Nhóm & Feature dùng cho clustering & Thuật toán & Cách diễn giải \\
+\midrule
+A: Heart/Breast/CDC & Biến số sau chuẩn hóa, bỏ target & K-Means, Hierarchical, DBSCAN & So sánh mean/median từng cụm với nhãn thật đã ẩn \\
+B: Appliances/HAR/MHEALTH & Biến cảm biến, lag/rolling nếu có & K-Means, Hierarchical, DBSCAN & Cụm theo mức tiêu thụ hoặc kiểu hoạt động \\
+C: HAM10000/Reuters & Đặc trưng ảnh hoặc TF-IDF text & K-Means, Hierarchical, DBSCAN & Cụm theo độ sáng/kích thước/topic sau khi bỏ label \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Khi triển khai, số cụm $K$ nên được chọn bằng Elbow hoặc Silhouette. Sau khi có nhãn cụm, cần lập bảng thống kê mô tả theo cụm: mean/median cho biến định lượng, mode/tần suất cho biến định tính. Đây là bước ``đọc vị bản chất cụm'' trong tài liệu yêu cầu: cụm không chỉ là số 0, 1, 2 mà phải được diễn giải thành nhóm bệnh nhân, nhóm hành vi tiêu thụ, nhóm hoạt động cảm biến hoặc nhóm ảnh/văn bản có đặc điểm tương tự.
+
+\section{Đối sánh với nghiên cứu liên quan}
+
+Tài liệu yêu cầu kết quả Chương 4 phải đối sánh với các nghiên cứu cùng dataset đã nêu ở Chương 2. Ở mức baseline hiện tại, có thể rút ra ba nhận xét đối sánh định tính:
+
+\begin{table}[H]
+\centering
+\caption{Đối sánh định tính giữa baseline của báo cáo và xu hướng nghiên cứu liên quan}
+\label{tab:chapter4_literature_compare}
+\small
+\begin{tabular}{p{0.20\textwidth}p{0.28\textwidth}p{0.38\textwidth}}
+\toprule
+Dataset & Xu hướng nghiên cứu liên quan & Kết quả baseline trong báo cáo \\
+\midrule
+Heart Disease & Logistic Regression, instance-based learning, Random Forest/SVM thường dùng cho chẩn đoán nhị phân & Random Forest đạt F1 0.897; SVM có recall cao 0.964, phù hợp mục tiêu giảm bỏ sót bệnh \\
+CDC Diabetes & Các mô hình tabular thường chịu ảnh hưởng mất cân bằng và nhiễu hành vi tự báo cáo & F1 khoảng 0.740--0.761, thấp hơn Heart/Breast; cần xử lý imbalance và feature selection tốt hơn \\
+Breast Cancer & SVM/Logistic Regression thường đạt kết quả cao sau chuẩn hóa đặc trưng liên tục & SVM đạt F1 0.976, phù hợp xu hướng bộ dữ liệu có ranh giới lớp rõ \\
+Appliances Energy & Dự báo năng lượng thường cần lag, rolling, mùa vụ và mô hình chuỗi thời gian & Baseline tức thời có $R^2$ thấp; cần bổ sung feature thời gian và mô hình chuyên biệt \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Bảng \ref{tab:chapter4_literature_compare} chưa thay thế được bảng trích dẫn định lượng đầy đủ từ bài báo khoa học. Tuy nhiên, nó cho thấy kết quả của báo cáo đi cùng hướng với đặc điểm dữ liệu: Breast Cancer dễ phân lớp hơn CDC Diabetes; dự báo Appliances khó nếu thiếu feature thời gian. Phần đối sánh định lượng với citation cụ thể cần tiếp tục hoàn thiện trong tài liệu tham khảo và phụ lục.
+
+\section{Kết luận Chương 4}
+
+Classification nhóm A đã có ba target setup và ba thuật toán, đáp ứng phần lõi của yêu cầu. Breast Cancer đạt kết quả cao nhất, Heart Disease đạt mức tốt, CDC Diabetes khó hơn do nhiễu và đặc trưng rời rạc/ordinal. Regression nhóm B mới ở mức baseline; kết quả cho thấy cần xử lý chuỗi thời gian sâu hơn. Clustering chưa có artifact kết quả nên được trình bày như pipeline cần triển khai, tránh đưa số liệu không thể tái lập.

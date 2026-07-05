@@ -1,0 +1,3085 @@
+Trường Đại học Cần Thơ
+Trường Công nghệ thông tin và Truyền thông
+
+Báo cáo môn học: CTH624
+Ứng dụng Thị giác máy tính trong Hệ thống thông tin
+
+Tên đề tài
+
+Thực hiện bởi:
+
+Nhóm 1
+Nguyễn Văn A B1282727 Trưởng nhóm
+Nguyễn Văn A B1282727 Thành viên
+Nguyễn Văn A B1282727 Thành viên
+GVHD: PGS. TS. Nguyễn Thanh Hải
+Học kỳ 2, năm học 2023-2024
+Ngày 26 tháng 6 năm 2026
+
+2
+
+Mục lục
+Mục lục
+
+ii
+
+Danh sách Hình
+
+iii
+
+Danh sách Bảng
+
+v
+
+1 CƠ SỞ LÝ THUYẾT
+1.1 Vai trò của thống kê mô tả trong phân tích dữ liệu . . . . . . . . . . .
+1.2 Các số đo xu hướng trung tâm . . . . . . . . . . . . . . . . . . . . . . .
+1.2.1 Mean . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+1.2.2 Median . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+1.2.3 Mode . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+1.2.4 Percentiles . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+1.3 Các số đo độ phân tán . . . . . . . . . . . . . . . . . . . . . . . . . . .
+1.3.1 Range . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+1.3.2 Variance và Standard Deviation . . . . . . . . . . . . . . . . . .
+1.3.3 Coefficient of Variation . . . . . . . . . . . . . . . . . . . . . . .
+1.3.4 Interquartile Range . . . . . . . . . . . . . . . . . . . . . . . . .
+1.3.5 Bảng tần suất và tần suất tương đối . . . . . . . . . . . . . . .
+1.3.6 Z-score . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+1.4 Phân loại biến số . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+1.5 Hệ thống biểu đồ trực quan hóa . . . . . . . . . . . . . . . . . . . . . .
+1.5.1 Histogram . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+1.5.2 Boxplot . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+1.5.3 Scatter plot . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+1.5.4 Bar chart và pie chart . . . . . . . . . . . . . . . . . . . . . . .
+1.5.5 Line chart cho chuỗi thời gian . . . . . . . . . . . . . . . . . . .
+1.5.6 Correlation heatmap . . . . . . . . . . . . . . . . . . . . . . . .
+1.6 Các phép biến đổi và tiền xử lý cơ bản . . . . . . . . . . . . . . . . . .
+1.6.1 Điền khuyết . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+1.6.2 Chuẩn hóa thang đo . . . . . . . . . . . . . . . . . . . . . . . .
+1.6.3 Log transform và differencing cho chuỗi thời gian . . . . . . . .
+1.7 Quy trình phân tích khám phá dữ liệu . . . . . . . . . . . . . . . . . .
+1.8 Nguyên tắc chọn biểu đồ theo câu hỏi phân tích . . . . . . . . . . . . .
+1.9 Diễn giải thống kê trong bối cảnh dữ liệu . . . . . . . . . . . . . . . . .
+1.10 Các sai lệch thường gặp khi đọc biểu đồ . . . . . . . . . . . . . . . . .
+1.11 Minh họa tính toán trên Heart Disease . . . . . . . . . . . . . . . . . .
+1.12 Liên kết lý thuyết với các chương sau . . . . . . . . . . . . . . . . . . .
+
+1
+3
+3
+3
+4
+4
+4
+5
+5
+5
+5
+6
+6
+6
+7
+7
+7
+8
+8
+8
+8
+8
+9
+9
+9
+9
+10
+11
+12
+12
+13
+15
+
+2 THU THẬP, MÔ TẢ VÀ TỔNG QUAN CÁC BỘ DỮ LIỆU
+2.1 Tiêu chí lựa chọn dữ liệu . . . . . . . . . . . . . . . . . . . . . . . . . .
+2.2 Chiến lược thu thập và kiểm chứng dữ liệu . . . . . . . . . . . . . . . .
+2.3 Nhóm A: Dữ liệu dạng bảng . . . . . . . . . . . . . . . . . . . . . . . .
+2.3.1 A1 - Heart Disease . . . . . . . . . . . . . . . . . . . . . . . . .
+2.3.2 A2 - CDC Diabetes Health Indicators . . . . . . . . . . . . . . .
+
+17
+18
+18
+21
+21
+21
+
+i
+
+2.3.3 A3 - Breast Cancer Wisconsin Diagnostic . . . . . . . . . . . . .
+Nhóm B: Dữ liệu chuỗi thời gian và cảm biến . . . . . . . . . . . . . .
+2.4.1 B1 - Appliances Energy Prediction . . . . . . . . . . . . . . . .
+2.4.2 B2 - Human Activity Recognition Using Smartphones . . . . . .
+2.4.3 B3 - MHEALTH Dataset . . . . . . . . . . . . . . . . . . . . . .
+2.5 Nhóm C: Dữ liệu đa phương tiện . . . . . . . . . . . . . . . . . . . . .
+2.5.1 C1 - HAM10000 . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2.5.2 C2 - Reuters-21578 Text Categorization . . . . . . . . . . . . .
+2.6 Tổng quan nghiên cứu liên quan . . . . . . . . . . . . . . . . . . . . . .
+2.7 Đánh giá chất lượng dữ liệu và rủi ro phân tích . . . . . . . . . . . . .
+2.8 Liên hệ giữa nguồn dữ liệu và yêu cầu bài toán . . . . . . . . . . . . .
+2.9 Các dữ liệu và nội dung cần bổ sung tiếp . . . . . . . . . . . . . . . . .
+2.10 Đường dẫn minh chứng và tái sử dụng . . . . . . . . . . . . . . . . . .
+2.4
+
+22
+23
+23
+24
+25
+25
+25
+27
+27
+28
+29
+29
+30
+
+3 PHÂN TÍCH ĐẶC ĐIỂM DỮ LIỆU QUA THỐNG KÊ VÀ TRỰC
+QUAN HÓA
+31
+3.1 Quy trình phân tích và minh chứng . . . . . . . . . . . . . . . . . . . . 32
+3.2 Nhóm A: Phân tích Heart Disease . . . . . . . . . . . . . . . . . . . . . 32
+3.2.1 Lựa chọn biến và cách tính . . . . . . . . . . . . . . . . . . . . . 32
+3.2.2 Bảng tần suất và biểu đồ cột . . . . . . . . . . . . . . . . . . . 33
+3.2.3 So sánh trước và sau tiền xử lý . . . . . . . . . . . . . . . . . . 34
+3.2.4 Scatter plot và tương quan . . . . . . . . . . . . . . . . . . . . . 36
+3.3 Nhóm B: Phân tích Appliances Energy . . . . . . . . . . . . . . . . . . 37
+3.3.1 Cấu trúc chuỗi thời gian và biến cần phân tích . . . . . . . . . . 37
+3.4 Biểu đồ vẽ bằng Excel và đối chiếu với Python . . . . . . . . . . . . . . 38
+3.4.1 Workbook Excel được tạo . . . . . . . . . . . . . . . . . . . . . 38
+3.4.2 Biểu đồ Excel cho Heart Disease . . . . . . . . . . . . . . . . . . 39
+3.4.3 Biểu đồ Excel cho Appliances Energy . . . . . . . . . . . . . . . 40
+3.4.4 So sánh Excel và Python . . . . . . . . . . . . . . . . . . . . . . 40
+3.5 Kết luận từ phân tích trực quan . . . . . . . . . . . . . . . . . . . . . . 41
+4 PHÂN TÍCH DỮ LIỆU VỚI HỌC MÁY VÀ ĐỐI SÁNH KẾT QUẢ 43
+4.1 Classification trên nhóm A . . . . . . . . . . . . . . . . . . . . . . . . . 44
+4.2 Regression và dự báo trên nhóm B . . . . . . . . . . . . . . . . . . . . 44
+4.3 Clustering trên nhóm A, B và C . . . . . . . . . . . . . . . . . . . . . . 44
+4.4 Đối sánh với nghiên cứu liên quan . . . . . . . . . . . . . . . . . . . . . 44
+5 KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN
+5.1 Kết luận . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+5.2 Hạn chế . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+5.3 Hướng phát triển . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+45
+46
+46
+46
+
+Tài liệu tham khảo
+
+46
+
+ii
+
+Danh sách hình vẽ
+1.1
+
+1.2
+
+2.1
+2.2
+
+2.3
+
+2.4
+
+3.1
+3.2
+
+3.3
+
+3.4
+
+3.5
+3.6
+
+Ví dụ histogram và boxplot trên Heart Disease. Python source: src/analyze_heart_disease
+figure paths: outputs/figures/heart_disease_age_raw_vs_cleaned.png,
+outputs/figures/heart_disease_cholesterol_boxplot.png. . . . . 14
+Ví dụ scatter plot và heatmap trên Heart Disease. Python source: src/analyze_heart_disea
+figure paths: outputs/figures/heart_disease_age_thalach_scatter.png,
+outputs/figures/heart_disease_correlation_heatmap.png. . . . . 15
+
+Phân phối target của ba bộ dữ liệu nhóm A. Python source: src/analyze_heart_disease.py
+src/analyze_tabular_health.py; figure paths nằm trong outputs/figures/. 20
+Minh họa cấu trúc số của Breast Cancer Wisconsin Diagnostic. Python
+source: src/analyze_tabular_health.py; figure paths: outputs/figures/breast_cancer
+outputs/figures/breast_cancer_correlation_heatmap.png. . . . . 23
+Minh họa đặc trưng chuỗi thời gian của Appliances Energy. Python
+source: src/analyze_appliances_energy.py; figure paths: outputs/figures/appliances
+outputs/figures/appliances_energy_distribution_raw_vs_log.png. 24
+Minh họa phân tích dữ liệu ảnh HAM10000 sau khi số hóa. Python
+source: src/analyze_ham10000.py; figure paths: outputs/figures/ham10000_class_dist
+outputs/figures/ham10000_mean_intensity_boxplot.png. . . . . . 26
+
+Bar chart tần suất loại đau ngực Heart Disease. Python source: src/analyze_heart_disease
+figure path: outputs/figures/heart_disease_chest_pain_bar.png.
+34
+Kiểm tra phân phối và outlier trên Heart Disease. Python source: src/analyze_heart_disea
+figure paths: outputs/figures/heart_disease_age_raw_vs_cleaned.png,
+outputs/figures/heart_disease_cholesterol_boxplot.png. . . . . 35
+Phân tích quan hệ đa biến trên Heart Disease. Python source: src/analyze_heart_disease.
+figure paths: outputs/figures/heart_disease_age_thalach_scatter.png,
+outputs/figures/heart_disease_correlation_heatmap.png. . . . . 36
+Trực quan hóa target Appliances Energy. Python source: src/analyze_appliances_energy.
+figure paths: outputs/figures/appliances_energy_daily_line.png,
+outputs/figures/appliances_energy_distribution_raw_vs_log.png. 38
+Preview các biểu đồ Excel cho Heart Disease. Excel workbook: excel/excel_visualization
+Excel sheets: Heart Frequency, Heart Scatter; source: src/create_excel_visualizatio
+Preview các biểu đồ Excel cho Appliances Energy. Excel workbook:
+excel/excel_visualization_comparison.xlsx; Excel sheets: Appliances
+Daily, Appliances Histogram; source: src/create_excel_visualizations.py. 40
+
+iii
+
+iv
+
+Danh sách bảng
+1
+
+Danh mục các ký hiệu viết tắt . . . . . . . . . . . . . . . . . . . . . . .
+
+xi
+
+1.1
+1.2
+1.3
+1.4
+1.5
+1.6
+
+Liên kết giữa yêu cầu phân tích và kỹ thuật sử dụng . . . . . . . . . .
+Ví dụ phân loại biến theo bản chất dữ liệu . . . . . . . . . . . . . . . .
+Quy trình EDA và sản phẩm đầu ra cần lưu . . . . . . . . . . . . . . .
+Chọn biểu đồ theo loại câu hỏi phân tích . . . . . . . . . . . . . . . . .
+Ví dụ thống kê mô tả trên một số biến Heart Disease . . . . . . . . . .
+So sánh trước và sau tiền xử lý trên Heart Disease . . . . . . . . . . . .
+
+3
+7
+11
+11
+13
+13
+
+2.1 Vai trò của từng bộ dữ liệu trong toàn bộ báo cáo . . . . . . . . . . . .
+2.2 Tổng hợp các bộ dữ liệu sử dụng trong báo cáo . . . . . . . . . . . . .
+2.3 Kiểm tra đáp ứng yêu cầu tối thiểu của đề bài . . . . . . . . . . . . . .
+2.4 Các biến chính trong Heart Disease . . . . . . . . . . . . . . . . . . . .
+2.5 Nhóm biến tiêu biểu trong CDC Diabetes . . . . . . . . . . . . . . . .
+2.6 Cấu trúc nhãn hoạt động trong HAR . . . . . . . . . . . . . . . . . . .
+2.7 So sánh hai bộ dữ liệu cảm biến nhóm B . . . . . . . . . . . . . . . . .
+2.8 Phân phối lớp chẩn đoán trong HAM10000 . . . . . . . . . . . . . . . .
+2.9 Kế hoạch số hóa dữ liệu text Reuters-21578 . . . . . . . . . . . . . . .
+2.10 Hướng tổng quan nghiên cứu liên quan theo từng nhóm dữ liệu . . . .
+2.11 Baseline học máy ban đầu để làm mốc cho Chương 4 . . . . . . . . . .
+2.12 Rủi ro chất lượng dữ liệu và hướng xử lý . . . . . . . . . . . . . . . . .
+2.13 Liên hệ dataset với các yêu cầu của đề bài . . . . . . . . . . . . . . . .
+
+19
+20
+20
+21
+22
+25
+25
+26
+27
+27
+28
+28
+29
+
+3.1
+3.2
+3.3
+3.4
+3.5
+3.6
+3.7
+
+Minh chứng source code và output cho Chương 3 . . . . . . . . . . . . 32
+Thống kê mô tả một số biến Heart Disease sau tiền xử lý. Source:
+outputs/tables/heart_disease_summary.csv; code: src/analyze_heart_disease.py. 3
+Bảng tần suất biến cp trong Heart Disease. Source: outputs/tables/heart_disease_freque
+code: src/analyze_heart_disease.py. . . . . . . . . . . . . . . . . . 33
+Ảnh hưởng của tiền xử lý trên Heart Disease. Source: outputs/tables/heart_disease_prep
+code: src/analyze_heart_disease.py. . . . . . . . . . . . . . . . . . 35
+Thống kê mô tả một số biến Appliances Energy. Source: outputs/tables/appliances_energ
+code: src/analyze_appliances_energy.py. . . . . . . . . . . . . . . . 37
+Danh sách biểu đồ Excel đã tạo. Source: outputs/tables/excel_visualization_index.csv
+code: src/create_excel_visualizations.py. . . . . . . . . . . . . . 39
+So sánh vai trò của Python và Excel trong phân tích. . . . . . . . . . . 40
+
+v
+
+vi
+
+Lời cám ơn
+
+vii
+
+viii
+
+Lời cam đoan
+Nghiên cứu của nhóm là trung thực, không sao chép từ các nghiên cứu khác. Có trích
+dẫn đầy đủ các tài liệu có tham khảo....
+
+ix
+
+x
+
+Danh mục bảng viết tắt
+Bảng 1: Danh mục các ký hiệu viết tắt
+
+Chữ viết tắt Chữ đầy đủ
+
+Diễn giải
+
+CNN
+
+Mạng nơ-ron tích chập
+
+Convolutional Neural Network
+
+xi
+
+xii
+
+Tóm tắt
+Abstract viết các nội dung ngắn gọn trình bày: 1-2 câu mô tả ngữ cảnh vấn đề,
+tại sao nên làm nghiên cứu này; 2-3 câu mô tả pp đề xuất, các thành phần trong
+pp đề xuất; 1-2 câu mô tả dữ liệu dùng để đánh giá và kết quả đạt được (vd:
+https://www.sciencedirect.com/science/article/pii/S0952197623000593)
+
+xiii
+
+xiv
+
+Chương 1
+CƠ SỞ LÝ THUYẾT
+
+1
+
+1.1
+1.2
+
+Vai trò của thống kê mô tả trong phân tích dữ liệu . . . . . .
+Các số đo xu hướng trung tâm . . . . . . . . . . . . . . . . . .
+1.2.1 Mean . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+1.2.2 Median . . . . . . . . . . . . . . . . . . . . . . . . . . .
+1.2.3 Mode . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+1.2.4 Percentiles . . . . . . . . . . . . . . . . . . . . . . . . .
+1.3 Các số đo độ phân tán . . . . . . . . . . . . . . . . . . . . . .
+1.3.1 Range . . . . . . . . . . . . . . . . . . . . . . . . . . .
+1.3.2 Variance và Standard Deviation . . . . . . . . . . . . .
+1.3.3 Coefficient of Variation . . . . . . . . . . . . . . . . . .
+1.3.4 Interquartile Range . . . . . . . . . . . . . . . . . . . .
+1.3.5 Bảng tần suất và tần suất tương đối . . . . . . . . . .
+1.3.6 Z-score . . . . . . . . . . . . . . . . . . . . . . . . . . .
+1.4 Phân loại biến số . . . . . . . . . . . . . . . . . . . . . . . . .
+1.5 Hệ thống biểu đồ trực quan hóa . . . . . . . . . . . . . . . . .
+1.5.1 Histogram . . . . . . . . . . . . . . . . . . . . . . . . .
+1.5.2 Boxplot . . . . . . . . . . . . . . . . . . . . . . . . . .
+1.5.3 Scatter plot . . . . . . . . . . . . . . . . . . . . . . . .
+1.5.4 Bar chart và pie chart . . . . . . . . . . . . . . . . . .
+1.5.5 Line chart cho chuỗi thời gian . . . . . . . . . . . . . .
+1.5.6 Correlation heatmap . . . . . . . . . . . . . . . . . . .
+1.6 Các phép biến đổi và tiền xử lý cơ bản . . . . . . . . . . . . .
+1.6.1 Điền khuyết . . . . . . . . . . . . . . . . . . . . . . . .
+1.6.2 Chuẩn hóa thang đo . . . . . . . . . . . . . . . . . . .
+1.6.3 Log transform và differencing cho chuỗi thời gian . . .
+1.7 Quy trình phân tích khám phá dữ liệu . . . . . . . . . . . . .
+1.8 Nguyên tắc chọn biểu đồ theo câu hỏi phân tích . . . . . . . .
+1.9 Diễn giải thống kê trong bối cảnh dữ liệu . . . . . . . . . . . .
+1.10 Các sai lệch thường gặp khi đọc biểu đồ . . . . . . . . . . . .
+1.11 Minh họa tính toán trên Heart Disease . . . . . . . . . . . . .
+1.12 Liên kết lý thuyết với các chương sau . . . . . . . . . . . . . .
+
+3
+3
+3
+4
+4
+4
+5
+5
+5
+5
+6
+6
+6
+7
+7
+7
+8
+8
+8
+8
+8
+9
+9
+9
+9
+10
+11
+12
+12
+13
+15
+
+Chương này trình bày nền tảng thống kê mô tả và trực quan hóa dữ liệu dùng
+trong toàn bộ báo cáo. Các khái niệm lý thuyết được gắn với ví dụ thực tế từ bộ dữ
+liệu Heart Disease để làm rõ ý nghĩa phân tích trước khi áp dụng trên các nhóm dữ
+liệu A, B và C.
+
+2
+
+CƠ SỞ LÝ THUYẾT
+
+1.1
+
+Vai trò của thống kê mô tả trong phân tích dữ
+liệu
+
+Thống kê mô tả là bước đầu tiên để biến dữ liệu thô thành thông tin có thể đọc được.
+Trước khi áp dụng các thuật toán học máy, người phân tích cần biết dữ liệu có bao
+nhiêu mẫu, biến nào có giá trị thiếu, biến nào lệch phân phối, biến nào có biến động
+lớn và biến nào có khả năng phân tách nhãn mục tiêu. Trong báo cáo này, thống kê
+mô tả được sử dụng với ba mục đích chính:
+ Mô tả hình dạng và trung tâm của từng biến.
+ Phát hiện bất thường như outlier, dữ liệu thiếu hoặc phân phối lệch.
+ Tạo cơ sở định lượng để so sánh dữ liệu trước và sau tiền xử lý.
+
+Với nhóm A và B, thống kê mô tả được tính trực tiếp trên các biến bảng số. Với
+nhóm C, dữ liệu đa phương tiện phải được số hóa thành đặc trưng định lượng trước,
+ví dụ độ sáng trung bình của ảnh, kích thước ảnh, độ dài văn bản, số từ hoặc tần suất
+từ.
+Bảng 1.1: Liên kết giữa yêu cầu phân tích và kỹ thuật sử dụng
+Yêu cầu
+
+Kỹ thuật thống kê
+
+Trực quan hóa phù hợp
+
+Mô tả trung tâm dữ liệu
+Mô tả độ biến động
+Phát hiện outlier
+So sánh theo lớp
+Phân tích liên hệ biến
+Phân tích chuỗi thời gian
+Số hóa multimedia
+
+Mean, Median, Mode
+Range, Variance, SD, CV, IQR
+Quy tắc IQR, Z-score
+Tần suất, mean theo nhóm
+Correlation, covariance
+Rolling mean, differencing
+Feature extraction
+
+Histogram
+Boxplot
+Boxplot, Scatter plot
+Bar chart, Boxplot
+Scatter plot, Heatmap
+Line chart
+Histogram, Boxplot theo lớp
+
+Bảng 1.1 cho thấy mỗi yêu cầu trong đề bài đều có thể ánh xạ thành một nhóm kỹ
+thuật cụ thể. Cách ánh xạ này giúp quá trình thực hiện không bị rời rạc: mỗi bảng và
+mỗi hình trong báo cáo đều phải trả lời một câu hỏi phân tích nhất định.
+
+1.2
+
+Các số đo xu hướng trung tâm
+
+1.2.1
+
+Mean
+
+Trung bình mẫu cho biết giá trị đại diện theo nghĩa cân bằng số học của một biến định
+lượng. Với mẫu gồm n quan sát x1 , x2 , . . . , xn , trung bình mẫu được tính như sau:
+3
+
+n
+
+1X
+xi
+x̄ =
+n i=1
+
+(1.1)
+
+Mean hữu ích khi phân phối tương đối cân bằng và không có quá nhiều outlier. Tuy
+nhiên, mean rất nhạy với các giá trị cực trị. Ví dụ trong Heart Disease, biến chol có
+mean thô khoảng 246.69 nhưng max lên đến 564. Sau khi xử lý outlier bằng quy tắc
+IQR, max của chol giảm xuống 371 và mean giảm nhẹ còn 245.58. Điều này cho thấy
+mean bị ảnh hưởng bởi các giá trị cholesterol rất cao.
+
+1.2.2
+
+Median
+
+Median là giá trị nằm ở giữa phân phối sau khi sắp xếp dữ liệu. Median bền vững hơn
+mean khi dữ liệu có outlier. Nếu n lẻ, median là giá trị tại vị trí (n + 1)/2; nếu n chẵn,
+median là trung bình của hai giá trị giữa.
+Trong Heart Disease, median của chol là 241 cả trước và sau tiền xử lý. Việc median
+gần như không đổi trong khi max thay đổi mạnh cho thấy một số điểm cực trị ảnh
+hưởng nhiều hơn đến mean so với median.
+
+1.2.3
+
+Mode
+
+Mode là giá trị xuất hiện nhiều nhất. Với biến định tính, mode là nhóm phổ biến nhất;
+với biến định lượng rời rạc, mode giúp nhận diện giá trị tập trung nhất. Ví dụ trong
+Heart Disease, mode của age là 58 và mode của oldpeak là 0.0. Điều này gợi ý nhiều
+bệnh nhân không có ST depression trong bài test gắng sức.
+
+1.2.4
+
+Percentiles
+
+Percentile mô tả vị trí tương đối của một giá trị trong phân phối. Percentile thứ 25, 50
+và 75 lần lượt là Q1 , median và Q3 . Các mốc này đặc biệt quan trọng khi lập boxplot
+và xác định outlier theo IQR.
+Nếu Pk là percentile thứ k, có thể hiểu Pk là ngưỡng mà xấp xỉ k% quan sát có giá
+trị nhỏ hơn hoặc bằng ngưỡng đó. Trong thực hành, P25 và P75 được dùng nhiều hơn
+cả vì chúng tạo thành khoảng tứ phân vị, là nền tảng của boxplot.
+4
+
+CƠ SỞ LÝ THUYẾT
+
+1.3
+
+Các số đo độ phân tán
+
+1.3.1
+
+Range
+
+Range là khoảng biến thiên từ giá trị nhỏ nhất đến lớn nhất:
+Range = xmax − xmin
+
+(1.2)
+
+Range dễ hiểu nhưng rất nhạy với outlier. Trong Heart Disease, range thô của
+chol là 438, sau tiền xử lý còn 245. Sự thay đổi này là bằng chứng rõ ràng rằng biến
+cholesterol có một số giá trị cực trị cần được kiểm tra trước khi đưa vào mô hình.
+
+1.3.2
+
+Variance và Standard Deviation
+
+Phương sai đo mức độ phân tán trung bình quanh mean:
+n
+1 X
+s =
+(xi − x̄)2
+n − 1 i=1
+2
+
+(1.3)
+
+Độ lệch chuẩn là căn bậc hai của phương sai:
+√
+s=
+
+s2
+
+(1.4)
+
+Độ lệch chuẩn có cùng đơn vị với biến gốc nên dễ diễn giải hơn phương sai. Trong
+Heart Disease, độ lệch chuẩn của trestbps giảm từ 17.60 xuống 16.65 sau khi xử lý
+outlier. Mức giảm không quá lớn, cho thấy phần lớn biến động huyết áp nghỉ ngơi vẫn
+là biến động thật của dữ liệu, không chỉ do outlier.
+
+1.3.3
+
+Coefficient of Variation
+
+Hệ số biến thiên chuẩn hóa độ lệch chuẩn theo mean:
+CV =
+
+s
+x̄
+
+(1.5)
+
+CV hữu ích khi cần so sánh mức biến động giữa các biến có thang đo khác nhau.
+Ví dụ oldpeak có CV thô khoảng 1.12, cao hơn nhiều so với age là 0.17. Điều này cho
+thấy oldpeak biến động mạnh tương đối với mức trung bình của nó.
+5
+
+1.3.4
+
+Interquartile Range
+
+IQR là khoảng giữa tứ phân vị thứ 75 và 25:
+IQR = Q3 − Q1
+
+(1.6)
+
+Quy tắc phát hiện outlier phổ biến:
+Lower = Q1 − 1.5 × IQR
+
+(1.7)
+
+U pper = Q3 + 1.5 × IQR
+
+(1.8)
+
+Giá trị nhỏ hơn Lower hoặc lớn hơn Upper được xem là ứng viên outlier. Trong
+script src/analyze_heart_disease.py, quy tắc này được dùng để cắt biến trestbps,
+chol, thalach, oldpeak và ca.
+
+1.3.5
+
+Bảng tần suất và tần suất tương đối
+
+Với biến định tính, việc tính mean hoặc standard deviation thường không có ý nghĩa.
+Khi đó, bảng tần suất là công cụ cơ bản. Tần suất tuyệt đối của một lớp cj được ký
+hiệu là fj :
+
+fj =
+
+n
+X
+
+I(xi = cj )
+
+(1.9)
+
+i=1
+
+Trong đó I(·) là hàm chỉ báo, nhận giá trị 1 nếu điều kiện đúng và 0 nếu sai. Tần
+suất tương đối của lớp cj là:
+pj =
+
+fj
+n
+
+(1.10)
+
+Bảng tần suất được dùng cho các biến như sex, cp, Diagnosis, dx, localization.
+Ví dụ với HAM10000, lớp nv có 6,705 ảnh, chiếm khoảng 66.95% tổng số ảnh. Tỷ lệ
+này cho thấy dữ liệu ảnh da liễu bị mất cân bằng lớp, và các thuật toán học máy cần
+được đánh giá bằng macro-F1 hoặc weighted-F1 thay vì chỉ dùng accuracy.
+
+1.3.6
+
+Z-score
+
+Z-score chuẩn hóa giá trị theo mean và standard deviation:
+6
+
+CƠ SỞ LÝ THUYẾT
+
+zi =
+
+xi − x̄
+s
+
+(1.11)
+
+Giá trị |zi | lớn cho thấy quan sát nằm xa trung tâm dữ liệu. Trong nhiều bài toán,
+|zi | > 3 được xem là dấu hiệu outlier. Z-score đặc biệt hữu ích khi cần so sánh các biến
+có đơn vị khác nhau, ví dụ tuổi, cholesterol và huyết áp.
+
+1.4
+
+Phân loại biến số
+
+Trong yêu cầu bài tập, mỗi biến phải được phân loại theo bản chất. Cách phân loại
+được dùng trong báo cáo:
+ Qualitative: biến định tính, ví dụ sex, cp, Diagnosis, dx.
+ Quantitative discrete: biến định lượng rời rạc, ví dụ age, số mạch máu ca, số
+khung hình, số từ.
+ Quantitative continuous: biến định lượng liên tục, ví dụ huyết áp, cholesterol,
+nhiệt độ, độ ẩm, độ sáng pixel.
+
+Việc phân loại biến quyết định cách tính thống kê và loại biểu đồ. Biến định tính
+ưu tiên bảng tần suất, bar chart hoặc pie chart. Biến định lượng ưu tiên mean, median,
+standard deviation, histogram và boxplot.
+Bảng 1.2: Ví dụ phân loại biến theo bản chất dữ liệu
+Dataset
+
+Biến
+
+Loại biến
+
+Cách phân tích chính
+
+Heart Disease
+Heart Disease
+Heart Disease
+CDC Diabetes
+Appliances
+Appliances
+HAM10000
+HAM10000
+Reuters
+
+sex
+age
+chol
+GenHlth
+date
+T1
+dx
+mean intensity
+word count
+
+Qualitative
+Quantitative discrete
+Quantitative continuous
+Ordinal/qualitative
+Time index
+Quantitative continuous
+Qualitative target
+Quantitative continuous
+Quantitative discrete
+
+Bảng tần suất, bar chart
+Mean, median, histogram
+Boxplot, outlier, IQR
+Tần suất theo mức
+Line chart, time split
+Histogram, correlation
+Class distribution
+Boxplot theo lớp
+Histogram, boxplot
+
+1.5
+
+Hệ thống biểu đồ trực quan hóa
+
+1.5.1
+
+Histogram
+
+Histogram chia miền giá trị thành các khoảng và đếm số quan sát trong từng khoảng.
+Biểu đồ này giúp nhận diện phân phối cân bằng, lệch trái, lệch phải, đa đỉnh hoặc có
+7
+
+điểm bất thường. Trong báo cáo, histogram được dùng cho các biến như age, chol,
+BMI, Appliances và age trong HAM10000.
+
+1.5.2
+
+Boxplot
+
+Boxplot hiển thị median, Q1 , Q3 , IQR và các điểm ngoài ngưỡng. Đây là biểu đồ quan
+trọng để phát hiện outlier và so sánh phân phối giữa các lớp. Ví dụ boxplot cholesterol
+theo target_binary cho phép so sánh mức cholesterol giữa nhóm có và không có bệnh
+tim.
+
+1.5.3
+
+Scatter plot
+
+Scatter plot biểu diễn mối quan hệ giữa hai biến định lượng. Nếu các điểm tạo thành
+xu hướng tăng/giảm, có thể tồn tại liên hệ tuyến tính hoặc phi tuyến. Trong Heart
+Disease, scatter plot giữa age và thalach giúp kiểm tra xu hướng tuổi cao đi kèm nhịp
+tim tối đa thấp hơn hay không.
+
+1.5.4
+
+Bar chart và pie chart
+
+Bar chart và pie chart dùng cho biến định tính. Bar chart để so sánh tần suất giữa các
+nhóm; pie chart để mô tả tỷ trọng khi số nhóm ít và tỷ lệ cần trình bày nhanh. Trong
+báo cáo, bar chart được ưu tiên hơn pie chart vì dễ so sánh hơn, đặc biệt với các biến
+có nhiều lớp như localization trong HAM10000.
+
+1.5.5
+
+Line chart cho chuỗi thời gian
+
+Line chart đặt thời gian trên trục hoành và giá trị quan sát trên trục tung. Biểu đồ
+này bắt buộc với nhóm B để phân tích trend, seasonality, biến động bất thường và thời
+điểm thay đổi. Với Appliances Energy, dữ liệu có 19,735 mẫu từ 2016-01-11 17:00:00
+đến 2016-05-27 18:00:00, tần suất phổ biến 10 phút/mẫu. Do đó line chart theo ngày
+được dùng để làm mượt xu hướng tiêu thụ năng lượng.
+
+1.5.6
+
+Correlation heatmap
+
+Correlation heatmap biểu diễn ma trận tương quan giữa các biến định lượng. Màu sắc
+giúp nhận diện nhanh cặp biến có tương quan dương hoặc âm. Biểu đồ này hữu ích
+trong bước lựa chọn đặc trưng và phát hiện đa cộng tuyến trước khi huấn luyện mô
+hình.
+Hệ số tương quan Pearson giữa hai biến X và Y được tính bằng:
+8
+
+CƠ SỞ LÝ THUYẾT
+Pn
+
+i=1 (xi − x̄)(yi − ȳ)
+pPn
+2
+2
+(x
+−
+x̄)
+i
+i=1
+i=1 (yi − ȳ)
+
+rXY = pPn
+
+(1.12)
+
+Giá trị rXY nằm trong khoảng [−1, 1]. Giá trị gần 1 biểu thị tương quan dương
+mạnh; gần -1 biểu thị tương quan âm mạnh; gần 0 biểu thị mối quan hệ tuyến tính
+yếu. Tuy nhiên, tương quan không đồng nghĩa với quan hệ nhân quả, nên heatmap chỉ
+nên được xem là công cụ thăm dò ban đầu.
+
+1.6
+
+Các phép biến đổi và tiền xử lý cơ bản
+
+1.6.1
+
+Điền khuyết
+
+Dữ liệu thực tế thường có missing value. Với biến định lượng, hai cách điền khuyết phổ
+biến là mean và median. Median được ưu tiên khi biến có outlier. Với biến định tính,
+mode được dùng để thay thế nhóm xuất hiện nhiều nhất:
+
+
+median(X), nếu X là biến định lượng có outlier
+xmissing = mean(X),
+nếu X là biến định lượng cân bằng
+
+
+mode(X),
+nếu X là biến định tính
+
+1.6.2
+
+(1.13)
+
+Chuẩn hóa thang đo
+
+Trong học máy, các biến có thang đo khác nhau có thể làm thuật toán dựa trên khoảng
+cách bị lệch. Min-max scaling đưa giá trị về khoảng [0, 1]:
+x′ =
+
+x − xmin
+xmax − xmin
+
+(1.14)
+
+Standardization đưa dữ liệu về mean 0 và standard deviation 1:
+x′ =
+
+x−µ
+σ
+
+(1.15)
+
+Hai phép biến đổi này đặc biệt quan trọng với SVM, Logistic Regression, K-Means
+và Hierarchical Clustering.
+
+1.6.3
+
+Log transform và differencing cho chuỗi thời gian
+
+Với dữ liệu chuỗi thời gian, log transform giúp giảm độ lệch phải và làm ổn định phương
+sai:
+9
+
+yt′ = log(1 + yt )
+
+(1.16)
+
+Sai phân bậc 1 giúp loại bỏ xu hướng cục bộ:
+
+∆yt = yt − yt−1
+
+(1.17)
+
+Trong Appliances Energy, Appliances_log1p và Appliances_diff đã được tạo
+trong script src/analyze_appliances_energy.py để phục vụ phân tích phân phối và
+biến động theo thời gian.
+
+1.7
+
+Quy trình phân tích khám phá dữ liệu
+
+Phân tích khám phá dữ liệu (Exploratory Data Analysis - EDA) là giai đoạn nối giữa
+dữ liệu thô và mô hình phân tích. Nếu bỏ qua EDA, người phân tích có thể đưa vào
+mô hình các biến bị lỗi kiểu dữ liệu, phân phối lệch quá mạnh, chứa outlier bất thường
+hoặc có target mất cân bằng. Trong báo cáo này, EDA được xem như một quy trình
+có kiểm soát gồm năm bước.
+
+1. Kiểm tra cấu trúc dữ liệu: xác định số dòng, số cột, kiểu dữ liệu, khóa thời
+gian, nhãn mục tiêu và các file nguồn.
+2. Kiểm tra chất lượng dữ liệu: tìm giá trị thiếu, giá trị trùng, giá trị ngoài
+miền hợp lý và kiểu dữ liệu bị đọc sai.
+3. Thống kê mô tả: tính mean, median, mode, percentile, variance, standard deviation, CV và IQR cho các biến định lượng; lập bảng tần suất cho biến định
+tính.
+4. Trực quan hóa: chọn biểu đồ phù hợp với bản chất biến và câu hỏi phân tích.
+5. Rút kết luận phân tích: ghi nhận đặc điểm dữ liệu có ảnh hưởng đến tiền xử
+lý, feature engineering và mô hình học máy.
+
+Điểm quan trọng là EDA không dừng ở việc tạo ra nhiều hình. Mỗi hình phải trả
+lời một câu hỏi cụ thể. Ví dụ, histogram trả lời câu hỏi “biến này phân phối như thế
+nào?”, boxplot trả lời câu hỏi “biến này có outlier không?”, scatter plot trả lời câu hỏi
+“hai biến có quan hệ gì không?”, còn line chart trả lời câu hỏi “dữ liệu thay đổi ra sao
+theo thời gian?”.
+10
+
+CƠ SỞ LÝ THUYẾT
+Bảng 1.3: Quy trình EDA và sản phẩm đầu ra cần lưu
+Bước
+
+Câu hỏi chính
+
+Sản phẩm đầu ra
+
+Kiểm kê dữ liệu
+
+Dữ liệu có bao nhiêu
+dòng/cột?
+Biến nào thiếu và thiếu bao
+nhiêu?
+Trung tâm và độ phân tán ra
+sao?
+Phân phối, outlier, quan hệ
+biến thế nào?
+Kết quả tác động gì đến mô
+hình?
+
+Inventory CSV, mô tả dataset
+
+Kiểm tra thiếu
+Thống kê mô tả
+Trực quan hóa
+Diễn giải
+
+Missing-value table
+Summary table
+PNG figure, Excel chart
+Nhận xét trong báo cáo
+
+Bảng 1.3 cũng là cơ sở tổ chức thư mục của dự án. Các file trong outputs/tables/
+lưu bằng chứng dạng bảng; các file trong outputs/figures/ lưu biểu đồ; các file trong
+src/ lưu script tạo kết quả. Cách tổ chức này giúp báo cáo không chỉ có kết luận, mà
+còn có đường dẫn tái lập kết luận.
+
+1.8
+
+Nguyên tắc chọn biểu đồ theo câu hỏi phân tích
+
+Không có một loại biểu đồ nào phù hợp cho mọi dữ liệu. Việc chọn biểu đồ phụ thuộc
+vào loại biến, số biến cần so sánh và câu hỏi đang đặt ra. Nếu chọn sai biểu đồ, người
+đọc có thể hiểu sai bản chất dữ liệu. Ví dụ, dùng pie chart cho biến có quá nhiều lớp
+sẽ khó so sánh; dùng scatter plot cho biến định tính sẽ không có ý nghĩa; dùng line
+chart cho dữ liệu không có thứ tự thời gian có thể tạo cảm giác có xu hướng giả.
+Bảng 1.4: Chọn biểu đồ theo loại câu hỏi phân tích
+Câu hỏi phân tích
+
+Biểu đồ ưu tiên
+
+Lý do sử dụng
+
+Biến định lượng phân
+phối thế nào?
+Có outlier không?
+
+Histogram
+
+Hai biến số có quan hệ
+không?
+Biến định tính có cơ
+cấu ra sao?
+Dữ liệu thay đổi theo
+thời gian thế nào?
+Nhiều biến liên hệ với
+nhau ra sao?
+
+Scatter plot
+
+Nhìn được dạng lệch, nhiều
+đỉnh, tập trung
+Dựa trên median, IQR và điểm
+ngoài ngưỡng
+Thể hiện từng cặp quan sát trên
+mặt phẳng
+So sánh tần suất giữa các lớp rõ
+hơn pie chart
+Giữ thứ tự thời gian và phát
+hiện xu hướng
+Tóm tắt ma trận tương quan
+bằng màu sắc
+
+Boxplot
+
+Bar chart
+Line chart
+Correlation heatmap
+
+11
+
+Trong báo cáo này, nguyên tắc chọn biểu đồ được áp dụng nhất quán. Với Heart
+Disease, histogram và boxplot được dùng để minh họa phân phối và outlier; scatter
+plot và heatmap được dùng để khảo sát quan hệ biến. Với Appliances Energy, line
+chart là bắt buộc vì dữ liệu có trục thời gian. Với HAM10000, bar chart được dùng cho
+phân phối lớp, còn boxplot được dùng cho đặc trưng độ sáng sau khi số hóa ảnh.
+
+1.9
+
+Diễn giải thống kê trong bối cảnh dữ liệu
+
+Một chỉ số thống kê chỉ có ý nghĩa khi được đọc trong bối cảnh dữ liệu. Mean không
+chỉ là một con số trung bình; nó cho biết mức đại diện nếu phân phối tương đối cân
+bằng. Median không chỉ là vị trí giữa; nó giúp so sánh với mean để nhận biết độ lệch.
+Standard deviation không chỉ đo độ phân tán; nó còn cho biết biến nào có dao động
+lớn và có thể cần chuẩn hóa. IQR không chỉ phục vụ boxplot; nó là nền tảng của quy
+tắc phát hiện outlier.
+Khi đọc một biến định lượng, báo cáo sử dụng ba lớp nhận xét:
+ Nhận xét trung tâm: mean và median gần hay xa nhau, biến có nghiêng lệch
+hay không.
+ Nhận xét phân tán: standard deviation, range, IQR lớn hay nhỏ so với mean.
+ Nhận xét tiền xử lý: có cần cắt outlier, log-transform, chuẩn hóa hay không.
+
+Ví dụ, trong Appliances Energy, mean của Appliances lớn hơn median và max rất
+cao, cho thấy target lệch phải. Nhận xét này dẫn trực tiếp đến việc dùng log1p. Ngược
+lại, trong Heart Disease, median của chol gần như không đổi trước và sau tiền xử lý,
+trong khi max giảm mạnh; điều này cho thấy tiền xử lý chủ yếu làm giảm ảnh hưởng
+của điểm cực trị, không làm thay đổi phần lõi của phân phối.
+
+1.10
+
+Các sai lệch thường gặp khi đọc biểu đồ
+
+Trực quan hóa giúp dữ liệu dễ hiểu hơn, nhưng cũng có thể gây hiểu nhầm nếu không
+đọc đúng. Một số sai lệch thường gặp trong báo cáo dữ liệu gồm:
+ Nhầm tương quan với nhân quả: heatmap chỉ cho biết hai biến thay đổi cùng
+nhau, không chứng minh biến này gây ra biến kia.
+ Đánh giá mô hình chỉ bằng accuracy: nếu target mất cân bằng, accuracy
+cao có thể chỉ do mô hình dự đoán lớp đa số.
+ Bỏ qua scale: các biến có thang đo khác nhau làm scatter plot và thuật toán
+khoảng cách khó diễn giải nếu chưa chuẩn hóa.
+
+12
+
+CƠ SỞ LÝ THUYẾT
+ Dùng biểu đồ tổng thể thay cho phân tích theo lớp: phân phối toàn bộ
+dữ liệu có thể che mất khác biệt giữa các nhóm target.
+ Không gắn biểu đồ với câu hỏi: một hình đẹp nhưng không trả lời câu hỏi
+phân tích thì không giúp cải thiện báo cáo.
+
+Do đó, mỗi biểu đồ trong báo cáo được viết kèm lý do chọn biểu đồ và nhận xét.
+Cách trình bày này giúp người đọc hiểu không chỉ biểu đồ thể hiện gì, mà còn vì sao
+nó cần thiết cho bài toán phân tích dữ liệu.
+
+1.11
+
+Minh họa tính toán trên Heart Disease
+
+Bộ Heart Disease Cleveland có 303 mẫu và 14 thuộc tính gốc được dùng phổ biến trong
+các thực nghiệm. Trong quá trình đọc dữ liệu, ký hiệu ? được chuyển thành missing
+value. Bảng missing cho thấy biến ca thiếu 4 giá trị, tương đương 1.3201%, và biến
+thal thiếu 2 giá trị, tương đương 0.6601%.
+Bảng 1.5: Ví dụ thống kê mô tả trên một số biến Heart Disease
+Biến
+
+Mean
+
+Median
+
+Std
+
+Min
+
+Max
+
+age
+trestbps
+chol
+thalach
+oldpeak
+
+54.44
+131.69
+246.69
+149.61
+1.04
+
+56.00 9.04 29.00 77.00
+130.00 17.60 94.00 200.00
+241.00 51.78 126.00 564.00
+153.00 22.88 71.00 202.00
+0.80 1.16
+0.00
+6.20
+
+Từ Bảng 1.5, có thể rút ra ba nhận xét ban đầu. Thứ nhất, biến age có median 56
+và mean 54.44, cho thấy phân phối tuổi hơi nghiêng về nhóm trung niên và cao tuổi.
+Thứ hai, chol có range rất lớn, từ 126 đến 564, nên cần kiểm tra outlier bằng boxplot.
+Thứ ba, oldpeak có median 0.8 nhưng mode 0.0, cho thấy một phần đáng kể bệnh
+nhân không có ST depression.
+Bảng 1.6: So sánh trước và sau tiền xử lý trên Heart Disease
+Biến
+trestbps
+chol
+thalach
+oldpeak
+ca
+
+Mean thô
+
+Mean sạch
+
+Std thô
+
+Std sạch
+
+131.69
+246.69
+149.61
+1.04
+0.67
+
+131.35
+245.58
+149.65
+1.02
+0.63
+
+17.60
+51.78
+22.88
+1.16
+0.94
+
+16.65
+47.56
+22.73
+1.11
+0.86
+
+Bảng 1.6 cho thấy tiền xử lý không làm thay đổi mạnh giá trị trung tâm, nhưng
+làm giảm độ biến động của các biến có outlier. Trường hợp rõ nhất là chol: standard
+13
+
+deviation giảm từ 51.78 xuống 47.56, max giảm từ 564 xuống 371. Điều này phù hợp
+với mục tiêu của tiền xử lý: giữ lại cấu trúc chính của dữ liệu nhưng hạn chế ảnh hưởng
+của điểm cực trị.
+
+(a) Phân phối tuổi trước/sau xử lý
+
+(b) Boxplot cholesterol theo nhãn bệnh
+
+Hình
+1.1:
+Ví
+dụ
+histogram
+và
+boxplot
+trên
+Heart
+Disease.
+Python
+source:
+src/analyze_heart_disease.py;
+figure
+paths:
+outputs/figures/heart_disease_age_raw_vs_cleaned.png,
+outputs/figures/heart_disease_cholesterol_boxplot.png.
+
+Lý do chọn biểu đồ. Histogram được dùng vì biến age là biến định lượng, cần
+quan sát hình dạng phân phối trước và sau xử lý. Boxplot được dùng vì chol dễ có
+outlier và cần so sánh theo nhãn bệnh.
+Nhận xét. Hình 1.1 minh họa hai cách đọc dữ liệu khác nhau. Histogram tuổi cho
+thấy mẫu Heart Disease tập trung ở nhóm trung niên và cao tuổi. Boxplot cholesterol
+theo nhãn bệnh giúp kiểm tra phân phối cholesterol của nhóm có bệnh và không có bệnh
+có khác nhau rõ ràng hay không. Nếu hai hộp IQR chồng lắp nhiều, riêng cholesterol
+có thể không đủ mạnh để phân loại mà cần kết hợp với các biến khác.
+14
+
+CƠ SỞ LÝ THUYẾT
+
+(a) Scatter plot age và thalach
+
+(b) Correlation heatmap
+
+Hình
+1.2:
+Ví
+dụ
+scatter
+plot
+và
+heatmap
+trên
+Heart
+Disease.
+Python
+source:
+src/analyze_heart_disease.py;
+figure
+paths:
+outputs/figures/heart_disease_age_thalach_scatter.png,
+outputs/figures/heart_disease_correlation_heatmap.png.
+
+Lý do chọn biểu đồ. Scatter plot phù hợp để kiểm tra quan hệ giữa hai biến định
+lượng age và thalach; heatmap phù hợp để xem nhanh toàn bộ ma trận tương quan.
+Nhận xét. Hình 1.2 minh họa vai trò của trực quan hóa đa biến. Scatter plot cho
+phép quan sát mối quan hệ giữa tuổi và nhịp tim tối đa, đồng thời tô màu theo nhãn
+bệnh. Heatmap cho phép nhìn nhanh cặp biến nào có liên hệ tuyến tính mạnh. Trong
+quy trình phân tích, hai biểu đồ này giúp hình thành giả thuyết trước khi đưa dữ liệu
+vào mô hình học máy.
+
+1.12
+
+Liên kết lý thuyết với các chương sau
+
+Chương 1 cung cấp ngôn ngữ chung để đọc các kết quả ở Chương 3 và Chương 4. Các
+chỉ số mean, median, IQR và standard deviation sẽ được dùng để so sánh trước/sau
+tiền xử lý. Các biểu đồ histogram, boxplot, line chart và heatmap sẽ được dùng để phát
+hiện đặc trưng dữ liệu. Các nhận xét này tiếp tục làm cơ sở cho lựa chọn mô hình,
+diễn giải sai số và so sánh với nghiên cứu liên quan.
+
+15
+
+16
+
+Chương 2
+THU THẬP, MÔ TẢ VÀ TỔNG QUAN
+CÁC BỘ DỮ LIỆU
+2.1
+2.2
+2.3
+
+Tiêu chí lựa chọn dữ liệu . . . . . . . . . . . . . . . . . . . . .
+Chiến lược thu thập và kiểm chứng dữ liệu . . . . . . . . . . .
+Nhóm A: Dữ liệu dạng bảng . . . . . . . . . . . . . . . . . . .
+2.3.1 A1 - Heart Disease . . . . . . . . . . . . . . . . . . . .
+2.3.2 A2 - CDC Diabetes Health Indicators . . . . . . . . . .
+2.3.3 A3 - Breast Cancer Wisconsin Diagnostic . . . . . . . .
+2.4 Nhóm B: Dữ liệu chuỗi thời gian và cảm biến . . . . . . . . .
+2.4.1 B1 - Appliances Energy Prediction . . . . . . . . . . .
+2.4.2 B2 - Human Activity Recognition Using Smartphones .
+2.4.3 B3 - MHEALTH Dataset . . . . . . . . . . . . . . . . .
+2.5 Nhóm C: Dữ liệu đa phương tiện . . . . . . . . . . . . . . . .
+2.5.1 C1 - HAM10000 . . . . . . . . . . . . . . . . . . . . . .
+2.5.2 C2 - Reuters-21578 Text Categorization . . . . . . . .
+2.6 Tổng quan nghiên cứu liên quan . . . . . . . . . . . . . . . . .
+2.7 Đánh giá chất lượng dữ liệu và rủi ro phân tích . . . . . . . .
+2.8 Liên hệ giữa nguồn dữ liệu và yêu cầu bài toán . . . . . . . .
+2.9 Các dữ liệu và nội dung cần bổ sung tiếp . . . . . . . . . . . .
+2.10 Đường dẫn minh chứng và tái sử dụng . . . . . . . . . . . . .
+
+18
+18
+21
+21
+21
+22
+23
+23
+24
+25
+25
+25
+27
+27
+28
+29
+29
+30
+
+Chương này trình bày nguồn gốc, cấu trúc, đặc điểm và mục đích sử dụng của các
+bộ dữ liệu trong báo cáo. Theo yêu cầu bài tập, nhóm dữ liệu được chia thành ba
+nhóm: dữ liệu dạng bảng, dữ liệu chuỗi thời gian/cảm biến và dữ liệu đa phương tiện.
+
+17
+
+2.1
+
+Tiêu chí lựa chọn dữ liệu
+
+2.2
+
+Chiến lược thu thập và kiểm chứng dữ liệu
+
+Việc chọn dữ liệu trong báo cáo không chỉ nhằm đủ số lượng bộ dữ liệu theo đề bài,
+mà còn phải bảo đảm mỗi bộ dữ liệu có thể tạo ra phân tích thống kê, trực quan hóa
+và thí nghiệm học máy có ý nghĩa. Do đó, nhóm áp dụng bốn tiêu chí khi quyết định
+đưa một dataset vào báo cáo.
+
+1. Tính phù hợp với nhóm dữ liệu: dataset phải thuộc một trong ba nhóm A,
+B, C theo mô tả bài toán.
+
+2. Khả năng phân tích thống kê: dataset cần có biến định lượng hoặc biến định
+tính đủ rõ để tính thống kê, lập bảng tần suất và vẽ biểu đồ.
+
+3. Khả năng học máy: dataset nên có target hoặc có cấu trúc đặc trưng đủ tốt
+để phục vụ classification, regression hoặc clustering.
+
+4. Khả năng tái lập: dữ liệu, script, bảng kết quả, biểu đồ và log phải được lưu
+lại trong thư mục dự án.
+
+Với tiêu chí này, các bộ dữ liệu được chọn không đứng độc lập mà tạo thành một
+pipeline xuyên suốt. Heart Disease được dùng để minh họa lý thuyết, phân tích thống
+kê và classification. Appliances Energy được dùng để minh họa chuỗi thời gian và
+regression. HAM10000 và Reuters-21578 đại diện cho dữ liệu đa phương tiện, nơi dữ
+liệu thô cần được số hóa thành đặc trưng trước khi thống kê.
+18
+
+THU THẬP, MÔ TẢ VÀ TỔNG QUAN CÁC BỘ DỮ LIỆU
+Bảng 2.1: Vai trò của từng bộ dữ liệu trong toàn bộ báo cáo
+Dataset
+
+Nhóm
+
+Vai trò thống kê
+
+Vai trò học máy
+
+Heart Disease
+
+A
+
+CDC Diabetes
+
+A
+
+Breast Cancer
+
+A
+
+Classification, clustering
+Classification nguy cơ
+tiểu đường
+Classification khối u
+
+Appliances Energy
+
+B
+
+HAR
+
+B
+
+MHEALTH
+
+B
+
+HAM10000
+
+C
+
+Reuters-21578
+
+C
+
+Minh họa lý thuyết,
+outlier, tần suất
+Tần suất biến sức
+khỏe/hành vi
+Histogram, boxplot,
+heatmap
+Line chart, phân phối
+target
+Phân phối activity,
+cảm biến
+Thống kê tín hiệu cảm
+biến
+Phân phối lớp, đặc
+trưng ảnh
+Độ dài văn bản, tần
+suất topic
+
+Regression/timeseries forecasting
+Activity classification,
+clustering
+Activity classification,
+clustering
+Image classification,
+clustering
+Text classification
+
+Bảng 2.1 cho thấy mỗi dataset đều có một vai trò cụ thể, tránh tình trạng thu thập
+dữ liệu chỉ để đủ số lượng. Đây cũng là căn cứ để Chương 3 và Chương 4 mở rộng phân
+tích theo từng nhóm.
+Yêu cầu bài tập đặt ra ba nhóm dữ liệu chính. Nhóm A là dữ liệu dạng bảng, cần
+tối thiểu 3 bộ, mỗi bộ có hơn 5 features và hơn 100 samples. Nhóm B là dữ liệu chuỗi
+thời gian, cần tối thiểu 3 bộ, mỗi bộ có hơn 500 samples. Nhóm C là dữ liệu đa phương
+tiện, cần ít nhất 2 bộ trong các loại ảnh, audio, video hoặc text.
+Trong quá trình thực hiện, báo cáo chọn 8 bộ dữ liệu để bao phủ cả ba nhóm. Các
+bộ dữ liệu được ưu tiên vì có nguồn công khai, có số mẫu đủ lớn, có bài toán học máy
+rõ ràng và có khả năng sinh bảng/hình/log minh chứng bằng Python. Bảng 2.2 tóm
+tắt danh sách dữ liệu đã thu thập.
+19
+
+Bảng 2.2: Tổng hợp các bộ dữ liệu sử dụng trong báo cáo
+ID
+
+Nhóm
+
+Bộ dữ liệu
+
+Bài toán chính
+
+Số mẫu
+
+A1
+A2
+A3
+B1
+B2
+B3
+C1
+C2
+
+A
+A
+A
+B
+B
+B
+C
+C
+
+Heart Disease
+CDC Diabetes Health Indicators
+Breast Cancer Wisconsin Diagnostic
+Appliances Energy Prediction
+Human Activity Recognition
+MHEALTH
+HAM10000
+Reuters-21578
+
+Classification
+Classification
+Classification
+Regression
+Classification
+Classification
+Image classification
+Text classification
+
+303
+253680
+569
+19735
+10299
+1215745
+10015
+21578
+
+Bảng kiểm kê dữ liệu chi tiết được lưu tại reports/chapter2_dataset_inventory.
+md. Các bảng inventory sinh từ script nằm tại outputs/tables/uci_dataset_inventory.
+csv và outputs/tables/local_dataset_inventory.csv.
+Bảng 2.3: Kiểm tra đáp ứng yêu cầu tối thiểu của đề bài
+Nhóm
+
+Yêu cầu tối thiểu
+
+Trạng thái hiện tại
+
+Kết luận
+
+A
+B
+C
+Minh chứng
+
+3 bộ, > 5 features, > 100 samples
+3 bộ, > 500 samples
+2 bộ multimedia
+Code/data/log/kết quả
+
+3 bộ: 303 đến 253680 mẫu
+3 bộ: 10299 đến 1215745 mẫu
+HAM10000 và Reuters-21578
+99 artifact trong evidence index
+
+Đạt
+Đạt
+Đạt
+Đạt nền
+
+(a) Heart Disease
+
+(b) CDC Diabetes
+
+(c) Breast Cancer
+
+Hình 2.1: Phân phối target của ba bộ dữ liệu nhóm A. Python source:
+src/analyze_heart_disease.py, src/analyze_tabular_health.py; figure paths
+nằm trong outputs/figures/.
+Lý do chọn biểu đồ. Ba biểu đồ target distribution được chọn vì nhóm A phục
+vụ classification; trước khi huấn luyện mô hình cần biết target có cân bằng hay không.
+Nhận xét. Hình 2.1 cho thấy ba bộ dữ liệu nhóm A đều có target phân lớp rõ
+ràng, nhưng mức cân bằng lớp khác nhau. Heart Disease và CDC Diabetes cần theo
+dõi precision/recall từng lớp, trong khi Breast Cancer có số mẫu nhỏ hơn nhưng đặc
+trưng liên tục rõ ràng và thường cho kết quả phân loại cao.
+20
+
+THU THẬP, MÔ TẢ VÀ TỔNG QUAN CÁC BỘ DỮ LIỆU
+
+2.3
+
+Nhóm A: Dữ liệu dạng bảng
+
+2.3.1
+
+A1 - Heart Disease
+
+Heart Disease là bộ dữ liệu y khoa từ UCI Machine Learning Repository. Thư mục local
+là datasets/heart+disease/. Bộ dữ liệu gốc gồm các nguồn Cleveland, Hungarian,
+Switzerland và Long Beach VA. Trong các thực nghiệm phổ biến, bản Cleveland processed với 303 mẫu và 14 thuộc tính được sử dụng nhiều nhất. Biến mục tiêu là num,
+trong đó 0 biểu diễn không có bệnh tim và 1–4 biểu diễn các mức có bệnh.
+Trong báo cáo này, Heart Disease được dùng cho cả ba mục đích: minh họa lý thuyết
+ở Chương 1, phân tích thống kê/trực quan hóa ở Chương 3 và classification/clustering ở
+Chương 4. Các biến quan trọng gồm age, sex, cp, trestbps, chol, thalach, oldpeak,
+ca, thal và num. Dữ liệu có missing value ở ca và thal; đây là cơ sở để minh họa bước
+tiền xử lý dữ liệu.
+Trong file mô tả của UCI, các nghiên cứu trước đây trên bộ dữ liệu này đã bao
+gồm mô hình xác suất chẩn đoán bệnh mạch vành của Detrano và cộng sự, các thực
+nghiệm instance-based prediction của Aha và Kibler, và hệ thống clustering/phân lớp
+CLASSIT của Gennari và cộng sự. Các kết quả này phù hợp để làm mốc đối sánh khi
+báo cáo đánh giá Logistic Regression, Random Forest và SVM ở Chương 4.
+Bảng 2.4: Các biến chính trong Heart Disease
+
+2.3.2
+
+Biến
+
+Loại
+
+Ý nghĩa
+
+Vai trò
+
+age
+sex
+cp
+trestbps
+chol
+thalach
+oldpeak
+ca
+thal
+num
+
+Định lượng rời rạc
+Định tính
+Định tính
+Liên tục
+Liên tục
+Liên tục
+Liên tục
+Rời rạc
+Định tính
+Định tính/thứ bậc
+
+Tuổi bệnh nhân
+Giới tính
+Loại đau ngực
+Huyết áp nghỉ ngơi
+Cholesterol huyết thanh
+Nhịp tim tối đa
+ST depression
+Số mạch máu chính
+Trạng thái thalassemia
+Chẩn đoán bệnh tim
+
+Feature
+Feature
+Feature
+Feature
+Feature
+Feature
+Feature
+Feature
+Feature
+Target
+
+A2 - CDC Diabetes Health Indicators
+
+CDC Diabetes Health Indicators là bộ dữ liệu dạng bảng từ UCI, được lưu tại datasets/
+uci_891_cdc_diabetes_health_indicators/. Dữ liệu có 253,680 mẫu, 21 features
+và 1 target là Diabetes_binary. Các biến đặc trưng mô tả tình trạng sức khỏe và
+hành vi sống, ví dụ HighBP, HighChol, BMI, Smoker, Stroke, PhysActivity, GenHlth,
+MentHlth, PhysHlth, Age, Education và Income.
+21
+
+Bộ dữ liệu này phù hợp với bài toán classification vì target là tình trạng tiểu đường
+dạng nhị phân. Ngoài ra, các biến sức khỏe và xã hội học giúp phân tích quan hệ giữa
+lối sống, điều kiện sức khỏe và nguy cơ bệnh. Trong Chương 3, báo cáo sẽ tính bảng tần
+suất cho các biến nhị phân/ordinal và thống kê mô tả cho BMI, MentHlth, PhysHlth,
+Age và Income. Trong Chương 4, bộ dữ liệu được dùng làm một trong ba target setup
+classification của nhóm A.
+
+Bảng 2.5: Nhóm biến tiêu biểu trong CDC Diabetes
+Nhóm biến
+
+Biến tiêu biểu
+
+Ý nghĩa phân tích
+
+Bệnh nền
+Hành vi
+Tiếp cận y tế
+Tự đánh giá
+Nhân khẩu
+
+HighBP, HighChol, Stroke
+Smoker, PhysActivity, Fruits, Veggies
+AnyHealthcare, NoDocbcCost
+GenHlth, MentHlth, PhysHlth
+Sex, Age, Education, Income
+
+Tình trạng sức khỏe nền
+Lối sống và nguy cơ
+Khả năng chăm sóc sức khỏe
+Sức khỏe tự báo cáo
+Yếu tố xã hội học
+
+2.3.3
+
+A3 - Breast Cancer Wisconsin Diagnostic
+
+Breast Cancer Wisconsin Diagnostic là bộ dữ liệu chẩn đoán ung thư vú từ UCI,
+được lưu tại datasets/uci_17_breast_cancer_wisconsin_diagnostic/. Bộ dữ liệu
+có 569 mẫu, 30 features và target Diagnosis. Target có hai lớp: malignant và benign,
+trong file dữ liệu được ký hiệu bằng M và B.
+Features của bộ dữ liệu này là các đặc trưng hình học và kết cấu của nhân tế bào,
+bao gồm radius, texture, perimeter, area, smoothness, compactness, concavity, concave
+points, symmetry và fractal dimension ở nhiều nhóm đo khác nhau. Do có nhiều biến
+định lượng liên tục và target rõ ràng, bộ dữ liệu này rất phù hợp để kiểm tra histogram,
+boxplot theo lớp, correlation heatmap và các mô hình classification.
+Trong các nghiên cứu liên quan, Breast Cancer Wisconsin Diagnostic thường được
+dùng để so sánh các thuật toán SVM, k-NN, Decision Tree, Random Forest và Logistic
+Regression. Trong báo cáo này, các baseline Logistic Regression, Random Forest và
+SVM sẽ được đối chiếu với xu hướng chung: các mô hình phân lớp có thể đạt kết quả
+cao nếu dữ liệu được chuẩn hóa và tách train/test hợp lý.
+22
+
+THU THẬP, MÔ TẢ VÀ TỔNG QUAN CÁC BỘ DỮ LIỆU
+
+(a) Histogram các biến chọn
+
+(b) Heatmap tương quan
+
+Hình 2.2: Minh họa cấu trúc số của Breast Cancer Wisconsin Diagnostic.
+Python
+source:
+src/analyze_tabular_health.py;
+figure
+paths:
+outputs/figures/breast_cancer_selected_histograms.png,
+outputs/figures/breast_cancer_correlation_heatmap.png.
+
+Lý do chọn biểu đồ. Histogram giúp xem hình dạng phân phối của các biến hình
+học; heatmap giúp phát hiện các nhóm biến tương quan cao trong Breast Cancer.
+Nhận xét. Hình 2.2 cho thấy bộ Breast Cancer có nhiều biến liên tục và tương
+quan cao giữa các phép đo hình học. Điều này giải thích vì sao các mô hình tuyến tính
+sau chuẩn hóa, như Logistic Regression hoặc SVM, thường hoạt động tốt trên bộ dữ
+liệu này.
+
+2.4
+
+Nhóm B: Dữ liệu chuỗi thời gian và cảm biến
+
+2.4.1
+
+B1 - Appliances Energy Prediction
+
+Appliances Energy Prediction là bộ dữ liệu UCI được lưu tại datasets/uci_374_
+appliances_energy_prediction/. Bộ dữ liệu có 19,735 mẫu, 28 features và target
+Appliances. Mỗi mẫu gắn với một mốc thời gian; khoảng cách phổ biến giữa hai mẫu
+liên tiếp là 10 phút. Khoảng thời gian quan sát bắt đầu từ 2016-01-11 17:00:00 đến
+2016-05-27 18:00:00.
+Các features bao gồm nhiệt độ, độ ẩm trong nhiều khu vực, ánh sáng, áp suất, độ
+ẩm ngoài trời, tốc độ gió, tầm nhìn và điểm sương. Bộ dữ liệu phù hợp với bài toán
+regression/time-series forecasting vì target là mức tiêu thụ năng lượng của thiết bị gia
+dụng. Trong Chương 3, line chart theo ngày được dùng để phân tích xu hướng tiêu
+thụ. Trong Chương 4, dữ liệu được tách theo thứ tự thời gian, không tách ngẫu nhiên,
+để tránh rò rỉ dữ liệu tương lai vào tập train.
+23
+
+(a) Tiêu thụ trung bình theo ngày
+
+(b) Phân phối target trước/sau log
+
+Hình 2.3: Minh họa đặc trưng chuỗi thời gian của Appliances
+Energy.
+Python
+source:
+src/analyze_appliances_energy.py;
+figure
+paths:
+outputs/figures/appliances_energy_daily_line.png,
+outputs/figures/appliances_energy_distribution_raw_vs_log.png.
+
+Lý do chọn biểu đồ. Line chart được chọn vì Appliances Energy là dữ liệu chuỗi
+thời gian; histogram raw-vs-log được chọn để kiểm tra mức lệch phải của target và tác
+dụng của log transform.
+Nhận xét. Hình 2.3 cho thấy dữ liệu Appliances có biến động theo thời gian và
+phân phối target lệch phải. Do đó, ngoài các mô hình regression thông thường, các đặc
+trưng lag, rolling mean và log transform có thể cần thiết để cải thiện kết quả dự báo.
+
+2.4.2
+
+B2 - Human Activity Recognition Using Smartphones
+
+Human Activity Recognition Using Smartphones (HAR) là bộ dữ liệu cảm biến chuyển
+động từ UCI, được giải nén tại datasets/human+activity+recognition+using+smartphones/
+UCIHARDataset/. Bộ dữ liệu có 10,299 mẫu, 561 features và 6 nhãn hoạt động: walking,
+walking upstairs, walking downstairs, sitting, standing và laying.
+Bộ dữ liệu này có hai dạng thông tin: feature vectors đã xử lý và các tín hiệu inertial
+raw trong thư mục train/test. Với yêu cầu nhóm B, HAR có thể được dùng để phân
+tích dữ liệu cảm biến theo thời gian và để classification/clustering trên không gian
+đặc trưng. Trong Chương 3, các biến thống kê từ accelerometer/gyroscope có thể được
+chọn để vẽ histogram, boxplot theo activity và correlation heatmap. Trong Chương 4,
+nhãn activity sẽ được ẩn khi chạy clustering.
+24
+
+THU THẬP, MÔ TẢ VÀ TỔNG QUAN CÁC BỘ DỮ LIỆU
+Bảng 2.6: Cấu trúc nhãn hoạt động trong HAR
+
+2.4.3
+
+Mã nhãn
+
+Hoạt động
+
+1
+2
+3
+4
+5
+6
+
+WALKING
+WALKING_UPSTAIRS
+WALKING_DOWNSTAIRS
+SITTING
+STANDING
+LAYING
+
+B3 - MHEALTH Dataset
+
+MHEALTH là bộ dữ liệu Mobile Health từ UCI, được lưu tại datasets/MHEALTHDATASET/
+MHEALTHDATASET/. Dữ liệu gồm 10 file subject log, tổng cộng 1,215,745 dòng, 23 features cảm biến và 1 cột activity label. Các cảm biến được đặt trên nhiều vị trí cơ thể,
+thu thập gia tốc, gyro, từ trường và tín hiệu liên quan sức khỏe.
+MHEALTH phù hợp với nhóm B vì có bản chất đa biến theo thời gian và số mẫu
+rất lớn. Trong báo cáo, dữ liệu này được dùng để phân tích tần suất activity, phân
+phối các kênh cảm biến và khả năng phân tách hoạt động bằng các đặc trưng thống
+kê. Do kích thước lớn, khi trực quan hóa và huấn luyện baseline có thể cần lấy mẫu
+đại diện để bảo đảm thời gian tính toán.
+Bảng 2.7: So sánh hai bộ dữ liệu cảm biến nhóm B
+Bộ dữ liệu
+
+Số mẫu
+
+Số đặc trưng
+
+Điểm mạnh
+
+HAR
+MHEALTH
+
+10299
+1215745
+
+561
+23
+
+Feature vector đã xử lý, nhãn hoạt động rõ
+Dữ liệu log dài, nhiều subject, cảm biến đa vị trí
+
+2.5
+
+Nhóm C: Dữ liệu đa phương tiện
+
+2.5.1
+
+C1 - HAM10000
+
+HAM10000 là bộ dữ liệu ảnh da liễu từ Kaggle, được chuẩn bị bằng kagglehub. Metadata được lưu tại datasets/ham10000/; ảnh gốc nằm trong KaggleHub cache và đường
+dẫn được ghi tại datasets/ham10000/source_path.txt. Bộ dữ liệu có 10,015 ảnh, 7
+lớp chẩn đoán và 7 cột metadata. Số lesion duy nhất là 7,470.
+Metadata chính bao gồm lesion_id, image_id, dx, dx_type, age, sex và localization.
+Trong Chương 3, báo cáo số hóa ảnh bằng các đặc trưng đơn giản như width, height,
+mode màu, mean intensity và standard deviation intensity trên một mẫu 1,000 ảnh.
+25
+
+Cách tiếp cận này đáp ứng yêu cầu cốt lõi của nhóm C: dữ liệu ảnh thô phải được biến
+đổi thành đặc trưng định lượng trước khi thống kê và trực quan hóa.
+HAM10000 phù hợp với bài toán classification vì target dx có 7 lớp. Tuy nhiên, dữ
+liệu ảnh có thể mất cân bằng lớp, do đó khi đánh giá mô hình cần chú ý đến macro-F1,
+confusion matrix và tỷ lệ mẫu mỗi lớp, không chỉ dùng accuracy.
+
+Bảng 2.8: Phân phối lớp chẩn đoán trong HAM10000
+Lớp
+
+Số ảnh
+
+Tỷ lệ
+
+nv
+mel
+bkl
+bcc
+akiec
+vasc
+df
+
+6705
+1113
+1099
+514
+327
+142
+115
+
+66.95%
+11.11%
+10.97%
+5.13%
+3.27%
+1.42%
+1.15%
+
+(a) Phân phối lớp
+
+(b) Độ sáng trung bình theo lớp
+
+Hình
+2.4:
+Minh
+họa
+phân
+tích
+dữ
+liệu
+ảnh
+HAM10000
+sau
+khi
+số
+hóa.
+Python
+source:
+src/analyze_ham10000.py;
+figure
+paths:
+outputs/figures/ham10000_class_distribution.png,
+outputs/figures/ham10000_mean_intensity_boxplot.png.
+
+Lý do chọn biểu đồ. Bar chart phân phối lớp được chọn để kiểm tra mất cân
+bằng nhãn; boxplot độ sáng trung bình được chọn để xem đặc trưng ảnh sau số hóa
+có khác nhau giữa các lớp hay không.
+Nhận xét. Bảng 2.8 và Hình 2.4 chỉ ra vấn đề mất cân bằng lớp rất rõ. Lớp nv
+chiếm gần 67%, trong khi df chỉ khoảng 1.15%. Nếu mô hình chỉ học cách dự đoán lớp
+đa số, accuracy có thể cao nhưng khả năng phát hiện các lớp hiếm sẽ kém.
+26
+
+THU THẬP, MÔ TẢ VÀ TỔNG QUAN CÁC BỘ DỮ LIỆU
+
+2.5.2
+
+C2 - Reuters-21578 Text Categorization
+
+Reuters-21578 là bộ dữ liệu text categorization từ UCI/KDD Archive, được giải nén
+tại datasets/reuters21578/. Bộ dữ liệu có 21,578 tài liệu trong 22 file SGML và các
+file từ điển category liên quan. Đây là bộ dữ liệu text phù hợp với yêu cầu nhóm C vì
+vượt ngưỡng 1,000 samples và có nhãn chủ đề.
+Để phân tích thống kê, text cần được số hóa thành các đặc trưng như số từ, số
+ký tự, số câu, tần suất từ, TF-IDF hoặc embedding. Trong Chương 3, bước đầu có
+thể trích xuất độ dài văn bản và tần suất category để vẽ histogram/boxplot. Trong
+Chương 4, có thể dùng TF-IDF kết hợp Logistic Regression, Linear SVM hoặc Naive
+Bayes để phân loại chủ đề.
+Bảng 2.9: Kế hoạch số hóa dữ liệu text Reuters-21578
+Nhóm đặc trưng
+
+Ví dụ
+
+Mục đích
+
+Độ dài văn bản
+Từ vựng
+Vector hóa
+Nhãn chủ đề
+
+số từ, số ký tự, số câu
+tần suất từ, stop word ratio
+TF-IDF unigram/bigram
+topics, places, orgs
+
+Thống kê mô tả và outlier
+Mô tả phong cách nội dung
+Input cho classification
+Target và phân tích tần suất
+
+2.6
+
+Tổng quan nghiên cứu liên quan
+
+Các bộ dữ liệu trong báo cáo đều là benchmark phổ biến, do đó phần nghiên cứu liên
+quan có hai vai trò. Thứ nhất, nó cung cấp mốc đối sánh cho kết quả học máy của
+nhóm. Thứ hai, nó giúp giải thích tại sao một số thuật toán phù hợp hơn với từng kiểu
+dữ liệu.
+Bảng 2.10: Hướng tổng quan nghiên cứu liên quan theo từng nhóm dữ liệu
+Nhóm
+
+Dữ liệu
+
+Hướng nghiên cứu cần đối sánh
+
+A
+A
+A
+B
+B
+B
+C
+C
+
+Heart Disease
+CDC Diabetes
+Breast Cancer
+Appliances Energy
+HAR
+MHEALTH
+HAM10000
+Reuters-21578
+
+Logistic Regression, C4, instance-based learning
+Risk factor analysis, classification trên health indicators
+SVM, Random Forest, Logistic Regression
+Regression, feature engineering, time-series split
+Activity recognition từ smartphone sensors
+Human activity recognition từ multimodal body sensors
+Skin lesion classification, class imbalance
+Text categorization, TF-IDF, SVM, Naive Bayes
+
+Với Heart Disease, file mô tả gốc đã nêu các kết quả sử dụng mô hình xác suất,
+instance-based prediction và conceptual clustering. Với Breast Cancer, các nghiên cứu
+27
+
+thường khai thác tính phân tách mạnh của đặc trưng hình học nhân tế bào. Với
+Appliances Energy, trọng tâm nằm ở việc dự báo tiêu thụ năng lượng theo thời gian
+và xử lý đặc trưng môi trường. Với HAR và MHEALTH, các nghiên cứu liên quan tập
+trung vào nhận dạng hành vi người dùng bằng tín hiệu cảm biến. Với HAM10000 và
+Reuters-21578, các nghiên cứu liên quan lần lượt đại diện cho hai hướng đa phương
+tiện: phân loại ảnh y khoa và phân loại văn bản.
+Bảng 2.11: Baseline học máy ban đầu để làm mốc cho Chương 4
+Dataset
+
+Model
+
+Heart Disease
+CDC Diabetes
+Breast Cancer
+
+Random Forest
+Logistic Regression
+SVM RBF
+
+Accuracy
+
+Recall
+
+F1
+
+0.902
+0.744
+0.982
+
+0.929
+0.775
+0.976
+
+0.897
+0.752
+0.976
+
+Bảng 2.11 chưa thay thế phần thực nghiệm chính ở Chương 4, nhưng nó cho thấy
+ba bộ dữ liệu nhóm A đã sẵn sàng cho bài toán classification. Breast Cancer cho kết
+quả cao nhất trong baseline do đặc trưng hình học có tính phân tách mạnh. CDC
+Diabetes khó hơn vì các biến sức khỏe/hành vi có nhiều yếu tố nhiễu và target liên
+quan đến nguy cơ tổng hợp.
+
+2.7
+
+Đánh giá chất lượng dữ liệu và rủi ro phân tích
+
+Mỗi nhóm dữ liệu có rủi ro phân tích khác nhau. Dữ liệu dạng bảng thường gặp missing
+value, outlier và mất cân bằng target. Dữ liệu chuỗi thời gian có rủi ro rò rỉ tương lai
+nếu chia train/test ngẫu nhiên. Dữ liệu đa phương tiện có rủi ro lớn hơn vì phải chuyển
+đổi file ảnh hoặc văn bản thô thành đặc trưng định lượng trước khi thống kê.
+Bảng 2.12: Rủi ro chất lượng dữ liệu và hướng xử lý
+Nhóm dữ liệu
+
+Rủi ro chính
+
+Hướng xử lý trong báo cáo
+
+Nhóm A
+
+Missing value, outlier, target
+mất cân bằng
+Rò rỉ dữ liệu tương lai, seasonality, scale khác nhau
+Mất cân bằng lớp, ảnh khác
+kích thước/độ sáng
+Văn bản dài/ngắn bất
+thường, nhiều topic
+
+Điền khuyết, IQR, chuẩn hóa,
+confusion matrix
+Tách theo thời gian, rolling/lag,
+log-transform
+Trích xuất width, height, intensity, phân tích theo lớp
+Word count, TF-IDF, bảng tần
+suất topic
+
+Nhóm B
+Nhóm C ảnh
+Nhóm C text
+
+Bảng 2.12 là cơ sở để liên kết Chương 2 với Chương 3. Sau khi mô tả nguồn dữ
+liệu, báo cáo cần chứng minh dữ liệu đủ tốt để phân tích, hoặc chỉ rõ biến nào cần làm
+sạch. Ví dụ, Heart Disease có missing value ở ca và thal; Appliances Energy không
+28
+
+THU THẬP, MÔ TẢ VÀ TỔNG QUAN CÁC BỘ DỮ LIỆU
+nên chia dữ liệu ngẫu nhiên; HAM10000 mất cân bằng lớp rất rõ; Reuters-21578 cần
+bước parse SGML và chuẩn hóa văn bản trước khi tạo đặc trưng.
+
+2.8
+
+Liên hệ giữa nguồn dữ liệu và yêu cầu bài toán
+
+Yêu cầu bài tập gồm ba khối: thu thập dữ liệu, phân tích thống kê/trực quan hóa và
+học máy. Do đó, phần mô tả dữ liệu phải cho thấy mỗi dataset đóng góp gì cho từng
+yêu cầu. Nếu một dataset chỉ được mô tả nguồn gốc mà không được dùng để tính toán
+hoặc vẽ biểu đồ, báo cáo sẽ thiếu bằng chứng thực nghiệm.
+Bảng 2.13: Liên hệ dataset với các yêu cầu của đề bài
+Dataset
+
+Yêu cầu 1
+
+Yêu cầu 2
+
+Yêu cầu 3
+
+Heart Disease
+
+Dữ liệu bảng
+
+Classification
+
+CDC Diabetes
+
+Dữ liệu bảng lớn
+
+Breast Cancer
+Appliances Energy
+
+Dữ liệu bảng y
+sinh
+Chuỗi thời gian
+
+HAR
+
+Chuỗi/cảm biến
+
+MHEALTH
+
+Chuỗi/cảm
+lớn
+
+Thống kê, histogram,
+boxplot, scatter
+Tần suất biến sức khỏe,
+BMI
+Histogram,
+heatmap,
+boxplot
+Line
+chart,
+logtransform
+Phân phối activity, cảm
+biến
+Thống kê tín hiệu
+
+HAM10000
+
+Ảnh
+
+Reuters-21578
+
+Text
+
+biến
+
+Số hóa ảnh, class distribution
+Word count, topic frequency
+
+Classification
+Classification
+Regression
+Clustering/classification
+Clustering/classification
+Image classification
+Text classification
+
+Bảng 2.13 giúp người đọc thấy rõ dữ liệu không bị chọn rời rạc. Mỗi bộ dữ liệu là
+một mắt xích của chuỗi yêu cầu: từ nguồn dữ liệu, sang thống kê/trực quan hóa, rồi
+sang mô hình học máy.
+
+2.9
+
+Các dữ liệu và nội dung cần bổ sung tiếp
+
+Dù bộ dữ liệu đã đủ điều kiện tối thiểu, báo cáo vẫn cần tiếp tục bổ sung để đạt yêu
+cầu final. Các nội dung còn thiếu gồm:
+ Bổ sung mô tả biến chi tiết hơn cho HAR, MHEALTH và Reuters-21578.
+
+29
+
+ Tạo thêm bảng thống kê và biểu đồ cho toàn bộ 8 dataset, không chỉ các dataset
+đã phân tích sâu.
+ Bổ sung các bài báo liên quan cho từng dataset và chuẩn hóa trích dẫn theo IEEE
+hoặc APA.
+ Thêm phụ lục liệt kê đường dẫn raw data, cleaned data, source code, log và
+output cho từng hình/bảng.
+ Hoàn thiện các thí nghiệm clustering trên cả dữ liệu bảng, chuỗi thời gian/cảm
+biến và multimedia.
+
+Phần thiếu này không làm mất giá trị của dữ liệu đã thu thập, nhưng cần được ghi
+rõ để báo cáo minh bạch. Trong phiên bản final, các mục thiếu nên được chuyển thành
+phụ lục hoặc checklist kiểm tra trước khi nộp.
+
+2.10
+
+Đường dẫn minh chứng và tái sử dụng
+
+Tất cả dữ liệu, script và kết quả được lưu lại để phục vụ phụ lục. Bảng minh chứng
+tổng hợp được sinh bằng src/build_evidence_index.py và lưu tại outputs/tables/
+evidence_index.csv. Cách tổ chức này giúp mỗi bảng/hình trong báo cáo đều có thể
+truy vết nguồn dữ liệu, script xử lý và file kết quả tương ứng.
+
+30
+
+Chương 3
+PHÂN TÍCH ĐẶC ĐIỂM DỮ LIỆU
+QUA THỐNG KÊ VÀ TRỰC QUAN
+HÓA
+3.1
+3.2
+
+3.3
+3.4
+
+3.5
+
+Quy trình phân tích và minh chứng . . . . . . . . . . . . . . .
+Nhóm A: Phân tích Heart Disease . . . . . . . . . . . . . . . .
+3.2.1 Lựa chọn biến và cách tính . . . . . . . . . . . . . . . .
+3.2.2 Bảng tần suất và biểu đồ cột . . . . . . . . . . . . . .
+3.2.3 So sánh trước và sau tiền xử lý . . . . . . . . . . . . .
+3.2.4 Scatter plot và tương quan . . . . . . . . . . . . . . . .
+Nhóm B: Phân tích Appliances Energy . . . . . . . . . . . . .
+3.3.1 Cấu trúc chuỗi thời gian và biến cần phân tích . . . . .
+Biểu đồ vẽ bằng Excel và đối chiếu với Python . . . . . . . . .
+3.4.1 Workbook Excel được tạo . . . . . . . . . . . . . . . .
+3.4.2 Biểu đồ Excel cho Heart Disease . . . . . . . . . . . . .
+3.4.3 Biểu đồ Excel cho Appliances Energy . . . . . . . . . .
+3.4.4 So sánh Excel và Python . . . . . . . . . . . . . . . . .
+Kết luận từ phân tích trực quan . . . . . . . . . . . . . . . . .
+
+32
+32
+32
+33
+34
+36
+37
+37
+38
+38
+39
+40
+40
+41
+
+Chương này trình bày kết quả thống kê mô tả, bảng tần suất, trực quan hóa và
+so sánh trước/sau tiền xử lý dữ liệu. Mỗi hình và bảng đều được gắn với đường dẫn
+source code tương đối để có thể tái lập kết quả khi nộp kèm thư mục dự án.
+
+31
+
+3.1
+
+Quy trình phân tích và minh chứng
+
+Yêu cầu của đề bài không chỉ là vẽ biểu đồ, mà phải chỉ ra biểu đồ được tính từ đâu,
+công thức nào được áp dụng và kết quả có ý nghĩa gì. Vì vậy, chương này dùng quy
+trình bốn bước:
+1. Chọn biến cần phân tích và phân loại bản chất biến: định tính, định lượng rời
+rạc, định lượng liên tục hoặc chỉ số thời gian.
+2. Tính bảng tần suất hoặc thống kê mô tả bằng Python, sau đó lưu kết quả thành
+file CSV.
+3. Vẽ biểu đồ bằng Python và tạo thêm workbook Excel có chart gốc để đối chiếu
+công cụ.
+4. Ghi nhận xét dựa trên số liệu: không chỉ mô tả hình dạng biểu đồ, mà giải thích
+vì sao biểu đồ đó quan trọng cho tiền xử lý và học máy.
+Bảng 3.1 tóm tắt các artifact chính được dùng trong chương này. Các đường dẫn
+đều là đường dẫn tương đối trong thư mục nộp bài.
+Bảng 3.1: Minh chứng source code và output cho Chương 3
+Nhãn mục
+
+Source code
+
+Heart Disease
+
+src/analyze_heart_disease.py
+outputs/tables/heart_disease_summary.csv
+Thống
+kê
+nhóm A
+src/analyze_heart_disease.py
+outputs/figures/heart_disease_*.png
+Histogram,
+boxplot, scatter
+src/analyze_appliances_energy.py
+outputs/tables/appliances_energy_summary.csv
+Thống
+kê
+nhóm B
+src/analyze_appliances_energy.py
+outputs/figures/appliances_energy_*.png
+Line chart, histogram
+src/create_excel_visualizations.py
+excel/excel_visualization_comparison.xlsx
+Đối chiếu Excel
+src/create_excel_visualizations.py
+outputs/tables/excel_visualization_index.csv
+Truy vết chart
+Excel
+
+Heart plots
+
+Appliances
+Appliances plots
+Excel charts
+Excel chart index
+
+Output bảng/hình
+
+3.2
+
+Nhóm A: Phân tích Heart Disease
+
+3.2.1
+
+Lựa chọn biến và cách tính
+
+Vai trò
+
+Với Heart Disease, chương này chọn 6 biến tiêu biểu: age, cp, trestbps, chol, thalach
+và oldpeak. Lý do chọn là các biến này đại diện cho cả định tính, định lượng rời rạc
+32
+
+PHÂN TÍCH ĐẶC ĐIỂM DỮ LIỆU QUA THỐNG KÊ VÀ TRỰC QUAN
+HÓA
+và định lượng liên tục. Biến cp được phân tích bằng bảng tần suất, trong khi các biến
+còn lại được tính mean, median, standard deviation, IQR và coefficient of variation.
+Với biến định tính cp, tần suất tuyệt đối và tần suất tương đối được tính theo:
+
+fj =
+
+n
+X
+
+I(cpi = j),
+
+pj =
+
+i=1
+
+fj
+n
+
+(3.1)
+
+IQR = Q3 − Q1
+
+(3.2)
+
+Với biến định lượng, các chỉ số chính gồm:
+
+x̄ =
+
+n
+1X
+
+n i=1
+
+xi ,
+
+v
+u
+u
+s=t
+
+n
+1 X
+(xi − x̄)2 ,
+n − 1 i=1
+
+Bảng 3.2: Thống kê mô tả một số biến Heart Disease sau tiền
+xử
+lý.
+Source:
+outputs/tables/heart_disease_summary.csv;
+code:
+src/analyze_heart_disease.py.
+Biến
+
+Mean
+
+Median
+
+Std
+
+Min
+
+Max
+
+IQR
+
+age
+trestbps
+chol
+thalach
+oldpeak
+
+54.44
+131.35
+245.58
+149.65
+1.02
+
+56.00
+130.00
+241.00
+153.00
+0.80
+
+9.04
+16.65
+47.56
+22.73
+1.11
+
+29.00
+94.00
+126.00
+84.75
+0.00
+
+77.00
+170.00
+371.00
+202.00
+4.00
+
+13.00
+20.00
+64.00
+32.50
+1.60
+
+Bảng 3.2 cho thấy chol và thalach có độ lệch chuẩn lớn hơn các biến còn lại, nên
+hai biến này cần được kiểm tra bằng boxplot và scatter plot. Biến oldpeak có mean
+1.02 nhưng median 0.80 và min bằng 0, cho thấy phân phối có xu hướng lệch phải:
+nhiều bệnh nhân có giá trị thấp, một số ít có ST depression cao.
+
+3.2.2
+
+Bảng tần suất và biểu đồ cột
+
+Bảng
+3.3:
+Bảng
+tần
+suất
+biến
+cp
+trong
+Heart
+Source:
+outputs/tables/heart_disease_frequency_cp.csv;
+src/analyze_heart_disease.py.
+Loại đau ngực cp
+4.0
+3.0
+2.0
+1.0
+
+Tần suất
+
+Tần suất tương đối
+
+144
+86
+50
+23
+
+47.52%
+28.38%
+16.50%
+7.59%
+
+33
+
+Disease.
+code:
+
+Lý do chọn biểu đồ. Biến cp là biến định tính/rời rạc, vì vậy bar chart phù hợp hơn
+histogram. Bar chart giúp so sánh trực tiếp số mẫu giữa các loại đau ngực và phát hiện
+lớp nào chiếm ưu thế.
+Cách tính. Chiều cao mỗi cột được tính bằng fj = count(cp = j); tỷ lệ phần trăm
+được tính bằng pj = fj /n.
+
+Hình
+3.1:
+Bar
+chart
+tần
+suất
+loại
+đau
+ngực
+ease.
+Python
+source:
+src/analyze_heart_disease.py;
+outputs/figures/heart_disease_chest_pain_bar.png.
+
+Heart
+figure
+
+Dispath:
+
+Nhận xét. Hình 3.1 cho thấy cp=4 chiếm tỷ lệ cao nhất, gần một nửa số mẫu.
+Điều này nói rằng dữ liệu không phân bố đều theo loại đau ngực. Tuy nhiên, biểu đồ
+cột chưa đủ để kết luận cp=4 gây bệnh tim; nó chỉ cho biết cấu trúc của biến đầu vào.
+Ở Chương 4, biến này cần được đưa vào mô hình phân loại và đánh giá qua confusion
+matrix, precision, recall và F1-score.
+
+3.2.3
+
+So sánh trước và sau tiền xử lý
+
+Tiền xử lý Heart Disease gồm chuyển ký hiệu ? thành missing value, điền khuyết và
+cắt outlier theo quy tắc IQR. Với mỗi biến định lượng, ngưỡng cắt được tính theo:
+
+Lower = Q1 − 1.5 × IQR,
+34
+
+U pper = Q3 + 1.5 × IQR
+
+(3.3)
+
+PHÂN TÍCH ĐẶC ĐIỂM DỮ LIỆU QUA THỐNG KÊ VÀ TRỰC QUAN
+HÓA
+Bảng 3.4: Ảnh hưởng của tiền xử lý trên Heart Disease. Source:
+outputs/tables/heart_disease_preprocessing_comparison.csv;
+code:
+src/analyze_heart_disease.py.
+Biến
+
+Max thô
+
+Max sạch
+
+Std thô
+
+Std sạch
+
+200.00
+564.00
+202.00
+6.20
+3.00
+
+170.00
+371.00
+202.00
+4.00
+2.50
+
+17.60
+51.78
+22.88
+1.16
+0.94
+
+16.65
+47.56
+22.73
+1.11
+0.86
+
+trestbps
+chol
+thalach
+oldpeak
+ca
+
+Bảng 3.4 cho thấy tiền xử lý làm giảm giá trị cực trị và độ lệch chuẩn ở các biến
+có outlier. Trường hợp rõ nhất là chol: max giảm từ 564 xuống 371, std giảm từ 51.78
+xuống 47.56. Điều này có ý nghĩa thực hành: khi train mô hình dựa trên khoảng cách
+hoặc regularization, outlier rất cao có thể làm lệch thang đo đặc trưng.
+Lý do chọn biểu đồ. Histogram được dùng để quan sát hình dạng phân phối của
+age; boxplot được dùng để phát hiện outlier của chol. Hai biểu đồ này bổ sung cho
+nhau: histogram nói về toàn bộ phân phối, còn boxplot nhấn mạnh median, IQR và
+điểm ngoại lai.
+Cách tính. Histogram chia miền giá trị thành các khoảng rồi đếm số quan sát trong
+từng khoảng. Boxplot dùng Q1 , Q2 , Q3 và IQR; điểm nằm ngoài [Q1 − 1.5IQR, Q3 +
+1.5IQR] được xem là ứng viên outlier.
+
+(a) Histogram tuổi
+
+(b) Boxplot cholesterol
+
+Hình
+3.2:
+Kiểm
+tra
+phân
+phối
+và
+outlier
+trên
+Heart
+Disease.
+Python
+source:
+src/analyze_heart_disease.py;
+figure
+paths:
+outputs/figures/heart_disease_age_raw_vs_cleaned.png,
+outputs/figures/heart_disease_cholesterol_boxplot.png.
+
+Nhận xét. Hình 3.2 cho thấy histogram tuổi không thay đổi sau tiền xử lý vì biến
+age không có outlier cần cắt. Ngược lại, boxplot cholesterol cho phép nhìn trực quan các
+điểm nằm xa hộp IQR. Khi hộp của hai nhóm target chồng lắp nhiều, riêng cholesterol
+35
+
+khó có khả năng phân loại độc lập; nó nên được dùng chung với cp, thalach, oldpeak
+và các biến khác.
+
+3.2.4
+
+Scatter plot và tương quan
+
+Scatter plot giữa age và thalach được tạo từ các cặp điểm (agei , thalachi ). Để định
+lượng xu hướng, có thể tính hệ số Pearson:
+Pn
+r = pP
+
+i=1 (agei − age)(thalachi − thalach)
+
+n
+2
+i=1 (agei − age)
+
+qP
+n
+
+i=1 (thalachi
+
+(3.4)
+
+− thalach)2
+
+Kết quả trên dữ liệu sạch cho r ≈ −0.394, biểu thị tương quan âm vừa phải: tuổi
+cao có xu hướng đi kèm nhịp tim tối đa thấp hơn.
+Lý do chọn biểu đồ. Scatter plot phù hợp khi cần xem quan hệ giữa hai biến
+định lượng. Correlation heatmap phù hợp khi cần xem nhanh nhiều cặp biến cùng lúc.
+Đây là hai bước thăm dò quan trọng trước khi chọn feature cho mô hình học máy.
+
+(a) Age và thalach
+
+(b) Heatmap tương quan
+
+Hình
+3.3:
+Phân
+tích
+quan
+hệ
+đa
+biến
+trên
+Heart
+Disease.
+Python
+source:
+src/analyze_heart_disease.py;
+figure
+paths:
+outputs/figures/heart_disease_age_thalach_scatter.png,
+outputs/figures/heart_disease_correlation_heatmap.png.
+
+Nhận xét. Hình 3.3 cho thấy các điểm phân tán theo hướng giảm nhẹ: khi tuổi
+tăng, thalach có xu hướng giảm. Heatmap bổ sung góc nhìn tổng quát hơn, giúp phát
+hiện cặp biến nào có liên hệ tuyến tính mạnh. Trong bước học máy, các biến tương
+quan cao với nhau cần được theo dõi để tránh thông tin lặp lại qua nhiều feature.
+36
+
+PHÂN TÍCH ĐẶC ĐIỂM DỮ LIỆU QUA THỐNG KÊ VÀ TRỰC QUAN
+HÓA
+
+3.3
+
+Nhóm B: Phân tích Appliances Energy
+
+3.3.1
+
+Cấu trúc chuỗi thời gian và biến cần phân tích
+
+Appliances Energy có 19,735 mẫu, thu thập từ 2016-01-11 17:00:00 đến 2016-05-27
+18:00:00, tần suất phổ biến 10 phút/mẫu. Biến target là Appliances, biểu diễn mức
+tiêu thụ năng lượng của thiết bị. Các biến giải thích gồm nhiệt độ, độ ẩm trong nhà,
+điều kiện ngoài trời, áp suất, gió và tầm nhìn.
+Với chuỗi thời gian, công thức trung bình ngày được dùng để làm mượt line chart:
+
+ȳd =
+
+1 X
+yt
+nd t∈d
+
+(3.5)
+
+Trong đó d là ngày, nd là số mẫu trong ngày và yt là giá trị Appliances tại thời
+điểm t. Biểu đồ phân phối dùng thêm biến log-transform:
+yt′ = ln(1 + yt )
+
+(3.6)
+
+Bảng 3.5: Thống kê mô tả một số biến Appliances
+Source:
+outputs/tables/appliances_energy_summary.csv;
+src/analyze_appliances_energy.py.
+Biến
+
+Mean
+
+Median
+
+Std
+
+Min
+
+Max
+
+IQR
+
+Appliances
+lights
+T1
+RH_1
+T_out
+Windspeed
+
+97.69
+3.80
+21.69
+40.26
+7.41
+4.04
+
+60.00
+0.00
+21.60
+39.66
+6.92
+3.67
+
+102.52
+7.94
+1.61
+3.98
+5.32
+2.45
+
+10.00
+0.00
+16.79
+27.02
+-5.00
+0.00
+
+1080.00
+70.00
+26.26
+63.36
+26.10
+14.00
+
+50.00
+0.00
+1.84
+5.73
+6.73
+3.50
+
+Energy.
+code:
+
+Bảng 3.5 cho thấy target Appliances lệch phải rất mạnh: median chỉ 60 nhưng
+mean 97.69 và max 1080. Standard deviation 102.52 lớn hơn mean, CV xấp xỉ 1.05.
+Điều này giải thích vì sao log-transform cần được xem xét trước khi regression.
+Lý do chọn biểu đồ. Line chart là biểu đồ bắt buộc với chuỗi thời gian vì giữ
+được thứ tự thời gian. Histogram raw-vs-log được dùng để kiểm tra mức độ lệch phải
+của target và tác dụng của phép biến đổi log.
+Cách tính. Line chart dùng trung bình ngày ȳd . Histogram raw đếm trực tiếp
+Appliances; histogram log đếm giá trị yt′ = ln(1 + yt ).
+37
+
+(a) Trung bình ngày
+
+(b) Raw và log1p
+
+Hình
+3.4:
+Trực
+quan
+hóa
+target
+Appliances
+Energy.
+Python
+source:
+src/analyze_appliances_energy.py;
+figure
+paths:
+outputs/figures/appliances_energy_daily_line.png,
+outputs/figures/appliances_energy_distribution_raw_vs_log.png.
+
+Nhận xét. Hình 3.4 cho thấy mức tiêu thụ năng lượng dao động theo thời gian,
+nên không nên chia train/test ngẫu nhiên. Histogram raw bị lệch phải rõ, trong khi
+histogram sau ln(1 + y) gom dữ liệu về khoảng hẹp hơn. Do đó, khi huấn luyện mô
+hình regression, nên thử nghiệm cả target gốc và target biến đổi log.
+
+3.4
+
+Biểu đồ vẽ bằng Excel và đối chiếu với Python
+
+3.4.1
+
+Workbook Excel được tạo
+
+Theo yêu cầu đề bài, ngoài hình vẽ bằng Python, báo cáo tạo thêm workbook Excel
+tại excel/excel_visualization_comparison.xlsx. Workbook này được sinh bằng
+script src/create_excel_visualizations.py và gồm các sheet:
+ README: ghi đường dẫn dữ liệu, source code và ghi chú công thức.
+ Heart Frequency: bảng tần suất cp và chart cột Excel.
+ Heart Stats: các công thức Excel AVERAGE, MEDIAN, STDEV.S, MIN, MAX, QUARTILE.INC.
+ Heart Scatter: chart scatter Excel giữa age và thalach.
+ Appliances Daily: chart line Excel cho trung bình ngày.
+ Appliances Histogram: chart cột Excel cho phân phối raw và log1p.
+
+Bảng index của các chart Excel được lưu tại outputs/tables/excel_visualization_
+index.csv; log tạo file nằm tại outputs/logs/create_excel_visualizations.log.
+38
+
+PHÂN TÍCH ĐẶC ĐIỂM DỮ LIỆU QUA THỐNG KÊ VÀ TRỰC QUAN
+HÓA
+Bảng
+3.6:
+Danh
+sách
+biểu
+đồ
+Excel
+đã
+tạo.
+Source:
+outputs/tables/excel_visualization_index.csv;
+code:
+src/create_excel_visualizations.py.
+Chart
+
+Dataset
+
+excel_heart_cp_bar
+Heart
+excel_heart_age_thalach Heart
+excel_appliances_daily Appliances
+excel_appliances_hist Appliances
+
+3.4.2
+
+Sheet Excel
+
+Cách tính
+
+Heart Frequency
+Heart Scatter
+Appliances Daily
+Appliances
+Histogram
+
+fj = count(cp = j)
+(agei , thalachi )
+ȳd = mean(yt )
+yt′ = ln(1 + yt )
+
+Biểu đồ Excel cho Heart Disease
+
+Lý do chọn biểu đồ. Hai chart Excel cho Heart Disease được chọn để đối chiếu với
+Python ở hai dạng dữ liệu khác nhau: bar chart cho biến định tính cp, scatter chart
+cho hai biến định lượng age và thalach. Cách chọn này giúp chứng minh Excel có thể
+kiểm tra lại cả bảng tần suất và quan hệ hai biến.
+
+(a) Excel column chart
+
+(b) Excel scatter chart
+
+Hình 3.5: Preview các biểu đồ Excel cho Heart Disease. Excel workbook:
+excel/excel_visualization_comparison.xlsx; Excel sheets: Heart Frequency,
+Heart Scatter; source: src/create_excel_visualizations.py.
+
+Nhận xét. Hình 3.5 là bản preview để chèn vào LaTeX; chart gốc nằm trong
+workbook Excel. Biểu đồ cột được tính từ bảng tần suất, vì vậy kết quả phải khớp với
+Bảng 3.3. Biểu đồ scatter dùng cùng cặp điểm với Hình 3.3. Nếu biểu đồ Python và
+Excel cùng cho xu hướng tuổi tăng thì thalach giảm, có thể xem kết quả trực quan
+hóa là ổn định theo công cụ.
+39
+
+3.4.3
+
+Biểu đồ Excel cho Appliances Energy
+
+Lý do chọn biểu đồ. Với dữ liệu chuỗi thời gian, line chart trong Excel cho phép
+người đọc mở workbook và kiểm tra trực tiếp chuỗi trung bình ngày. Histogram Excel
+cho raw và log1p giúp kiểm chứng phép biến đổi log bằng một công cụ khác Python.
+
+(a) Excel line chart
+
+(b) Excel histogram preview
+
+Hình 3.6: Preview các biểu đồ Excel cho Appliances Energy. Excel workbook:
+excel/excel_visualization_comparison.xlsx; Excel sheets: Appliances Daily,
+Appliances Histogram; source: src/create_excel_visualizations.py.
+
+Nhận xét. Hình 3.6 cho thấy Excel và Python đều dẫn đến cùng một kết luận:
+chuỗi Appliances có biến động theo ngày và target lệch phải. Trung bình ngày thấp
+nhất khoảng 37.50 vào 2016-01-28, cao nhất khoảng 188.54 vào 2016-04-04. Biểu đồ
+log1p làm phân phối gọn hơn, standard deviation của target gốc là 102.52 trong khi
+standard deviation của log1p(Appliances) chỉ khoảng 0.65. Đây là bằng chứng định
+lượng cho việc biến đổi log trước khi dự báo.
+
+3.4.4
+
+So sánh Excel và Python
+Bảng 3.7: So sánh vai trò của Python và Excel trong phân tích.
+
+Tiêu chí
+
+Python
+
+Excel
+
+Tái lập kết quả
+
+Cao, chạy lại script trong src/
+
+Xử lý dữ liệu lớn
+
+Phù hợp với 253k và 1.2M mẫu
+
+Công thức thống kê
+
+Linh hoạt với pandas/numpy
+
+Biểu đồ
+
+Tự động xuất PNG cho LaTeX
+
+Kiểm soát pipeline
+
+Mạnh, có log và file output
+
+Cao nếu workbook và công thức
+được giữ
+Giới hạn hơn, nên dùng
+mẫu/tổng hợp
+Dễ kiểm tra bằng công thức ở
+cell
+Dễ mở workbook và kiểm tra
+chart
+Tốt cho đối chiếu và trình bày
+
+40
+
+PHÂN TÍCH ĐẶC ĐIỂM DỮ LIỆU QUA THỐNG KÊ VÀ TRỰC QUAN
+HÓA
+Từ Bảng 3.7, có thể kết luận Python nên là công cụ chính để xử lý dữ liệu lớn, lập
+script và sinh hàng loạt artifact. Excel phù hợp để kiểm tra công thức, minh họa cách
+tính và cho người đọc tự thao tác trên workbook. Trong báo cáo này, hai công cụ
+không thay thế nhau mà bổ sung cho nhau: Python bảo đảm tái lập, Excel bảo đảm
+tính minh bạch của các phép tính cơ bản.
+
+3.5
+
+Kết luận từ phân tích trực quan
+
+Từ các biểu đồ và bảng thống kê trong chương này, có bốn kết luận chính:
+ Heart Disease có một số biến có outlier, đặc biệt chol, trestbps, oldpeak; tiền
+xử lý IQR làm giảm biến động cực trị nhưng không làm mất cấu trúc trung tâm.
+ Biến cp có phân phối không đều, cp=4 chiếm 47.52%; đây là biến định tính cần
+được đưa vào mô hình classification và đánh giá bằng confusion matrix.
+ Appliances Energy là chuỗi thời gian có target lệch phải, mean lớn hơn median
+và max rất cao; log-transform là phép biến đổi cần thiết để thu hẹp phân phối.
+ Kết quả Excel và Python thống nhất về xu hướng chính, đồng thời tạo được bằng
+chứng phụ lục trong src/, excel/ và outputs/tables/.
+
+Những kết luận này là cơ sở cho Chương 4. Classification nhóm A cần chú ý đến
+outlier, mất cân bằng lớp và các cặp biến tương quan. Regression nhóm B cần tách
+train/test theo thời gian, cần xem xét biến đổi log và các đặc trưng lag/rolling mean
+để bắt xu hướng.
+
+41
+
+42
+
+Chương 4
+PHÂN TÍCH DỮ LIỆU VỚI HỌC
+MÁY VÀ ĐỐI SÁNH KẾT QUẢ
+4.1
+4.2
+4.3
+4.4
+
+Classification trên nhóm A . . . . . . . . . . . . . . . . . . . .
+Regression và dự báo trên nhóm B . . . . . . . . . . . . . . .
+Clustering trên nhóm A, B và C . . . . . . . . . . . . . . . . .
+Đối sánh với nghiên cứu liên quan . . . . . . . . . . . . . . . .
+
+44
+44
+44
+44
+
+Chương này trình bày các thực nghiệm classification, regression/time-series forecasting và clustering trên các nhóm dữ liệu A, B và C.
+
+43
+
+4.1
+
+Classification trên nhóm A
+
+Baseline đã được sinh từ src/run_ml_baselines.py. Kết quả nằm tại outputs/tables/ml_classifica
+các confusion matrix nằm tại outputs/figures/ml_*_confusion_matrix.png.
+
+4.2
+
+Regression và dự báo trên nhóm B
+
+Baseline cho Appliances Energy đã dùng chia theo thứ tự thời gian. Kết quả nằm tại
+outputs/tables/ml_regression_metrics.csv và hình dự báo mẫu tại outputs/figures/ml_applian
+
+4.3
+
+Clustering trên nhóm A, B và C
+
+Cần ẩn nhãn, chuẩn hóa đặc trưng, chạy ít nhất ba thuật toán và giải thích số cụm
+bằng Elbow hoặc Silhouette. Sau đó đọc vị cụm bằng thống kê mô tả.
+
+4.4
+
+Đối sánh với nghiên cứu liên quan
+
+Cần lập bảng so sánh giữa kết quả nhóm và kết quả từ các bài báo đã tổng hợp ở
+Chương 2.
+
+44
+
+Chương 5
+KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN
+5.1
+5.2
+5.3
+
+Kết luận . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Hạn chế . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Hướng phát triển . . . . . . . . . . . . . . . . . . . . . . . . .
+
+46
+46
+46
+
+Chương này tổng kết các phát hiện về dữ liệu, hiệu năng mô hình, hạn chế và hướng
+phát triển.
+
+45
+
+5.1
+
+Kết luận
+
+Báo cáo đã xây dựng được pipeline ban đầu cho bài toán phân tích dữ liệu cao học: thu
+thập dữ liệu theo ba nhóm A, B, C; tạo script Python để thống kê và trực quan hóa;
+tạo workbook Excel để đối chiếu; và lưu lại các artifact cần thiết trong outputs/. Phần
+phân tích hiện tại cho thấy dữ liệu nhóm A có nhiều biến phù hợp với classification,
+dữ liệu nhóm B cần xử lý theo thứ tự thời gian, còn dữ liệu nhóm C phải được số hóa
+thành đặc trưng định lượng trước khi thống kê và học máy.
+Về trực quan hóa, các biểu đồ histogram, boxplot, scatter plot, heatmap, line chart
+và các chart Excel đã giúp phát hiện outlier, phân phối lệch, quan hệ giữa biến và xu
+hướng theo thời gian. Đây là cơ sở để chọn phương pháp tiền xử lý và mô hình học
+máy ở các chương sau.
+
+5.2
+
+Hạn chế
+
+Báo cáo vẫn còn một số hạn chế cần tiếp tục hoàn thiện. Thứ nhất, Chương 4 mới
+có baseline ban đầu, chưa đủ phần clustering và đối sánh chi tiết với nghiên cứu liên
+quan. Thứ hai, phần tài liệu tham khảo cần được chuẩn hóa theo IEEE hoặc APA và
+liên kết trực tiếp với từng dataset, từng bài báo. Thứ ba, số trang hiện tại vẫn thấp
+hơn yêu cầu cuối kỳ rất nhiều, nên cần tiếp tục mở rộng phân tích cho toàn bộ 8 bộ
+dữ liệu.
+
+5.3
+
+Hướng phát triển
+
+Các bước tiếp theo nên tập trung vào bốn hướng. Một là mở rộng thống kê và biểu
+đồ cho HAR, MHEALTH và Reuters-21578. Hai là hoàn thiện học máy: classification
+trên ba bộ nhóm A, regression/time-series trên nhóm B và clustering trên cả A, B, C.
+Ba là bổ sung bảng so sánh với các nghiên cứu cùng dataset. Bốn là tạo phụ lục đầy
+đủ gồm đường dẫn dữ liệu, source code, log chạy, bảng kết quả và hình minh chứng.
+
+46
+
+

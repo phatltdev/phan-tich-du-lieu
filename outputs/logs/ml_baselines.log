@@ -1,0 +1,11 @@
+2026-06-26 01:11:08,077 | INFO | Classification complete: heart_disease logistic_regression
+2026-06-26 01:11:08,367 | INFO | Classification complete: heart_disease random_forest
+2026-06-26 01:11:08,490 | INFO | Classification complete: heart_disease svm_rbf
+2026-06-26 01:11:08,669 | INFO | Classification complete: cdc_diabetes_sampled logistic_regression
+2026-06-26 01:11:10,420 | INFO | Classification complete: cdc_diabetes_sampled random_forest
+2026-06-26 01:11:17,183 | INFO | Classification complete: cdc_diabetes_sampled svm_rbf
+2026-06-26 01:11:17,339 | INFO | Classification complete: breast_cancer logistic_regression
+2026-06-26 01:11:17,682 | INFO | Classification complete: breast_cancer random_forest
+2026-06-26 01:11:17,816 | INFO | Classification complete: breast_cancer svm_rbf
+2026-06-26 01:11:17,931 | INFO | Regression complete: linear_regression
+2026-06-26 01:11:22,174 | INFO | Regression complete: random_forest_regressor

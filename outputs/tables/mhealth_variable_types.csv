@@ -1,0 +1,4 @@
+variable,type,role,description
+activity,categorical,target,Nhãn hoạt động/NULL
+sensor_01..sensor_23,continuous,feature,Kênh cảm biến gia tốc/gyro/từ trường/sinh lý
+subject,categorical,group,Mã người tham gia

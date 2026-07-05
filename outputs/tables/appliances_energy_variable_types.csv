@@ -1,0 +1,7 @@
+variable,type,role,description
+date,datetime,time_index,Mốc thời gian 10 phút
+Appliances,continuous,target,Năng lượng thiết bị
+lights,continuous,feature,Năng lượng chiếu sáng
+T1..T9,continuous,feature,Nhiệt độ các khu vực
+RH_1..RH_9,continuous,feature,Độ ẩm các khu vực
+"T_out,RH_out,Windspeed",continuous,feature,Điều kiện thời tiết

@@ -1,0 +1,47 @@
+\chapter{KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN}
+
+\startcontents[chapters]
+\printmyminitoc{
+Chương này tổng kết các phát hiện về dữ liệu, hiệu năng mô hình, hạn chế và hướng phát triển theo đúng yêu cầu trong \texttt{docments/mo\_ta\_yeu\_cau.md}.
+}
+
+\section{Kết luận}
+
+Báo cáo đã vận dụng tài liệu yêu cầu trong \texttt{docments/} để xây dựng pipeline phân tích dữ liệu gồm ba nhóm: dữ liệu bảng, dữ liệu chuỗi thời gian/cảm biến và dữ liệu đa phương tiện. Tổng cộng 8 bộ dữ liệu được đưa vào cấu trúc báo cáo: Heart Disease, CDC Diabetes, Breast Cancer, Appliances Energy, HAR, MHEALTH, HAM10000 và Reuters-21578. Cách tổ chức này đáp ứng tiêu chí tối thiểu: nhóm A có 3 bộ tabular trên 100 mẫu và trên 5 features; nhóm B có 3 bộ trên 500 mẫu; nhóm C có 2 bộ multimedia.
+
+Về thống kê và trực quan hóa, báo cáo đã trình bày đầy đủ các số đo trung tâm và phân tán như Mean, Median, Mode, Percentiles, Range, Variance, Standard Deviation, CV và IQR. Các biểu đồ histogram, boxplot, scatter plot, bar chart, line chart, heatmap và một số biểu đồ mở rộng được gắn với tác dụng phân tích cụ thể. Heart Disease cho thấy outlier ở \texttt{chol}, \texttt{trestbps}, \texttt{oldpeak}; Appliances Energy có target lệch phải mạnh và cần log-transform; HAM10000 minh họa yêu cầu số hóa ảnh thành đặc trưng kích thước, độ sáng và nhãn lớp.
+
+Về học máy, classification nhóm A đã có ba target setup và ba thuật toán baseline. Breast Cancer đạt kết quả tốt nhất với SVM RBF, accuracy khoảng 0.982 và F1 khoảng 0.976. Heart Disease đạt F1 cao nhất với Random Forest khoảng 0.897, trong khi SVM có recall cao khoảng 0.964. CDC Diabetes khó hơn, F1 khoảng 0.740--0.761 do dữ liệu sức khỏe/hành vi có nhiều nhiễu và biến dạng nhị phân/ordinal. Regression trên Appliances Energy cho thấy baseline Linear Regression có MAE 58.71, RMSE 89.40 và $R^2$ 0.036; Random Forest Regressor có $R^2$ âm, chứng tỏ cần đặc trưng thời gian tốt hơn.
+
+Kết quả trên phù hợp với phân tích dữ liệu: bộ Breast Cancer có đặc trưng liên tục tách lớp rõ nên phân loại tốt; CDC Diabetes có tín hiệu yếu hơn nên cần xử lý imbalance và feature selection; Appliances Energy phụ thuộc trend, seasonality và hành vi sử dụng nên mô hình tức thời chưa đủ mạnh.
+
+\section{Hạn chế}
+
+Báo cáo vẫn còn một số hạn chế. Thứ nhất, artifact phân tích sâu hiện tập trung nhiều vào Heart Disease, Appliances Energy, HAM10000 và các baseline nhóm A; HAR, MHEALTH và Reuters-21578 cần được mở rộng thêm bảng thống kê, hình và mô hình. Thứ hai, phần clustering mới dừng ở thiết kế pipeline vì repository chưa có bảng kết quả clustering chính thức trong \texttt{outputs/tables/}. Thứ ba, đối sánh với nghiên cứu liên quan mới ở mức định tính; cần bổ sung trích dẫn chuẩn IEEE/APA và số liệu từ bài báo để so sánh định lượng. Thứ tư, báo cáo chưa đạt mức độ mở rộng rất lớn như yêu cầu cuối kỳ về số trang, nên cần tiếp tục phát triển phụ lục và phân tích chi tiết.
+
+\section{Hướng phát triển}
+
+Các hướng phát triển tiếp theo gồm:
+
+\begin{enumerate}
+    \item Hoàn thiện phân tích thống kê cho HAR, MHEALTH và Reuters-21578: chọn tối thiểu 5 biến/đặc trưng, lập bảng tần suất, tính đầy đủ các chỉ số mô tả và sinh biểu đồ.
+    \item Bổ sung clustering trên A, B, C bằng K-Means, Hierarchical và DBSCAN; chọn số cụm bằng Elbow/Silhouette; diễn giải cụm bằng mean, median, mode và bảng tần suất.
+    \item Cải thiện regression Appliances bằng lag features, rolling mean, biến giờ/ngày/thứ, log-transform target, TimeSeriesSplit và thử ARIMA/SARIMA/XGBoost.
+    \item Chuẩn hóa tài liệu tham khảo theo IEEE hoặc APA, đặc biệt các nghiên cứu dùng cùng dataset để đối sánh Chương 4.
+    \item Tạo phụ lục minh chứng đầy đủ gồm đường dẫn dữ liệu, source code, log chạy, bảng kết quả, hình PNG và workbook Excel.
+\end{enumerate}
+
+\section{Minh chứng tái lập}
+
+Các artifact chính được lưu theo cấu trúc sau:
+
+\begin{itemize}
+    \item Dữ liệu gốc và dữ liệu sạch: \texttt{datasets/}, \texttt{outputs/cleaned/}.
+    \item Script phân tích và học máy: \texttt{src/analyze\_heart\_disease.py}, \texttt{src/analyze\_tabular\_health.py}, \texttt{src/analyze\_appliances\_energy.py}, \texttt{src/analyze\_ham10000.py}, \texttt{src/run\_ml\_baselines.py}.
+    \item Bảng kết quả: \texttt{outputs/tables/}.
+    \item Hình minh họa: \texttt{outputs/figures/}.
+    \item Log thực nghiệm: \texttt{outputs/logs/}.
+    \item Workbook Excel đối chiếu: \texttt{excel/excel\_visualization\_comparison.xlsx}.
+\end{itemize}
+
+Việc gắn kết bảng/hình với đường dẫn source và output giúp báo cáo không chỉ trình bày kết quả mà còn có khả năng tái lập khi nộp kèm toàn bộ thư mục dự án.

@@ -1,0 +1,5 @@
+chart_id,chart_type,dataset,excel_workbook,excel_sheet,python_source,png_preview,calculation
+excel_heart_cp_bar,Excel column chart,Heart Disease,excel/excel_visualization_comparison.xlsx,Heart Frequency,src/create_excel_visualizations.py,outputs/figures/excel_heart_cp_bar_preview.png,"f_j = count(cp = j), p_j = f_j / n"
+excel_heart_age_thalach_scatter,Excel scatter chart,Heart Disease,excel/excel_visualization_comparison.xlsx,Heart Scatter,src/create_excel_visualizations.py,outputs/figures/excel_heart_age_thalach_scatter_preview.png,"points are pairs (age_i, thalach_i); relation checked with Pearson r"
+excel_appliances_daily_line,Excel line chart,Appliances Energy,excel/excel_visualization_comparison.xlsx,Appliances Daily,src/create_excel_visualizations.py,outputs/figures/excel_appliances_daily_line_preview.png,daily mean = average(Appliances values in the same day)
+excel_appliances_raw_vs_log_hist,Excel column histogram charts,Appliances Energy,excel/excel_visualization_comparison.xlsx,Appliances Histogram,src/create_excel_visualizations.py,outputs/figures/excel_appliances_raw_vs_log_hist_preview.png,y'_t = ln(1 + y_t)

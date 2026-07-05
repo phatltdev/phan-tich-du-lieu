@@ -1,0 +1,5 @@
+dataset,group,local_path,samples,features,targets,status,notes
+Human Activity Recognition Using Smartphones,B,datasets/human+activity+recognition+using+smartphones/UCI HAR Dataset,10299,561,1,available_extracted,Feature vectors plus raw inertial signal files are available.
+MHEALTH Dataset,B,datasets/MHEALTHDATASET/MHEALTHDATASET,1215745,23,1,available_extracted,10 subject log files; last column is activity label.
+Reuters-21578 Text Categorization Collection,C,datasets/reuters21578,21578,5,multi-label categories,available_extracted,22 SGML files plus category metadata files.
+Skin Cancer MNIST HAM10000,C,datasets/ham10000,10015,7,dx,available_via_kagglehub_cache,Metadata copied locally; original JPG images are in KaggleHub cache path recorded in source_path.txt.

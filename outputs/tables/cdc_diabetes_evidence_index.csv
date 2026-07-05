@@ -1,0 +1,9 @@
+artifact_type,path,description
+script,src/analyze_cdc_diabetes.py,CDC Diabetes descriptive analysis source
+raw_data,datasets/uci_891_cdc_diabetes_health_indicators/data.csv,Raw CDC Diabetes Health Indicators data
+cleaned_data,outputs/cleaned/cdc_diabetes_cleaned.csv,Cleaned CDC Diabetes data
+table,outputs/tables/cdc_diabetes_summary.csv,Raw and cleaned descriptive statistics
+table,outputs/tables/cdc_diabetes_preprocessing_comparison.csv,Raw vs cleaned comparison
+figure,outputs/figures/cdc_diabetes_bmi_raw_vs_cleaned.png,BMI raw vs cleaned histogram
+figure,outputs/figures/cdc_diabetes_correlation_heatmap.png,Selected variable correlation heatmap
+log,outputs/logs/cdc_diabetes_analysis.log,Execution log

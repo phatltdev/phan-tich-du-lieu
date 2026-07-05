@@ -1,0 +1,3 @@
+dataset,rows,columns,target,cleaned_path
+cdc_diabetes,253680,22,Diabetes_binary,outputs/cleaned/cdc_diabetes_cleaned.csv
+breast_cancer,569,31,Diagnosis,outputs/cleaned/breast_cancer_cleaned.csv

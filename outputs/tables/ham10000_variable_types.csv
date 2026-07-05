@@ -1,0 +1,6 @@
+variable,type,role,description
+dx,categorical,target,7 lớp chẩn đoán
+age,continuous,metadata,Tuổi bệnh nhân
+sex,categorical,metadata,Giới tính
+localization,categorical,metadata,Vị trí tổn thương
+"mean_intensity,std_intensity",continuous,image_feature,Đặc trưng ảnh số hóa

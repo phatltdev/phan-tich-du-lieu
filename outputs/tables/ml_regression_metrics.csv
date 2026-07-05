@@ -1,0 +1,3 @@
+task,dataset,model,train_rows,test_rows,mae,rmse,r2
+regression,appliances_energy,linear_regression,15788,3947,58.707993700823245,89.40208045155913,0.0356275888903822
+regression,appliances_energy,random_forest_regressor,15788,3947,117.238831179799,141.79192804705923,-1.425786322117001

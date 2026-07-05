@@ -1,0 +1,28 @@
+2026-06-26 00:50:57,805 | INFO | Fetching UCI dataset id=891
+2026-06-26 00:51:04,321 | INFO | Saved 253680 rows x 22 columns to D:\project-cao-hoc\phan-tich-du-lieu\datasets\uci_891_cdc_diabetes_health_indicators
+2026-06-26 00:51:04,342 | INFO | Fetching UCI dataset id=17
+2026-06-26 00:51:06,500 | INFO | Saved 569 rows x 31 columns to D:\project-cao-hoc\phan-tich-du-lieu\datasets\uci_17_breast_cancer_wisconsin_diagnostic
+2026-06-26 00:51:06,500 | INFO | Fetching UCI dataset id=374
+2026-06-26 00:51:10,233 | INFO | Saved 19735 rows x 29 columns to D:\project-cao-hoc\phan-tich-du-lieu\datasets\uci_374_appliances_energy_prediction
+2026-06-26 00:51:10,235 | INFO | Fetching UCI dataset id=319
+2026-06-26 00:51:11,110 | ERROR | Failed to download {'id': 319, 'group': 'B', 'short_name': 'mhealth'}
+Traceback (most recent call last):
+  File "D:\project-cao-hoc\phan-tich-du-lieu\src\download_uci_datasets.py", line 114, in main
+    rows.append(save_dataset(entry))
+                ~~~~~~~~~~~~^^^^^^^
+  File "D:\project-cao-hoc\phan-tich-du-lieu\src\download_uci_datasets.py", line 62, in save_dataset
+    dataset = fetch_ucirepo(id=uci_id)
+  File "C:\Users\Hello\AppData\Local\Programs\Python\Python313\Lib\site-packages\ucimlrepo\fetch.py", line 91, in fetch_ucirepo
+    raise DatasetNotFoundError('"{}" dataset (id={}) exists in the repository, but is not available for import. Please select a dataset from this list: https://archive.ics.uci.edu/datasets?skip=0&take=10&sort=desc&orderBy=NumHits&search=&Python=true'.format(name, id))
+ucimlrepo.fetch.DatasetNotFoundError: "MHEALTH" dataset (id=319) exists in the repository, but is not available for import. Please select a dataset from this list: https://archive.ics.uci.edu/datasets?skip=0&take=10&sort=desc&orderBy=NumHits&search=&Python=true
+2026-06-26 00:51:11,113 | INFO | Fetching UCI dataset id=137
+2026-06-26 00:51:12,038 | ERROR | Failed to download {'id': 137, 'group': 'C', 'short_name': 'reuters_21578'}
+Traceback (most recent call last):
+  File "D:\project-cao-hoc\phan-tich-du-lieu\src\download_uci_datasets.py", line 114, in main
+    rows.append(save_dataset(entry))
+                ~~~~~~~~~~~~^^^^^^^
+  File "D:\project-cao-hoc\phan-tich-du-lieu\src\download_uci_datasets.py", line 62, in save_dataset
+    dataset = fetch_ucirepo(id=uci_id)
+  File "C:\Users\Hello\AppData\Local\Programs\Python\Python313\Lib\site-packages\ucimlrepo\fetch.py", line 91, in fetch_ucirepo
+    raise DatasetNotFoundError('"{}" dataset (id={}) exists in the repository, but is not available for import. Please select a dataset from this list: https://archive.ics.uci.edu/datasets?skip=0&take=10&sort=desc&orderBy=NumHits&search=&Python=true'.format(name, id))
+ucimlrepo.fetch.DatasetNotFoundError: "Reuters-21578 Text Categorization Collection" dataset (id=137) exists in the repository, but is not available for import. Please select a dataset from this list: https://archive.ics.uci.edu/datasets?skip=0&take=10&sort=desc&orderBy=NumHits&search=&Python=true

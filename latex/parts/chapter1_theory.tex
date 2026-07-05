@@ -1,0 +1,1635 @@
+\chapter{CƠ SỞ LÝ THUYẾT}
+
+\startcontents[chapters]
+\printmyminitoc{
+Chương này trình bày nền tảng thống kê mô tả và trực quan hóa dữ liệu dùng trong toàn bộ báo cáo. Các khái niệm lý thuyết được gắn với ví dụ thực tế từ bộ dữ liệu Heart Disease để làm rõ ý nghĩa phân tích trước khi áp dụng trên các nhóm dữ liệu A, B và C.
+}
+
+\section{Vai trò của thống kê mô tả trong phân tích dữ liệu}
+
+Thống kê mô tả là bước đầu tiên để biến dữ liệu thô thành thông tin có thể đọc được. Trước khi áp dụng các thuật toán học máy, người phân tích cần biết dữ liệu có bao nhiêu mẫu, biến nào có giá trị thiếu, biến nào lệch phân phối, biến nào có biến động lớn và biến nào có khả năng phân tách nhãn mục tiêu. Trong báo cáo này, thống kê mô tả được sử dụng với ba mục đích chính:
+
+\begin{itemize}
+    \item Mô tả hình dạng và trung tâm của từng biến.
+    \item Phát hiện bất thường như outlier, dữ liệu thiếu hoặc phân phối lệch.
+    \item Tạo cơ sở định lượng để so sánh dữ liệu trước và sau tiền xử lý.
+\end{itemize}
+
+Với nhóm A và B, thống kê mô tả được tính trực tiếp trên các biến bảng số. Với nhóm C, dữ liệu đa phương tiện phải được số hóa thành đặc trưng định lượng trước, ví dụ độ sáng trung bình của ảnh, kích thước ảnh, độ dài văn bản, số từ hoặc tần suất từ.
+
+\begin{table}[H]
+\centering
+\caption{Liên kết giữa yêu cầu phân tích và kỹ thuật sử dụng}
+\label{tab:chapter1_requirement_method}
+\small
+\begin{tabular}{lll}
+\toprule
+Yêu cầu & Kỹ thuật thống kê & Trực quan hóa phù hợp \\
+\midrule
+Mô tả trung tâm dữ liệu & Mean, Median, Mode & Histogram \\
+Mô tả độ biến động & Range, Variance, SD, CV, IQR & Boxplot \\
+Phát hiện outlier & Quy tắc IQR, Z-score & Boxplot, Scatter plot \\
+So sánh theo lớp & Tần suất, mean theo nhóm & Bar chart, Boxplot \\
+Phân tích liên hệ biến & Correlation, covariance & Scatter plot, Heatmap \\
+Phân tích chuỗi thời gian & Rolling mean, differencing & Line chart \\
+Số hóa multimedia & Feature extraction & Histogram, Boxplot theo lớp \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Bảng \ref{tab:chapter1_requirement_method} cho thấy mỗi yêu cầu trong đề bài đều có thể ánh xạ thành một nhóm kỹ thuật cụ thể. Cách ánh xạ này giúp quá trình thực hiện không bị rời rạc: mỗi bảng và mỗi hình trong báo cáo đều phải trả lời một câu hỏi phân tích nhất định.
+
+\section{Phân loại biến và quy trình EDA}
+
+Trước khi tính thống kê hoặc vẽ biểu đồ cần phân loại bản chất biến. Biến \textbf{định tính} mô tả nhóm, nhãn hoặc trạng thái, ví dụ \texttt{sex}, \texttt{cp}, \texttt{Diagnosis}, \texttt{dx}, topic văn bản. Biến định tính có thể là \textit{nominal} nếu các mức không có thứ tự tự nhiên, hoặc \textit{ordinal} nếu có thứ tự như \texttt{GenHlth}, \texttt{Education}, \texttt{Income}. Biến \textbf{định lượng} biểu diễn giá trị số; biến rời rạc thường là tuổi, số ngày sức khỏe kém, số từ; biến liên tục gồm BMI, cholesterol, huyết áp, nhiệt độ, độ ẩm, năng lượng tiêu thụ, độ sáng ảnh.
+
+\begin{table}[H]
+\centering
+\caption{Phân loại biến dùng trong các nhóm dữ liệu của báo cáo}
+\label{tab:chapter1_variable_taxonomy}
+\small
+\begin{tabular}{p{0.18\textwidth}p{0.22\textwidth}p{0.26\textwidth}p{0.24\textwidth}}
+\toprule
+Loại biến & Ý nghĩa & Ví dụ trong báo cáo & Xử lý phù hợp \\
+\midrule
+Định tính nominal & Nhãn không có thứ tự & \texttt{cp}, \texttt{Diagnosis}, \texttt{dx}, topic Reuters & Tần suất, mode, bar chart, one-hot encoding \\
+Định tính ordinal & Nhãn có thứ tự & \texttt{GenHlth}, \texttt{Education}, \texttt{Income} & Tần suất, median, bar chart, ordinal encoding \\
+Định lượng rời rạc & Giá trị đếm được & \texttt{age}, \texttt{MentHlth}, số từ văn bản & Mean/median, histogram, boxplot \\
+Định lượng liên tục & Giá trị đo lường & \texttt{chol}, \texttt{BMI}, \texttt{Appliances}, độ sáng ảnh & Thống kê đầy đủ, histogram, boxplot, scatter \\
+Chuỗi thời gian & Giá trị gắn mốc thời gian/thứ tự & Appliances, tín hiệu HAR/MHEALTH & Line chart, rolling mean, interpolation, differencing \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Quy trình EDA trong báo cáo được triển khai theo sáu bước: hiểu nguồn dữ liệu và biến mục tiêu; phân loại biến; tính thống kê mô tả hoặc bảng tần suất; vẽ biểu đồ phù hợp; phát hiện thiếu dữ liệu, outlier và mất cân bằng lớp; tiền xử lý rồi kiểm tra lại bằng cùng hệ thống thống kê/biểu đồ. Cách làm này bảo đảm Chương 1 không chỉ là công thức rời rạc mà trở thành khung thao tác trực tiếp cho Chương 3.
+
+\begin{table}[H]
+\centering
+\caption{Gợi ý chọn biểu đồ theo mục tiêu phân tích}
+\label{tab:chapter1_chart_selection}
+\small
+\begin{tabular}{p{0.23\textwidth}p{0.27\textwidth}p{0.40\textwidth}}
+\toprule
+Câu hỏi phân tích & Biểu đồ chính & Lý do sử dụng \\
+\midrule
+Biến số phân phối ra sao? & Histogram, density plot & Nhận biết lệch trái/phải, nhiều đỉnh, khoảng giá trị phổ biến \\
+Có outlier không? & Boxplot & Dựa trên quartile và IQR để nhìn điểm dị biệt \\
+Hai biến số liên hệ thế nào? & Scatter plot, heatmap tương quan & Phát hiện tuyến tính, phi tuyến, cụm hoặc nhiễu \\
+Biến định tính chiếm tỷ trọng nào? & Bar chart, pie chart & So sánh tần suất/tỷ lệ từng lớp \\
+Chuỗi thay đổi theo thời gian ra sao? & Line chart, rolling mean & Nhìn trend, seasonality, đứt gãy và biến động \\
+Hai nhóm/lớp khác nhau không? & Boxplot theo lớp, grouped bar & Đánh giá khả năng phân tách trước học máy \\
+Multimedia đã số hóa ra sao? & Histogram đặc trưng, boxplot theo lớp & Kiểm tra đặc trưng ảnh/văn bản có ý nghĩa thống kê không \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Các số đo xu hướng trung tâm}
+
+Các công thức trong mục này được tổng hợp từ các tài liệu học phần trong thư mục \texttt{docments/}, đặc biệt là giáo trình \textit{Essentials of Data Science and Analytics: Statistical Tools, Machine Learning, and R-Statistical Software Overview} \cite{Sahay2021Essentials} và tài liệu nhập môn phân tích dữ liệu \textit{Data Analytics Made Easy} \cite{DeMauro2021DataAnalytics}. Theo các tài liệu này, thống kê mô tả là lớp phân tích đầu tiên của EDA: tóm tắt dữ liệu thô thành các đại lượng dễ đọc, hỗ trợ phát hiện độ lệch, outlier, mất cân bằng và tạo cơ sở chọn biểu đồ hoặc mô hình. Nhóm số đo xu hướng trung tâm trả lời câu hỏi: ``giá trị đại diện của biến nằm ở đâu?''. Tuy nhiên, không có một số đo nào luôn đúng cho mọi dữ liệu; mean, median, mode và percentiles cần được chọn theo kiểu biến, hình dạng phân phối và mục tiêu phân tích.
+
+\subsection{Mean}
+
+Trung bình mẫu cho biết giá trị đại diện theo nghĩa cân bằng số học của một biến định lượng. Công thức mean là công thức thống kê mô tả cơ bản được trình bày trong các tài liệu học phần \cite{Sahay2021Essentials,DeMauro2021DataAnalytics}. Với mẫu gồm $n$ quan sát $x_1, x_2, \ldots, x_n$, trung bình mẫu được tính như sau:
+
+\begin{equation}
+\bar{x} = \frac{1}{n}\sum_{i=1}^{n}x_i = \frac{x_1+x_2+\cdots+x_n}{n}
+\end{equation}
+
+Trong đó $x_i$ là giá trị quan sát thứ $i$, $n$ là số quan sát hợp lệ, $\sum$ là phép cộng toàn bộ các giá trị và $\bar{x}$ là mean. Mean có ba ý nghĩa chính. Thứ nhất, nó là điểm cân bằng số học của dữ liệu: nếu tổng giá trị được chia đều cho mọi quan sát thì mỗi quan sát nhận $\bar{x}$. Thứ hai, mean dùng toàn bộ dữ liệu nên tận dụng nhiều thông tin hơn median/mode. Thứ ba, mean là nền tảng cho nhiều phép tính sau như variance, standard deviation, z-score, regression và các thuật toán tối ưu hóa sai số bình phương.
+
+Mean phù hợp với biến định lượng liên tục hoặc rời rạc khi phân phối tương đối cân bằng, ít outlier và cần một giá trị đại diện tổng quát. Mean đặc biệt hữu ích khi so sánh trung bình giữa các nhóm, ví dụ cholesterol trung bình của nhóm có bệnh và không bệnh tim. Trường hợp sử dụng phổ biến gồm: tính tuổi trung bình bệnh nhân, mức tiêu thụ năng lượng trung bình theo ngày, độ sáng trung bình của ảnh hoặc giá trị trung bình của đặc trưng đầu vào trước khi chuẩn hóa. \textbf{Hạn chế:} mean không phù hợp làm đại diện duy nhất khi dữ liệu lệch mạnh, có giá trị cực trị hoặc phân phối nhiều đỉnh. Mean cũng không dùng cho biến định tính và có thể bị kéo lệch chỉ bởi một vài quan sát bất thường. Trong các trường hợp đó cần đọc kèm median, IQR và boxplot.
+
+\textbf{Ví dụ.} Bảng \ref{tab:chapter1_mean_example} minh họa mean trên nhiều đặc tính Heart Disease. Với \texttt{chol}, $\bar{x}=74748/303=246.69$; sau xử lý outlier, mean giảm còn 245.58, cho thấy mean bị ảnh hưởng bởi giá trị cholesterol rất cao.
+
+\begin{table}[H]
+\centering
+\caption{Bảng ví dụ Mean trên một số đặc tính Heart Disease}
+\label{tab:chapter1_mean_example}
+\small
+\begin{tabular}{lrrr}
+\toprule
+Đặc tính & $n$ & Tổng giá trị & Mean \\
+\midrule
+\texttt{age} -- tuổi & 303 & 16498 & 54.44 \\
+\texttt{trestbps} -- huyết áp nghỉ & 303 & 39949 & 131.68 \\
+\texttt{chol} -- cholesterol & 303 & 74748 & 246.69 \\
+\texttt{thalach} -- nhịp tim tối đa & 303 & 45343 & 149.65 \\
+\texttt{oldpeak} -- ST depression & 303 & 315.0 & 1.04 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Median}
+
+Median là giá trị nằm ở giữa phân phối sau khi sắp xếp dữ liệu tăng dần; đây là số đo trung tâm bền vững được khuyến nghị dùng khi dữ liệu lệch hoặc có ngoại lệ \cite{Sahay2021Essentials,DeMauro2021DataAnalytics}. Gọi $x_{(1)} \le x_{(2)} \le \cdots \le x_{(n)}$ là dãy đã sắp xếp. Median được tính như sau:
+
+\begin{equation}
+Median =
+\begin{cases}
+ x_{\left(\frac{n+1}{2}\right)}, & \text{nếu } n \text{ lẻ} \\
+ \frac{x_{\left(\frac{n}{2}\right)} + x_{\left(\frac{n}{2}+1\right)}}{2}, & \text{nếu } n \text{ chẵn}
+\end{cases}
+\end{equation}
+
+Trong đó $x_{(j)}$ là giá trị tại vị trí thứ $j$ sau khi sắp xếp. Median có ý nghĩa là điểm chia dữ liệu thành hai nửa: khoảng 50\% quan sát nhỏ hơn hoặc bằng median và khoảng 50\% quan sát lớn hơn hoặc bằng median. Vì chỉ phụ thuộc vào vị trí sau sắp xếp chứ không phụ thuộc trực tiếp vào độ lớn của các giá trị cực trị, median là số đo trung tâm bền vững hơn mean.
+
+Median phù hợp khi dữ liệu có outlier, phân phối lệch hoặc cần mô tả giá trị trung tâm bền vững. Median thường được dùng với thu nhập, giá nhà, chi phí y tế, cholesterol hoặc năng lượng tiêu thụ khi có vài giá trị rất lớn. Trường hợp sử dụng điển hình là báo cáo mức cholesterol đại diện khi có bệnh nhân ngoại lệ, mô tả ngày tiêu thụ điện điển hình trong chuỗi Appliances, hoặc chọn giá trị giữa của độ sáng ảnh khi ảnh có vùng quá tối/quá sáng. Trong tiền xử lý, median cũng thường được dùng để điền khuyết cho biến định lượng có outlier. \textbf{Hạn chế:} median không sử dụng độ lớn của toàn bộ quan sát, nên có thể bỏ qua một phần thông tin biến động; hai bộ dữ liệu có median giống nhau vẫn có thể có độ phân tán rất khác nhau. Median cũng kém thuận tiện hơn mean trong một số công thức tối ưu hóa và mô hình thống kê.
+
+\textbf{Ví dụ.} Bảng \ref{tab:chapter1_median_example} minh họa median trên nhiều đặc tính. Với \texttt{chol}, $n=303$ là số lẻ nên vị trí median là $(303+1)/2=152$; giá trị tại vị trí này là 241. Median giữ nguyên trước và sau tiền xử lý, cho thấy cấu trúc trung tâm ít bị ảnh hưởng bởi điểm cực trị.
+
+\begin{table}[H]
+\centering
+\caption{Bảng ví dụ Median trên một số đặc tính Heart Disease}
+\label{tab:chapter1_median_example}
+\small
+\begin{tabular}{lrrr}
+\toprule
+Đặc tính & $n$ & Vị trí median & Median \\
+\midrule
+\texttt{age} -- tuổi & 303 & 152 & 56.00 \\
+\texttt{trestbps} -- huyết áp nghỉ & 303 & 152 & 130.00 \\
+\texttt{chol} -- cholesterol & 303 & 152 & 241.00 \\
+\texttt{thalach} -- nhịp tim tối đa & 303 & 152 & 153.00 \\
+\texttt{oldpeak} -- ST depression & 303 & 152 & 0.80 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Mode}
+
+Mode là giá trị hoặc nhóm xuất hiện nhiều nhất trong dữ liệu, thường được dùng trong mô tả biến định tính và phân phối tần suất \cite{Sahay2021Essentials,DeMauro2021DataAnalytics}:
+
+\begin{equation}
+Mode = \arg\max_v f(v), \quad f(v)=\sum_{i=1}^{n} I(x_i=v)
+\end{equation}
+
+Trong đó $v$ là một giá trị hoặc một lớp cần xét, $f(v)$ là tần suất của $v$, $I(\cdot)$ là hàm chỉ báo nhận 1 nếu điều kiện đúng và 0 nếu sai. Mode có ý nghĩa là trạng thái phổ biến nhất của dữ liệu. Khác với mean và median, mode có thể áp dụng trực tiếp cho biến định tính, ví dụ giới tính, loại đau ngực, nhãn bệnh, vị trí tổn thương hoặc lớp văn bản.
+
+Mode phù hợp nhất với biến định tính như \texttt{cp}, \texttt{sex}, \texttt{dx}, \texttt{Diagnosis}; cũng dùng được với biến định lượng rời rạc như tuổi hoặc số mạch máu. Trường hợp sử dụng cụ thể gồm xác định loại đau ngực phổ biến nhất trong Heart Disease, lớp tổn thương da xuất hiện nhiều nhất trong HAM10000, nhãn chẩn đoán chiếm ưu thế trong Breast Cancer hoặc mức đánh giá sức khỏe phổ biến trong CDC Diabetes. Trong tiền xử lý, mode thường được dùng để điền khuyết cho biến phân loại vì nó giữ lại nhóm phổ biến nhất. \textbf{Hạn chế:} một biến có thể có một mode, nhiều mode hoặc không có mode rõ ràng nếu tần suất quá phân tán. Mode không ổn định với biến liên tục có quá nhiều giá trị khác nhau, khi đó nên nhóm khoảng trước khi tính. Mode chỉ phản ánh giá trị phổ biến nhất, không cho biết trung tâm số học hay mức phân tán của dữ liệu.
+
+\textbf{Ví dụ.} Dựa trên dữ liệu Heart Disease, có thể xác định mode cho nhiều đặc tính khác nhau như Bảng \ref{tab:chapter1_mode_example}. Bảng này cho thấy mode không chỉ dùng cho biến phân loại như \texttt{cp}, \texttt{sex}, \texttt{slope}, mà còn dùng được cho biến định lượng rời rạc hoặc đã làm tròn như \texttt{age}, \texttt{ca}, \texttt{oldpeak}.
+
+\begin{table}[H]
+\centering
+\caption{Bảng tổng hợp ví dụ kết quả Mode trên một số đặc tính Heart Disease}
+\label{tab:chapter1_mode_example}
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Đặc tính & $n$ & Mean & Median & Mode \\
+\midrule
+\texttt{age} -- tuổi & 303 & 54.44 & 56.00 & 58 \\
+\texttt{sex} -- giới tính & 303 & 0.68 & 1.00 & 1 \\
+\texttt{cp} -- loại đau ngực & 303 & 3.16 & 3.00 & 4 \\
+\texttt{trestbps} -- huyết áp nghỉ & 303 & 131.69 & 130.00 & 120 \\
+\texttt{chol} -- cholesterol & 303 & 246.69 & 241.00 & 197, 204, 234 \\
+\texttt{thalach} -- nhịp tim tối đa & 303 & 149.61 & 153.00 & 162 \\
+\texttt{oldpeak} -- ST depression & 303 & 1.04 & 0.80 & 0.0 \\
+\texttt{slope} -- độ dốc ST & 303 & 1.60 & 2.00 & 2 \\
+\texttt{ca} -- số mạch máu & 303 & 0.67 & 0.00 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Từ Bảng \ref{tab:chapter1_mode_example}, \texttt{cp=4} là loại đau ngực phổ biến nhất, \texttt{sex=1} là nhóm giới tính chiếm ưu thế, \texttt{oldpeak=0.0} cho thấy nhiều bệnh nhân không có ST depression trong bài test gắng sức, và \texttt{ca=0} là số mạch máu thường gặp nhất. Với \texttt{chol}, có nhiều mode cùng xuất hiện, minh họa trường hợp dữ liệu đa mode.
+
+\subsection{Percentiles}
+
+Percentile mô tả vị trí tương đối của một giá trị trong phân phối và thường được dùng để xây dựng quartiles, IQR và boxplot \cite{Sahay2021Essentials,DeMauro2021DataAnalytics}. Gọi $P_k$ là percentile thứ $k$, có thể hiểu $P_k$ là ngưỡng sao cho xấp xỉ $k\%$ quan sát có giá trị nhỏ hơn hoặc bằng ngưỡng đó. Với dãy đã sắp xếp tăng dần, vị trí percentile thường được xác định gần đúng bằng:
+
+\begin{equation}
+pos_k = \frac{k}{100}(n+1)
+\end{equation}
+
+Sau đó $P_k$ được lấy tại vị trí $pos_k$ hoặc nội suy giữa hai vị trí lân cận nếu $pos_k$ không nguyên. Trong đó $k$ là mức phần trăm cần tính, $n$ là số quan sát và $pos_k$ là vị trí lý thuyết trong dãy đã sắp xếp. Percentiles mở rộng ý tưởng median từ một điểm chia 50\% thành nhiều ngưỡng chia khác nhau trên toàn bộ phân phối. Nhờ đó, người phân tích không chỉ biết trung tâm dữ liệu mà còn biết vùng thấp, vùng cao và độ trải của dữ liệu.
+
+Percentiles phù hợp khi cần mô tả phân bố theo ngưỡng, đánh giá nhóm thấp/trung bình/cao hoặc xác định vùng dữ liệu trung tâm. Percentile thứ 25, 50 và 75 lần lượt là $Q_1$, median và $Q_3$. Trong dữ liệu y tế, percentiles giúp xác định nhóm bệnh nhân có chỉ số quá thấp hoặc quá cao; trong chuỗi thời gian, percentiles giúp phân biệt ngày tiêu thụ bình thường và ngày tiêu thụ bất thường; trong dữ liệu ảnh, percentiles của độ sáng pixel giúp mô tả ảnh tối/sáng. Trường hợp sử dụng thực tế gồm đặt ngưỡng cảnh báo cholesterol ở nhóm 10\% cao nhất, chia bệnh nhân theo nhóm tuổi, xác định mức tiêu thụ điện bất thường trên $P_{95}$ hoặc cắt ngưỡng pixel khi chuẩn hóa ảnh. \textbf{Hạn chế:} percentile phụ thuộc vào cách nội suy và kích thước mẫu; với mẫu nhỏ, ngưỡng phân vị có thể không ổn định. Percentile cũng chỉ cho biết vị trí tương đối, không giải thích nguyên nhân vì sao một giá trị nằm ở vùng cao hoặc thấp.
+
+\textbf{Ví dụ.} Bảng \ref{tab:chapter1_percentile_example} minh họa percentiles trên nhiều đặc tính. Với \texttt{chol}, $P_{25}=211$, $P_{50}=241$ và $P_{75}=275$, nghĩa là khoảng 75\% bệnh nhân có cholesterol không vượt quá 275.
+
+\begin{table}[H]
+\centering
+\caption{Bảng ví dụ Percentiles trên một số đặc tính Heart Disease}
+\label{tab:chapter1_percentile_example}
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Đặc tính & $n$ & $P_{25}$ & $P_{50}$ & $P_{75}$ \\
+\midrule
+\texttt{age} -- tuổi & 303 & 48.00 & 56.00 & 61.00 \\
+\texttt{trestbps} -- huyết áp nghỉ & 303 & 120.00 & 130.00 & 140.00 \\
+\texttt{chol} -- cholesterol & 303 & 211.00 & 241.00 & 275.00 \\
+\texttt{thalach} -- nhịp tim tối đa & 303 & 133.50 & 153.00 & 166.00 \\
+\texttt{oldpeak} -- ST depression & 303 & 0.00 & 0.80 & 1.60 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Trimmed Mean (Trung bình cắt ngọn)}
+
+Mean và median thể hiện sự đánh đổi điển hình giữa hiệu quả và tính bền vững: mean tận dụng toàn bộ dữ liệu nhưng nhạy với outlier, còn median bền vững nhưng bỏ qua độ lớn của hầu hết quan sát. Trimmed mean (trung bình cắt ngọn) là lựa chọn trung gian được John W. Tukey giới thiệu trong công trình nền tảng về phân tích dữ liệu khám phá như một số đo trung tâm bền vững khi dữ liệu có vài giá trị cực trị nhưng vẫn muốn giữ ý nghĩa ``điểm cân bằng số học'' của mean \cite{Tukey1977EDA}. Với tỷ lệ cắt $\alpha$ ($0 \le \alpha < 0.5$), trimmed mean loại bỏ $\alpha n$ giá trị nhỏ nhất và $\alpha n$ giá trị lớn nhất sau khi sắp xếp rồi tính trung bình phần còn lại:
+
+\begin{equation}
+\bar{x}_{\alpha} = \frac{1}{n - 2\lfloor \alpha n \rfloor}\sum_{i=\lfloor \alpha n \rfloor+1}^{n-\lfloor \alpha n \rfloor} x_{(i)}
+\end{equation}
+
+Trong đó $x_{(1)} \le x_{(2)} \le \cdots \le x_{(n)}$ là dãy đã sắp xếp, $\lfloor \alpha n \rfloor$ là số quan sát bị cắt ở mỗi đầu, và $\bar{x}_{\alpha}$ là trung bình của phần giữ lại. Khi $\alpha = 0$, trimmed mean trở về mean thường; khi $\alpha$ tiệm cận 0.5, nó tiệm cận median. Việc chọn $\alpha$ thường vào khoảng 5\%--20\% tùy mức độ nghi ngờ outlier.
+
+Trimmed mean phù hợp khi dữ liệu định lượng có phân phối hơi lệch hoặc vài giá trị cực trị, nhưng người phân tích vẫn muốn một số đo trung tâm dạng trung bình số học thay vì median thuần túy. Trường hợp sử dụng thực tế gồm báo cáo cholesterol đại diện bền vững cho Heart Disease khi có vài bệnh nhân có giá trị rất cao, tóm tắt mức tiêu thụ điện điển hình của chuỗi Appliances Energy loại trừ vài ngày đỉnh điểm, hoặc ước lượng độ sáng đại diện của ảnh khi có vùng quá sáng cục bộ. \textbf{Hạn chế:} trimmed mean loại bỏ thông tin ở hai đầu phân phối, nên không thích hợp khi các giá trị cực trị mang ý nghĩa thực tế cần giữ (ví dụ ngày tiêu thụ điện đỉnh là đối tượng quan tâm), và việc chọn $\alpha$ có phần chủ quan.
+
+\textbf{Ví dụ.} Bảng \ref{tab:chapter1_trimmed_example} so sánh mean, median và trimmed mean trên các đặc tính Heart Disease. Với \texttt{chol}, mean thường là 246.69 nhưng trimmed mean 10\% chỉ còn 243.97, tiệm cận median 241.00; sự chênh lệch này khẳng định mean bị kéo lên bởi một số bệnh nhân cholesterol rất cao. Ngược lại, với \texttt{age}, mean (54.44), trimmed mean (54.62) và median (56.00) rất gần nhau, phù hợp với phân phối tuổi khá cân bằng của mẫu bệnh nhân.
+
+\begin{table}[H]
+\centering
+\caption{So sánh Mean, Trimmed Mean và Median trên một số đặc tính Heart Disease}
+\label{tab:chapter1_trimmed_example}
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Đặc tính & $n$ & Mean & Trimmed mean 10\% & Median \\
+\midrule
+\texttt{age} -- tuổi & 303 & 54.44 & 54.62 & 56.00 \\
+\texttt{trestbps} -- huyết áp nghỉ & 303 & 131.69 & 130.49 & 130.00 \\
+\texttt{chol} -- cholesterol & 303 & 246.69 & 243.97 & 241.00 \\
+\texttt{thalach} -- nhịp tim tối đa & 303 & 149.61 & 150.93 & 153.00 \\
+\texttt{oldpeak} -- ST depression & 303 & 1.04 & 0.86 & 0.80 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Geometric Mean (Trung bình nhân)}
+
+Geometric mean (trung bình nhân) là số đo trung tâm dành riêng cho biến dương, đặc biệt hữu ích khi dữ liệu có phạm vi giá trị rộng, phân phối lệch phải hoặc biến đổi theo cấp số nhân như tỷ lệ tăng trưởng, độ sáng pixel, mật độ năng lượng. Trung bình nhân được định nghĩa là căn bậc $n$ của tích các giá trị \cite{NIST2013Handbook}:
+
+\begin{equation}
+\bar{x}_G = \sqrt[n]{x_1 \cdot x_2 \cdots x_n} = \exp\!\left(\frac{1}{n}\sum_{i=1}^{n}\ln x_i\right)
+\end{equation}
+
+Trong đó $x_i > 0$ là quan sát thứ $i$, $n$ là số quan sát dương và $\bar{x}_G$ là trung bình nhân. Dạng $\exp\!\left(\frac{1}{n}\sum \ln x_i\right)$ tương đương arithmetic mean của logarit rồi lấy mũ, vừa tránh tràn số với tích lớn, vừa gợi nối trực tiếp với log transform dùng trong tiền xử lý (mục \ref{sec:logtransform}). Trung bình nhân luôn nhỏ hơn hoặc bằng mean số học khi mọi $x_i > 0$, và khoảng cách giữa hai số đo càng lớn thì phân phối lệch phải càng mạnh.
+
+Geometric mean phù hợp khi biến luôn dương và cần ước lượng trung tâm trên thang multiplicative, ví dụ độ sáng ảnh (pixel intensity), mức tiêu thụ năng lượng, hoặc thời gian phản hồi. Trung bình nhân cũng là công cụ chuẩn để tổng hợp các tỷ lệ tăng trưởng (ví dụ tốc độ tăng số ca bệnh theo tuần) vì cộng log của các tỷ lệ đúng về mặt đại số. \textbf{Hạn chế:} trung bình nhân chỉ định nghĩa khi $x_i > 0$, nên không dùng trực tiếp cho biến có giá trị 0 hoặc âm; với \texttt{oldpeak} trong Heart Disease có tới 99/303 bệnh nhân mang giá trị 0, trung bình nhân không phải lựa chọn phù hợp. Khi cần dùng trên dữ liệu có chứa 0, thường phải dịch chuyển giá trị ($x_i + c$) trước khi tính, và lựa chọn $c$ sẽ ảnh hưởng đến kết quả.
+
+\textbf{Ví dụ.} Bảng \ref{tab:chapter1_geom_example} so sánh mean, geometric mean và median trên các đặc tính dương của Heart Disease. Với \texttt{chol}, geometric mean (241.62) gần với median (241.00) và thấp hơn mean (246.69), phản ánh phân phối hơi lệch phải mà section Mean đã ghi nhận. Đối với \texttt{thalach} (nhịp tim tối đa), geometric mean (147.71) nằm giữa mean (149.61) và median (153.00). Đặc tính \texttt{oldpeak} bị loại khỏi bảng vì có nhiều giá trị 0, minh họa đúng hạn chế nêu trên.
+
+\begin{table}[H]
+\centering
+\caption{So sánh Mean, Geometric Mean và Median trên các đặc tính dương của Heart Disease}
+\label{tab:chapter1_geom_example}
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Đặc tính & $n$ & Mean & Geometric mean & Median \\
+\midrule
+\texttt{age} -- tuổi & 303 & 54.44 & 53.65 & 56.00 \\
+\texttt{trestbps} -- huyết áp nghỉ & 303 & 131.69 & 130.56 & 130.00 \\
+\texttt{chol} -- cholesterol & 303 & 246.69 & 241.62 & 241.00 \\
+\texttt{thalach} -- nhịp tim tối đa & 303 & 149.61 & 147.71 & 153.00 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Các số đo độ phân tán}
+
+Các số đo độ phân tán cho biết dữ liệu nằm gần hay xa giá trị trung tâm. Nếu các số đo xu hướng trung tâm trả lời câu hỏi ``dữ liệu tập trung ở đâu?'', thì các số đo độ phân tán trả lời câu hỏi ``dữ liệu dao động mạnh hay yếu?''. Theo các tài liệu trong \texttt{docments/}, nhóm chỉ số này rất quan trọng trong EDA vì giúp phát hiện dữ liệu không ổn định, outlier, biến cần chuẩn hóa và biến có thể gây khó khăn cho mô hình học máy \cite{Sahay2021Essentials,DeMauro2021DataAnalytics}. Trong báo cáo này, các chỉ số phân tán được dùng để so sánh dữ liệu thô và dữ liệu sau tiền xử lý.
+
+\subsection{Range}
+
+Range là khoảng biến thiên từ giá trị nhỏ nhất đến lớn nhất:
+
+\begin{equation}
+Range = x_{max} - x_{min}
+\end{equation}
+
+Trong đó $x_{max}$ là giá trị lớn nhất và $x_{min}$ là giá trị nhỏ nhất của biến. Range là số đo đơn giản nhất để biết toàn bộ miền biến thiên của dữ liệu. Chỉ số này phù hợp khi cần kiểm tra nhanh dữ liệu có trải quá rộng hay có giá trị bất thường hay không. Trường hợp sử dụng gồm kiểm tra miền tuổi bệnh nhân, khoảng dao động cholesterol, biên độ tiêu thụ năng lượng trong ngày hoặc khoảng cường độ pixel của ảnh. \textbf{Hạn chế:} range chỉ dùng hai điểm cực trị nên rất nhạy với outlier và không phản ánh hình dạng phân phối bên trong. Hai tập dữ liệu có cùng range vẫn có thể có mức tập trung hoàn toàn khác nhau. Range cũng không cho biết phần lớn quan sát nằm gần min, gần max hay ở giữa.
+
+\textbf{Ví dụ.} Bảng \ref{tab:chapter1_range_example} minh họa range trên nhiều đặc tính. Với \texttt{chol}, range thô là $564-126=438$; sau tiền xử lý, max được giới hạn ở 371 nên range còn $371-126=245$.
+
+\begin{table}[H]
+\centering
+\caption{Bảng ví dụ Range trên một số đặc tính Heart Disease}
+\label{tab:chapter1_range_example}
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Đặc tính & $n$ & Min & Max & Range \\
+\midrule
+\texttt{age} -- tuổi & 303 & 29 & 77 & 48 \\
+\texttt{trestbps} -- huyết áp nghỉ & 303 & 94 & 200 & 106 \\
+\texttt{chol} -- cholesterol & 303 & 126 & 564 & 438 \\
+\texttt{thalach} -- nhịp tim tối đa & 303 & 71 & 202 & 131 \\
+\texttt{oldpeak} -- ST depression & 303 & 0.0 & 6.2 & 6.2 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Variance và Standard Deviation}
+
+Phương sai đo mức độ phân tán trung bình quanh mean. Với mẫu dữ liệu, báo cáo dùng phương sai mẫu:
+
+\begin{equation}
+s^2 = \frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar{x})^2
+\end{equation}
+
+Độ lệch chuẩn là căn bậc hai của phương sai:
+
+\begin{equation}
+s = \sqrt{s^2}
+\end{equation}
+
+Trong đó $x_i$ là quan sát thứ $i$, $\bar{x}$ là mean, $n$ là số quan sát và $n-1$ là bậc tự do khi tính phương sai mẫu. Mỗi sai lệch $(x_i-\bar{x})$ được bình phương để loại dấu âm và làm nổi bật các quan sát nằm xa trung tâm. Phương sai và độ lệch chuẩn cùng đo mức độ phân tán, nhưng khác nhau ở đơn vị và cách diễn giải. Phương sai $s^2$ lấy trung bình bình phương khoảng cách từ từng quan sát đến mean, nên đơn vị của nó là bình phương đơn vị gốc. Ví dụ nếu \texttt{chol} đo bằng mg/dL thì phương sai có đơn vị $(mg/dL)^2$, khó diễn giải trực tiếp trong ngữ cảnh y tế. Độ lệch chuẩn $s$ là căn bậc hai của phương sai, nên quay về cùng đơn vị với biến gốc và dễ đọc hơn: ``giá trị thường lệch khỏi mean khoảng bao nhiêu đơn vị''.
+
+Về vai trò phân tích, phương sai hữu ích trong công thức toán học, tối ưu hóa mô hình, phân tích phương sai và các thuật toán học máy; độ lệch chuẩn hữu ích hơn khi trình bày báo cáo, so sánh mức dao động và giải thích cho người đọc. Trường hợp sử dụng gồm so sánh độ dao động huyết áp giữa các nhóm bệnh, đánh giá biến nào cần chuẩn hóa trước SVM/logistic regression, đo mức ổn định của năng lượng tiêu thụ hoặc mô tả độ phân tán đặc trưng ảnh. \textbf{Hạn chế:} phương sai nhấn mạnh mạnh hơn các sai lệch lớn vì bình phương khoảng cách, do đó rất nhạy với outlier. Độ lệch chuẩn cũng bị ảnh hưởng bởi outlier, nhưng dễ diễn giải hơn vì cùng đơn vị với dữ liệu. Cả hai chỉ số đều nên được đọc kèm histogram hoặc boxplot vì cùng một standard deviation có thể đi kèm các hình dạng phân phối khác nhau.
+
+\textbf{Ví dụ.} Bảng \ref{tab:chapter1_var_sd_example} minh họa variance và standard deviation trên nhiều đặc tính. Với \texttt{chol}, phương sai thô là 2680.85 còn độ lệch chuẩn là $\sqrt{2680.85}=51.78$; số 51.78 dễ hiểu hơn vì có thể đọc là cholesterol thường lệch khỏi mean khoảng 51.78 đơn vị.
+
+\begin{table}[H]
+\centering
+\caption{Bảng ví dụ Variance và Standard Deviation trên một số đặc tính Heart Disease}
+\label{tab:chapter1_var_sd_example}
+\small
+\begin{tabular}{lrrr}
+\toprule
+Đặc tính & $n$ & Variance & SD \\
+\midrule
+\texttt{age} -- tuổi & 303 & 81.70 & 9.04 \\
+\texttt{trestbps} -- huyết áp nghỉ & 303 & 309.75 & 17.60 \\
+\texttt{chol} -- cholesterol & 303 & 2680.85 & 51.78 \\
+\texttt{thalach} -- nhịp tim tối đa & 303 & 524.65 & 22.91 \\
+\texttt{oldpeak} -- ST depression & 303 & 1.35 & 1.16 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Coefficient of Variation}
+
+Hệ số biến thiên chuẩn hóa độ lệch chuẩn theo mean:
+
+\begin{equation}
+CV = \frac{s}{\bar{x}}
+\end{equation}
+
+Trong đó $s$ là độ lệch chuẩn và $\bar{x}$ là mean của biến. CV là số đo không có đơn vị vì đã chuẩn hóa độ lệch chuẩn theo mean. Nhờ vậy, CV hữu ích khi cần so sánh mức biến động giữa các biến có thang đo hoặc đơn vị đo khác nhau, ví dụ tuổi, cholesterol, huyết áp, năng lượng tiêu thụ và độ sáng ảnh. CV càng lớn thì biến càng dao động mạnh tương đối với mức trung bình của chính nó.
+
+CV phù hợp khi $\bar{x}$ dương và đủ xa 0. Trường hợp sử dụng gồm so sánh độ biến động tương đối giữa tuổi và cholesterol, giữa các cảm biến nhiệt độ/độ ẩm trong Appliances, hoặc giữa các đặc trưng ảnh có thang đo khác nhau. \textbf{Hạn chế:} nếu mean gần 0 hoặc có thể âm, CV dễ gây hiểu sai vì mẫu số quá nhỏ hoặc đổi dấu. CV cũng nên được đọc cùng histogram/boxplot vì một biến có CV cao có thể do outlier chứ không phải do biến động tự nhiên. CV không phù hợp cho thang đo có điểm 0 tùy ý hoặc biến đã chuẩn hóa quanh 0.
+
+\textbf{Ví dụ.} Bảng \ref{tab:chapter1_cv_example} minh họa CV trên nhiều đặc tính. \texttt{oldpeak} có CV khoảng 1.12, cao hơn nhiều so với \texttt{age} là 0.17, cho thấy \texttt{oldpeak} biến động mạnh tương đối với mức trung bình của nó.
+
+\begin{table}[H]
+\centering
+\caption{Bảng ví dụ Coefficient of Variation trên một số đặc tính Heart Disease}
+\label{tab:chapter1_cv_example}
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Đặc tính & $n$ & Mean & SD & CV \\
+\midrule
+\texttt{age} -- tuổi & 303 & 54.44 & 9.04 & 0.17 \\
+\texttt{trestbps} -- huyết áp nghỉ & 303 & 131.68 & 17.60 & 0.13 \\
+\texttt{chol} -- cholesterol & 303 & 246.69 & 51.78 & 0.21 \\
+\texttt{thalach} -- nhịp tim tối đa & 303 & 149.65 & 22.91 & 0.15 \\
+\texttt{oldpeak} -- ST depression & 303 & 1.04 & 1.16 & 1.12 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Interquartile Range}
+
+IQR là khoảng giữa tứ phân vị thứ 75 và 25, đo độ rộng của 50\% dữ liệu trung tâm:
+
+\begin{equation}
+IQR = Q_3 - Q_1
+\end{equation}
+
+Quy tắc phát hiện outlier phổ biến:
+
+\begin{equation}
+Lower = Q_1 - 1.5 \times IQR
+\end{equation}
+
+\begin{equation}
+Upper = Q_3 + 1.5 \times IQR
+\end{equation}
+
+Trong đó $Q_1=P_{25}$ là tứ phân vị dưới và $Q_3=P_{75}$ là tứ phân vị trên. IQR ít bị ảnh hưởng bởi outlier hơn range vì nó bỏ qua 25\% thấp nhất và 25\% cao nhất, chỉ tập trung vào vùng dữ liệu trung tâm. Do đó, IQR phù hợp khi dữ liệu lệch, có ngoại lệ hoặc cần so sánh độ phân tán bền vững giữa các nhóm. Trường hợp sử dụng gồm phát hiện cholesterol bất thường, so sánh vùng dao động BMI giữa nhóm bệnh/không bệnh, xác định ngày tiêu thụ điện ngoài mức thông thường hoặc kiểm tra ảnh có độ sáng lệch nhiều so với phần lớn mẫu.
+
+Giá trị nhỏ hơn \texttt{Lower} hoặc lớn hơn \texttt{Upper} được xem là ứng viên outlier. \textbf{Hạn chế:} quy tắc $1.5\times IQR$ không khẳng định chắc chắn một điểm là lỗi dữ liệu; nó chỉ đánh dấu điểm cần kiểm tra thêm bằng kiến thức miền. IQR bỏ qua 50\% dữ liệu ngoài vùng giữa nên không mô tả đầy đủ phần đuôi phân phối. Trong dữ liệu y tế, một giá trị cholesterol rất cao có thể là lỗi nhập liệu, nhưng cũng có thể là bệnh nhân thật sự có chỉ số bất thường.
+
+\textbf{Ví dụ.} Bảng \ref{tab:chapter1_iqr_example} minh họa IQR trên nhiều đặc tính. Với \texttt{chol}, $Q_1=211$, $Q_3=275$, nên $IQR=64$; biên trên là $275+1.5\times64=371$. Vì max thô là 564, giá trị này vượt biên trên và được xem là ứng viên outlier.
+
+\begin{table}[H]
+\centering
+\caption{Bảng ví dụ IQR trên một số đặc tính Heart Disease}
+\label{tab:chapter1_iqr_example}
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Đặc tính & $Q_1$ & $Q_3$ & IQR & Biên trên \\
+\midrule
+\texttt{age} -- tuổi & 48.00 & 61.00 & 13.00 & 80.50 \\
+\texttt{trestbps} -- huyết áp nghỉ & 120.00 & 140.00 & 20.00 & 170.00 \\
+\texttt{chol} -- cholesterol & 211.00 & 275.00 & 64.00 & 371.00 \\
+\texttt{thalach} -- nhịp tim tối đa & 133.50 & 166.00 & 32.50 & 214.75 \\
+\texttt{oldpeak} -- ST depression & 0.00 & 1.60 & 1.60 & 4.00 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Mean Absolute Deviation (MAD)}
+
+Standard deviation là số đo phân tán phổ biến nhất nhưng, vì bình phương sai lệch $(x_i-\bar{x})^2$, nó rất nhạy với outlier: chỉ một vài giá trị cực trị cũng làm $s$ phồng lên đáng kể. Mean Absolute Deviation (MAD) -- độ lệch tuyệt đối trung bình -- là số đo phân tán đơn giản hơn, lấy trung bình của các khoảng cách tuyệt đối đến mean thay vì bình phương chúng. Công thức MAD (ký hiệu $D_{\text{mean}}$ để phân biệt với median-MAD ở mục kế tiếp) là:
+
+\begin{equation}
+D_{\text{mean}} = \frac{1}{n}\sum_{i=1}^{n}\lvert x_i - \bar{x}\rvert
+\end{equation}
+
+Trong đó $x_i$ là quan sát thứ $i$, $\bar{x}$ là mean, $n$ là số quan sát và $\lvert \cdot \rvert$ là giá trị tuyệt đối. Việc dùng trị tuyệt đối thay vì bình phương làm MAD ít bị kéo phồng bởi các sai lệch lớn hơn so với standard deviation, đồng thời giữ cùng đơn vị với dữ liệu gốc nên dễ diễn giải: ``giá trị thường lệch khỏi mean khoảng bao nhiêu đơn vị''. Dưới phân phối chuẩn, MAD xấp xỉ $0.8s$ (cụ thể $\sqrt{2/\pi}\,s \approx 0.7979s$).
+
+$D_{\text{mean}}$ phù hợp khi cần một số đo phân tán dễ giải thích, ít nhạy với một vài cực trị hơn standard deviation, nhưng vẫn gắn với mean để giữ tính liên tục với các phân tích dùng mean. Trường hợp sử dụng thực tế gồm tóm tắt mức dao động cholesterol hoặc huyết áp khi có vài bệnh nhân ngoại lệ, mô tả độ ổn định tiêu thụ điện của Appliances loại trừ các ngày đỉnh, hoặc đo độ phân tán cường độ pixel ảnh. \textbf{Hạn chế:} vì vẫn tham chiếu đến mean (bản thân mean đã bị outlier kéo lệch), $D_{\text{mean}}$ chỉ giảm bớt chứ không triệt tiêu hoàn toàn ảnh hưởng của cực trị; khi cần độ bền vững cao hơn, nên dùng median-MAD ở mục kế tiếp.
+
+\textbf{Ví dụ.} Bảng \ref{tab:chapter1_mad_mean_example} so sánh standard deviation và $D_{\text{mean}}$ trên các đặc tính Heart Disease. Với \texttt{chol}, $s=51.78$ nhưng $D_{\text{mean}}=39.31$, nhỏ hơn rõ rệt -- khoảng cách này phản ánh việc một số giá trị cholesterol rất cao làm phồng $s$ thông qua phép bình phương, trong khi $D_{\text{mean}}$ ít bị kéo theo.
+
+\begin{table}[H]
+\centering
+\caption{So sánh Standard Deviation và Mean Absolute Deviation trên một số đặc tính Heart Disease}
+\label{tab:chapter1_mad_mean_example}
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Đặc tính & $n$ & Mean & SD & MAD (từ mean) \\
+\midrule
+\texttt{age} -- tuổi & 303 & 54.44 & 9.04 & 7.42 \\
+\texttt{trestbps} -- huyết áp nghỉ & 303 & 131.69 & 17.60 & 13.60 \\
+\texttt{chol} -- cholesterol & 303 & 246.69 & 51.78 & 39.31 \\
+\texttt{thalach} -- nhịp tim tối đa & 303 & 149.61 & 22.88 & 18.45 \\
+\texttt{oldpeak} -- ST depression & 303 & 1.04 & 1.16 & 0.93 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Median Absolute Deviation (MAD bền vững)}
+
+Median Absolute Deviation, hay số đo MAD bền vững, đi thêm một bước nữa so với $D_{\text{mean}}$: thay vì tham chiếu đến mean, nó tham chiếu đến median và lấy median các độ lệch tuyệt đối. Đây là số đo phân tán bền vững (robust) kinh điển trong thống kê, được trình bày chi tiết trong các tài liệu về thống kê bền vững \cite{Huber2009Robust,Rousseeuw1993Alternatives}. Công thức là:
+
+\begin{equation}
+\text{MAD} = \text{median}\bigl(\lvert x_i - \tilde{x} \rvert\bigr)
+\end{equation}
+
+Trong đó $\tilde{x}$ là median của mẫu và $\text{median}(\cdot)$ lấy giá trị ở giữa của các độ lệch tuyệt đối. Để so sánh trực tiếp với standard deviation dưới phân phối chuẩn, người ta thường nhân MAD với hệ số 1.4826:
+
+\begin{equation}
+\hat{\sigma}_{\text{MAD}} = 1.4826 \times \text{MAD}
+\end{equation}
+
+Khi đó $\hat{\sigma}_{\text{MAD}}$ ước lượng cùng đại lượng với $s$ nhưng có breakdown point 50\%, nghĩa là tới một nửa dữ liệu có thể bị nhiễm cực trị mà ước lượng vẫn ổn định -- thuộc tính mà cả standard deviation lẫn $D_{\text{mean}}$ đều không có \cite{Rousseeuw1993Alternatives}.
+
+$\hat{\sigma}_{\text{MAD}}$ phù hợp khi dữ liệu có nhiều outlier, phân phối lệch nặng hoặc cần một chuẩn tham chiếu bền vững để đối sánh với standard deviation. Trường hợp sử dụng thực tế gồm ước lượng độ phân tán ``thực sự'' của cholesterol khi bác bỏ các giá trị cực cao, mô tả độ dao động của tín hiệu cảm biến HAR/MHEALTH có nhiễu đột biến, hoặc so sánh mức phân tán bền vững giữa các đặc trưng ảnh trước khi chuẩn hóa. \textbf{Hạn chế:} hiệu quả thống kê (Gaussian efficiency) của MAD chỉ khoảng 37\%, thấp hơn nhiều so với standard deviation; vì vậy MAD tốt cho khâu phát hiện/nhận diện outlier nhưng khi dữ liệu đã sạch, standard deviation vẫn là lựa chọn hiệu quả hơn. MAD cũng có ngưỡng làm tròn: với mẫu rất nhỏ hoặc dữ liệu rời rạc ít giá trị, các độ lệch tuyệt đối có thể trùng nhau làm MAD kém sắc nét.
+
+\textbf{Ví dụ.} Bảng \ref{tab:chapter1_mad_median_example} so sánh ba số đo phân tán trên các đặc tính Heart Disease. Với \texttt{chol}, $s=51.78$ và $\hat{\sigma}_{\text{MAD}}=47.44$ -- hai giá trị khá gần nhau, cho thấy phần lớn dữ liệu cholesterol khá ổn định và các cực trị chỉ đẩy $s$ lên một chút. Trong khi đó, với \texttt{thalach}, $\hat{\sigma}_{\text{MAD}}=22.24$ gần như bằng $s=22.88$, phù hợp với phân phối ít lệch của nhịp tim tối đa. Sự so sánh giữa $s$ và $\hat{\sigma}_{\text{MAD}}$ là một cách nhanh gọn để đánh giá mức độ ảnh hưởng của outlier lên độ phân tán.
+
+\begin{table}[H]
+\centering
+\caption{So sánh Standard Deviation, $D_{\text{mean}}$ và $\hat{\sigma}_{\text{MAD}}$ trên một số đặc tính Heart Disease}
+\label{tab:chapter1_mad_median_example}
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Đặc tính & $n$ & SD & $D_{\text{mean}}$ & $\hat{\sigma}_{\text{MAD}}=1.4826\,\text{MAD}$ \\
+\midrule
+\texttt{age} -- tuổi & 303 & 9.04 & 7.42 & 8.90 \\
+\texttt{trestbps} -- huyết áp nghỉ & 303 & 17.60 & 13.60 & 14.83 \\
+\texttt{chol} -- cholesterol & 303 & 51.78 & 39.31 & 47.44 \\
+\texttt{thalach} -- nhịp tim tối đa & 303 & 22.88 & 18.45 & 22.24 \\
+\texttt{oldpeak} -- ST depression & 303 & 1.16 & 0.93 & 1.19 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Bảng tần suất và tần suất tương đối}
+
+Với biến định tính, việc tính mean hoặc standard deviation thường không có ý nghĩa. Khi đó, bảng tần suất là công cụ cơ bản. Tần suất tuyệt đối của một lớp $c_j$ được ký hiệu là $f_j$:
+
+\begin{equation}
+f_j = \sum_{i=1}^{n} I(x_i = c_j)
+\end{equation}
+
+Trong đó $I(\cdot)$ là hàm chỉ báo, nhận giá trị 1 nếu điều kiện đúng và 0 nếu sai. Tần suất tương đối của lớp $c_j$ là:
+
+\begin{equation}
+p_j = \frac{f_j}{n}
+\end{equation}
+
+Bảng tần suất được dùng cho các biến như \texttt{sex}, \texttt{cp}, \texttt{Diagnosis}, \texttt{dx}, \texttt{localization}. Trường hợp sử dụng gồm kiểm tra tỷ lệ nam/nữ trong Heart Disease, phân bố loại đau ngực, tỷ lệ khối u lành/ác trong Breast Cancer, phân bố lớp tổn thương da trong HAM10000 và vị trí tổn thương phổ biến. Bảng \ref{tab:chapter1_freq_example} minh họa tần suất và tần suất tương đối của biến \texttt{cp}. \textbf{Hạn chế:} bảng tần suất chỉ mô tả số lượng/tỷ lệ từng lớp, không cho biết quan hệ giữa biến phân loại với các biến số khác. Nếu số lớp quá nhiều, bảng dài và khó đọc; khi đó cần gộp lớp hoặc dùng biểu đồ.
+
+\begin{table}[H]
+\centering
+\caption{Bảng ví dụ tần suất và tần suất tương đối của biến \texttt{cp}}
+\label{tab:chapter1_freq_example}
+\small
+\begin{tabular}{lrr}
+\toprule
+Giá trị \texttt{cp} & Tần suất & Tần suất tương đối \\
+\midrule
+1 & 23 & 7.6\% \\
+2 & 50 & 16.5\% \\
+3 & 86 & 28.4\% \\
+4 & 144 & 47.5\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Z-score}
+
+Z-score chuẩn hóa giá trị theo mean và standard deviation:
+
+\begin{equation}
+z_i = \frac{x_i - \bar{x}}{s}
+\end{equation}
+
+Giá trị $|z_i|$ lớn cho thấy quan sát nằm xa trung tâm dữ liệu. Trong nhiều bài toán, $|z_i| > 3$ được xem là dấu hiệu outlier. Z-score đặc biệt hữu ích khi cần so sánh các biến có đơn vị khác nhau, ví dụ tuổi, cholesterol và huyết áp. Trường hợp sử dụng gồm chuẩn hóa đặc trưng trước SVM/logistic regression, phát hiện bệnh nhân có chỉ số sinh học quá xa trung bình, chuẩn hóa cảm biến năng lượng và đưa các đặc trưng ảnh về cùng thang đo trước khi huấn luyện mô hình. \textbf{Hạn chế:} z-score phụ thuộc vào mean và standard deviation nên nhạy với outlier và kém phù hợp khi phân phối lệch mạnh. Ngưỡng $|z|>3$ chỉ là quy tắc kinh nghiệm, không thay thế kiểm tra bằng kiến thức miền.
+
+\textbf{Ví dụ.} Bảng \ref{tab:chapter1_zscore_example} minh họa z-score cho một vài quan sát cholesterol, với $\bar{x}=246.69$ và $s=51.78$.
+
+\begin{table}[H]
+\centering
+\caption{Bảng ví dụ Z-score của một số giá trị cholesterol}
+\label{tab:chapter1_zscore_example}
+\small
+\begin{tabular}{rrrr}
+\toprule
+Mẫu & \texttt{chol} & Công thức & Z-score \\
+\midrule
+1 & 126 & $(126-246.69)/51.78$ & -2.33 \\
+2 & 241 & $(241-246.69)/51.78$ & -0.11 \\
+3 & 275 & $(275-246.69)/51.78$ & 0.55 \\
+4 & 371 & $(371-246.69)/51.78$ & 2.40 \\
+5 & 564 & $(564-246.69)/51.78$ & 6.13 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Minh họa tính toán chi tiết trên hai biến thực tế}
+
+Thống kê mô tả chỉ thực sự có ý nghĩa khi được tính tay trên dữ liệu thật trước khi giao cho máy. Mục này chọn hai biến có bản chất rất khác nhau để cùng áp dụng toàn bộ hệ công thức đã trình bày ở các mục 1.3 và 1.4: biến \texttt{chol} (cholesterol huyết thanh, nhóm A -- Heart Disease, $n=303$) là đại diện cho dữ liệu y tế dạng bảng, và biến \texttt{Appliances} (mức tiêu thụ điện, nhóm B -- Appliances Energy Prediction, $n=19\,735$) là đại diện cho dữ liệu chuỗi thời gian. Việc đặt hai biến cạnh nhau cho phép thấy cùng một công thức nhưng cho ra những bài đọc rất khác, từ đó rút ra nhận xét về cách chọn số đo phù hợp với từng kiểu dữ liệu.
+
+\subsection{Biến \texttt{chol} trong Heart Disease (nhóm A)}
+
+\noindent\textbf{Sắp xếp dữ liệu.} Gọi $X=\{x_1,x_2,\ldots,x_n\}$ là dãy giá trị cholesterol thô với $n=303$. Các bước chuẩn bị như sau:
+\begin{enumerate}[leftmargin=2.2em,label=\textbf{\arabic*.}]
+    \item Sắp xếp dãy tăng dần thành $x_{(1)}\le x_{(2)}\le\cdots\le x_{(303)}$.
+    \item Đọc giá trị nhỏ nhất: $x_{(1)}=x_{min}=126$.
+    \item Đọc giá trị lớn nhất: $x_{(303)}=x_{max}=564$.
+\end{enumerate}
+
+\noindent\textbf{Mean.} Trung bình mẫu là tổng giá trị chia cho số quan sát. Thực hiện theo hai bước:
+\begin{enumerate}[leftmargin=2.2em,label=\textbf{\arabic*.}]
+    \item Cộng toàn bộ 303 giá trị: $\sum x_i = 74\,748$.
+    \item Chia cho số quan sát:
+    \begin{equation}
+    \bar{x} = \frac{1}{n}\sum_{i=1}^{n}x_i = \frac{74\,748}{303} = 246.69
+    \end{equation}
+\end{enumerate}
+
+\noindent\textbf{Median.} Vì $n=303$ là số lẻ, median nằm tại vị trí giữa của dãy đã sắp xếp:
+\begin{enumerate}[leftmargin=2.2em,label=\textbf{\arabic*.}]
+    \item Tính vị trí median: $\dfrac{n+1}{2}=\dfrac{303+1}{2}=152$.
+    \item Đọc giá trị tại vị trí 152: $Median=x_{(152)}=241$.
+\end{enumerate}
+
+\noindent\textbf{Mode.} Đếm tần suất từng giá trị xuất hiện trong dãy:
+\begin{enumerate}[leftmargin=2.2em,label=\textbf{\arabic*.}]
+    \item Đếm số lần lặp lại của từng giá trị.
+    \item Chọn giá trị có tần suất cao nhất: giá trị 204 xuất hiện 5 lần, nên $Mode=204$.
+\end{enumerate}
+
+\noindent\textbf{Range.} Lấy hiệu số giữa hai giá trị cực trị:
+\begin{enumerate}[leftmargin=2.2em,label=\textbf{\arabic*.}]
+    \item Lấy $x_{max}=564$ và $x_{min}=126$ từ bước sắp xếp dữ liệu.
+    \item Trừ hai giá trị: $Range = x_{max}-x_{min}=564-126=438$.
+\end{enumerate}
+
+\noindent\textbf{Variance và Standard deviation.} Phương sai đo mức phân tán trung bình quanh mean; độ lệch chuẩn là căn bậc hai của phương sai:
+\begin{enumerate}[leftmargin=2.2em,label=\textbf{\arabic*.}]
+    \item Với mỗi quan sát, tính sai lệch tới mean: $x_i-\bar{x}$.
+    \item Bình phương từng sai lệch rồi cộng lại: $\sum(x_i-\bar{x})^2 = 809\,616.45$.
+    \item Chia cho bậc tự do $n-1=302$ được phương sai mẫu:
+    \begin{equation}
+    s^2 = \frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})^2 = \frac{809\,616.45}{302} = 2680.85
+    \end{equation}
+    \item Lấy căn bậc hai được độ lệch chuẩn:
+    \begin{equation}
+    s = \sqrt{s^2}=\sqrt{2680.85}=51.78
+    \end{equation}
+\end{enumerate}
+
+\noindent\textbf{Coefficient of Variation.} CV chuẩn hóa độ lệch chuẩn theo mean để so sánh biến động tương đối:
+\begin{enumerate}[leftmargin=2.2em,label=\textbf{\arabic*.}]
+    \item Lấy $s=51.78$ và $\bar{x}=246.69$ từ các bước trên.
+    \item Chia $s$ cho $\bar{x}$:
+    \begin{equation}
+    CV = \frac{s}{\bar{x}}=\frac{51.78}{246.69}=0.210
+    \end{equation}
+\end{enumerate}
+
+\noindent\textbf{Percentiles và IQR.} Dùng công thức vị trí $pos_k=\tfrac{k}{100}(n+1)$ để tìm tứ phân vị:
+\begin{enumerate}[leftmargin=2.2em,label=\textbf{\arabic*.}]
+    \item Tính vị trí $Q_1$: $pos_{25}=\tfrac{25}{100}\times304=76$, nên $Q_1=P_{25}=x_{(76)}=211$.
+    \item Tính vị trí $Q_3$: $pos_{75}=\tfrac{75}{100}\times304=228$, nên $Q_3=P_{75}=x_{(228)}=275$.
+    \item Trừ hai tứ phân vị được IQR:
+    \begin{equation}
+    IQR = Q_3-Q_1 = 275-211 = 64
+    \end{equation}
+\end{enumerate}
+
+\noindent\textbf{Trimmed mean (10\%).} Cắt một tỷ lệ nhỏ hai đầu rồi tính mean trên phần còn lại:
+\begin{enumerate}[leftmargin=2.2em,label=\textbf{\arabic*.}]
+    \item Tính số giá trị cắt mỗi đầu: $\lfloor 0.1\times303\rfloor=30$.
+    \item Bỏ 30 giá trị nhỏ nhất và 30 giá trị lớn nhất, còn 243 giá trị giữa.
+    \item Tính mean trên 243 giá trị này: $\bar{x}_{0.1}=243.97$.
+\end{enumerate}
+
+\noindent\textbf{MAD bền vững.} Lấy median của các độ lệch tuyệt đối đến median rồi nhân hệ số qui thang:
+\begin{enumerate}[leftmargin=2.2em,label=\textbf{\arabic*.}]
+    \item Tính độ lệch tuyệt đối của từng quan sát tới median: $|x_i-241|$.
+    \item Lấy median của các độ lệch này: $\text{MAD}=32$.
+    \item Nhân hệ số 1.4826 để qui về thang của $s$:
+    \begin{equation}
+    \hat{\sigma}_{\text{MAD}} = 1.4826 \times \text{MAD} = 1.4826 \times 32 = 47.44
+    \end{equation}
+\end{enumerate}
+
+\noindent\textbf{Phát hiện outlier theo IQR.} Dùng quy tắc râu boxplot với $Q_1$, $Q_3$, $IQR$ vừa tính:
+\begin{enumerate}[leftmargin=2.2em,label=\textbf{\arabic*.}]
+    \item Tính biên dưới:
+    \begin{equation}
+    Lower = Q_1 - 1.5\times IQR = 211 - 1.5\times 64 = 115
+    \end{equation}
+    \item Tính biên trên:
+    \begin{equation}
+    Upper = Q_3 + 1.5\times IQR = 275 + 1.5\times 64 = 371
+    \end{equation}
+    \item So max thô với biên trên: $564 > 371$ nên max là ứng viên outlier. Đếm được 5/303 bệnh nhân ($\approx1.7\%$) có \texttt{chol} vượt 371.
+\end{enumerate}
+
+\noindent\textbf{Bảng tổng hợp và so sánh trước/sau xử lý outlier.} Bảng \ref{tab:chapter1_chol_detailed_stats} tổng hợp các giá trị vừa tính và đối chiếu với phiên bản đã cắt outlier ở ngưỡng 371.
+
+\begin{table}[ht]
+\centering
+\caption[Minh họa thống kê mô tả biến \texttt{chol} Heart Disease]{Minh họa thống kê mô tả biến \texttt{chol} trong Heart Disease bằng cách tính thủ công từ dãy quan sát, kèm so sánh trước/sau khi cắt outlier ở ngưỡng $Upper=371$.}
+\label{tab:chapter1_chol_detailed_stats}
+\small
+\begin{tabular}{lrrp{0.38\textwidth}}
+\toprule
+Thông số & Thô & Sau xử lý & Ý nghĩa phân tích \\
+\midrule
+$n$ & 303 & 298 & 5 bệnh nhân vượt ngưỡng 371 bị cắt. \\
+Mean & 246.69 & 245.58 & Mean nhạy với outlier nên giảm nhẹ sau cắt. \\
+Median & 241.00 & 241.00 & Bền vững: không đổi sau cắt. \\
+Mode & 204 & 204 & Giá trị phổ biến nhất không đổi. \\
+Range & 438 & 245 & Range giảm mạnh vì max từ 564 xuống 371. \\
+Variance & 2680.85 & 2261.84 & Phương sai giảm rõ do đuôi phải bị nén. \\
+Std & 51.78 & 47.56 & Độ lệch chuẩn giảm cùng phương sai. \\
+CV & 0.210 & 0.194 & Dao động tương đối giảm nhẹ. \\
+$IQR$ & 64 & 64 & IQR không đổi vì nằm trong vùng trung tâm. \\
+Trimmed mean 10\% & 243.97 & 243.97 & Không đổi: bản thân nó đã loại đuôi. \\
+$\hat{\sigma}_{\text{MAD}}$ & 47.44 & 47.44 & Bền vững: không đổi sau cắt. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Nhận xét cho \texttt{chol}.} Ba số đo trung tâm cho ba góc nhìn khác nhau: $\bar{x}=246.69 > Median=241 > Mode=204$. Mean cao hơn median 5.69 đơn vị và cao hơn mode tới 42 đơn vị, gợi ý phân phối hơi lệch phải (skewness $\approx 1.14$). Điều này khẳng định một số bệnh nhân có cholesterol rất cao kéo mean lên. Sự đối lập giữa $s=51.78$ và $\hat{\sigma}_{\text{MAD}}=47.44$ -- hai số đo cùng ước lượng độ phân tán nhưng cách nhau 4.34 đơn vị -- chính là dấu hiệu của outlier: khi loại 5 giá trị vượt ngưỡng 371, $s$ giảm về 47.56 (gần $\hat{\sigma}_{\text{MAD}}$), trong khi $\hat{\sigma}_{\text{MAD}}$ và $IQR$ gần như không đổi. Bài học thực hành: với dữ liệu y tế có vài ca cực trị, nên báo cáo median kèm IQR cho câu chuyện trung tâm, và dùng $\hat{\sigma}_{\text{MAD}}$ hoặc trimmed mean khi cần số đo bền vững; mean và $s$ chỉ nên dùng sau khi đã xử lý outlier hoặc khi mô hình yêu cầu rõ.
+
+\FloatBarrier
+\subsection{Biến \texttt{Appliances} trong Appliances Energy Prediction (nhóm B)}
+
+\noindent\textbf{Sắp xếp dữ liệu.} Biến \texttt{Appliances} là mức tiêu thụ điện (Wh) ghi theo mốc 10 phút, có $n=19\,735$ quan sát. Các bước chuẩn bị như sau:
+\begin{enumerate}[leftmargin=2.2em,label=\textbf{\arabic*.}]
+    \item Sắp xếp dãy tăng dần.
+    \item Đọc giá trị nhỏ nhất: $x_{min}=10$.
+    \item Đọc giá trị lớn nhất: $x_{max}=1080$.
+\end{enumerate}
+
+\noindent\textbf{Mean.} Trung bình mẫu là tổng mức tiêu thụ chia cho số mốc. Thực hiện theo hai bước:
+\begin{enumerate}[leftmargin=2.2em,label=\textbf{\arabic*.}]
+    \item Cộng toàn bộ 19\,735 mốc: $\sum x_i = 1\,928\,121$.
+    \item Chia cho số mốc:
+    \begin{equation}
+    \bar{x} = \frac{1}{n}\sum_{i=1}^{n}x_i = \frac{1\,928\,121}{19\,735} = 97.70
+    \end{equation}
+\end{enumerate}
+
+\noindent\textbf{Median.} Vì $n=19\,735$ là số lẻ, median nằm tại vị trí giữa của dãy đã sắp xếp:
+\begin{enumerate}[leftmargin=2.2em,label=\textbf{\arabic*.}]
+    \item Tính vị trí median: $\dfrac{n+1}{2}=\dfrac{19\,735+1}{2}=9868$.
+    \item Đọc giá trị tại vị trí 9868: $Median=x_{(9868)}=60$.
+\end{enumerate}
+
+\noindent\textbf{Mode.} Đếm tần suất từng giá trị xuất hiện trong dãy:
+\begin{enumerate}[leftmargin=2.2em,label=\textbf{\arabic*.}]
+    \item Làm tròn giá trị về số nguyên và đếm số lần lặp lại.
+    \item Chọn giá trị có tần suất cao nhất: giá trị 50 xuất hiện nhiều nhất, nên $Mode=50$.
+\end{enumerate}
+
+\noindent\textbf{Range.} Lấy hiệu số giữa hai giá trị cực trị:
+\begin{enumerate}[leftmargin=2.2em,label=\textbf{\arabic*.}]
+    \item Lấy $x_{max}=1080$ và $x_{min}=10$ từ bước sắp xếp dữ liệu.
+    \item Trừ hai giá trị: $Range = x_{max}-x_{min}=1080-10=1070$.
+\end{enumerate}
+
+\noindent\textbf{Variance và Standard deviation.} Phương sai đo mức phân tán trung bình quanh mean; độ lệch chuẩn là căn bậc hai của phương sai:
+\begin{enumerate}[leftmargin=2.2em,label=\textbf{\arabic*.}]
+    \item Với mỗi quan sát, tính sai lệch tới mean: $x_i-\bar{x}$.
+    \item Bình phương từng sai lệch rồi cộng lại: $\sum(x_i-\bar{x})^2 \approx 207\,535\,204$.
+    \item Chia cho bậc tự do $n-1=19\,734$ được phương sai mẫu:
+    \begin{equation}
+    s^2 = \frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})^2 = 10511.35
+    \end{equation}
+    \item Lấy căn bậc hai được độ lệch chuẩn:
+    \begin{equation}
+    s = \sqrt{s^2}=\sqrt{10511.35}=102.52
+    \end{equation}
+\end{enumerate}
+
+\noindent\textbf{Coefficient of Variation.} CV chuẩn hóa độ lệch chuẩn theo mean để so sánh biến động tương đối:
+\begin{enumerate}[leftmargin=2.2em,label=\textbf{\arabic*.}]
+    \item Lấy $s=102.52$ và $\bar{x}=97.70$ từ các bước trên.
+    \item Chia $s$ cho $\bar{x}$:
+    \begin{equation}
+    CV = \frac{s}{\bar{x}}=\frac{102.52}{97.70}=1.049
+    \end{equation}
+\end{enumerate}
+
+\noindent\textbf{Percentiles và IQR.} Tìm tứ phân vị từ dãy đã sắp xếp:
+\begin{enumerate}[leftmargin=2.2em,label=\textbf{\arabic*.}]
+    \item Đọc tứ phân vị dưới: $Q_1=P_{25}=50$.
+    \item Đọc tứ phân vị trên: $Q_3=P_{75}=100$.
+    \item Trừ hai tứ phân vị được IQR:
+    \begin{equation}
+    IQR = Q_3-Q_1 = 100-50 = 50
+    \end{equation}
+\end{enumerate}
+
+\noindent\textbf{Trimmed mean (10\%).} Cắt một tỷ lệ nhỏ hai đầu rồi tính mean trên phần còn lại:
+\begin{enumerate}[leftmargin=2.2em,label=\textbf{\arabic*.}]
+    \item Tính số giá trị cắt mỗi đầu: $\lfloor 0.1\times19\,735\rfloor=1973$.
+    \item Bỏ 1973 giá trị nhỏ nhất và 1973 giá trị lớn nhất, còn 15\,789 giá trị giữa.
+    \item Tính mean trên 15\,789 giá trị này: $\bar{x}_{0.1}=72.75$.
+\end{enumerate}
+
+\noindent\textbf{MAD bền vững.} Lấy median của các độ lệch tuyệt đối đến median rồi nhân hệ số qui thang:
+\begin{enumerate}[leftmargin=2.2em,label=\textbf{\arabic*.}]
+    \item Tính độ lệch tuyệt đối của từng quan sát tới median: $|x_i-60|$.
+    \item Lấy median của các độ lệch này: $\text{MAD}=20$.
+    \item Nhân hệ số 1.4826 để qui về thang của $s$:
+    \begin{equation}
+    \hat{\sigma}_{\text{MAD}} = 1.4826 \times \text{MAD} = 1.4826 \times 20 = 29.65
+    \end{equation}
+\end{enumerate}
+
+\noindent\textbf{Phát hiện outlier theo IQR.} Dùng quy tắc râu boxplot với $Q_1$, $Q_3$, $IQR$ vừa tính:
+\begin{enumerate}[leftmargin=2.2em,label=\textbf{\arabic*.}]
+    \item Tính biên dưới:
+    \begin{equation}
+    Lower = Q_1 - 1.5\times IQR = 50 - 1.5\times 50 = -25
+    \end{equation}
+    \item Tính biên trên:
+    \begin{equation}
+    Upper = Q_3 + 1.5\times IQR = 100 + 1.5\times 50 = 175
+    \end{equation}
+    \item Vì \texttt{Appliances} luôn không âm, ngưỡng dưới $-25$ không có ý nghĩa thực tế. Đếm được 2138/19\,735 mốc ($\approx10.8\%$) vượt ngưỡng trên 175 -- đây là các khung giờ tiêu thụ đỉnh, không phải lỗi dữ liệu.
+\end{enumerate}
+
+\noindent\textbf{Bảng tổng hợp và so sánh trước/sau xử lý.} Bảng \ref{tab:chapter1_appliances_detailed_stats} tổng hợp các giá trị vừa tính và so sánh ba phiên bản: dữ liệu thô, dữ liệu sau khi cắt outlier ở ngưỡng 175 (theo quy tắc IQR) và dữ liệu sau khi biến đổi log1p. Việc đặt ba phiên bản cạnh nhau cho phép đối chiếu trực tiếp hai hướng xử lý và rút ra bài học về chuỗi thời gian.
+
+\begin{table}[ht]
+\centering
+\caption[Minh họa thống kê mô tả biến \texttt{Appliances} Appliances Energy Prediction]{Minh họa thống kê mô tả biến \texttt{Appliances} trong Appliances Energy Prediction bằng cách tính thủ công từ dãy quan sát, kèm so sánh giữa dữ liệu thô, dữ liệu cắt outlier ở ngưỡng 175 và dữ liệu biến đổi log1p.}
+\label{tab:chapter1_appliances_detailed_stats}
+\small
+\begin{tabular}{lrrrp{0.30\textwidth}}
+\toprule
+Thông số & Thô & Cắt tại 175 & log1p & Ý nghĩa phân tích \\
+\midrule
+$n$ & 19\,735 & 19\,735 & 19\,735 & Cắt và biến đổi đều giữ nguyên số mốc. \\
+Mean & 97.70 & 78.89 & 4.32 & Cắt và log đều kéo mean về gần median. \\
+Median & 60.00 & 60.00 & 4.11 & Bền vững: không đổi sau xử lý. \\
+Min / Max & 10 / 1080 & 10 / 175 & 2.40 / 6.99 & Phạm vi thu hẹp đáng kể. \\
+Range & 1070 & 165 & 4.59 & Range giảm mạnh vì đuôi phải bị nén. \\
+Variance & 10511.35 & 1845.67 & 0.42 & Phương sai giảm rõ, log nén mạnh nhất. \\
+Std & 102.52 & 42.96 & 0.65 & Độ lệch chuẩn giảm cùng phương sai. \\
+CV & 1.049 & 0.545 & 0.150 & CV từ $>1$ về $<0.2$ sau log. \\
+$P_{25}$ / $P_{75}$ & 50 / 100 & 50 / 100 & 3.93 / 4.62 & IQR không đổi với cắt, nén với log. \\
+$IQR$ & 50 & 50 & 0.68 & Vùng trung tâm ổn định trước cắt/log. \\
+Trimmed mean 10\% & 72.75 & 72.65 & 4.23 & Bền vững: gần như không đổi. \\
+$\hat{\sigma}_{\text{MAD}}$ & 29.65 & 29.65 & 0.42 & Bền vững tuyệt đối: không đổi sau cắt. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Nhận xét cho \texttt{Appliances}.} Bảng \ref{tab:chapter1_appliances_detailed_stats} cho thấy hai hướng xử lý dẫn tới hai kịch bản khác nhau. Nếu cắt outlier ở ngưỡng 175 như \texttt{chol}, mean giảm từ 97.70 xuống 78.89, $s$ giảm từ 102.52 xuống 42.96, nhưng \textbf{median, $IQR$ và $\hat{\sigma}_{\text{MAD}}$ gần như không đổi} -- đúng như lý thuyết về tính bền vững của nhóm số đo dựa trên median. Tuy nhiên, việc cắt bỏ 10.8\% mốc tiêu thụ đỉnh là \textit{mất thông tin dự báo quan trọng}, vì đây là các khung giờ tiêu thụ cao có thật chứ không phải lỗi. Nếu thay vào đó dùng log1p-transform (cột cuối), CV giảm từ 1.049 xuống 0.150, phân phối gần chuẩn hơn mà vẫn giữ toàn bộ mốc. Vì vậy, với chuỗi thời gian như \texttt{Appliances}, \textbf{log-transform là lựa chọn đúng} thay vì cắt outlier: nó nén đuôi phải, làm $s$ và CV giảm mạnh, nhưng vẫn bảo toàn ngày đỉnh cho mô hình dự báo. Khoảng cách lớn giữa $s=102.52$ và $\hat{\sigma}_{\text{MAD}}=29.65$ (hơn 3 lần) ở phiên bản thô chính là dấu hiệu để người phân tích nhận biết ngay rằng dữ liệu lệch phải nặng và cần biến đổi thay vì cắt.
+
+\FloatBarrier
+\subsection{So sánh hai biến và bài học phương pháp}
+
+\begin{table}[ht]
+\centering
+\caption{So sánh các số đo thống kê giữa \texttt{chol} (nhóm A) và \texttt{Appliances} (nhóm B).}
+\label{tab:chapter1_two_var_compare}
+\small
+\begin{tabular}{lrrp{0.36\textwidth}}
+\toprule
+Số đo & \texttt{chol} & \texttt{Appliances} & Bài đọc so sánh \\
+\midrule
+$n$ & 303 & 19\,735 & \texttt{Appliances} lớn hơn 65 lần, phân vị ổn định hơn. \\
+$\bar{x}-Median$ & 5.69 & 37.70 & \texttt{Appliances} lệch phải mạnh hơn nhiều. \\
+$CV$ & 0.210 & 1.049 & \texttt{chol} khá tập trung; \texttt{Appliances} cực kỳ phân tán. \\
+$s$ vs $\hat{\sigma}_{\text{MAD}}$ & 51.78 vs 47.44 & 102.52 vs 29.65 & \texttt{chol}: gần nhau $\Rightarrow$ ít outlier; \texttt{Appliances}: cách xa $\Rightarrow$ đuôi phải nặng. \\
+Tỷ lệ outlier IQR & 1.7\% & 10.8\% & \texttt{chol}: ứng viên lỗi cần xử lý; \texttt{Appliances}: đỉnh đích thực cần giữ. \\
+Trimmed mean & 243.97 & 72.75 & Dùng cho cả hai khi mean bị kéo. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Hai biến cho thấy cùng một bộ công thức thống kê nhưng dẫn tới những quyết định tiền xử lý trái ngược. Với \texttt{chol}, vì chỉ 1.7\% quan sát là outlier và chúng làm phồng $s$, cắt theo ngưỡng IQR là hợp lý; mean, $s$, variance thay đổi rõ sau cắt còn median, $IQR$, $\hat{\sigma}_{\text{MAD}}$ đứng yên -- minh chứng cho tính bền vững của nhóm số đo dựa trên median. Với \texttt{Appliances}, 10.8\% ``outlier'' theo công thức IQR thực ra là phần đuôi phân phối có thật, không được xóa mà cần biến đổi (log-transform) và giữ lại cho dự báo. Như vậy, không có số đo nào đúng tuyệt đối: mean/$s$ phù hợp khi dữ liệu sạch và cần hiệu quả; median/$IQR$/$\hat{\sigma}_{\text{MAD}}$ phù hợp khi cần bền vững; trimmed mean là cầu nối trung gian. Việc tính tay các bước trên hai biến thật -- từ sắp xếp dãy, thay số vào công thức đến đối chiếu trước/sau xử lý -- chính là cơ sở để ở Chương 3 chọn đúng số đo và biểu đồ cho từng biến trước khi vào học máy.
+
+\section{Hệ thống biểu đồ trực quan hóa và tác dụng phân tích}
+
+Hệ thống biểu đồ trong báo cáo được chọn theo ba tiêu chí: bản chất biến, câu hỏi phân tích và khả năng tái lập từ dữ liệu minh họa. Theo checklist của project, mỗi hình phải có đường dẫn dữ liệu, script sinh hình và diễn giải ngắn; vì vậy phần này không chỉ nêu tên biểu đồ mà còn chỉ rõ các bước vẽ, hình dạng/phân bố quan sát được, nhận xét dữ liệu, ý nghĩa phân tích và phạm vi áp dụng của từng biểu đồ. Các ví dụ được gắn với Heart Disease, Appliances Energy, HAM10000, Breast Cancer và CDC Diabetes. Để người đọc thấy rõ dữ liệu đầu vào của từng biểu đồ, mỗi nhóm biểu đồ chính được bổ sung một bảng dữ liệu mẫu rút gọn ngay trước hoặc sau hình minh họa.
+
+\subsection{Quy trình chung khi vẽ và phân tích biểu đồ}
+
+Mỗi biểu đồ trong báo cáo được thực hiện theo cùng một quy trình để bảo đảm hình vẽ không chỉ mang tính minh họa mà còn tạo ra kết luận phân tích:
+
+\begin{enumerate}
+    \item \textbf{Xác định câu hỏi phân tích:} cần xem phân phối một biến, so sánh giữa các nhóm, tìm tương quan, xem cơ cấu hay theo dõi xu hướng thời gian.
+    \item \textbf{Chọn biến và loại biểu đồ:} biến định lượng ưu tiên histogram, boxplot, scatter plot, heatmap hoặc line chart; biến định tính ưu tiên bar chart/pie chart; biến thời gian ưu tiên line chart.
+    \item \textbf{Chuẩn bị dữ liệu:} loại giá trị thiếu không hợp lệ, chuyển kiểu dữ liệu, sắp xếp thời gian nếu có, tính tần suất/phân vị/tương quan/rolling mean khi cần.
+    \item \textbf{Vẽ biểu đồ:} đặt trục, nhãn, tiêu đề, chú giải, đơn vị đo; chọn bins, màu, kích thước điểm hoặc thang màu phù hợp để tránh gây hiểu nhầm.
+    \item \textbf{Đọc hình dạng và phân bố:} xác định dữ liệu cân bằng hay lệch trái/lệch phải, một đỉnh hay nhiều đỉnh, phân tán rộng hay hẹp, có cụm, outlier hoặc mùa vụ hay không.
+    \item \textbf{Nhận xét dữ liệu:} liên hệ hình dạng biểu đồ với bản chất dữ liệu, ví dụ mất cân bằng lớp, đuôi phải dài, tương quan âm, biến động theo ngày hoặc điểm bất thường.
+    \item \textbf{Rút ra ý nghĩa và phạm vi áp dụng:} giải thích biểu đồ hỗ trợ quyết định nào trong EDA, tiền xử lý hoặc mô hình hóa; đồng thời nêu trường hợp nên dùng và không nên dùng.
+\end{enumerate}
+
+\begin{table}[H]
+\centering
+\caption{Cách đọc nhanh hình dạng biểu đồ và ý nghĩa phân tích}
+\label{tab:chapter1_chart_reading_guide}
+\small
+\begin{tabular}{p{0.20\textwidth}p{0.28\textwidth}p{0.26\textwidth}p{0.18\textwidth}}
+\toprule
+Dấu hiệu trên biểu đồ & Nhận xét về dữ liệu & Ý nghĩa phân tích & Hành động phù hợp \\
+\midrule
+Histogram lệch phải & Phần lớn giá trị nhỏ, ít giá trị rất lớn & Mean dễ bị kéo lên, mô hình nhạy outlier & Xem log-transform, median, IQR \\
+Boxplot có nhiều điểm ngoài râu & Có ứng viên outlier & Cần kiểm tra lỗi nhập liệu hoặc giá trị hiếm hợp lệ & Winsorize/capping hoặc giữ nếu có ý nghĩa miền \\
+Scatter có xu hướng tăng/giảm & Hai biến có liên hệ quan sát được & Có thể dùng làm đặc trưng hoặc kiểm tra giả thuyết & Tính correlation/regression, không kết luận nhân quả \\
+Bar chart lệch mạnh & Mất cân bằng nhóm/lớp & Mô hình phân loại dễ thiên lệch về lớp lớn & Dùng stratified split, class weight, resampling \\
+Line chart có đỉnh bất thường & Có biến động theo thời gian hoặc sự kiện đặc biệt & Cần tránh chia train/test ngẫu nhiên nếu dữ liệu phụ thuộc thời gian & Chia theo thời gian, thêm biến mùa vụ/rolling mean \\
+Heatmap có cặp tương quan cao & Đặc trưng có khả năng trùng thông tin & Có nguy cơ đa cộng tuyến & Chọn bớt biến hoặc dùng regularization \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Nhóm biểu đồ phân phối}
+
+Nhóm biểu đồ phân phối trả lời câu hỏi ``một biến định lượng phân bố như thế nào?''. Nhóm này dùng cho \texttt{chol}, \texttt{age}, \texttt{BMI}, \texttt{Appliances}, độ sáng ảnh. Hai biểu đồ chính là histogram và boxplot; có thể bổ sung KDE/density plot để xem đường mật độ mượt hơn, violin plot để so sánh phân phối theo lớp, strip/swarm plot để xem từng quan sát khi mẫu nhỏ.
+
+\begin{table}[H]
+\centering
+\caption{Nhóm biểu đồ phân phối: ý nghĩa, hạn chế và trường hợp áp dụng}
+\label{tab:chapter1_distribution_chart_group}
+\small
+\begin{tabular}{p{0.18\textwidth}p{0.25\textwidth}p{0.25\textwidth}p{0.20\textwidth}}
+\toprule
+Biểu đồ & Ý nghĩa & Trường hợp áp dụng & Hạn chế \\
+\midrule
+Histogram & Xem hình dáng phân phối, độ lệch, đa đỉnh & \texttt{Appliances}, \texttt{chol}, BMI & Phụ thuộc số bins, không chỉ rõ từng outlier \\
+Boxplot & Phát hiện outlier theo IQR, so sánh nhóm & \texttt{chol} theo target, độ sáng ảnh theo lớp & Không mô tả rõ đa đỉnh, outlier chỉ là ứng viên \\
+KDE/Density & Xem mật độ phân phối mượt & So sánh phân phối giữa nhóm bệnh/không bệnh & Phụ thuộc bandwidth, có thể làm mượt quá mức \\
+Violin plot & Kết hợp boxplot và density & Đặc trưng ảnh hoặc chỉ số y tế theo lớp & Khó đọc hơn boxplot nếu người xem chưa quen \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Histogram: hình dáng phân phối}
+
+Histogram chia miền giá trị thành các khoảng và đếm số quan sát trong từng khoảng. Biểu đồ này giúp nhận diện phân phối cân bằng, lệch trái, lệch phải, đa đỉnh hoặc có điểm bất thường. Trong báo cáo, histogram được dùng cho các biến như \texttt{age}, \texttt{chol}, \texttt{BMI}, \texttt{Appliances} và \texttt{age} trong HAM10000. Tác dụng chính là quyết định có cần log-transform, chuẩn hóa hoặc chia nhóm giá trị trước khi mô hình hóa hay không. \textbf{Hạn chế:} histogram phụ thuộc số bins; cùng một dữ liệu nhưng chọn bins khác nhau có thể làm hình dạng nhìn khác. Histogram cũng không hiển thị rõ từng điểm outlier như boxplot.
+
+\begin{table}[H]
+\centering
+\caption{Dữ liệu mẫu cho histogram Appliances Energy}
+\label{tab:chapter1_histogram_sample_data}
+\small
+\begin{tabular}{rrr}
+\toprule
+Mẫu & \texttt{Appliances} & \texttt{log1p(Appliances)} \\
+\midrule
+1 & 60 & 4.11 \\
+2 & 60 & 4.11 \\
+3 & 50 & 3.93 \\
+4 & 50 & 3.93 \\
+5 & 60 & 4.11 \\
+6 & 230 & 5.44 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Bảng \ref{tab:chapter1_histogram_sample_data} minh họa dạng dữ liệu một biến dùng để tạo histogram. Trước khi vẽ, cần tính thủ công các khoảng lớp và tần suất. Ví dụ chọn ba khoảng $[50,100)$, $[100,200)$, $[200,300]$ cho sáu mẫu trên, ta có kết quả ở Bảng \ref{tab:chapter1_histogram_calc}.
+
+\begin{table}[H]
+\centering
+\caption{Tính tần suất trước khi vẽ histogram Appliances}
+\label{tab:chapter1_histogram_calc}
+\small
+\begin{tabular}{lrr}
+\toprule
+Khoảng giá trị & Cách đếm & Tần suất \\
+\midrule
+$[50,100)$ & 50, 50, 60, 60, 60 & 5 \\
+$[100,200)$ & Không có mẫu & 0 \\
+$[200,300]$ & 230 & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Từ bảng tính này có thể vẽ tay histogram: trục hoành là khoảng giá trị, trục tung là tần suất. Cột log1p được tính bằng $\log(1+x)$, ví dụ $\log(1+60)=4.11$, nhằm chứng minh biến đổi log trước khi vẽ biểu đồ so sánh.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.90\textwidth]{../outputs/figures/appliances_energy_distribution_raw_vs_log.png}
+\caption[Minh họa histogram Python]{Minh họa histogram raw và log1p trên Appliances Energy bằng Python. Python source: \texttt{src/analyze\_appliances\_energy.py}; figure path: \texttt{outputs/figures/appliances\_energy\_distribution\_raw\_vs\_log.png}.}
+\label{fig:chapter1_histogram_example}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.90\textwidth]{../outputs/figures/excel_appliances_raw_vs_log_hist_preview.png}
+\caption[Minh họa histogram Excel]{Minh họa histogram raw và log1p trên Appliances Energy bằng Excel. Excel source: \texttt{excel/excel\_visualization\_comparison.xlsx}; Excel preview: \texttt{outputs/figures/excel\_appliances\_raw\_vs\_log\_hist\_preview.png}.}
+\label{fig:chapter1_histogram_example_excel}
+\end{figure}
+
+\textbf{Nhận xét và lý do chọn.} Histogram được chọn vì \texttt{Appliances} là biến định lượng liên tục và mục tiêu cần xem hình dạng phân phối. Hình \ref{fig:chapter1_histogram_example} cho thấy phân phối gốc lệch phải mạnh: phần lớn quan sát tập trung ở mức tiêu thụ thấp, nhưng vẫn có một số đỉnh tiêu thụ rất cao. Khi dùng log1p, phân phối gọn và cân bằng hơn. So sánh Python và Excel cho thấy hai công cụ cùng phản ánh một kết luận: dữ liệu năng lượng không nên đưa thẳng vào mô hình hồi quy mà cần xem xét biến đổi log hoặc xử lý outlier. Python phù hợp để tự động hóa và tái lập; Excel phù hợp để kiểm tra trực quan nhanh bằng bảng tính.
+
+\subsubsection{Boxplot: phát hiện outliers dựa trên IQR}
+
+Boxplot hiển thị median, $Q_1$, $Q_3$, IQR và các điểm ngoài ngưỡng $Q_1-1.5\times IQR$ hoặc $Q_3+1.5\times IQR$. Đây là biểu đồ quan trọng để phát hiện outlier và so sánh phân phối giữa các lớp. Ví dụ boxplot cholesterol theo \texttt{target\_binary} cho phép so sánh mức cholesterol giữa nhóm có và không có bệnh tim. Tác dụng phân tích là phát hiện biến cần xử lý ngoại lệ, đồng thời đánh giá biến định lượng có khả năng phân biệt nhãn hay không. \textbf{Hạn chế:} boxplot không mô tả rõ hình dạng phân phối bên trong; dữ liệu đa đỉnh có thể bị che khuất. Điểm ngoài râu hộp chỉ là ứng viên outlier, cần kiểm tra thêm bằng kiến thức miền.
+
+\begin{table}[H]
+\centering
+\caption{Dữ liệu mẫu cho boxplot cholesterol theo nhóm bệnh tim}
+\label{tab:chapter1_boxplot_sample_data}
+\small
+\begin{tabular}{rrrr}
+\toprule
+Mẫu & \texttt{target\_binary} & \texttt{chol} & Ghi chú \\
+\midrule
+1 & 0 & 233 & Nhóm không bệnh \\
+2 & 0 & 250 & Nhóm không bệnh \\
+3 & 1 & 204 & Nhóm có bệnh \\
+4 & 1 & 236 & Nhóm có bệnh \\
+5 & 0 & 354 & Giá trị cao \\
+6 & 1 & 564 & Ứng viên outlier \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Bảng \ref{tab:chapter1_boxplot_sample_data} cho thấy dữ liệu boxplot cần một biến định lượng và một biến nhóm. Trước khi vẽ, cần tính các đại lượng hộp: $Q_1$, median, $Q_3$, IQR và biên outlier.
+
+\begin{table}[H]
+\centering
+\caption{Tính toán trước khi vẽ boxplot cholesterol}
+\label{tab:chapter1_boxplot_calc}
+\small
+\begin{tabular}{lrr}
+\toprule
+Thành phần boxplot & Công thức/cách lấy & Kết quả \\
+\midrule
+$Q_1$ & $P_{25}$ của \texttt{chol} & 211 \\
+Median & $P_{50}$ của \texttt{chol} & 241 \\
+$Q_3$ & $P_{75}$ của \texttt{chol} & 275 \\
+IQR & $Q_3-Q_1$ & 64 \\
+Biên dưới & $Q_1-1.5\times IQR$ & 115 \\
+Biên trên & $Q_3+1.5\times IQR$ & 371 \\
+Ứng viên outlier & \texttt{chol} $>371$ hoặc $<115$ & 564 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Từ các kết quả trên có thể vẽ tay boxplot: hộp kéo từ 211 đến 275, đường giữa ở 241, râu trên đến 371 và điểm 564 được vẽ riêng như outlier.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.90\textwidth]{../outputs/figures/heart_disease_cholesterol_boxplot.png}
+\caption[Minh họa boxplot Heart Disease]{Minh họa boxplot: cholesterol theo nhóm bệnh tim. Python source: \texttt{src/analyze\_heart\_disease.py}; figure path: \texttt{outputs/figures/heart\_disease\_cholesterol\_boxplot.png}.}
+\label{fig:chapter1_boxplot_example}
+\end{figure}
+
+\textbf{Nhận xét và lý do chọn.} Boxplot được chọn vì \texttt{chol} là biến định lượng liên tục và câu hỏi phân tích là ``có outlier hay không, phân phối hai nhóm target khác nhau thế nào?''. Hình \ref{fig:chapter1_boxplot_example} cho thấy cholesterol có các điểm nằm ngoài vùng râu hộp, tức là có ứng viên outlier theo quy tắc IQR. Median và IQR giúp đọc cấu trúc trung tâm tốt hơn mean khi dữ liệu có giá trị cực trị. So với histogram, boxplot không mô tả chi tiết hình dạng phân phối, nhưng tốt hơn trong việc so sánh hai nhóm và phát hiện điểm bất thường. Vì vậy, mẫu Heart Disease phù hợp với boxplot khi mục tiêu là đánh giá outlier và khả năng phân biệt nhóm bệnh/không bệnh.
+
+\subsection{Nhóm biểu đồ tương quan và cơ cấu}
+
+Nhóm biểu đồ tương quan và cơ cấu trả lời hai câu hỏi: ``các biến có liên hệ với nhau không?'' và ``các nhóm định tính chiếm tỷ trọng thế nào?''. Scatter plot và heatmap dùng cho biến định lượng; bar chart và pie chart dùng cho biến định tính. Có thể bổ sung pair plot, hexbin plot, stacked bar chart và mosaic plot khi cần phân tích sâu hơn.
+
+\begin{table}[H]
+\centering
+\caption{Nhóm biểu đồ tương quan và cơ cấu: ý nghĩa, hạn chế và trường hợp áp dụng}
+\label{tab:chapter1_relation_structure_chart_group}
+\small
+\begin{tabular}{p{0.18\textwidth}p{0.25\textwidth}p{0.25\textwidth}p{0.20\textwidth}}
+\toprule
+Biểu đồ & Ý nghĩa & Trường hợp áp dụng & Hạn chế \\
+\midrule
+Scatter plot & Tìm liên hệ tuyến tính/phi tuyến, cụm, điểm bất thường & \texttt{age}--\texttt{thalach}, nhiệt độ--năng lượng & Rối khi nhiều điểm, không chứng minh nhân quả \\
+Bar chart/Pie chart & Xem cơ cấu định tính, lớp phổ biến/hiếm & \texttt{cp}, \texttt{dx}, \texttt{Diagnosis} & Pie khó so sánh nhiều nhóm; bar không thể hiện quan hệ nếu không nhóm/chồng \\
+Correlation heatmap & Xem tương quan nhiều biến định lượng & Chọn đặc trưng Heart Disease, Breast Cancer & Chủ yếu phản ánh tuyến tính, không chứng minh nhân quả \\
+Pair/Hexbin plot & Xem nhiều cặp biến hoặc mật độ điểm dày & EDA nhiều biến định lượng & Dễ rối, tốn không gian báo cáo \\
+Stacked bar/Mosaic & Xem quan hệ hai biến định tính & \texttt{dx} theo \texttt{localization}, target theo giới tính & Khó đọc khi nhiều nhóm nhỏ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Scatter plot: tìm liên hệ tuyến tính/phi tuyến}
+
+Scatter plot biểu diễn mối quan hệ giữa hai biến định lượng. Nếu các điểm tạo thành xu hướng tăng/giảm, có thể tồn tại liên hệ tuyến tính hoặc phi tuyến. Trong Heart Disease, scatter plot giữa \texttt{age} và \texttt{thalach} giúp kiểm tra xu hướng tuổi cao đi kèm nhịp tim tối đa thấp hơn hay không. Tác dụng phân tích là phát hiện quan hệ biến, cụm quan sát và điểm bất thường theo cặp biến. \textbf{Hạn chế:} khi số điểm quá lớn, điểm bị chồng lên nhau làm khó đọc; xu hướng quan sát được không khẳng định quan hệ nhân quả.
+
+\begin{table}[H]
+\centering
+\caption{Dữ liệu mẫu cho scatter plot tuổi và nhịp tim tối đa}
+\label{tab:chapter1_scatter_sample_data}
+\small
+\begin{tabular}{rrrr}
+\toprule
+Mẫu & \texttt{age} & \texttt{thalach} & \texttt{target\_binary} \\
+\midrule
+1 & 63 & 150 & 0 \\
+2 & 67 & 108 & 1 \\
+3 & 37 & 187 & 0 \\
+4 & 41 & 172 & 0 \\
+5 & 56 & 178 & 1 \\
+6 & 62 & 160 & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Bảng \ref{tab:chapter1_scatter_sample_data} minh họa mỗi dòng là một điểm trên scatter plot. Trước khi vẽ, cần chuyển mỗi dòng thành tọa độ $(x,y)$, với $x=\texttt{age}$ và $y=\texttt{thalach}$; nếu tô màu thì dùng thêm \texttt{target\_binary}.
+
+\begin{table}[H]
+\centering
+\caption{Tính tọa độ trước khi vẽ scatter plot}
+\label{tab:chapter1_scatter_calc}
+\small
+\begin{tabular}{rrrr}
+\toprule
+Mẫu & Tọa độ $(x,y)$ & Nhóm màu & Diễn giải \\
+\midrule
+1 & $(63,150)$ & 0 & Tuổi 63, nhịp tim tối đa 150 \\
+2 & $(67,108)$ & 1 & Tuổi 67, nhịp tim tối đa 108 \\
+3 & $(37,187)$ & 0 & Tuổi 37, nhịp tim tối đa 187 \\
+4 & $(41,172)$ & 0 & Tuổi 41, nhịp tim tối đa 172 \\
+5 & $(56,178)$ & 1 & Tuổi 56, nhịp tim tối đa 178 \\
+6 & $(62,160)$ & 1 & Tuổi 62, nhịp tim tối đa 160 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Từ bảng tọa độ này có thể vẽ tay scatter plot bằng cách đặt từng điểm lên hệ trục; nhóm màu 0/1 giúp phân biệt bệnh/không bệnh.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.90\textwidth]{../outputs/figures/heart_disease_age_thalach_scatter.png}
+\caption[Minh họa scatter plot Python]{Minh họa scatter plot tuổi và nhịp tim tối đa trong Heart Disease bằng Python. Python source: \texttt{src/analyze\_heart\_disease.py}; figure path: \texttt{outputs/figures/heart\_disease\_age\_thalach\_scatter.png}.}
+\label{fig:chapter1_scatter_example}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.90\textwidth]{../outputs/figures/excel_heart_age_thalach_scatter_preview.png}
+\caption[Minh họa scatter plot Excel]{Minh họa scatter plot tuổi và nhịp tim tối đa trong Heart Disease bằng Excel. Excel source: \texttt{excel/excel\_visualization\_comparison.xlsx}; Excel preview: \texttt{outputs/figures/excel\_heart\_age\_thalach\_scatter\_preview.png}.}
+\label{fig:chapter1_scatter_example_excel}
+\end{figure}
+
+\textbf{Nhận xét và lý do chọn.} Scatter plot được chọn vì \texttt{age} và \texttt{thalach} đều là biến định lượng, mục tiêu là kiểm tra quan hệ giữa hai biến thay vì chỉ xem từng biến riêng lẻ. Hình \ref{fig:chapter1_scatter_example} cho thấy xu hướng âm: tuổi tăng thì nhịp tim tối đa có xu hướng giảm. So với histogram và boxplot, scatter plot biểu diễn từng cặp quan sát nên phù hợp để phát hiện quan hệ tuyến tính, phi tuyến, cụm điểm hoặc điểm bất thường theo cặp biến. Python và Excel cho hình dạng xu hướng tương tự; Python thuận tiện khi cần tô màu theo target hoặc tính correlation, còn Excel giúp kiểm tra nhanh bằng thao tác trực quan.
+
+\subsubsection{Bar chart/Pie chart: cơ cấu định tính}
+
+Bar chart và pie chart dùng cho biến định tính. Bar chart để so sánh tần suất giữa các nhóm; pie chart để mô tả tỷ trọng khi số nhóm ít và tỷ lệ cần trình bày nhanh. Trong báo cáo, bar chart được ưu tiên hơn pie chart vì dễ so sánh hơn, đặc biệt với các biến có nhiều lớp như \texttt{localization} trong HAM10000. Tác dụng phân tích là nhận diện mất cân bằng lớp, lớp hiếm và cơ cấu dữ liệu đầu vào. \textbf{Hạn chế:} pie chart khó so sánh khi có nhiều nhóm hoặc tỷ lệ gần nhau; bar chart chỉ mô tả cơ cấu một biến nếu không mở rộng thành grouped/stacked bar.
+
+\begin{table}[H]
+\centering
+\caption{Dữ liệu mẫu cho bar chart loại đau ngực}
+\label{tab:chapter1_bar_sample_data}
+\small
+\begin{tabular}{lrr}
+\toprule
+Loại đau ngực \texttt{cp} & Tần suất & Tỷ lệ xấp xỉ \\
+\midrule
+1 & 23 & 7.6\% \\
+2 & 50 & 16.5\% \\
+3 & 86 & 28.4\% \\
+4 & 144 & 47.5\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Bảng \ref{tab:chapter1_bar_sample_data} là dữ liệu đã tổng hợp theo nhóm. Trước khi vẽ bar chart hoặc pie chart, cần tính tần suất và tỷ lệ: $p_j=f_j/n$ với $n=303$.
+
+\begin{table}[H]
+\centering
+\caption{Tính toán trước khi vẽ bar chart/pie chart biến \texttt{cp}}
+\label{tab:chapter1_bar_calc}
+\small
+\begin{tabular}{lrrr}
+\toprule
+Giá trị \texttt{cp} & $f_j$ & $p_j=f_j/303$ & Góc pie chart \\
+\midrule
+1 & 23 & 7.6\% & 27.3$^\circ$ \\
+2 & 50 & 16.5\% & 59.4$^\circ$ \\
+3 & 86 & 28.4\% & 102.2$^\circ$ \\
+4 & 144 & 47.5\% & 171.1$^\circ$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Từ bảng này có thể vẽ tay bar chart bằng chiều cao cột $f_j$; nếu vẽ pie chart thì dùng góc $p_j\times360^\circ$ cho từng lát cắt.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.90\textwidth]{../outputs/figures/heart_disease_chest_pain_bar.png}
+\caption[Minh họa bar chart Python]{Minh họa bar chart tần suất loại đau ngực Heart Disease bằng Python. Python source: \texttt{src/analyze\_heart\_disease.py}; figure path: \texttt{outputs/figures/heart\_disease\_chest\_pain\_bar.png}.}
+\label{fig:chapter1_bar_example}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.90\textwidth]{../outputs/figures/excel_heart_cp_bar_preview.png}
+\caption[Minh họa bar chart Excel]{Minh họa bar chart tần suất loại đau ngực Heart Disease bằng Excel. Excel source: \texttt{excel/excel\_visualization\_comparison.xlsx}; Excel preview: \texttt{outputs/figures/excel\_heart\_cp\_bar\_preview.png}.}
+\label{fig:chapter1_bar_example_excel}
+\end{figure}
+
+\textbf{Nhận xét và lý do chọn.} Bar chart được chọn vì \texttt{cp} là biến định tính/rời rạc, biểu diễn loại đau ngực. Với biến loại nhóm, histogram không phù hợp vì các mã 1--4 không phải thang đo liên tục; scatter plot cũng không có ý nghĩa nếu chỉ phân tích một biến định tính. Hình \ref{fig:chapter1_bar_example} cho thấy \texttt{cp=4} chiếm nhiều nhất, tức cơ cấu loại đau ngực không cân bằng. Bar chart tốt hơn pie chart trong mẫu này vì người đọc dễ so sánh chiều cao cột giữa bốn nhóm. Python và Excel cho cùng thứ tự nhóm, chứng minh bảng tần suất được tính nhất quán giữa hai công cụ.
+
+\subsection{Các dạng biểu đồ khác}
+
+Nhóm này dùng cho các trường hợp ngoài phân phối một biến, tương quan hai biến hoặc cơ cấu định tính đơn giản. Các dạng quan trọng gồm line chart cho chuỗi thời gian, rolling mean/area chart để làm mượt hoặc nhấn mạnh xu hướng, confusion matrix để đánh giá phân loại, prediction vs actual để đánh giá hồi quy/dự báo, image grid để kiểm tra dữ liệu ảnh.
+
+\begin{table}[H]
+\centering
+\caption{Các dạng biểu đồ khác: ý nghĩa, hạn chế và trường hợp áp dụng}
+\label{tab:chapter1_other_chart_group}
+\small
+\begin{tabular}{p{0.18\textwidth}p{0.25\textwidth}p{0.25\textwidth}p{0.20\textwidth}}
+\toprule
+Biểu đồ & Ý nghĩa & Trường hợp áp dụng & Hạn chế \\
+\midrule
+Line chart & Trend, seasonality, biến động theo thời gian & Appliances Energy, HAR, MHEALTH & Dễ nhiễu nếu dữ liệu dao động mạnh \\
+Rolling mean/Area chart & Làm mượt hoặc nhấn mạnh tổng lượng & Tiêu thụ điện theo ngày/tuần & Che mất biến động ngắn hạn \\
+Confusion matrix & Lỗi phân loại theo lớp & Heart Disease, HAM10000, Breast Cancer & Cần mô hình đã huấn luyện; phụ thuộc ngưỡng \\
+Prediction vs Actual & So sánh dự báo và thực tế & Regression/dự báo Appliances & Không chỉ rõ nguyên nhân sai số \\
+Image grid/montage & Kiểm tra chất lượng ảnh, lỗi nhãn & HAM10000 & Chủ quan, chỉ xem được mẫu nhỏ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Line chart cho chuỗi thời gian}
+
+Line chart đặt thời gian trên trục hoành và giá trị quan sát trên trục tung. Biểu đồ này bắt buộc với nhóm B để phân tích trend, seasonality, biến động bất thường và thời điểm thay đổi. Với Appliances Energy, dữ liệu có 19,735 mẫu từ 2016-01-11 17:00:00 đến 2016-05-27 18:00:00, tần suất phổ biến 10 phút/mẫu. Do đó line chart theo ngày được dùng để làm mượt xu hướng tiêu thụ năng lượng. Tác dụng phân tích là chọn cách chia train/test theo thời gian và đánh giá biến động trước khi dự báo. \textbf{Hạn chế:} line chart dễ bị nhiễu nếu tần suất lấy mẫu dày và biến động mạnh; cần sắp xếp thời gian đúng, xử lý missing timestamp và cân nhắc rolling mean.
+
+\begin{table}[H]
+\centering
+\caption{Dữ liệu mẫu cho line chart Appliances Energy theo thời gian}
+\label{tab:chapter1_line_sample_data}
+\small
+\begin{tabular}{lr}
+\toprule
+Thời điểm & \texttt{Appliances} \\
+\midrule
+2016-01-11 17:00 & 60 \\
+2016-01-11 17:10 & 60 \\
+2016-01-11 17:20 & 50 \\
+2016-01-11 17:30 & 50 \\
+2016-01-11 17:40 & 60 \\
+2016-01-11 17:50 & 50 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Bảng \ref{tab:chapter1_line_sample_data} cho thấy điều kiện cần của line chart là có biến thời gian được sắp xếp. Trước khi vẽ, cần chuyển từng dòng thành điểm $(t,y)$, với $t$ là thời điểm và $y=\texttt{Appliances}$; nếu vẽ đường trung bình trượt thì tính thêm rolling mean.
+
+\begin{table}[H]
+\centering
+\caption{Tính tọa độ và rolling mean trước khi vẽ line chart}
+\label{tab:chapter1_line_calc}
+\small
+\begin{tabular}{lrr}
+\toprule
+Thời điểm & $y_t$ & Rolling mean 3 mẫu \\
+\midrule
+2016-01-11 17:00 & 60 & -- \\
+2016-01-11 17:10 & 60 & -- \\
+2016-01-11 17:20 & 50 & 56.67 \\
+2016-01-11 17:30 & 50 & 53.33 \\
+2016-01-11 17:40 & 60 & 53.33 \\
+2016-01-11 17:50 & 50 & 53.33 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Công thức rolling mean 3 mẫu là $\bar{y}_{t,3}=(y_t+y_{t-1}+y_{t-2})/3$, ví dụ tại 17:20: $(60+60+50)/3=56.67$. Từ bảng này có thể vẽ tay line chart bằng cách nối các điểm theo thứ tự thời gian.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.90\textwidth]{../outputs/figures/appliances_energy_daily_line.png}
+\caption[Minh họa line chart Python]{Minh họa line chart tiêu thụ năng lượng theo ngày trong Appliances Energy bằng Python. Python source: \texttt{src/analyze\_appliances\_energy.py}; figure path: \texttt{outputs/figures/appliances\_energy\_daily\_line.png}.}
+\label{fig:chapter1_line_example}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.90\textwidth]{../outputs/figures/excel_appliances_daily_line_preview.png}
+\caption[Minh họa line chart Excel]{Minh họa line chart tiêu thụ năng lượng theo ngày trong Appliances Energy bằng Excel. Excel source: \texttt{excel/excel\_visualization\_comparison.xlsx}; Excel preview: \texttt{outputs/figures/excel\_appliances\_daily\_line\_preview.png}.}
+\label{fig:chapter1_line_example_excel}
+\end{figure}
+
+\textbf{Nhận xét và lý do chọn.} Line chart được chọn vì Appliances Energy có trục thời gian rõ ràng, mỗi quan sát gắn với thời điểm thu thập. Nếu dùng histogram, ta chỉ biết phân phối mức tiêu thụ nhưng mất thông tin thứ tự thời gian; nếu dùng bar chart, xu hướng theo ngày không rõ. Hình \ref{fig:chapter1_line_example} cho thấy mức tiêu thụ dao động theo ngày, có các giai đoạn tăng/giảm và các điểm cao bất thường. So sánh Python và Excel cho thấy xu hướng tổng thể thống nhất. Vì vậy, line chart là lựa chọn phù hợp nhất để phân tích trend, seasonality và làm cơ sở cho quyết định chia train/test theo thời gian ở bài toán dự báo.
+
+\subsubsection{Correlation heatmap: tương quan nhiều biến định lượng}
+
+Correlation heatmap biểu diễn ma trận tương quan giữa các biến định lượng. Màu sắc giúp nhận diện nhanh cặp biến có tương quan dương hoặc âm. Biểu đồ này hữu ích trong bước lựa chọn đặc trưng và phát hiện đa cộng tuyến trước khi huấn luyện mô hình.
+
+Hệ số tương quan Pearson giữa hai biến $X$ và $Y$ được tính bằng:
+
+\begin{equation}
+r_{XY} = \frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}{\sqrt{\sum_{i=1}^{n}(x_i-\bar{x})^2}\sqrt{\sum_{i=1}^{n}(y_i-\bar{y})^2}}
+\end{equation}
+
+Giá trị $r_{XY}$ nằm trong khoảng $[-1, 1]$. Giá trị gần 1 biểu thị tương quan dương mạnh; gần -1 biểu thị tương quan âm mạnh; gần 0 biểu thị mối quan hệ tuyến tính yếu. Tuy nhiên, tương quan không đồng nghĩa với quan hệ nhân quả, nên heatmap chỉ nên được xem là công cụ thăm dò ban đầu.
+
+\begin{table}[H]
+\centering
+\caption{Dữ liệu mẫu cho correlation heatmap Heart Disease}
+\label{tab:chapter1_heatmap_sample_data}
+\small
+\begin{tabular}{rrrrr}
+\toprule
+Mẫu & \texttt{age} & \texttt{trestbps} & \texttt{chol} & \texttt{thalach} \\
+\midrule
+1 & 63 & 145 & 233 & 150 \\
+2 & 67 & 160 & 286 & 108 \\
+3 & 37 & 130 & 250 & 187 \\
+4 & 41 & 130 & 204 & 172 \\
+5 & 56 & 120 & 236 & 178 \\
+6 & 62 & 140 & 268 & 160 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Bảng \ref{tab:chapter1_heatmap_sample_data} gồm nhiều biến định lượng trên cùng các mẫu. Từ bảng này, hệ số tương quan được tính cho từng cặp biến, sau đó đưa vào ma trận màu của heatmap. Để chứng minh heatmap không phải hình vẽ ngẫu nhiên, Bảng \ref{tab:chapter1_heatmap_calc} đưa ra một số hệ số tương quan đã tính trước khi tô màu.
+
+\begin{table}[H]
+\centering
+\caption{Tính toán tương quan trước khi vẽ heatmap}
+\label{tab:chapter1_heatmap_calc}
+\small
+\begin{tabular}{lrr}
+\toprule
+Cặp biến & Hệ số $r$ & Ý nghĩa màu \\
+\midrule
+\texttt{age} -- \texttt{thalach} & -0.39 & Tương quan âm, màu lạnh \\
+\texttt{age} -- \texttt{trestbps} & 0.28 & Tương quan dương yếu, màu ấm nhạt \\
+\texttt{chol} -- \texttt{trestbps} & 0.13 & Gần trung tính \\
+\texttt{chol} -- \texttt{thalach} & -0.01 & Gần 0, màu trung tính \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Từ các hệ số này có thể vẽ tay heatmap bằng cách lập ma trận biến--biến, ghi $r$ vào từng ô và gán màu theo độ lớn/dấu của $r$.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{../outputs/figures/heart_disease_correlation_heatmap.png}
+\caption[Minh họa correlation heatmap Heart Disease]{Minh họa correlation heatmap: tương quan biến trong Heart Disease. Python source: \texttt{src/analyze\_heart\_disease.py}; figure path: \texttt{outputs/figures/heart\_disease\_correlation\_heatmap.png}.}
+\label{fig:chapter1_heatmap_example}
+\end{figure}
+
+\textbf{Nhận xét và lý do chọn.} Correlation heatmap được chọn vì Heart Disease có nhiều biến định lượng và cần xem nhanh quan hệ giữa nhiều cặp biến cùng lúc. Nếu chỉ dùng scatter plot, mỗi hình chỉ thể hiện một cặp biến; heatmap gom toàn bộ ma trận tương quan vào một hình, giúp phát hiện cặp biến có liên hệ dương/âm mạnh và các nhóm biến có khả năng trùng thông tin. Hình \ref{fig:chapter1_heatmap_example} phù hợp cho bước chọn đặc trưng trước khi học máy. Tuy nhiên, heatmap chỉ phản ánh tương quan tuyến tính, không chứng minh quan hệ nhân quả và không thay thế kiểm định thống kê hay kiến thức chuyên ngành y tế.
+
+\subsection{Một số dạng biểu đồ bổ sung phù hợp với bài toán}
+
+Ngoài sáu dạng chính, báo cáo đề xuất thêm ba biểu đồ mới có khả năng bổ sung trực tiếp cho phân tích trong các chương sau: raincloud plot cho phân phối theo lớp, ridgeline plot cho nhiều phân phối song song và hexbin plot cho dữ liệu hai biến có mật độ điểm cao. Ba biểu đồ này không thay thế histogram, boxplot hoặc scatter plot; chúng được dùng khi biểu đồ cơ bản bắt đầu che mất mật độ, chồng điểm hoặc khác biệt nhỏ giữa nhiều nhóm. Các biểu đồ mới được khai báo trong Bảng \ref{tab:chapter1_extra_chart_types} trước khi minh họa chi tiết.
+
+\begin{table}[H]
+\centering
+\caption{Đề xuất 3 biểu đồ mới: ưu điểm, nhược điểm và phạm vi áp dụng}
+\label{tab:chapter1_extra_chart_types}
+\small
+\begin{tabular}{p{0.16\textwidth}p{0.25\textwidth}p{0.21\textwidth}p{0.21\textwidth}p{0.12\textwidth}}
+\toprule
+Biểu đồ mới & Giới thiệu & Ưu điểm & Nhược điểm & Phạm vi áp dụng \\
+\midrule
+Raincloud plot & Kết hợp density/violin, boxplot và điểm dữ liệu thô trong cùng một hình. & Vừa thấy hình dạng phân phối, median/IQR, vừa thấy từng quan sát; tốt hơn boxplot khi cần giải thích sự chồng lấn giữa các lớp. & Dễ rối nếu số lớp nhiều hoặc mẫu quá lớn; cần chú thích rõ để người đọc không quen vẫn hiểu. & So sánh biến định lượng theo lớp: \texttt{chol} theo \texttt{target\_binary}, độ sáng ảnh HAM10000 theo \texttt{dx}. \\
+Ridgeline plot & Xếp nhiều density plot theo hàng ngang để so sánh nhiều nhóm hoặc nhiều mốc thời gian. & Tiết kiệm không gian khi có nhiều phân phối; dễ nhận ra dịch chuyển trung tâm, độ lệch và đa đỉnh giữa các nhóm. & Không phù hợp nếu nhóm quá ít; phần chồng lớp có thể gây hiểu nhầm diện tích nếu thang đo không thống nhất. & So sánh phân phối \texttt{Appliances} theo tháng/ngày trong tuần hoặc phân phối tuổi theo lớp bệnh. \\
+Hexbin plot & Chia mặt phẳng hai biến thành các ô lục giác và tô màu theo số điểm trong mỗi ô. & Giải quyết overplotting tốt hơn scatter plot khi dữ liệu nhiều điểm; màu thể hiện mật độ quan sát. & Mất thông tin từng điểm; kết quả phụ thuộc kích thước ô và thang màu. & Cặp biến định lượng dày điểm: \texttt{T1}--\texttt{Appliances}, \texttt{age}--\texttt{thalach}, đặc trưng ảnh số hóa. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Raincloud plot cho phân phối theo lớp}
+
+Raincloud plot trong Bảng \ref{tab:chapter1_extra_chart_types} kết hợp ba lớp thông tin: density/violin để thấy hình dạng phân phối, boxplot để đọc median và IQR, và điểm jitter để thấy quan sát thô. Biểu đồ này phù hợp khi cần so sánh biến định lượng giữa các nhóm nhưng boxplot đơn lẻ chưa cho biết mật độ điểm tập trung ở đâu. Với Heart Disease, raincloud plot có thể dùng cho \texttt{chol} theo \texttt{target\_binary}. Dữ liệu đầu vào gồm hai cột: nhãn bệnh \texttt{target\_binary} và cholesterol \texttt{chol}; mỗi nhóm được vẽ một nửa density, một hộp IQR và các điểm jitter. Nếu nhóm có bệnh có đuôi phải dài hơn, biểu đồ cho thấy khác biệt không chỉ ở median mà còn ở mật độ và outlier. \textbf{Hạn chế:} raincloud plot dễ rối khi có quá nhiều lớp hoặc quá nhiều điểm; cần chú thích rõ ý nghĩa của density, hộp IQR và điểm dữ liệu.
+
+\subsubsection{Ridgeline plot cho nhiều phân phối song song}
+
+Ridgeline plot trong Bảng \ref{tab:chapter1_extra_chart_types} xếp nhiều đường mật độ theo từng nhóm hoặc từng mốc thời gian. Biểu đồ này phù hợp khi cần so sánh nhiều phân phối cùng lúc mà histogram hoặc KDE riêng lẻ chiếm quá nhiều không gian. Với Appliances Energy, ridgeline plot được dùng để so sánh phân phối \texttt{log1p(Appliances)} theo tháng. Dữ liệu đầu vào gồm tháng trích từ biến thời gian và giá trị \texttt{Appliances\_log1p}; mỗi tháng tạo một density riêng, xếp chồng theo trục dọc. Nếu một tháng có density lệch phải hơn tháng khác, người phân tích có cơ sở kiểm tra yếu tố mùa vụ hoặc thay đổi hành vi tiêu thụ. \textbf{Hạn chế:} ridgeline plot có thể gây hiểu nhầm nếu thang mật độ không thống nhất hoặc các đường chồng quá mạnh; nên dùng cùng thang đo và sắp xếp nhóm theo thời gian.
+
+\subsubsection{Hexbin plot cho dữ liệu hai biến dày điểm}
+
+Hexbin plot trong Bảng \ref{tab:chapter1_extra_chart_types} chia mặt phẳng hai biến thành các ô lục giác và tô màu theo số quan sát trong từng ô. Biểu đồ này phù hợp khi scatter plot bị overplotting, tức nhiều điểm chồng lên nhau làm người đọc không thấy vùng mật độ cao. Với dữ liệu 19,735 mẫu của Appliances Energy, hexbin plot giữa \texttt{T1} và \texttt{Appliances} phù hợp hơn scatter plot vì mỗi ô màu đậm cho biết vùng nhiệt độ phòng và mức tiêu thụ điện xuất hiện thường xuyên. Với Heart Disease, hexbin cũng có thể dùng cho cặp \texttt{age}--\texttt{thalach} nếu mở rộng sang dữ liệu lớn hơn. \textbf{Hạn chế:} hexbin plot làm mất thông tin từng điểm riêng lẻ; kết quả phụ thuộc kích thước ô và thang màu, nên cần chọn tham số nhất quán khi so sánh nhiều hình.
+
+\begin{table}[H]
+\centering
+\caption{Dữ liệu mẫu minh họa ba biểu đồ mới}
+\label{tab:chapter1_extra_chart_sample_data}
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Dataset & Biến nhóm/thời gian & Biến $x$ & Biến $y$ & Biểu đồ phù hợp \\
+\midrule
+Heart Disease & \texttt{target\_binary} & -- & \texttt{chol} & Raincloud plot \\
+Heart Disease & \texttt{target\_binary} & -- & \texttt{thalach} & Raincloud plot \\
+Appliances Energy & Tháng/ngày trong tuần & -- & \texttt{Appliances} & Ridgeline plot \\
+Appliances Energy & -- & \texttt{T1} & \texttt{Appliances} & Hexbin plot \\
+HAM10000 & \texttt{dx} & -- & Mean intensity & Raincloud/Ridgeline plot \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.90\textwidth]{../outputs/figures/ham10000_mean_intensity_boxplot.png}
+\caption[Minh họa dữ liệu cho raincloud plot]{Cơ sở thay thế bằng raincloud plot: độ sáng ảnh HAM10000 theo lớp. Python source: \texttt{src/analyze\_ham10000.py}; figure path: \texttt{outputs/figures/ham10000\_mean\_intensity\_boxplot.png}.}
+\label{fig:chapter1_extra_chart_examples}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.90\textwidth]{../outputs/figures/heart_disease_age_thalach_scatter.png}
+\caption[Minh họa dữ liệu cho hexbin plot]{Cơ sở thay thế bằng hexbin plot: tuổi và nhịp tim tối đa trong Heart Disease. Python source: \texttt{src/analyze\_heart\_disease.py}; figure path: \texttt{outputs/figures/heart\_disease\_age\_thalach\_scatter.png}.}
+\label{fig:chapter1_extra_chart_examples_hexbin}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{../outputs/figures/appliances_energy_monthly_ridgeline.png}
+\caption[Minh họa ridgeline plot Appliances Energy]{Minh họa ridgeline plot: phân phối \texttt{log1p(Appliances)} theo tháng trong Appliances Energy. Python source: \texttt{src/analyze\_appliances\_energy.py}; figure path: \texttt{outputs/figures/appliances\_energy\_monthly\_ridgeline.png}.}
+\label{fig:chapter1_ridgeline_example}
+\end{figure}
+
+\textbf{Nhận xét và lý do chọn.} Ba biểu đồ mới được chọn vì mỗi biểu đồ xử lý một hạn chế cụ thể của biểu đồ cơ bản. Raincloud plot mở rộng boxplot khi cần thấy cả density và điểm dữ liệu; ridgeline plot mở rộng KDE khi cần so sánh nhiều nhóm/thời đoạn; hexbin plot mở rộng scatter plot khi điểm quan sát quá dày. Trong báo cáo, chúng nên được dùng có chọn lọc: chỉ thêm khi câu hỏi phân tích cần mật độ phân phối, nhiều nhóm song song hoặc dữ liệu hai biến quá đông điểm. Nếu mục tiêu chỉ là mô tả đơn giản, histogram, boxplot và scatter plot vẫn là lựa chọn dễ đọc hơn.
+
+\section{Các phép biến đổi và tiền xử lý cơ bản}
+
+Các phép biến đổi và tiền xử lý là cầu nối giữa thống kê mô tả và mô hình hóa. Theo Han, Kamber và Pei, chất lượng dữ liệu ảnh hưởng trực tiếp đến chất lượng khai phá dữ liệu; dữ liệu thiếu, nhiễu, lệch thang đo hoặc không dừng có thể làm mô hình học sai cấu trúc thật \cite{Han2011DataMining}. Trong học máy ứng dụng, Kuhn và Johnson cũng nhấn mạnh rằng tiền xử lý và feature engineering phải được quyết định dựa trên bản chất biến, phân phối và thuật toán sử dụng, không nên áp dụng máy móc cho mọi cột \cite{Kuhn2019FeatureEngineering}. Với dữ liệu chuỗi thời gian, Hyndman và Athanasopoulos khuyến nghị xử lý biến đổi phương sai, sai phân và kiểm tra thứ tự thời gian trước khi dự báo \cite{Hyndman2021Forecasting}.
+
+\subsection{Điền khuyết}
+
+Dữ liệu thực tế thường có missing value do lỗi nhập liệu, lỗi cảm biến, file bị ghép thiếu hoặc một số thuộc tính không đo được ở mọi mẫu. Nếu bỏ toàn bộ dòng thiếu, kích thước mẫu có thể giảm mạnh và tạo thiên lệch nếu missing không ngẫu nhiên. Vì vậy, cần chọn cách điền khuyết theo kiểu biến và nguyên nhân thiếu. Với biến định lượng cân bằng, mean giữ nguyên trung bình tổng thể; với biến định lượng lệch hoặc có outlier, median bền vững hơn; với biến định tính, mode giữ lại lớp phổ biến nhất.
+
+\begin{equation}
+x_{missing} =
+\begin{cases}
+median(X), & \text{nếu X là biến định lượng có outlier} \\
+mean(X), & \text{nếu X là biến định lượng cân bằng} \\
+mode(X), & \text{nếu X là biến định tính}
+\end{cases}
+\end{equation}
+
+\textbf{Trường hợp/phạm vi áp dụng.} Điền mean/median phù hợp khi tỷ lệ thiếu thấp và biến thiếu không phải nhãn mục tiêu. Điền mode phù hợp với biến phân loại có số lớp ít. Với chuỗi thời gian, nên ưu tiên nội suy, forward fill hoặc backward fill nếu giá trị liền kề có ý nghĩa thời gian. Không nên điền khuyết tùy tiện khi tỷ lệ thiếu quá cao, khi missing mang ý nghĩa riêng, hoặc khi biến thiếu là target cần dự báo.
+
+\textbf{Ví dụ cụ thể.} Trong Heart Disease, biến \texttt{ca} thiếu 4 giá trị và \texttt{thal} thiếu 2 giá trị. Vì tỷ lệ thiếu thấp, có thể điền \texttt{ca} bằng median/mode sau khi xem phân phối, và điền \texttt{thal} bằng mode vì đây là biến phân loại được mã hóa. Trong Appliances Energy, các biến cảm biến nếu có khoảng trống ngắn nên dùng nội suy tuyến tính theo thời gian để giữ xu hướng liên tục thay vì điền mean toàn cục.
+
+\subsection{Chuẩn hóa thang đo}
+
+Trong học máy, các biến có thang đo khác nhau có thể làm thuật toán dựa trên khoảng cách hoặc gradient bị lệch. Ví dụ, cholesterol có miền khoảng hàng trăm, còn \texttt{oldpeak} chỉ khoảng 0--6; nếu dùng K-Means hoặc SVM mà không chuẩn hóa, biến có đơn vị lớn dễ chi phối khoảng cách. Hai kỹ thuật cơ bản là min-max scaling và standardization.
+
+Min-max scaling đưa giá trị về khoảng $[0,1]$:
+
+\begin{equation}
+x' = \frac{x - x_{min}}{x_{max} - x_{min}}
+\end{equation}
+
+Standardization đưa dữ liệu về mean 0 và standard deviation 1:
+
+\begin{equation}
+x' = \frac{x - \mu}{\sigma}
+\end{equation}
+
+\textbf{Trường hợp/phạm vi áp dụng.} Min-max scaling phù hợp khi cần giữ miền cố định, ví dụ đặc trưng ảnh đưa về $[0,1]$ hoặc mô hình neural network. Standardization phù hợp hơn cho Logistic Regression, SVM, PCA, K-Means và Hierarchical Clustering vì các thuật toán này nhạy với thang đo. Không bắt buộc chuẩn hóa cho cây quyết định và Random Forest vì chúng tách theo ngưỡng từng biến, nhưng chuẩn hóa vẫn có thể hữu ích khi so sánh hệ số hoặc kết hợp với thuật toán khác.
+
+\textbf{Ví dụ cụ thể.} Với Heart Disease, trước khi chạy K-Means, các biến \texttt{age}, \texttt{trestbps}, \texttt{chol}, \texttt{thalach}, \texttt{oldpeak} cần standardization để \texttt{chol} không áp đảo khoảng cách. Với HAM10000, nếu trích đặc trưng độ sáng trung bình từ ảnh, giá trị pixel nên chia cho 255 để đưa về $[0,1]$ trước khi so sánh giữa ảnh.
+
+\subsection{Log transform và differencing cho chuỗi thời gian}
+\label{sec:logtransform}
+
+Log transform dùng khi biến định lượng lệch phải mạnh, có nhiều giá trị nhỏ nhưng một số giá trị rất lớn. Phép biến đổi này nén phần đuôi phải, giảm ảnh hưởng của giá trị cực trị và giúp mô hình tuyến tính dễ học hơn. Với dữ liệu chuỗi thời gian, log transform còn giúp phương sai ổn định hơn trước khi dự báo \cite{Hyndman2021Forecasting}:
+
+\begin{equation}
+y'_t = \log(1 + y_t)
+\end{equation}
+
+Sai phân bậc 1 giúp loại bỏ xu hướng cục bộ và chuyển phân tích từ mức giá trị sang mức thay đổi:
+
+\begin{equation}
+\Delta y_t = y_t - y_{t-1}
+\end{equation}
+
+\textbf{Trường hợp/phạm vi áp dụng.} Log1p phù hợp với biến không âm và lệch phải như \texttt{Appliances}, chi phí, doanh thu, số lượt truy cập hoặc cường độ pixel tổng hợp. Không dùng log trực tiếp cho giá trị âm; khi có 0 nên dùng \texttt{log1p}. Differencing phù hợp cho chuỗi thời gian có xu hướng hoặc mức nền thay đổi; tuy nhiên nếu sai phân quá mức có thể làm mất thông tin dài hạn và tăng nhiễu.
+
+\textbf{Ví dụ cụ thể.} Trong Appliances Energy, \texttt{Appliances\_log1p} và \texttt{Appliances\_diff} đã được tạo trong script \texttt{src/analyze\_appliances\_energy.py}. Histogram raw cho thấy \texttt{Appliances} lệch phải, còn histogram log1p gọn hơn. Line chart theo ngày và ridgeline plot theo tháng giúp kiểm tra liệu phân phối tiêu thụ điện có thay đổi theo thời gian hay không. Khi xây dựng mô hình dự báo, dữ liệu phải chia train/test theo thứ tự thời gian, không random split, để tránh rò rỉ thông tin tương lai.
+
+\begin{table}[H]
+\centering
+\caption{Tóm tắt phạm vi áp dụng các phép tiền xử lý cơ bản}
+\label{tab:chapter1_preprocess_scope}
+\small
+\begin{tabular}{p{0.18\textwidth}p{0.27\textwidth}p{0.25\textwidth}p{0.20\textwidth}}
+\toprule
+Kỹ thuật & Áp dụng khi & Không nên dùng khi & Ví dụ trong báo cáo \\
+\midrule
+Mean/median/mode imputation & Tỷ lệ thiếu thấp, biến đầu vào quan trọng & Missing quá cao hoặc missing là tín hiệu riêng & \texttt{ca}, \texttt{thal} trong Heart Disease \\
+Nội suy thời gian & Chuỗi thời gian có khoảng trống ngắn & Khoảng trống dài, cảm biến lỗi kéo dài & Cảm biến Appliances Energy \\
+Min-max scaling & Cần miền $[0,1]$, dữ liệu ảnh/neural network & Có outlier mạnh chưa xử lý & Độ sáng ảnh HAM10000 \\
+Standardization & SVM, Logistic Regression, PCA, K-Means & Cần giữ đơn vị gốc để giải thích trực tiếp & Các biến Heart Disease trước clustering \\
+Log1p transform & Biến không âm lệch phải & Dữ liệu âm hoặc cần diễn giải đơn vị gốc & \texttt{Appliances\_log1p} \\
+Differencing & Chuỗi có xu hướng, cần phân tích thay đổi & Chuỗi quá nhiễu hoặc cần mức tuyệt đối & \texttt{Appliances\_diff} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\section{Quy trình phân tích khám phá dữ liệu}
+
+Phân tích khám phá dữ liệu (Exploratory Data Analysis - EDA) là giai đoạn nối giữa dữ liệu thô và mô hình phân tích. Nếu bỏ qua EDA, người phân tích có thể đưa vào mô hình các biến bị lỗi kiểu dữ liệu, phân phối lệch quá mạnh, chứa outlier bất thường hoặc có target mất cân bằng. Trong báo cáo này, EDA được xem như một quy trình có kiểm soát gồm năm bước.
+
+\begin{enumerate}
+    \item \textbf{Kiểm tra cấu trúc dữ liệu}: xác định số dòng, số cột, kiểu dữ liệu, khóa thời gian, nhãn mục tiêu và các file nguồn.
+    \item \textbf{Kiểm tra chất lượng dữ liệu}: tìm giá trị thiếu, giá trị trùng, giá trị ngoài miền hợp lý và kiểu dữ liệu bị đọc sai.
+    \item \textbf{Thống kê mô tả}: tính mean, median, mode, percentile, variance, standard deviation, CV và IQR cho các biến định lượng; lập bảng tần suất cho biến định tính.
+    \item \textbf{Trực quan hóa}: chọn biểu đồ phù hợp với bản chất biến và câu hỏi phân tích.
+    \item \textbf{Rút kết luận phân tích}: ghi nhận đặc điểm dữ liệu có ảnh hưởng đến tiền xử lý, feature engineering và mô hình học máy.
+\end{enumerate}
+
+Điểm quan trọng là EDA không dừng ở việc tạo ra nhiều hình. Mỗi hình phải trả lời một câu hỏi cụ thể. Ví dụ, histogram trả lời câu hỏi ``biến này phân phối như thế nào?'', boxplot trả lời câu hỏi ``biến này có outlier không?'', scatter plot trả lời câu hỏi ``hai biến có quan hệ gì không?'', còn line chart trả lời câu hỏi ``dữ liệu thay đổi ra sao theo thời gian?''.
+
+\begin{table}[H]
+\centering
+\caption{Quy trình EDA và sản phẩm đầu ra cần lưu}
+\label{tab:chapter1_eda_outputs}
+\small
+\begin{tabular}{p{0.20\textwidth}p{0.32\textwidth}p{0.34\textwidth}}
+\toprule
+Bước & Câu hỏi chính & Sản phẩm đầu ra \\
+\midrule
+Kiểm kê dữ liệu & Dữ liệu có bao nhiêu dòng/cột? & Inventory CSV, mô tả dataset \\
+Kiểm tra thiếu & Biến nào thiếu và thiếu bao nhiêu? & Missing-value table \\
+Thống kê mô tả & Trung tâm và độ phân tán ra sao? & Summary table \\
+Trực quan hóa & Phân phối, outlier, quan hệ biến thế nào? & PNG figure, Excel chart \\
+Diễn giải & Kết quả tác động gì đến mô hình? & Nhận xét trong báo cáo \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Bảng \ref{tab:chapter1_eda_outputs} cũng là cơ sở tổ chức thư mục của dự án. Các file trong \texttt{outputs/tables/} lưu bằng chứng dạng bảng; các file trong \texttt{outputs/figures/} lưu biểu đồ; các file trong \texttt{src/} lưu script tạo kết quả. Cách tổ chức này giúp báo cáo không chỉ có kết luận, mà còn có đường dẫn tái lập kết luận.
+
+\section{Nguyên tắc chọn biểu đồ theo câu hỏi phân tích}
+
+Không có một loại biểu đồ nào phù hợp cho mọi dữ liệu. Việc chọn biểu đồ phụ thuộc vào loại biến, số biến cần so sánh và câu hỏi đang đặt ra. Nếu chọn sai biểu đồ, người đọc có thể hiểu sai bản chất dữ liệu. Ví dụ, dùng pie chart cho biến có quá nhiều lớp sẽ khó so sánh; dùng scatter plot cho biến định tính sẽ không có ý nghĩa; dùng line chart cho dữ liệu không có thứ tự thời gian có thể tạo cảm giác có xu hướng giả.
+
+\begin{table}[H]
+\centering
+\caption{Chọn biểu đồ theo loại câu hỏi phân tích}
+\label{tab:chapter1_chart_selection}
+\small
+\begin{tabular}{p{0.24\textwidth}p{0.26\textwidth}p{0.34\textwidth}}
+\toprule
+Câu hỏi phân tích & Biểu đồ ưu tiên & Lý do sử dụng \\
+\midrule
+Biến định lượng phân phối thế nào? & Histogram & Nhìn được dạng lệch, nhiều đỉnh, tập trung \\
+Có outlier không? & Boxplot & Dựa trên median, IQR và điểm ngoài ngưỡng \\
+Hai biến số có quan hệ không? & Scatter plot & Thể hiện từng cặp quan sát trên mặt phẳng \\
+Biến định tính có cơ cấu ra sao? & Bar chart & So sánh tần suất giữa các lớp rõ hơn pie chart \\
+Dữ liệu thay đổi theo thời gian thế nào? & Line chart & Giữ thứ tự thời gian và phát hiện xu hướng \\
+Nhiều biến liên hệ với nhau ra sao? & Correlation heatmap & Tóm tắt ma trận tương quan bằng màu sắc \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Trong báo cáo này, nguyên tắc chọn biểu đồ được áp dụng nhất quán. Với Heart Disease, histogram và boxplot được dùng để minh họa phân phối và outlier; scatter plot và heatmap được dùng để khảo sát quan hệ biến. Với Appliances Energy, line chart là bắt buộc vì dữ liệu có trục thời gian. Với HAM10000, bar chart được dùng cho phân phối lớp, còn boxplot được dùng cho đặc trưng độ sáng sau khi số hóa ảnh.
+
+\section{Diễn giải thống kê trong bối cảnh dữ liệu}
+
+Một chỉ số thống kê chỉ có ý nghĩa khi được đọc trong bối cảnh dữ liệu. Mean không chỉ là một con số trung bình; nó cho biết mức đại diện nếu phân phối tương đối cân bằng. Median không chỉ là vị trí giữa; nó giúp so sánh với mean để nhận biết độ lệch. Standard deviation không chỉ đo độ phân tán; nó còn cho biết biến nào có dao động lớn và có thể cần chuẩn hóa. IQR không chỉ phục vụ boxplot; nó là nền tảng của quy tắc phát hiện outlier.
+
+Khi đọc một biến định lượng, báo cáo sử dụng ba lớp nhận xét:
+
+\begin{itemize}
+    \item \textbf{Nhận xét trung tâm}: mean và median gần hay xa nhau, biến có nghiêng lệch hay không.
+    \item \textbf{Nhận xét phân tán}: standard deviation, range, IQR lớn hay nhỏ so với mean.
+    \item \textbf{Nhận xét tiền xử lý}: có cần cắt outlier, log-transform, chuẩn hóa hay không.
+\end{itemize}
+
+Ví dụ, trong Appliances Energy, mean của \texttt{Appliances} lớn hơn median và max rất cao, cho thấy target lệch phải. Nhận xét này dẫn trực tiếp đến việc dùng \texttt{log1p}. Ngược lại, trong Heart Disease, median của \texttt{chol} gần như không đổi trước và sau tiền xử lý, trong khi max giảm mạnh; điều này cho thấy tiền xử lý chủ yếu làm giảm ảnh hưởng của điểm cực trị, không làm thay đổi phần lõi của phân phối.
+
+\section{Các sai lệch thường gặp khi đọc biểu đồ}
+
+Trực quan hóa giúp dữ liệu dễ hiểu hơn, nhưng cũng có thể gây hiểu nhầm nếu không đọc đúng. Một số sai lệch thường gặp trong báo cáo dữ liệu gồm:
+
+\begin{itemize}
+    \item \textbf{Nhầm tương quan với nhân quả}: heatmap chỉ cho biết hai biến thay đổi cùng nhau, không chứng minh biến này gây ra biến kia.
+    \item \textbf{Đánh giá mô hình chỉ bằng accuracy}: nếu target mất cân bằng, accuracy cao có thể chỉ do mô hình dự đoán lớp đa số.
+    \item \textbf{Bỏ qua scale}: các biến có thang đo khác nhau làm scatter plot và thuật toán khoảng cách khó diễn giải nếu chưa chuẩn hóa.
+    \item \textbf{Dùng biểu đồ tổng thể thay cho phân tích theo lớp}: phân phối toàn bộ dữ liệu có thể che mất khác biệt giữa các nhóm target.
+    \item \textbf{Không gắn biểu đồ với câu hỏi}: một hình đẹp nhưng không trả lời câu hỏi phân tích thì không giúp cải thiện báo cáo.
+\end{itemize}
+
+Do đó, mỗi biểu đồ trong báo cáo được viết kèm lý do chọn biểu đồ và nhận xét. Cách trình bày này giúp người đọc hiểu không chỉ biểu đồ thể hiện gì, mà còn vì sao nó cần thiết cho bài toán phân tích dữ liệu.
+
+\section{Minh họa tính toán trên Heart Disease}
+
+Bộ Heart Disease Cleveland có 303 mẫu và 14 thuộc tính gốc được dùng phổ biến trong các thực nghiệm. Trong quá trình đọc dữ liệu, ký hiệu \texttt{?} được chuyển thành missing value. Bảng missing cho thấy biến \texttt{ca} thiếu 4 giá trị, tương đương 1.3201\%, và biến \texttt{thal} thiếu 2 giá trị, tương đương 0.6601\%.
+
+\begin{table}[H]
+\centering
+\caption{Ví dụ thống kê mô tả trên một số biến Heart Disease}
+\label{tab:chapter1_heart_stats}
+\begin{tabular}{lrrrrr}
+\toprule
+Biến & Mean & Median & Std & Min & Max \\
+\midrule
+age & 54.44 & 56.00 & 9.04 & 29.00 & 77.00 \\
+trestbps & 131.69 & 130.00 & 17.60 & 94.00 & 200.00 \\
+chol & 246.69 & 241.00 & 51.78 & 126.00 & 564.00 \\
+thalach & 149.61 & 153.00 & 22.88 & 71.00 & 202.00 \\
+oldpeak & 1.04 & 0.80 & 1.16 & 0.00 & 6.20 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Từ Bảng \ref{tab:chapter1_heart_stats}, có thể rút ra ba nhận xét ban đầu. Thứ nhất, biến \texttt{age} có median 56 và mean 54.44, cho thấy phân phối tuổi hơi nghiêng về nhóm trung niên và cao tuổi. Thứ hai, \texttt{chol} có range rất lớn, từ 126 đến 564, nên cần kiểm tra outlier bằng boxplot. Thứ ba, \texttt{oldpeak} có median 0.8 nhưng mode 0.0, cho thấy một phần đáng kể bệnh nhân không có ST depression.
+
+\begin{table}[H]
+\centering
+\caption{So sánh trước và sau tiền xử lý trên Heart Disease}
+\label{tab:chapter1_preprocess_compare}
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Biến & Mean thô & Mean sạch & Std thô & Std sạch \\
+\midrule
+trestbps & 131.69 & 131.35 & 17.60 & 16.65 \\
+chol & 246.69 & 245.58 & 51.78 & 47.56 \\
+thalach & 149.61 & 149.65 & 22.88 & 22.73 \\
+oldpeak & 1.04 & 1.02 & 1.16 & 1.11 \\
+ca & 0.67 & 0.63 & 0.94 & 0.86 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Bảng \ref{tab:chapter1_preprocess_compare} cho thấy tiền xử lý không làm thay đổi mạnh giá trị trung tâm, nhưng làm giảm độ biến động của các biến có outlier. Trường hợp rõ nhất là \texttt{chol}: standard deviation giảm từ 51.78 xuống 47.56, max giảm từ 564 xuống 371. Điều này phù hợp với mục tiêu của tiền xử lý: giữ lại cấu trúc chính của dữ liệu nhưng hạn chế ảnh hưởng của điểm cực trị.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.90\textwidth]{../outputs/figures/heart_disease_age_raw_vs_cleaned.png}
+\caption[Ví dụ histogram tuổi trên Heart Disease]{Ví dụ histogram tuổi trước/sau xử lý trên Heart Disease. Python source: \texttt{src/analyze\_heart\_disease.py}; figure path: \texttt{outputs/figures/heart\_disease\_age\_raw\_vs\_cleaned.png}.}
+\label{fig:chapter1_hist_box}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.90\textwidth]{../outputs/figures/heart_disease_cholesterol_boxplot.png}
+\caption[Ví dụ boxplot cholesterol trên Heart Disease]{Ví dụ boxplot cholesterol theo nhãn bệnh trên Heart Disease. Python source: \texttt{src/analyze\_heart\_disease.py}; figure path: \texttt{outputs/figures/heart\_disease\_cholesterol\_boxplot.png}.}
+\label{fig:heart_chol_boxplot}
+\end{figure}
+
+\textbf{Lý do chọn biểu đồ.} Histogram được dùng vì biến \texttt{age} là biến định lượng, cần quan sát hình dạng phân phối trước và sau xử lý. Boxplot được dùng vì \texttt{chol} dễ có outlier và cần so sánh theo nhãn bệnh.
+
+\textbf{Nhận xét.} Hình \ref{fig:chapter1_hist_box} minh họa hai cách đọc dữ liệu khác nhau. Histogram tuổi cho thấy mẫu Heart Disease tập trung ở nhóm trung niên và cao tuổi. Boxplot cholesterol theo nhãn bệnh giúp kiểm tra phân phối cholesterol của nhóm có bệnh và không có bệnh có khác nhau rõ ràng hay không. Nếu hai hộp IQR chồng lắp nhiều, riêng cholesterol có thể không đủ mạnh để phân loại mà cần kết hợp với các biến khác.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.90\textwidth]{../outputs/figures/heart_disease_age_thalach_scatter.png}
+\caption[Ví dụ scatter plot trên Heart Disease]{Ví dụ scatter plot age và thalach trên Heart Disease. Python source: \texttt{src/analyze\_heart\_disease.py}; figure path: \texttt{outputs/figures/heart\_disease\_age\_thalach\_scatter.png}.}
+\label{fig:chapter1_scatter_heatmap}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{../outputs/figures/heart_disease_correlation_heatmap.png}
+\caption[Ví dụ correlation heatmap trên Heart Disease]{Ví dụ correlation heatmap trên Heart Disease. Python source: \texttt{src/analyze\_heart\_disease.py}; figure path: \texttt{outputs/figures/heart\_disease\_correlation\_heatmap.png}.}
+\label{fig:heart_corr_heatmap}
+\end{figure}
+
+\textbf{Lý do chọn biểu đồ.} Scatter plot phù hợp để kiểm tra quan hệ giữa hai biến định lượng \texttt{age} và \texttt{thalach}; heatmap phù hợp để xem nhanh toàn bộ ma trận tương quan.
+
+\textbf{Nhận xét.} Hình \ref{fig:chapter1_scatter_heatmap} minh họa vai trò của trực quan hóa đa biến. Scatter plot cho phép quan sát mối quan hệ giữa tuổi và nhịp tim tối đa, đồng thời tô màu theo nhãn bệnh. Heatmap cho phép nhìn nhanh cặp biến nào có liên hệ tuyến tính mạnh. Trong quy trình phân tích, hai biểu đồ này giúp hình thành giả thuyết trước khi đưa dữ liệu vào mô hình học máy.
+
+\section{Liên kết lý thuyết với các chương sau}
+
+Chương 1 cung cấp ngôn ngữ chung để đọc các kết quả ở Chương 3 và Chương 4. Các chỉ số mean, median, IQR và standard deviation sẽ được dùng để so sánh trước/sau tiền xử lý. Các biểu đồ histogram, boxplot, line chart và heatmap sẽ được dùng để phát hiện đặc trưng dữ liệu. Các nhận xét này tiếp tục làm cơ sở cho lựa chọn mô hình, diễn giải sai số và so sánh với nghiên cứu liên quan.

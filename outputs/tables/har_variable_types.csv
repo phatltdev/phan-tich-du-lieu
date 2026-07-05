@@ -1,0 +1,6 @@
+variable,type,role,description
+activity,categorical,target,6 nhãn hoạt động
+tBodyAcc-*,continuous,feature,Đặc trưng gia tốc miền thời gian
+tBodyGyro-*,continuous,feature,Đặc trưng con quay miền thời gian
+fBodyAcc-*,continuous,feature,Đặc trưng gia tốc miền tần số
+subject,categorical,group,Mã người tham gia

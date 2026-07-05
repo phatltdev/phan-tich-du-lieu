@@ -1,0 +1,4125 @@
+Trng i hc Cn Th Trng Công ngh thông tin và Truyn thông
+Báo cáo môn hc: CTH624 ng dng Th giác máy tính trong H thng thông tin
+Tên  tài
+Thc hin bi:
+Nhóm 1 Nguyn Vn A B1282727 Trng nhóm Nguyn Vn A B1282727 Thành viên Nguyn Vn A B1282727 Thành viên
+GVHD: PGS. TS. Nguyn Thanh Hi
+Hc k 2, nm hc 2023-2024 Ngày 4 tháng 7 nm 2026
+
+2
+
+Mc lc
+
+Mc lc
+
+iii
+
+Danh sách Hình
+
+v
+
+Danh sách Bng
+
+ix
+
+1 C S LÝ THUYT
+
+1
+
+1.1 Vai trò ca thng kê mô t trong phân tích d liu . . . . . . . . . . . 3
+
+1.2 Phân loi bin và quy trình EDA . . . . . . . . . . . . . . . . . . . . . 3
+
+1.3 Các s o xu hng trung tâm . . . . . . . . . . . . . . . . . . . . . . . 5
+
+1.3.1 Mean . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+
+1.3.2 Median . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+
+1.3.3 Mode . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+
+1.3.4 Percentiles . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+
+1.4 Các s o  phân tán . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+
+1.4.1 Range . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+
+1.4.2 Variance và Standard Deviation . . . . . . . . . . . . . . . . . . 10
+
+1.4.3 Coefficient of Variation . . . . . . . . . . . . . . . . . . . . . . . 11
+
+1.4.4 Interquartile Range . . . . . . . . . . . . . . . . . . . . . . . . . 12
+
+1.4.5 Bng tn sut và tn sut tng i . . . . . . . . . . . . . . . 13
+
+1.4.6 Z-score . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+
+1.5  xut thêm các phép toán thng kê phù hp vi bài toán . . . . . . . 14
+
+1.6 Minh ha tính toán chi tit trên mt bin thc t . . . . . . . . . . . . 16
+
+1.7 Phân loi bin s . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+
+1.8 H thng biu  trc quan hóa và tác dng phân tích . . . . . . . . . 19
+
+1.8.1 Quy trình chung khi v và phân tích biu  . . . . . . . . . . . 19
+
+1.8.2 Nhóm biu  phân phi . . . . . . . . . . . . . . . . . . . . . . 20
+
+1.8.3 Nhóm biu  tng quan và c cu . . . . . . . . . . . . . . . 25
+
+1.8.4 Các dng biu  khác . . . . . . . . . . . . . . . . . . . . . . . 30
+
+1.8.5 Mt s dng biu  b sung phù hp vi bài toán . . . . . . . 35
+
+1.9 Các phép bin i và tin x lý c bn . . . . . . . . . . . . . . . . . . 39
+
+1.9.1 in khuyt . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 40
+
+1.9.2 Chun hóa thang o . . . . . . . . . . . . . . . . . . . . . . . . 40
+
+1.9.3 Log transform và differencing cho chui thi gian . . . . . . . . 41
+
+1.10 Quy trình phân tích khám phá d liu . . . . . . . . . . . . . . . . . . 42
+
+1.11 Nguyên tc chn biu  theo câu hi phân tích . . . . . . . . . . . . . 43
+
+1.12 Din gii thng kê trong bi cnh d liu . . . . . . . . . . . . . . . . . 44
+
+1.13 Các sai lch thng gp khi c biu  . . . . . . . . . . . . . . . . . 45
+
+1.14 Minh ha tính toán trên Heart Disease . . . . . . . . . . . . . . . . . . 45
+
+1.15 Liên kt lý thuyt vi các chng sau . . . . . . . . . . . . . . . . . . . 49
+
+2 THU THP, MÔ T VÀ TNG QUAN CÁC B D LIU
+
+51
+
+2.1 Tiêu chí la chn d liu . . . . . . . . . . . . . . . . . . . . . . . . . . 52
+
+2.2 Chin lc thu thp và kim chng d liu . . . . . . . . . . . . . . . . 52
+
+2.3 Nhóm A: D liu dng bng . . . . . . . . . . . . . . . . . . . . . . . . 55
+
+i
+
+2.3.1 A1 - Heart Disease . . . . . . . . . . . . . . . . . . . . . . . . . 55 2.3.2 A2 - CDC Diabetes Health Indicators . . . . . . . . . . . . . . . 58 2.3.3 A3 - Breast Cancer Wisconsin Diagnostic . . . . . . . . . . . . . 61 2.4 Nhóm B: D liu chui thi gian và cm bin . . . . . . . . . . . . . . 64 2.4.1 B1 - Appliances Energy Prediction . . . . . . . . . . . . . . . . 64 2.4.2 B2 - Human Activity Recognition Using Smartphones . . . . . . 67 2.4.3 B3 - MHEALTH Dataset . . . . . . . . . . . . . . . . . . . . . . 70 2.5 Nhóm C: D liu a phng tin . . . . . . . . . . . . . . . . . . . . . 72 2.5.1 C1 - HAM10000 . . . . . . . . . . . . . . . . . . . . . . . . . . . 72 2.5.2 C2 - Reuters-21578 Text Categorization . . . . . . . . . . . . . 75 2.6 ánh giá cht lng d liu và ri ro phân tích . . . . . . . . . . . . . 79 2.7 Liên h gia ngun d liu và yêu cu bài toán . . . . . . . . . . . . . 79 2.8 Các d liu và ni dung cn b sung tip . . . . . . . . . . . . . . . . . 80 2.9 ng dn minh chng và tái s dng . . . . . . . . . . . . . . . . . . 81
+
+3 PHÂN TÍCH C IM D LIU QUA THNG KÊ VÀ TRC
+
+QUAN HÓA
+
+83
+
+3.1 Phn lý thuyt: thng kê mô t và trc quan hóa . . . . . . . . . . . . 84
+
+3.1.1 Các thông s thng kê mô t . . . . . . . . . . . . . . . . . . . 84
+
+3.1.2 Các loi biu  dùng trong phân tích d liu . . . . . . . . . . 85
+
+3.2 Quy trình phân tích và minh chng . . . . . . . . . . . . . . . . . . . . 85
+
+3.3 Nhóm A: d liu bng . . . . . . . . . . . . . . . . . . . . . . . . . . . 86
+
+3.3.1 D liu Nhóm A: Phân tích Heart Disease . . . . . . . . . . . . 87
+
+3.3.2 D liu Nhóm A: Phân tích CDC Diabetes Health Indicators . . 91
+
+3.3.3 Breast Cancer Wisconsin Diagnostic . . . . . . . . . . . . . . . 95
+
+3.4 Nhóm B: d liu chui thi gian và cm bin . . . . . . . . . . . . . . . 96
+
+3.4.1 Appliances Energy . . . . . . . . . . . . . . . . . . . . . . . . . 96
+
+3.4.2 HAR: Human Activity Recognition . . . . . . . . . . . . . . . . 97
+
+3.4.3 MHEALTH . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 98
+
+3.5 i sánh công c phân tích: Excel và Python . . . . . . . . . . . . . . . 99
+
+3.6 Nhóm C: d liu a phng tin . . . . . . . . . . . . . . . . . . . . . . 101
+
+3.6.1 HAM10000: d liu nh . . . . . . . . . . . . . . . . . . . . . . 101
+
+3.6.2 Reuters-21578: d liu vn bn . . . . . . . . . . . . . . . . . . 102
+
+3.7 Kt lun t phân tích trc quan . . . . . . . . . . . . . . . . . . . . . . 103
+
+4 PHÂN TÍCH D LIU VI HC MÁY VÀ I SÁNH KT QU105 4.1 Quy trình hc máy và minh chng . . . . . . . . . . . . . . . . . . . . 106 4.2 Classification trên nhóm A . . . . . . . . . . . . . . . . . . . . . . . . . 106 4.3 Regression và d báo trên nhóm B . . . . . . . . . . . . . . . . . . . . 107 4.4 Clustering trên nhóm A, B và C . . . . . . . . . . . . . . . . . . . . . . 108 4.5 i sánh vi nghiên cu liên quan . . . . . . . . . . . . . . . . . . . . . 109 4.6 Kt lun Chng 4 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 110
+
+ii
+
+5 KT LUN VÀ HNG PHÁT TRIN
+
+111
+
+5.1 Kt lun . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 112
+
+5.2 Hn ch . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 112
+
+5.3 Hng phát trin . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 113
+
+5.4 Minh chng tái lp . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 113
+
+Tài liu tham kho
+
+116
+
+iii
+
+iv
+
+Danh sách hình v
+1.1 Minh ha histogram Python . . . . . . . . . . . . . . . . . . . . . . . . 22 1.2 Minh ha histogram Excel . . . . . . . . . . . . . . . . . . . . . . . . . 23 1.3 Minh ha boxplot Heart Disease . . . . . . . . . . . . . . . . . . . . . . 25 1.4 Minh ha scatter plot Python . . . . . . . . . . . . . . . . . . . . . . . 27 1.5 Minh ha scatter plot Excel . . . . . . . . . . . . . . . . . . . . . . . . 28 1.6 Minh ha bar chart Python . . . . . . . . . . . . . . . . . . . . . . . . 29 1.7 Minh ha bar chart Excel . . . . . . . . . . . . . . . . . . . . . . . . . 30 1.8 Minh ha line chart Python . . . . . . . . . . . . . . . . . . . . . . . . 32 1.9 Minh ha line chart Excel . . . . . . . . . . . . . . . . . . . . . . . . . 33 1.10 Minh ha correlation heatmap Heart Disease . . . . . . . . . . . . . . . 35 1.11 Minh ha d liu cho raincloud plot . . . . . . . . . . . . . . . . . . . . 38 1.12 Minh ha d liu cho hexbin plot . . . . . . . . . . . . . . . . . . . . . 38 1.13 Minh ha ridgeline plot Appliances Energy . . . . . . . . . . . . . . . . 39 1.14 Ví d histogram tui trên Heart Disease . . . . . . . . . . . . . . . . . 46 1.15 Ví d boxplot cholesterol trên Heart Disease . . . . . . . . . . . . . . . 47 1.16 Ví d scatter plot trên Heart Disease . . . . . . . . . . . . . . . . . . . 48 1.17 Ví d correlation heatmap trên Heart Disease . . . . . . . . . . . . . . 49
+2.1 Minh ha Heart Disease . . . . . . . . . . . . . . . . . . . . . . . . . . 57 2.2 Minh ha CDC Diabetes . . . . . . . . . . . . . . . . . . . . . . . . . . 60 2.3 Minh ha cu trúc s ca Breast Cancer . . . . . . . . . . . . . . . . . 63 2.4 Minh ha c trng chui thi gian ca Appliances Energy . . . . . . . 66 2.5 Minh ha HAR Smartphones . . . . . . . . . . . . . . . . . . . . . . . 69 2.6 Minh ha MHEALTH . . . . . . . . . . . . . . . . . . . . . . . . . . . 71 2.7 Minh ha phân tích d liu nh HAM10000 sau khi s hóa . . . . . . . 74 2.8 Minh ha Reuters-21578 . . . . . . . . . . . . . . . . . . . . . . . . . . 77
+3.1 Bar chart tn sut loi au ngc Heart Disease . . . . . . . . . . . . . 88 3.2 Kim tra phân phi và outlier trên Heart Disease . . . . . . . . . . . . 90 3.3 Phân tích quan h a bin trên Heart Disease . . . . . . . . . . . . . . 91 3.4 Kim tra phân phi và outlier trên CDC Diabetes . . . . . . . . . . . . 94 3.5 Phân tích quan h a bin trên CDC Diabetes . . . . . . . . . . . . . . 95 3.6 Bar chart t l tiu ng theo bin sc khe/hành vi . . . . . . . . . . 95 3.7 Trc quan hóa target Appliances Energy . . . . . . . . . . . . . . . . . 97 3.8 Phân tích cm bin HAR và MHEALTH . . . . . . . . . . . . . . . . . 98 3.9 Phân b nhãn hot ng trong HAR và MHEALTH . . . . . . . . . . . 98 3.10 Preview các biu  Excel cho Heart Disease . . . . . . . . . . . . . . . 100 3.11 Preview các biu  Excel cho Appliances Energy . . . . . . . . . . . . 100 3.12 S hóa và trc quan hóa d liu nh HAM10000 . . . . . . . . . . . . . 102 3.13 S hóa và trc quan hóa d liu vn bn Reuters . . . . . . . . . . . . 102
+4.1 Confusion matrix cho ba bài toán classification nhóm A . . . . . . . . . 107 4.2 So sánh giá tr thc t và d báo mu trên Appliances Energy . . . . . 108
+v
+
+vi
+
+Danh sách bng
+1 Danh mc các ký hiu vit tt . . . . . . . . . . . . . . . . . . . . . . . xv
+1.1 Liên kt gia yêu cu phân tích và k thut s dng . . . . . . . . . . 3 1.2 Phân loi bin dùng trong các nhóm d liu ca báo cáo . . . . . . . . 4 1.3 Gi ý chn biu  theo mc tiêu phân tích . . . . . . . . . . . . . . . 4 1.4 Bng ví d Mean trên mt s c tính Heart Disease . . . . . . . . . . 6 1.5 Bng ví d Median trên mt s c tính Heart Disease . . . . . . . . . 7 1.6 Bng tng hp ví d kt qu Mode trên mt s c tính Heart Disease 8 1.7 Bng ví d Percentiles trên mt s c tính Heart Disease . . . . . . . 9 1.8 Bng ví d Range trên mt s c tính Heart Disease . . . . . . . . . . 10 1.9 Bng ví d Variance và Standard Deviation trên mt s c tính Heart
+Disease . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11 1.10 Bng ví d Coefficient of Variation trên mt s c tính Heart Disease 12 1.11 Bng ví d IQR trên mt s c tính Heart Disease . . . . . . . . . . . 13 1.12 Bng ví d tn sut và tn sut tng i ca bin cp . . . . . . . . . 13 1.13 Bng ví d Z-score ca mt s giá tr cholesterol . . . . . . . . . . . . . 14 1.14  xut 3 s o thng kê b sung cho báo cáo . . . . . . . . . . . . . . 15 1.15 Minh ha thng kê mô t bin cholesterol Heart Disease . . . . . . . . 17 1.16 So sánh thng kê bin cholesterol trc và sau tin x lý . . . . . . . . 18 1.17 Ví d phân loi bin theo bn cht d liu . . . . . . . . . . . . . . . . 19 1.18 Cách c nhanh hình dng biu  và ý ngha phân tích . . . . . . . . 20 1.19 Nhóm biu  phân phi: ý ngha, hn ch và trng hp áp dng . . . 21 1.20 D liu mu cho histogram Appliances Energy . . . . . . . . . . . . . . 21 1.21 Tính tn sut trc khi v histogram Appliances . . . . . . . . . . . . . 22 1.22 D liu mu cho boxplot cholesterol theo nhóm bnh tim . . . . . . . . 24 1.23 Tính toán trc khi v boxplot cholesterol . . . . . . . . . . . . . . . . 24 1.24 Nhóm biu  tng quan và c cu: ý ngha, hn ch và trng hp áp
+dng . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26 1.25 D liu mu cho scatter plot tui và nhp tim ti a . . . . . . . . . . . 26 1.26 Tính ta  trc khi v scatter plot . . . . . . . . . . . . . . . . . . . 27 1.27 D liu mu cho bar chart loi au ngc . . . . . . . . . . . . . . . . . 29 1.28 Tính toán trc khi v bar chart/pie chart bin cp . . . . . . . . . . . 29 1.29 Các dng biu  khác: ý ngha, hn ch và trng hp áp dng . . . . 31 1.30 D liu mu cho line chart Appliances Energy theo thi gian . . . . . . 31 1.31 Tính ta  và rolling mean trc khi v line chart . . . . . . . . . . . 32 1.32 D liu mu cho correlation heatmap Heart Disease . . . . . . . . . . . 34 1.33 Tính toán tng quan trc khi v heatmap . . . . . . . . . . . . . . . 34 1.34  xut 3 biu  mi: u im, nhc im và phm vi áp dng . . . 36 1.35 D liu mu minh ha ba biu  mi . . . . . . . . . . . . . . . . . . 37 1.36 Tóm tt phm vi áp dng các phép tin x lý c bn . . . . . . . . . . 42 1.37 Quy trình EDA và sn phm u ra cn lu . . . . . . . . . . . . . . . 43 1.38 Chn biu  theo loi câu hi phân tích . . . . . . . . . . . . . . . . . 44 1.39 Ví d thng kê mô t trên mt s bin Heart Disease . . . . . . . . . . 45 1.40 So sánh trc và sau tin x lý trên Heart Disease . . . . . . . . . . . . 46
+2.1 Vai trò ca tng b d liu trong toàn b báo cáo . . . . . . . . . . . . 53
+vii
+
+2.2 i chiu b d liu vi yêu cu  bài . . . . . . . . . . . . . . . . . . 54 2.3 Tng hp các b d liu s dng trong báo cáo . . . . . . . . . . . . . 54 2.4 Tng hp yêu cu mô t d liu bng nhóm A . . . . . . . . . . . . . . 55 2.5 Các bin chính trong Heart Disease . . . . . . . . . . . . . . . . . . . . 56 2.6 Thng kê mô t các thuc tính chính ca Heart Disease . . . . . . . . . 56 2.7 Nhóm bin tiêu biu trong CDC Diabetes . . . . . . . . . . . . . . . . 58 2.8 Thng kê mô t các thuc tính chính ca CDC Diabetes . . . . . . . . 59 2.9 Danh sách feature tiêu biu ca Breast Cancer . . . . . . . . . . . . . . 62 2.10 Thng kê mô t các thuc tính chính ca Breast Cancer . . . . . . . . 62 2.11 Tng hp c trng chui thi gian ca nhóm B . . . . . . . . . . . . . 64 2.12 Thng kê mô t các thuc tính chính ca Appliances Energy . . . . . . 65 2.13 Cu trúc nhãn hot ng trong HAR . . . . . . . . . . . . . . . . . . . 67 2.14 Thng kê mô t các thuc tính chính ca HAR . . . . . . . . . . . . . 68 2.15 So sánh hai b d liu cm bin nhóm B . . . . . . . . . . . . . . . . . 70 2.16 Thng kê mô t các thuc tính chính ca MHEALTH . . . . . . . . . . 70 2.17 Thông tin file gc và c trng trích xut ca nhóm C . . . . . . . . . 72 2.18 Phng pháp trích xut c trng cho d liu a phng tin . . . . . 72 2.19 Phân phi lp chn oán trong HAM10000 . . . . . . . . . . . . . . . . 73 2.20 Thng kê mô t các thuc tính chính ca HAM10000 . . . . . . . . . . 73 2.21 K hoch s hóa d liu text Reuters-21578 . . . . . . . . . . . . . . . 75 2.22 Thng kê mô t các thuc tính chính ca Reuters-21578 . . . . . . . . 76 2.23 i sánh nghiên cu liên quan và baseline dùng cho Chng 4 . . . . . 78 2.24 Baseline hc máy nhóm A dùng làm mc cho Chng 4 . . . . . . . . . 78 2.25 Ri ro cht lng d liu và hng x lý . . . . . . . . . . . . . . . . . 79 2.26 Liên h dataset vi các yêu cu ca  bài . . . . . . . . . . . . . . . . 80
+3.1 Ý ngha các thông s thng kê khi phân tích d liu . . . . . . . . . . . 84
+3.2 Ý ngha các loi biu  ph bin . . . . . . . . . . . . . . . . . . . . . 85 3.3 Ma trn bám yêu cu phân tích ca Chng 3 . . . . . . . . . . . . . . 86 3.4 Minh chng source code và output cho Chng 3 . . . . . . . . . . . . 86 3.5 Phân loi bn cht bin Heart Disease c chn . . . . . . . . . . . . 87 3.6 Thng kê mô t mt s bin Heart Disease sau tin x lý . . . . . . . . 87 3.7 Bng tn sut bin cp trong Heart Disease . . . . . . . . . . . . . . . . 88
+3.8 nh hng ca tin x lý trên Heart Disease . . . . . . . . . . . . . . . 89 3.9 Phân loi bn cht bin CDC Diabetes c chn . . . . . . . . . . . . 92 3.10 Bng tn sut các bin nh phân chính trong CDC Diabetes . . . . . . 92 3.11 Thng kê mô t mt s bin CDC Diabetes sau tin x lý . . . . . . . 93
+3.12 nh hng ca tin x lý trên CDC Diabetes . . . . . . . . . . . . . . 93 3.13 Phân loi bin chính ca Breast Cancer . . . . . . . . . . . . . . . . . . 96 3.14 Thng kê mô t mt s bin Appliances Energy . . . . . . . . . . . . . 97 3.15 Danh sách biu  Excel ã to . . . . . . . . . . . . . . . . . . . . . . 99 3.16 So sánh vai trò ca Python và Excel trong phân tích. . . . . . . . . . . 101
+4.1 Kt qu classification nhóm A . . . . . . . . . . . . . . . . . . . . . . . 106 4.2 Kt qu regression trên Appliances Energy . . . . . . . . . . . . . . . . 107 4.3 Thit k clustering theo yêu cu tài liu . . . . . . . . . . . . . . . . . 109
+viii
+
+4.4 i sánh nh tính gia baseline ca báo cáo và xu hng nghiên cu liên quan . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 110
+ix
+
+x
+
+Li cám n
+xi
+
+xii
+
+Li cam oan
+Nghiên cu ca nhóm là trung thc, không sao chép t các nghiên cu khác. Có trích dn y  các tài liu có tham kho....
+xiii
+
+xiv
+
+Danh mc bng vit tt
+
+Bng 1: Danh mc các ký hiu vit tt
+
+Ch vit tt Ch y 
+
+Din gii
+
+CNN
+
+Convolutional Neural Network Mng n-ron tích chp
+
+xv
+
+xvi
+
+Tóm tt
+Abstract vit các ni dung ngn gn trình bày: 1-2 câu mô t ng cnh vn , ti sao nên làm nghiên cu này; 2-3 câu mô t pp  xut, các thành phn trong pp  xut; 1-2 câu mô t d liu dùng  ánh giá và kt qu t c (vd: https://www.sciencedirect.com/science/article/pii/S0952197623000593)
+xvii
+
+xviii
+
+Chng 1 C S LÝ THUYT
+1
+
+1.1 Vai trò ca thng kê mô t trong phân tích d liu . . . . . . 3 1.2 Phân loi bin và quy trình EDA . . . . . . . . . . . . . . . . 3 1.3 Các s o xu hng trung tâm . . . . . . . . . . . . . . . . . . 5
+1.3.1 Mean . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5 1.3.2 Median . . . . . . . . . . . . . . . . . . . . . . . . . . . 6 1.3.3 Mode . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7 1.3.4 Percentiles . . . . . . . . . . . . . . . . . . . . . . . . . 8 1.4 Các s o  phân tán . . . . . . . . . . . . . . . . . . . . . . 9 1.4.1 Range . . . . . . . . . . . . . . . . . . . . . . . . . . . 9 1.4.2 Variance và Standard Deviation . . . . . . . . . . . . . 10 1.4.3 Coefficient of Variation . . . . . . . . . . . . . . . . . . 11 1.4.4 Interquartile Range . . . . . . . . . . . . . . . . . . . . 12 1.4.5 Bng tn sut và tn sut tng i . . . . . . . . . . 13 1.4.6 Z-score . . . . . . . . . . . . . . . . . . . . . . . . . . . 14 1.5  xut thêm các phép toán thng kê phù hp vi bài toán . . 14 1.6 Minh ha tính toán chi tit trên mt bin thc t . . . . . . . 16 1.7 Phân loi bin s . . . . . . . . . . . . . . . . . . . . . . . . . 18 1.8 H thng biu  trc quan hóa và tác dng phân tích . . . . 19 1.8.1 Quy trình chung khi v và phân tích biu  . . . . . . 19 1.8.2 Nhóm biu  phân phi . . . . . . . . . . . . . . . . . 20 1.8.3 Nhóm biu  tng quan và c cu . . . . . . . . . . 25 1.8.4 Các dng biu  khác . . . . . . . . . . . . . . . . . . 30 1.8.5 Mt s dng biu  b sung phù hp vi bài toán . . 35 1.9 Các phép bin i và tin x lý c bn . . . . . . . . . . . . . 39 1.9.1 in khuyt . . . . . . . . . . . . . . . . . . . . . . . . 40 1.9.2 Chun hóa thang o . . . . . . . . . . . . . . . . . . . 40 1.9.3 Log transform và differencing cho chui thi gian . . . 41 1.10 Quy trình phân tích khám phá d liu . . . . . . . . . . . . . 42 1.11 Nguyên tc chn biu  theo câu hi phân tích . . . . . . . . 43 1.12 Din gii thng kê trong bi cnh d liu . . . . . . . . . . . . 44 1.13 Các sai lch thng gp khi c biu  . . . . . . . . . . . . 45 1.14 Minh ha tính toán trên Heart Disease . . . . . . . . . . . . . 45 1.15 Liên kt lý thuyt vi các chng sau . . . . . . . . . . . . . . 49
+Chng này trình bày nn tng thng kê mô t và trc quan hóa d liu dùng trong toàn b báo cáo. Các khái nim lý thuyt c gn vi ví d thc t t b d liu Heart Disease  làm rõ ý ngha phân tích trc khi áp dng trên các nhóm d liu A, B và C.
+2
+
+C S LÝ THUYT
+1.1 Vai trò ca thng kê mô t trong phân tích d liu
+
+Thng kê mô t là bc u tiên  bin d liu thô thành thông tin có th c c. Trc khi áp dng các thut toán hc máy, ngi phân tích cn bit d liu có bao nhiêu mu, bin nào có giá tr thiu, bin nào lch phân phi, bin nào có bin ng ln và bin nào có kh nng phân tách nhãn mc tiêu. Trong báo cáo này, thng kê mô t c s dng vi ba mc ích chính:
+
+ Mô t hình dng và trung tâm ca tng bin.  Phát hin bt thng nh outlier, d liu thiu hoc phân phi lch.  To c s nh lng  so sánh d liu trc và sau tin x lý.
+
+Vi nhóm A và B, thng kê mô t c tính trc tip trên các bin bng s. Vi nhóm C, d liu a phng tin phi c s hóa thành c trng nh lng trc, ví d  sáng trung bình ca nh, kích thc nh,  dài vn bn, s t hoc tn sut t.
+Bng 1.1: Liên kt gia yêu cu phân tích và k thut s dng
+
+Yêu cu
+
+K thut thng kê
+
+Trc quan hóa phù hp
+
+Mô t trung tâm d liu Mô t  bin ng Phát hin outlier So sánh theo lp Phân tích liên h bin Phân tích chui thi gian S hóa multimedia
+
+Mean, Median, Mode Range, Variance, SD, CV, IQR Quy tc IQR, Z-score Tn sut, mean theo nhóm Correlation, covariance Rolling mean, differencing Feature extraction
+
+Histogram Boxplot Boxplot, Scatter plot Bar chart, Boxplot Scatter plot, Heatmap Line chart Histogram, Boxplot theo lp
+
+Bng 1.1 cho thy mi yêu cu trong  bài u có th ánh x thành mt nhóm k thut c th. Cách ánh x này giúp quá trình thc hin không b ri rc: mi bng và mi hình trong báo cáo u phi tr li mt câu hi phân tích nht nh.
+1.2 Phân loi bin và quy trình EDA
+Trc khi tính thng kê hoc v biu  cn phân loi bn cht bin. Bin nh tính mô t nhóm, nhãn hoc trng thái, ví d sex, cp, Diagnosis, dx, topic vn bn. Bin nh tính có th là nominal nu các mc không có th t t nhiên, hoc ordinal nu có th t nh GenHlth, Education, Income. Bin nh lng biu din giá tr s; bin
+3
+
+ri rc thng là tui, s ngày sc khe kém, s t; bin liên tc gm BMI, cholesterol, huyt áp, nhit ,  m, nng lng tiêu th,  sáng nh.
+Bng 1.2: Phân loi bin dùng trong các nhóm d liu ca báo cáo
+
+Loi bin
+
+Ý ngha
+
+Ví d trong báo cáo
+
+X lý phù hp
+
+nh tính nominal
+nh tính ordinal
+nh lng ri rc nh lng liên tc
+Chui thi gian
+
+Nhãn không có th t Nhãn có th t
+Giá tr m c Giá tr o lng
+Giá tr gn mc thi gian/th t
+
+cp, Diagnosis, dx, topic Reuters
+GenHlth, Education, Income
+age, MentHlth, s t vn bn chol, BMI, Appliances,  sáng nh
+Appliances, tín hiu HAR/MHEALTH
+
+Tn sut, mode, bar chart, one-hot encoding Tn sut, median, bar chart, ordinal encoding Mean/median, histogram, boxplot Thng kê y , histogram, boxplot, scatter Line chart, rolling mean, interpolation, differencing
+
+Quy trình EDA trong báo cáo c trin khai theo sáu bc: hiu ngun d liu và bin mc tiêu; phân loi bin; tính thng kê mô t hoc bng tn sut; v biu  phù hp; phát hin thiu d liu, outlier và mt cân bng lp; tin x lý ri kim tra li bng cùng h thng thng kê/biu . Cách làm này bo m Chng 1 không ch là công thc ri rc mà tr thành khung thao tác trc tip cho Chng 3.
+Bng 1.3: Gi ý chn biu  theo mc tiêu phân tích
+
+Câu hi phân tích Biu  chính
+
+Lý do s dng
+
+Bin s phân phi ra sao? Có outlier không?
+Hai bin s liên h th nào? Bin nh tính chim t trng nào? Chui thay i theo thi gian ra sao? Hai nhóm/lp khác nhau không? Multimedia ã s hóa ra sao?
+
+Histogram, density plot
+
+Boxplot
+
+Scatter plot, heatmap tng quan Bar chart, pie chart
+
+Line chart, rolling mean
+
+Boxplot theo grouped bar Histogram c boxplot theo lp
+
+lp, trng,
+
+Nhn bit lch trái/phi, nhiu nh, khong giá tr ph bin Da trên quartile và IQR  nhìn im d bit Phát hin tuyn tính, phi tuyn, cm hoc nhiu So sánh tn sut/t l tng lp
+Nhìn trend, seasonality, t gãy và bin ng ánh giá kh nng phân tách trc hc máy Kim tra c trng nh/vn bn có ý ngha thng kê không
+
+4
+
+C S LÝ THUYT
+1.3 Các s o xu hng trung tâm
+Các công thc trong mc này c tng hp t các tài liu hc phn trong th mc docments/, c bit là giáo trình Essentials of Data Science and Analytics: Statistical Tools, Machine Learning, and R-Statistical Software Overview [16] và tài liu nhp môn phân tích d liu Data Analytics Made Easy [6]. Theo các tài liu này, thng kê mô t là lp phân tích u tiên ca EDA: tóm tt d liu thô thành các i lng d c, h tr phát hin  lch, outlier, mt cân bng và to c s chn biu  hoc mô hình. Nhóm s o xu hng trung tâm tr li câu hi: "giá tr i din ca bin nm  âu?". Tuy nhiên, không có mt s o nào luôn úng cho mi d liu; mean, median, mode và percentiles cn c chn theo kiu bin, hình dng phân phi và mc tiêu phân tích.
+
+1.3.1 Mean
+
+Trung bình mu cho bit giá tr i din theo ngha cân bng s hc ca mt bin nh lng. Công thc mean là công thc thng kê mô t c bn c trình bày trong các tài liu hc phn [16, 6]. Vi mu gm n quan sát x1, x2, . . . , xn, trung bình mu c tính nh sau:
+
+1 x¯ =
+n
+
+n
+
+xi
+
+=
+
+x1
+
++
+
+x2
+
++··· n
+
++
+
+xn
+
+i=1
+
+(1.1)
+
+Trong ó xi là giá tr quan sát th i, n là s quan sát hp l, là phép cng toàn b các giá tr và x¯ là mean. Mean có ba ý ngha chính. Th nht, nó là im cân bng s hc ca d liu: nu tng giá tr c chia u cho mi quan sát thì mi quan sát nhn x¯. Th hai, mean dùng toàn b d liu nên tn dng nhiu thông tin hn median/mode. Th ba, mean là nn tng cho nhiu phép tính sau nh variance, standard deviation, z-score, regression và các thut toán ti u hóa sai s bình phng.
+Mean phù hp vi bin nh lng liên tc hoc ri rc khi phân phi tng i cân bng, ít outlier và cn mt giá tr i din tng quát. Mean c bit hu ích khi so sánh trung bình gia các nhóm, ví d cholesterol trung bình ca nhóm có bnh và không bnh tim. Trng hp s dng ph bin gm: tính tui trung bình bnh nhân, mc tiêu th nng lng trung bình theo ngày,  sáng trung bình ca nh hoc giá tr trung bình ca c trng u vào trc khi chun hóa. Hn ch: mean không phù hp làm i din duy nht khi d liu lch mnh, có giá tr cc tr hoc phân phi nhiu nh. Mean cng không dùng cho bin nh tính và có th b kéo lch ch bi mt vài quan sát bt thng. Trong các trng hp ó cn c kèm median, IQR và boxplot.
+Ví d. Bng 1.4 minh ha mean trên nhiu c tính Heart Disease. Vi chol, x¯ = 74748/303 = 246.69; sau x lý outlier, mean gim còn 245.58, cho thy mean b nh hng bi giá tr cholesterol rt cao.
+
+5
+
+Bng 1.4: Bng ví d Mean trên mt s c tính Heart Disease
+
+c tính
+
+n Tng giá tr Mean
+
+age ­ tui
+
+303
+
+trestbps ­ huyt áp ngh 303
+
+chol ­ cholesterol
+
+303
+
+thalach ­ nhp tim ti a 303
+
+oldpeak ­ ST depression 303
+
+16498 39949 74748 45343 315.0
+
+54.44 131.68 246.69 149.65
+1.04
+
+1.3.2 Median
+Median là giá tr nm  gia phân phi sau khi sp xp d liu tng dn; ây là s o trung tâm bn vng c khuyn ngh dùng khi d liu lch hoc có ngoi l [16, 6]. Gi x(1)  x(2)  · · ·  x(n) là dãy ã sp xp. Median c tính nh sau:
+
+M edian =
+
+x(
+
+n+1 2
+
+),
+
+, x(
+
+n 2
+
+)
+
++x(
+
+n 2
+
++1)
+
+2
+
+nu n l nu n chn
+
+(1.2)
+
+Trong ó x(j) là giá tr ti v trí th j sau khi sp xp. Median có ý ngha là im chia d liu thành hai na: khong 50% quan sát nh hn hoc bng median và khong 50% quan sát ln hn hoc bng median. Vì ch ph thuc vào v trí sau sp xp ch không ph thuc trc tip vào  ln ca các giá tr cc tr, median là s o trung tâm bn vng hn mean.
+Median phù hp khi d liu có outlier, phân phi lch hoc cn mô t giá tr trung tâm bn vng. Median thng c dùng vi thu nhp, giá nhà, chi phí y t, cholesterol hoc nng lng tiêu th khi có vài giá tr rt ln. Trng hp s dng in hình là báo cáo mc cholesterol i din khi có bnh nhân ngoi l, mô t ngày tiêu th in in hình trong chui Appliances, hoc chn giá tr gia ca  sáng nh khi nh có vùng quá ti/quá sáng. Trong tin x lý, median cng thng c dùng  in khuyt cho bin nh lng có outlier. Hn ch: median không s dng  ln ca toàn b quan sát, nên có th b qua mt phn thông tin bin ng; hai b d liu có median ging nhau vn có th có  phân tán rt khác nhau. Median cng kém thun tin hn mean trong mt s công thc ti u hóa và mô hình thng kê.
+Ví d. Bng 1.5 minh ha median trên nhiu c tính. Vi chol, n = 303 là s l nên v trí median là (303 + 1)/2 = 152; giá tr ti v trí này là 241. Median gi nguyên trc và sau tin x lý, cho thy cu trúc trung tâm ít b nh hng bi im cc tr.
+6
+
+C S LÝ THUYT
+
+Bng 1.5: Bng ví d Median trên mt s c tính Heart Disease
+
+c tính
+
+n V trí median Median
+
+age ­ tui
+
+303
+
+trestbps ­ huyt áp ngh 303
+
+chol ­ cholesterol
+
+303
+
+thalach ­ nhp tim ti a 303
+
+oldpeak ­ ST depression 303
+
+152 56.00 152 130.00 152 241.00 152 153.00 152 0.80
+
+1.3.3 Mode
+Mode là giá tr hoc nhóm xut hin nhiu nht trong d liu, thng c dùng trong mô t bin nh tính và phân phi tn sut [16, 6]:
+
+n
+M ode = arg max f (v), f (v) = I(xi = v) v i=1
+
+(1.3)
+
+Trong ó v là mt giá tr hoc mt lp cn xét, f (v) là tn sut ca v, I(·) là hàm ch báo nhn 1 nu iu kin úng và 0 nu sai. Mode có ý ngha là trng thái ph bin nht ca d liu. Khác vi mean và median, mode có th áp dng trc tip cho bin nh tính, ví d gii tính, loi au ngc, nhãn bnh, v trí tn thng hoc lp vn bn.
+Mode phù hp nht vi bin nh tính nh cp, sex, dx, Diagnosis; cng dùng c vi bin nh lng ri rc nh tui hoc s mch máu. Trng hp s dng c th gm xác nh loi au ngc ph bin nht trong Heart Disease, lp tn thng da xut hin nhiu nht trong HAM10000, nhãn chn oán chim u th trong Breast Cancer hoc mc ánh giá sc khe ph bin trong CDC Diabetes. Trong tin x lý, mode thng c dùng  in khuyt cho bin phân loi vì nó gi li nhóm ph bin nht. Hn ch: mt bin có th có mt mode, nhiu mode hoc không có mode rõ ràng nu tn sut quá phân tán. Mode không n nh vi bin liên tc có quá nhiu giá tr khác nhau, khi ó nên nhóm khong trc khi tính. Mode ch phn ánh giá tr ph bin nht, không cho bit trung tâm s hc hay mc phân tán ca d liu.
+Ví d. Da trên d liu Heart Disease, có th xác nh mode cho nhiu c tính khác nhau nh Bng 1.6. Bng này cho thy mode không ch dùng cho bin phân loi nh cp, sex, slope, mà còn dùng c cho bin nh lng ri rc hoc ã làm tròn nh age, ca, oldpeak.
+7
+
+Bng 1.6: Bng tng hp ví d kt qu Mode trên mt s c tính Heart Disease
+
+c tính
+
+n Mean Median
+
+Mode
+
+age ­ tui
+
+303 54.44
+
+sex ­ gii tính
+
+303 0.68
+
+cp ­ loi au ngc
+
+303 3.16
+
+trestbps ­ huyt áp ngh 303 131.69
+
+chol ­ cholesterol
+
+303 246.69
+
+thalach ­ nhp tim ti a 303 149.61
+
+oldpeak ­ ST depression 303 1.04
+
+slope ­  dc ST
+
+303 1.60
+
+ca ­ s mch máu
+
+303 0.67
+
+56.00 1.00 3.00 130.00 241.00 153.00 0.80 2.00 0.00
+
+58 1 4 120 197, 204, 234 162 0.0 2 0
+
+T Bng 1.6, cp=4 là loi au ngc ph bin nht, sex=1 là nhóm gii tính chim u th, oldpeak=0.0 cho thy nhiu bnh nhân không có ST depression trong bài test gng sc, và ca=0 là s mch máu thng gp nht. Vi chol, có nhiu mode cùng xut hin, minh ha trng hp d liu a mode.
+
+1.3.4 Percentiles
+
+Percentile mô t v trí tng i ca mt giá tr trong phân phi và thng c dùng  xây dng quartiles, IQR và boxplot [16, 6]. Gi Pk là percentile th k, có th hiu Pk là ngng sao cho xp x k% quan sát có giá tr nh hn hoc bng ngng ó. Vi dãy ã sp xp tng dn, v trí percentile thng c xác nh gn úng bng:
+
+k
+
+posk
+
+=
+
+(n 100
+
++
+
+1)
+
+(1.4)
+
+Sau ó Pk c ly ti v trí posk hoc ni suy gia hai v trí lân cn nu posk không nguyên. Trong ó k là mc phn trm cn tính, n là s quan sát và posk là v trí lý thuyt trong dãy ã sp xp. Percentiles m rng ý tng median t mt im chia 50% thành nhiu ngng chia khác nhau trên toàn b phân phi. Nh ó, ngi phân tích không ch bit trung tâm d liu mà còn bit vùng thp, vùng cao và  tri ca d liu.
+Percentiles phù hp khi cn mô t phân b theo ngng, ánh giá nhóm thp/trung bình/cao hoc xác nh vùng d liu trung tâm. Percentile th 25, 50 và 75 ln lt là Q1, median và Q3. Trong d liu y t, percentiles giúp xác nh nhóm bnh nhân có ch s quá thp hoc quá cao; trong chui thi gian, percentiles giúp phân bit ngày tiêu th bình thng và ngày tiêu th bt thng; trong d liu nh, percentiles ca  sáng pixel giúp mô t nh ti/sáng. Trng hp s dng thc t gm t ngng cnh báo cholesterol  nhóm 10% cao nht, chia bnh nhân theo nhóm tui, xác nh mc tiêu th in bt thng trên P95 hoc ct ngng pixel khi chun hóa nh. Hn ch: percentile ph thuc vào cách ni suy và kích thc mu; vi mu nh, ngng
+
+8
+
+C S LÝ THUYT
+phân v có th không n nh. Percentile cng ch cho bit v trí tng i, không gii thích nguyên nhân vì sao mt giá tr nm  vùng cao hoc thp.
+Ví d. Bng 1.7 minh ha percentiles trên nhiu c tính. Vi chol, P25 = 211, P50 = 241 và P75 = 275, ngha là khong 75% bnh nhân có cholesterol không vt quá 275.
+
+Bng 1.7: Bng ví d Percentiles trên mt s c tính Heart Disease
+
+c tính
+
+n
+
+P25
+
+P50
+
+P75
+
+age ­ tui
+
+303 48.00 56.00 61.00
+
+trestbps ­ huyt áp ngh 303 120.00 130.00 140.00
+
+chol ­ cholesterol
+
+303 211.00 241.00 275.00
+
+thalach ­ nhp tim ti a 303 133.50 153.00 166.00
+
+oldpeak ­ ST depression 303 0.00 0.80 1.60
+
+1.4 Các s o  phân tán
+Các s o  phân tán cho bit d liu nm gn hay xa giá tr trung tâm. Nu các s o xu hng trung tâm tr li câu hi "d liu tp trung  âu?", thì các s o  phân tán tr li câu hi "d liu dao ng mnh hay yu?". Theo các tài liu trong docments/, nhóm ch s này rt quan trng trong EDA vì giúp phát hin d liu không n nh, outlier, bin cn chun hóa và bin có th gây khó khn cho mô hình hc máy [16, 6]. Trong báo cáo này, các ch s phân tán c dùng  so sánh d liu thô và d liu sau tin x lý.
+
+1.4.1 Range
+Range là khong bin thiên t giá tr nh nht n ln nht:
+
+Range = xmax - xmin
+
+(1.5)
+
+Trong ó xmax là giá tr ln nht và xmin là giá tr nh nht ca bin. Range là s o n gin nht  bit toàn b min bin thiên ca d liu. Ch s này phù hp khi cn kim tra nhanh d liu có tri quá rng hay có giá tr bt thng hay không. Trng hp s dng gm kim tra min tui bnh nhân, khong dao ng cholesterol, biên  tiêu th nng lng trong ngày hoc khong cng  pixel ca nh. Hn ch: range ch dùng hai im cc tr nên rt nhy vi outlier và không phn ánh hình dng phân phi bên trong. Hai tp d liu có cùng range vn có th có mc tp trung hoàn toàn khác nhau. Range cng không cho bit phn ln quan sát nm gn min, gn max hay  gia.
+
+9
+
+Ví d. Bng 1.8 minh ha range trên nhiu c tính. Vi chol, range thô là 564-126 = 438; sau tin x lý, max c gii hn  371 nên range còn 371-126 = 245.
+
+Bng 1.8: Bng ví d Range trên mt s c tính Heart Disease
+
+c tính
+
+n Min Max Range
+
+age ­ tui
+
+303 29 77
+
+48
+
+trestbps ­ huyt áp ngh 303 94 200 106
+
+chol ­ cholesterol
+
+303 126 564 438
+
+thalach ­ nhp tim ti a 303 71 202 131
+
+oldpeak ­ ST depression 303 0.0 6.2 6.2
+
+1.4.2 Variance và Standard Deviation
+
+Phng sai o mc  phân tán trung bình quanh mean. Vi mu d liu, báo cáo dùng phng sai mu:
+
+s2 = 1 n-1
+
+n
+(xi - x¯)2
+
+i=1
+
+(1.6)
+
+ lch chun là cn bc hai ca phng sai: 
+s = s2
+
+(1.7)
+
+Trong ó xi là quan sát th i, x¯ là mean, n là s quan sát và n - 1 là bc t do khi tính phng sai mu. Mi sai lch (xi - x¯) c bình phng  loi du âm và làm ni bt các quan sát nm xa trung tâm. Phng sai và  lch chun cùng o mc  phân tán, nhng khác nhau  n v và cách din gii. Phng sai s2 ly trung bình bình phng khong cách t tng quan sát n mean, nên n v ca nó là bình phng n v gc. Ví d nu chol o bng mg/dL thì phng sai có n v (mg/dL)2, khó din gii trc tip trong ng cnh y t.  lch chun s là cn bc hai ca phng sai, nên quay v cùng n v vi bin gc và d c hn: "giá tr thng lch khi mean khong bao nhiêu n v".
+V vai trò phân tích, phng sai hu ích trong công thc toán hc, ti u hóa mô hình, phân tích phng sai và các thut toán hc máy;  lch chun hu ích hn khi trình bày báo cáo, so sánh mc dao ng và gii thích cho ngi c. Trng hp s dng gm so sánh  dao ng huyt áp gia các nhóm bnh, ánh giá bin nào cn chun hóa trc SVM/logistic regression, o mc n nh ca nng lng tiêu th hoc mô t  phân tán c trng nh. Hn ch: phng sai nhn mnh mnh hn các sai lch ln vì bình phng khong cách, do ó rt nhy vi outlier.  lch chun cng b nh hng bi outlier, nhng d din gii hn vì cùng n v vi d liu. C hai ch
+
+10
+
+C S LÝ THUYT
+s u nên c c kèm histogram hoc boxplot vì cùng mt standard deviation có th i kèm các hình dng phân phi khác nhau.
+Ví d. Bng 1.9 minh ha variance và standard deviation trên nhiu c tính. Vi chol, phng sai thô là 2680.85 còn  lch chun là 2680.85 = 51.78; s 51.78 d hiu hn vì có th c là cholesterol thng lch khi mean khong 51.78 n v.
+
+Bng 1.9: Bng ví d Variance và Standard Deviation trên mt s c tính Heart Disease
+
+c tính
+
+n Variance SD
+
+age ­ tui
+
+303
+
+trestbps ­ huyt áp ngh 303
+
+chol ­ cholesterol
+
+303
+
+thalach ­ nhp tim ti a 303
+
+oldpeak ­ ST depression 303
+
+81.70 309.75 2680.85 524.65
+1.35
+
+9.04 17.60 51.78 22.91
+1.16
+
+1.4.3 Coefficient of Variation
+H s bin thiên chun hóa  lch chun theo mean:
+
+s CV =
+x¯
+
+(1.8)
+
+Trong ó s là  lch chun và x¯ là mean ca bin. CV là s o không có n v vì ã chun hóa  lch chun theo mean. Nh vy, CV hu ích khi cn so sánh mc bin ng gia các bin có thang o hoc n v o khác nhau, ví d tui, cholesterol, huyt áp, nng lng tiêu th và  sáng nh. CV càng ln thì bin càng dao ng mnh tng i vi mc trung bình ca chính nó.
+CV phù hp khi x¯ dng và  xa 0. Trng hp s dng gm so sánh  bin ng tng i gia tui và cholesterol, gia các cm bin nhit / m trong Appliances, hoc gia các c trng nh có thang o khác nhau. Hn ch: nu mean gn 0 hoc có th âm, CV d gây hiu sai vì mu s quá nh hoc i du. CV cng nên c c cùng histogram/boxplot vì mt bin có CV cao có th do outlier ch không phi do bin ng t nhiên. CV không phù hp cho thang o có im 0 tùy ý hoc bin ã chun hóa quanh 0.
+Ví d. Bng 1.10 minh ha CV trên nhiu c tính. oldpeak có CV khong 1.12, cao hn nhiu so vi age là 0.17, cho thy oldpeak bin ng mnh tng i vi mc trung bình ca nó.
+11
+
+Bng 1.10: Bng ví d Coefficient of Variation trên mt s c tính Heart Disease
+
+c tính
+
+n Mean SD CV
+
+age ­ tui
+
+303 54.44 9.04 0.17
+
+trestbps ­ huyt áp ngh 303 131.68 17.60 0.13
+
+chol ­ cholesterol
+
+303 246.69 51.78 0.21
+
+thalach ­ nhp tim ti a 303 149.65 22.91 0.15
+
+oldpeak ­ ST depression 303 1.04 1.16 1.12
+
+1.4.4 Interquartile Range
+IQR là khong gia t phân v th 75 và 25, o  rng ca 50% d liu trung tâm:
+
+IQR = Q3 - Q1 Quy tc phát hin outlier ph bin:
+
+(1.9)
+
+Lower = Q1 - 1.5 × IQR
+
+(1.10)
+
+U pper = Q3 + 1.5 × IQR
+
+(1.11)
+
+Trong ó Q1 = P25 là t phân v di và Q3 = P75 là t phân v trên. IQR ít b nh hng bi outlier hn range vì nó b qua 25% thp nht và 25% cao nht, ch tp trung vào vùng d liu trung tâm. Do ó, IQR phù hp khi d liu lch, có ngoi l hoc cn so sánh  phân tán bn vng gia các nhóm. Trng hp s dng gm phát hin cholesterol bt thng, so sánh vùng dao ng BMI gia nhóm bnh/không bnh, xác nh ngày tiêu th in ngoài mc thông thng hoc kim tra nh có  sáng lch nhiu so vi phn ln mu.
+Giá tr nh hn Lower hoc ln hn Upper c xem là ng viên outlier. Hn ch: quy tc 1.5 × IQR không khng nh chc chn mt im là li d liu; nó ch ánh du im cn kim tra thêm bng kin thc min. IQR b qua 50% d liu ngoài vùng gia nên không mô t y  phn uôi phân phi. Trong d liu y t, mt giá tr cholesterol rt cao có th là li nhp liu, nhng cng có th là bnh nhân tht s có ch s bt thng.
+Ví d. Bng 1.11 minh ha IQR trên nhiu c tính. Vi chol, Q1 = 211, Q3 = 275, nên IQR = 64; biên trên là 275 + 1.5 × 64 = 371. Vì max thô là 564, giá tr này vt biên trên và c xem là ng viên outlier.
+12
+
+C S LÝ THUYT Bng 1.11: Bng ví d IQR trên mt s c tính Heart Disease
+
+c tính
+
+Q1
+
+Q3 IQR Biên trên
+
+age ­ tui trestbps ­ huyt áp ngh chol ­ cholesterol thalach ­ nhp tim ti a oldpeak ­ ST depression
+
+48.00 120.00 211.00 133.50
+0.00
+
+61.00 140.00 275.00 166.00
+1.60
+
+13.00 20.00 64.00 32.50 1.60
+
+80.50 170.00 371.00 214.75
+4.00
+
+1.4.5 Bng tn sut và tn sut tng i
+
+Vi bin nh tính, vic tính mean hoc standard deviation thng không có ý ngha. Khi ó, bng tn sut là công c c bn. Tn sut tuyt i ca mt lp cj c ký hiu là fj:
+
+n
+fj = I(xi = cj)
+i=1
+
+(1.12)
+
+Trong ó I(·) là hàm ch báo, nhn giá tr 1 nu iu kin úng và 0 nu sai. Tn sut tng i ca lp cj là:
+
+pj
+
+=
+
+fj n
+
+(1.13)
+
+Bng tn sut c dùng cho các bin nh sex, cp, Diagnosis, dx, localization. Trng hp s dng gm kim tra t l nam/n trong Heart Disease, phân b loi au ngc, t l khi u lành/ác trong Breast Cancer, phân b lp tn thng da trong HAM10000 và v trí tn thng ph bin. Bng 1.12 minh ha tn sut và tn sut tng i ca bin cp. Hn ch: bng tn sut ch mô t s lng/t l tng lp, không cho bit quan h gia bin phân loi vi các bin s khác. Nu s lp quá nhiu, bng dài và khó c; khi ó cn gp lp hoc dùng biu .
+
+Bng 1.12: Bng ví d tn sut và tn sut tng i ca bin cp
+
+Giá tr cp Tn sut Tn sut tng i
+
+1
+
+23
+
+7.6%
+
+2
+
+50
+
+16.5%
+
+3
+
+86
+
+28.4%
+
+4
+
+144
+
+47.5%
+
+13
+
+1.4.6 Z-score
+Z-score chun hóa giá tr theo mean và standard deviation:
+
+zi
+
+=
+
+xi
+
+- s
+
+x¯
+
+(1.14)
+
+Giá tr |zi| ln cho thy quan sát nm xa trung tâm d liu. Trong nhiu bài toán, |zi| > 3 c xem là du hiu outlier. Z-score c bit hu ích khi cn so sánh các bin có n v khác nhau, ví d tui, cholesterol và huyt áp. Trng hp s dng gm chun hóa c trng trc SVM/logistic regression, phát hin bnh nhân có ch s sinh hc quá xa trung bình, chun hóa cm bin nng lng và a các c trng nh v cùng thang o trc khi hun luyn mô hình. Hn ch: z-score ph thuc vào mean và standard deviation nên nhy vi outlier và kém phù hp khi phân phi lch mnh. Ngng |z| > 3 ch là quy tc kinh nghim, không thay th kim tra bng kin thc min.
+Ví d. Bng 1.13 minh ha z-score cho mt vài quan sát cholesterol, vi x¯ = 246.69 và s = 51.78.
+
+Bng 1.13: Bng ví d Z-score ca mt s giá tr cholesterol
+
+Mu chol
+
+Công thc Z-score
+
+1 126 (126 - 246.69)/51.78 2 241 (241 - 246.69)/51.78 3 275 (275 - 246.69)/51.78 4 371 (371 - 246.69)/51.78 5 564 (564 - 246.69)/51.78
+
+-2.33 -0.11 0.55 2.40 6.13
+
+1.5  xut thêm các phép toán thng kê phù hp vi bài toán
+Ngoài các phép toán ã nêu trong mô t  bài, báo cáo ch  xut thêm ba s o u tiên  tránh dàn tri: trimmed mean thuc nhóm xu hng trung tâm; skewness và median absolute deviation thuc nhóm phân tán/hình dng phân phi. Ba s o này b sung trc tip cho mean, median, variance và IQR trong bi cnh d liu y t, nng lng và nh.
+14
+
+C S LÝ THUYT
+
+Bng 1.14:  xut 3 s o thng kê b sung cho báo cáo
+
+S o
+
+Nhóm
+
+Trng hp s Công dng dng
+
+Hn ch
+
+Trimmed mean
+Skewness
+Median Absolute Deviation (MAD)
+
+Xu hng trung tâm
+Phân tán/hình dng
+Phân tán
+
+Bin nh lng có vài outlier nh chol, Appliances
+
+Bin
+
+lch
+
+phi/trái nh
+
+chol,
+
+BMI,
+
+Appliances
+
+D liu có outlier, c bit y t và cm bin
+
+c lng trung tâm bn vng hn mean bng cách b mt t l nh hai u phân phi Xác nh chiu và mc  lch  quyt nh logtransform hoc dùng median/IQR o  phân tán bn vng quanh median; thay th SD khi d liu lch
+
+Cn chn t l ct; nu ct quá mnh có th mt thông tin tht
+Nhy vi outlier; khó din gii nu mu nh hoc phân phi nhiu nh Không quen thuc bng SD; cn h s chun hóa nu mun so sánh vi  lch chun
+
+Trimmed mean. ây là s o xu hng trung tâm, thng ct b % giá tr nh nht và % giá tr ln nht ri tính mean trên phn còn li. Công dng là gi u im ca mean nhng gim nh hng ca outlier. Ví d vi chol, thay vì  giá tr 564 kéo mean lên, có th dùng trimmed mean 5%  mô t cholesterol trung tâm n nh hn. Hn ch là phi chn t l ct; t l ct không phù hp có th loi b c các ca bnh tht s bt thng.
+Skewness. ây là s o thuc nhóm phân tán/hình dng phân phi, cho bit phân phi lch phi, lch trái hay tng i cân bng. Công dng là h tr quyt nh bin i d liu: nu Appliances lch phi mnh thì log1p giúp phân phi gn hn trc hi quy. Ví d histogram nng lng tiêu th có uôi phi dài; skewness dng xác nhn phn ln quan sát thp nhng có mt s mc tiêu th rt cao. Hn ch là skewness nhy vi outlier và không  mô t toàn b hình dng phân phi nu d liu nhiu nh.
+Median Absolute Deviation (MAD). ây là s o phân tán bn vng, c tính theo M AD = median(|xi - M edian(X)|). Công dng là o khong lch in hình quanh median và phát hin im bt thng khi SD b outlier làm phóng i. Ví d vi chol, MAD cho bit phn ln bnh nhân lch khi median cholesterol khong bao nhiêu, ít b nh hng bi giá tr cc cao 564. Hn ch là MAD ít quen thuc vi ngi c ph thông hn standard deviation và cn gii thích thêm nu dùng  t ngng outlier.
+15
+
+1.6 Minh ha tính toán chi tit trên mt bin thc t
+ vn dng các phép toán thng kê mô t, báo cáo chn bin chol trong b Heart Disease. ây là bin nh lng liên tc, biu din cholesterol huyt thanh ca bnh nhân. Mc này minh ha cách ngi phân tích tính th công các thông s thng kê t dãy giá tr quan sát: sp xp d liu, xác nh v trí phân v, thay s vào công thc và din gii ý ngha. Trng tâm không phi chy code, mà là hiu bn cht phép tính và cách c kt qu.
+Gi tp giá tr cholesterol thô là X = {x1, x2, . . . , xn} vi n = 303. Các bc tính c áp dng nh sau:
+
+1 x¯ =
+n
+
+n
+
+xi
+
+=
+
+x1
+
++ x2
+
++ · · · + x303 303
+
+=
+
+246.69
+
+i=1
+
+M edian = P50 = 241.00
+
+M ode = arg max count(xi = v) = 197.00 v
+
+Range = xmax - xmin = 564 - 126 = 438
+
+s2 = 1 n-1
+
+n
+(xi - x¯)2 = 2680.85
+
+
+
+i=1
+
+s = s2 = 2680.85 = 51.78
+
+s 51.78
+
+CV = =
+
+= 0.210
+
+x¯ 246.69
+
+IQR = Q3 - Q1 = P75 - P25 = 275 - 211 = 64
+
+(1.15)
+(1.16) (1.17) (1.18) (1.19)
+(1.20) (1.21) (1.22)
+
+Trong ó P25 = 211, P50 = 241 và P75 = 275 c ly t phân v 25%, 50% và 75% ca dãy chol sau khi sp xp tng dn. Phng sai dùng mu s n - 1 vì ây là phng sai mu. Bng di ây tng hp li kt qu và din gii ý ngha phân tích.
+16
+
+C S LÝ THUYT
+Bng 1.15: Minh ha thng kê mô t bin chol trong Heart Disease bng cách tính th công t dãy quan sát.
+
+Thông s
+
+Giá tr Ý ngha phân tích
+
+Count Mean Median Mode Min Max Range Variance Standard deviation CV P25 P50 P75 IQR
+
+303 246.69 241.00 197.00 126.00 564.00 438.00 2680.85 51.78 0.210 211.00 241.00 275.00 64.00
+
+Có 303 quan sát hp l  phân tích bin cholesterol. Trung bình cholesterol tng i cao, nhng nhy vi giá tr cc tr. Trung v thp hn mean, gi ý phân phi hi lch phi. Giá tr xut hin nhiu nht là 197, thp hn mean khá nhiu. Mc cholesterol nh nht trong mu. Giá tr rt cao, là ng viên outlier cn kim tra. Khong bin thiên ln do max quá xa min. Phng sai ln, phn ánh mc phân tán áng k quanh mean. Trung bình các quan sát lch khi mean khong 51.78 n v.  bin thiên bng khong 21% mean, mc dao ng tng i áng chú ý. 25% bnh nhân có cholesterol không vt quá 211. Trùng vi median. 75% bnh nhân có cholesterol không vt quá 275. 50% d liu trung tâm nm trong khong rng 64 n v.
+
+T các giá tr trên, cách tính outlier theo IQR c thc hin theo ba bc. Bc 1, ly t phân v di Q1 = P25 = 211 và t phân v trên Q3 = P75 = 275. Bc 2, tính khong t phân v IQR = Q3 - Q1 = 275 - 211 = 64. Bc 3, th vào công thc biên di và biên trên:
+
+Lower = Q1 - 1.5 × IQR = 211 - 1.5 × 64 = 115
+
+(1.23)
+
+U pper = Q3 + 1.5 × IQR = 275 + 1.5 × 64 = 371
+
+(1.24)
+
+Do ó, các giá tr chol ln hn 371 c xem là ng viên outlier. Giá tr max thô 564 vt xa ngng này, nên nu a trc tip vào mô hình có th làm lch mean, range, variance và standard deviation.
+
+17
+
+Sau tin x lý, các ch s c tính li bng cùng công thc. Ví d:
+
+Rangecleaned = 371 - 126 = 245
+
+sc2leaned
+
+=
+
+2261.84 
+
+scleaned = 2261.84 = 47.56
+
+47.56 CVcleaned = 245.58 = 0.194
+
+(1.25) (1.26) (1.27)
+(1.28)
+
+Nh vy max gim t 564 xung 371, range gim t 438 xung 245, variance gim t 2680.85 xung 2261.84 và standard deviation gim t 51.78 xung 47.56. Median vn gi  241, cho thy cu trúc trung tâm ca bin không thay i nhiu; phn thay i ch yu nm  uôi phi ca phân phi.
+
+Bng 1.16: So sánh thng kê bin chol trc và sau tin x lý bng cùng h công thc thng kê mô t.
+
+Trng thái
+
+Mean Median Max Range Variance Std
+
+Thô
+
+246.69 241.00 564.00 438.00 2680.85 51.78
+
+Sau tin x lý 245.58 241.00 371.00 245.00 2261.84 47.56
+
+Nhn xét bn cht: mean và median dùng  c trung tâm d liu; mode cho bit giá tr ph bin; percentiles và IQR cho bit vùng tp trung ca 50% d liu gia; range, variance, standard deviation và CV cho bit mc bin ng. Vi bin chol, s chênh lch gia mean và median không quá ln nhng max rt cao, nên cn dùng ng thi median, IQR và boxplot  tránh kt lun sai do outlier. ây là lý do thng kê mô t phi i trc trc quan hóa và hc máy.
+
+1.7 Phân loi bin s
+Trong yêu cu bài tp, mi bin phi c phân loi theo bn cht. Cách phân loi c dùng trong báo cáo:
+ Qualitative: bin nh tính, ví d sex, cp, Diagnosis, dx.  Quantitative discrete: bin nh lng ri rc, ví d age, s mch máu ca, s
+khung hình, s t.  Quantitative continuous: bin nh lng liên tc, ví d huyt áp, cholesterol,
+nhit ,  m,  sáng pixel.
+Vic phân loi bin quyt nh cách tính thng kê và loi biu . Bin nh tính u tiên bng tn sut, bar chart hoc pie chart. Bin nh lng u tiên mean, median, standard deviation, histogram và boxplot.
+18
+
+C S LÝ THUYT
+
+Bng 1.17: Ví d phân loi bin theo bn cht d liu
+
+Dataset
+
+Bin
+
+Loi bin
+
+Cách phân tích chính
+
+Heart Disease Heart Disease Heart Disease CDC Diabetes Appliances Appliances HAM10000 HAM10000 Reuters
+
+sex age chol GenHlth date T1 dx mean intensity word count
+
+Qualitative Quantitative discrete Quantitative continuous Ordinal/qualitative Time index Quantitative continuous Qualitative target Quantitative continuous Quantitative discrete
+
+Bng tn sut, bar chart Mean, median, histogram Boxplot, outlier, IQR Tn sut theo mc Line chart, time split Histogram, correlation Class distribution Boxplot theo lp Histogram, boxplot
+
+1.8 H thng biu  trc quan hóa và tác dng phân tích
+H thng biu  trong báo cáo c chn theo ba tiêu chí: bn cht bin, câu hi phân tích và kh nng tái lp t d liu minh ha. Theo checklist ca project, mi hình phi có ng dn d liu, script sinh hình và din gii ngn; vì vy phn này không ch nêu tên biu  mà còn ch rõ các bc v, hình dng/phân b quan sát c, nhn xét d liu, ý ngha phân tích và phm vi áp dng ca tng biu . Các ví d c gn vi Heart Disease, Appliances Energy, HAM10000, Breast Cancer và CDC Diabetes.  ngi c thy rõ d liu u vào ca tng biu , mi nhóm biu  chính c b sung mt bng d liu mu rút gn ngay trc hoc sau hình minh ha.
+1.8.1 Quy trình chung khi v và phân tích biu 
+Mi biu  trong báo cáo c thc hin theo cùng mt quy trình  bo m hình v không ch mang tính minh ha mà còn to ra kt lun phân tích:
+1. Xác nh câu hi phân tích: cn xem phân phi mt bin, so sánh gia các nhóm, tìm tng quan, xem c cu hay theo dõi xu hng thi gian.
+2. Chn bin và loi biu : bin nh lng u tiên histogram, boxplot, scatter plot, heatmap hoc line chart; bin nh tính u tiên bar chart/pie chart; bin thi gian u tiên line chart.
+3. Chun b d liu: loi giá tr thiu không hp l, chuyn kiu d liu, sp xp thi gian nu có, tính tn sut/phân v/tng quan/rolling mean khi cn.
+4. V biu : t trc, nhãn, tiêu , chú gii, n v o; chn bins, màu, kích thc im hoc thang màu phù hp  tránh gây hiu nhm.
+19
+
+5. c hình dng và phân b: xác nh d liu cân bng hay lch trái/lch phi, mt nh hay nhiu nh, phân tán rng hay hp, có cm, outlier hoc mùa v hay không.
+6. Nhn xét d liu: liên h hình dng biu  vi bn cht d liu, ví d mt cân bng lp, uôi phi dài, tng quan âm, bin ng theo ngày hoc im bt thng.
+7. Rút ra ý ngha và phm vi áp dng: gii thích biu  h tr quyt nh nào trong EDA, tin x lý hoc mô hình hóa; ng thi nêu trng hp nên dùng và không nên dùng.
+
+Bng 1.18: Cách c nhanh hình dng biu  và ý ngha phân tích
+
+Du hiu trên biu Nhn xét v d liu 
+
+Ý ngha phân tích
+
+Hành ng phù hp
+
+Histogram lch phi
+Boxplot có nhiu im ngoài râu
+Scatter có xu hng tng/gim
+Bar chart lch mnh
+Line chart có nh bt thng
+Heatmap có cp tng quan cao
+
+Phn ln giá tr nh, ít giá tr rt ln Có ng viên outlier
+Hai bin có liên h quan sát c
+Mt cân bng nhóm/lp
+Có bin ng theo thi gian hoc s kin c bit
+c trng có kh nng trùng thông tin
+
+Mean d b kéo lên, mô hình nhy outlier
+Cn kim tra li nhp liu hoc giá tr him hp l Có th dùng làm c trng hoc kim tra gi thuyt
+Mô hình phân loi d thiên lch v lp ln
+Cn tránh chia train/test ngu nhiên nu d liu ph thuc thi gian Có nguy c a cng tuyn
+
+Xem
+
+log-
+
+transform,
+
+median, IQR
+
+Winsorize/capping
+
+hoc gi nu có
+
+ý ngha min
+
+Tính correla-
+
+tion/regression,
+
+không kt lun
+
+nhân qu
+
+Dùng strati-
+
+fied split, class
+
+weight, resam-
+
+pling
+
+Chia theo thi
+
+gian, thêm bin
+
+mùa v/rolling
+
+mean
+
+Chn bt bin
+
+hoc dùng regu-
+
+larization
+
+1.8.2 Nhóm biu  phân phi
+Nhóm biu  phân phi tr li câu hi "mt bin nh lng phân b nh th nào?". Nhóm này dùng cho chol, age, BMI, Appliances,  sáng nh. Hai biu  chính là histogram và boxplot; có th b sung KDE/density plot  xem ng mt  mt
+20
+
+C S LÝ THUYT
+hn, violin plot  so sánh phân phi theo lp, strip/swarm plot  xem tng quan sát khi mu nh.
+Bng 1.19: Nhóm biu  phân phi: ý ngha, hn ch và trng hp áp dng
+
+Biu  Histogram Boxplot KDE/Density Violin plot
+
+Ý ngha
+
+Trng hp áp dng Hn ch
+
+Xem hình dáng phân phi,  lch, a nh
+Phát hin outlier theo IQR, so sánh nhóm
+Xem mt  phân phi mt
+Kt hp boxplot và density
+
+Appliances, BMI
+
+chol,
+
+chol theo target,  sáng nh theo lp
+
+So sánh phân phi gia nhóm bnh/không bnh c trng nh hoc ch s y t theo lp
+
+Ph thuc s bins, không ch rõ tng outlier Không mô t rõ a nh, outlier ch là ng viên Ph thuc bandwidth, có th làm mt quá mc Khó c hn boxplot nu ngi xem cha quen
+
+Histogram: hình dáng phân phi
+
+Histogram chia min giá tr thành các khong và m s quan sát trong tng khong. Biu  này giúp nhn din phân phi cân bng, lch trái, lch phi, a nh hoc có im bt thng. Trong báo cáo, histogram c dùng cho các bin nh age, chol, BMI, Appliances và age trong HAM10000. Tác dng chính là quyt nh có cn logtransform, chun hóa hoc chia nhóm giá tr trc khi mô hình hóa hay không. Hn ch: histogram ph thuc s bins; cùng mt d liu nhng chn bins khác nhau có th làm hình dng nhìn khác. Histogram cng không hin th rõ tng im outlier nh boxplot.
+Bng 1.20: D liu mu cho histogram Appliances Energy
+
+Mu Appliances log1p(Appliances)
+
+1
+
+60
+
+4.11
+
+2
+
+60
+
+4.11
+
+3
+
+50
+
+3.93
+
+4
+
+50
+
+3.93
+
+5
+
+60
+
+4.11
+
+6
+
+230
+
+5.44
+
+Bng 1.20 minh ha dng d liu mt bin dùng  to histogram. Trc khi v, cn tính th công các khong lp và tn sut. Ví d chn ba khong [50, 100), [100, 200), [200, 300] cho sáu mu trên, ta có kt qu  Bng 1.21.
+21
+
+Bng 1.21: Tính tn sut trc khi v histogram Appliances
+
+Khong giá tr
+
+Cách m Tn sut
+
+[50, 100)
+
+50, 50, 60, 60, 60
+
+5
+
+[100, 200)
+
+Không có mu
+
+0
+
+[200, 300]
+
+230
+
+1
+
+T bng tính này có th v tay histogram: trc hoành là khong giá tr, trc tung là tn sut. Ct log1p c tính bng log(1 + x), ví d log(1 + 60) = 4.11, nhm chng minh bin i log trc khi v biu  so sánh.
+
+Hình 1.1: Minh ha histogram raw và log1p trên Appliances Energy bng Python. Python source: src/analyze_appliances_energy.py; figure path: outputs/figures/appliances_energy_distribution_raw_vs_log.png.
+22
+
+C S LÝ THUYT
+Hình 1.2: Minh ha histogram raw và log1p trên Appliances Energy bng Excel. Excel source: excel/excel_visualization_comparison.xlsx; Excel preview: outputs/figures/excel_appliances_raw_vs_log_hist_preview.png.
+Nhn xét và lý do chn. Histogram c chn vì Appliances là bin nh lng liên tc và mc tiêu cn xem hình dng phân phi. Hình 1.1 cho thy phân phi gc lch phi mnh: phn ln quan sát tp trung  mc tiêu th thp, nhng vn có mt s nh tiêu th rt cao. Khi dùng log1p, phân phi gn và cân bng hn. So sánh Python và Excel cho thy hai công c cùng phn ánh mt kt lun: d liu nng lng không nên a thng vào mô hình hi quy mà cn xem xét bin i log hoc x lý outlier. Python phù hp  t ng hóa và tái lp; Excel phù hp  kim tra trc quan nhanh bng bng tính.
+Boxplot: phát hin outliers da trên IQR Boxplot hin th median, Q1, Q3, IQR và các im ngoài ngng Q1 - 1.5 × IQR hoc Q3 + 1.5 × IQR. ây là biu  quan trng  phát hin outlier và so sánh phân phi gia các lp. Ví d boxplot cholesterol theo target_binary cho phép so sánh mc cholesterol gia nhóm có và không có bnh tim. Tác dng phân tích là phát hin bin cn x lý ngoi l, ng thi ánh giá bin nh lng có kh nng phân bit nhãn hay không. Hn ch: boxplot không mô t rõ hình dng phân phi bên trong; d liu a nh có th b che khut. im ngoài râu hp ch là ng viên outlier, cn kim tra thêm bng kin thc min.
+23
+
+Bng 1.22: D liu mu cho boxplot cholesterol theo nhóm bnh tim
+
+Mu target_binary chol
+
+Ghi chú
+
+1
+
+0 233 Nhóm không bnh
+
+2
+
+0 250 Nhóm không bnh
+
+3
+
+1 204
+
+Nhóm có bnh
+
+4
+
+1 236
+
+Nhóm có bnh
+
+5
+
+0 354
+
+Giá tr cao
+
+6
+
+1 564 ng viên outlier
+
+Bng 1.22 cho thy d liu boxplot cn mt bin nh lng và mt bin nhóm. Trc khi v, cn tính các i lng hp: Q1, median, Q3, IQR và biên outlier.
+
+Bng 1.23: Tính toán trc khi v boxplot cholesterol
+
+Thành phn boxplot
+
+Công thc/cách ly Kt qu
+
+Q1
+
+P25 ca chol
+
+211
+
+Median
+
+P50 ca chol
+
+241
+
+Q3
+
+P75 ca chol
+
+275
+
+IQR
+
+Q3 - Q1
+
+64
+
+Biên di
+
+Q1 - 1.5 × IQR
+
+115
+
+Biên trên
+
+Q3 + 1.5 × IQR
+
+371
+
+ng viên outlier
+
+chol > 371 hoc < 115
+
+564
+
+T các kt qu trên có th v tay boxplot: hp kéo t 211 n 275, ng gia  241, râu trên n 371 và im 564 c v riêng nh outlier.
+24
+
+C S LÝ THUYT
+
+Hình 1.3: Minh ha boxplot: cholesterol theo nhóm bnh tim.
+
+Python
+
+source:
+
+src/analyze_heart_disease.py;
+
+figure
+
+path:
+
+outputs/figures/heart_disease_cholesterol_boxplot.png.
+
+Nhn xét và lý do chn. Boxplot c chn vì chol là bin nh lng liên tc và câu hi phân tích là "có outlier hay không, phân phi hai nhóm target khác nhau th nào?". Hình 1.3 cho thy cholesterol có các im nm ngoài vùng râu hp, tc là có ng viên outlier theo quy tc IQR. Median và IQR giúp c cu trúc trung tâm tt hn mean khi d liu có giá tr cc tr. So vi histogram, boxplot không mô t chi tit hình dng phân phi, nhng tt hn trong vic so sánh hai nhóm và phát hin im bt thng. Vì vy, mu Heart Disease phù hp vi boxplot khi mc tiêu là ánh giá outlier và kh nng phân bit nhóm bnh/không bnh.
+
+1.8.3 Nhóm biu  tng quan và c cu
+Nhóm biu  tng quan và c cu tr li hai câu hi: "các bin có liên h vi nhau không?" và "các nhóm nh tính chim t trng th nào?". Scatter plot và heatmap dùng cho bin nh lng; bar chart và pie chart dùng cho bin nh tính. Có th b sung pair plot, hexbin plot, stacked bar chart và mosaic plot khi cn phân tích sâu hn.
+25
+
+Bng 1.24: Nhóm biu  tng quan và c cu: ý ngha, hn ch và trng hp áp dng
+
+Biu 
+
+Ý ngha
+
+Trng hp áp dng Hn ch
+
+Scatter plot
+Bar chart/Pie chart
+Correlation heatmap
+Pair/Hexbin plot Stacked bar/Mosaic
+
+Tìm liên h tuyn tính/phi tuyn, cm, im bt thng
+Xem c cu nh tính, lp ph bin/him
+Xem tng quan nhiu bin nh lng
+Xem nhiu cp bin hoc mt  im dày Xem quan h hai bin nh tính
+
+age­thalach, nhit ­nng lng
+cp, dx, Diagnosis
+Chn c trng Heart Disease, Breast Cancer
+EDA nhiu bin nh lng dx theo localization, target theo gii tính
+
+Ri khi nhiu
+
+im,
+
+không
+
+chng minh nhân
+
+qu
+
+Pie khó so sánh
+
+nhiu nhóm; bar
+
+không th hin
+
+quan h nu không
+
+nhóm/chng
+
+Ch yu phn ánh
+
+tuyn tính, không
+
+chng minh nhân
+
+qu
+
+D ri, tn không
+
+gian báo cáo
+
+Khó c khi nhiu
+
+nhóm nh
+
+Scatter plot: tìm liên h tuyn tính/phi tuyn
+Scatter plot biu din mi quan h gia hai bin nh lng. Nu các im to thành xu hng tng/gim, có th tn ti liên h tuyn tính hoc phi tuyn. Trong Heart Disease, scatter plot gia age và thalach giúp kim tra xu hng tui cao i kèm nhp tim ti a thp hn hay không. Tác dng phân tích là phát hin quan h bin, cm quan sát và im bt thng theo cp bin. Hn ch: khi s im quá ln, im b chng lên nhau làm khó c; xu hng quan sát c không khng nh quan h nhân qu.
+
+Bng 1.25: D liu mu cho scatter plot tui và nhp tim ti a
+
+Mu age thalach target_binary
+
+1 63
+
+150
+
+0
+
+2 67
+
+108
+
+1
+
+3 37
+
+187
+
+0
+
+4 41
+
+172
+
+0
+
+5 56
+
+178
+
+1
+
+6 62
+
+160
+
+1
+
+26
+
+C S LÝ THUYT
+Bng 1.25 minh ha mi dòng là mt im trên scatter plot. Trc khi v, cn chuyn mi dòng thành ta  (x, y), vi x = age và y = thalach; nu tô màu thì dùng thêm target_binary.
+
+Bng 1.26: Tính ta  trc khi v scatter plot
+
+Mu Ta  (x, y) Nhóm màu
+
+Din gii
+
+1
+
+(63, 150)
+
+2
+
+(67, 108)
+
+3
+
+(37, 187)
+
+4
+
+(41, 172)
+
+5
+
+(56, 178)
+
+6
+
+(62, 160)
+
+0 Tui 63, nhp tim ti a 150 1 Tui 67, nhp tim ti a 108 0 Tui 37, nhp tim ti a 187 0 Tui 41, nhp tim ti a 172 1 Tui 56, nhp tim ti a 178 1 Tui 62, nhp tim ti a 160
+
+T bng ta  này có th v tay scatter plot bng cách t tng im lên h trc; nhóm màu 0/1 giúp phân bit bnh/không bnh.
+
+Hình 1.4: Minh ha scatter plot tui và nhp tim ti a trong Heart Disease bng Python. Python source: src/analyze_heart_disease.py; figure path: outputs/figures/heart_disease_age_thalach_scatter.png.
+27
+
+Hình 1.5: Minh ha scatter plot tui và nhp tim ti a trong Heart Disease bng Excel. Excel source: excel/excel_visualization_comparison.xlsx; Excel preview: outputs/figures/excel_heart_age_thalach_scatter_preview.png.
+Nhn xét và lý do chn. Scatter plot c chn vì age và thalach u là bin nh lng, mc tiêu là kim tra quan h gia hai bin thay vì ch xem tng bin riêng l. Hình 1.4 cho thy xu hng âm: tui tng thì nhp tim ti a có xu hng gim. So vi histogram và boxplot, scatter plot biu din tng cp quan sát nên phù hp  phát hin quan h tuyn tính, phi tuyn, cm im hoc im bt thng theo cp bin. Python và Excel cho hình dng xu hng tng t; Python thun tin khi cn tô màu theo target hoc tính correlation, còn Excel giúp kim tra nhanh bng thao tác trc quan.
+Bar chart/Pie chart: c cu nh tính
+Bar chart và pie chart dùng cho bin nh tính. Bar chart  so sánh tn sut gia các nhóm; pie chart  mô t t trng khi s nhóm ít và t l cn trình bày nhanh. Trong báo cáo, bar chart c u tiên hn pie chart vì d so sánh hn, c bit vi các bin có nhiu lp nh localization trong HAM10000. Tác dng phân tích là nhn din mt cân bng lp, lp him và c cu d liu u vào. Hn ch: pie chart khó so sánh khi có nhiu nhóm hoc t l gn nhau; bar chart ch mô t c cu mt bin nu không m rng thành grouped/stacked bar.
+28
+
+C S LÝ THUYT
+
+Bng 1.27: D liu mu cho bar chart loi au ngc
+
+Loi au ngc cp Tn sut T l xp x
+
+1
+
+23
+
+7.6%
+
+2
+
+50
+
+16.5%
+
+3
+
+86
+
+28.4%
+
+4
+
+144
+
+47.5%
+
+Bng 1.27 là d liu ã tng hp theo nhóm. Trc khi v bar chart hoc pie chart, cn tính tn sut và t l: pj = fj/n vi n = 303.
+Bng 1.28: Tính toán trc khi v bar chart/pie chart bin cp
+
+Giá tr cp fj pj = fj/303 Góc pie chart
+
+1
+
+23
+
+7.6%
+
+27.3
+
+2
+
+50
+
+16.5%
+
+59.4
+
+3
+
+86
+
+28.4%
+
+102.2
+
+4
+
+144
+
+47.5%
+
+171.1
+
+T bng này có th v tay bar chart bng chiu cao ct fj; nu v pie chart thì dùng góc pj × 360 cho tng lát ct.
+
+Hình 1.6: Minh ha bar chart tn sut loi au ngc Heart Disease bng Python. Python source: src/analyze_heart_disease.py; figure path: outputs/figures/heart_disease_chest_pain_bar.png.
+29
+
+Hình 1.7: Minh ha bar chart tn sut loi au ngc Heart Disease bng Excel. Excel source: excel/excel_visualization_comparison.xlsx; Excel preview: outputs/figures/excel_heart_cp_bar_preview.png.
+Nhn xét và lý do chn. Bar chart c chn vì cp là bin nh tính/ri rc, biu din loi au ngc. Vi bin loi nhóm, histogram không phù hp vì các mã 1­4 không phi thang o liên tc; scatter plot cng không có ý ngha nu ch phân tích mt bin nh tính. Hình 1.6 cho thy cp=4 chim nhiu nht, tc c cu loi au ngc không cân bng. Bar chart tt hn pie chart trong mu này vì ngi c d so sánh chiu cao ct gia bn nhóm. Python và Excel cho cùng th t nhóm, chng minh bng tn sut c tính nht quán gia hai công c.
+1.8.4 Các dng biu  khác
+Nhóm này dùng cho các trng hp ngoài phân phi mt bin, tng quan hai bin hoc c cu nh tính n gin. Các dng quan trng gm line chart cho chui thi gian, rolling mean/area chart  làm mt hoc nhn mnh xu hng, confusion matrix  ánh giá phân loi, prediction vs actual  ánh giá hi quy/d báo, image grid  kim tra d liu nh.
+30
+
+C S LÝ THUYT Bng 1.29: Các dng biu  khác: ý ngha, hn ch và trng hp áp dng
+
+Biu 
+
+Ý ngha
+
+Trng hp áp dng Hn ch
+
+Line chart
+Rolling mean/Area chart Confusion matrix
+Prediction vs Actual
+Image grid/montage
+
+Trend, seasonality, bin ng theo thi gian
+Làm mt hoc nhn mnh tng lng
+Li phân loi theo lp
+So sánh d báo và thc t
+Kim tra cht lng nh, li nhãn
+
+Appliances Energy, HAR, MHEALTH
+
+Tiêu th in theo ngày/tun
+
+Heart
+
+Disease,
+
+HAM10000, Breast
+
+Cancer
+
+Regression/d báo Ap-
+
+pliances
+
+HAM10000
+
+D nhiu nu d liu dao ng mnh Che mt bin ng ngn hn
+Cn mô hình ã hun luyn; ph thuc ngng Không ch rõ nguyên nhân sai s Ch quan, ch xem c mu nh
+
+Line chart cho chui thi gian
+
+Line chart t thi gian trên trc hoành và giá tr quan sát trên trc tung. Biu  này bt buc vi nhóm B  phân tích trend, seasonality, bin ng bt thng và thi im thay i. Vi Appliances Energy, d liu có 19,735 mu t 2016-01-11 17:00:00 n 2016-05-27 18:00:00, tn sut ph bin 10 phút/mu. Do ó line chart theo ngày c dùng  làm mt xu hng tiêu th nng lng. Tác dng phân tích là chn cách chia train/test theo thi gian và ánh giá bin ng trc khi d báo. Hn ch: line chart d b nhiu nu tn sut ly mu dày và bin ng mnh; cn sp xp thi gian úng, x lý missing timestamp và cân nhc rolling mean.
+
+Bng 1.30: D liu mu cho line chart Appliances Energy theo thi gian
+
+Thi im
+
+Appliances
+
+2016-01-11 17:00
+
+60
+
+2016-01-11 17:10
+
+60
+
+2016-01-11 17:20
+
+50
+
+2016-01-11 17:30
+
+50
+
+2016-01-11 17:40
+
+60
+
+2016-01-11 17:50
+
+50
+
+Bng 1.30 cho thy iu kin cn ca line chart là có bin thi gian c sp xp. Trc khi v, cn chuyn tng dòng thành im (t, y), vi t là thi im và y = Appliances; nu v ng trung bình trt thì tính thêm rolling mean.
+31
+
+Bng 1.31: Tính ta  và rolling mean trc khi v line chart
+
+Thi im
+
+yt Rolling mean 3 mu
+
+2016-01-11 17:00 60 2016-01-11 17:10 60 2016-01-11 17:20 50 2016-01-11 17:30 50 2016-01-11 17:40 60 2016-01-11 17:50 50
+
+­ ­ 56.67 53.33 53.33 53.33
+
+Công thc rolling mean 3 mu là y¯t,3 = (yt + yt-1 + yt-2)/3, ví d ti 17:20: (60 + 60 + 50)/3 = 56.67. T bng này có th v tay line chart bng cách ni các im theo th t thi gian.
+
+Hình 1.8: Minh ha line chart tiêu th nng lng theo ngày trong Appliances Energy bng Python. Python source: src/analyze_appliances_energy.py; figure path: outputs/figures/appliances_energy_daily_line.png.
+32
+
+C S LÝ THUYT
+
+Hình 1.9: Minh ha line chart tiêu th nng lng theo ngày trong Appliances Energy bng Excel. Excel source: excel/excel_visualization_comparison.xlsx; Excel preview: outputs/figures/excel_appliances_daily_line_preview.png.
+
+Nhn xét và lý do chn. Line chart c chn vì Appliances Energy có trc thi gian rõ ràng, mi quan sát gn vi thi im thu thp. Nu dùng histogram, ta ch bit phân phi mc tiêu th nhng mt thông tin th t thi gian; nu dùng bar chart, xu hng theo ngày không rõ. Hình 1.8 cho thy mc tiêu th dao ng theo ngày, có các giai on tng/gim và các im cao bt thng. So sánh Python và Excel cho thy xu hng tng th thng nht. Vì vy, line chart là la chn phù hp nht  phân tích trend, seasonality và làm c s cho quyt nh chia train/test theo thi gian  bài toán d báo.
+
+Correlation heatmap: tng quan nhiu bin nh lng
+
+Correlation heatmap biu din ma trn tng quan gia các bin nh lng. Màu sc giúp nhn din nhanh cp bin có tng quan dng hoc âm. Biu  này hu ích trong bc la chn c trng và phát hin a cng tuyn trc khi hun luyn mô hình.
+H s tng quan Pearson gia hai bin X và Y c tính bng:
+
+rXY =
+
+in=1(xi - x¯)(yi - y¯)
+
+ni=1(xi - x¯)2
+
+ni=1(yi - y¯)2
+
+(1.29)
+
+Giá tr rXY nm trong khong [-1, 1]. Giá tr gn 1 biu th tng quan dng mnh; gn -1 biu th tng quan âm mnh; gn 0 biu th mi quan h tuyn tính yu. Tuy nhiên, tng quan không ng ngha vi quan h nhân qu, nên heatmap ch nên c xem là công c thm dò ban u.
+
+33
+
+Bng 1.32: D liu mu cho correlation heatmap Heart Disease
+
+Mu age trestbps chol thalach
+
+1 63 2 67 3 37 4 41 5 56 6 62
+
+145 233
+
+150
+
+160 286
+
+108
+
+130 250
+
+187
+
+130 204
+
+172
+
+120 236
+
+178
+
+140 268
+
+160
+
+Bng 1.32 gm nhiu bin nh lng trên cùng các mu. T bng này, h s tng quan c tính cho tng cp bin, sau ó a vào ma trn màu ca heatmap.  chng minh heatmap không phi hình v ngu nhiên, Bng 1.33 a ra mt s h s tng quan ã tính trc khi tô màu.
+
+Bng 1.33: Tính toán tng quan trc khi v heatmap
+
+Cp bin
+
+H s r
+
+Ý ngha màu
+
+age ­ thalach age ­ trestbps chol ­ trestbps chol ­ thalach
+
+-0.39 0.28 0.13 -0.01
+
+Tng quan âm, màu lnh Tng quan dng yu, màu m nht
+Gn trung tính Gn 0, màu trung tính
+
+T các h s này có th v tay heatmap bng cách lp ma trn bin­bin, ghi r vào tng ô và gán màu theo  ln/du ca r.
+34
+
+C S LÝ THUYT
+Hình 1.10: Minh ha correlation heatmap: tng quan bin trong Heart Disease. Python source: src/analyze_heart_disease.py; figure path: outputs/figures/heart_disease_correlation_heatmap.png.
+Nhn xét và lý do chn. Correlation heatmap c chn vì Heart Disease có nhiu bin nh lng và cn xem nhanh quan h gia nhiu cp bin cùng lúc. Nu ch dùng scatter plot, mi hình ch th hin mt cp bin; heatmap gom toàn b ma trn tng quan vào mt hình, giúp phát hin cp bin có liên h dng/âm mnh và các nhóm bin có kh nng trùng thông tin. Hình 1.10 phù hp cho bc chn c trng trc khi hc máy. Tuy nhiên, heatmap ch phn ánh tng quan tuyn tính, không chng minh quan h nhân qu và không thay th kim nh thng kê hay kin thc chuyên ngành y t.
+1.8.5 Mt s dng biu  b sung phù hp vi bài toán
+Ngoài sáu dng chính, báo cáo  xut thêm ba biu  mi có kh nng b sung trc tip cho phân tích trong các chng sau: raincloud plot cho phân phi theo lp, ridgeline plot cho nhiu phân phi song song và hexbin plot cho d liu hai bin có mt  im cao. Ba biu  này không thay th histogram, boxplot hoc scatter plot; chúng c dùng khi biu  c bn bt u che mt mt , chng im hoc khác
+35
+
+bit nh gia nhiu nhóm. Các biu  mi c khai báo trong Bng 1.34 trc khi minh ha chi tit.
+Bng 1.34:  xut 3 biu  mi: u im, nhc im và phm vi áp dng
+
+Biu  mi Gii thiu
+
+u im
+
+Nhc im
+
+Phm vi áp dng
+
+Raincloud plot Ridgeline plot Hexbin plot
+
+Kt hp density/violin, boxplot và im d liu thô trong cùng mt hình.
+Xp nhiu density plot theo hàng ngang  so sánh nhiu nhóm hoc nhiu mc thi gian.
+Chia mt phng hai bin thành các ô lc giác và tô màu theo s im trong mi ô.
+
+Va thy hình dng phân phi, median/IQR, va thy tng quan sát; tt hn boxplot khi cn gii thích s chng ln gia các lp.
+Tit kim không gian khi có nhiu phân phi; d nhn ra dch chuyn trung tâm,  lch và a nh gia các nhóm.
+Gii quyt overplotting tt hn scatter plot khi d liu nhiu im; màu th hin mt  quan sát.
+
+D ri nu s lp nhiu hoc mu quá ln; cn chú thích rõ  ngi c không quen vn hiu.
+Không phù hp nu nhóm quá ít; phn chng lp có th gây hiu nhm din tích nu thang o không thng nht.
+Mt thông tin tng im; kt qu ph thuc kích thc ô và thang màu.
+
+So sánh bin nh lng theo lp: chol theo target_binary,  sáng nh HAM10000 theo dx. So sánh phân phi Appliances theo tháng/ngày trong tun hoc phân phi tui theo lp bnh. Cp bin nh lng dày im: T1­ Appliances, age­ thalach, c trng nh s hóa.
+
+Raincloud plot cho phân phi theo lp
+Raincloud plot trong Bng 1.34 kt hp ba lp thông tin: density/violin  thy hình dng phân phi, boxplot  c median và IQR, và im jitter  thy quan sát thô. Biu  này phù hp khi cn so sánh bin nh lng gia các nhóm nhng boxplot n l cha cho bit mt  im tp trung  âu. Vi Heart Disease, raincloud plot
+36
+
+C S LÝ THUYT
+có th dùng cho chol theo target_binary. D liu u vào gm hai ct: nhãn bnh target_binary và cholesterol chol; mi nhóm c v mt na density, mt hp IQR và các im jitter. Nu nhóm có bnh có uôi phi dài hn, biu  cho thy khác bit không ch  median mà còn  mt  và outlier. Hn ch: raincloud plot d ri khi có quá nhiu lp hoc quá nhiu im; cn chú thích rõ ý ngha ca density, hp IQR và im d liu.
+
+Ridgeline plot cho nhiu phân phi song song
+Ridgeline plot trong Bng 1.34 xp nhiu ng mt  theo tng nhóm hoc tng mc thi gian. Biu  này phù hp khi cn so sánh nhiu phân phi cùng lúc mà histogram hoc KDE riêng l chim quá nhiu không gian. Vi Appliances Energy, ridgeline plot c dùng  so sánh phân phi log1p(Appliances) theo tháng. D liu u vào gm tháng trích t bin thi gian và giá tr Appliances_log1p; mi tháng to mt density riêng, xp chng theo trc dc. Nu mt tháng có density lch phi hn tháng khác, ngi phân tích có c s kim tra yu t mùa v hoc thay i hành vi tiêu th. Hn ch: ridgeline plot có th gây hiu nhm nu thang mt  không thng nht hoc các ng chng quá mnh; nên dùng cùng thang o và sp xp nhóm theo thi gian.
+
+Hexbin plot cho d liu hai bin dày im
+Hexbin plot trong Bng 1.34 chia mt phng hai bin thành các ô lc giác và tô màu theo s quan sát trong tng ô. Biu  này phù hp khi scatter plot b overplotting, tc nhiu im chng lên nhau làm ngi c không thy vùng mt  cao. Vi d liu 19,735 mu ca Appliances Energy, hexbin plot gia T1 và Appliances phù hp hn scatter plot vì mi ô màu m cho bit vùng nhit  phòng và mc tiêu th in xut hin thng xuyên. Vi Heart Disease, hexbin cng có th dùng cho cp age­thalach nu m rng sang d liu ln hn. Hn ch: hexbin plot làm mt thông tin tng im riêng l; kt qu ph thuc kích thc ô và thang màu, nên cn chn tham s nht quán khi so sánh nhiu hình.
+
+Bng 1.35: D liu mu minh ha ba biu  mi
+
+Dataset
+
+Bin nhóm/thi gian Bin x
+
+Bin y
+
+Biu  phù hp
+
+Heart Disease Heart Disease Appliances Energy Appliances Energy HAM10000
+
+target_binary target_binary Tháng/ngày trong tun
+­ dx
+
+­
+
+chol
+
+Raincloud plot
+
+­
+
+thalach
+
+Raincloud plot
+
+­ Appliances
+
+Ridgeline plot
+
+T1 Appliances
+
+Hexbin plot
+
+­ Mean intensity Raincloud/Ridgeline plot
+
+37
+
+Hình 1.11: C s thay th bng raincloud plot:  sáng nh HAM10000 theo lp. Python source: src/analyze_ham10000.py; figure path: outputs/figures/ham10000_mean_intensity_boxplot.png.
+Hình 1.12: C s thay th bng hexbin plot: tui và nhp tim ti a trong Heart Disease. Python source: src/analyze_heart_disease.py; figure path: outputs/figures/heart_disease_age_thalach_scatter.png.
+38
+
+C S LÝ THUYT
+Hình 1.13: Minh ha ridgeline plot: phân phi log1p(Appliances) theo tháng trong Appliances Energy. Python source: src/analyze_appliances_energy.py; figure path: outputs/figures/appliances_energy_monthly_ridgeline.png.
+Nhn xét và lý do chn. Ba biu  mi c chn vì mi biu  x lý mt hn ch c th ca biu  c bn. Raincloud plot m rng boxplot khi cn thy c density và im d liu; ridgeline plot m rng KDE khi cn so sánh nhiu nhóm/thi on; hexbin plot m rng scatter plot khi im quan sát quá dày. Trong báo cáo, chúng nên c dùng có chn lc: ch thêm khi câu hi phân tích cn mt  phân phi, nhiu nhóm song song hoc d liu hai bin quá ông im. Nu mc tiêu ch là mô t n gin, histogram, boxplot và scatter plot vn là la chn d c hn.
+1.9 Các phép bin i và tin x lý c bn
+Các phép bin i và tin x lý là cu ni gia thng kê mô t và mô hình hóa. Theo Han, Kamber và Pei, cht lng d liu nh hng trc tip n cht lng khai phá d liu; d liu thiu, nhiu, lch thang o hoc không dng có th làm mô hình hc sai cu trúc tht [10]. Trong hc máy ng dng, Kuhn và Johnson cng nhn mnh rng tin x lý và feature engineering phi c quyt nh da trên bn cht bin, phân phi và thut toán s dng, không nên áp dng máy móc cho mi ct [13]. Vi d liu chui thi gian, Hyndman và Athanasopoulos khuyn ngh x lý bin i phng sai, sai phân và kim tra th t thi gian trc khi d báo [11].
+39
+
+1.9.1 in khuyt
+
+D liu thc t thng có missing value do li nhp liu, li cm bin, file b ghép thiu hoc mt s thuc tính không o c  mi mu. Nu b toàn b dòng thiu, kích thc mu có th gim mnh và to thiên lch nu missing không ngu nhiên. Vì vy, cn chn cách in khuyt theo kiu bin và nguyên nhân thiu. Vi bin nh lng cân bng, mean gi nguyên trung bình tng th; vi bin nh lng lch hoc có outlier, median bn vng hn; vi bin nh tính, mode gi li lp ph bin nht.
+
+ median(X ), 
+xmissing = mean(X),
+mode(X ),
+
+nu X là bin nh lng có outlier nu X là bin nh lng cân bng nu X là bin nh tính
+
+(1.30)
+
+Trng hp/phm vi áp dng. in mean/median phù hp khi t l thiu thp và bin thiu không phi nhãn mc tiêu. in mode phù hp vi bin phân loi có s lp ít. Vi chui thi gian, nên u tiên ni suy, forward fill hoc backward fill nu giá tr lin k có ý ngha thi gian. Không nên in khuyt tùy tin khi t l thiu quá cao, khi missing mang ý ngha riêng, hoc khi bin thiu là target cn d báo.
+Ví d c th. Trong Heart Disease, bin ca thiu 4 giá tr và thal thiu 2 giá tr. Vì t l thiu thp, có th in ca bng median/mode sau khi xem phân phi, và in thal bng mode vì ây là bin phân loi c mã hóa. Trong Appliances Energy, các bin cm bin nu có khong trng ngn nên dùng ni suy tuyn tính theo thi gian  gi xu hng liên tc thay vì in mean toàn cc.
+
+1.9.2 Chun hóa thang o
+
+Trong hc máy, các bin có thang o khác nhau có th làm thut toán da trên khong cách hoc gradient b lch. Ví d, cholesterol có min khong hàng trm, còn oldpeak ch khong 0­6; nu dùng K-Means hoc SVM mà không chun hóa, bin có n v ln d chi phi khong cách. Hai k thut c bn là min-max scaling và standardization.
+Min-max scaling a giá tr v khong [0, 1]:
+
+x = x - xmin xmax - xmin
+Standardization a d liu v mean 0 và standard deviation 1:
+
+(1.31)
+
+x = x - µ 
+
+(1.32)
+
+Trng hp/phm vi áp dng. Min-max scaling phù hp khi cn gi min c nh, ví d c trng nh a v [0, 1] hoc mô hình neural network. Standardization
+
+40
+
+C S LÝ THUYT
+phù hp hn cho Logistic Regression, SVM, PCA, K-Means và Hierarchical Clustering vì các thut toán này nhy vi thang o. Không bt buc chun hóa cho cây quyt nh và Random Forest vì chúng tách theo ngng tng bin, nhng chun hóa vn có th hu ích khi so sánh h s hoc kt hp vi thut toán khác.
+Ví d c th. Vi Heart Disease, trc khi chy K-Means, các bin age, trestbps, chol, thalach, oldpeak cn standardization  chol không áp o khong cách. Vi HAM10000, nu trích c trng  sáng trung bình t nh, giá tr pixel nên chia cho 255  a v [0, 1] trc khi so sánh gia nh.
+
+1.9.3 Log transform và differencing cho chui thi gian
+Log transform dùng khi bin nh lng lch phi mnh, có nhiu giá tr nh nhng mt s giá tr rt ln. Phép bin i này nén phn uôi phi, gim nh hng ca giá tr cc tr và giúp mô hình tuyn tính d hc hn. Vi d liu chui thi gian, log transform còn giúp phng sai n nh hn trc khi d báo [11]:
+
+yt = log(1 + yt)
+
+(1.33)
+
+Sai phân bc 1 giúp loi b xu hng cc b và chuyn phân tích t mc giá tr sang mc thay i:
+
+yt = yt - yt-1
+
+(1.34)
+
+Trng hp/phm vi áp dng. Log1p phù hp vi bin không âm và lch phi nh Appliances, chi phí, doanh thu, s lt truy cp hoc cng  pixel tng hp. Không dùng log trc tip cho giá tr âm; khi có 0 nên dùng log1p. Differencing phù hp cho chui thi gian có xu hng hoc mc nn thay i; tuy nhiên nu sai phân quá mc có th làm mt thông tin dài hn và tng nhiu.
+Ví d c th. Trong Appliances Energy, Appliances_log1p và Appliances_diff ã c to trong script src/analyze_appliances_energy.py. Histogram raw cho thy Appliances lch phi, còn histogram log1p gn hn. Line chart theo ngày và ridgeline plot theo tháng giúp kim tra liu phân phi tiêu th in có thay i theo thi gian hay không. Khi xây dng mô hình d báo, d liu phi chia train/test theo th t thi gian, không random split,  tránh rò r thông tin tng lai.
+41
+
+Bng 1.36: Tóm tt phm vi áp dng các phép tin x lý c bn
+
+K thut
+
+Áp dng khi
+
+Không nên dùng khi
+
+Ví d trong báo cáo
+
+Mean/median/modTe l thiu thp, bin
+
+imputation
+
+u vào quan trng
+
+Ni suy thi gian Min-max scaling Standardization
+
+Chui thi gian có khong trng ngn Cn min [0, 1], d liu nh/neural network SVM, Logistic Regression, PCA, K-Means
+
+Log1p transform Bin không âm lch phi
+
+Differencing
+
+Chui có xu hng, cn phân tích thay i
+
+Missing quá cao hoc missing là tín hiu riêng Khong trng dài, cm bin li kéo dài Có outlier mnh cha x lý Cn gi n v gc  gii thích trc tip
+D liu âm hoc cn din gii n v gc Chui quá nhiu hoc cn mc tuyt i
+
+ca, thal trong Heart Disease
+Cm bin Appliances Energy  sáng nh HAM10000 Các bin Heart Disease trc clustering Appliances_log1p
+Appliances_diff
+
+1.10 Quy trình phân tích khám phá d liu
+Phân tích khám phá d liu (Exploratory Data Analysis - EDA) là giai on ni gia d liu thô và mô hình phân tích. Nu b qua EDA, ngi phân tích có th a vào mô hình các bin b li kiu d liu, phân phi lch quá mnh, cha outlier bt thng hoc có target mt cân bng. Trong báo cáo này, EDA c xem nh mt quy trình có kim soát gm nm bc.
+1. Kim tra cu trúc d liu: xác nh s dòng, s ct, kiu d liu, khóa thi gian, nhãn mc tiêu và các file ngun.
+2. Kim tra cht lng d liu: tìm giá tr thiu, giá tr trùng, giá tr ngoài min hp lý và kiu d liu b c sai.
+3. Thng kê mô t: tính mean, median, mode, percentile, variance, standard deviation, CV và IQR cho các bin nh lng; lp bng tn sut cho bin nh tính.
+4. Trc quan hóa: chn biu  phù hp vi bn cht bin và câu hi phân tích.
+5. Rút kt lun phân tích: ghi nhn c im d liu có nh hng n tin x lý, feature engineering và mô hình hc máy.
+im quan trng là EDA không dng  vic to ra nhiu hình. Mi hình phi tr li mt câu hi c th. Ví d, histogram tr li câu hi "bin này phân phi nh th
+42
+
+C S LÝ THUYT
+nào?", boxplot tr li câu hi "bin này có outlier không?", scatter plot tr li câu hi "hai bin có quan h gì không?", còn line chart tr li câu hi "d liu thay i ra sao theo thi gian?".
+
+Bng 1.37: Quy trình EDA và sn phm u ra cn lu
+
+Bc Kim kê d liu Kim tra thiu Thng kê mô t Trc quan hóa Din gii
+
+Câu hi chính
+
+Sn phm u ra
+
+D liu có bao nhiêu dòng/ct? Bin nào thiu và thiu bao nhiêu? Trung tâm và  phân tán ra sao? Phân phi, outlier, quan h bin th nào? Kt qu tác ng gì n mô hình?
+
+Inventory CSV, mô t dataset Missing-value table Summary table PNG figure, Excel chart Nhn xét trong báo cáo
+
+Bng 1.37 cng là c s t chc th mc ca d án. Các file trong outputs/tables/ lu bng chng dng bng; các file trong outputs/figures/ lu biu ; các file trong src/ lu script to kt qu. Cách t chc này giúp báo cáo không ch có kt lun, mà còn có ng dn tái lp kt lun.
+1.11 Nguyên tc chn biu  theo câu hi phân tích
+Không có mt loi biu  nào phù hp cho mi d liu. Vic chn biu  ph thuc vào loi bin, s bin cn so sánh và câu hi ang t ra. Nu chn sai biu , ngi c có th hiu sai bn cht d liu. Ví d, dùng pie chart cho bin có quá nhiu lp s khó so sánh; dùng scatter plot cho bin nh tính s không có ý ngha; dùng line chart cho d liu không có th t thi gian có th to cm giác có xu hng gi.
+43
+
+Bng 1.38: Chn biu  theo loi câu hi phân tích
+
+Câu hi phân tích
+
+Biu  u tiên
+
+Bin nh lng phân Histogram
+
+phi th nào?
+
+Có outlier không?
+
+Boxplot
+
+Hai bin s có quan h không? Bin nh tính có c cu ra sao? D liu thay i theo thi gian th nào? Nhiu bin liên h vi nhau ra sao?
+
+Scatter plot Bar chart Line chart Correlation heatmap
+
+Lý do s dng
+Nhìn c dng lch, nhiu nh, tp trung Da trên median, IQR và im ngoài ngng Th hin tng cp quan sát trên mt phng So sánh tn sut gia các lp rõ hn pie chart Gi th t thi gian và phát hin xu hng Tóm tt ma trn tng quan bng màu sc
+
+Trong báo cáo này, nguyên tc chn biu  c áp dng nht quán. Vi Heart Disease, histogram và boxplot c dùng  minh ha phân phi và outlier; scatter plot và heatmap c dùng  kho sát quan h bin. Vi Appliances Energy, line chart là bt buc vì d liu có trc thi gian. Vi HAM10000, bar chart c dùng cho phân phi lp, còn boxplot c dùng cho c trng  sáng sau khi s hóa nh.
+
+1.12 Din gii thng kê trong bi cnh d liu
+Mt ch s thng kê ch có ý ngha khi c c trong bi cnh d liu. Mean không ch là mt con s trung bình; nó cho bit mc i din nu phân phi tng i cân bng. Median không ch là v trí gia; nó giúp so sánh vi mean  nhn bit  lch. Standard deviation không ch o  phân tán; nó còn cho bit bin nào có dao ng ln và có th cn chun hóa. IQR không ch phc v boxplot; nó là nn tng ca quy tc phát hin outlier.
+Khi c mt bin nh lng, báo cáo s dng ba lp nhn xét:
+ Nhn xét trung tâm: mean và median gn hay xa nhau, bin có nghiêng lch hay không.
+ Nhn xét phân tán: standard deviation, range, IQR ln hay nh so vi mean.  Nhn xét tin x lý: có cn ct outlier, log-transform, chun hóa hay không.
+Ví d, trong Appliances Energy, mean ca Appliances ln hn median và max rt cao, cho thy target lch phi. Nhn xét này dn trc tip n vic dùng log1p. Ngc li, trong Heart Disease, median ca chol gn nh không i trc và sau tin x lý, trong khi max gim mnh; iu này cho thy tin x lý ch yu làm gim nh hng ca im cc tr, không làm thay i phn lõi ca phân phi.
+44
+
+C S LÝ THUYT
+1.13 Các sai lch thng gp khi c biu 
+
+Trc quan hóa giúp d liu d hiu hn, nhng cng có th gây hiu nhm nu không c úng. Mt s sai lch thng gp trong báo cáo d liu gm:
+ Nhm tng quan vi nhân qu: heatmap ch cho bit hai bin thay i cùng nhau, không chng minh bin này gây ra bin kia.
+ ánh giá mô hình ch bng accuracy: nu target mt cân bng, accuracy cao có th ch do mô hình d oán lp a s.
+ B qua scale: các bin có thang o khác nhau làm scatter plot và thut toán khong cách khó din gii nu cha chun hóa.
+ Dùng biu  tng th thay cho phân tích theo lp: phân phi toàn b d liu có th che mt khác bit gia các nhóm target.
+ Không gn biu  vi câu hi: mt hình p nhng không tr li câu hi phân tích thì không giúp ci thin báo cáo.
+Do ó, mi biu  trong báo cáo c vit kèm lý do chn biu  và nhn xét. Cách trình bày này giúp ngi c hiu không ch biu  th hin gì, mà còn vì sao nó cn thit cho bài toán phân tích d liu.
+
+1.14 Minh ha tính toán trên Heart Disease
+
+B Heart Disease Cleveland có 303 mu và 14 thuc tính gc c dùng ph bin trong các thc nghim. Trong quá trình c d liu, ký hiu ? c chuyn thành missing value. Bng missing cho thy bin ca thiu 4 giá tr, tng ng 1.3201%, và bin thal thiu 2 giá tr, tng ng 0.6601%.
+Bng 1.39: Ví d thng kê mô t trên mt s bin Heart Disease
+
+Bin
+
+Mean Median Std Min Max
+
+age trestbps chol thalach oldpeak
+
+54.44 131.69 246.69 149.61
+1.04
+
+56.00 130.00 241.00 153.00
+0.80
+
+9.04 17.60 51.78 22.88 1.16
+
+29.00 94.00 126.00 71.00 0.00
+
+77.00 200.00 564.00 202.00
+6.20
+
+T Bng 1.39, có th rút ra ba nhn xét ban u. Th nht, bin age có median 56 và mean 54.44, cho thy phân phi tui hi nghiêng v nhóm trung niên và cao tui. Th hai, chol có range rt ln, t 126 n 564, nên cn kim tra outlier bng boxplot.
+45
+
+Th ba, oldpeak có median 0.8 nhng mode 0.0, cho thy mt phn áng k bnh nhân không có ST depression.
+
+Bng 1.40: So sánh trc và sau tin x lý trên Heart Disease
+
+Bin
+
+Mean thô Mean sch Std thô Std sch
+
+trestbps chol thalach oldpeak ca
+
+131.69 246.69 149.61
+1.04 0.67
+
+131.35 245.58 149.65
+1.02 0.63
+
+17.60 51.78 22.88 1.16 0.94
+
+16.65 47.56 22.73
+1.11 0.86
+
+Bng 1.40 cho thy tin x lý không làm thay i mnh giá tr trung tâm, nhng làm gim  bin ng ca các bin có outlier. Trng hp rõ nht là chol: standard deviation gim t 51.78 xung 47.56, max gim t 564 xung 371. iu này phù hp vi mc tiêu ca tin x lý: gi li cu trúc chính ca d liu nhng hn ch nh hng ca im cc tr.
+
+Hình 1.14: Ví d histogram tui trc/sau x lý trên Heart Disease. Python source: src/analyze_heart_disease.py; figure path: outputs/figures/heart_disease_age_raw_vs_cleaned.png.
+46
+
+C S LÝ THUYT
+Hình 1.15: Ví d boxplot cholesterol theo nhãn bnh trên Heart Disease. Python source: src/analyze_heart_disease.py; figure path: outputs/figures/heart_disease_cholesterol_boxplot.png.
+Lý do chn biu . Histogram c dùng vì bin age là bin nh lng, cn quan sát hình dng phân phi trc và sau x lý. Boxplot c dùng vì chol d có outlier và cn so sánh theo nhãn bnh.
+Nhn xét. Hình 1.14 minh ha hai cách c d liu khác nhau. Histogram tui cho thy mu Heart Disease tp trung  nhóm trung niên và cao tui. Boxplot cholesterol theo nhãn bnh giúp kim tra phân phi cholesterol ca nhóm có bnh và không có bnh có khác nhau rõ ràng hay không. Nu hai hp IQR chng lp nhiu, riêng cholesterol có th không  mnh  phân loi mà cn kt hp vi các bin khác.
+47
+
+Hình 1.16: Ví d scatter plot age và thalach trên Heart Disease. Python source: src/analyze_heart_disease.py; figure path: outputs/figures/heart_disease_age_thalach_scatter.png.
+48
+
+C S LÝ THUYT
+
+Hình 1.17: Ví d correlation heatmap trên
+
+Python
+
+source:
+
+src/analyze_heart_disease.py;
+
+outputs/figures/heart_disease_correlation_heatmap.png.
+
+Heart figure
+
+Disease. path:
+
+Lý do chn biu . Scatter plot phù hp  kim tra quan h gia hai bin nh lng age và thalach; heatmap phù hp  xem nhanh toàn b ma trn tng quan.
+Nhn xét. Hình 1.16 minh ha vai trò ca trc quan hóa a bin. Scatter plot cho phép quan sát mi quan h gia tui và nhp tim ti a, ng thi tô màu theo nhãn bnh. Heatmap cho phép nhìn nhanh cp bin nào có liên h tuyn tính mnh. Trong quy trình phân tích, hai biu  này giúp hình thành gi thuyt trc khi a d liu vào mô hình hc máy.
+
+1.15 Liên kt lý thuyt vi các chng sau
+Chng 1 cung cp ngôn ng chung  c các kt qu  Chng 3 và Chng 4. Các ch s mean, median, IQR và standard deviation s c dùng  so sánh trc/sau tin x lý. Các biu  histogram, boxplot, line chart và heatmap s c dùng  phát hin c trng d liu. Các nhn xét này tip tc làm c s cho la chn mô hình, din gii sai s và so sánh vi nghiên cu liên quan.
+
+49
+
+50
+
+Chng 2
+THU THP, MÔ T VÀ TNG QUAN
+CÁC B D LIU
+2.1 Tiêu chí la chn d liu . . . . . . . . . . . . . . . . . . . . . 52 2.2 Chin lc thu thp và kim chng d liu . . . . . . . . . . . 52 2.3 Nhóm A: D liu dng bng . . . . . . . . . . . . . . . . . . . 55
+2.3.1 A1 - Heart Disease . . . . . . . . . . . . . . . . . . . . 55 2.3.2 A2 - CDC Diabetes Health Indicators . . . . . . . . . . 58 2.3.3 A3 - Breast Cancer Wisconsin Diagnostic . . . . . . . . 61 2.4 Nhóm B: D liu chui thi gian và cm bin . . . . . . . . . 64 2.4.1 B1 - Appliances Energy Prediction . . . . . . . . . . . 64 2.4.2 B2 - Human Activity Recognition Using Smartphones . 67 2.4.3 B3 - MHEALTH Dataset . . . . . . . . . . . . . . . . . 70 2.5 Nhóm C: D liu a phng tin . . . . . . . . . . . . . . . . 72 2.5.1 C1 - HAM10000 . . . . . . . . . . . . . . . . . . . . . . 72 2.5.2 C2 - Reuters-21578 Text Categorization . . . . . . . . 75 2.6 ánh giá cht lng d liu và ri ro phân tích . . . . . . . . 79 2.7 Liên h gia ngun d liu và yêu cu bài toán . . . . . . . . 79 2.8 Các d liu và ni dung cn b sung tip . . . . . . . . . . . . 80 2.9 ng dn minh chng và tái s dng . . . . . . . . . . . . . 81
+Chng này trình bày ngun gc, cu trúc, c im và mc ích s dng ca các b d liu trong báo cáo. Theo yêu cu bài tp, nhóm d liu c chia thành ba nhóm: d liu dng bng, d liu chui thi gian/cm bin và d liu a phng tin.
+51
+
+2.1 Tiêu chí la chn d liu
+Tiêu chí la chn d liu c xây dng theo yêu cu ca  bài và kh nng phân tích thc t trong báo cáo. Mi b d liu c a vào phi thuc úng mt trong ba nhóm A, B hoc C; có s mu và s bin t ngng ti thiu; có ngun gc rõ ràng; ng thi có th phc v các ni dung thng kê mô t, trc quan hóa, tin x lý và hc máy  các chng sau.
+i vi nhóm A, d liu phi là dng bng, có ít nht hn 5 thuc tính và hn 100 quan sát  phù hp vi phân tích bin nh tính, bin nh lng và bài toán phân loi. i vi nhóm B, d liu phi có bn cht chui thi gian hoc tín hiu/cm bin, có hn 500 quan sát  có th biu din xu hng và ánh giá mô hình d báo hoc phân loi theo thi gian. i vi nhóm C, d liu phi thuc nhóm a phng tin nh nh hoc vn bn,  ln  trích xut c trng s và phân tích phân phi lp.
+Ngoài các tiêu chí nh lng, báo cáo u tiên nhng b d liu có tài liu mô t, bin mc tiêu rõ ràng, ã c s dng trong nghiên cu hoc benchmark, và có kh nng tái lp bng mã ngun Python trong th mc d án. Nh vy, vic la chn d liu không ch nhm áp ng s lng mà còn bo m tính nht quán gia Chng 2, Chng 3 và Chng 4.
+2.2 Chin lc thu thp và kim chng d liu
+Vic chn d liu trong báo cáo không ch nhm  s lng b d liu theo  bài, mà còn phi bo m mi b d liu có th to ra phân tích thng kê, trc quan hóa và thí nghim hc máy có ý ngha. Do ó, nhóm áp dng bn tiêu chí khi quyt nh a mt dataset vào báo cáo.
+1. Tính phù hp vi nhóm d liu: dataset phi thuc mt trong ba nhóm A, B, C theo mô t bài toán.
+2. Kh nng phân tích thng kê: dataset cn có bin nh lng hoc bin nh tính  rõ  tính thng kê, lp bng tn sut và v biu .
+3. Kh nng hc máy: dataset nên có target hoc có cu trúc c trng  tt  phc v classification, regression hoc clustering.
+4. Kh nng tái lp: d liu, script, bng kt qu, biu  và log phi c lu li trong th mc d án.
+Vi tiêu chí này, các b d liu c chn không ng c lp mà to thành mt pipeline xuyên sut. Heart Disease c dùng  minh ha lý thuyt, phân tích thng kê và classification. Appliances Energy c dùng  minh ha chui thi gian và regression. HAM10000 và Reuters-21578 i din cho d liu a phng tin, ni d liu thô cn c s hóa thành c trng trc khi thng kê.
+52
+
+THU THP, MÔ T VÀ TNG QUAN CÁC B D LIU
+
+Bng 2.1: Vai trò ca tng b d liu trong toàn b báo cáo
+
+Dataset Heart Disease
+
+Nhóm A
+
+CDC Diabetes
+
+A
+
+Breast Cancer
+
+A
+
+Appliances Energy B
+
+HAR
+
+B
+
+MHEALTH
+
+B
+
+HAM10000
+
+C
+
+Reuters-21578
+
+C
+
+Vai trò thng kê
+
+Vai trò hc máy
+
+Minh ha lý thuyt, outlier, tn sut Tn sut bin sc khe/hành vi Histogram, boxplot, heatmap Line chart, phân phi target Phân phi activity, cm bin Thng kê tín hiu cm bin Phân phi lp, c trng nh  dài vn bn, tn sut topic
+
+Classification, clustering Classification nguy c tiu ng Classification khi u
+Regression/timeseries forecasting Activity classification, clustering Activity classification, clustering Image classification, clustering Text classification
+
+Bng 2.1 cho thy mi dataset u có mt vai trò c th, tránh tình trng thu thp d liu ch   s lng. ây cng là cn c  Chng 3 và Chng 4 m rng phân tích theo tng nhóm.
+Yêu cu bài tp t ra ba nhóm d liu chính. Nhóm A là d liu dng bng, cn ti thiu 3 b, mi b có hn 5 features và hn 100 samples. Nhóm B là d liu chui thi gian, cn ti thiu 3 b, mi b có hn 500 samples. Nhóm C là d liu a phng tin, cn ít nht 2 b trong các loi nh, audio, video hoc text.
+Trong quá trình thc hin, báo cáo chn 8 b d liu  bao ph c ba nhóm. Các b d liu c u tiên vì có ngun công khai, có s mu  ln, có bài toán hc máy rõ ràng và có kh nng sinh bng/hình/log minh chng bng Python. Bng 2.3 tóm tt danh sách d liu ã thu thp.
+53
+
+Bng 2.2: i chiu b d liu vi yêu cu  bài
+
+Nhóm yêu cu
+
+Dataset s dng Ngng  bài Minh chng áp Artifact trong
+
+ng
+
+d án
+
+A ­ tabular
+A ­ tabular
+A ­ tabular
+B ­ chui/cm bin B ­ chui/cm bin B ­ chui/cm bin C ­ nh
+C ­ vn bn
+
+Heart Disease CDC Diabetes Breast Cancer Appliances Energy HAR MHEALTH HAM10000 Reuters-21578
+
+> 5 feature, > 100 mu > 5 feature, > 100 mu > 5 feature, > 100 mu > 500 mu
+> 500 mu
+> 500 mu
+ 500 nh
+ 1000 vn bn
+
+13 feature, 303 mu 21 feature, 253680 mu 30 feature, 569 mu 19735 mu, có mc thi gian 10299 mu cm bin 1215745 mu cm bin 10015 nh/metadata 21578 vn bn
+
+datasets/heart+disease/ datasets/uci_891_cdc_diabet datasets/breast+cancer+wisc datasets/appliances+energy+ datasets/human+activity+rec datasets/mhealth+dataset/ datasets/skin-cancer-mnistdatasets/reuters-21578/
+
+Bng 2.2 cho thy la chn d liu vt ngng ti thiu ca  bài: nhóm A có  ba b bng, nhóm B có  ba b chui/th t quan sát, nhóm C có hai dng multimedia là nh và vn bn. Vic ghi rõ th mc artifact giúp báo cáo có tính tái lp: ngi c có th kim tra d liu thô, script phân tích trong src/, bng xut trong outputs/tables/ và hình xut trong outputs/figures/.
+
+Bng 2.3: Tng hp các b d liu s dng trong báo cáo
+
+ID Nhóm B d liu
+
+Bài toán chính
+
+S mu
+
+A1 A A2 A A3 A B1 B B2 B B3 B C1 C C2 C
+
+Heart Disease CDC Diabetes Health Indicators Breast Cancer Wisconsin Diagnostic Appliances Energy Prediction Human Activity Recognition MHEALTH HAM10000 Reuters-21578
+
+Classification Classification Classification Regression Classification Classification Image classification Text classification
+
+303 253680
+569 19735 10299 1215745 10015 21578
+
+54
+
+THU THP, MÔ T VÀ TNG QUAN CÁC B D LIU
+2.3 Nhóm A: D liu dng bng
+
+Nhóm A gm ba b d liu dng bng, mi dòng là mt quan sát c lp và mi ct là mt thuc tính có kiu d liu rõ ràng. Các bng mô t trong phn này tp trung vào: s lng mu, kiu d liu ca feature, ý ngha thc t và kt qu baseline dùng làm mc i sánh cho Chng 4.
+
+Bng 2.4: Tng hp yêu cu mô t d liu bng nhóm A
+
+Dataset
+
+S mu S feature Target
+
+Bài toán
+
+A1 Heart Disease 303 A2 CDC Diabetes 253680 A3 Breast Cancer 569
+
+13 + target num
+
+Classification/clustering
+
+21 + target Diabetes_binary Classification
+
+30 + target Diagnosis
+
+Classification
+
+2.3.1 A1 - Heart Disease
+Ngun gc và cu trúc d liu. Heart Disease là b d liu y khoa t UCI Machine Learning Repository. Th mc local là datasets/heart+disease/. B d liu gc gm Cleveland, Hungarian, Switzerland và Long Beach VA; trong báo cáo dùng bn Cleveland processed vi 303 mu và 14 thuc tính. Bin mc tiêu là num, trong ó 0 biu din không có bnh tim và 1­4 biu din các mc có bnh.
+Trng d liu và phân phi. Các bin chính gm thông tin nhân khu hc, triu chng lâm sàng và kt qu xét nghim: age, sex, cp, trestbps, chol, thalach, oldpeak, ca, thal và num. Phân phi target gm 164 mu lp 0 (54.13%), 55 mu lp 1, 36 mu lp 2, 35 mu lp 3 và 13 mu lp 4; khi quy v nh phân, hai nhóm không bnh/có bnh khá cân bng. Tui bnh nhân có trung bình 54.44, trung v 56 và tri t 29 n 77. Cholesterol có trung bình 246.69 và giá tr ln nht ban u 564, sau làm sch c chn còn 371  gim nh hng outlier. thalach có trung bình 149.61, phn ánh nhp tim ti a khi gng sc; oldpeak có trung v 0.8 và giá tr cc i c gim t 6.2 xung 4.0 sau x lý. D liu có missing value  ca và thal, nên ây là ví d phù hp  minh ha in khuyt, mã hóa bin phân loi và chun hóa trc khi hc máy.
+Tng quan bài báo liên quan. Detrano và cng s xây dng mô hình xác sut h tr chn oán bnh mch vành t d liu lâm sàng, nhn mnh kh nng dùng bin bnh án thng quy  c lng nguy c [7]. Aha và Kibler dùng cùng nhóm d liu  ánh giá instance-based learning; trng tâm ca bài báo là o khong cách gia các h s bnh nhân và ra quyt nh da trên các ca tng t [1]. Gennari và cng s khai thác hng conceptual clustering/classification qua h thng CLASSIT, cho thy d liu nh nhng giàu ý ngha y khoa vn có th dùng  to nhóm khái nim có th din gii [9]. Nhìn chung, các nghiên cu t c kt qu quan trng  mc phng pháp: chng minh Heart Disease là benchmark phù hp cho mô hình tuyn tính, k-NN, cây quyt nh và ensemble; ng thi cho thy tính din gii ca c trng lâm sàng
+55
+
+là yu t quan trng hn mô hình quá phc tp.
+
+Bng 2.5: Các bin chính trong Heart Disease
+
+Bin Loi
+
+Ý ngha
+
+Vai trò
+
+age sex cp trestbps chol thalach oldpeak ca thal num
+
+nh lng ri rc nh tính nh tính Liên tc Liên tc Liên tc Liên tc Ri rc nh tính nh tính/th bc
+
+Tui bnh nhân Gii tính Loi au ngc Huyt áp ngh ngi Cholesterol huyt thanh Nhp tim ti a ST depression S mch máu chính Trng thái thalassemia Chn oán bnh tim
+
+Feature Feature Feature Feature Feature Feature Feature Feature Feature Target
+
+Bng 2.6: Thng kê mô t các thuc tính chính ca Heart Disease
+
+Thuc tính Loi
+
+Trung bình  phân tán Ghi chú
+
+age chol thalach oldpeak num
+
+Ri rc Liên tc Liên tc Liên tc Th bc
+
+54.44 246.69 149.61 1.04 ­
+
+std = 9.04 std = 51.78 std = 22.88 std = 1.16 IQR theo lp
+
+Tui, 29­77 Outlier max 564 Nhp tim ti a Lch phi Target 0­4
+
+56
+
+THU THP, MÔ T VÀ TNG QUAN CÁC B D LIU
+(a) Phân phi target
+(b) Tui và nhp tim ti a
+Hình 2.1: Minh ha Heart Disease. Python source: src/analyze_heart_disease.py; figure paths: outputs/figures/heart_disease_target_distribution.png, outputs/figures/heart_disease_age_thalach_scatter.png.
+Kt qu ban u. Bng tn sut cho thy target có hai nhóm chính sau khi quy v nh phân: không bnh và có bnh. Baseline  Bng 2.24 t F1 = 0.897 vi Random
+57
+
+Forest, cao hn Logistic Regression và gn vi SVM RBF. Hình 2.1 minh ha mt cân bng nh ca target và quan h gia tui, thalach và nhãn bnh.
+
+2.3.2 A2 - CDC Diabetes Health Indicators
+Ngun gc và cu trúc d liu. CDC Diabetes Health Indicators là b d liu dng bng t UCI, c lu ti datasets/uci_891_cdc_diabetes_health_indicators/. D liu có 253,680 mu, 21 features và 1 target là Diabetes_binary. Mi dòng biu din mt ngi tr li kho sát sc khe; các bin mô t bnh nn, hành vi sng, kh nng tip cn y t, t ánh giá sc khe và nhân khu hc.
+Trng d liu và phân phi. Target Diabetes_binary mt cân bng rõ: 218,334 mu lp 0 (86.07%) và 35,346 mu lp 1 (13.93%). Nhóm bnh nn gm HighBP, HighChol, Stroke; nhóm hành vi gm Smoker, PhysActivity, Fruits, Veggies; nhóm t ánh giá gm GenHlth, MentHlth, PhysHlth; nhóm xã hi hc gm Sex, Age, Education, Income. BMI có trung bình 28.38, trung v 27 và khong giá tr thô 12­98; sau x lý outlier, khong hp lý hn là 13.5­41.5. MentHlth và PhysHlth có trung v 0 nhng có giá tr cc i 30 ngày, cho thy phân phi lch phi: phn ln ngi tr li không báo cáo ngày sc khe kém, nhng mt nhóm nh có tình trng kéo dài. Age có trung bình mã hóa 8.03, Income trung bình 6.05; ây là các bin ordinal nên không nên din gii nh i lng liên tc tuyt i.
+Tng quan bài báo liên quan. Ngun gc d liu gn vi h thng BRFSS ca CDC, mt kho sát quy mô ln v hành vi, bnh nn và yu t nhân khu hc trong cng ng [5]. Smith và cng s óng gói b diabetes health indicators thành bài toán phân loi nguy c tiu ng da trên d liu t báo cáo, giúp d liu d dùng trong UCI/Kaggle và các thí nghim hc máy [18]. Các nghiên cu liên quan thng tóm tt mc tiêu là phát hin nhóm nguy c cao t BMI, huyt áp, cholesterol, hot ng th cht, tui và thu nhp; kt qu t c là chng minh d liu kho sát có th dùng cho d oán sàng lc, dù nhiu do t báo cáo và mt cân bng lp làm bài toán khó hn d liu y khoa o trc tip. iu này phù hp vi báo cáo hin ti: mô hình t F1 trung bình khá, nhng cn cân bng lp và ánh giá bng recall/F1 thay vì ch accuracy.
+
+Bng 2.7: Nhóm bin tiêu biu trong CDC Diabetes
+
+Nhóm bin Bin tiêu biu
+
+Ý ngha phân tích
+
+Bnh nn Hành vi Tip cn y t T ánh giá Nhân khu
+
+HighBP, HighChol, Stroke Smoker, PhysActivity, Fruits, Veggies AnyHealthcare, NoDocbcCost GenHlth, MentHlth, PhysHlth Sex, Age, Education, Income
+
+Tình trng sc khe nn Li sng và nguy c Kh nng chm sóc sc khe Sc khe t báo cáo Yu t xã hi hc
+
+58
+
+THU THP, MÔ T VÀ TNG QUAN CÁC B D LIU
+
+Bng 2.8: Thng kê mô t các thuc tính chính ca CDC Diabetes
+
+Thuc tính Loi
+
+Trung bình  phân tán Ghi chú
+
+BMI GenHlth MentHlth PhysHlth Age Income
+
+Liên tc Th bc Ri rc Ri rc Th bc Th bc
+
+28.38 2.51 3.18 4.24 8.03 6.05
+
+std = 6.61 std = 1.07 std = 7.41 std = 8.72 std = 3.05 std = 2.07
+
+Lch phi T ánh giá sc khe Nhiu giá tr 0 Nhiu giá tr 0 Mã nhóm tui Mã nhóm thu nhp
+
+59
+
+(a) Phân phi Diabetes_binary
+
+(b) Histogram các bin sc khe
+
+Hình 2.2: Minh ha CDC Diabetes Health Indicators.
+
+Python
+
+source:
+
+src/analyze_cdc_diabetes.py;
+
+figure
+
+paths:
+
+outputs/figures/cdc_diabetes_target_distribution.png,
+
+outputs/figures/cdc_diabetes_selected_histograms.png. Bng minh chng
+
+b sung: outputs/tables/cdc_diabetes_preprocessing_comparison.csv,
+
+outputs/tables/cdc_diabetes_evidence_index.csv.
+
+Kt qu ban u. D liu có quy mô ln nên phù hp  kim tra n nh ca mô hình trên d liu bng nhiu bin ordinal/nh phân. Baseline tt nht trong mu th
+60
+
+THU THP, MÔ T VÀ TNG QUAN CÁC B D LIU
+t F1 = 0.761 vi SVM RBF, trong khi Logistic Regression t accuracy = 0.744. Hình 2.2 cho thy target không cân bng hoàn toàn và các bin nh BMI, tui, sc khe tng quát có phân phi lch, cn chun hóa hoc bin i khi mô hình yêu cu. Phân tích b sung theo mu Heart Disease c lu trong src/analyze_cdc_diabetes.py; các bng cdc_diabetes_summary.csv, cdc_diabetes_preprocessing_comparison.csv và cdc_diabetes_evidence_index.csv ghi li y  thng kê mô t, so sánh trc­ sau x lý và ng dn minh chng.
+2.3.3 A3 - Breast Cancer Wisconsin Diagnostic
+Ngun gc và cu trúc d liu. Breast Cancer Wisconsin Diagnostic là b d liu chn oán ung th vú t UCI, c lu ti datasets/uci_17_breast_cancer_ wisconsin_diagnostic/. B d liu có 569 mu, 30 features và target Diagnosis. Target có hai lp: malignant (M) và benign (B), tng ng khi u ác tính và lành tính.
+Trng d liu và phân phi. Các features là c trng hình hc/kt cu ca nhân t bào: radius, texture, perimeter, area, smoothness, compactness, concavity, concave points, symmetry và fractal dimension; mi nhóm có ba dng mean, standard error và worst value. Phân phi lp gm 357 mu benign (62.74%) và 212 mu malignant (37.26%), không cân bng hoàn toàn nhng vn  mu cho c hai lp. radius1 có trung bình 14.13 và trung v 13.37; area1 có trung bình 654.89, trung v 551.1 và phng sai ln, cho thy kích thc khi u có outlier. Sau x lý, area1 c chn t max 2501 xung 1326.3 và radius1 t 28.11 xung 21.9. concavity1 có trung v 0.06154 nhng max 0.4268, phn ánh  lõm là bin phân bit quan trng gia hai lp. Heatmap cho thy các bin radius, perimeter và area tng quan cao, vì vy có th cn chun hóa và kim tra a cng tuyn trc khi dùng mô hình tuyn tính.
+Tng quan bài báo liên quan. Street, Wolberg và Mangasarian xây dng b d liu t nh fine needle aspirate (FNA), sau ó trích xut c trng s mô t nhân t bào  chn oán u lành/ác [19]. im chính ca bài báo là bin nh y sinh thành vector c trng nh lng, giúp mô hình hc máy có th x lý mà không cn nh gc. Mangasarian và cng s tip tc khai thác hng ti u hóa và separating hyperplane cho phân lp ung th vú [15]. Kt qu/ý ngha t c ca các nghiên cu này là chng minh c trng hình hc ca nhân t bào có tính phân tách mnh; trong báo cáo hin ti, iu này c xác nhn khi SVM RBF t F1 = 0.976, cao nht trong nhóm A.
+61
+
+Bng 2.9: Danh sách feature tiêu biu ca Breast Cancer
+
+Nhóm feature
+
+Loi
+
+Ý ngha thc t
+
+Ví d
+
+radius/perimeter/area texture smoothness/compactness concavity/concave points symmetry/fractal dimension Diagnosis
+
+Liên tc Liên tc Liên tc Liên tc Liên tc nh tính
+
+Kích thc nhân t bào  bin thiên cng  nh Hình dng biên nhân  lõm và im lõm biên i xng và  phc tp biên Nhãn lành/ác tính
+
+radius1, area1 texture1 smoothness1 concavity1 symmetry1 B, M
+
+Bng 2.10: Thng kê mô t các thuc tính chính ca Breast Cancer
+
+Thuc tính Loi
+
+Trung bình  phân tán
+
+Ghi chú
+
+radius1 texture1 area1 concavity1 Diagnosis
+
+Liên tc Liên tc Liên tc Liên tc nh tính
+
+14.13 19.29 654.89 0.09 ­
+
+std = 3.52 std = 4.30 std = 351.91 std = 0.08 B/M = 357/212
+
+Kích thc nhân Kt cu Phân tán ln Bin phân bit mnh Target
+
+62
+
+THU THP, MÔ T VÀ TNG QUAN CÁC B D LIU
+(a) Histogram các bin chn
+
+(b) Heatmap tng quan
+
+Hình 2.3: Minh ha cu trúc s ca Breast Cancer Wisconsin Di-
+
+agnostic. Python source: src/analyze_tabular_health.py; figure
+
+paths:
+
+outputs/figures/breast_cancer_selected_histograms.png,
+
+outputs/figures/breast_cancer_correlation_heatmap.png.
+
+63
+
+Lý do chn biu . Histogram giúp xem hình dng phân phi ca các bin hình hc; heatmap giúp phát hin các nhóm bin tng quan cao trong Breast Cancer.
+Nhn xét. Hình 2.3 cho thy b Breast Cancer có nhiu bin liên tc và tng quan cao gia các phép o hình hc. iu này gii thích vì sao các mô hình tuyn tính sau chun hóa, nh Logistic Regression hoc SVM, thng hot ng tt trên b d liu này.
+Kt qu ban u. Baseline SVM RBF t accuracy = 0.982 và F1 = 0.976, cao nht trong ba b d liu bng nhóm A. Kt qu này phù hp vi nhn xét t heatmap: nhiu c trng hình hc có kh nng phân tách rõ gia malignant và benign.
+
+2.4 Nhóm B: D liu chui thi gian và cm bin
+
+Nhóm B gm các b d liu có yu t th t thi gian hoc tín hiu cm bin. im khác bit so vi d liu bng là quan sát hin ti có th ph thuc vào thi im trc ó, nên cn mô t tn sut thu thp, ca s tín hiu và cách tách train/test theo thi gian.
+Bng 2.11: Tng hp c trng chui thi gian ca nhóm B
+
+Dataset
+
+S mu
+
+Features
+
+B1 Appliances 19735
+
+28
+
+B2 HAR
+
+10299
+
+561
+
+B3 MHEALTH 1215745 23
+
+Tn sut/ca s Ý ngha chui thi gian
+
+10 phút/mu
+Ca s tín hiu inertial Log cm bin liên tc
+
+D báo tiêu th nng lng theo thi gian Nhn dng hot ng t chui gia tc/gyro Chuyn log a kênh thành ca s hot ng
+
+2.4.1 B1 - Appliances Energy Prediction
+Ngun gc và cu trúc d liu. Appliances Energy Prediction là b d liu UCI c lu ti datasets/uci_374_appliances_energy_prediction/. B d liu có 19,735 mu, 28 features và target Appliances. Mi mu gn vi mt mc thi gian cách nhau khong 10 phút; khong quan sát bt u t 2016-01-11 17:00:00 n 2016-05-27 18:00:00.
+Trng d liu và phân phi. Các features bao gm nhit ,  m trong nhiu khu vc, ánh sáng, áp sut,  m ngoài tri, tc  gió, tm nhìn và im sng. Target Appliances có trung bình 97.69, trung v 60, mode 50,  lch chun 102.52 và h s bin thiên khong 1.05; max 1080 cho thy phân phi lch phi mnh. Bin lights có trung v và phân v 75 u bng 0, ngha là phn ln thi im èn không
+64
+
+THU THP, MÔ T VÀ TNG QUAN CÁC B D LIU
+tiêu th hoc không c ghi nhn  mc áng k. T1 có trung bình 21.69, RH_1 trung bình 40.26 và T_out trung bình 7.41, phn ánh ng thi iu kin trong nhà và ngoài tri. Vì ây là d liu chui thi gian, vic chia train/test phi theo th t thi gian; nu tách ngu nhiên s làm rò r thông tin tng lai và ánh giá mô hình quá lc quan.
+Tng quan bài báo liên quan. Candanedo, Feldheim và Deramaix gii thiu b d liu này  d báo tiêu th nng lng thit b gia dng t cm bin trong nhà và d liu thi tit [4]. Bài báo gc so sánh nhiu mô hình hi quy, trong ó Random Forest t hiu qu tt nh mô hình hóa c quan h phi tuyn gia nhit ,  m, ánh sáng, iu kin thi tit và hành vi s dng thit b. Kt qu chính ca nghiên cu là ch ra d liu cm bin môi trng có th dùng  d báo nng lng  quy mô h gia ình, nhng cn c trng thi gian nh gi, ngày trong tun, lag, rolling mean và rolling standard deviation. Trong báo cáo này, mô hình tuyn tính ban u có R2 thp, xác nhn rng nu cha to c trng chui thi gian thì mô hình khó khai thác y  mùa v và thói quen sinh hot.
+
+Bng 2.12: Thng kê mô t các thuc tính chính ca Appliances Energy
+
+Thuc tính Loi
+
+Trung bình  phân tán Ghi chú
+
+Appliances lights T1 RH_1 T_out Windspeed
+
+Liên tc Liên tc Liên tc Liên tc Liên tc Liên tc
+
+97.69 3.80 21.69 40.26 7.41 4.04
+
+std = 102.52 std = 7.94 std = 1.61 std = 3.98 std = 5.32 std = 2.45
+
+Target lch phi Nhiu giá tr 0 Nhit  trong nhà  m trong nhà Nhit  ngoài tri Thi tit
+
+65
+
+(a) Tiêu th trung bình theo ngày
+
+(b) Phân phi target trc/sau log
+
+Hình 2.4: Minh ha c trng chui thi gian ca Appliances
+
+Energy. Python source: src/analyze_appliances_energy.py; fig-
+
+ure
+
+paths:
+
+outputs/figures/appliances_energy_daily_line.png,
+
+outputs/figures/appliances_energy_distribution_raw_vs_log.png.
+
+Lý do chn biu . Line chart c chn vì Appliances Energy là d liu chui thi gian; histogram raw-vs-log c chn  kim tra mc lch phi ca target và tác dng ca log transform.
+Nhn xét. Hình 2.4 cho thy d liu Appliances có bin ng theo thi gian và phân phi target lch phi. Do ó, ngoài các mô hình regression thông thng, các c trng lag, rolling mean và log transform có th cn thit  ci thin kt qu d báo.
+Kt qu ban u. Khi tách train/test theo th t thi gian, Linear Regression t MAE = 58.71 và RMSE = 89.40. Random Forest cha tt trong cu hình ban u vì cha b sung  c trng lag/rolling, cho thy bài toán d báo nng lng cn x lý seasonality và c trng thi gian cn thn hn classification d liu bng.
+66
+
+THU THP, MÔ T VÀ TNG QUAN CÁC B D LIU
+2.4.2 B2 - Human Activity Recognition Using Smartphones
+Ngun gc và cu trúc d liu. Human Activity Recognition Using Smartphones (HAR) là b d liu cm bin chuyn ng t UCI, c gii nén ti datasets/human+ activity+recognition+using+smartphones/UCIHARDataset/. B d liu có 10,299 mu, 561 features và 6 nhãn hot ng: walking, walking upstairs, walking downstairs, sitting, standing và laying. D liu gm feature vectors ã x lý và tín hiu inertial raw trong th mc train/test.
+Trng d liu và phân phi. 561 features c trích t accelerometer và gyroscope, bao gm c trng min thi gian, min tn s, trung bình,  lch chun, nng lng, entropy, tng quan gia trc và dominant frequency. Phân phi lp tng i cân bng: LAYING 1,944 mu (18.88%), STANDING 1,906 (18.51%), SITTING 1,777 (17.25%), WALKING 1,722 (16.72%), WALKING_UPSTAIRS 1,544 (14.99%) và WALKING_DOWNSTAIRS 1,406 (13.65%). Nhóm hot ng tnh (sitting, standing, laying) và nhóm hot ng ng (walking, upstairs, downstairs) có mu dao ng cm bin khác nhau; ây là c s  boxplot theo activity cho thy kh nng phân tách trc khi hun luyn mô hình.
+Tng quan bài báo liên quan. Anguita và cng s công b HAR nh benchmark nhn dng hot ng bng smartphone, s dng cm bin gia tc và con quay hi chuyn thu thp trên ca s tín hiu c nh [2]. Bài báo tóm tt quy trình t tín hiu raw, lc nhiu, trích xut 561 c trng ri hun luyn SVM  phân loi sáu hot ng. Kt qu/ý ngha t c là chng minh in thoi thông minh có th thay th thit b chuyên dng trong activity recognition, ng thi cung cp b feature vector chun cho so sánh mô hình. Vi báo cáo hin ti, phân phi lp khá cân bng giúp classification/clustering áng tin cy hn MHEALTH, còn tín hiu raw m ra hng dùng CNN 1D hoc LSTM nu m rng sang hc sâu.
+
+Bng 2.13: Cu trúc nhãn hot ng trong HAR
+
+Mã nhãn Hot ng
+
+1
+
+WALKING
+
+2
+
+WALKING_UPSTAIRS
+
+3
+
+WALKING_DOWNSTAIRS
+
+4
+
+SITTING
+
+5
+
+STANDING
+
+6
+
+LAYING
+
+67
+
+Bng 2.14: Thng kê mô t các thuc tính chính ca HAR
+
+Thuc tính
+
+Loi
+
+Trung bình  phân tán Ghi chú
+
+f001_tBodyAcc-mean()-X f004_tBodyAcc-std()-X f121_tBodyGyro-mean()-X activity subject
+
+Liên tc Liên tc Liên tc nh tính nh tính
+
+0.27 -0.61 -0.03 ­ ­
+
+std = 0.07 std = 0.45 std = 0.13 6 lp 30 ngi
+
+Gia tc trc X Dao ng tín hiu Gyro trc X Target khá cân bng Nhóm quan sát
+
+68
+
+THU THP, MÔ T VÀ TNG QUAN CÁC B D LIU
+
+(a) Phân phi activity
+
+(b) c trng cm bin theo activity
+
+Hình 2.5: Minh ha Human Activity Recognition Us-
+
+ing Smartphones. Python source: src/analyze_har.py; fig-
+
+ure
+
+paths:
+
+outputs/figures/har_activity_distribution.png,
+
+outputs/figures/har_selected_feature_boxplot.png.
+
+Kt qu ban u. Hình 2.5 cho thy sáu hot ng c ghi nhn tng i y , to iu kin thun li cho classification và clustering. Boxplot các c trng gia tc/gyro cho thy mt s hot ng tnh và ng có min giá tr khác nhau, phù hp vi hng dùng SVM, Random Forest hoc CNN/LSTM trên tín hiu raw.
+69
+
+2.4.3 B3 - MHEALTH Dataset
+
+Ngun gc và cu trúc d liu. MHEALTH là b d liu Mobile Health t UCI, c lu ti datasets/MHEALTHDATASET/MHEALTHDATASET/. D liu gm 10 file subject log, tng cng 1,215,745 dòng, 23 features cm bin và 1 ct activity label. Các cm bin c t trên nhiu v trí c th, thu thp gia tc, gyro, t trng và tín hiu liên quan sc khe.
+Trng d liu và phân phi. Mi dòng là mt thi im trong log cm bin, cha phi mt mu hc máy c lp theo ngha ca s thi gian. Trong mu phân tích, nhãn NULL chim 282,379 dòng (70.59%), ln hn nhiu so vi các hot ng thc nh standing still 24,576 (6.14%), sitting 21,568 (5.39%), lying 18,496 (4.62%), walking 16,960 (4.24%), waist bends 13,684 (3.42%) và climbing stairs 12,288 (3.07%). iu này cho thy d liu rt giàu v thi lng ghi nhn nhng mt cân bng nghiêm trng theo nhãn. Các trng sensor_01­sensor_23 i din cho nhiu kênh o; khi phân tích cn nhóm theo v trí/cm bin, chun hóa scale, lc nhãn NULL và chuyn log dài thành ca s trt có c trng mean, variance, RMS, energy hoc FFT.
+Tng quan bài báo liên quan. Banos và cng s xây dng MHEALTH  ánh giá nhn dng hot ng và theo dõi sc khe bng cm bin a v trí trên c th [3]. Bài báo nhn mnh u im ca d liu a kênh: cùng mt hot ng c quan sát t nhiu v trí c th, giúp mô hình hc c c chuyn ng cc b và toàn thân. Kt qu/ý ngha ca nghiên cu là cung cp benchmark ln cho activity recognition trong bi cnh mobile health, ni yêu cu va nhn dng hot ng va h tr giám sát sc khe. Trong báo cáo này, phân phi NULL quá ln cho thy cn tin x lý mnh hn HAR: loi b on không hot ng, cân bng lp và to ca s trt trc khi dùng SVM, Random Forest, CNN 1D hoc LSTM.
+
+Bng 2.15: So sánh hai b d liu cm bin nhóm B
+
+B d liu S mu S c trng im mnh
+
+HAR
+
+10299 561
+
+MHEALTH 1215745 23
+
+Feature vector ã x lý, nhãn hot ng rõ D liu log dài, nhiu subject, cm bin a v trí
+
+Bng 2.16: Thng kê mô t các thuc tính chính ca MHEALTH
+
+Thuc tính Loi
+
+Trung bình  phân tán Ghi chú
+
+sensor_01 sensor_02 sensor_03 sensor_10 activity
+
+Liên tc Liên tc Liên tc Liên tc nh tính
+
+-3.80 -9.44 1.92 -0.34 ­
+
+std = 4.25 std = 3.30 std = 4.07 std = 0.57 NULL 70.59%
+
+Gia tc/ngc Gia tc/ngc Gia tc/ngc Kênh cm bin khác Target mt cân bng
+
+70
+
+THU THP, MÔ T VÀ TNG QUAN CÁC B D LIU
+
+(a) Phân phi activity trên mu
+
+(b) Kênh cm bin theo activity
+
+Hình 2.6: Minh ha MHEALTH Dataset. Python source: src/analyze_mhealth.py;
+
+figure
+
+paths:
+
+outputs/figures/mhealth_activity_distribution.png,
+
+outputs/figures/mhealth_sensor_boxplot.png.
+
+Kt qu ban u. Hình 2.6 cho thy d liu MHEALTH có nhiu nhãn hot ng và log cm bin ln. Hot ng null chim nhiu dòng trong mu, vì vy khi hun luyn cn lc hoc cân bng nhãn. Các kênh gia tc ngc có phân phi khác nhau theo hot ng, xác nhn d liu phù hp cho nhn dng hot ng bng c trng ca s trt.
+71
+
+2.5 Nhóm C: D liu a phng tin
+
+Nhóm C chn hai dng d liu a phng tin: nh và vn bn. Vi nhóm này, mô t không ch gm s dòng mà còn phi nêu nh dng file gc và cách chuyn d liu thô thành c trng s  thng kê/hc máy.
+
+Bng 2.17: Thông tin file gc và c trng trích xut ca nhóm C
+
+Dataset C1 HAM10000 C2 Reuters
+
+Loi media nh Vn bn
+
+S lng 10015 nh 21578 tài liu
+
+nh dng gc
+
+c trng trích xut
+
+JPG + metadata CSV
+22 file SGML
+
+width, height, mean/std intensity, dx word count, char count, topic, TFIDF
+
+Bng 2.18: Phng pháp trích xut c trng cho d liu a phng tin
+
+Dataset HAM10000
+Reuters
+
+Truyn thng
+
+Hc sâu
+
+Nghiên cu liên quan
+
+Histogram màu, texture, shape, ABCD
+Bag-of-words, TFIDF, n-gram, chn c trng
+
+CNN,
+
+trans-
+
+fer
+
+learning
+
+ResNet/EfficientNet
+
+Embedding,
+
+CNN/RNN, Trans-
+
+former
+
+Tschandl et al.; Esteva et al.
+Lewis; Joachims; Sebastiani
+
+2.5.1 C1 - HAM10000
+Ngun gc và cu trúc d liu. HAM10000 là b d liu nh da liu t Kaggle, c chun b bng kagglehub. Metadata c lu ti datasets/ham10000/; nh gc nm trong KaggleHub cache và ng dn c ghi ti datasets/ham10000/source_ path.txt. B d liu có 10,015 nh, 7 lp chn oán, 7 ct metadata và 7,470 lesion duy nht.
+Trng d liu và phân phi. Metadata gm lesion_id, image_id, dx, dx_type, age, sex và localization. Target dx mt cân bng rt mnh: nv có 6,705 nh (66.95%), mel 1,113 (11.11%), bkl 1,099 (10.97%), bcc 514 (5.13%), akiec 327 (3.27%), vasc 142 (1.42%) và df 115 (1.15%). Ngoài nhãn bnh, tui, gii tính, v trí tn thng và kiu xác nhn chn oán là các bin quan trng  phân tích bias d liu. Trong báo cáo, nh c s hóa trên mu 1,000 nh bng width, height, mode màu, mean
+72
+
+THU THP, MÔ T VÀ TNG QUAN CÁC B D LIU
+intensity và standard deviation intensity; ây là c trng mô t ban u, cha  thay th c trng màu, hình dng, texture hoc embedding CNN.
+Tng quan bài báo liên quan. Tschandl, Rosendahl và Kittler công b HAM10000 nh mt tp nh da liu ln nhm h tr hun luyn h thng phân loi tn thng sc t [20]. Bài báo tóm tt quá trình thu thp nh, chun hóa metadata và xây dng nhãn a lp, ng thi nhn mnh thách thc mt cân bng lp. Esteva và cng s cho thy CNN có th t hiu qu  mc chuyên gia da liu trong phân loi ung th da, qua ó chng minh hng transfer learning rt phù hp vi nh y khoa [8]. Kt qu/ý ngha ca hai hng nghiên cu là: d liu nh cn mô hình khai thác không gian-màu sc tt hn c trng thng kê n gin, nhng ánh giá phi chú ý lp him. Vì vy báo cáo dùng macro-F1, confusion matrix, augmentation và class weighting nh hng m rng hp lý.
+
+Bng 2.19: Phân phi lp chn oán trong HAM10000
+
+Lp S nh T l
+
+nv mel bkl bcc akiec vasc df
+
+6705 1113 1099 514
+327 142 115
+
+66.95% 11.11% 10.97% 5.13% 3.27%
+1.42% 1.15%
+
+Bng 2.20: Thng kê mô t các thuc tính chính ca HAM10000
+
+Thuc tính
+
+Loi
+
+Trung bình  phân tán Ghi chú
+
+age width height mean_intensity std_intensity dx
+
+Liên tc Ri rc Ri rc Liên tc Liên tc nh tính
+
+51.86 600.00 450.00 157.47 46.11 ­
+
+std = 16.97 std = 0.00 std = 0.00 std = 18.65 std = 8.52 nv 66.95%
+
+Tui bnh nhân Mu nh ã chun hóa Mu nh ã chun hóa  sáng trung bình  phân tán pixel Target mt cân bng
+
+73
+
+(a) Phân phi lp
+
+(b)  sáng trung bình theo lp
+
+Hình 2.7: Minh ha phân tích d liu nh HAM10000 sau
+
+khi s hóa. Python source: src/analyze_ham10000.py; fig-
+
+ure
+
+paths:
+
+outputs/figures/ham10000_class_distribution.png,
+
+outputs/figures/ham10000_mean_intensity_boxplot.png.
+
+Lý do chn biu . Bar chart phân phi lp c chn  kim tra mt cân bng nhãn; boxplot  sáng trung bình c chn  xem c trng nh sau s hóa có khác nhau gia các lp hay không.
+Nhn xét. Bng 2.19 và Hình 2.7 ch ra vn  mt cân bng lp rt rõ. Lp nv
+74
+
+THU THP, MÔ T VÀ TNG QUAN CÁC B D LIU
+chim gn 67%, trong khi df ch khong 1.15%. Nu mô hình ch hc cách d oán lp a s, accuracy có th cao nhng kh nng phát hin các lp him s kém.
+Kt qu ban u. Phân tích metadata và mu c trng nh cho thy tui bnh nhân, v trí tn thng và  sáng trung bình u có th dùng nh bin mô t b sung. Tuy nhiên, riêng c trng intensity cha  thay th nh gc; thí nghim chính nên dùng thêm c trng màu/texture hoc transfer learning  khai thác thông tin không gian ca lesion.
+
+2.5.2 C2 - Reuters-21578 Text Categorization
+Ngun gc và cu trúc d liu. Reuters-21578 là b d liu text categorization t UCI/KDD Archive, c gii nén ti datasets/reuters21578/. B d liu có 21,578 tài liu trong 22 file SGML và các file t in category liên quan. Mi tài liu có th cha tiêu , ni dung, topic, place, people, organization và các metadata khác.
+Trng d liu và phân phi.  phân tích thng kê, SGML c parse thành bng c trng gm mã tài liu, topic chính, s t và s ký t. Top topic có phân phi dài uôi: earn có 3,972 tài liu, acq 2,423, money-fx 682, crude 543, grain 537, trade 473, interest 339, ship 209, money-supply 177 và sugar 154.  dài vn bn bin thiên mnh, nên cn chun hóa text, loi stopword, x lý token him và dùng TF-IDF  gim nh hng ca vn bn quá dài. Vì nhiu topic nh có ít mu, accuracy d b chi phi bi lp ln; macro-F1 và per-class recall phù hp hn khi ánh giá.
+Tng quan bài báo liên quan. Lewis mô t và chun hóa Reuters-21578 nh benchmark kinh in cho text categorization, giúp cng ng có mt b tin tc gán nhãn  so sánh thut toán phân loi vn bn [14]. Joachims dùng Reuters  ánh giá SVM cho text classification và ch ra rng SVM phù hp vi vector vn bn tha, nhiu chiu vì có kh nng tìm siêu phng phân tách tt trong không gian TF-IDF [12]. Sebastiani tng quan các k thut machine learning cho text categorization, trong ó Reuters là b d liu i sánh quan trng  so sánh Naive Bayes, k-NN, SVM và các phng pháp chn c trng [17]. Kt qu/ý ngha chung là xác lp pipeline c in cho text mining: parse vn bn, vector hóa bng bag-of-words/TF-IDF, chn c trng và dùng mô hình tuyn tính; báo cáo hin ti i theo pipeline này  mc chun b c trng ban u.
+
+Bng 2.21: K hoch s hóa d liu text Reuters-21578
+
+Nhóm c trng Ví d
+
+Mc ích
+
+ dài vn bn T vng Vector hóa Nhãn ch 
+
+s t, s ký t, s câu tn sut t, stop word ratio TF-IDF unigram/bigram topics, places, orgs
+
+Thng kê mô t và outlier Mô t phong cách ni dung Input cho classification Target và phân tích tn sut
+
+75
+
+Bng 2.22: Thng kê mô t các thuc tính chính ca Reuters-21578
+
+Thuc tính
+
+Loi
+
+Trung bình  phân tán Ghi chú
+
+word_count char_count primary_topic topics newid
+
+Ri rc Ri rc nh tính Multi-label nh danh
+
+72.31 439.64 ­ ­ ­
+
+std = 145.78 std = 873.51 earn 3972 nhiu nhãn ­
+
+ dài vn bn S ký t Target dài uôi Ch  vn bn Mã tài liu
+
+76
+
+THU THP, MÔ T VÀ TNG QUAN CÁC B D LIU
+(a) Top topic chính
+
+(b) Phân phi s t
+
+Hình
+
+2.8:
+
+Minh
+
+ha
+
+Reuters-21578
+
+sau
+
+khi
+
+parse
+
+SGML.
+
+Python
+
+source:
+
+src/analyze_reuters.py;
+
+fig-
+
+ure
+
+paths:
+
+outputs/figures/reuters_top_topics.png,
+
+outputs/figures/reuters_word_count_histogram.png.
+
+Kt qu ban u. Script parse SGML to bng c trng vn bn gm topic chính, s t và s ký t cho tng tài liu. Hình 2.8 cho thy topic có phân phi lch và  dài vn bn bin thiên mnh; vì vy mô hình text classification cn TF-IDF, chun
+77
+
+hóa vn bn và ánh giá macro-F1 thay vì ch accuracy.
+
+Bng 2.23: i sánh nghiên cu liên quan và baseline dùng cho Chng 4
+
+Dataset
+
+Nghiên cu
+
+K thut/thut toán
+
+Kt qu/ý ngha i sánh
+
+Heart Disease
+
+Detrano; Aha; Gennari
+
+CDC Diabetes BRFSS; Smith et al.
+
+Breast Cancer Street; Mangasarian
+
+Appliances
+
+Candanedo et al.
+
+HAR/MHEALTH Anguita; Banos
+HAM10000/ReuterTs schandl, Esteva; Lewis, Joachims
+
+Mô hình xác sut, instance-based learning, CLASSIT
+Phân tích yu t nguy c, LR/RF/SVM
+Trích c trng FNA, hyperplane/SVM
+RF, regression, feature thi gian
+SVM, windowing, sensor features
+CNN/transfer learning; TF-IDF/SVM
+
+Benchmark lâm sàng; baseline RF ca báo cáo t Acc 0.902, F1 0.897 D liu kho sát mt cân bng; SVM RBF mu t Acc 0.744, F1 0.761 c trng hình hc phân tách mnh; SVM RBF t Acc 0.982, F1 0.976 Forecasting cn lag/rolling; LR ban u RMSE 89.40, R2 0.036 Activity recognition cn ca s tín hiu và chun hóa kênh Multimedia cn trích c trng; ánh giá macro-F1 do mt cân bng
+
+Bng 2.24: Baseline hc máy nhóm A dùng làm mc cho Chng 4
+
+Dataset
+
+Model
+
+Accuracy Recall F1
+
+Heart Disease Heart Disease Heart Disease CDC Diabetes CDC Diabetes CDC Diabetes Breast Cancer Breast Cancer Breast Cancer
+
+Logistic Regression Random Forest SVM RBF Logistic Regression Random Forest SVM RBF Logistic Regression Random Forest SVM RBF
+
+0.869 0.902 0.885 0.744 0.724 0.744 0.974 0.974 0.982
+
+0.929 0.929 0.964 0.775 0.787 0.814 0.952 0.929 0.976
+
+0.867 0.897 0.885 0.752 0.740 0.761 0.964 0.963 0.976
+
+78
+
+THU THP, MÔ T VÀ TNG QUAN CÁC B D LIU
+Bng 2.23 và Bng 2.24 là cu ni gia phn mô t d liu  Chng 2 và thc nghim  Chng 4. Các kt qu trong báo cáo không thay th kt qu công b ca bài báo gc, nhng cung cp mc ni b  so sánh mô hình trên cùng pipeline tin x lý.
+2.6 ánh giá cht lng d liu và ri ro phân tích
+Mi nhóm d liu có ri ro phân tích khác nhau. D liu dng bng thng gp missing value, outlier và mt cân bng target. D liu chui thi gian có ri ro rò r tng lai nu chia train/test ngu nhiên. D liu a phng tin có ri ro ln hn vì phi chuyn i file nh hoc vn bn thô thành c trng nh lng trc khi thng kê.
+
+Bng 2.25: Ri ro cht lng d liu và hng x lý
+
+Nhóm d liu Nhóm A Nhóm B Nhóm C nh Nhóm C text
+
+Ri ro chính
+
+Hng x lý trong báo cáo
+
+Missing value, outlier, target mt cân bng Rò r d liu tng lai, seasonality, scale khác nhau Mt cân bng lp, nh khác kích thc/ sáng Vn bn dài/ngn bt thng, nhiu topic
+
+in khuyt, IQR, chun hóa, confusion matrix Tách theo thi gian, rolling/lag, log-transform Trích xut width, height, intensity, phân tích theo lp Word count, TF-IDF, bng tn sut topic
+
+Bng 2.25 là c s  liên kt Chng 2 vi Chng 3. Sau khi mô t ngun d liu, báo cáo cn chng minh d liu  tt  phân tích, hoc ch rõ bin nào cn làm sch. Ví d, Heart Disease có missing value  ca và thal; Appliances Energy không nên chia d liu ngu nhiên; HAM10000 mt cân bng lp rt rõ; Reuters-21578 cn bc parse SGML và chun hóa vn bn trc khi to c trng.
+2.7 Liên h gia ngun d liu và yêu cu bài toán
+Yêu cu bài tp gm ba khi: thu thp d liu, phân tích thng kê/trc quan hóa và hc máy. Do ó, phn mô t d liu phi cho thy mi dataset óng góp gì cho tng yêu cu. Nu mt dataset ch c mô t ngun gc mà không c dùng  tính toán hoc v biu , báo cáo s thiu bng chng thc nghim.
+79
+
+Bng 2.26: Liên h dataset vi các yêu cu ca  bài
+
+Dataset Heart Disease CDC Diabetes Breast Cancer Appliances Energy HAR MHEALTH HAM10000 Reuters-21578
+
+Yêu cu 1
+
+Yêu cu 2
+
+Yêu cu 3
+
+D liu bng
+D liu bng ln
+D liu bng y sinh Chui thi gian
+Chui/cm bin
+Chui/cm bin ln nh
+Text
+
+Thng kê, histogram, boxplot, scatter Tn sut bin sc khe, BMI Histogram, heatmap, boxplot Line chart, logtransform Phân phi activity, cm bin Thng kê tín hiu
+S hóa nh, class distribution Word count, topic frequency
+
+Classification Classification Classification Regression Clustering/classification Clustering/classification
+Image classification Text classification
+
+Bng 2.26 giúp ngi c thy rõ d liu không b chn ri rc. Mi b d liu là mt mt xích ca chui yêu cu: t ngun d liu, sang thng kê/trc quan hóa, ri sang mô hình hc máy.
+2.8 Các d liu và ni dung cn b sung tip
+Dù Chng 2 ã mô t  8 b d liu, bài báo liên quan, phân phi chính và kt qu ban u, báo cáo vn cn các bc hoàn thin sau  phc v bn final:
+ Chuyn bng mô t bin y  ca tng dataset sang ph lc  tránh làm Chng 2 quá dài.
+ M rng thí nghim clustering trên c d liu bng, chui thi gian/cm bin và multimedia.
+ B sung bng tng hp ng dn raw data, cleaned data, source code, log và output cho tng hình/bng.
+ Chun hóa toàn b trích dn theo mt kiu thng nht trc khi np bn final.
+Các mc trên là phn hoàn thin ph lc và thc nghim, không phi thiu sót ct lõi ca Chng 2. Ni dung chính ca chng hin ã liên kt c ngun d liu, trng d liu, phân phi, bài báo liên quan và kt qu phân tích ban u.
+80
+
+THU THP, MÔ T VÀ TNG QUAN CÁC B D LIU
+2.9 ng dn minh chng và tái s dng
+Tt c d liu, script và kt qu c lu li  phc v ph lc. Bng minh chng tng hp c sinh bng src/build_evidence_index.py và lu ti outputs/tables/ evidence_index.csv. Cách t chc này giúp mi bng/hình trong báo cáo u có th truy vt ngun d liu, script x lý và file kt qu tng ng.
+81
+
+82
+
+Chng 3
+PHÂN TÍCH C IM D LIU
+QUA THNG KÊ VÀ TRC QUAN HÓA
+3.1 Phn lý thuyt: thng kê mô t và trc quan hóa . . . . . . . 84 3.1.1 Các thông s thng kê mô t . . . . . . . . . . . . . . 84 3.1.2 Các loi biu  dùng trong phân tích d liu . . . . . 85
+3.2 Quy trình phân tích và minh chng . . . . . . . . . . . . . . . 85 3.3 Nhóm A: d liu bng . . . . . . . . . . . . . . . . . . . . . . 86
+3.3.1 D liu Nhóm A: Phân tích Heart Disease . . . . . . . 87 3.3.2 D liu Nhóm A: Phân tích CDC Diabetes Health Indi-
+cators . . . . . . . . . . . . . . . . . . . . . . . . . . . 91 3.3.3 Breast Cancer Wisconsin Diagnostic . . . . . . . . . . 95 3.4 Nhóm B: d liu chui thi gian và cm bin . . . . . . . . . . 96 3.4.1 Appliances Energy . . . . . . . . . . . . . . . . . . . . 96 3.4.2 HAR: Human Activity Recognition . . . . . . . . . . . 97 3.4.3 MHEALTH . . . . . . . . . . . . . . . . . . . . . . . . 98 3.5 i sánh công c phân tích: Excel và Python . . . . . . . . . . 99 3.6 Nhóm C: d liu a phng tin . . . . . . . . . . . . . . . . . 101 3.6.1 HAM10000: d liu nh . . . . . . . . . . . . . . . . . 101 3.6.2 Reuters-21578: d liu vn bn . . . . . . . . . . . . . 102 3.7 Kt lun t phân tích trc quan . . . . . . . . . . . . . . . . . 103
+Chng này trình bày kt qu thng kê mô t, bng tn sut, trc quan hóa và so sánh trc/sau tin x lý d liu. Mi hình và bng u c gn vi ng dn source code tng i  có th tái lp kt qu khi np kèm th mc d án.
+83
+
+3.1 Phn lý thuyt: thng kê mô t và trc quan hóa
+Yêu cu 2 tp trung vào vic hiu d liu bng hai nhóm công c b tr nhau: thng kê mô t cho bit c im nh lng ca bin, còn trc quan hóa giúp nhìn nhanh phân phi, ngoi l, quan h và xu hng. Trong chng này, b d liu Heart Disease thuc nhóm A c chn làm ví d minh ha chính cho phn lý thuyt vì có c bin nh tính nh cp, sex, target và bin nh lng nh age, chol, thalach, oldpeak. Ngoài ra, Appliances Energy thuc nhóm B và HAM10000/Reuters thuc nhóm C c dùng  minh ha thêm cho d liu chui thi gian, nh và vn bn.
+
+3.1.1 Các thông s thng kê mô t
+
+Bng 3.1: Ý ngha các thông s thng kê khi phân tích d liu
+
+Thông s
+
+Công thc/khái nim
+
+Ý ngha khi phân tích d liu
+
+Sample Mean
+Median Mode Percentiles Range Variance Standard deviation Coefficient of variation Interquartile range
+
+x¯ =
+
+1 n
+
+n i=1
+
+xi
+
+Giá tr  v trí gia sau khi sp xp
+Giá tr xut hin nhiu nht
+Mc Pk sao cho k% quan sát không vt quá mc ó
+max(x) - min(x)
+
+s2
+
+=
+
+1 n-1
+
+ s = s2
+
+ni=1(xi - x¯)2
+
+CV
+
+=
+
+s x¯
+
+IQR = Q3 - Q1
+
+Giá tr trung bình mu; dùng  mô t mc in hình ca bin nh lng. Nhy vi outlier nên cn so sánh vi median.
+i din trung tâm bn vng hn mean khi d liu lch hoc có outlier, ví d oldpeak. Phù hp cho bin nh tính hoc bin ri rc; dùng  bit nhóm ph bin nht nh loi au ngc cp. Cho bit v trí tng i ca quan sát; dùng  chia nhóm thp­trung bình­cao và t ngng kim tra.
+ tri toàn phn ca d liu; d hiu nhng rt nhy vi giá tr cc tr.
+o mc phân tán quanh mean; n v b bình phng nên thng din gii cùng standard deviation.
+Cho bit d liu dao ng trung bình bao xa quanh mean; hu ích  so sánh bin sau chun hóa.
+o  bin ng tng i; dùng khi cn so sánh mc phân tán gia các bin khác n v.
+Khong gia 50% d liu trung tâm; dùng phát hin outlier theo ngng Q1 - 1.5IQR và Q3 + 1.5IQR.
+
+Các thông s trên không nên c riêng l. Nu mean ln hn median rõ rt, d liu có th lch phi; nu range rt ln nhng IQR nh, phn ln d liu tp trung nhng có vài outlier; nu CV cao, bin có mc dao ng ln so vi giá tr trung bình. Ví d trong Heart Disease, oldpeak có mean ln hn median nên cn histogram  kim tra lch phi; chol có range rng nên cn boxplot  kim tra outlier cholesterol.
+84
+
+PHÂN TÍCH C IM D LIU QUA THNG KÊ VÀ TRC QUAN
+
+3.1.2 Các loi biu  dùng trong phân tích d liu
+
+HÓA
+
+Biu  Histogram Boxplot Bar chart Pie chart Scatter plot Line chart Heatmap Density plot
+
+Bng 3.2: Ý ngha các loi biu  ph bin
+
+D liu phù hp
+
+Ý ngha/tác dng
+
+Bin nh lng liên tc/ri rc Quan sát hình dng phân phi,  lch, nhiu nh, khong
+
+nhiu mc
+
+giá tr tp trung; dùng cho age, chol, oldpeak.
+
+Bin nh lng, có th chia theo lp
+
+Tóm tt median, quartile, IQR và outlier; phù hp so sánh trc­sau tin x lý hoc gia target 0/1.
+
+Bin nh tính hoc ordinal
+
+So sánh tn sut/t l các nhóm; dùng cho cp, target, nhãn bnh trong HAM10000.
+
+Bin nh tính ít nhóm
+
+Minh ha c cu t l; ch nên dùng khi s nhóm ít và cn nhn mnh thành phn.
+
+Hai bin nh lng
+
+Phát hin quan h tuyn tính/phi tuyn, cm im hoc im bt thng; dùng cho age­thalach.
+
+D liu thi gian/th t
+
+Th hin xu hng, dao ng và chu k; phù hp Appliances Energy theo thi gian.
+
+Ma trn tng quan hoc bng Nhìn nhanh cp bin liên h mnh/yu; h tr chn feature
+
+chéo
+
+và phát hin a cng tuyn.
+
+Bin nh lng
+
+Làm mt phân phi, d so sánh nhiu nhóm hn histogram khi chng lp.
+
+Nh vy, histogram tr li câu hi "bin phân phi nh th nào", boxplot tr li "có outlier không", bar chart tr li "nhóm nào chim u th", scatter plot tr li "hai bin có liên h không", line chart tr li "d liu thay i theo thi gian ra sao", và heatmap tr li "cp bin nào tng quan mnh". Các biu  này c dùng xuyên sut Chng 3  minh ha lý thuyt bng ít nht mt b d liu thuc nhóm A, ng thi m rng sang nhóm B và C.
+3.2 Quy trình phân tích và minh chng
+Yêu cu ca  bài không ch là v biu , mà phi ch ra biu  c tính t âu, công thc nào c áp dng và kt qu có ý ngha gì. Vì vy, chng này dùng quy trình bn bc:
+1. Chn bin cn phân tích và phân loi bn cht bin: nh tính, nh lng ri rc, nh lng liên tc hoc ch s thi gian.
+2. Tính bng tn sut hoc thng kê mô t bng Python, sau ó lu kt qu thành file CSV.
+3. V biu  bng Python và to thêm workbook Excel có chart gc  i chiu công c.
+4. Ghi nhn xét da trên s liu: không ch mô t hình dng biu , mà gii thích vì sao biu  ó quan trng cho tin x lý và hc máy.
+85
+
+Bng 3.4 tóm tt các artifact chính c dùng trong chng này. Các ng dn u là ng dn tng i trong th mc np bài. Cách t chc này bám trc tip tài liu yêu cu trong docments/mo_ta_yeu_cau.md: nhóm A và B phi chn ti thiu 5 bin, phân loi bn cht bin, tính tn sut/thng kê mô t, v biu  phù hp và so sánh d liu trc­sau tin x lý; nhóm C phi s hóa d liu thô thành c trng nh lng trc khi thng kê.
+
+Bng 3.3: Ma trn bám yêu cu phân tích ca Chng 3
+
+Yêu cu trong  bài
+
+Cách thc hin trong báo cáo
+
+Minh chng/ý ngha
+
+Phân loi bin
+
+Ghi rõ nh tính, nh lng ri Tránh dùng sai thng kê; bin nh tính dùng tn rc, nh lng liên tc, chui thi sut, bin nh lng dùng mean/median/IQR gian
+
+Tính thng kê/tn sut CSV trong outputs/tables/
+
+Có s liu kim tra li, không ch nhìn biu 
+
+V his-
+
+PNG trong outputs/figures/
+
+togram/boxplot/scatter/bar/line
+
+Mi biu  tr li mt câu hi: phân phi, outlier, tng quan, c cu, xu hng
+
+So sánh thô­sch
+
+Heart Disease và Appliances dùng IQR/log/interpolation/chun hóa tùy loi bin
+
+Chng minh tin x lý làm gim nhiu hoc n nh phân phi
+
+Excel vs Python
+
+Workbook
+
+Kim chng công thc và chart bng hai công c
+
+excel/excel_visualization_comparison.xlsx
+
+S hóa multimedia
+
+HAM10000 và Reuters chuyn nh/vn bn thành c trng s
+
+áp ng nguyên tc d liu C phi thng kê c sau feature extraction
+
+Bng 3.4: Minh chng source code và output cho Chng 3
+
+Nhãn mc
+
+Source code
+
+Output bng/hình
+
+Vai trò
+
+Heart Disease
+
+src/analyze_heart_disease.pyoutputs/tables/heart_disease_summary.Ncshvóm A: thô/sch
+
+CDC/Breast Cancer
+
+src/analyze_tabular_health.poyutputs/figures/cdc_diabetes_*.png, Nhóm A m rng breast_cancer_*.png
+
+Appliances
+
+src/analyze_appliances_energoyu.tppyuts/tables/appliances_energy_summNarhyó.mcsBv: chui thi gian
+
+HAR/MHEALTH src/analyze_har.py,
+
+outputs/tables/har_feature_summary_exNtehnódmedB.c: scv,m bin
+
+src/analyze_mhealth.py
+
+mhealth_sensor_summary_extended.csv
+
+HAM10000/Reuters src/analyze_ham10000.py, src/analyze_reuters.py
+
+outputs/figures/ham10000_*.png, reuters_*.png
+
+Nhóm C: a phng tin
+
+Excel charts
+
+src/create_excel_visualizatieoxncse.lp/yexcel_visualization_comparison.xlsi xchiu Excel/Python
+
+3.3 Nhóm A: d liu bng
+Mc này c làm li theo bn bc: (1) phân loi Qualitative/Quantitative và Continuous/Discrete; (2) lp bng tn sut và tính mean, median, mode, percentile, range, variance, standard deviation, CV, IQR; (3) v histogram, boxplot, scatter plot, line chart và biu  b sung; (4) t song song d liu thô và d liu sch  nhn xét tác dng tin x lý.
+86
+
+PHÂN TÍCH C IM D LIU QUA THNG KÊ VÀ TRC QUAN
+
+3.3.1 D liu Nhóm A: Phân tích Heart Disease
+
+HÓA
+
+Bc 1: Phân loi bn cht bin và la chn bin
+
+Vi Heart Disease, chng này chn 6 bin tiêu biu: age, cp, trestbps, chol, thalach và oldpeak. Lý do chn là các bin này i din cho c nh tính, nh lng ri rc và nh lng liên tc. Bin cp c phân tích bng bng tn sut, trong khi các bin còn li c tính mean, median, standard deviation, IQR và coefficient of variation.
+Bng 3.5: Phân loi bn cht bin Heart Disease c chn
+
+Bin
+age cp trestbps chol thalach oldpeak
+
+Bn cht
+nh lng ri rc nh tính nominal nh lng liên tc nh lng liên tc nh lng liên tc nh lng liên tc
+
+Vai trò thng kê
+
+Biu  dùng
+
+Mean, median, SD, IQR
+
+Histogram, boxplot
+
+Tn sut, tn sut tng i, mode Bar chart/pie chart
+
+Phân tán, outlier huyt áp
+
+Histogram, boxplot
+
+Outlier cholesterol
+
+Boxplot thô­sch
+
+Quan h vi tui/target
+
+Scatter plot
+
+Lch phi, im cc tr
+
+Histogram, boxplot
+
+Bng 3.5 là bc bt buc trc khi tính toán: cùng mt dataset có c bin nh tính và nh lng nên không th áp dng mt công thc cho tt c ct. ây cng là c s  gii thích vì sao cp dùng tn sut, còn chol và oldpeak dùng IQR  phát hin outlier.
+Vi bin nh tính cp, tn sut tuyt i và tn sut tng i c tính theo:
+
+n
+fj = I(cpi = j),
+
+pj
+
+=
+
+fj n
+
+i=1
+
+Vi bin nh lng, các ch s chính gm:
+
+(3.1)
+
+1n
+
+x¯ = n
+
+xi, s =
+
+i=1
+
+1 n-1
+
+n
+(xi - x¯)2,
+
+IQR = Q3 - Q1
+
+i=1
+
+(3.2)
+
+Bng 3.6: Thng kê mô t mt s bin Heart Disease sau tin x lý. Source: outputs/tables/heart_disease_summary.csv; code: src/analyze_heart_disease.py.
+
+Bin
+
+Mean Median Std Min Max IQR
+
+age trestbps chol thalach oldpeak
+
+54.44 131.35 245.58 149.65
+1.02
+
+56.00 130.00 241.00 153.00
+0.80
+
+9.04 16.65 47.56 22.73
+1.11
+
+29.00 94.00 126.00 84.75
+0.00
+
+77.00 170.00 371.00 202.00
+4.00
+
+13.00 20.00 64.00 32.50
+1.60
+
+87
+
+Bng 3.6 cho thy chol và thalach có  lch chun ln hn các bin còn li, nên hai bin này cn c kim tra bng boxplot và scatter plot. Bin oldpeak có mean 1.02 nhng median 0.80 và min bng 0, cho thy phân phi có xu hng lch phi: nhiu bnh nhân có giá tr thp, mt s ít có ST depression cao.
+
+Bc 2: Bng tn sut và thông s thng kê
+
+Bng 3.7: Bng tn sut bin cp trong Heart
+
+Source:
+
+outputs/tables/heart_disease_frequency_cp.csv;
+
+src/analyze_heart_disease.py.
+
+Disease. code:
+
+Loi au ngc cp Tn sut Tn sut tng i
+
+4.0
+
+144
+
+47.52%
+
+3.0
+
+86
+
+28.38%
+
+2.0
+
+50
+
+16.50%
+
+1.0
+
+23
+
+7.59%
+
+Lý do chn biu . Bin cp là bin nh tính/ri rc, vì vy bar chart phù hp hn histogram. Bar chart giúp so sánh trc tip s mu gia các loi au ngc và phát hin lp nào chim u th.
+Cách tính. Chiu cao mi ct c tính bng fj = count(cp = j); t l phn trm c tính bng pj = fj/n.
+
+Hình 3.1: Bar chart tn sut loi au ngc Heart Disease. Python source: src/analyze_heart_disease.py; figure path: outputs/figures/heart_disease_chest_pain_bar.png.
+Nhn xét. Hình 3.1 cho thy cp=4 chim t l cao nht, gn mt na s mu.
+88
+
+PHÂN TÍCH C IM D LIU QUA THNG KÊ VÀ TRC QUAN
+HÓA iu này nói rng d liu không phân b u theo loi au ngc. Tuy nhiên, biu  ct cha   kt lun cp=4 gây bnh tim; nó ch cho bit cu trúc ca bin u vào.
+ Chng 4, bin này cn c a vào mô hình phân loi và ánh giá qua confusion matrix, precision, recall và F1-score.
+
+Bc 3: Histogram, boxplot và so sánh bin thô­sch
+Tin x lý Heart Disease gm chuyn ký hiu ? thành missing value, in khuyt và ct outlier theo quy tc IQR. Vi mi bin nh lng, ngng ct c tính theo:
+
+Lower = Q1 - 1.5 × IQR, U pper = Q3 + 1.5 × IQR
+
+(3.3)
+
+Bng 3.8: nh hng ca tin x lý trên Heart Disease. Source:
+
+outputs/tables/heart_disease_preprocessing_comparison.csv;
+
+code:
+
+src/analyze_heart_disease.py.
+
+Bin
+
+Max thô Max sch Std thô Std sch
+
+trestbps chol thalach oldpeak ca
+
+200.00 564.00 202.00
+6.20 3.00
+
+170.00 371.00 202.00
+4.00 2.50
+
+17.60 51.78 22.88 1.16 0.94
+
+16.65 47.56 22.73
+1.11 0.86
+
+Bng 3.8 cho thy tin x lý làm gim giá tr cc tr và  lch chun  các bin có outlier. Trng hp rõ nht là chol: max gim t 564 xung 371, std gim t 51.78 xung 47.56. iu này có ý ngha thc hành: khi train mô hình da trên khong cách hoc regularization, outlier rt cao có th làm lch thang o c trng.
+Lý do chn biu . Histogram c dùng  quan sát hình dng phân phi ca age; boxplot c dùng  phát hin outlier ca chol. Hai biu  này b sung cho nhau: histogram nói v toàn b phân phi, còn boxplot nhn mnh median, IQR và im ngoi lai.
+Cách tính. Histogram chia min giá tr thành các khong ri m s quan sát trong tng khong. Boxplot dùng Q1, Q2, Q3 và IQR; im nm ngoài [Q1 - 1.5IQR, Q3 + 1.5IQR] c xem là ng viên outlier.
+89
+
+(a) Histogram tui
+
+(b) Boxplot cholesterol
+
+Hình 3.2: Kim tra phân phi và outlier trên Heart Dis-
+
+ease.
+
+Python
+
+source:
+
+src/analyze_heart_disease.py;
+
+figure
+
+paths:
+
+outputs/figures/heart_disease_age_raw_vs_cleaned.png,
+
+outputs/figures/heart_disease_cholesterol_boxplot.png.
+
+Nhn xét. Hình 3.2 cho thy histogram tui không thay i sau tin x lý vì bin age không có outlier cn ct. Ngc li, boxplot cholesterol cho phép nhìn trc quan các im nm xa hp IQR. Khi hp ca hai nhóm target chng lp nhiu, riêng cholesterol khó có kh nng phân loi c lp; nó nên c dùng chung vi cp, thalach, oldpeak và các bin khác.
+
+Bc 4: Scatter plot, heatmap và nhn xét a bin
+Scatter plot gia age và thalach c to t các cp im (agei, thalachi).  nh lng xu hng, có th tính h s Pearson:
+
+r=
+
+n i=1
+
+(ag
+
+ei
+
+-
+
+age)(thalachi
+
+-
+
+thalach)
+
+ni=1(agei - age)2
+
+n i=1
+
+(thalachi
+
+-
+
+thalach)2
+
+(3.4)
+
+Kt qu trên d liu sch cho r  -0.394, biu th tng quan âm va phi: tui cao có xu hng i kèm nhp tim ti a thp hn.
+Lý do chn biu . Scatter plot phù hp khi cn xem quan h gia hai bin nh lng. Correlation heatmap phù hp khi cn xem nhanh nhiu cp bin cùng lúc. ây là hai bc thm dò quan trng trc khi chn feature cho mô hình hc máy.
+90
+
+PHÂN TÍCH C IM D LIU QUA THNG KÊ VÀ TRC QUAN HÓA
+
+(a) Age và thalach
+
+(b) Heatmap tng quan
+
+Hình 3.3: Phân tích quan h a bin trên Heart Dis-
+
+ease.
+
+Python
+
+source:
+
+src/analyze_heart_disease.py;
+
+figure
+
+paths:
+
+outputs/figures/heart_disease_age_thalach_scatter.png,
+
+outputs/figures/heart_disease_correlation_heatmap.png.
+
+Nhn xét. Hình 3.3 cho thy các im phân tán theo hng gim nh: khi tui tng, thalach có xu hng gim. Heatmap b sung góc nhìn tng quát hn, giúp phát hin cp bin nào có liên h tuyn tính mnh. Trong bc hc máy, các bin tng quan cao vi nhau cn c theo dõi  tránh thông tin lp li qua nhiu feature.
+
+3.3.2 D liu Nhóm A: Phân tích CDC Diabetes Health Indicators
+CDC Diabetes là b d liu bng ln t kho sát sc khe, có 253680 mu, 21 bin u vào và target nh phân Diabetes_binary.  trình bày song song vi mc Heart Disease, phn này cng i theo bn bc: phân loi bin, lp bng tn sut/thng kê mô t, trc quan hóa phân phi­outlier, sau ó phân tích scatter plot và heatmap.
+
+Bc 1: Phân loi bn cht bin và la chn bin
+Các bin c chn gm Diabetes_binary, BMI, HighBP, HighChol, GenHlth, MentHlth, PhysHlth, Age và Income. Nhóm bin này i din cho target, bin nh tính nh phân, bin nh lng liên tc, bin nh lng ri rc và bin th bc. Source code chính ca phn này là src/analyze_cdc_diabetes.py; d liu sch c lu ti outputs/cleaned/cdc_diabetes_cleaned.csv.
+91
+
+Bng 3.9: Phân loi bn cht bin CDC Diabetes c chn
+
+Bin
+Diabetes_binary BMI HighBP HighChol GenHlth MentHlth PhysHlth Age Income
+
+Bn cht
+nh tính nh phân nh lng liên tc nh tính nh phân nh tính nh phân Th bc ri rc nh lng ri rc nh lng ri rc Th bc ri rc Th bc ri rc
+
+Vai trò thng kê
+Target, tn sut lp Mean, median, SD, IQR, outlier Tn sut huyt áp cao Tn sut cholesterol cao T ánh giá sc khe 1­5 S ngày sc khe tinh thn kém S ngày sc khe th cht kém Nhóm tui mã hóa 1­13 Nhóm thu nhp mã hóa 1­8
+
+Biu  dùng
+Bar chart Histogram, boxplot Bar chart theo target Bar chart theo target Histogram, heatmap Histogram, IQR Histogram, IQR Scatter plot, heatmap Histogram, heatmap
+
+Bng 3.9 cho thy CDC Diabetes khác Heart Disease  ch phn ln bin là nh phân hoc ordinal. Vì vy, khi tin x lý không c ct outlier tùy tin trên tt c ct; báo cáo ch áp dng IQR cho BMI, MentHlth và PhysHlth, còn Age, Education, Income, GenHlth c gi nh mã th bc.
+
+Bc 2: Bng tn sut và thông s thng kê
+
+Vi bin nh phân, tn sut tuyt i và tng i c tính nh trong Heart Disease:
+
+n
+fj = I(xi = j),
+i=1
+
+pj
+
+=
+
+fj n
+
+(3.5)
+
+Bng 3.10: Bng tn sut các bin nh phân chính trong CDC Diabetes. Source: outputs/tables/cdc_diabetes_frequency_*.csv; code: src/analyze_cdc_diabetes.py.
+
+Bin
+
+Giá tr Tn sut Tn sut tng i
+
+Diabetes_binary 0
+
+Diabetes_binary 1
+
+HighBP
+
+0
+
+HighBP
+
+1
+
+HighChol
+
+0
+
+HighChol
+
+1
+
+218334 35346 144851 108829 146089 107591
+
+86.07% 13.93% 57.10% 42.90% 57.59% 42.41%
+
+Bng 3.10 cho thy target mt cân bng mnh: nhóm không tiu ng chim 86.07%, nhóm tin tiu ng/tiu ng ch chim 13.93%. Do ó, nu ch dùng accuracy  Chng 4 s d ánh giá sai mô hình; cn xem thêm precision, recall và F1-score.
+92
+
+PHÂN TÍCH C IM D LIU QUA THNG KÊ VÀ TRC QUAN
+HÓA Bng 3.11: Thng kê mô t mt s bin CDC Diabetes sau tin x lý. Source: outputs/tables/cdc_diabetes_summary.csv; code: src/analyze_cdc_diabetes.py.
+
+Bin
+
+Mean Median Std Min Max IQR
+
+BMI GenHlth MentHlth PhysHlth Age Income
+
+28.11 2.51 1.18 1.85 8.03 6.05
+
+27.00 5.56 13.50 41.50 7.00 2.00 1.07 1.00 5.00 1.00 0.00 1.95 0.00 5.00 2.00 0.00 2.89 0.00 7.50 3.00 8.00 3.05 1.00 13.00 4.00 7.00 2.07 1.00 8.00 3.00
+
+Bng 3.11 cho thy BMI có mean 28.11 và median 27.00 sau tin x lý, phn ánh phân phi lch phi nh. Hai bin MentHlth và PhysHlth có median bng 0, ngha là phn ln ngi tr li không báo cáo ngày sc khe kém; tuy nhiên vn có nhóm nh có giá tr cao nên cn kim tra outlier.
+
+Bc 3: Histogram, boxplot và so sánh bin thô­sch
+Tin x lý CDC Diabetes gm kim tra missing value, in giá tr thiu nu có và ct outlier bng IQR cho các bin có ý ngha nh lng trc tip. Công thc ngng IQR vn là:
+
+Lower = Q1 - 1.5 × IQR, U pper = Q3 + 1.5 × IQR
+
+(3.6)
+
+Bng 3.12: nh hng ca tin x lý trên CDC Diabetes. Source:
+
+outputs/tables/cdc_diabetes_preprocessing_comparison.csv;
+
+code:
+
+src/analyze_cdc_diabetes.py.
+
+Bin
+
+Max thô Max sch Std thô Std sch
+
+BMI
+
+98.00
+
+41.50 6.61
+
+5.56
+
+MentHlth 30.00
+
+5.00 7.41
+
+1.95
+
+PhysHlth
+
+30.00
+
+7.50 8.72
+
+2.89
+
+Age
+
+13.00
+
+13.00 3.05
+
+3.05
+
+Income
+
+8.00
+
+8.00 2.07
+
+2.07
+
+Bng 3.12 cho thy tác ng rõ nht  BMI, MentHlth và PhysHlth. Ví d BMI gim max t 98 xung 41.5, còn MentHlth gim max t 30 xung 5. Vic này làm gim nh hng ca giá tr cc tr nhng không thay i các bin ordinal nh Age và Income.
+Lý do chn biu . Histogram raw­cleaned cho BMI giúp nhìn tác ng tin x lý trên bin liên tc. Boxplot theo target giúp so sánh phân phi BMI gia nhóm không tiu ng và nhóm có nguy c/tiu ng.
+93
+
+(a) Histogram BMI thô­sch
+
+(b) Boxplot BMI theo target
+
+Hình 3.4: Kim tra phân phi và outlier trên CDC Di-
+
+abetes.
+
+Python
+
+source:
+
+src/analyze_cdc_diabetes.py;
+
+figure
+
+paths:
+
+outputs/figures/cdc_diabetes_bmi_raw_vs_cleaned.png,
+
+outputs/figures/cdc_diabetes_bmi_boxplot_by_target.png.
+
+Nhn xét. Hình 3.4 cho thy phân phi BMI sau x lý bt kéo dài  uôi phi. Boxplot theo target cho phép so sánh trc quan BMI gia hai nhóm Diabetes_binary; nhóm dng tính thng có BMI cao hn, nhng hai phân phi vn chng lp nên BMI n l không   phân loi.
+
+Bc 4: Scatter plot, heatmap và nhn xét a bin
+Scatter plot gia Age và BMI c dùng  kim tra quan h gia nhóm tui và ch s c th. Vì CDC có hn 253 nghìn dòng, biu  scatter c ly mu ngu nhiên  tránh chng im và gim kích thc file hình.
+Lý do chn biu . Scatter plot phù hp  xem mi quan h gia hai bin nh lng/ordinal; heatmap tng quan giúp tng hp quan h tuyn tính gia BMI, GenHlth, MentHlth, PhysHlth, Age, Education, Income và Diabetes_binary.
+94
+
+PHÂN TÍCH C IM D LIU QUA THNG KÊ VÀ TRC QUAN HÓA
+
+(a) Age và BMI
+
+(b) Heatmap tng quan
+
+Hình 3.5: Phân tích quan h a bin trên CDC Di-
+
+abetes.
+
+Python
+
+source:
+
+src/analyze_cdc_diabetes.py;
+
+fig-
+
+ure
+
+paths:
+
+outputs/figures/cdc_diabetes_age_bmi_scatter.png,
+
+outputs/figures/cdc_diabetes_correlation_heatmap.png.
+
+Nhn xét. Hình 3.5 cho thy BMI có  phân tán rng  nhiu nhóm tui, còn heatmap cho thy GenHlth, BMI, Age, PhysHlth có liên h nht nh vi target. iu này phù hp vi bn cht d liu kho sát: nguy c tiu ng không n t mt bin n l mà là t hp sc khe nn, hành vi và nhân khu hc.
+
+(a) HighBP
+
+(b) HighChol
+
+(c) PhysActivity
+
+Hình 3.6: Bar chart t l tiu ng theo bin sc khe/hành vi trong CDC Diabetes. Python source: src/analyze_cdc_diabetes.py.
+
+Nhn xét b sung. Hình 3.6 cho thy t l Diabetes_binary=1 thay i theo nhóm huyt áp cao, cholesterol cao và hot ng th cht. ây là c s  a các bin nh phân vào mô hình phân loi  Chng 4 thay vì ch dùng các bin liên tc.
+
+3.3.3 Breast Cancer Wisconsin Diagnostic
+Breast Cancer là d liu bng y sinh vi nhiu c trng nh lng liên tc o t nh t bào. Các bin chn gm Diagnosis, radius1, texture1, perimeter1, area1, smoothness1, concavity1.
+95
+
+Bin
+Diagnosis radius1 texture1 perimeter1 area1 smoothness1 concavity1
+
+Bng 3.13: Phân loi bin chính ca Breast Cancer
+
+Bn cht
+Qualitative Quantitative Quantitative Quantitative Quantitative Quantitative Quantitative
+
+Kiu chi tit
+Binary nominal Continuous Continuous Continuous Continuous Continuous Continuous
+
+Vai trò phân tích
+Target B/M, frequency table Histogram, boxplot theo target Thng kê mô t Tng quan vi radius/area Outlier, phân tán mnh c trng hình thái Kh nng tách lp
+
+Các bng ngun gm breast_cancer_summary.csv, breast_cancer_variable_types.csv, breast_cancer_missing_values.csv và breast_cancer_frequency_Diagnosis.csv. Hình ?? cng minh ha Breast Cancer bng boxplot theo target. Nhiu c trng kích thc nh radius1, perimeter1, area1 có tng quan mnh; do ó Chng 4 cn chú ý a cng tuyn hoc dùng chun hóa phù hp. File sch outputs/cleaned/breast_cancer_cleaned.csv gi nhãn Diagnosis và x lý d liu thiu/outlier trc khi mô hình hóa.
+3.4 Nhóm B: d liu chui thi gian và cm bin
+3.4.1 Appliances Energy
+Bc 1: Phân loi bn cht bin và cu trúc chui thi gian
+Appliances Energy có 19,735 mu, thu thp t 2016-01-11 17:00:00 n 2016-05-27 18:00:00, tn sut ph bin 10 phút/mu. Bin target là Appliances, biu din mc tiêu th nng lng ca thit b. Các bin gii thích gm nhit ,  m trong nhà, iu kin ngoài tri, áp sut, gió và tm nhìn.
+Vi chui thi gian, công thc trung bình ngày c dùng  làm mt line chart:
+
+1 y¯d = nd td yt
+
+(3.7)
+
+Trong ó d là ngày, nd là s mu trong ngày và yt là giá tr Appliances ti thi im t. Biu  phân phi dùng thêm bin log-transform:
+
+yt = ln(1 + yt) 96
+
+(3.8)
+
+PHÂN TÍCH C IM D LIU QUA THNG KÊ VÀ TRC QUAN
+
+HÓA Bng 3.14: Thng kê mô t mt s bin Appliances Energy.
+
+Source:
+
+outputs/tables/appliances_energy_summary.csv;
+
+code:
+
+src/analyze_appliances_energy.py.
+
+Bin
+
+Mean Median Std Min Max IQR
+
+Appliances lights T1 RH_1 T_out Windspeed
+
+97.69 3.80
+21.69 40.26
+7.41 4.04
+
+60.00 0.00
+21.60 39.66
+6.92 3.67
+
+102.52 7.94 1.61 3.98 5.32 2.45
+
+10.00 0.00
+16.79 27.02 -5.00
+0.00
+
+1080.00 70.00 26.26 63.36 26.10 14.00
+
+50.00 0.00 1.84 5.73 6.73 3.50
+
+Bng 3.14 cho thy target Appliances lch phi rt mnh: median ch 60 nhng mean 97.69 và max 1080. Standard deviation 102.52 ln hn mean, CV xp x 1.05. iu này gii thích vì sao log-transform cn c xem xét trc khi regression.
+Lý do chn biu . Line chart là biu  bt buc vi chui thi gian vì gi c th t thi gian. Histogram raw-vs-log c dùng  kim tra mc  lch phi ca target và tác dng ca phép bin i log.
+Cách tính. Line chart dùng trung bình ngày y¯d. Histogram raw m trc tip Appliances; histogram log m giá tr yt = ln(1 + yt).
+
+(a) Trung bình ngày
+
+(b) Raw và log1p
+
+Hình 3.7: Trc quan hóa target Appliances Energy.
+
+Python
+
+source:
+
+src/analyze_appliances_energy.py;
+
+figure
+
+paths:
+
+outputs/figures/appliances_energy_daily_line.png,
+
+outputs/figures/appliances_energy_distribution_raw_vs_log.png.
+
+Nhn xét. Hình 3.7 cho thy mc tiêu th nng lng dao ng theo thi gian, nên không nên chia train/test ngu nhiên. Histogram raw b lch phi rõ, trong khi histogram sau ln(1 + y) gom d liu v khong hp hn. Do ó, khi hun luyn mô hình regression, nên th nghim c target gc và target bin i log.
+
+3.4.2 HAR: Human Activity Recognition
+HAR là d liu cm bin ã c bin i thành vector c trng t accelerometer/gyroscope. Các bin chn gm tBodyAcc-mean()-X, tBodyAcc-mean()-Y, tBodyAcc-mean()-Z,
+97
+
+tBodyAcc-std()-X, tGravityAcc-mean()-X và Activity.
+
+(a) HAR: boxplot feature theo activity
+
+(b) MHEALTH: boxplot cm bin theo activity
+
+Hình 3.8: Phân tích cm bin HAR và MHEALTH.
+
+Sources:
+
+src/analyze_har.py,
+
+src/analyze_mhealth.py;
+
+ta-
+
+bles:
+
+outputs/tables/har_feature_summary_extended.csv,
+
+outputs/tables/mhealth_sensor_summary_extended.csv.
+
+(a) HAR: phân b activity
+
+(b) MHEALTH: phân b activity
+
+Hình 3.9: Phân b nhãn hot ng trong HAR và MHEALTH. Sources: src/analyze_har.py, src/analyze_mhealth.py.
+
+Hình 3.8 cho thy feature HAR có phân phi khác nhau gia các activity. Bng ngun gm har_feature_summary_extended.csv, har_activity_distribution.csv, har_variable_types.csv. Tin x lý HAR gm windowing tín hiu, chun hóa feature, gi train/test theo subject  tránh rò r d liu.
+
+3.4.3 MHEALTH
+MHEALTH là d liu cm bin sc khe theo subject/activity. Các bin chn i din cho accelerometer, gyroscope và magnetometer, kèm nhãn Activity. Các bng ngun gm mhealth_sensor_summary_extended.csv, mhealth_selected_sensor_summary.csv, mhealth_activity_distribution_sample.csv và mhealth_variable_types.csv. Hình 3.8 và 3.9 cho thy phân phi cm bin và phân b nhãn ca MHEALTH. Tin x lý
+98
+
+PHÂN TÍCH C IM D LIU QUA THNG KÊ VÀ TRC QUAN
+HÓA phù hp gm loi/ánh du activity 0 nu là trng thái không hot ng, chun hóa z-score theo sensor, kim tra mt cân bng nhãn và tách d liu theo subject.
+
+3.5 i sánh công c phân tích: Excel và Python
+
+Workbook Excel c to
+Theo yêu cu  bài, ngoài hình v bng Python, báo cáo to thêm workbook Excel ti excel/excel_visualization_comparison.xlsx. Workbook này c sinh bng script src/create_excel_visualizations.py và gm các sheet:
+
+ README: ghi ng dn d liu, source code và ghi chú công thc.  Heart Frequency: bng tn sut cp và chart ct Excel.  Heart Stats: các công thc Excel AVERAGE, MEDIAN, STDEV.S, MIN, MAX, QUARTILE.INC.  Heart Scatter: chart scatter Excel gia age và thalach.  Appliances Daily: chart line Excel cho trung bình ngày.  Appliances Histogram: chart ct Excel cho phân phi raw và log1p.
+
+Bng index ca các chart Excel c lu ti outputs/tables/excel_visualization_ index.csv; log to file nm ti outputs/logs/create_excel_visualizations.log.
+
+Bng 3.15: Danh sách biu  Excel ã to. Source:
+
+outputs/tables/excel_visualization_index.csv;
+
+code:
+
+src/create_excel_visualizations.py.
+
+Chart
+excel_heart_cp_bar excel_heart_age_thalach excel_appliances_daily excel_appliances_hist
+
+Dataset
+Heart Heart Appliances Appliances
+
+Sheet Excel
+
+Cách tính
+
+Heart Frequency Heart Scatter Appliances Daily Appliances Histogram
+
+fj = count(cp = j) (agei, thalachi) y¯d = mean(yt) yt = ln(1 + yt)
+
+Biu  Excel cho Heart Disease
+Lý do chn biu . Hai chart Excel cho Heart Disease c chn  i chiu vi Python  hai dng d liu khác nhau: bar chart cho bin nh tính cp, scatter chart cho hai bin nh lng age và thalach. Cách chn này giúp chng minh Excel có th kim tra li c bng tn sut và quan h hai bin.
+99
+
+(a) Excel column chart
+
+(b) Excel scatter chart
+
+Hình 3.10: Preview các biu  Excel cho Heart Disease. Excel workbook: excel/excel_visualization_comparison.xlsx; Excel sheets: Heart Frequency, Heart Scatter; source: src/create_excel_visualizations.py.
+
+Nhn xét. Hình 3.10 là bn preview  chèn vào LaTeX; chart gc nm trong workbook Excel. Biu  ct c tính t bng tn sut, vì vy kt qu phi khp vi Bng 3.7. Biu  scatter dùng cùng cp im vi Hình 3.3. Nu biu  Python và Excel cùng cho xu hng tui tng thì thalach gim, có th xem kt qu trc quan hóa là n nh theo công c.
+
+Biu  Excel cho Appliances Energy
+Lý do chn biu . Vi d liu chui thi gian, line chart trong Excel cho phép ngi c m workbook và kim tra trc tip chui trung bình ngày. Histogram Excel cho raw và log1p giúp kim chng phép bin i log bng mt công c khác Python.
+
+(a) Excel line chart
+
+(b) Excel histogram preview
+
+Hình 3.11: Preview các biu  Excel cho Appliances Energy. Excel workbook: excel/excel_visualization_comparison.xlsx; Excel sheets: Appliances Daily, Appliances Histogram; source: src/create_excel_visualizations.py.
+
+Nhn xét. Hình 3.11 cho thy Excel và Python u dn n cùng mt kt lun: chui Appliances có bin ng theo ngày và target lch phi. Trung bình ngày thp
+100
+
+PHÂN TÍCH C IM D LIU QUA THNG KÊ VÀ TRC QUAN
+HÓA nht khong 37.50 vào 2016-01-28, cao nht khong 188.54 vào 2016-04-04. Biu  log1p làm phân phi gn hn, standard deviation ca target gc là 102.52 trong khi standard deviation ca log1p(Appliances) ch khong 0.65. ây là bng chng nh lng cho vic bin i log trc khi d báo.
+
+So sánh Excel và Python
+
+Bng 3.16: So sánh vai trò ca Python và Excel trong phân tích.
+
+Tiêu chí
+Tái lp kt qu X lý d liu ln Công thc thng kê Biu  Kim soát pipeline
+
+Python
+Cao, chy li script trong src/ Phù hp vi 253k và 1.2M mu Linh hot vi pandas/numpy T ng xut PNG cho LaTeX Mnh, có log và file output
+
+Excel
+Cao nu workbook và công thc c gi Gii hn hn, nên dùng mu/tng hp D kim tra bng công thc  cell D m workbook và kim tra chart Tt cho i chiu và trình bày
+
+T Bng 3.16, có th kt lun Python nên là công c chính  x lý d liu ln, lp script và sinh hàng lot artifact. Excel phù hp  kim tra công thc, minh ha cách tính và cho ngi c t thao tác trên workbook. Trong báo cáo này, hai công c không thay th nhau mà b sung cho nhau: Python bo m tái lp, Excel bo m tính minh bch ca các phép tính c bn.
+3.6 Nhóm C: d liu a phng tin
+3.6.1 HAM10000: d liu nh
+Quy tc ct lõi trong tài liu là d liu a phng tin phi c s hóa thành thuc tính nh lng. Vi HAM10000, nh da liu c chuyn thành các c trng nh chiu rng, chiu cao, s pixel, nhãn dx, v trí localization và  sáng trung bình. Các bng ngun gm ham10000_dataset_summary.csv, ham10000_variable_types.csv, ham10000_age_summary.csv, ham10000_frequency_dx.csv và ham10000_image_feature_sample.c
+101
+
+(a) Kích thc nh HAM10000
+
+(b)  sáng trung bình theo lp
+
+Hình 3.12: S hóa và trc quan hóa d liu nh HAM10000. Python source: src/analyze_ham10000.py.
+
+Hình 3.12 minh ha hai cp  phân tích nhóm C: dataset-level và class-level. Histogram kích thc kim tra tính ng nht hình hc ca nh; boxplot  sáng theo lp kim tra liu c trng sc  có khác bit gia các nhóm bnh hay không. Ngoài ra, ham10000_class_distribution.png, ham10000_age_histogram.png và ham10000_localization_bar kim tra mt cân bng lp, phân b tui và v trí tn thng. ây là bc tin  trc khi dùng nh trong mô hình hc máy, vì mô hình cn vector c trng s.
+
+3.6.2 Reuters-21578: d liu vn bn
+Vi Reuters-21578, vn bn c chuyn thành s t, s ký t, tn sut t, topic/label và các c trng TF-IDF nu dùng cho hc máy. Các bng ngun gm reuters_variable_types.csv, reuters_text_summary.csv, reuters_text_features.csv và reuters_top_topics.csv.
+
+(a) Reuters: histogram s t
+
+(b) Reuters: top topics
+
+Hình 3.13: S hóa và trc quan hóa d liu vn bn Reuters. Python source: src/analyze_reuters.py; tables: outputs/tables/reuters_variable_types.csv, outputs/tables/reuters_text_summary.csv, outputs/tables/reuters_top_topics.csv.
+
+Hình 3.13 minh ha b d liu a phng tin th hai  dng vn bn. Vn bn 102
+
+PHÂN TÍCH C IM D LIU QUA THNG KÊ VÀ TRC QUAN HÓA
+thô c s hóa thành s t, s ký t, nhãn topic và có th m rng sang TF-IDF. Histogram s t giúp phát hin vn bn quá ngn/quá dài; biu  top topics cho bit mc mt cân bng lp. Nu mt topic chim u th quá ln, mô hình phân loi vn bn  Chng 4 cn ánh giá bng macro-F1 thay vì ch accuracy.
+3.7 Kt lun t phân tích trc quan
+T các biu  và bng thng kê trong chng này, có bn kt lun chính:
+ Heart Disease có mt s bin có outlier, c bit chol, trestbps, oldpeak; tin x lý IQR làm gim bin ng cc tr nhng không làm mt cu trúc trung tâm.
+ Bin cp có phân phi không u, cp=4 chim 47.52%; ây là bin nh tính cn c a vào mô hình classification và ánh giá bng confusion matrix.
+ CDC Diabetes và Breast Cancer b sung hai kiu d liu bng khác nhau: mt b nhiu bin sc khe dng nh phân/ordinal, mt b nhiu bin liên tc hình hc. iu này áp ng yêu cu nhóm A phi có ít nht ba dataset và ti thiu nm bin phân tích.
+ Appliances Energy là chui thi gian có target lch phi, mean ln hn median và max rt cao; log-transform là phép bin i cn thit  thu hp phân phi.
+ HAR và MHEALTH ã c phân tích bng bng thng kê cm bin, boxplot theo activity và biu  phân b nhãn; các artifact nm trong outputs/tables/ và outputs/figures/.
+ HAM10000 chng minh nguyên tc s hóa multimedia: nh c chuyn thành kích thc, s pixel,  sáng trung bình và nhãn lp trc khi thng kê.
+ Reuters chng minh nguyên tc s hóa vn bn: vn bn c chuyn thành s t, s ký t, topic và c trng có th m rng sang TF-IDF; phân b topic cn c kim tra  tránh ánh giá lch do mt cân bng lp.
+ Kt qu Excel và Python thng nht v xu hng chính, ng thi to c bng chng ph lc trong src/, excel/ và outputs/tables/.
+Nhng kt lun này là c s cho Chng 4. Classification nhóm A cn chú ý n outlier, mt cân bng lp và các cp bin tng quan. Regression nhóm B cn tách train/test theo thi gian, cn xem xét bin i log và các c trng lag/rolling mean  bt xu hng.
+103
+
+104
+
+Chng 4
+PHÂN TÍCH D LIU VI HC MÁY VÀ I SÁNH KT QU
+4.1 Quy trình hc máy và minh chng . . . . . . . . . . . . . . . 106 4.2 Classification trên nhóm A . . . . . . . . . . . . . . . . . . . . 106 4.3 Regression và d báo trên nhóm B . . . . . . . . . . . . . . . 107 4.4 Clustering trên nhóm A, B và C . . . . . . . . . . . . . . . . . 108 4.5 i sánh vi nghiên cu liên quan . . . . . . . . . . . . . . . . 109 4.6 Kt lun Chng 4 . . . . . . . . . . . . . . . . . . . . . . . . 110 Chng này trình bày các thc nghim classification, regression/time-series forecasting và clustering trên các nhóm d liu A, B và C. Ni dung c t chc theo úng yêu cu trong docments/mo_ta_yeu_cau.md: phân lp trên nhóm A, hi quy/d báo trên nhóm B, gom cm trên A/B/C và i sánh vi nghiên cu liên quan.
+105
+
+4.1 Quy trình hc máy và minh chng
+
+D liu a vào mô hình là kt qu sau các bc thng kê, trc quan hóa và tin x lý  Chng 3. Quy trình chung gm nm bc:
+1. Xác nh bài toán: classification, regression/time-series forecasting hoc clustering.
+2. Tách bin u vào và target; vi clustering phi n nhãn mc tiêu.
+3. Tin x lý: in khuyt, mã hóa bin nh tính, chun hóa thang o khi mô hình cn.
+4. Hun luyn nhiu thut toán  có i sánh ni b.
+5. ánh giá bng ch s phù hp: Accuracy/Precision/Recall/F1 cho classification; MAE/RMSE/R2 cho regression; Silhouette/Elbow và thng kê cm cho clustering.
+Các baseline hin có c sinh t src/run_ml_baselines.py. Kt qu bng nm ti outputs/tables/ml_classification_metrics.csv, outputs/tables/ml_regression_metrics.c và outputs/tables/ml_baseline_metrics.csv. Confusion matrix nm trong outputs/figures/ml_*_
+
+4.2 Classification trên nhóm A
+
+Theo tài liu yêu cu, nhóm A cn ít nht ba target setup. Báo cáo dùng ba dataset tabular: Heart Disease, CDC Diabetes Health Indicators và Breast Cancer Wisconsin Diagnostic. Ba thut toán baseline gm Logistic Regression, Random Forest và SVM RBF. Train/test split c lu trong script và bng kt qu; vi CDC Diabetes, báo cáo dùng mu cân bng/gim kích thc  thi gian chy phù hp.
+
+Bng 4.1: Kt qu classification nhóm A. Source:
+
+outputs/tables/ml_classification_metrics.csv;
+
+code:
+
+src/run_ml_baselines.py.
+
+Dataset
+
+Model
+
+Accuracy Precision Recall F1
+
+Heart Disease Heart Disease Heart Disease CDC Diabetes CDC Diabetes CDC Diabetes Breast Cancer Breast Cancer Breast Cancer
+
+Logistic Regression Random Forest SVM RBF Logistic Regression Random Forest SVM RBF Logistic Regression Random Forest SVM RBF
+
+0.869 0.902 0.885 0.744 0.724 0.744 0.974 0.974 0.982
+
+0.813 0.867 0.818 0.730 0.699 0.714 0.976 1.000 0.976
+
+0.929 0.929 0.964 0.775 0.787 0.814 0.952 0.929 0.976
+
+0.867 0.897 0.885 0.752 0.740 0.761 0.964 0.963 0.976
+
+106
+
+PHÂN TÍCH D LIU VI HC MÁY VÀ I SÁNH KT QU
+Bng 4.1 cho thy Breast Cancer là bài toán d nht trong ba b nhóm A: SVM RBF t accuracy 0.982 và F1 0.976. iu này phù hp vi phân tích  Chng 2­3: các c trng hình hc ca nhân t bào là bin liên tc, có kh nng tách lp tt và tng quan rõ vi target. Heart Disease t kt qu trung bình cao; Random Forest tt nht vi F1 0.897. CDC Diabetes khó hn vì bin sc khe/hành vi có nhiu, nhiu bin nh phân/ordinal và quan h vi target không tách bit mnh.
+
+(a) Heart Disease RF
+
+(b) CDC SVM
+
+(c) Breast Cancer SVM
+
+Hình 4.1: Confusion matrix cho ba bài toán classification nhóm A. Python source: src/run_ml_baselines.py; figure paths: outputs/figures/ml_heart_disease_random_forest_confusion_matrix.png, outputs/figures/ml_cdc_diabetes_sampled_svm_rbf_confusion_matrix.png, outputs/figures/ml_breast_cancer_svm_rbf_confusion_matrix.png.
+
+Confusion matrix  Hình 4.1 b sung thông tin mà accuracy không th hin ht. Vi bài toán y khoa, false negative thng nguy him hn false positive vì b sót bnh. Vì vy recall và F1 cn c c cùng accuracy. Ví d SVM trên Heart Disease có recall 0.964, cao hn Random Forest, nên nu u tiên gim b sót bnh có th xem SVM là la chn áng cân nhc dù accuracy thp hn Random Forest.
+
+4.3 Regression và d báo trên nhóm B
+
+Vi nhóm B, tài liu yêu cu không tách train/test ngu nhiên mà dùng c thù thi gian. Baseline hin có dùng Appliances Energy Prediction, chia d liu theo th t quan sát: 15,788 mu train và 3,947 mu test. Target là Appliances; c trng gm nhit ,  m, ánh sáng, iu kin thi tit và các bin liên quan.
+
+Bng 4.2: Kt qu regression trên Appliances Energy. Source: outputs/tables/ml_regression_metrics.csv; code: src/run_ml_baselines.py.
+
+Model
+
+Train rows Test rows MAE RMSE
+
+R2
+
+Linear Regression Random Forest Regressor
+
+15788 15788
+
+3947 58.71 89.40 0.036 3947 117.24 141.79 -1.426
+
+107
+
+Bng 4.2 cho thy Linear Regression là baseline tt hn Random Forest Regressor trong thc nghim hin ti. R2 ca Linear Regression ch khong 0.036, ngha là mô hình mi gii thích c rt ít bin thiên ca target. Random Forest có R2 âm, cho thy mô hình tng quát kém hn d báo trung bình trên tp test. Kt qu này phù hp vi phân tích Chng 3: Appliances lch phi mnh, có nh tiêu th bt thng và ph thuc thi gian; ch dùng c trng tc thi cha   bt trend, seasonality và hành vi s dng thit b.
+Hình 4.2: So sánh giá tr thc t và d báo mu trên Appliances Energy. Python source: src/run_ml_baselines.py; figure path: outputs/figures/ml_appliances_energy_prediction_sample.png.
+Hình 4.2 cho thy mô hình baseline cha bt tt các nh tiêu th cao. Hng ci thin phù hp vi tài liu gm: thêm lag features, rolling mean/rolling standard deviation, c trng gi-ngày-th, log-transform target và th TimeSeriesSplit hoc mô hình chuyên cho chui nh ARIMA/SARIMA/XGBoost vi validation theo thi gian.
+4.4 Clustering trên nhóm A, B và C
+Yêu cu clustering trong tài liu gm ba im bt buc: n nhãn mc tiêu, chun hóa c trng và so sánh ít nht ba thut toán nh K-Means, Hierarchical Clustering và DBSCAN. Hin ti repository cha có bng kt qu clustering chính thc trong outputs/tables/; vì vy phn này trình bày pipeline cn trin khai và không ba s liu.
+108
+
+PHÂN TÍCH D LIU VI HC MÁY VÀ I SÁNH KT QU
+
+Bng 4.3: Thit k clustering theo yêu cu tài liu
+
+Nhóm
+
+Feature dùng cho clus- Thut toán tering
+
+Cách din gii
+
+A:
+
+Bin s sau chun hóa,
+
+Heart/Breast/CDCb target
+
+B:
+
+Appli- Bin cm bin,
+
+ances/HAR/MHEAlaLgT/Hrolling nu có
+
+C:
+
+c trng nh hoc
+
+HAM10000/ReuterTs F-IDF text
+
+K-Means, Hierarchical, DBSCAN
+K-Means, Hierarchical, DBSCAN
+K-Means, Hierarchical, DBSCAN
+
+So
+
+sánh
+
+mean/median
+
+tng cm vi nhãn
+
+tht ã n
+
+Cm theo mc tiêu
+
+th hoc kiu hot
+
+ng
+
+Cm
+
+theo
+
+
+
+sáng/kích
+
+thc/topic sau
+
+khi b label
+
+Khi trin khai, s cm K nên c chn bng Elbow hoc Silhouette. Sau khi có nhãn cm, cn lp bng thng kê mô t theo cm: mean/median cho bin nh lng, mode/tn sut cho bin nh tính. ây là bc "c v bn cht cm" trong tài liu yêu cu: cm không ch là s 0, 1, 2 mà phi c din gii thành nhóm bnh nhân, nhóm hành vi tiêu th, nhóm hot ng cm bin hoc nhóm nh/vn bn có c im tng t.
+4.5 i sánh vi nghiên cu liên quan
+Tài liu yêu cu kt qu Chng 4 phi i sánh vi các nghiên cu cùng dataset ã nêu  Chng 2.  mc baseline hin ti, có th rút ra ba nhn xét i sánh nh tính:
+109
+
+Bng 4.4: i sánh nh tính gia baseline ca báo cáo và xu hng nghiên cu liên quan
+
+Dataset
+
+Xu hng nghiên cu liên Kt qu baseline trong báo cáo quan
+
+Heart Disease
+CDC Diabetes Breast Cancer Appliances Energy
+
+Logistic
+
+Regression,
+
+instance-based learning,
+
+Random Forest/SVM
+
+thng dùng cho chn
+
+oán nh phân
+
+Các mô hình tabular
+
+thng chu nh hng
+
+mt cân bng và nhiu
+
+hành vi t báo cáo
+
+SVM/Logistic Regression
+
+thng t kt qu cao
+
+sau chun hóa c trng
+
+liên tc
+
+D báo nng lng
+
+thng cn lag, rolling,
+
+mùa v và mô hình chui
+
+thi gian
+
+Random Forest t F1 0.897; SVM có recall cao 0.964, phù hp mc tiêu gim b sót bnh
+F1 khong 0.740­0.761, thp hn Heart/Breast; cn x lý imbalance và feature selection tt hn
+SVM t F1 0.976, phù hp xu hng b d liu có ranh gii lp rõ
+Baseline tc thi có R2 thp; cn b sung feature thi gian và mô hình chuyên bit
+
+Bng 4.4 cha thay th c bng trích dn nh lng y  t bài báo khoa hc. Tuy nhiên, nó cho thy kt qu ca báo cáo i cùng hng vi c im d liu: Breast Cancer d phân lp hn CDC Diabetes; d báo Appliances khó nu thiu feature thi gian. Phn i sánh nh lng vi citation c th cn tip tc hoàn thin trong tài liu tham kho và ph lc.
+4.6 Kt lun Chng 4
+Classification nhóm A ã có ba target setup và ba thut toán, áp ng phn lõi ca yêu cu. Breast Cancer t kt qu cao nht, Heart Disease t mc tt, CDC Diabetes khó hn do nhiu và c trng ri rc/ordinal. Regression nhóm B mi  mc baseline; kt qu cho thy cn x lý chui thi gian sâu hn. Clustering cha có artifact kt qu nên c trình bày nh pipeline cn trin khai, tránh a s liu không th tái lp.
+
+110
+
+Chng 5 KT LUN VÀ HNG PHÁT TRIN
+5.1 Kt lun . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 112 5.2 Hn ch . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 112 5.3 Hng phát trin . . . . . . . . . . . . . . . . . . . . . . . . . 113 5.4 Minh chng tái lp . . . . . . . . . . . . . . . . . . . . . . . . 113 Chng này tng kt các phát hin v d liu, hiu nng mô hình, hn ch và hng phát trin theo úng yêu cu trong docments/mo_ta_yeu_cau.md.
+111
+
+5.1 Kt lun
+Báo cáo ã vn dng tài liu yêu cu trong docments/  xây dng pipeline phân tích d liu gm ba nhóm: d liu bng, d liu chui thi gian/cm bin và d liu a phng tin. Tng cng 8 b d liu c a vào cu trúc báo cáo: Heart Disease, CDC Diabetes, Breast Cancer, Appliances Energy, HAR, MHEALTH, HAM10000 và Reuters-21578. Cách t chc này áp ng tiêu chí ti thiu: nhóm A có 3 b tabular trên 100 mu và trên 5 features; nhóm B có 3 b trên 500 mu; nhóm C có 2 b multimedia.
+V thng kê và trc quan hóa, báo cáo ã trình bày y  các s o trung tâm và phân tán nh Mean, Median, Mode, Percentiles, Range, Variance, Standard Deviation, CV và IQR. Các biu  histogram, boxplot, scatter plot, bar chart, line chart, heatmap và mt s biu  m rng c gn vi tác dng phân tích c th. Heart Disease cho thy outlier  chol, trestbps, oldpeak; Appliances Energy có target lch phi mnh và cn log-transform; HAM10000 minh ha yêu cu s hóa nh thành c trng kích thc,  sáng và nhãn lp.
+V hc máy, classification nhóm A ã có ba target setup và ba thut toán baseline. Breast Cancer t kt qu tt nht vi SVM RBF, accuracy khong 0.982 và F1 khong 0.976. Heart Disease t F1 cao nht vi Random Forest khong 0.897, trong khi SVM có recall cao khong 0.964. CDC Diabetes khó hn, F1 khong 0.740­0.761 do d liu sc khe/hành vi có nhiu nhiu và bin dng nh phân/ordinal. Regression trên Appliances Energy cho thy baseline Linear Regression có MAE 58.71, RMSE 89.40 và R2 0.036; Random Forest Regressor có R2 âm, chng t cn c trng thi gian tt hn.
+Kt qu trên phù hp vi phân tích d liu: b Breast Cancer có c trng liên tc tách lp rõ nên phân loi tt; CDC Diabetes có tín hiu yu hn nên cn x lý imbalance và feature selection; Appliances Energy ph thuc trend, seasonality và hành vi s dng nên mô hình tc thi cha  mnh.
+5.2 Hn ch
+Báo cáo vn còn mt s hn ch. Th nht, artifact phân tích sâu hin tp trung nhiu vào Heart Disease, Appliances Energy, HAM10000 và các baseline nhóm A; HAR, MHEALTH và Reuters-21578 cn c m rng thêm bng thng kê, hình và mô hình. Th hai, phn clustering mi dng  thit k pipeline vì repository cha có bng kt qu clustering chính thc trong outputs/tables/. Th ba, i sánh vi nghiên cu liên quan mi  mc nh tính; cn b sung trích dn chun IEEE/APA và s liu t bài báo  so sánh nh lng. Th t, báo cáo cha t mc  m rng rt ln nh yêu cu cui k v s trang, nên cn tip tc phát trin ph lc và phân tích chi tit.
+112
+
+KT LUN VÀ HNG PHÁT TRIN
+5.3 Hng phát trin
+Các hng phát trin tip theo gm:
+1. Hoàn thin phân tích thng kê cho HAR, MHEALTH và Reuters-21578: chn ti thiu 5 bin/c trng, lp bng tn sut, tính y  các ch s mô t và sinh biu .
+2. B sung clustering trên A, B, C bng K-Means, Hierarchical và DBSCAN; chn s cm bng Elbow/Silhouette; din gii cm bng mean, median, mode và bng tn sut.
+3. Ci thin regression Appliances bng lag features, rolling mean, bin gi/ngày/th, log-transform target, TimeSeriesSplit và th ARIMA/SARIMA/XGBoost.
+4. Chun hóa tài liu tham kho theo IEEE hoc APA, c bit các nghiên cu dùng cùng dataset  i sánh Chng 4.
+5. To ph lc minh chng y  gm ng dn d liu, source code, log chy, bng kt qu, hình PNG và workbook Excel.
+5.4 Minh chng tái lp
+Các artifact chính c lu theo cu trúc sau:
+ D liu gc và d liu sch: datasets/, outputs/cleaned/.  Script phân tích và hc máy: src/analyze_heart_disease.py, src/analyze_tabular_health
+src/analyze_appliances_energy.py, src/analyze_ham10000.py, src/run_ml_baselines.p  Bng kt qu: outputs/tables/.  Hình minh ha: outputs/figures/.  Log thc nghim: outputs/logs/.  Workbook Excel i chiu: excel/excel_visualization_comparison.xlsx.
+Vic gn kt bng/hình vi ng dn source và output giúp báo cáo không ch trình bày kt qu mà còn có kh nng tái lp khi np kèm toàn b th mc d án.
+113
+
+114
+
+Tài liu tham kho
+[1] David W. Aha, Dennis Kibler, and Marc K. Albert. "Instance-based learning algorithms". In: Machine Learning 6 (1991), pp. 37­66. doi: 10.1007/BF00153759.
+[2] Davide Anguita et al. "A public domain dataset for human activity recognition using smartphones". In: 21st European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning. 2013, pp. 437­442.
+[3] Oresti Banos et al. "mHealthDroid: a novel framework for agile development of mobile health applications". In: International Workshop on Ambient Assisted Living. Springer, 2014, pp. 91­98.
+[4] Luis M. Candanedo, Veronique Feldheim, and Dominique Deramaix. "Data driven prediction models of energy use of appliances in a low-energy house". In: Energy and Buildings 140 (2017), pp. 81­97. doi: 10.1016/j.enbuild.2017.01.083.
+[5] Centers for Disease Control and Prevention. Behavioral Risk Factor Surveillance System. Accessed 2026-06-26. 2023. url: https://www.cdc.gov/brfss/.
+[6] Andrea De Mauro. Data Analytics Made Easy. Local course material in docments folder. Packt Publishing, 2021.
+[7] Robert Detrano et al. "International application of a new probability algorithm for the diagnosis of coronary artery disease". In: The American Journal of Cardiology 64.5 (1989), pp. 304­310. doi: 10.1016/0002-9149(89)90524-9.
+[8] Andre Esteva et al. "Dermatologist-level classification of skin cancer with deep neural networks". In: Nature 542.7639 (2017), pp. 115­118. doi: 10 . 1038 / nature21056.
+[9] John H. Gennari, Pat Langley, and Doug Fisher. "Models of incremental concept formation". In: Artificial Intelligence 40.1-3 (1989), pp. 11­61. doi: 10.1016/ 0004-3702(89)90046-5.
+[10] Jiawei Han, Micheline Kamber, and Jian Pei. Data Mining: Concepts and Techniques. 3rd ed. Morgan Kaufmann, 2011.
+[11] Rob J. Hyndman and George Athanasopoulos. Forecasting: Principles and Practice. 3rd ed. OTexts, 2021. url: https://otexts.com/fpp3/.
+[12] Thorsten Joachims. "Text categorization with support vector machines: Learning with many relevant features". In: European Conference on Machine Learning. Springer, 1998, pp. 137­142. doi: 10.1007/BFb0026683.
+[13] Max Kuhn and Kjell Johnson. Feature Engineering and Selection: A Practical Approach for Predictive Models. CRC Press, 2019.
+[14] David D. Lewis. "Reuters-21578 text categorization test collection, distribution 1.0". In: AT&T Labs Research (1997). url: http://www.daviddlewis.com/ resources/testcollections/reuters21578/.
+115
+
+[15] Olvi L. Mangasarian, W. Nick Street, and William H. Wolberg. "Breast cancer diagnosis and prognosis via linear programming". In: Operations Research 43.4 (1995), pp. 570­577. doi: 10.1287/opre.43.4.570.
+[16] Amar Sahay. Essentials of Data Science and Analytics: Statistical Tools, Machine Learning, and R-Statistical Software Overview. Local course material in docments folder. Business Expert Press, 2021.
+[17] Fabrizio Sebastiani. "Machine learning in automated text categorization". In: ACM Computing Surveys 34.1 (2002), pp. 1­47. doi: 10.1145/505282.505283.
+[18] Michael Smith. Diabetes Health Indicators Dataset. UCI Machine Learning Repository. 2014. url: https : / / archive . ics . uci . edu / dataset / 891 / cdc + diabetes+health+indicators.
+[19] W. Nick Street, William H. Wolberg, and Olvi L. Mangasarian. "Nuclear feature extraction for breast tumor diagnosis". In: IS&T/SPIE International Symposium on Electronic Imaging: Science and Technology. 1993, pp. 861­870.
+[20] Philipp Tschandl, Cliff Rosendahl, and Harald Kittler. "The HAM10000 dataset, a large collection of multi-source dermatoscopic images of common pigmented skin lesions". In: Scientific Data 5 (2018), p. 180161. doi: 10.1038/sdata.2018. 161.
+116
+
+

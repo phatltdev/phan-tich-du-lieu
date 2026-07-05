@@ -1,0 +1,15 @@
+variable,type,meaning,selected_for_chapter3
+age,quantitative_discrete,Age in years,True
+sex,qualitative,"Sex: 1 male, 0 female",False
+cp,qualitative,Chest pain type,False
+trestbps,quantitative_continuous,Resting blood pressure,True
+chol,quantitative_continuous,Serum cholesterol,True
+fbs,qualitative,Fasting blood sugar > 120 mg/dl,False
+restecg,qualitative,Resting electrocardiographic result,False
+thalach,quantitative_continuous,Maximum heart rate achieved,True
+exang,qualitative,Exercise induced angina,False
+oldpeak,quantitative_continuous,ST depression induced by exercise,True
+slope,qualitative,Slope of peak exercise ST segment,False
+ca,quantitative_discrete,Number of major vessels colored by fluoroscopy,False
+thal,qualitative,Thalassemia category,False
+num,qualitative,"Heart disease diagnosis: 0 absent, 1-4 present/severity",True

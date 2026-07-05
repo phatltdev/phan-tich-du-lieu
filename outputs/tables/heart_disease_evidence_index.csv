@@ -1,0 +1,22 @@
+artifact,relative_path,artifact_type,used_for
+heart_disease_cleaned.csv,outputs/cleaned/heart_disease_cleaned.csv,cleaned,Heart Disease Chapter 2/3 evidence
+heart_disease_age_raw_vs_cleaned.png,outputs/figures/heart_disease_age_raw_vs_cleaned.png,figures,Heart Disease Chapter 2/3 evidence
+heart_disease_age_thalach_scatter.png,outputs/figures/heart_disease_age_thalach_scatter.png,figures,Heart Disease Chapter 2/3 evidence
+heart_disease_chest_pain_bar.png,outputs/figures/heart_disease_chest_pain_bar.png,figures,Heart Disease Chapter 2/3 evidence
+heart_disease_cholesterol_boxplot.png,outputs/figures/heart_disease_cholesterol_boxplot.png,figures,Heart Disease Chapter 2/3 evidence
+heart_disease_correlation_heatmap.png,outputs/figures/heart_disease_correlation_heatmap.png,figures,Heart Disease Chapter 2/3 evidence
+heart_disease_target_distribution.png,outputs/figures/heart_disease_target_distribution.png,figures,Heart Disease Chapter 2/3 evidence
+heart_disease_analysis.log,outputs/logs/heart_disease_analysis.log,logs,Heart Disease Chapter 2/3 evidence
+heart_disease_evidence_index.csv,outputs/tables/heart_disease_evidence_index.csv,tables,Heart Disease Chapter 2/3 evidence
+heart_disease_frequency_cp.csv,outputs/tables/heart_disease_frequency_cp.csv,tables,Heart Disease Chapter 2/3 evidence
+heart_disease_frequency_exang.csv,outputs/tables/heart_disease_frequency_exang.csv,tables,Heart Disease Chapter 2/3 evidence
+heart_disease_frequency_fbs.csv,outputs/tables/heart_disease_frequency_fbs.csv,tables,Heart Disease Chapter 2/3 evidence
+heart_disease_frequency_num.csv,outputs/tables/heart_disease_frequency_num.csv,tables,Heart Disease Chapter 2/3 evidence
+heart_disease_frequency_restecg.csv,outputs/tables/heart_disease_frequency_restecg.csv,tables,Heart Disease Chapter 2/3 evidence
+heart_disease_frequency_sex.csv,outputs/tables/heart_disease_frequency_sex.csv,tables,Heart Disease Chapter 2/3 evidence
+heart_disease_frequency_slope.csv,outputs/tables/heart_disease_frequency_slope.csv,tables,Heart Disease Chapter 2/3 evidence
+heart_disease_frequency_thal.csv,outputs/tables/heart_disease_frequency_thal.csv,tables,Heart Disease Chapter 2/3 evidence
+heart_disease_missing_values.csv,outputs/tables/heart_disease_missing_values.csv,tables,Heart Disease Chapter 2/3 evidence
+heart_disease_preprocessing_comparison.csv,outputs/tables/heart_disease_preprocessing_comparison.csv,tables,Heart Disease Chapter 2/3 evidence
+heart_disease_summary.csv,outputs/tables/heart_disease_summary.csv,tables,Heart Disease Chapter 2/3 evidence
+heart_disease_variable_types.csv,outputs/tables/heart_disease_variable_types.csv,tables,Heart Disease Chapter 2/3 evidence
