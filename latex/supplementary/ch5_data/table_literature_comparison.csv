@@ -1,0 +1,6 @@
+Dataset,Nghien_cuu_tham_khao,Phuong_phap_tham_khao,Ket_qua_tham_khao,Ket_qua_nhom,Chenh_lech
+Breast Cancer Wisconsin,"Multiple studies (Bazazeh & Shubair 2016; Bhise et al.)",SVM/RF full 30 features,Accuracy 95-98%,Accuracy 92.11% (SVM, 6 features),Thap hon 3-6 diem %
+Heart Disease Cleveland,"Empirical analysis of predicting heart disease (2025), ScienceDirect",Random Forest 13 features,Accuracy 90.16%,Accuracy 90.16% (Random Forest),Gan nhu trung khop tuyet doi
+CDC Diabetes (3-class),"CopulaSMOTE paper (arXiv 2506.17326)",RF/LR/XGB khong dung SMOTE nang cao,F1-macro 0.28-0.44,F1-macro 0.37-0.42,Cung khoang, phu hop kho khan chung
+Appliances Energy Prediction,"Candanedo et al. 2017 (Energy and Buildings); GBM reproduction",GBM tren du lieu goc 10 phut,"RMSE=66.65, MAE=35.22, MAPE=38.3%","RMSE=21.11, MAE=14.50, MAPE=17.7% (XGBoost, resample gio)",Tot hon nhieu do khac biet do phan giai thoi gian
+HAM10000 (bo sung boi canh),"Nhieu nghien cuu CNN (Chaturvedi 2021; EfficientNet 2025...)",Deep Learning tren anh do phan giai day du,Accuracy 85-97% (phan loai co giam sat),Silhouette=0.245 (K=2, khong giam sat tren dac trung pixel 28x28),Khong the so sanh truc tiep (khac bai toan)

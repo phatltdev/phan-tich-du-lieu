@@ -1,4 +1,4 @@
-\documentclass[12pt]{book}
+\documentclass[12pt,openany]{book}
 %\usepackage{natbib}
 \usepackage[
 	backend=bibtex,
@@ -100,6 +100,78 @@
 \newcommand{\HRule}{\rule{\linewidth}{0.7mm}}
 \newcommand{\Hrule}{\rule{\linewidth}{0.3mm}}
 
+% Section 4.1.3 is kept here by request; chapter3 calls this macro at the
+% correct position under section 4.1 so the PDF numbering remains 4.1.3.
+\long\def\chapterThreeExcelPythonComparison{%
+\subsection{Đối sánh công cụ phân tích: Excel/Spreadsheet và Python}
+
+Để đáp ứng yêu cầu đối sánh công cụ phân tích, báo cáo chọn đúng hai bộ dữ liệu đại diện: \textbf{Heart Disease} cho nhóm A và \textbf{Appliances Energy Prediction} cho nhóm B. Mỗi bộ dữ liệu được xử lý song song theo hai tuyến: tuyến Excel/Spreadsheet dùng workbook \path{excel/excel_visualization_comparison_native.xlsx}; tuyến Python dùng các script phân tích tái lập trong thư mục \path{src/}. Cách chọn này giúp kiểm tra cùng một câu hỏi phân tích bằng hai môi trường khác nhau: công cụ bảng tính quen thuộc với người dùng nghiệp vụ và pipeline lập trình phù hợp cho xử lý lặp lại.
+
+Tiêu chí đối sánh không chỉ là ``vẽ được biểu đồ'', mà gồm bốn điểm: dữ liệu đầu vào có cùng nguồn, công thức thống kê tương đương, biểu đồ truyền tải cùng kết luận, và artefact có thể truy vết bằng đường dẫn. Workbook Excel được sinh tự động bằng \path{src/create_excel_visualizations.py}; danh sách sheet/chart được lưu tại \path{outputs/tables/excel_visualization_index.csv}. Vì vậy, phần Excel vẫn có bằng chứng tái lập thay vì chỉ là thao tác thủ công không kiểm soát.
+
+\begin{table}[H]
+\centering
+\caption{Thiết kế đối sánh Excel/Spreadsheet và Python cho hai nhóm dữ liệu}
+\label{tab:ch4_tool_comparison_design}
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.18}
+\begin{tabularx}{\textwidth}{p{0.13\textwidth}p{0.19\textwidth}p{0.29\textwidth}Y}
+\toprule
+Nhóm & Dataset & Minh chứng Excel/Spreadsheet & Minh chứng Python \\
+\midrule
+A & Heart Disease & \path{excel/excel_visualization_comparison_native.xlsx}: sheet \texttt{Heart Frequency}, \texttt{Heart Age Hist}, \texttt{Heart Scatter}, \texttt{Heart Target}, \texttt{Heart Stats} & \path{src/analyze_heart_disease.py}; bảng \path{outputs/tables/heart_disease_*.csv}; Hình \ref{fig:ch4_cp_bar}, \ref{fig:ch4_heart_hist}, \ref{fig:ch4_heart_scatter}, \ref{fig:ch4_heart_target} \\
+B & Appliances Energy & \path{excel/excel_visualization_comparison_native.xlsx}: sheet \texttt{Appliances Daily}, \texttt{Appliances Histogram}, \texttt{Appliances Sample} & \path{src/analyze_appliances_energy.py}; bảng \path{outputs/tables/appliances_energy_*.csv}; Hình \ref{fig:ch4_appliances_daily_line}, \ref{fig:ch4_appliances_log} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Đối chiếu thao tác phân tích tương ứng giữa Excel/Spreadsheet và Python}
+\label{tab:ch4_tool_comparison_operations}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.18}
+\begin{tabularx}{\textwidth}{p{0.16\textwidth}p{0.25\textwidth}p{0.25\textwidth}Y}
+\toprule
+Bộ dữ liệu & Thao tác trong Excel/Spreadsheet & Thao tác trong Python & Kết quả đối chiếu \\
+\midrule
+Heart Disease & Sheet \texttt{Heart Frequency} dùng bảng tần suất \texttt{cp}; sheet \texttt{Heart Stats} dùng \texttt{AVERAGE}, \texttt{MEDIAN}, \texttt{STDEV.S}, \texttt{MIN}, \texttt{MAX}, \texttt{QUARTILE.INC}; sheet \texttt{Heart Scatter} dựng điểm \texttt{age}--\texttt{thalach}. & \path{src/analyze_heart_disease.py} làm sạch dữ liệu, tính bảng tần suất, thống kê mô tả, IQR/outlier và sinh hình bằng pandas/matplotlib/seaborn. & Hai công cụ cùng xác nhận \texttt{cp=4} là mode, tuổi tập trung quanh nhóm trung niên--lớn tuổi, và quan hệ \texttt{age}--\texttt{thalach} có xu hướng âm. Python bổ sung được heatmap tương quan và pipeline tiền xử lý toàn phần. \\
+Appliances Energy & Sheet \texttt{Appliances Daily} tính trung bình \texttt{Appliances} theo ngày và dựng line chart; sheet \texttt{Appliances Histogram} dựng histogram cho giá trị gốc và \texttt{log1p}. & \path{src/analyze_appliances_energy.py} giữ index thời gian, tính resampling theo ngày, thống kê mô tả, \texttt{log1p}, \texttt{diff}, rolling và các biểu đồ chuỗi thời gian. & Hai công cụ cùng cho thấy target lệch phải mạnh và biến đổi \texttt{log1p} làm phân phối bớt kéo đuôi. Python vượt trội ở thao tác chuỗi thời gian lặp lại như rolling, differencing và chuẩn bị dữ liệu cho dự báo. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textbf{Nhóm A -- Heart Disease.} Với dữ liệu dạng bảng, Excel phù hợp cho thao tác kiểm chứng nhanh: đếm tần suất \texttt{cp}, dựng column chart, histogram tuổi và scatter \texttt{age}--\texttt{thalach}. Các biểu đồ Excel trong Hình \ref{fig:ch4_cp_bar}, \ref{fig:ch4_heart_hist} và \ref{fig:ch4_heart_scatter} cho cùng kết luận với Python: \texttt{cp=4} là mode, phân phối tuổi tập trung ở nhóm 50--60, và tuổi có quan hệ âm với nhịp tim tối đa. Tuy nhiên, Python thuận lợi hơn khi cần lặp lại toàn bộ pipeline, xử lý ngoại lai theo IQR, xuất bảng \path{outputs/tables/heart_disease_*.csv} và tạo heatmap tương quan. Vì vậy, Excel đóng vai trò kiểm chứng trực quan và trình bày; Python đóng vai trò xử lý có khả năng tái lập.
+
+\textbf{Nhóm B -- Appliances Energy Prediction.} Với dữ liệu chuỗi thời gian, Excel vẫn tạo được line chart theo ngày và histogram phân phối \texttt{Appliances}/\texttt{log1p(Appliances)} như Hình \ref{fig:ch4_appliances_daily_line} và \ref{fig:ch4_appliances_log}. Kết quả Excel xác nhận thông điệp chính của Python: mức tiêu thụ điện dao động theo ngày, phân phối gốc lệch phải mạnh và biến đổi log làm đuôi phải ngắn hơn. Điểm hạn chế của Excel là khó tự động hóa các bước đặc thù chuỗi thời gian như resampling, rolling mean/rolling standard deviation, interpolation, forward fill và differencing. Python phù hợp hơn cho nhóm B vì giữ được index thời gian, tái chạy pipeline ổn định và mở rộng trực tiếp sang mô hình dự báo.
+
+\textbf{Đánh giá mức tương đương.} Với các phép mô tả cơ bản như tần suất, mean, median, standard deviation và histogram, Excel/Spreadsheet và Python cho kết quả cùng hướng vì đều dựa trên cùng dữ liệu sạch. Khác biệt chủ yếu nằm ở quy mô và khả năng kiểm soát quy trình: Excel thuận lợi khi cần mở file, rà soát một sheet và trao đổi nhanh với người dùng không lập trình; Python thuận lợi khi cần chạy lại nhiều lần, ghi log, đồng bộ bảng/hình với LaTeX và mở rộng sang mô hình học máy ở chương sau. Nói cách khác, Excel là lớp kiểm chứng và truyền thông kết quả; Python là lớp sản xuất kết quả chính.
+
+\begin{table}[H]
+\centering
+\caption{Tổng hợp ưu/nhược điểm khi dùng Excel/Spreadsheet và Python}
+\label{tab:ch4_excel_python_comparison}
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.18}
+\begin{tabularx}{\textwidth}{p{0.22\textwidth}YY}
+\toprule
+Tiêu chí & Excel/Spreadsheet & Python \\
+\midrule
+Khả năng kiểm chứng nhanh & Mạnh: thao tác trực quan, dễ mở workbook, phù hợp biểu đồ cột/đường/scatter cơ bản & Cần chạy script, nhưng kết quả nhất quán và lưu được toàn bộ mã nguồn \\
+Tái lập kết quả & Phụ thuộc thao tác sheet, dễ sai nếu sửa tay & Cao: script, seed, pipeline và output file rõ ràng \\
+Xử lý dữ liệu lớn/lặp lại & Hạn chế khi nhiều sheet, nhiều bước tiền xử lý & Mạnh với pandas/numpy; phù hợp batch processing \\
+Chuỗi thời gian & Dựng line chart tốt, nhưng khó rolling/differencing tự động & Mạnh: resampling, rolling, interpolation, differencing, split theo thời gian \\
+Trình bày báo cáo & Thuận lợi cho minh họa trực quan và đối chiếu thủ công & Thuận lợi cho sinh ảnh/bảng đồng bộ với LaTeX \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Từ đối sánh trên, báo cáo sử dụng chiến lược kết hợp: Python là công cụ chính để làm sạch, thống kê, sinh bảng và biểu đồ tái lập; Excel/Spreadsheet dùng để kiểm chứng một số biểu đồ phổ biến và giúp người đọc thấy cùng một kết luận có thể thu được bằng công cụ văn phòng quen thuộc. Cách làm này đặc biệt hữu ích trong môi trường phân tích dữ liệu ứng dụng, nơi kết quả Python cần được giải thích và đối chiếu với công cụ mà người dùng nghiệp vụ thường sử dụng.
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -108,6 +180,7 @@
 
 
 \begin{document}
+\raggedbottom
 \selectlanguage{vietnamese} 
 \begin{titlepage}
     \begin{tikzpicture}[remember picture,overlay,inner sep=0,outer sep=0]

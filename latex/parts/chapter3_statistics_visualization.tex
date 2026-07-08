@@ -40,10 +40,12 @@ Appliances Energy & \path{src/analyze_appliances_energy.py} & \path{outputs/tabl
 HAR và MHEALTH & \path{src/analyze_har.py}; \path{src/analyze_mhealth.py} & \path{outputs/tables/har_*.csv}; \path{outputs/tables/mhealth_*.csv} & Nhóm B, chuỗi cảm biến \\
 HAM10000 & \path{src/analyze_ham10000.py} & \path{outputs/tables/ham10000_*.csv} & Nhóm C, ảnh \\
 Reuters-21578 & \path{src/analyze_reuters.py} & \path{outputs/tables/reuters_*.csv} & Nhóm C, văn bản \\
-Excel & \path{src/create_excel_visualizations.py} & \path{excel/excel_visualization_comparison.xlsx} & Đối chiếu Excel và Python \\
+Excel & \path{src/create_excel_visualizations.py} & \path{excel/excel_visualization_comparison_native.xlsx} & Đối chiếu Excel và Python; mở sheet \texttt{Report Chart Index} để xem biểu đồ nằm ở sheet nào \\
 \bottomrule
 \end{tabularx}
 \end{table}
+
+\noindent\textbf{Cách tìm các biểu đồ Excel trong workbook.} File minh chứng Excel chính là \path{excel/excel_visualization_comparison_native.xlsx}. Khi mở file, sheet \texttt{Report Chart Index} liệt kê từng \texttt{chart\_id}, loại biểu đồ và sheet chứa chart object native. Báo cáo chỉ trích dẫn workbook Excel cho các biểu đồ dựng trực tiếp được trong Excel như column chart, histogram dạng column chart, scatter chart và line chart. Các biểu đồ không có chart object native trong workbook, chẳng hạn ridgeline hoặc heatmap dạng matplotlib, chỉ được trình bày như biểu đồ Python và không được tính là biểu đồ Excel.
 
 \section{Phân tích chi tiết dữ liệu cấu trúc}
 
@@ -67,7 +69,7 @@ Biến & Bản chất & Thống kê dùng & Biểu đồ phù hợp \\
 \texttt{age} & Quantitative Discrete & Mean, median, SD, IQR & Histogram, boxplot \\
 \texttt{cp} & Qualitative (nominal) & Tần suất, tần suất tương đối, mode & Bar chart, pie chart \\
 \texttt{trestbps} & Quantitative Continuous & Range, SD, IQR & Histogram, boxplot \\
-\texttt{chol} & Quantitative Continuous & Outlier theo IQR & Boxplot thô--sạch \\
+\texttt{chol} & Quantitative Continuous & Dữ liệu bất thường theo IQR & Boxplot thô--sạch \\
 \texttt{thalach} & Quantitative Continuous & Tương quan với tuổi/target & Scatter plot \\
 \texttt{oldpeak} & Quantitative Continuous & Độ lệch phải, CV & Histogram, boxplot \\
 \bottomrule
@@ -116,14 +118,11 @@ Biến & Lớp & Tần suất tuyệt đối & Tần suất tương đối & Mod
 \end{tabular}
 \end{table}
 
-\par\vspace*{1.2\baselineskip}
-\noindent
-
 \textbf{Nhận xét.} Với biến Qualitative, Mean/Median không có ý nghĩa, nên công cụ mô tả duy nhất là bảng phân phối tần suất và Mode. Bảng \ref{tab:ch4_heart_qualitative_freq} cho thấy mẫu Heart Disease mất cân bằng giới: 67.99\% là nam (mode = 1). Đa số bệnh nhân không có đường huyết lúc đói cao (\texttt{fbs} mode = 0, 85.15\%) và không bị đau thắt ngực khi gắng sức (\texttt{exang} mode = 0, 67.33\%). Đáng chú ý, \texttt{restecg} có phân phối gần như nhị phân giữa lớp 0 (49.83\%) và lớp 2 (48.84\%), trong khi lớp 1 gần như vắng mặt (1.32\%) -- đặc điểm này cần lưu ý khi mã hóa one-hot cho mô hình học máy.
 
-\begin{table}[H]
+\begin{center}
 \centering
-\caption[Thống kê mô tả Heart Disease sau tiền xử lý]{Thống kê mô tả Heart Disease sau tiền xử lý: số đo xu hướng trung tâm (Mean, Median, Mode, Percentile) và độ phân tán (Range, Variance, Std, CV, IQR). Source: \texttt{outputs/tables/heart\_disease\_summary.csv}.}
+\captionof{table}[Thống kê mô tả Heart Disease sau tiền xử lý]{Thống kê mô tả Heart Disease sau tiền xử lý: số đo xu hướng trung tâm (Mean, Median, Mode, Percentile) và độ phân tán (Range, Variance, Std, CV, IQR). Source: \texttt{outputs/tables/heart\_disease\_summary.csv}.}
 \label{tab:ch4_heart_stats}
 \footnotesize
 \setlength{\tabcolsep}{2pt}
@@ -138,7 +137,8 @@ Biến & Mean & Med & Mode & P25 & P75 & Range & Var & Std & CV & IQR \\
 \texttt{oldpeak} & 1.02 & 0.80 & 0.0 & 0.00 & 1.60 & 4.00 & 1.23 & 1.11 & 1.084 & 1.60 \\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{center}
+\vspace{-0.4\baselineskip}
 
 \textbf{Nhận xét về hình dáng phân phối.} Quan hệ giữa mean, median và mode cho phép đọc nhanh hướng lệch: nếu $\text{Mean} > \text{Median} > \text{Mode}$ thì phân phối lệch phải, ngược lại lệch trái. Trong Heart Disease, \texttt{age} có mean 54.44 \textless{} median 56 \textless{} mode 58, tức phân phối \emph{lệch trái nhẹ} -- tập mẫu nghiêng về nhóm tuổi trung--lão niên. \texttt{chol} và \texttt{oldpeak} đều có mean lớn hơn median (\texttt{oldpeak}: 1.02 vs 0.80, mode 0), cho thấy \emph{lệch phải}; riêng \texttt{oldpeak} lệch rất mạnh vì phần lớn bệnh nhân có ST depression bằng 0, kéo mode xuống đáy.
 
@@ -162,7 +162,7 @@ Biến & Mean & Med & Mode & P25 & P75 & Range & Var & Std & CV & IQR \\
 \captionsetup{justification=raggedright,singlelinecheck=false}
 \caption[Bar chart tần suất \texttt{cp}: Python và Excel]{Tần suất loại đau ngực Heart Disease vẽ bằng Python và Excel.\\
 \footnotesize Python source: \texttt{src/analyze\_heart\_disease.py}.\\
-Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (\texttt{Heart Frequency}).}
+Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison\_native.xlsx}, sheet \texttt{Heart Frequency}.}
 \label{fig:ch4_cp_bar}
 \end{figure}
 
@@ -186,35 +186,22 @@ Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{ex
 \captionsetup{justification=raggedright,singlelinecheck=false}
 \caption[Histogram tuổi Heart Disease: Python và Excel]{Histogram tuổi thô/sạch trên Heart Disease, đối chiếu giữa Python và Excel.\\
 \footnotesize Python source: \texttt{src/analyze\_heart\_disease.py}.\\
-Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (\texttt{Heart Age Hist}).}
+Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison\_native.xlsx}, sheet \texttt{Heart Age Hist}.}
 \label{fig:ch4_heart_hist}
 \end{figure}
 
-\textbf{Nhận xét Hình \ref{fig:ch4_heart_hist}.} Histogram tuổi thô và histogram tuổi sau tiền xử lý gần như trùng nhau, cho thấy biến \texttt{age} không chịu tác động đáng kể từ bước làm sạch. Phân phối tập trung nhiều ở nhóm trung niên và lớn tuổi, khoảng 50--60 tuổi xuất hiện dày hơn các nhóm còn lại; điều này phù hợp với bối cảnh bệnh tim thường được khảo sát nhiều ở nhóm tuổi có nguy cơ cao. Vì hình dạng phân phối không bị biến dạng sau tiền xử lý, \texttt{age} có thể được giữ nguyên để đưa vào mô hình phân loại.
+\textbf{Nhận xét Hình \ref{fig:ch4_heart_hist}.} Histogram tuổi thô và histogram tuổi sau tiền xử lý gần như trùng nhau, cho thấy biến \texttt{age} không chịu tác động đáng kể từ bước làm sạch. Phân phối tập trung nhiều ở nhóm trung niên và lớn tuổi, khoảng 50--60 tuổi xuất hiện dày hơn các nhóm còn lại; điều này phù hợp với bối cảnh bệnh tim thường được khảo sát nhiều ở nhóm tuổi có nguy cơ cao.
 
 \begin{figure}[H]
 \centering
-\begin{subfigure}{0.92\textwidth}
- \centering
- \includegraphics[width=\textwidth]{images/ch3/heart_disease_cholesterol_boxplot.png}
- \caption{Python -- Boxplot cholesterol}
-\end{subfigure}
-
-\par\medskip
-
-\begin{subfigure}{0.92\textwidth}
- \centering
- \includegraphics[width=\textwidth]{images/ch3/excel_heart_chol_boxplot_preview.png}
- \caption{Excel -- Boxplot cholesterol}
-\end{subfigure}
+\includegraphics[width=0.92\textwidth]{images/ch3/heart_disease_cholesterol_boxplot.png}
 \captionsetup{justification=raggedright,singlelinecheck=false}
-\caption[Boxplot cholesterol Heart Disease: Python và Excel]{Boxplot cholesterol trên Heart Disease, đối chiếu giữa Python và Excel.\\
-\footnotesize Python source: \texttt{src/analyze\_heart\_disease.py}.\\
-Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (\texttt{Heart Boxplot}).}
+\caption[Boxplot cholesterol Heart Disease]{Boxplot cholesterol trên Heart Disease.\\
+\footnotesize Python source: \texttt{src/analyze\_heart\_disease.py}.}
 \label{fig:ch4_heart_boxplot}
 \end{figure}
 
-\textbf{Nhận xét Hình \ref{fig:ch4_heart_boxplot}.} Boxplot cholesterol theo \texttt{target\_binary} cho thấy cả hai nhóm đều có nhiều giá trị nằm ngoài hộp IQR, đặc biệt ở vùng cholesterol cao. Trung vị giữa nhóm có bệnh và không bệnh không tách quá xa, nghĩa là \texttt{chol} một mình chưa đủ phân biệt lớp, nhưng các điểm ngoại lai và độ trải rộng vẫn mang thông tin lâm sàng cần kiểm soát. Vì vậy tiền xử lý nên dùng IQR clipping hoặc kiểm tra ngoại lai có điều kiện, thay vì loại bỏ cơ học toàn bộ các điểm cao.
+\textbf{Nhận xét Hình \ref{fig:ch4_heart_boxplot}.} Boxplot cholesterol theo \texttt{target\_binary} cho thấy cả hai nhóm đều có nhiều giá trị nằm ngoài hộp IQR, đặc biệt ở vùng cholesterol cao. Trung vị giữa nhóm có bệnh và không bệnh không tách quá xa, nghĩa là \texttt{chol} một mình chưa đủ phân biệt lớp, nhưng các điểm ngoại lai và độ trải rộng vẫn mang thông tin lâm sàng cần kiểm soát.
 
 \begin{figure}[H]
 \centering
@@ -223,26 +210,22 @@ Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{ex
  \includegraphics[width=\textwidth]{images/ch3/heart_disease_age_thalach_scatter.png}
  \caption{Python -- \texttt{age} và \texttt{thalach}}
 \end{subfigure}
-\captionsetup{labelformat=empty}
-\caption[Scatter plot \texttt{age}--\texttt{thalach}: Python và Excel]{}
-\captionsetup{labelformat=default}
-\label{fig:ch4_heart_scatter}
-\end{figure}
 
-\begin{figure}[H]\ContinuedFloat
-\centering
+\par\medskip
+
 \begin{subfigure}{0.92\textwidth}
  \centering
  \includegraphics[width=\textwidth]{images/ch3/excel_heart_age_thalach_scatter_preview.png}
  \caption{Excel -- \texttt{age} và \texttt{thalach}}
 \end{subfigure}
 \captionsetup{justification=raggedright,singlelinecheck=false}
-\caption[]{Scatter plot giữa tuổi và nhịp tim tối đa.\\
+\caption[Scatter plot \texttt{age}--\texttt{thalach}: Python và Excel]{Scatter plot giữa tuổi và nhịp tim tối đa.\\
 \footnotesize Python source: \texttt{src/analyze\_heart\_disease.py}.\\
-Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (\texttt{Heart Scatter}).}
+Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison\_native.xlsx}, sheet \texttt{Heart Scatter}.}
+\label{fig:ch4_heart_scatter}
 \end{figure}
 
-\textbf{Nhận xét Hình \ref{fig:ch4_heart_scatter}.} Scatter plot cho thấy quan hệ âm giữa \texttt{age} và \texttt{thalach}: bệnh nhân lớn tuổi thường đạt nhịp tim tối đa thấp hơn trong kiểm tra gắng sức. Đây là quan hệ phù hợp với trực giác sinh lý và giúp giải thích vì sao mô hình phân loại ở chương học máy cần dùng đồng thời biến tuổi và biến đáp ứng tim mạch.
+\textbf{Nhận xét Hình \ref{fig:ch4_heart_scatter}.} Scatter plot cho thấy quan hệ âm giữa \texttt{age} và \texttt{thalach}: bệnh nhân lớn tuổi thường đạt nhịp tim tối đa thấp hơn trong kiểm tra gắng sức.
 
 \begin{figure}[H]
 \centering
@@ -262,31 +245,18 @@ Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{ex
 \captionsetup{justification=raggedright,singlelinecheck=false}
 \caption[Phân bố target Heart Disease: Python và Excel]{Phân bố target Heart Disease, đối chiếu giữa Python và Excel.\\
 \footnotesize Python source: \texttt{src/analyze\_heart\_disease.py}.\\
-Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (\texttt{Heart Target}).}
+Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison\_native.xlsx}, sheet \texttt{Heart Target}.}
 \label{fig:ch4_heart_target}
 \end{figure}
 
 \textbf{Nhận xét Hình \ref{fig:ch4_heart_target}.} Phân bố target cho thấy hai lớp bệnh/không bệnh tương đối cân bằng hơn nhiều bộ dữ liệu y tế khác, nên accuracy có thể dùng như chỉ báo ban đầu nhưng vẫn cần precision, recall và F1.
 
-\begin{figure}[p]
+\begin{figure}[H]
 \centering
-\begin{subfigure}{0.86\textwidth}
- \centering
- \includegraphics[width=\textwidth]{images/ch3/heart_disease_correlation_heatmap.png}
- \caption{Python -- Heatmap tương quan}
-\end{subfigure}
-
-\par\medskip
-
-\begin{subfigure}{0.86\textwidth}
- \centering
- \includegraphics[width=\textwidth]{images/ch3/excel_heart_corr_heatmap_preview.png}
- \caption{Excel -- Heatmap tương quan}
-\end{subfigure}
+\includegraphics[width=0.86\textwidth]{images/ch3/heart_disease_correlation_heatmap.png}
 \captionsetup{justification=raggedright,singlelinecheck=false}
-\caption[Heatmap tương quan Heart Disease: Python và Excel]{Heatmap tương quan các biến định lượng Heart Disease, đối chiếu giữa Python và Excel.\\
-\footnotesize Python source: \texttt{src/analyze\_heart\_disease.py}.\\
-Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (\texttt{Heart Corr Heatmap}).}
+\caption[Heatmap tương quan Heart Disease]{Heatmap tương quan các biến định lượng Heart Disease.\\
+\footnotesize Python source: \texttt{src/analyze\_heart\_disease.py}.}
 \label{fig:ch4_heart_corr}
 \end{figure}
 
@@ -325,7 +295,7 @@ CDC Diabetes có 253\,680 mẫu và 21 biến giải thích, là bộ dữ liệ
 \toprule
 Biến & Bản chất & Thống kê dùng & Biểu đồ phù hợp \\
 \midrule
-\texttt{BMI} & Quantitative Continuous & Mean, median, IQR, outlier & Histogram, boxplot \\
+\texttt{BMI} & Quantitative Continuous & Mean, median, IQR, dữ liệu bất thường & Histogram, boxplot \\
 \texttt{Age} & Quantitative Discrete/ordinal & Tần suất, median, IQR & Bar chart, scatter \\
 \texttt{GenHlth} & Ordinal & Mode, median, IQR & Bar chart, histogram rời rạc \\
 \texttt{MentHlth} & Quantitative Discrete & Mean, median, CV & Histogram, boxplot \\
@@ -406,7 +376,7 @@ Biến & Mean thô & Mean sạch & Std thô & Std sạch & Max thô & Max sạch
 \captionsetup{justification=raggedright,singlelinecheck=false}
 \caption[Bar chart \texttt{HighBP} CDC Diabetes: Python và Excel]{Tần suất huyết áp cao trong CDC Diabetes, đối chiếu giữa Python và Excel.\\
 \footnotesize Python source: \texttt{src/analyze\_cdc\_diabetes.py}.\\
-Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (\texttt{CDC HighBP}).}
+Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison\_native.xlsx}, sheet \texttt{CDC HighBP}.}
 \label{fig:ch4_cdc_highbp_bar}
 \end{figure}
 
@@ -428,7 +398,7 @@ Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{ex
 \captionsetup{justification=raggedright,singlelinecheck=false}
 \caption[Histogram \texttt{BMI} CDC Diabetes: Python và Excel]{Phân phối \texttt{BMI} sau tiền xử lý trong CDC Diabetes, đối chiếu giữa Python và Excel.\\
 \footnotesize Python source: \texttt{src/analyze\_cdc\_diabetes.py}.\\
-Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (\texttt{CDC BMI Hist}).}
+Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison\_native.xlsx}, sheet \texttt{CDC BMI Hist}.}
 \label{fig:ch4_cdc_bmi_hist}
 \end{figure}
 
@@ -436,21 +406,10 @@ Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{ex
 
 \begin{figure}[H]
 \centering
-\begin{subfigure}{0.90\textwidth}
- \centering
- \includegraphics[width=\textwidth]{images/ch3/cdc_diabetes_bmi_boxplot_by_target.png}
- \caption{Python -- Boxplot \texttt{BMI} theo target}
-\end{subfigure}
-\par\medskip
-\begin{subfigure}{0.90\textwidth}
- \centering
- \includegraphics[width=\textwidth]{images/ch3/excel_cdc_bmi_boxplot_preview.png}
- \caption{Excel -- Boxplot \texttt{BMI} theo target}
-\end{subfigure}
+\includegraphics[width=0.90\textwidth]{images/ch3/cdc_diabetes_bmi_boxplot_by_target.png}
 \captionsetup{justification=raggedright,singlelinecheck=false}
-\caption[Boxplot \texttt{BMI} CDC Diabetes: Python và Excel]{Boxplot \texttt{BMI} theo \texttt{Diabetes\_binary}, đối chiếu giữa Python và Excel.\\
-\footnotesize Python source: \texttt{src/analyze\_cdc\_diabetes.py}.\\
-Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (\texttt{CDC BMI Boxplot}).}
+\caption[Boxplot \texttt{BMI} CDC Diabetes]{Boxplot \texttt{BMI} theo \texttt{Diabetes\_binary}.\\
+\footnotesize Python source: \texttt{src/analyze\_cdc\_diabetes.py}.}
 \label{fig:ch4_cdc_bmi_boxplot}
 \end{figure}
 
@@ -472,7 +431,7 @@ Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{ex
 \captionsetup{justification=raggedright,singlelinecheck=false}
 \caption[Scatter \texttt{Age}--\texttt{BMI} CDC Diabetes: Python và Excel]{Quan hệ giữa nhóm tuổi và BMI trong CDC Diabetes.\\
 \footnotesize Python source: \texttt{src/analyze\_cdc\_diabetes.py}.\\
-Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (\texttt{CDC Age BMI}).}
+Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison\_native.xlsx}, sheet \texttt{CDC Age BMI}.}
 \label{fig:ch4_cdc_age_bmi}
 \end{figure}
 
@@ -494,29 +453,18 @@ Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{ex
 \captionsetup{justification=raggedright,singlelinecheck=false}
 \caption[Phân bố target CDC Diabetes: Python và Excel]{Phân bố biến mục tiêu \texttt{Diabetes\_binary}, đối chiếu giữa Python và Excel.\\
 \footnotesize Python source: \texttt{src/analyze\_cdc\_diabetes.py}.\\
-Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (\texttt{CDC Target}).}
+Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison\_native.xlsx}, sheet \texttt{CDC Target}.}
 \label{fig:ch4_cdc_target}
 \end{figure}
 
 \textbf{Nhận xét Hình \ref{fig:ch4_cdc_target}.} Phân bố target cho thấy lớp không tiểu đường chiếm ưu thế, dữ liệu mất cân bằng rõ rệt.
 
-\begin{figure}[p]
+\begin{figure}[H]
 \centering
-\begin{subfigure}{0.86\textwidth}
- \centering
- \includegraphics[width=\textwidth]{images/ch3/cdc_diabetes_correlation_heatmap.png}
- \caption{Python -- Heatmap tương quan}
-\end{subfigure}
-\par\medskip
-\begin{subfigure}{0.86\textwidth}
- \centering
- \includegraphics[width=\textwidth]{images/ch3/excel_cdc_corr_heatmap_preview.png}
- \caption{Excel -- Heatmap tương quan}
-\end{subfigure}
+\includegraphics[width=0.86\textwidth]{images/ch3/cdc_diabetes_correlation_heatmap.png}
 \captionsetup{justification=raggedright,singlelinecheck=false}
-\caption[Heatmap tương quan CDC Diabetes: Python và Excel]{Heatmap tương quan các biến CDC Diabetes, đối chiếu giữa Python và Excel.\\
-\footnotesize Python source: \texttt{src/analyze\_cdc\_diabetes.py}.\\
-Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (\texttt{CDC Corr}).}
+\caption[Heatmap tương quan CDC Diabetes]{Heatmap tương quan các biến CDC Diabetes.\\
+\footnotesize Python source: \texttt{src/analyze\_cdc\_diabetes.py}.}
 \label{fig:ch4_cdc_corr}
 \end{figure}
 
@@ -595,9 +543,10 @@ Biến & Mean & Med & Mode & P25 & P75 & Range & Var & Std & CV & IQR \\
  \includegraphics[width=\textwidth]{images/ch3/excel_breast_target_distribution_preview.png}
  \caption{Excel -- Phân bố \texttt{Diagnosis}}
 \end{subfigure}
+\captionsetup{justification=raggedright,singlelinecheck=false}
 \caption[Phân bố target Breast Cancer: Python và Excel]{Phân bố \texttt{Diagnosis} trong Breast Cancer, đối chiếu giữa Python và Excel.\\
 \footnotesize Python source: \texttt{src/analyze\_tabular\_health.py}.\\
-Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (\texttt{Breast Target}).}
+Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison\_native.xlsx}, sheet \texttt{Breast Target}.}
 \label{fig:ch4_breast_target}
 \end{figure}
 
@@ -616,9 +565,10 @@ Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{ex
  \includegraphics[width=\textwidth]{images/ch3/excel_breast_radius_hist_preview.png}
  \caption{Excel -- Histogram \texttt{radius1}}
 \end{subfigure}
+\captionsetup{justification=raggedright,singlelinecheck=false}
 \caption[Histogram \texttt{radius1} Breast Cancer: Python và Excel]{Phân phối \texttt{radius1} trong Breast Cancer, đối chiếu giữa Python và Excel.\\
 \footnotesize Python source: \texttt{src/analyze\_tabular\_health.py}.\\
-Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (\texttt{Breast Radius Hist}).}
+Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison\_native.xlsx}, sheet \texttt{Breast Radius Hist}.}
 \label{fig:ch4_breast_radius_hist}
 \end{figure}
 
@@ -626,20 +576,10 @@ Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{ex
 
 \begin{figure}[H]
 \centering
-\begin{subfigure}{0.90\textwidth}
- \centering
- \includegraphics[width=\textwidth]{images/ch3/breast_cancer_radius1_boxplot_by_target.png}
- \caption{Python -- Boxplot \texttt{radius1} theo B/M}
-\end{subfigure}
-\par\medskip
-\begin{subfigure}{0.90\textwidth}
- \centering
- \includegraphics[width=\textwidth]{images/ch3/excel_breast_radius_boxplot_preview.png}
- \caption{Excel -- Boxplot \texttt{radius1} theo B/M}
-\end{subfigure}
-\caption[Boxplot \texttt{radius1} Breast Cancer: Python và Excel]{Boxplot \texttt{radius1} theo chẩn đoán B/M, đối chiếu giữa Python và Excel.\\
-\footnotesize Python source: \texttt{src/analyze\_tabular\_health.py}.\\
-Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (\texttt{Breast Radius Boxplot}).}
+\includegraphics[width=0.90\textwidth]{images/ch3/breast_cancer_radius1_boxplot_by_target.png}
+\captionsetup{justification=raggedright,singlelinecheck=false}
+\caption[Boxplot \texttt{radius1} Breast Cancer]{Boxplot \texttt{radius1} theo chẩn đoán B/M.\\
+\footnotesize Python source: \texttt{src/analyze\_tabular\_health.py}.}
 \label{fig:ch4_breast_radius_boxplot}
 \end{figure}
 
@@ -658,30 +598,21 @@ Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{ex
  \includegraphics[width=\textwidth]{images/ch3/excel_breast_radius_texture_scatter_preview.png}
  \caption{Excel -- Scatter \texttt{radius1}--\texttt{texture1}}
 \end{subfigure}
+\captionsetup{justification=raggedright,singlelinecheck=false}
 \caption[Scatter Breast Cancer: Python và Excel]{Scatter giữa \texttt{radius1} và \texttt{texture1}, đối chiếu giữa Python và Excel.\\
 \footnotesize Python source: \texttt{src/analyze\_tabular\_health.py}.\\
-Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (\texttt{Breast Scatter}).}
+Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison\_native.xlsx}, sheet \texttt{Breast Scatter}.}
 \label{fig:ch4_breast_scatter}
 \end{figure}
 
 \textbf{Nhận xét Hình \ref{fig:ch4_breast_scatter}.} Nhóm M thường dịch về vùng \texttt{radius1} lớn hơn, còn \texttt{texture1} bổ sung độ tách theo chiều thứ hai.
 
-\begin{figure}[p]
+\begin{figure}[H]
 \centering
-\begin{subfigure}{0.86\textwidth}
- \centering
- \includegraphics[width=\textwidth]{images/ch3/breast_cancer_correlation_heatmap.png}
- \caption{Python -- Heatmap tương quan}
-\end{subfigure}
-\par\medskip
-\begin{subfigure}{0.86\textwidth}
- \centering
- \includegraphics[width=\textwidth]{images/ch3/excel_breast_corr_heatmap_preview.png}
- \caption{Excel -- Heatmap tương quan}
-\end{subfigure}
-\caption[Heatmap tương quan Breast Cancer: Python và Excel]{Heatmap tương quan các đặc trưng hình thái Breast Cancer, đối chiếu giữa Python và Excel.\\
-\footnotesize Python source: \texttt{src/analyze\_tabular\_health.py}.\\
-Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (\texttt{Breast Corr}).}
+\includegraphics[width=0.86\textwidth]{images/ch3/breast_cancer_correlation_heatmap.png}
+\captionsetup{justification=raggedright,singlelinecheck=false}
+\caption[Heatmap tương quan Breast Cancer]{Heatmap tương quan các đặc trưng hình thái Breast Cancer.\\
+\footnotesize Python source: \texttt{src/analyze\_tabular\_health.py}.}
 \label{fig:ch4_breast_corr}
 \end{figure}
 
@@ -738,29 +669,23 @@ Tần suất mode & 10 phút \\
 \par\medskip
 \begin{subfigure}{0.90\textwidth}\centering\includegraphics[width=\textwidth]{images/ch3/excel_appliances_daily_line_preview.png}\caption{Excel -- Daily line chart}\end{subfigure}
 \caption[Line chart Appliances Energy: Python và Excel]{Xu hướng tiêu thụ điện trung bình theo ngày.\\
-\footnotesize Python source: \texttt{src/analyze\_appliances\_energy.py}. Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (\texttt{Appliances Daily}).}
+\footnotesize Python source: \texttt{src/analyze\_appliances\_energy.py}. Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison\_native.xlsx}, sheet \texttt{Appliances Daily}.}
 \label{fig:ch4_appliances_daily_line}
 \end{figure}
 \textbf{Nhận xét Hình \ref{fig:ch4_appliances_daily_line}.} Line chart cho thấy mức tiêu thụ dao động mạnh theo ngày, không phù hợp chia train/test ngẫu nhiên. Cần giữ thứ tự thời gian để tránh rò rỉ thông tin tương lai.
 
 \begin{figure}[H]\centering
-\begin{subfigure}{0.90\textwidth}\centering\includegraphics[width=\textwidth]{images/ch3/appliances_energy_rolling_trend.png}\caption{Python -- Rolling mean/std}\end{subfigure}
-\par\medskip
-\begin{subfigure}{0.90\textwidth}\centering\includegraphics[width=\textwidth]{images/ch3/excel_appliances_rolling_trend_preview.png}\caption{Excel -- Rolling mean/std}\end{subfigure}
-\caption[Rolling statistics Appliances Energy: Python và Excel]{Rolling mean và rolling standard deviation 1 ngày của \texttt{Appliances}.\
-\footnotesize Python source: \texttt{scripts/generate\_group\_b\_figures.py}.\
-Excel source/workbook: \texttt{scripts/generate\_group\_b\_figures.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (Excel-style preview).}
+\includegraphics[width=0.90\textwidth]{images/ch3/appliances_energy_rolling_trend.png}
+\caption[Rolling statistics Appliances Energy]{Rolling mean và rolling standard deviation 1 ngày của \texttt{Appliances}.\\
+\footnotesize Python source: \texttt{scripts/generate\_group\_b\_figures.py}.}
 \label{fig:ch4_appliances_rolling}
 \end{figure}
 \textbf{Nhận xét Hình \ref{fig:ch4_appliances_rolling}.} Rolling mean làm rõ xu hướng nền, còn rolling std cho thấy phương sai thay đổi theo thời gian. Đây là dấu hiệu chuỗi không hoàn toàn dừng.
 
 \begin{figure}[H]\centering
-\begin{subfigure}{0.90\textwidth}\centering\includegraphics[width=\textwidth]{images/ch3/appliances_energy_missing_interpolation_ffill.png}\caption{Python -- Interpolation/Forward fill}\end{subfigure}
-\par\medskip
-\begin{subfigure}{0.90\textwidth}\centering\includegraphics[width=\textwidth]{images/ch3/excel_appliances_missing_interpolation_ffill_preview.png}\caption{Excel -- Interpolation/Forward fill}\end{subfigure}
-\caption[Điền khuyết thời gian Appliances Energy: Python và Excel]{Minh họa xử lý missing theo thời gian bằng interpolation và forward fill.\
-\footnotesize Python source: \texttt{scripts/generate\_group\_b\_figures.py}.\
-Excel source/workbook: \texttt{scripts/generate\_group\_b\_figures.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (Excel-style preview).}
+\includegraphics[width=0.90\textwidth]{images/ch3/appliances_energy_missing_interpolation_ffill.png}
+\caption[Điền khuyết thời gian Appliances Energy]{Minh họa xử lý missing theo thời gian bằng interpolation và forward fill.\\
+\footnotesize Python source: \texttt{scripts/generate\_group\_b\_figures.py}.}
 \label{fig:ch4_appliances_missing_fill}
 \end{figure}
 \textbf{Nhận xét Hình \ref{fig:ch4_appliances_missing_fill}.} Interpolation tạo đường chuyển tiếp mượt giữa hai điểm quan sát, còn forward fill giữ giá trị gần nhất. Với chuỗi cảm biến 10 phút, interpolation phù hợp khi missing ngắn; forward fill phù hợp khi trạng thái vật lý ít thay đổi.
@@ -769,32 +694,25 @@ Excel source/workbook: \texttt{scripts/generate\_group\_b\_figures.py}, \texttt{
 \begin{subfigure}{0.90\textwidth}\centering\includegraphics[width=\textwidth]{images/ch3/appliances_energy_distribution_raw_vs_log.png}\caption{Python -- Raw vs log1p}\end{subfigure}
 \par\medskip
 \begin{subfigure}{0.90\textwidth}\centering\includegraphics[width=\textwidth]{images/ch3/excel_appliances_raw_vs_log_hist_preview.png}\caption{Excel -- Raw vs log1p}\end{subfigure}
-\caption[Log-transform Appliances Energy: Python và Excel]{Biến đổi \texttt{log1p} để giảm lệch phải của \texttt{Appliances}.\
-\footnotesize Python source: \texttt{src/analyze\_appliances\_energy.py}.\
-Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (\texttt{Appliances Histogram}).}
+\caption[Log-transform Appliances Energy: Python và Excel]{Biến đổi \texttt{log1p} để giảm lệch phải của \texttt{Appliances}.\\
+\footnotesize Python source: \texttt{src/analyze\_appliances\_energy.py}. Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison\_native.xlsx}, sheet \texttt{Appliances Histogram}.}
 \label{fig:ch4_appliances_log}
 \end{figure}
 \textbf{Nhận xét Hình \ref{fig:ch4_appliances_log}.} Phân phối gốc lệch phải mạnh do các đỉnh tiêu thụ cao. \texttt{log1p} nén đuôi phải, giúp phương sai ổn định hơn.
 
 \begin{figure}[H]\centering
-\begin{subfigure}{0.90\textwidth}\centering\includegraphics[width=\textwidth]{images/ch3/appliances_energy_differencing_line.png}\caption{Python -- Differencing}\end{subfigure}
-\par\medskip
-\begin{subfigure}{0.90\textwidth}\centering\includegraphics[width=\textwidth]{images/ch3/excel_appliances_differencing_line_preview.png}\caption{Excel -- Differencing}\end{subfigure}
-\caption[Differencing Appliances Energy: Python và Excel]{Sai phân bậc một của \texttt{Appliances}.\
-\footnotesize Python source: \texttt{scripts/generate\_group\_b\_figures.py}.\
-Excel source/workbook: \texttt{scripts/generate\_group\_b\_figures.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (Excel-style preview).}
+\includegraphics[width=0.90\textwidth]{images/ch3/appliances_energy_differencing_line.png}
+\caption[Differencing Appliances Energy]{Sai phân bậc một của \texttt{Appliances}.\\
+\footnotesize Python source: \texttt{scripts/generate\_group\_b\_figures.py}.}
 \label{fig:ch4_appliances_diff}
 \end{figure}
 \textbf{Nhận xét Hình \ref{fig:ch4_appliances_diff}.} Differencing đưa chuỗi về dao động quanh 0, giúp nhấn mạnh thay đổi ngắn hạn thay vì mức tuyệt đối.
 
 \begin{figure}[H]\centering
 \begin{subfigure}{0.90\textwidth}\centering\includegraphics[width=\textwidth]{images/ch3/appliances_energy_monthly_ridgeline.png}\caption{Python -- Monthly ridgeline}\end{subfigure}
-\par\medskip
-\begin{subfigure}{0.90\textwidth}\centering\includegraphics[width=\textwidth]{images/ch3/excel_appliances_ridgeline_preview.png}\caption{Excel -- Monthly histogram approximation}\end{subfigure}
-\caption[Mùa vụ Appliances Energy: Python và Excel]{Phân phối \texttt{log1p(Appliances)} theo tháng.\
+\caption[Mùa vụ Appliances Energy]{Phân phối \texttt{log1p(Appliances)} theo tháng.\
 \footnotesize Python source: \texttt{src/analyze\_appliances\_energy.py}.\
-Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (\texttt{Appliances Ridgeline}).}
-\label{fig:ch4_appliances_seasonality}
+}\label{fig:ch4_appliances_seasonality}
 \end{figure}
 \textbf{Nhận xét Hình \ref{fig:ch4_appliances_seasonality}.} Ridgeline cho thấy hình dạng phân phối thay đổi theo tháng, gợi ý ảnh hưởng mùa vụ và điều kiện thời tiết ngoài trời.
 
@@ -804,45 +722,33 @@ HAR có 10\,299 quan sát và 561 đặc trưng cảm biến đã trích xuất.
 
 \begin{figure}[H]\centering
 \begin{subfigure}{0.90\textwidth}\centering\includegraphics[width=\textwidth]{images/ch3/har_activity_distribution.png}\caption{Python -- Activity distribution}\end{subfigure}
-\par\medskip
-\begin{subfigure}{0.90\textwidth}\centering\includegraphics[width=\textwidth]{images/ch3/excel_har_activity_distribution_preview.png}\caption{Excel -- Activity distribution}\end{subfigure}
-\caption[Phân bố hoạt động HAR: Python và Excel]{Tần suất các hoạt động trong HAR.\
+\caption[Phân bố hoạt động HAR]{Tần suất các hoạt động trong HAR.\
 \footnotesize Python source: \texttt{src/analyze\_har.py}.\
-Excel source/workbook: \texttt{scripts/generate\_group\_b\_figures.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (Excel-style preview).}
-\label{fig:ch4_har_activity}
+}\label{fig:ch4_har_activity}
 \end{figure}
 \textbf{Nhận xét Hình \ref{fig:ch4_har_activity}.} Các lớp hoạt động tương đối cân bằng, thuận lợi cho phân loại nhiều lớp; vẫn cần kiểm tra từng lớp động/tĩnh vì tín hiệu cảm biến có độ biến thiên khác nhau.
 
 \begin{figure}[H]\centering
 \begin{subfigure}{0.90\textwidth}\centering\includegraphics[width=\textwidth]{images/ch3/har_selected_feature_line.png}\caption{Python -- Feature line sample}\end{subfigure}
-\par\medskip
-\begin{subfigure}{0.90\textwidth}\centering\includegraphics[width=\textwidth]{images/ch3/excel_har_selected_feature_line_preview.png}\caption{Excel -- Feature line sample}\end{subfigure}
-\caption[Line chart HAR: Python và Excel]{Line chart theo index mẫu của 5 feature HAR đã chọn.\
+\caption[Line chart HAR]{Line chart theo index mẫu của 5 feature HAR đã chọn.\
 \footnotesize Python source: \texttt{scripts/generate\_group\_b\_figures.py}.\
-Excel source/workbook: \texttt{scripts/generate\_group\_b\_figures.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (Excel-style preview).}
-\label{fig:ch4_har_line}
+}\label{fig:ch4_har_line}
 \end{figure}
 \textbf{Nhận xét Hình \ref{fig:ch4_har_line}.} Line chart cho thấy các feature tăng/giảm theo đoạn hoạt động; vì vậy khi chia dữ liệu cần chú ý subject và activity block, không chỉ coi mẫu là độc lập tuyệt đối.
 
 \begin{figure}[H]\centering
 \begin{subfigure}{0.90\textwidth}\centering\includegraphics[width=\textwidth]{images/ch3/har_five_feature_boxplot.png}\caption{Python -- Boxplot 5 features}\end{subfigure}
-\par\medskip
-\begin{subfigure}{0.90\textwidth}\centering\includegraphics[width=\textwidth]{images/ch3/excel_har_five_feature_boxplot_preview.png}\caption{Excel -- Boxplot 5 features}\end{subfigure}
-\caption[Boxplot HAR: Python và Excel]{Boxplot 5 feature HAR theo hoạt động.\
+\caption[Boxplot HAR]{Boxplot 5 feature HAR theo hoạt động.\
 \footnotesize Python source: \texttt{scripts/generate\_group\_b\_figures.py}.\
-Excel source/workbook: \texttt{scripts/generate\_group\_b\_figures.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (Excel-style preview).}
-\label{fig:ch4_har_box}
+}\label{fig:ch4_har_box}
 \end{figure}
 \textbf{Nhận xét Hình \ref{fig:ch4_har_box}.} Feature mean/std tách rõ giữa nhóm hoạt động tĩnh và động. Các giá trị ngoại biên có thể là chuyển động thực, không nên loại bỏ cơ học.
 
 \begin{figure}[H]\centering
 \begin{subfigure}{0.90\textwidth}\centering\includegraphics[width=\textwidth]{images/ch3/har_selected_feature_correlation_heatmap.png}\caption{Python -- Correlation heatmap}\end{subfigure}
-\par\medskip
-\begin{subfigure}{0.90\textwidth}\centering\includegraphics[width=\textwidth]{images/ch3/excel_har_corr_heatmap_preview.png}\caption{Excel -- Correlation heatmap}\end{subfigure}
-\caption[Heatmap HAR: Python và Excel]{Heatmap tương quan 5 feature HAR.\
+\caption[Heatmap HAR]{Heatmap tương quan 5 feature HAR.\
 \footnotesize Python source: \texttt{scripts/generate\_group\_b\_figures.py}.\
-Excel source/workbook: \texttt{scripts/generate\_group\_b\_figures.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (Excel-style preview).}
-\label{fig:ch4_har_corr}
+}\label{fig:ch4_har_corr}
 \end{figure}
 \textbf{Nhận xét Hình \ref{fig:ch4_har_corr}.} Các trục gia tốc có tương quan nhất định, nhưng không hoàn toàn trùng nhau; giữ nhiều trục giúp mô hình nhận diện hướng chuyển động.
 
@@ -852,58 +758,45 @@ MHEALTH là dữ liệu cảm biến đeo trên cơ thể. Sáu chuỗi chọn p
 
 \begin{figure}[H]\centering
 \begin{subfigure}{0.90\textwidth}\centering\includegraphics[width=\textwidth]{images/ch3/mhealth_activity_distribution.png}\caption{Python -- Activity distribution}\end{subfigure}
-\par\medskip
-\begin{subfigure}{0.90\textwidth}\centering\includegraphics[width=\textwidth]{images/ch3/excel_mhealth_activity_distribution_preview.png}\caption{Excel -- Activity distribution}\end{subfigure}
-\caption[Phân bố hoạt động MHEALTH: Python và Excel]{Tần suất hoạt động trong mẫu MHEALTH.\
+\caption[Phân bố hoạt động MHEALTH]{Tần suất hoạt động trong mẫu MHEALTH.\
 \footnotesize Python source: \texttt{src/analyze\_mhealth.py}.\
-Excel source/workbook: \texttt{scripts/generate\_group\_b\_figures.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (Excel-style preview).}
-\label{fig:ch4_mhealth_activity}
+}\label{fig:ch4_mhealth_activity}
 \end{figure}
 \textbf{Nhận xét Hình \ref{fig:ch4_mhealth_activity}.} Lớp NULL chiếm tỷ lệ lớn do nhiều đoạn không gán hoạt động; phân tích mô hình nên cân nhắc lọc NULL hoặc dùng class weight.
 
 \begin{figure}[H]\centering
 \begin{subfigure}{0.90\textwidth}\centering\includegraphics[width=\textwidth]{images/ch3/mhealth_selected_sensor_line.png}\caption{Python -- Sensor line sample}\end{subfigure}
-\par\medskip
-\begin{subfigure}{0.90\textwidth}\centering\includegraphics[width=\textwidth]{images/ch3/excel_mhealth_selected_sensor_line_preview.png}\caption{Excel -- Sensor line sample}\end{subfigure}
-\caption[Line chart MHEALTH: Python và Excel]{Line chart theo index mẫu của 6 sensor MHEALTH.\
+\caption[Line chart MHEALTH]{Line chart theo index mẫu của 6 sensor MHEALTH.\
 \footnotesize Python source: \texttt{scripts/generate\_group\_b\_figures.py}.\
-Excel source/workbook: \texttt{scripts/generate\_group\_b\_figures.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (Excel-style preview).}
-\label{fig:ch4_mhealth_line}
+}\label{fig:ch4_mhealth_line}
 \end{figure}
 \textbf{Nhận xét Hình \ref{fig:ch4_mhealth_line}.} Chuỗi sensor có dao động ngắn hạn mạnh, phản ánh chuyển động cơ thể. Biểu đồ đường phù hợp hơn histogram khi cần đọc đoạn hoạt động liên tiếp.
 
 \begin{figure}[H]\centering
 \begin{subfigure}{0.90\textwidth}\centering\includegraphics[width=\textwidth]{images/ch3/mhealth_sensor_boxplot.png}\caption{Python -- Sensor boxplot}\end{subfigure}
-\par\medskip
-\begin{subfigure}{0.90\textwidth}\centering\includegraphics[width=\textwidth]{images/ch3/excel_mhealth_sensor_boxplot_preview.png}\caption{Excel -- Sensor boxplot}\end{subfigure}
-\caption[Boxplot MHEALTH: Python và Excel]{Boxplot sensor theo hoạt động MHEALTH.\
+\caption[Boxplot MHEALTH]{Boxplot sensor theo hoạt động MHEALTH.\
 \footnotesize Python source: \texttt{src/analyze\_mhealth.py}.\
-Excel source/workbook: \texttt{scripts/generate\_group\_b\_figures.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (Excel-style preview).}
-\label{fig:ch4_mhealth_box}
+}\label{fig:ch4_mhealth_box}
 \end{figure}
 \textbf{Nhận xét Hình \ref{fig:ch4_mhealth_box}.} Phân bố sensor khác nhau giữa các hoạt động; ngoại lai có thể là chuyển động đột ngột nên cần kiểm tra theo ngữ cảnh trước khi clipping.
 
 \begin{figure}[H]\centering
 \begin{subfigure}{0.90\textwidth}\centering\includegraphics[width=\textwidth]{images/ch3/mhealth_sensor_rolling_diff.png}\caption{Python -- Rolling/differencing}\end{subfigure}
-\par\medskip
-\begin{subfigure}{0.90\textwidth}\centering\includegraphics[width=\textwidth]{images/ch3/excel_mhealth_rolling_diff_preview.png}\caption{Excel -- Rolling/differencing}\end{subfigure}
-\caption[Rolling và differencing MHEALTH: Python và Excel]{Rolling mean và sai phân của \texttt{sensor\_01}.\
+\caption[Rolling và differencing MHEALTH]{Rolling mean và sai phân của \texttt{sensor\_01}.\
 \footnotesize Python source: \texttt{scripts/generate\_group\_b\_figures.py}.\
-Excel source/workbook: \texttt{scripts/generate\_group\_b\_figures.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (Excel-style preview).}
-\label{fig:ch4_mhealth_roll_diff}
+}\label{fig:ch4_mhealth_roll_diff}
 \end{figure}
 \textbf{Nhận xét Hình \ref{fig:ch4_mhealth_roll_diff}.} Rolling mean làm rõ mức nền của cảm biến, còn differencing nhấn mạnh thay đổi tức thời; hai cách nhìn này bổ sung cho phân tích hoạt động.
 
 \begin{figure}[H]\centering
 \begin{subfigure}{0.90\textwidth}\centering\includegraphics[width=\textwidth]{images/ch3/mhealth_sensor_correlation_heatmap.png}\caption{Python -- Correlation heatmap}\end{subfigure}
-\par\medskip
-\begin{subfigure}{0.90\textwidth}\centering\includegraphics[width=\textwidth]{images/ch3/excel_mhealth_corr_heatmap_preview.png}\caption{Excel -- Correlation heatmap}\end{subfigure}
-\caption[Heatmap MHEALTH: Python và Excel]{Heatmap tương quan các sensor MHEALTH đã chọn.\
+\caption[Heatmap MHEALTH]{Heatmap tương quan các sensor MHEALTH đã chọn.\
 \footnotesize Python source: \texttt{scripts/generate\_group\_b\_figures.py}.\
-Excel source/workbook: \texttt{scripts/generate\_group\_b\_figures.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (Excel-style preview).}
-\label{fig:ch4_mhealth_corr}
+}\label{fig:ch4_mhealth_corr}
 \end{figure}
 \textbf{Nhận xét Hình \ref{fig:ch4_mhealth_corr}.} Tương quan giữa các sensor cho biết mức trùng lặp thông tin giữa kênh đo; các kênh ít tương quan nên được giữ lại để mô hình nhận diện chuyển động đa chiều.
+
+\chapterThreeExcelPythonComparison
 
 \section{Số hóa, thống kê và trực quan hóa dữ liệu đa phương tiện}
 

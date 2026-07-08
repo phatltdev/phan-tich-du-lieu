@@ -1,0 +1,3 @@
+cluster,radius_mean,texture_mean,perimeter_mean,area_mean,smoothness_mean,compactness_mean,n,ty_le_malignant_%
+0,17.92,21.55,121.94,1027.63,0.1,0.15,172,95.35
+1,12.41,18.64,80.43,484.87,0.09,0.08,397,12.09

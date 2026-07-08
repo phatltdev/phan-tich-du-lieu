@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.12.15)  8 JUL 2026 16:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.12.15)  8 JUL 2026 23:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1572,26 +1572,26 @@ File: t5cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 ))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for T5/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 182.
+LaTeX Font Info:    ... okay on input line 182.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 182.
+LaTeX Font Info:    ... okay on input line 182.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 182.
+LaTeX Font Info:    ... okay on input line 182.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 182.
+LaTeX Font Info:    ... okay on input line 182.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 182.
+LaTeX Font Info:    ... okay on input line 182.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 182.
+LaTeX Font Info:    ... okay on input line 182.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 182.
+LaTeX Font Info:    ... okay on input line 182.
+LaTeX Font Info:    Checking defaults for T5/cmr/m/n on input line 182.
+LaTeX Font Info:    ... okay on input line 182.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 182.
+LaTeX Font Info:    ... okay on input line 182.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 182.
+LaTeX Font Info:    ... okay on input line 182.
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 
@@ -1604,7 +1604,7 @@ Package biblatex Info: ... file 'vietnamese.lbx' not found.
 
 
 Package biblatex Warning: Language 'vietnamese' not supported.
-(biblatex)                Using dummy definitions on input line 110.
+(biblatex)                Using dummy definitions on input line 182.
 
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
@@ -1617,8 +1617,8 @@ Package biblatex Info: Data encoding 'utf8' specified.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
 (main.bbl)
-Package biblatex Info: Reference section=0 on input line 110.
-Package biblatex Info: Reference segment=0 on input line 110.
+Package biblatex Info: Reference section=0 on input line 182.
+Package biblatex Info: Reference segment=0 on input line 182.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
@@ -1726,31 +1726,31 @@ Package minitoc(hints) Warning: W0023
 (minitoc(hints))                --- It may be the consequence 
 (minitoc(hints))                of loading the ``hyperref'' package.
 
-Package hyperref Info: Link coloring ON on input line 110.
+Package hyperref Info: Link coloring ON on input line 182.
 (main.out) (main.out)
 \@outlinefile=\write6
 \openout6 = `main.out'.
 
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 1
-26.
+99.
 
 (C:\Users\Hello\AppData\Local\Programs\MiKTeX\tex/latex/stmaryrd\ustmry.fd)
-LaTeX Font Info:    Trying to load font information for U+msa on input line 126
+LaTeX Font Info:    Trying to load font information for U+msa on input line 199
 .
 
 (C:\Users\Hello\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 126
+LaTeX Font Info:    Trying to load font information for U+msb on input line 199
 .
 
 (C:\Users\Hello\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<images/assets/logoCTU.png, id=510, 978.7767pt x 978.5358pt>
+<images/assets/logoCTU.png, id=590, 978.7767pt x 978.5358pt>
 File: images/assets/logoCTU.png Graphic file (type png)
 <use images/assets/logoCTU.png>
-Package pdftex.def Info: images/assets/logoCTU.png  used on input line 127.
+Package pdftex.def Info: images/assets/logoCTU.png  used on input line 200.
 (pdftex.def)             Requested size: 56.91693pt x 56.9055pt.
 
 [1
@@ -1768,32 +1768,32 @@ File: t5cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 [1
 
-])
+] [2])
 \tf@toc=\write7
 \openout7 = `main.toc'.
 
- [2] (main.lof [3
+ [3] (main.lof [4
 
-])
+] [5])
 \tf@lof=\write8
 \openout8 = `main.lof'.
 
- [4] (main.lot [5
+ [6] (main.lot [7
 
-] [6])
+] [8])
 \tf@lot=\write9
 \openout9 = `main.lot'.
 
- (parts/intro.tex [7] [8
-
-]
+ (parts/intro.tex
 [9] [10
 
-] [11] [12
+] [11
 
-] [13] [14
+] [12
 
-]) [15] [16
+]) [13
+
+] [14
 
 ] (parts/chapter0_introduction.tex
 Ch\uhorn \ohorn ng 1.
@@ -1817,10 +1817,7 @@ Ch\uhorn \ohorn ng 2.
 \c@ttl@toc@chapters=\count517
 (main.ptc [3
 
-])
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [4]
+]) [4]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 17.97173pt, for example:
@@ -1837,9 +1834,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
 [7]
-LaTeX Font Info:    Font shape `T5/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `T5/cmtt/m/n' tried instead on input line 125.
- [8]
+Overfull \hbox (5.02654pt too wide) in paragraph at lines 112--123
+ [][] 
+ []
+
+[8]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 17.97173pt, for example:
@@ -1848,6 +1847,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
 [9] [10]
+Overfull \hbox (43.49161pt too wide) in paragraph at lines 200--211
+ [][] 
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 17.97173pt, for example:
@@ -1870,9 +1873,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
 [13] [14]
-Underfull \vbox (badness 3989) has occurred while \output is active []
-
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 17.97173pt, for example:
@@ -1889,9 +1889,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
 [17] [18]
-Underfull \vbox (badness 3460) has occurred while \output is active []
-
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 17.97173pt, for example:
@@ -1900,9 +1897,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
 [19] [20]
-Underfull \vbox (badness 2781) has occurred while \output is active []
-
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 17.97173pt, for example:
@@ -1922,6 +1916,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
 [23] [24]
+LaTeX Font Info:    Font shape `T5/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `T5/cmtt/m/n' tried instead on input line 764.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 17.97173pt, for example:
@@ -2062,6 +2059,11 @@ cmr/m/n/10.95 ,
  []
 
 
+Underfull \hbox (badness 1005) in paragraph at lines 948--948
+\T5/cmr/m/n/10.95 th˜Ìng theo IQR, so
+ []
+
+
 Underfull \hbox (badness 1168) in paragraph at lines 948--948
 []|\T5/cmtt/m/n/10.95 chol \T5/cmr/m/n/10.95 theo tar-get, ^^_Î
  []
@@ -2082,10 +2084,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 950--951
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 17.97173pt, for example:
 (fancyhdr)                \setlength{\headheight}{17.97173pt}.
@@ -2099,25 +2097,40 @@ Overfull \hbox (7.1992pt too wide) in paragraph at lines 978--979
  []
 
 [32]
-<images/ch1/appliances_energy_distribution_raw.png, id=1414, 505.89pt x 361.35p
+Overfull \hbox (204.42537pt too wide) in paragraph at lines 998--999
+[]\T5/cmr/bx/n/12 C°c b˜Óc thao t°c v≥ His-togram b¨ng Ex-cel. \T5/cmr/m/n/12 M
+ work-book \T5/cmtt/m/n/12 excel/excel_visualization_comparison_native.xlsx\T5
+/cmr/m/n/12 ,
+ []
+
+
+Overfull \hbox (78.77612pt too wide) in paragraph at lines 998--999
+\T5/cmr/m/n/12 sheet \T5/cmtt/m/n/12 Appliances Histogram\T5/cmr/m/n/12 , ho∞c 
+file d˙ liªu \T5/cmtt/m/n/12 outputs/cleaned/appliances_energy_cleaned.csv\T5/c
+mr/m/n/12 ;
+ []
+
+<images/ch1/appliances_energy_distribution_raw.png, id=1574, 505.89pt x 361.35p
 t>
 File: images/ch1/appliances_energy_distribution_raw.png Graphic file (type png)
 
 <use images/ch1/appliances_energy_distribution_raw.png>
 Package pdftex.def Info: images/ch1/appliances_energy_distribution_raw.png  use
-d on input line 1000.
+d on input line 1002.
 (pdftex.def)             Requested size: 343.99329pt x 245.71475pt.
-<images/ch1/excel_appliances_raw_vs_log_hist_preview.png, id=1415, 867.24pt x 3
+<images/ch1/excel_appliances_raw_vs_log_hist_preview.png, id=1575, 867.24pt x 3
 25.215pt>
 File: images/ch1/excel_appliances_raw_vs_log_hist_preview.png Graphic file (typ
 e png)
 <use images/ch1/excel_appliances_raw_vs_log_hist_preview.png>
 Package pdftex.def Info: images/ch1/excel_appliances_raw_vs_log_hist_preview.pn
-g  used on input line 1007.
+g  used on input line 1009.
 (pdftex.def)             Requested size: 343.99329pt x 128.99693pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+Underfull \hbox (badness 1173) in paragraph at lines 1010--1010
+\T5/cmr/m/n/12 book: \T5/cmtt/m/n/12 excel/excel_visualization_comparison_nativ
+e.xlsx\T5/cmr/m/n/12 , sheet \T5/cmtt/m/n/12 Appliances
+ []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2128,20 +2141,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [33 <./images/ch1/appliances_energy_distribution_raw.png>] [34 <./images/ch1/ex
 cel_appliances_raw_vs_log_hist_preview.png>]
-<images/ch1/heart_disease_cholesterol_boxplot.png, id=1432, 578.16pt x 361.35pt
+<images/ch1/heart_disease_cholesterol_boxplot.png, id=1591, 578.16pt x 361.35pt
 >
 File: images/ch1/heart_disease_cholesterol_boxplot.png Graphic file (type png)
 <use images/ch1/heart_disease_cholesterol_boxplot.png>
 Package pdftex.def Info: images/ch1/heart_disease_cholesterol_boxplot.png  used
- on input line 1063.
+ on input line 1067.
 (pdftex.def)             Requested size: 396.91325pt x 248.06912pt.
-<images/ch1/excel_heart_chol_boxplot_preview.png, id=1434, 505.89pt x 303.534pt
->
-File: images/ch1/excel_heart_chol_boxplot_preview.png Graphic file (type png)
-<use images/ch1/excel_heart_chol_boxplot_preview.png>
-Package pdftex.def Info: images/ch1/excel_heart_chol_boxplot_preview.png  used 
-on input line 1072.
-(pdftex.def)             Requested size: 374.86775pt x 224.92657pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2151,78 +2157,137 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
 [35 <./images/ch1/heart_disease_cholesterol_boxplot.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
+Underfull \hbox (badness 7030) in paragraph at lines 1089--1089
+[]|\T5/cmr/m/n/10.95 Bi∫u ^^_Á ph•n
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1089--1089
+\T5/cmr/m/n/10.95 t°n (Scat-ter
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1089--1089
 []|\T5/cmr/m/n/10.95 Tºm li∂n hª tuy∏n
  []
 
 
-Underfull \hbox (badness 1990) in paragraph at lines 1092--1092
+Underfull \hbox (badness 1990) in paragraph at lines 1089--1089
 \T5/cmr/m/n/10.95 tΩnh/phi tuy∏n, cˆm,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
+Underfull \hbox (badness 10000) in paragraph at lines 1089--1089
 []|\T5/cmtt/m/n/10.95 age\T5/cmr/m/n/10.95 --\T5/cmtt/m/n/10.95 thalach\T5/cmr/
 m/n/10.95 , nhiªt
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1093
-[]|\T5/cmr/m/n/10.95 RËi khi nhi∑u
+Underfull \hbox (badness 3240) in paragraph at lines 1089--1090
+[]|\T5/cmr/m/n/10.95 Dπ x£y ra hiªn
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1093
-\T5/cmr/m/n/10.95 ^^_i∫m, khÊng
+Underfull \hbox (badness 2941) in paragraph at lines 1089--1090
+\T5/cmr/m/n/10.95 t˜Òng chÁng lßp
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1093--1093
-[]|\T5/cmr/m/n/10.95 Bar chart/Pie
+Underfull \hbox (badness 10000) in paragraph at lines 1089--1090
+\T5/cmr/m/n/10.95 ^^_i∫m (over-plot-
  []
 
 
-Underfull \hbox (badness 1281) in paragraph at lines 1093--1094
+Underfull \hbox (badness 10000) in paragraph at lines 1089--1090
+\T5/cmr/m/n/10.95 ting) khi kΩch
+ []
+
+
+Underfull \hbox (badness 2469) in paragraph at lines 1089--1090
+\T5/cmr/m/n/10.95 t˜Ïng quan tr¸c
+ []
+
+
+Underfull \hbox (badness 1281) in paragraph at lines 1090--1091
 []|\T5/cmr/m/n/10.95 Pie kh‚ so s°nh
  []
 
 
-Underfull \hbox (badness 1546) in paragraph at lines 1093--1094
+Underfull \hbox (badness 1546) in paragraph at lines 1090--1091
 \T5/cmr/m/n/10.95 nhi∑u nh‚m; bar
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1093--1094
+Underfull \hbox (badness 10000) in paragraph at lines 1090--1091
 \T5/cmr/m/n/10.95 khÊng th∫ hiªn
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1094--1094
-[]|\T5/cmr/m/n/10.95 Correlation
+Underfull \hbox (badness 10000) in paragraph at lines 1091--1091
+[]|\T5/cmr/m/n/10.95 B£n ^^_Á nhiªt
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1095--1095
-[]|\T5/cmr/m/n/10.95 Pair/Hexbin
+Underfull \hbox (badness 10000) in paragraph at lines 1091--1091
+\T5/cmr/m/n/10.95 t˜Ïng quan
  []
 
 
-Underfull \hbox (badness 1838) in paragraph at lines 1095--1095
+Underfull \hbox (badness 10000) in paragraph at lines 1091--1091
+\T5/cmr/m/n/10.95 (Cor-re-la-tion
+ []
+
+
+Underfull \hbox (badness 2941) in paragraph at lines 1091--1092
+\T5/cmr/m/n/10.95 quan tuy∏n tΩnh
+ []
+
+
+Underfull \hbox (badness 5077) in paragraph at lines 1091--1092
+\T5/cmr/m/n/10.95 ^^_Ïn bi∏n (Pear-
+ []
+
+
+Underfull \hbox (badness 5189) in paragraph at lines 1091--1092
+\T5/cmr/m/n/10.95 son); khÊng th∫
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
+[]|\T5/cmr/m/n/10.95 Bi∫u ^^_Á
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
+\T5/cmr/m/n/10.95 c∞p/tÍ ong
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
+\T5/cmr/m/n/10.95 (Pair/Hexbin
+ []
+
+
+Underfull \hbox (badness 1838) in paragraph at lines 1092--1092
 []|\T5/cmr/m/n/10.95 Xem nhi∑u c∞p bi∏n
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1096--1096
-[]|\T5/cmr/m/n/10.95 Stacked
+Underfull \hbox (badness 10000) in paragraph at lines 1093--1093
+[]|\T5/cmr/m/n/10.95 Bi∫u ^^_Á cÎt
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 1093--1093
+\T5/cmr/m/n/10.95 chÁng/m£nh
+ []
 
- [36 <./images/ch1/excel_heart_chol_boxplot_preview.png>]
-Underfull \vbox (badness 1701) has occurred while \output is active []
 
+Underfull \hbox (badness 10000) in paragraph at lines 1093--1093
+\T5/cmr/m/n/10.95 gh≤p (Stacked
+ []
 
+[36]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 17.97173pt, for example:
@@ -2231,54 +2296,44 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
 [37]
-Overfull \hbox (5.36743pt too wide) in paragraph at lines 1149--1150
+Overfull \hbox (5.36743pt too wide) in paragraph at lines 1146--1147
 []\T5/cmr/bx/n/12 Chu©n b‡ d˙ liªu: \T5/cmr/m/n/12 m file \T5/cmtt/m/n/12 outp
 uts/cleaned/heart_disease_cleaned.csv \T5/cmr/m/n/12 trong
  []
 
 [38]
-<images/ch1/heart_disease_age_thalach_scatter.png, id=1468, 578.16pt x 361.35pt
+<images/ch1/heart_disease_age_thalach_scatter.png, id=1616, 578.16pt x 361.35pt
 >
 File: images/ch1/heart_disease_age_thalach_scatter.png Graphic file (type png)
 <use images/ch1/heart_disease_age_thalach_scatter.png>
 Package pdftex.def Info: images/ch1/heart_disease_age_thalach_scatter.png  used
- on input line 1161.
+ on input line 1158.
 (pdftex.def)             Requested size: 396.91325pt x 248.06912pt.
-<images/ch1/excel_heart_age_thalach_scatter_preview.png, id=1469, 505.89pt x 30
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 17.97173pt, for example:
+(fancyhdr)                \setlength{\headheight}{17.97173pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
+
+[39]
+<images/ch1/excel_heart_age_thalach_scatter_preview.png, id=1627, 505.89pt x 30
 3.534pt>
 File: images/ch1/excel_heart_age_thalach_scatter_preview.png Graphic file (type
  png)
 <use images/ch1/excel_heart_age_thalach_scatter_preview.png>
 Package pdftex.def Info: images/ch1/excel_heart_age_thalach_scatter_preview.png
-  used on input line 1168.
+  used on input line 1165.
 (pdftex.def)             Requested size: 396.91325pt x 238.15428pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 17.97173pt, for example:
-(fancyhdr)                \setlength{\headheight}{17.97173pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
-
-[39 <./images/ch1/heart_disease_age_thalach_scatter.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [40 <./images/ch1/excel_heart_age_thalach_scatter_preview.png>]
-<images/ch1/heart_disease_chest_pain_bar.png, id=1483, 578.16pt x 361.35pt>
+ [40 <./images/ch1/heart_disease_age_thalach_scatter.png> <./images/ch1/excel_h
+eart_age_thalach_scatter_preview.png>]
+<images/ch1/heart_disease_chest_pain_bar.png, id=1636, 578.16pt x 361.35pt>
 File: images/ch1/heart_disease_chest_pain_bar.png Graphic file (type png)
 <use images/ch1/heart_disease_chest_pain_bar.png>
 Package pdftex.def Info: images/ch1/heart_disease_chest_pain_bar.png  used on i
-nput line 1219.
+nput line 1216.
 (pdftex.def)             Requested size: 396.91325pt x 248.06912pt.
-<images/ch1/excel_heart_cp_bar_preview.png, id=1484, 505.89pt x 303.534pt>
-File: images/ch1/excel_heart_cp_bar_preview.png Graphic file (type png)
-<use images/ch1/excel_heart_cp_bar_preview.png>
-Package pdftex.def Info: images/ch1/excel_heart_cp_bar_preview.png  used on inp
-ut line 1226.
-(pdftex.def)             Requested size: 396.91325pt x 238.15428pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2287,82 +2342,83 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
-[41 <./images/ch1/heart_disease_chest_pain_bar.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [42 <./images/ch1/excel_heart_cp_bar_preview.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1248--1248
+[41]
+<images/ch1/excel_heart_cp_bar_preview.png, id=1641, 505.89pt x 303.534pt>
+File: images/ch1/excel_heart_cp_bar_preview.png Graphic file (type png)
+<use images/ch1/excel_heart_cp_bar_preview.png>
+Package pdftex.def Info: images/ch1/excel_heart_cp_bar_preview.png  used on inp
+ut line 1223.
+(pdftex.def)             Requested size: 396.91325pt x 238.15428pt.
+ [42 <./images/ch1/heart_disease_chest_pain_bar.png> <./images/ch1/excel_heart_
+cp_bar_preview.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
 []|\T5/cmr/m/n/10.95 Appliances En-ergy,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1248--1249
+Underfull \hbox (badness 10000) in paragraph at lines 1247--1248
 \T5/cmr/m/n/10.95 liªu dao ^^_Îng
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1249--1249
+Underfull \hbox (badness 10000) in paragraph at lines 1248--1248
 []|\T5/cmr/m/n/10.95 Rolling
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1249--1249
+Underfull \hbox (badness 10000) in paragraph at lines 1248--1248
 \T5/cmr/m/n/10.95 mean/Area
  []
 
 
-Underfull \hbox (badness 5274) in paragraph at lines 1249--1249
+Underfull \hbox (badness 5274) in paragraph at lines 1248--1248
 []|\T5/cmr/m/n/10.95 Ti∂u thˆ ^^_iªn theo
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1250--1250
+Underfull \hbox (badness 10000) in paragraph at lines 1249--1249
 []|\T5/cmr/m/n/10.95 Confusion ma-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1250--1250
+Underfull \hbox (badness 10000) in paragraph at lines 1249--1249
 []|\T5/cmr/m/n/10.95 Heart Dis-ease,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1250--1250
+Underfull \hbox (badness 10000) in paragraph at lines 1249--1249
 \T5/cmr/m/n/10.95 HAM10000, Breast
  []
 
 
-Underfull \hbox (badness 2698) in paragraph at lines 1250--1251
+Underfull \hbox (badness 2698) in paragraph at lines 1249--1250
 \T5/cmr/m/n/10.95 hußn luyªn; phˆ
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1251--1251
+Underfull \hbox (badness 10000) in paragraph at lines 1250--1250
 []|\T5/cmr/m/n/10.95 Prediction vs
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1251--1252
+Underfull \hbox (badness 10000) in paragraph at lines 1250--1251
 []|\T5/cmr/m/n/10.95 KhÊng chø r„
  []
 
 
-Underfull \hbox (badness 2237) in paragraph at lines 1251--1252
+Underfull \hbox (badness 2237) in paragraph at lines 1250--1251
 \T5/cmr/m/n/10.95 nguy∂n nh•n sai
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1252--1252
+Underfull \hbox (badness 10000) in paragraph at lines 1251--1251
 []|\T5/cmr/m/n/10.95 Image
  []
 
 
-Underfull \hbox (badness 1406) in paragraph at lines 1252--1252
+Underfull \hbox (badness 1406) in paragraph at lines 1251--1251
 []|\T5/cmr/m/n/10.95 Ki∫m tra chßt l˜Òng
  []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2372,21 +2428,27 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
 [43]
-<images/ch1/appliances_energy_daily_line.png, id=1503, 794.97pt x 361.35pt>
+<images/ch1/appliances_energy_daily_line.png, id=1654, 794.97pt x 361.35pt>
 File: images/ch1/appliances_energy_daily_line.png Graphic file (type png)
 <use images/ch1/appliances_energy_daily_line.png>
 Package pdftex.def Info: images/ch1/appliances_energy_daily_line.png  used on i
-nput line 1305.
+nput line 1304.
 (pdftex.def)             Requested size: 396.91325pt x 180.42091pt.
-<images/ch1/excel_appliances_daily_line_preview.png, id=1504, 578.16pt x 303.53
+ [44]
+<images/ch1/excel_appliances_daily_line_preview.png, id=1659, 578.16pt x 303.53
 4pt>
 File: images/ch1/excel_appliances_daily_line_preview.png Graphic file (type png
 )
 <use images/ch1/excel_appliances_daily_line_preview.png>
 Package pdftex.def Info: images/ch1/excel_appliances_daily_line_preview.png  us
-ed on input line 1312.
+ed on input line 1311.
 (pdftex.def)             Requested size: 396.91325pt x 208.37805pt.
- [44 <./images/ch1/appliances_energy_daily_line.png>]
+
+Underfull \hbox (badness 2662) in paragraph at lines 1312--1312
+\T5/cmr/m/n/12 b¨ng Ex-cel. Work-book: \T5/cmtt/m/n/12 excel/excel_visualizatio
+n_comparison_native.xlsx\T5/cmr/m/n/12 ,
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 17.97173pt, for example:
@@ -2394,29 +2456,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
-[45 <./images/ch1/excel_appliances_daily_line_preview.png>]
-<images/ch1/heart_disease_correlation_heatmap.png, id=1519, 722.7pt x 578.16pt>
+[45 <./images/ch1/appliances_energy_daily_line.png> <./images/ch1/excel_applian
+ces_daily_line_preview.png>]
+<images/ch1/heart_disease_correlation_heatmap.png, id=1670, 722.7pt x 578.16pt>
 
 File: images/ch1/heart_disease_correlation_heatmap.png Graphic file (type png)
 <use images/ch1/heart_disease_correlation_heatmap.png>
 Package pdftex.def Info: images/ch1/heart_disease_correlation_heatmap.png  used
- on input line 1373.
+ on input line 1372.
 (pdftex.def)             Requested size: 418.96548pt x 335.17424pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [46]
-<images/ch1/excel_heart_corr_heatmap_preview.png, id=1525, 448.074pt x 375.804p
-t>
-File: images/ch1/excel_heart_corr_heatmap_preview.png Graphic file (type png)
-<use images/ch1/excel_heart_corr_heatmap_preview.png>
-Package pdftex.def Info: images/ch1/excel_heart_corr_heatmap_preview.png  used 
-on input line 1382.
-(pdftex.def)             Requested size: 352.81552pt x 295.91281pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 17.97173pt, for example:
@@ -2425,251 +2474,224 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
 [47 <./images/ch1/heart_disease_correlation_heatmap.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1400--1401
+Underfull \hbox (badness 10000) in paragraph at lines 1392--1393
 []|\T5/cmr/m/n/10.95 Ph§m vi
  []
 
 
-Underfull \hbox (badness 2762) in paragraph at lines 1402--1402
+Underfull \hbox (badness 2762) in paragraph at lines 1394--1394
 \T5/cmr/m/n/10.95 thÊ trong cÚng mÎt
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1402--1402
+Underfull \hbox (badness 10000) in paragraph at lines 1394--1394
 []|\T5/cmr/m/n/10.95 V¯a thßy hºnh
  []
 
 
-Underfull \hbox (badness 6625) in paragraph at lines 1402--1402
+Underfull \hbox (badness 6625) in paragraph at lines 1394--1394
 \T5/cmr/m/n/10.95 d§ng ph•n phËi,
  []
 
 
-Underfull \hbox (badness 8189) in paragraph at lines 1402--1402
+Underfull \hbox (badness 8189) in paragraph at lines 1394--1394
 \T5/cmr/m/n/10.95 me-dian/IQR, v¯a
  []
 
 
-Underfull \hbox (badness 1596) in paragraph at lines 1402--1402
+Underfull \hbox (badness 1596) in paragraph at lines 1394--1394
 \T5/cmr/m/n/10.95 c¶n gi£i thΩch s¸
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1402--1402
+Underfull \hbox (badness 10000) in paragraph at lines 1394--1394
 \T5/cmr/m/n/10.95 nhi∑u ho∞c m®u
  []
 
 
-Underfull \hbox (badness 1616) in paragraph at lines 1402--1402
+Underfull \hbox (badness 1616) in paragraph at lines 1394--1394
 \T5/cmr/m/n/10.95 qu° lÓn; c¶n chÛ
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1402--1402
+Underfull \hbox (badness 10000) in paragraph at lines 1394--1394
 \T5/cmr/m/n/10.95 ^^_Âc khÊng quen
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1402--1403
+Underfull \hbox (badness 10000) in paragraph at lines 1394--1395
 []|\T5/cmr/m/n/10.95 So s°nh
  []
 
 
-Underfull \hbox (badness 8151) in paragraph at lines 1402--1403
+Underfull \hbox (badness 8151) in paragraph at lines 1394--1395
 \T5/cmr/m/n/10.95 bi∏n ^^_‡nh
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1402--1403
+Underfull \hbox (badness 10000) in paragraph at lines 1394--1395
 \T5/cmr/m/n/10.95 l˜Òng
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1402--1403
+Underfull \hbox (badness 10000) in paragraph at lines 1394--1395
 \T5/cmr/m/n/10.95 theo lÓp:
  []
 
 
-Underfull \hbox (badness 2894) in paragraph at lines 1402--1403
+Underfull \hbox (badness 2894) in paragraph at lines 1394--1395
 \T5/cmtt/m/n/10.95 chol \T5/cmr/m/n/10.95 theo
  []
 
 
-Overfull \hbox (24.83623pt too wide) in paragraph at lines 1402--1403
+Overfull \hbox (24.83623pt too wide) in paragraph at lines 1394--1395
 \T5/cmtt/m/n/10.95 target_binary\T5/cmr/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1402--1403
+Underfull \hbox (badness 10000) in paragraph at lines 1394--1395
 \T5/cmr/m/n/10.95 ^^_Î s°ng
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1402--1403
+Underfull \hbox (badness 10000) in paragraph at lines 1394--1395
 \T5/cmr/m/n/10.95 £nh
  []
 
 
-Overfull \hbox (0.90427pt too wide) in paragraph at lines 1402--1403
+Overfull \hbox (0.90427pt too wide) in paragraph at lines 1394--1395
 \T5/cmr/m/n/10.95 HAM10000
  []
 
 
-Underfull \hbox (badness 5119) in paragraph at lines 1403--1403
+Underfull \hbox (badness 5119) in paragraph at lines 1395--1395
 []|\T5/cmr/m/n/10.95 Ti∏t kiªm khÊng
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1403--1403
+Underfull \hbox (badness 10000) in paragraph at lines 1395--1395
 \T5/cmr/m/n/10.95 ra d‡ch chuy∫n
  []
 
 
-Underfull \hbox (badness 1616) in paragraph at lines 1403--1403
+Underfull \hbox (badness 1616) in paragraph at lines 1395--1395
 \T5/cmr/m/n/10.95 chÁng lÓp c‚ th∫
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1403--1404
+Underfull \hbox (badness 10000) in paragraph at lines 1395--1396
 []|\T5/cmr/m/n/10.95 So s°nh
  []
 
 
-Underfull \hbox (badness 1902) in paragraph at lines 1403--1404
+Underfull \hbox (badness 1902) in paragraph at lines 1395--1396
 \T5/cmr/m/n/10.95 ph•n phËi
  []
 
 
-Overfull \hbox (4.55333pt too wide) in paragraph at lines 1403--1404
+Overfull \hbox (4.55333pt too wide) in paragraph at lines 1395--1396
 \T5/cmtt/m/n/10.95 Appliances
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1403--1404
+Underfull \hbox (badness 10000) in paragraph at lines 1395--1396
 \T5/cmr/m/n/10.95 theo
  []
 
 
-Overfull \hbox (2.4247pt too wide) in paragraph at lines 1403--1404
+Overfull \hbox (2.4247pt too wide) in paragraph at lines 1395--1396
 \T5/cmr/m/n/10.95 th°ng/ng†y
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1403--1404
+Underfull \hbox (badness 10000) in paragraph at lines 1395--1396
 \T5/cmr/m/n/10.95 phËi tuÍi
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1403--1404
+Underfull \hbox (badness 10000) in paragraph at lines 1395--1396
 \T5/cmr/m/n/10.95 theo lÓp
  []
 
 
-Underfull \hbox (badness 1728) in paragraph at lines 1404--1404
+Underfull \hbox (badness 1728) in paragraph at lines 1396--1396
 []|\T5/cmr/m/n/10.95 Chia m∞t phØng hai
  []
 
 
-Underfull \hbox (badness 7308) in paragraph at lines 1404--1404
+Underfull \hbox (badness 7308) in paragraph at lines 1396--1396
 []|\T5/cmr/m/n/10.95 Gi£i quy∏t over-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1404--1404
+Underfull \hbox (badness 10000) in paragraph at lines 1396--1396
 \T5/cmr/m/n/10.95 plot-ting tËt hÏn
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1404--1404
+Underfull \hbox (badness 10000) in paragraph at lines 1396--1396
 \T5/cmr/m/n/10.95 liªu nhi∑u ^^_i∫m;
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1404--1405
+Underfull \hbox (badness 10000) in paragraph at lines 1396--1397
 []|\T5/cmr/m/n/10.95 C∞p bi∏n
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1404--1405
+Underfull \hbox (badness 10000) in paragraph at lines 1396--1397
 \T5/cmr/m/n/10.95 ^^_‡nh
  []
 
 
-Underfull \hbox (badness 3713) in paragraph at lines 1404--1405
+Underfull \hbox (badness 3713) in paragraph at lines 1396--1397
 \T5/cmr/m/n/10.95 l˜Òng d†y
  []
 
 
-Underfull \hbox (badness 3792) in paragraph at lines 1404--1405
+Underfull \hbox (badness 3792) in paragraph at lines 1396--1397
 \T5/cmr/m/n/10.95 ^^_i∫m: \T5/cmtt/m/n/10.95 T1\T5/cmr/m/n/10.95 --
  []
 
 
-Overfull \hbox (7.59424pt too wide) in paragraph at lines 1404--1405
+Overfull \hbox (7.59424pt too wide) in paragraph at lines 1396--1397
 \T5/cmtt/m/n/10.95 Appliances\T5/cmr/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1404--1405
+Underfull \hbox (badness 10000) in paragraph at lines 1396--1397
 \T5/cmtt/m/n/10.95 age\T5/cmr/m/n/10.95 --
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1404--1405
+Underfull \hbox (badness 10000) in paragraph at lines 1396--1397
 \T5/cmtt/m/n/10.95 thalach\T5/cmr/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 4872) in paragraph at lines 1404--1405
+Underfull \hbox (badness 4872) in paragraph at lines 1396--1397
 \T5/cmr/m/n/10.95 ^^_∞c tr˜ng
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1404--1405
+Underfull \hbox (badness 10000) in paragraph at lines 1396--1397
 \T5/cmr/m/n/10.95 £nh sË
  []
 
 
-Overfull \hbox (37.95447pt too wide) in paragraph at lines 1398--1407
+Overfull \hbox (37.95447pt too wide) in paragraph at lines 1390--1399
  [][] 
  []
 
-[48 <./images/ch1/excel_heart_corr_heatmap_preview.png>]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 17.97173pt, for example:
-(fancyhdr)                \setlength{\headheight}{17.97173pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
-
-[49]
-<images/ch1/appliances_energy_monthly_ridgeline.png, id=1548, 722.7pt x 433.62p
+[48]
+<images/ch1/appliances_energy_monthly_ridgeline.png, id=1689, 722.7pt x 433.62p
 t>
 File: images/ch1/appliances_energy_monthly_ridgeline.png Graphic file (type png
 )
 <use images/ch1/appliances_energy_monthly_ridgeline.png>
 Package pdftex.def Info: images/ch1/appliances_energy_monthly_ridgeline.png  us
-ed on input line 1419.
+ed on input line 1411.
 (pdftex.def)             Requested size: 405.7355pt x 243.44087pt.
-<images/ch1/excel_appliances_ridgeline_preview.png, id=1549, 578.16pt x 303.534
-pt>
-File: images/ch1/excel_appliances_ridgeline_preview.png Graphic file (type png)
-
-<use images/ch1/excel_appliances_ridgeline_preview.png>
-Package pdftex.def Info: images/ch1/excel_appliances_ridgeline_preview.png  use
-d on input line 1426.
-(pdftex.def)             Requested size: 374.86775pt x 196.8038pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [50 <./images/ch1/appliances_energy_monthly_ridgeline.png>]
-Overfull \hbox (45.98163pt too wide) in paragraph at lines 1442--1453
- [][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2678,24 +2700,82 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
-[51 <./images/ch1/excel_appliances_ridgeline_preview.png>]
-<images/ch1/ham10000_mean_intensity_boxplot.png, id=1565, 650.43pt x 361.35pt>
-File: images/ch1/ham10000_mean_intensity_boxplot.png Graphic file (type png)
-<use images/ch1/ham10000_mean_intensity_boxplot.png>
-Package pdftex.def Info: images/ch1/ham10000_mean_intensity_boxplot.png  used o
-n input line 1457.
-(pdftex.def)             Requested size: 396.91325pt x 220.5114pt.
-File: images/ch1/heart_disease_age_thalach_scatter.png Graphic file (type png)
-<use images/ch1/heart_disease_age_thalach_scatter.png>
-Package pdftex.def Info: images/ch1/heart_disease_age_thalach_scatter.png  used
- on input line 1464.
-(pdftex.def)             Requested size: 396.91325pt x 248.06912pt.
+[49 <./images/ch1/appliances_energy_monthly_ridgeline.png>]
+Overfull \hbox (45.98163pt too wide) in paragraph at lines 1427--1438
+ [][] 
+ []
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+<images/ch1/ham10000_mean_intensity_raincloud.png, id=1696, 722.7pt x 419.166pt
+>
+File: images/ch1/ham10000_mean_intensity_raincloud.png Graphic file (type png)
+<use images/ch1/ham10000_mean_intensity_raincloud.png>
+Package pdftex.def Info: images/ch1/ham10000_mean_intensity_raincloud.png  used
+ on input line 1442.
+(pdftex.def)             Requested size: 396.91325pt x 230.20943pt.
+<images/ch1/heart_age_thalach_hexbin.png, id=1697, 614.295pt x 390.258pt>
+File: images/ch1/heart_age_thalach_hexbin.png Graphic file (type png)
+<use images/ch1/heart_age_thalach_hexbin.png>
+Package pdftex.def Info: images/ch1/heart_age_thalach_hexbin.png  used on input
+ line 1449.
+(pdftex.def)             Requested size: 396.91325pt x 252.15811pt.
+[50 <./images/ch1/ham10000_mean_intensity_raincloud.png>]
 
- [52 <./images/ch1/ham10000_mean_intensity_boxplot.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 17.97173pt, for example:
+(fancyhdr)                \setlength{\headheight}{17.97173pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
+[51 <./images/ch1/heart_age_thalach_hexbin.png>] [52]
+Overfull \hbox (18.53754pt too wide) in paragraph at lines 1525--1525
+[]|\T5/cmr/m/n/10.95 Mean/median/mode
+ []
+
+
+Underfull \hbox (badness 6428) in paragraph at lines 1525--1525
+\T5/cmr/m/n/10.95 miss-ing l† tΩn hiªu
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1525--1526
+[]|\T5/cmtt/m/n/10.95 ca\T5/cmr/m/n/10.95 , \T5/cmtt/m/n/10.95 thal \T5/cmr/m/n
+/10.95 trong
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1526--1526
+[]|\T5/cmr/m/n/10.95 ChuÈi thÌi gian c‚
+ []
+
+
+Underfull \hbox (badness 1142) in paragraph at lines 1526--1527
+[]|\T5/cmr/m/n/10.95 C£m bi∏n Ap-pli-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1527--1528
+[]|\T5/cmr/m/n/10.95 ^^^Î s°ng £nh
+ []
+
+
+Underfull \hbox (badness 3189) in paragraph at lines 1528--1528
+[]|\T5/cmr/m/n/10.95 SVM, Lo-gis-tic Re-gres-
+ []
+
+
+Underfull \hbox (badness 7649) in paragraph at lines 1528--1529
+[]|\T5/cmr/m/n/10.95 C°c bi∏n Heart
+ []
+
+
+Overfull \hbox (3.75508pt too wide) in paragraph at lines 1529--1530
+[]|\T5/cmtt/m/n/10.95 Appliances_log1p| 
+ []
+
+
+Overfull \hbox (3.89551pt too wide) in paragraph at lines 1521--1533
+ [][] 
+ []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2705,59 +2785,24 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
 [53] [54]
-Overfull \hbox (18.53754pt too wide) in paragraph at lines 1540--1540
-[]|\T5/cmr/m/n/10.95 Mean/median/mode
+Underfull \hbox (badness 10000) in paragraph at lines 1558--1558
+[]|\T5/cmr/m/n/10.95 D˙ liªu c‚ bao nhi∂u
  []
 
 
-Underfull \hbox (badness 6428) in paragraph at lines 1540--1540
-\T5/cmr/m/n/10.95 miss-ing l† tΩn hiªu
+Underfull \hbox (badness 10000) in paragraph at lines 1561--1561
+[]|\T5/cmr/m/n/10.95 Ph•n phËi, d˙ liªu bßt
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1540--1541
-[]|\T5/cmtt/m/n/10.95 ca\T5/cmr/m/n/10.95 , \T5/cmtt/m/n/10.95 thal \T5/cmr/m/n
-/10.95 trong
+Underfull \hbox (badness 2181) in paragraph at lines 1561--1561
+\T5/cmr/m/n/10.95 th˜Ìng, quan hª bi∏n th∏
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1541--1541
-[]|\T5/cmr/m/n/10.95 ChuÈi thÌi gian c‚
+Underfull \hbox (badness 1565) in paragraph at lines 1582--1583
+[]|\T5/cmr/m/n/10.95 Nhºn ^^_˜Òc d§ng lªch, nhi∑u
  []
-
-
-Underfull \hbox (badness 1142) in paragraph at lines 1541--1542
-[]|\T5/cmr/m/n/10.95 C£m bi∏n Ap-pli-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1542--1543
-[]|\T5/cmr/m/n/10.95 ^^^Î s°ng £nh
- []
-
-
-Underfull \hbox (badness 3189) in paragraph at lines 1543--1543
-[]|\T5/cmr/m/n/10.95 SVM, Lo-gis-tic Re-gres-
- []
-
-
-Underfull \hbox (badness 7649) in paragraph at lines 1543--1544
-[]|\T5/cmr/m/n/10.95 C°c bi∏n Heart
- []
-
-
-Overfull \hbox (3.75508pt too wide) in paragraph at lines 1544--1545
-[]|\T5/cmtt/m/n/10.95 Appliances_log1p| 
- []
-
-
-Overfull \hbox (3.89551pt too wide) in paragraph at lines 1536--1548
- [][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2767,19 +2812,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
 [55] [56]
-Underfull \hbox (badness 10000) in paragraph at lines 1573--1573
-[]|\T5/cmr/m/n/10.95 D˙ liªu c‚ bao nhi∂u
- []
-
-
-Underfull \hbox (badness 1565) in paragraph at lines 1597--1598
-[]|\T5/cmr/m/n/10.95 Nhºn ^^_˜Òc d§ng lªch, nhi∑u
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 17.97173pt, for example:
@@ -2787,7 +2819,26 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
-[57] [58]
+[57]
+<images/ch1/heart_disease_age_raw_vs_cleaned.png, id=1754, 867.24pt x 361.35pt>
+
+File: images/ch1/heart_disease_age_raw_vs_cleaned.png Graphic file (type png)
+<use images/ch1/heart_disease_age_raw_vs_cleaned.png>
+Package pdftex.def Info: images/ch1/heart_disease_age_raw_vs_cleaned.png  used 
+on input line 1667.
+(pdftex.def)             Requested size: 396.91325pt x 165.37941pt.
+File: images/ch1/heart_disease_cholesterol_boxplot.png Graphic file (type png)
+<use images/ch1/heart_disease_cholesterol_boxplot.png>
+Package pdftex.def Info: images/ch1/heart_disease_cholesterol_boxplot.png  used
+ on input line 1674.
+(pdftex.def)             Requested size: 396.91325pt x 248.06912pt.
+ [58 <./images/ch1/heart_disease_age_raw_vs_cleaned.png>]
+File: images/ch1/heart_disease_age_thalach_scatter.png Graphic file (type png)
+<use images/ch1/heart_disease_age_thalach_scatter.png>
+Package pdftex.def Info: images/ch1/heart_disease_age_thalach_scatter.png  used
+ on input line 1685.
+(pdftex.def)             Requested size: 396.91325pt x 248.06912pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 17.97173pt, for example:
@@ -2796,31 +2847,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
 [59]
-<images/ch1/heart_disease_age_raw_vs_cleaned.png, id=1622, 867.24pt x 361.35pt>
-
-File: images/ch1/heart_disease_age_raw_vs_cleaned.png Graphic file (type png)
-<use images/ch1/heart_disease_age_raw_vs_cleaned.png>
-Package pdftex.def Info: images/ch1/heart_disease_age_raw_vs_cleaned.png  used 
-on input line 1682.
-(pdftex.def)             Requested size: 396.91325pt x 165.37941pt.
-File: images/ch1/heart_disease_cholesterol_boxplot.png Graphic file (type png)
-<use images/ch1/heart_disease_cholesterol_boxplot.png>
-Package pdftex.def Info: images/ch1/heart_disease_cholesterol_boxplot.png  used
- on input line 1689.
-(pdftex.def)             Requested size: 396.91325pt x 248.06912pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [60 <./images/ch1/heart_disease_age_raw_vs_cleaned.png>]
-File: images/ch1/heart_disease_age_thalach_scatter.png Graphic file (type png)
-<use images/ch1/heart_disease_age_thalach_scatter.png>
-Package pdftex.def Info: images/ch1/heart_disease_age_thalach_scatter.png  used
- on input line 1700.
-(pdftex.def)             Requested size: 396.91325pt x 248.06912pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
+File: images/ch1/heart_disease_correlation_heatmap.png Graphic file (type png)
+<use images/ch1/heart_disease_correlation_heatmap.png>
+Package pdftex.def Info: images/ch1/heart_disease_correlation_heatmap.png  used
+ on input line 1692.
+(pdftex.def)             Requested size: 418.96548pt x 335.17424pt.
+ [60]) (parts/chapter2_datasets.tex
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 17.97173pt, for example:
@@ -2829,36 +2861,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
 [61]
-File: images/ch1/heart_disease_correlation_heatmap.png Graphic file (type png)
-<use images/ch1/heart_disease_correlation_heatmap.png>
-Package pdftex.def Info: images/ch1/heart_disease_correlation_heatmap.png  used
- on input line 1707.
-(pdftex.def)             Requested size: 418.96548pt x 335.17424pt.
- [62]) (parts/chapter2_datasets.tex
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 17.97173pt, for example:
-(fancyhdr)                \setlength{\headheight}{17.97173pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
-
-[63] [64
-
-]
 Ch\uhorn \ohorn ng 3.
 
 Overfull \hbox (28.94672pt too wide) in paragraph at lines 1--1
 |\T5/cmr/m/sc/24.88 THU THäP, M∆ TÉ VÄ T NG QUAN
  []
 
-(main.ptc
-Underfull \vbox (badness 4024) has occurred while \output is active []
+(main.ptc [62
 
- [65]
-[66])
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
+]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 17.97173pt, for example:
@@ -2866,7 +2877,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
-[67]
+[63]) [64]
+Underfull \hbox (badness 1466) in paragraph at lines 37--37
+\T5/cmr/m/n/10.95 d˙ liªu bßt th˜Ìng,
+ []
+
+
 Underfull \hbox (badness 5548) in paragraph at lines 38--38
 []|\T5/cmr/m/n/10.95 T¶n sußt bi∏n s˘c
  []
@@ -2941,7 +2957,6 @@ Overfull \hbox (40.51697pt too wide) in paragraph at lines 73--73
 []|\T5/cmtt/m/n/10 datasets/reuters-21578/|  
  []
 
-[68]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 17.97173pt, for example:
@@ -2949,10 +2964,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
-[69]
-Underfull \vbox (badness 6658) has occurred while \output is active []
+[65] [66]
 
- [70]
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 17.97173pt, for example:
+(fancyhdr)                \setlength{\headheight}{17.97173pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
+
+[67]
 Underfull \hbox (badness 7486) in paragraph at lines 179--180
 []|\T5/cmr/m/n/10.95 DÚng bi∏n l•m s†ng
  []
@@ -2977,9 +2997,13 @@ Overfull \hbox (8.31671pt too wide) in paragraph at lines 175--184
  [][] 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+[68]
+<images/ch2/ch2_pervar_heart_age_hist.png, id=1867, 860.61525pt x 225.2415pt>
+File: images/ch2/ch2_pervar_heart_age_hist.png Graphic file (type png)
+<use images/ch2/ch2_pervar_heart_age_hist.png>
+Package pdftex.def Info: images/ch2/ch2_pervar_heart_age_hist.png  used on inpu
+t line 219.
+(pdftex.def)             Requested size: 423.37997pt x 110.80922pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2988,36 +3012,28 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
-[71]
-<images/ch2/ch2_pervar_heart_age_hist.png, id=1740, 860.61525pt x 225.2415pt>
-File: images/ch2/ch2_pervar_heart_age_hist.png Graphic file (type png)
-<use images/ch2/ch2_pervar_heart_age_hist.png>
-Package pdftex.def Info: images/ch2/ch2_pervar_heart_age_hist.png  used on inpu
-t line 221.
-(pdftex.def)             Requested size: 216.1011pt x 56.55768pt.
-<images/ch2/ch2_pervar_heart_age_box.png, id=1741, 318.59026pt x 239.09325pt>
+[69]
+<images/ch2/ch2_pervar_heart_age_box.png, id=1876, 318.59026pt x 239.09325pt>
 File: images/ch2/ch2_pervar_heart_age_box.png Graphic file (type png)
 <use images/ch2/ch2_pervar_heart_age_box.png>
 Package pdftex.def Info: images/ch2/ch2_pervar_heart_age_box.png  used on input
- line 225.
-(pdftex.def)             Requested size: 216.1011pt x 162.18358pt.
- [72]
-<images/ch2/ch2_pervar_heart_chol_hist.png, id=1749, 860.61525pt x 225.84375pt>
+ line 226.
+(pdftex.def)             Requested size: 423.37997pt x 317.76016pt.
+ [70 <./images/ch2/ch2_pervar_heart_age_hist.png> <./images/ch2/ch2_pervar_hear
+t_age_box.png>]
+<images/ch2/ch2_pervar_heart_chol_hist.png, id=1883, 860.61525pt x 225.84375pt>
 
 File: images/ch2/ch2_pervar_heart_chol_hist.png Graphic file (type png)
 <use images/ch2/ch2_pervar_heart_chol_hist.png>
 Package pdftex.def Info: images/ch2/ch2_pervar_heart_chol_hist.png  used on inp
-ut line 262.
-(pdftex.def)             Requested size: 216.1011pt x 56.70891pt.
-<images/ch2/ch2_pervar_heart_chol_box.png, id=1750, 318.59026pt x 239.09325pt>
+ut line 260.
+(pdftex.def)             Requested size: 423.37997pt x 111.1055pt.
+<images/ch2/ch2_pervar_heart_chol_box.png, id=1884, 318.59026pt x 239.09325pt>
 File: images/ch2/ch2_pervar_heart_chol_box.png Graphic file (type png)
 <use images/ch2/ch2_pervar_heart_chol_box.png>
 Package pdftex.def Info: images/ch2/ch2_pervar_heart_chol_box.png  used on inpu
-t line 266.
-(pdftex.def)             Requested size: 216.1011pt x 162.18358pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+t line 267.
+(pdftex.def)             Requested size: 423.37997pt x 317.76016pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3026,44 +3042,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
-[73 <./images/ch2/ch2_pervar_heart_age_hist.png> <./images/ch2/ch2_pervar_heart
-_age_box.png>]
-<images/ch2/ch2_pervar_heart_thalach_hist.png, id=1759, 860.013pt x 225.2415pt>
+[71 <./images/ch2/ch2_pervar_heart_chol_hist.png>] [72 <./images/ch2/ch2_pervar
+_heart_chol_box.png>]
+<images/ch2/ch2_pervar_heart_thalach_hist.png, id=1896, 860.013pt x 225.2415pt>
 
 File: images/ch2/ch2_pervar_heart_thalach_hist.png Graphic file (type png)
 <use images/ch2/ch2_pervar_heart_thalach_hist.png>
 Package pdftex.def Info: images/ch2/ch2_pervar_heart_thalach_hist.png  used on 
-input line 303.
-(pdftex.def)             Requested size: 216.1011pt x 56.59549pt.
-<images/ch2/ch2_pervar_heart_thalach_box.png, id=1760, 317.988pt x 239.09325pt>
+input line 301.
+(pdftex.def)             Requested size: 423.37997pt x 110.88483pt.
+<images/ch2/ch2_pervar_heart_thalach_box.png, id=1897, 317.988pt x 239.09325pt>
 
 File: images/ch2/ch2_pervar_heart_thalach_box.png Graphic file (type png)
 <use images/ch2/ch2_pervar_heart_thalach_box.png>
 Package pdftex.def Info: images/ch2/ch2_pervar_heart_thalach_box.png  used on i
-nput line 307.
-(pdftex.def)             Requested size: 216.1011pt x 162.48639pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [74 <./images/ch2/ch2_pervar_heart_chol_hist.png> <./images/ch2/ch2_pervar_hea
-rt_chol_box.png>]
-<images/ch2/ch2_pervar_heart_oldpeak_hist.png, id=1767, 860.61525pt x 225.84375
-pt>
-File: images/ch2/ch2_pervar_heart_oldpeak_hist.png Graphic file (type png)
-<use images/ch2/ch2_pervar_heart_oldpeak_hist.png>
-Package pdftex.def Info: images/ch2/ch2_pervar_heart_oldpeak_hist.png  used on 
-input line 344.
-(pdftex.def)             Requested size: 216.1011pt x 56.70891pt.
-<images/ch2/ch2_pervar_heart_oldpeak_box.png, id=1768, 318.59026pt x 239.09325p
-t>
-File: images/ch2/ch2_pervar_heart_oldpeak_box.png Graphic file (type png)
-<use images/ch2/ch2_pervar_heart_oldpeak_box.png>
-Package pdftex.def Info: images/ch2/ch2_pervar_heart_oldpeak_box.png  used on i
-nput line 348.
-(pdftex.def)             Requested size: 216.1011pt x 162.18358pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+nput line 308.
+(pdftex.def)             Requested size: 423.37997pt x 318.35483pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3072,16 +3066,38 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
-[75 <./images/ch2/ch2_pervar_heart_thalach_hist.png> <./images/ch2/ch2_pervar_h
-eart_thalach_box.png>]
-<images/ch2/ch2_pervar_heart_cp_bar.png, id=1777, 397.485pt x 254.75175pt>
+[73 <./images/ch2/ch2_pervar_heart_thalach_hist.png>]
+<images/ch2/ch2_pervar_heart_oldpeak_hist.png, id=1903, 860.61525pt x 225.84375
+pt>
+File: images/ch2/ch2_pervar_heart_oldpeak_hist.png Graphic file (type png)
+<use images/ch2/ch2_pervar_heart_oldpeak_hist.png>
+Package pdftex.def Info: images/ch2/ch2_pervar_heart_oldpeak_hist.png  used on 
+input line 342.
+(pdftex.def)             Requested size: 423.37997pt x 111.1055pt.
+ [74 <./images/ch2/ch2_pervar_heart_thalach_box.png>]
+<images/ch2/ch2_pervar_heart_oldpeak_box.png, id=1909, 318.59026pt x 239.09325p
+t>
+File: images/ch2/ch2_pervar_heart_oldpeak_box.png Graphic file (type png)
+<use images/ch2/ch2_pervar_heart_oldpeak_box.png>
+Package pdftex.def Info: images/ch2/ch2_pervar_heart_oldpeak_box.png  used on i
+nput line 349.
+(pdftex.def)             Requested size: 423.37997pt x 317.76016pt.
+<images/ch2/ch2_pervar_heart_cp_bar.png, id=1912, 397.485pt x 254.75175pt>
 File: images/ch2/ch2_pervar_heart_cp_bar.png Graphic file (type png)
 <use images/ch2/ch2_pervar_heart_cp_bar.png>
 Package pdftex.def Info: images/ch2/ch2_pervar_heart_cp_bar.png  used on input 
 line 358.
 (pdftex.def)             Requested size: 308.71106pt x 197.86203pt.
- [76 <./images/ch2/ch2_pervar_heart_oldpeak_hist.png> <./images/ch2/ch2_pervar_
-heart_oldpeak_box.png> <./images/ch2/ch2_pervar_heart_cp_bar.png>]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 17.97173pt, for example:
+(fancyhdr)                \setlength{\headheight}{17.97173pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
+
+[75 <./images/ch2/ch2_pervar_heart_oldpeak_hist.png> <./images/ch2/ch2_pervar_h
+eart_oldpeak_box.png>]
 Overfull \hbox (38.8425pt too wide) in paragraph at lines 387--388
 []\T5/cmr/bx/n/12 Random For-est: \T5/cmtt/m/n/12 RandomForestClassifier(n_esti
 mators=100, random_state=42)\T5/cmr/m/n/12 . 
@@ -3093,6 +3109,7 @@ Overfull \hbox (18.61964pt too wide) in paragraph at lines 389--390
 _iter=1000, random_state=42)\T5/cmr/m/n/12 . 
  []
 
+[76 <./images/ch2/ch2_pervar_heart_cp_bar.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 17.97173pt, for example:
@@ -3106,21 +3123,18 @@ Overfull \hbox (8.31671pt too wide) in paragraph at lines 462--470
  []
 
 [78]
-<images/ch2/ch2_pervar_cdc_BMI_hist.png, id=1800, 860.61525pt x 225.2415pt>
+<images/ch2/ch2_pervar_cdc_BMI_hist.png, id=1944, 860.61525pt x 225.2415pt>
 File: images/ch2/ch2_pervar_cdc_BMI_hist.png Graphic file (type png)
 <use images/ch2/ch2_pervar_cdc_BMI_hist.png>
 Package pdftex.def Info: images/ch2/ch2_pervar_cdc_BMI_hist.png  used on input 
-line 505.
-(pdftex.def)             Requested size: 216.1011pt x 56.55768pt.
-<images/ch2/ch2_pervar_cdc_BMI_box.png, id=1801, 318.59026pt x 239.09325pt>
+line 503.
+(pdftex.def)             Requested size: 423.37997pt x 110.80922pt.
+<images/ch2/ch2_pervar_cdc_BMI_box.png, id=1945, 318.59026pt x 239.09325pt>
 File: images/ch2/ch2_pervar_cdc_BMI_box.png Graphic file (type png)
 <use images/ch2/ch2_pervar_cdc_BMI_box.png>
 Package pdftex.def Info: images/ch2/ch2_pervar_cdc_BMI_box.png  used on input l
-ine 509.
-(pdftex.def)             Requested size: 216.1011pt x 162.18358pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+ine 510.
+(pdftex.def)             Requested size: 423.37997pt x 317.76016pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3129,41 +3143,28 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
-[79]
-<images/ch2/ch2_pervar_cdc_PhysHlth_hist.png, id=1809, 860.61525pt x 225.2415pt
+[79 <./images/ch2/ch2_pervar_cdc_BMI_hist.png>]
+<images/ch2/ch2_pervar_cdc_PhysHlth_hist.png, id=1951, 860.61525pt x 225.2415pt
 >
 File: images/ch2/ch2_pervar_cdc_PhysHlth_hist.png Graphic file (type png)
 <use images/ch2/ch2_pervar_cdc_PhysHlth_hist.png>
 Package pdftex.def Info: images/ch2/ch2_pervar_cdc_PhysHlth_hist.png  used on i
-nput line 545.
-(pdftex.def)             Requested size: 216.1011pt x 56.55768pt.
-<images/ch2/ch2_pervar_cdc_PhysHlth_box.png, id=1810, 317.988pt x 239.09325pt>
+nput line 543.
+(pdftex.def)             Requested size: 423.37997pt x 110.80922pt.
+ [80 <./images/ch2/ch2_pervar_cdc_BMI_box.png>]
+<images/ch2/ch2_pervar_cdc_PhysHlth_box.png, id=1957, 317.988pt x 239.09325pt>
 File: images/ch2/ch2_pervar_cdc_PhysHlth_box.png Graphic file (type png)
 <use images/ch2/ch2_pervar_cdc_PhysHlth_box.png>
 Package pdftex.def Info: images/ch2/ch2_pervar_cdc_PhysHlth_box.png  used on in
-put line 549.
-(pdftex.def)             Requested size: 216.1011pt x 162.48639pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [80 <./images/ch2/ch2_pervar_cdc_BMI_hist.png> <./images/ch2/ch2_pervar_cdc_BM
-I_box.png>]
-<images/ch2/ch2_pervar_cdc_GenHlth_hist.png, id=1817, 860.61525pt x 225.2415pt>
+put line 550.
+(pdftex.def)             Requested size: 423.37997pt x 318.35483pt.
+<images/ch2/ch2_pervar_cdc_GenHlth_hist.png, id=1958, 860.61525pt x 225.2415pt>
 
 File: images/ch2/ch2_pervar_cdc_GenHlth_hist.png Graphic file (type png)
 <use images/ch2/ch2_pervar_cdc_GenHlth_hist.png>
 Package pdftex.def Info: images/ch2/ch2_pervar_cdc_GenHlth_hist.png  used on in
-put line 561.
-(pdftex.def)             Requested size: 216.1011pt x 56.55768pt.
-<images/ch2/ch2_pervar_cdc_GenHlth_box.png, id=1818, 317.988pt x 239.09325pt>
-File: images/ch2/ch2_pervar_cdc_GenHlth_box.png Graphic file (type png)
-<use images/ch2/ch2_pervar_cdc_GenHlth_box.png>
-Package pdftex.def Info: images/ch2/ch2_pervar_cdc_GenHlth_box.png  used on inp
-ut line 565.
-(pdftex.def)             Requested size: 216.1011pt x 162.48639pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+put line 559.
+(pdftex.def)             Requested size: 423.37997pt x 110.80922pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3173,14 +3174,28 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
 [81 <./images/ch2/ch2_pervar_cdc_PhysHlth_hist.png> <./images/ch2/ch2_pervar_cd
-c_PhysHlth_box.png> <./images/ch2/ch2_pervar_cdc_GenHlth_hist.png> <./images/ch
-2/ch2_pervar_cdc_GenHlth_box.png>]
+c_PhysHlth_box.png>]
+<images/ch2/ch2_pervar_cdc_GenHlth_box.png, id=1966, 317.988pt x 239.09325pt>
+File: images/ch2/ch2_pervar_cdc_GenHlth_box.png Graphic file (type png)
+<use images/ch2/ch2_pervar_cdc_GenHlth_box.png>
+Package pdftex.def Info: images/ch2/ch2_pervar_cdc_GenHlth_box.png  used on inp
+ut line 566.
+(pdftex.def)             Requested size: 423.37997pt x 318.35483pt.
+ [82 <./images/ch2/ch2_pervar_cdc_GenHlth_hist.png> <./images/ch2/ch2_pervar_cd
+c_GenHlth_box.png>]
 Overfull \hbox (5.27237pt too wide) in paragraph at lines 627--628
 \T5/cmtt/m/n/12 dataset / 17 / breast + cancer + wisconsin + diagnostic$[][]\T5
 /cmr/m/n/12 . Th˜ mˆc lo-cal: $\T5/cmtt/m/n/12 datasets /
  []
 
-[82]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 17.97173pt, for example:
+(fancyhdr)                \setlength{\headheight}{17.97173pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
+
+[83]
 Underfull \hbox (badness 2057) in paragraph at lines 675--676
 \T5/cmr/m/n/10.95 vec-tor ^^_∞c tr˜ng ^^_‡nh
  []
@@ -3195,50 +3210,14 @@ Overfull \hbox (8.31671pt too wide) in paragraph at lines 671--679
  [][] 
  []
 
-
-Underfull \vbox (badness 1253) has occurred while \output is active []
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 17.97173pt, for example:
-(fancyhdr)                \setlength{\headheight}{17.97173pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
-
-[83]
-<images/ch2/ch2_pervar_breast_radius1_hist.png, id=1845, 860.61525pt x 225.8437
+[84]
+<images/ch2/ch2_pervar_breast_radius1_hist.png, id=1991, 860.61525pt x 225.8437
 5pt>
 File: images/ch2/ch2_pervar_breast_radius1_hist.png Graphic file (type png)
 <use images/ch2/ch2_pervar_breast_radius1_hist.png>
 Package pdftex.def Info: images/ch2/ch2_pervar_breast_radius1_hist.png  used on
- input line 713.
-(pdftex.def)             Requested size: 216.1011pt x 56.70891pt.
-<images/ch2/ch2_pervar_breast_radius1_box.png, id=1846, 318.59026pt x 239.09325
-pt>
-File: images/ch2/ch2_pervar_breast_radius1_box.png Graphic file (type png)
-<use images/ch2/ch2_pervar_breast_radius1_box.png>
-Package pdftex.def Info: images/ch2/ch2_pervar_breast_radius1_box.png  used on 
-input line 717.
-(pdftex.def)             Requested size: 216.1011pt x 162.18358pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [84]
-<images/ch2/ch2_pervar_breast_area1_hist.png, id=1853, 860.61525pt x 225.84375p
-t>
-File: images/ch2/ch2_pervar_breast_area1_hist.png Graphic file (type png)
-<use images/ch2/ch2_pervar_breast_area1_hist.png>
-Package pdftex.def Info: images/ch2/ch2_pervar_breast_area1_hist.png  used on i
-nput line 751.
-(pdftex.def)             Requested size: 216.1011pt x 56.70891pt.
-<images/ch2/ch2_pervar_breast_area1_box.png, id=1854, 318.59026pt x 239.09325pt
->
-File: images/ch2/ch2_pervar_breast_area1_box.png Graphic file (type png)
-<use images/ch2/ch2_pervar_breast_area1_box.png>
-Package pdftex.def Info: images/ch2/ch2_pervar_breast_area1_box.png  used on in
-put line 755.
-(pdftex.def)             Requested size: 216.1011pt x 162.18358pt.
+ input line 711.
+(pdftex.def)             Requested size: 423.37997pt x 111.1055pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3247,25 +3226,63 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
-[85 <./images/ch2/ch2_pervar_breast_radius1_hist.png> <./images/ch2/ch2_pervar_
-breast_radius1_box.png> <./images/ch2/ch2_pervar_breast_area1_hist.png> <./imag
-es/ch2/ch2_pervar_breast_area1_box.png>]
-<images/ch2/ch2_pervar_breast_concavity1_hist.png, id=1864, 860.61525pt x 225.8
+[85]
+<images/ch2/ch2_pervar_breast_radius1_box.png, id=1998, 318.59026pt x 239.09325
+pt>
+File: images/ch2/ch2_pervar_breast_radius1_box.png Graphic file (type png)
+<use images/ch2/ch2_pervar_breast_radius1_box.png>
+Package pdftex.def Info: images/ch2/ch2_pervar_breast_radius1_box.png  used on 
+input line 718.
+(pdftex.def)             Requested size: 423.37997pt x 317.76016pt.
+ [86 <./images/ch2/ch2_pervar_breast_radius1_hist.png> <./images/ch2/ch2_pervar
+_breast_radius1_box.png>]
+<images/ch2/ch2_pervar_breast_area1_hist.png, id=2005, 860.61525pt x 225.84375p
+t>
+File: images/ch2/ch2_pervar_breast_area1_hist.png Graphic file (type png)
+<use images/ch2/ch2_pervar_breast_area1_hist.png>
+Package pdftex.def Info: images/ch2/ch2_pervar_breast_area1_hist.png  used on i
+nput line 749.
+(pdftex.def)             Requested size: 423.37997pt x 111.1055pt.
+<images/ch2/ch2_pervar_breast_area1_box.png, id=2006, 318.59026pt x 239.09325pt
+>
+File: images/ch2/ch2_pervar_breast_area1_box.png Graphic file (type png)
+<use images/ch2/ch2_pervar_breast_area1_box.png>
+Package pdftex.def Info: images/ch2/ch2_pervar_breast_area1_box.png  used on in
+put line 756.
+(pdftex.def)             Requested size: 423.37997pt x 317.76016pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 17.97173pt, for example:
+(fancyhdr)                \setlength{\headheight}{17.97173pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
+
+[87 <./images/ch2/ch2_pervar_breast_area1_hist.png>]
+<images/ch2/ch2_pervar_breast_concavity1_hist.png, id=2013, 860.61525pt x 225.8
 4375pt>
 File: images/ch2/ch2_pervar_breast_concavity1_hist.png Graphic file (type png)
 <use images/ch2/ch2_pervar_breast_concavity1_hist.png>
 Package pdftex.def Info: images/ch2/ch2_pervar_breast_concavity1_hist.png  used
- on input line 767.
-(pdftex.def)             Requested size: 216.1011pt x 56.70891pt.
-<images/ch2/ch2_pervar_breast_concavity1_box.png, id=1865, 318.59026pt x 239.09
+ on input line 765.
+(pdftex.def)             Requested size: 423.37997pt x 111.1055pt.
+<images/ch2/ch2_pervar_breast_concavity1_box.png, id=2014, 318.59026pt x 239.09
 325pt>
 File: images/ch2/ch2_pervar_breast_concavity1_box.png Graphic file (type png)
 <use images/ch2/ch2_pervar_breast_concavity1_box.png>
 Package pdftex.def Info: images/ch2/ch2_pervar_breast_concavity1_box.png  used 
-on input line 771.
-(pdftex.def)             Requested size: 216.1011pt x 162.18358pt.
- [86 <./images/ch2/ch2_pervar_breast_concavity1_hist.png> <./images/ch2/ch2_per
-var_breast_concavity1_box.png>]
+on input line 772.
+(pdftex.def)             Requested size: 423.37997pt x 317.76016pt.
+ [88 <./images/ch2/ch2_pervar_breast_area1_box.png> <./images/ch2/ch2_pervar_br
+east_concavity1_hist.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 17.97173pt, for example:
+(fancyhdr)                \setlength{\headheight}{17.97173pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
+
+[89 <./images/ch2/ch2_pervar_breast_concavity1_box.png>]
 Underfull \hbox (badness 2865) in paragraph at lines 838--839
 []|\T5/cmr/m/n/10.95 ﬁ nghæa chuÈi thÌi
  []
@@ -3280,6 +3297,11 @@ Underfull \hbox (badness 4454) in paragraph at lines 842--843
 \T5/cmr/m/n/10.95 th†nh c˚a sÍ ho§t
  []
 
+[90]
+Overfull \hbox (8.31671pt too wide) in paragraph at lines 877--884
+ [][] 
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 17.97173pt, for example:
@@ -3287,45 +3309,38 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
-[87]
-Overfull \hbox (8.31671pt too wide) in paragraph at lines 877--884
- [][] 
- []
-
-[88]
-<images/ch2/ch2_pervar_appliances_Appliances_hist.png, id=1887, 860.61525pt x 2
+[91]
+<images/ch2/ch2_pervar_appliances_Appliances_hist.png, id=2040, 860.61525pt x 2
 25.84375pt>
 File: images/ch2/ch2_pervar_appliances_Appliances_hist.png Graphic file (type p
 ng)
 <use images/ch2/ch2_pervar_appliances_Appliances_hist.png>
 Package pdftex.def Info: images/ch2/ch2_pervar_appliances_Appliances_hist.png  
-used on input line 915.
-(pdftex.def)             Requested size: 216.1011pt x 56.70891pt.
-<images/ch2/ch2_pervar_appliances_Appliances_box.png, id=1888, 318.59026pt x 23
+used on input line 913.
+(pdftex.def)             Requested size: 423.37997pt x 111.1055pt.
+<images/ch2/ch2_pervar_appliances_Appliances_box.png, id=2041, 318.59026pt x 23
 9.09325pt>
 File: images/ch2/ch2_pervar_appliances_Appliances_box.png Graphic file (type pn
 g)
 <use images/ch2/ch2_pervar_appliances_Appliances_box.png>
 Package pdftex.def Info: images/ch2/ch2_pervar_appliances_Appliances_box.png  u
-sed on input line 919.
-(pdftex.def)             Requested size: 216.1011pt x 162.18358pt.
-<images/ch2/ch2_pervar_appliances_T_out_hist.png, id=1889, 860.61525pt x 225.24
+sed on input line 920.
+(pdftex.def)             Requested size: 423.37997pt x 317.76016pt.
+ [92 <./images/ch2/ch2_pervar_appliances_Appliances_hist.png>]
+<images/ch2/ch2_pervar_appliances_T_out_hist.png, id=2048, 860.61525pt x 225.24
 15pt>
 File: images/ch2/ch2_pervar_appliances_T_out_hist.png Graphic file (type png)
 <use images/ch2/ch2_pervar_appliances_T_out_hist.png>
 Package pdftex.def Info: images/ch2/ch2_pervar_appliances_T_out_hist.png  used 
-on input line 935.
-(pdftex.def)             Requested size: 216.1011pt x 56.55768pt.
-<images/ch2/ch2_pervar_appliances_T_out_box.png, id=1890, 318.59026pt x 239.093
+on input line 933.
+(pdftex.def)             Requested size: 423.37997pt x 110.80922pt.
+<images/ch2/ch2_pervar_appliances_T_out_box.png, id=2049, 318.59026pt x 239.093
 25pt>
 File: images/ch2/ch2_pervar_appliances_T_out_box.png Graphic file (type png)
 <use images/ch2/ch2_pervar_appliances_T_out_box.png>
 Package pdftex.def Info: images/ch2/ch2_pervar_appliances_T_out_box.png  used o
-n input line 939.
-(pdftex.def)             Requested size: 216.1011pt x 162.18358pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+n input line 940.
+(pdftex.def)             Requested size: 423.37997pt x 317.76016pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3334,9 +3349,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
-[89 <./images/ch2/ch2_pervar_appliances_Appliances_hist.png> <./images/ch2/ch2_
-pervar_appliances_Appliances_box.png>] [90 <./images/ch2/ch2_pervar_appliances_
-T_out_hist.png> <./images/ch2/ch2_pervar_appliances_T_out_box.png>]
+[93 <./images/ch2/ch2_pervar_appliances_Appliances_box.png> <./images/ch2/ch2_p
+ervar_appliances_T_out_hist.png>] [94 <./images/ch2/ch2_pervar_appliances_T_out
+_box.png>]
 Overfull \hbox (0.97372pt too wide) in paragraph at lines 998--999
 \T5/cmtt/m/n/12 dataset / 240 / human + activity + recognition + using + smartp
 hones$[][]\T5/cmr/m/n/12 . Th˜ mˆc lo-
@@ -3355,7 +3370,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
-[91]
+[95]
 Underfull \hbox (badness 2689) in paragraph at lines 1046--1047
 []|\T5/cmr/m/n/10.95 Benchmark nh™n d§ng
  []
@@ -3371,42 +3386,23 @@ Overfull \hbox (32.78879pt too wide) in paragraph at lines 1053--1054
 using + smartphones / UCIHARDataset / train/$\T5/cmr/m/n/12 . 
  []
 
-<images/ch2/ch2_pervar_har_tBodyAcc-std()-X_hist.png, id=1913, 860.61525pt x 22
+[96]
+<images/ch2/ch2_pervar_har_tBodyAcc-std()-X_hist.png, id=2076, 860.61525pt x 22
 5.2415pt>
 File: images/ch2/ch2_pervar_har_tBodyAcc-std()-X_hist.png Graphic file (type pn
 g)
 <use images/ch2/ch2_pervar_har_tBodyAcc-std()-X_hist.png>
 Package pdftex.def Info: images/ch2/ch2_pervar_har_tBodyAcc-std()-X_hist.png  u
-sed on input line 1080.
-(pdftex.def)             Requested size: 216.1011pt x 56.55768pt.
-<images/ch2/ch2_pervar_har_tBodyAcc-std()-X_box.png, id=1914, 318.59026pt x 239
+sed on input line 1078.
+(pdftex.def)             Requested size: 423.37997pt x 110.80922pt.
+<images/ch2/ch2_pervar_har_tBodyAcc-std()-X_box.png, id=2077, 318.59026pt x 239
 .09325pt>
 File: images/ch2/ch2_pervar_har_tBodyAcc-std()-X_box.png Graphic file (type png
 )
 <use images/ch2/ch2_pervar_har_tBodyAcc-std()-X_box.png>
 Package pdftex.def Info: images/ch2/ch2_pervar_har_tBodyAcc-std()-X_box.png  us
-ed on input line 1084.
-(pdftex.def)             Requested size: 216.1011pt x 162.18358pt.
-[92]
-<images/ch2/ch2_pervar_har_tGravityAcc-mean()-X_hist.png, id=1920, 860.013pt x 
-225.2415pt>
-File: images/ch2/ch2_pervar_har_tGravityAcc-mean()-X_hist.png Graphic file (typ
-e png)
-<use images/ch2/ch2_pervar_har_tGravityAcc-mean()-X_hist.png>
-Package pdftex.def Info: images/ch2/ch2_pervar_har_tGravityAcc-mean()-X_hist.pn
-g  used on input line 1098.
-(pdftex.def)             Requested size: 216.1011pt x 56.59549pt.
-<images/ch2/ch2_pervar_har_tGravityAcc-mean()-X_box.png, id=1921, 317.988pt x 2
-39.09325pt>
-File: images/ch2/ch2_pervar_har_tGravityAcc-mean()-X_box.png Graphic file (type
- png)
-<use images/ch2/ch2_pervar_har_tGravityAcc-mean()-X_box.png>
-Package pdftex.def Info: images/ch2/ch2_pervar_har_tGravityAcc-mean()-X_box.png
-  used on input line 1102.
-(pdftex.def)             Requested size: 216.1011pt x 162.48639pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+ed on input line 1085.
+(pdftex.def)             Requested size: 423.37997pt x 317.76016pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3415,9 +3411,34 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
-[93 <./images/ch2/ch2_pervar_har_tBodyAcc-std()-X_hist.png> <./images/ch2/ch2_p
-ervar_har_tBodyAcc-std()-X_box.png> <./images/ch2/ch2_pervar_har_tGravityAcc-me
-an()-X_hist.png> <./images/ch2/ch2_pervar_har_tGravityAcc-mean()-X_box.png>]
+[97 <./images/ch2/ch2_pervar_har_tBodyAcc-std()-X_hist.png> <./images/ch2/ch2_p
+ervar_har_tBodyAcc-std()-X_box.png>]
+<images/ch2/ch2_pervar_har_tGravityAcc-mean()-X_hist.png, id=2084, 860.013pt x 
+225.2415pt>
+File: images/ch2/ch2_pervar_har_tGravityAcc-mean()-X_hist.png Graphic file (typ
+e png)
+<use images/ch2/ch2_pervar_har_tGravityAcc-mean()-X_hist.png>
+Package pdftex.def Info: images/ch2/ch2_pervar_har_tGravityAcc-mean()-X_hist.pn
+g  used on input line 1096.
+(pdftex.def)             Requested size: 423.37997pt x 110.88483pt.
+<images/ch2/ch2_pervar_har_tGravityAcc-mean()-X_box.png, id=2085, 317.988pt x 2
+39.09325pt>
+File: images/ch2/ch2_pervar_har_tGravityAcc-mean()-X_box.png Graphic file (type
+ png)
+<use images/ch2/ch2_pervar_har_tGravityAcc-mean()-X_box.png>
+Package pdftex.def Info: images/ch2/ch2_pervar_har_tGravityAcc-mean()-X_box.png
+  used on input line 1103.
+(pdftex.def)             Requested size: 423.37997pt x 318.35483pt.
+ [98 <./images/ch2/ch2_pervar_har_tGravityAcc-mean()-X_hist.png> <./images/ch2/
+ch2_pervar_har_tGravityAcc-mean()-X_box.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 17.97173pt, for example:
+(fancyhdr)                \setlength{\headheight}{17.97173pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
+
+[99]
 Underfull \hbox (badness 10000) in paragraph at lines 1152--1153
 []|\T5/cmr/m/n/10.95 Benchmark ac-tiv-ity
  []
@@ -3437,21 +3458,35 @@ Overfull \hbox (8.31671pt too wide) in paragraph at lines 1148--1155
  [][] 
  []
 
-[94]
-<images/ch2/ch2_pervar_mhealth_sensor_01_hist.png, id=1938, 860.61525pt x 225.8
+<images/ch2/ch2_pervar_mhealth_sensor_01_hist.png, id=2101, 860.61525pt x 225.8
 4375pt>
 File: images/ch2/ch2_pervar_mhealth_sensor_01_hist.png Graphic file (type png)
 <use images/ch2/ch2_pervar_mhealth_sensor_01_hist.png>
 Package pdftex.def Info: images/ch2/ch2_pervar_mhealth_sensor_01_hist.png  used
- on input line 1186.
-(pdftex.def)             Requested size: 216.1011pt x 56.70891pt.
-<images/ch2/ch2_pervar_mhealth_sensor_01_box.png, id=1939, 318.59026pt x 239.09
+ on input line 1184.
+(pdftex.def)             Requested size: 423.37997pt x 111.1055pt.
+<images/ch2/ch2_pervar_mhealth_sensor_01_box.png, id=2102, 318.59026pt x 239.09
 325pt>
 File: images/ch2/ch2_pervar_mhealth_sensor_01_box.png Graphic file (type png)
 <use images/ch2/ch2_pervar_mhealth_sensor_01_box.png>
 Package pdftex.def Info: images/ch2/ch2_pervar_mhealth_sensor_01_box.png  used 
-on input line 1190.
-(pdftex.def)             Requested size: 216.1011pt x 162.18358pt.
+on input line 1191.
+(pdftex.def)             Requested size: 423.37997pt x 317.76016pt.
+[100 <./images/ch2/ch2_pervar_mhealth_sensor_01_hist.png>]
+<images/ch2/ch2_pervar_mhealth_sensor_04_hist.png, id=2109, 860.61525pt x 225.8
+4375pt>
+File: images/ch2/ch2_pervar_mhealth_sensor_04_hist.png Graphic file (type png)
+<use images/ch2/ch2_pervar_mhealth_sensor_04_hist.png>
+Package pdftex.def Info: images/ch2/ch2_pervar_mhealth_sensor_04_hist.png  used
+ on input line 1204.
+(pdftex.def)             Requested size: 423.37997pt x 111.1055pt.
+<images/ch2/ch2_pervar_mhealth_sensor_04_box.png, id=2110, 318.59026pt x 239.09
+325pt>
+File: images/ch2/ch2_pervar_mhealth_sensor_04_box.png Graphic file (type png)
+<use images/ch2/ch2_pervar_mhealth_sensor_04_box.png>
+Package pdftex.def Info: images/ch2/ch2_pervar_mhealth_sensor_04_box.png  used 
+on input line 1211.
+(pdftex.def)             Requested size: 423.37997pt x 317.76016pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3460,23 +3495,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
-[95 <./images/ch2/ch2_pervar_mhealth_sensor_01_hist.png> <./images/ch2/ch2_perv
-ar_mhealth_sensor_01_box.png>]
-<images/ch2/ch2_pervar_mhealth_sensor_04_hist.png, id=1947, 860.61525pt x 225.8
-4375pt>
-File: images/ch2/ch2_pervar_mhealth_sensor_04_hist.png Graphic file (type png)
-<use images/ch2/ch2_pervar_mhealth_sensor_04_hist.png>
-Package pdftex.def Info: images/ch2/ch2_pervar_mhealth_sensor_04_hist.png  used
- on input line 1206.
-(pdftex.def)             Requested size: 216.1011pt x 56.70891pt.
-<images/ch2/ch2_pervar_mhealth_sensor_04_box.png, id=1948, 318.59026pt x 239.09
-325pt>
-File: images/ch2/ch2_pervar_mhealth_sensor_04_box.png Graphic file (type png)
-<use images/ch2/ch2_pervar_mhealth_sensor_04_box.png>
-Package pdftex.def Info: images/ch2/ch2_pervar_mhealth_sensor_04_box.png  used 
-on input line 1210.
-(pdftex.def)             Requested size: 216.1011pt x 162.18358pt.
-
+[101 <./images/ch2/ch2_pervar_mhealth_sensor_01_box.png> <./images/ch2/ch2_perv
+ar_mhealth_sensor_04_hist.png>] [102 <./images/ch2/ch2_pervar_mhealth_sensor_04
+_box.png>]
 Underfull \hbox (badness 5388) in paragraph at lines 1249--1250
 []|\T5/cmr/m/n/10.95 ^^^∞c tr˜ng trΩch
  []
@@ -3496,8 +3517,7 @@ Overfull \hbox (7.07326pt too wide) in paragraph at lines 1247--1255
  [][] 
  []
 
-[96 <./images/ch2/ch2_pervar_mhealth_sensor_04_hist.png> <./images/ch2/ch2_perv
-ar_mhealth_sensor_04_box.png>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 1266--1266
 []|\T5/cmr/m/n/10.95 CNN, trans-
  []
@@ -3541,7 +3561,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
-[97]
+[103]
 Overfull \hbox (41.50189pt too wide) in paragraph at lines 1311--1312
 []\T5/cmr/m/n/12 ^^^∞c tr˜ng in-ten-sity l† mÊ t£ ban ^^_¶u, ch˜a ^^_ı thay th∏
  ^^_∞c tr˜ng m†u/texture/embedding
@@ -3552,26 +3572,19 @@ Overfull \hbox (8.31671pt too wide) in paragraph at lines 1322--1330
  [][] 
  []
 
-[98]
-<images/ch2/ch2_pervar_ham_age_hist.png, id=1970, 860.61525pt x 225.2415pt>
+[104]
+<images/ch2/ch2_pervar_ham_age_hist.png, id=2134, 860.61525pt x 225.2415pt>
 File: images/ch2/ch2_pervar_ham_age_hist.png Graphic file (type png)
 <use images/ch2/ch2_pervar_ham_age_hist.png>
 Package pdftex.def Info: images/ch2/ch2_pervar_ham_age_hist.png  used on input 
-line 1361.
-(pdftex.def)             Requested size: 216.1011pt x 56.55768pt.
-<images/ch2/ch2_pervar_ham_age_box.png, id=1971, 318.59026pt x 239.09325pt>
+line 1359.
+(pdftex.def)             Requested size: 423.37997pt x 110.80922pt.
+<images/ch2/ch2_pervar_ham_age_box.png, id=2135, 318.59026pt x 239.09325pt>
 File: images/ch2/ch2_pervar_ham_age_box.png Graphic file (type png)
 <use images/ch2/ch2_pervar_ham_age_box.png>
 Package pdftex.def Info: images/ch2/ch2_pervar_ham_age_box.png  used on input l
-ine 1365.
-(pdftex.def)             Requested size: 216.1011pt x 162.18358pt.
-<images/ch2/ch2_pervar_ham_localization_bar.png, id=1972, 1113.56026pt x 254.14
-95pt>
-File: images/ch2/ch2_pervar_ham_localization_bar.png Graphic file (type png)
-<use images/ch2/ch2_pervar_ham_localization_bar.png>
-Package pdftex.def Info: images/ch2/ch2_pervar_ham_localization_bar.png  used o
-n input line 1375.
-(pdftex.def)             Requested size: 330.76329pt x 75.48923pt.
+ine 1366.
+(pdftex.def)             Requested size: 423.37997pt x 317.76016pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3580,15 +3593,30 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
-[99 <./images/ch2/ch2_pervar_ham_age_hist.png> <./images/ch2/ch2_pervar_ham_age
-_box.png> <./images/ch2/ch2_pervar_ham_localization_bar.png>]
+[105 <./images/ch2/ch2_pervar_ham_age_hist.png>]
+<images/ch2/ch2_pervar_ham_localization_bar.png, id=2144, 1113.56026pt x 254.14
+95pt>
+File: images/ch2/ch2_pervar_ham_localization_bar.png Graphic file (type png)
+<use images/ch2/ch2_pervar_ham_localization_bar.png>
+Package pdftex.def Info: images/ch2/ch2_pervar_ham_localization_bar.png  used o
+n input line 1375.
+(pdftex.def)             Requested size: 330.76329pt x 75.48923pt.
+ [106 <./images/ch2/ch2_pervar_ham_age_box.png> <./images/ch2/ch2_pervar_ham_lo
+calization_bar.png>]
 Overfull \hbox (22.5353pt too wide) in paragraph at lines 1417--1418
 []\T5/cmr/bx/n/12 SË l˜Òng ^^_∞c tr˜ng: \T5/cmr/m/n/12 b£ng ^^_∞c tr˜ng parse g
 Ám \T5/cmtt/m/n/12 newid\T5/cmr/m/n/12 , \T5/cmtt/m/n/12 primary_topic\T5/cmr/m
 /n/12 , \T5/cmtt/m/n/12 word_count\T5/cmr/m/n/12 ,
  []
 
-[100]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 17.97173pt, for example:
+(fancyhdr)                \setlength{\headheight}{17.97173pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
+
+[107]
 Underfull \hbox (badness 1888) in paragraph at lines 1460--1460
 []|\T5/cmr/m/n/10.95 Benchmark, chu©n h‚a
  []
@@ -3623,6 +3651,23 @@ Overfull \hbox (8.31671pt too wide) in paragraph at lines 1456--1465
  [][] 
  []
 
+[108]
+<images/ch2/ch2_pervar_reuters_word_count_hist.png, id=2168, 860.61525pt x 225.
+2415pt>
+File: images/ch2/ch2_pervar_reuters_word_count_hist.png Graphic file (type png)
+
+<use images/ch2/ch2_pervar_reuters_word_count_hist.png>
+Package pdftex.def Info: images/ch2/ch2_pervar_reuters_word_count_hist.png  use
+d on input line 1492.
+(pdftex.def)             Requested size: 423.37997pt x 110.80922pt.
+<images/ch2/ch2_pervar_reuters_word_count_box.png, id=2169, 318.59026pt x 239.0
+9325pt>
+File: images/ch2/ch2_pervar_reuters_word_count_box.png Graphic file (type png)
+<use images/ch2/ch2_pervar_reuters_word_count_box.png>
+Package pdftex.def Info: images/ch2/ch2_pervar_reuters_word_count_box.png  used
+ on input line 1499.
+(pdftex.def)             Requested size: 423.37997pt x 317.76016pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 17.97173pt, for example:
@@ -3630,34 +3675,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
-[101]
-<images/ch2/ch2_pervar_reuters_word_count_hist.png, id=1997, 860.61525pt x 225.
-2415pt>
-File: images/ch2/ch2_pervar_reuters_word_count_hist.png Graphic file (type png)
-
-<use images/ch2/ch2_pervar_reuters_word_count_hist.png>
-Package pdftex.def Info: images/ch2/ch2_pervar_reuters_word_count_hist.png  use
-d on input line 1494.
-(pdftex.def)             Requested size: 216.1011pt x 56.55768pt.
-<images/ch2/ch2_pervar_reuters_word_count_box.png, id=1998, 318.59026pt x 239.0
-9325pt>
-File: images/ch2/ch2_pervar_reuters_word_count_box.png Graphic file (type png)
-<use images/ch2/ch2_pervar_reuters_word_count_box.png>
-Package pdftex.def Info: images/ch2/ch2_pervar_reuters_word_count_box.png  used
- on input line 1498.
-(pdftex.def)             Requested size: 216.1011pt x 162.18358pt.
-<images/ch2/ch2_pervar_reuters_topic_bar.png, id=1999, 462.528pt x 253.54726pt>
+[109 <./images/ch2/ch2_pervar_reuters_word_count_hist.png>]
+<images/ch2/ch2_pervar_reuters_topic_bar.png, id=2175, 462.528pt x 253.54726pt>
 
 File: images/ch2/ch2_pervar_reuters_topic_bar.png Graphic file (type png)
 <use images/ch2/ch2_pervar_reuters_topic_bar.png>
 Package pdftex.def Info: images/ch2/ch2_pervar_reuters_topic_bar.png  used on i
 nput line 1510.
 (pdftex.def)             Requested size: 352.81552pt x 193.41362pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [102 <./images/ch2/ch2_pervar_reuters_word_count_hist.png> <./images/ch2/ch2_p
-ervar_reuters_word_count_box.png>]
+ [110 <./images/ch2/ch2_pervar_reuters_word_count_box.png> <./images/ch2/ch2_pe
+rvar_reuters_topic_bar.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 1548--1548
 []|\T5/cmr/m/n/10.95 MÊ hºnh x°c sußt,
  []
@@ -3718,17 +3745,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 1553--1554
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 17.97173pt, for example:
 (fancyhdr)                \setlength{\headheight}{17.97173pt}.
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
-[103 <./images/ch2/ch2_pervar_reuters_topic_bar.png>] [104]
+[111] [112]
+Underfull \hbox (badness 1383) in paragraph at lines 1596--1596
+[]|\T5/cmr/m/n/10.95 Missing value, d˙ liªu bßt
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 1599--1599
 []|\T5/cmr/m/n/10.95 V´n b£n d†i/ng≠n bßt
  []
@@ -3774,9 +3802,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 1625--1626
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 17.97173pt, for example:
+(fancyhdr)                \setlength{\headheight}{17.97173pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
-
+[113] [114]) (parts/chapter3_statistics_visualization.tex
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 17.97173pt, for example:
@@ -3784,42 +3816,46 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
-[105]) (parts/chapter3_statistics_visualization.tex [106]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 17.97173pt, for example:
-(fancyhdr)                \setlength{\headheight}{17.97173pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
-
-[107] [108
+[115]
+Ch\uhorn \ohorn ng 4.
+(main.ptc) [116
 
 ]
-Ch\uhorn \ohorn ng 4.
-(main.ptc)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [109]
 Underfull \hbox (badness 1360) in paragraph at lines 45--45
 []|$\T5/cmtt/m/n/10 src / analyze _ 
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.92618pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.92618pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.92618pt}.
 
- [110]
-Underfull \hbox (badness 10000) in paragraph at lines 74--74
+[117] [118]
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
 []|\T5/cmr/m/n/10.95 Mean, me-dian, SD,
  []
 
 
-Underfull \hbox (badness 6157) in paragraph at lines 74--74
+Underfull \hbox (badness 6157) in paragraph at lines 76--76
 []|\T5/cmr/m/n/10.95 T¶n sußt, t¶n sußt
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--74
+Underfull \hbox (badness 3895) in paragraph at lines 76--76
+[]|\T5/cmr/m/n/10.95 D˙ liªu bßt th˜Ìng
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
 []|\T5/cmr/m/n/10.95 T˜Ïng quan vÓi
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--81
+[]\T5/cmr/m/n/12 B£ng 4.3: |B£ng t¶n sußt bi∏n \T5/cmtt/m/n/12 cp \T5/cmr/m/n/1
+2 trong Heart Dis-ease. Source:
  []
 
 
@@ -3829,170 +3865,25 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-22.92618pt}.
 
-[111]
-Underfull \hbox (badness 10000) in paragraph at lines 79--79
-[]\T5/cmr/m/n/12 B£ng 4.3: |B£ng t¶n sußt bi∏n \T5/cmtt/m/n/12 cp \T5/cmr/m/n/1
-2 trong Heart Dis-ease. Source:
- []
+[119]
 
-[112]
-<images/ch3/heart_disease_chest_pain_bar.png, id=2070, 578.16pt x 361.35pt>
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 125.
+See the caption package documentation for explanation.
+
+[120]
+<images/ch3/heart_disease_chest_pain_bar.png, id=2246, 578.16pt x 361.35pt>
 File: images/ch3/heart_disease_chest_pain_bar.png Graphic file (type png)
 <use images/ch3/heart_disease_chest_pain_bar.png>
 Package pdftex.def Info: images/ch3/heart_disease_chest_pain_bar.png  used on i
 nput line 151.
 (pdftex.def)             Requested size: 405.7355pt x 253.58287pt.
-<images/ch3/excel_heart_cp_bar_preview.png, id=2071, 505.89pt x 303.534pt>
+<images/ch3/excel_heart_cp_bar_preview.png, id=2247, 505.89pt x 303.534pt>
 File: images/ch3/excel_heart_cp_bar_preview.png Graphic file (type png)
 <use images/ch3/excel_heart_cp_bar_preview.png>
 Package pdftex.def Info: images/ch3/excel_heart_cp_bar_preview.png  used on inp
 ut line 159.
 (pdftex.def)             Requested size: 405.7355pt x 243.44351pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 34.92618pt, for example:
-(fancyhdr)                \setlength{\headheight}{34.92618pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-22.92618pt}.
-
-[113]
-<images/ch3/heart_disease_age_raw_vs_cleaned.png, id=2078, 867.24pt x 361.35pt>
-
-File: images/ch3/heart_disease_age_raw_vs_cleaned.png Graphic file (type png)
-<use images/ch3/heart_disease_age_raw_vs_cleaned.png>
-Package pdftex.def Info: images/ch3/heart_disease_age_raw_vs_cleaned.png  used 
-on input line 175.
-(pdftex.def)             Requested size: 405.7355pt x 169.05708pt.
-<images/ch3/excel_heart_age_raw_vs_cleaned_preview.png, id=2079, 867.24pt x 325
-.215pt>
-File: images/ch3/excel_heart_age_raw_vs_cleaned_preview.png Graphic file (type 
-png)
-<use images/ch3/excel_heart_age_raw_vs_cleaned_preview.png>
-Package pdftex.def Info: images/ch3/excel_heart_age_raw_vs_cleaned_preview.png 
- used on input line 183.
-(pdftex.def)             Requested size: 405.7355pt x 152.15137pt.
- [114 <./images/ch3/heart_disease_chest_pain_bar.png> <./images/ch3/excel_heart
-_cp_bar_preview.png>]
-<images/ch3/heart_disease_cholesterol_boxplot.png, id=2087, 578.16pt x 361.35pt
->
-File: images/ch3/heart_disease_cholesterol_boxplot.png Graphic file (type png)
-<use images/ch3/heart_disease_cholesterol_boxplot.png>
-Package pdftex.def Info: images/ch3/heart_disease_cholesterol_boxplot.png  used
- on input line 199.
-(pdftex.def)             Requested size: 405.7355pt x 253.58287pt.
-<images/ch3/excel_heart_chol_boxplot_preview.png, id=2088, 505.89pt x 303.534pt
->
-File: images/ch3/excel_heart_chol_boxplot_preview.png Graphic file (type png)
-<use images/ch3/excel_heart_chol_boxplot_preview.png>
-Package pdftex.def Info: images/ch3/excel_heart_chol_boxplot_preview.png  used 
-on input line 207.
-(pdftex.def)             Requested size: 405.7355pt x 243.44351pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 34.92618pt, for example:
-(fancyhdr)                \setlength{\headheight}{34.92618pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-22.92618pt}.
-
-[115 <./images/ch3/heart_disease_age_raw_vs_cleaned.png> <./images/ch3/excel_he
-art_age_raw_vs_cleaned_preview.png>] [116 <./images/ch3/heart_disease_cholester
-ol_boxplot.png> <./images/ch3/excel_heart_chol_boxplot_preview.png>]
-<images/ch3/heart_disease_age_thalach_scatter.png, id=2103, 578.16pt x 361.35pt
->
-File: images/ch3/heart_disease_age_thalach_scatter.png Graphic file (type png)
-<use images/ch3/heart_disease_age_thalach_scatter.png>
-Package pdftex.def Info: images/ch3/heart_disease_age_thalach_scatter.png  used
- on input line 223.
-(pdftex.def)             Requested size: 405.7355pt x 253.58287pt.
-<images/ch3/excel_heart_age_thalach_scatter_preview.png, id=2104, 505.89pt x 30
-3.534pt>
-File: images/ch3/excel_heart_age_thalach_scatter_preview.png Graphic file (type
- png)
-<use images/ch3/excel_heart_age_thalach_scatter_preview.png>
-Package pdftex.def Info: images/ch3/excel_heart_age_thalach_scatter_preview.png
-  used on input line 236.
-(pdftex.def)             Requested size: 405.7355pt x 243.44351pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 34.92618pt, for example:
-(fancyhdr)                \setlength{\headheight}{34.92618pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-22.92618pt}.
-
-[117 <./images/ch3/heart_disease_age_thalach_scatter.png>]
-<images/ch3/heart_disease_target_distribution.png, id=2111, 578.16pt x 361.35pt
->
-File: images/ch3/heart_disease_target_distribution.png Graphic file (type png)
-<use images/ch3/heart_disease_target_distribution.png>
-Package pdftex.def Info: images/ch3/heart_disease_target_distribution.png  used
- on input line 251.
-(pdftex.def)             Requested size: 405.7355pt x 253.58287pt.
-<images/ch3/excel_heart_target_distribution_preview.png, id=2112, 505.89pt x 30
-3.534pt>
-File: images/ch3/excel_heart_target_distribution_preview.png Graphic file (type
- png)
-<use images/ch3/excel_heart_target_distribution_preview.png>
-Package pdftex.def Info: images/ch3/excel_heart_target_distribution_preview.png
-  used on input line 259.
-(pdftex.def)             Requested size: 405.7355pt x 243.44351pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [118 <./images/ch3/excel_heart_age_thalach_scatter_preview.png>]
-<images/ch3/heart_disease_correlation_heatmap.png, id=2120, 722.7pt x 578.16pt>
-
-File: images/ch3/heart_disease_correlation_heatmap.png Graphic file (type png)
-<use images/ch3/heart_disease_correlation_heatmap.png>
-Package pdftex.def Info: images/ch3/heart_disease_correlation_heatmap.png  used
- on input line 275.
-(pdftex.def)             Requested size: 379.27551pt x 303.42386pt.
-<images/ch3/excel_heart_corr_heatmap_preview.png, id=2121, 448.074pt x 375.804p
-t>
-File: images/ch3/excel_heart_corr_heatmap_preview.png Graphic file (type png)
-<use images/ch3/excel_heart_corr_heatmap_preview.png>
-Package pdftex.def Info: images/ch3/excel_heart_corr_heatmap_preview.png  used 
-on input line 283.
-(pdftex.def)             Requested size: 379.27551pt x 318.10455pt.
-
-
-LaTeX Warning: Float too large for page by 76.7936pt on input line 291.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 34.92618pt, for example:
-(fancyhdr)                \setlength{\headheight}{34.92618pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-22.92618pt}.
-
-[119 <./images/ch3/heart_disease_target_distribution.png> <./images/ch3/excel_h
-eart_target_distribution_preview.png>] [120 <./images/ch3/heart_disease_correla
-tion_heatmap.png> <./images/ch3/excel_heart_corr_heatmap_preview.png>]
-Underfull \hbox (badness 4254) in paragraph at lines 297--297
-[]\T5/cmr/m/n/12 B£ng 4.6: |So s°nh d˙ liªu thÊ v† d˙ liªu s§ch Heart Dis-ease.
- Source:
- []
-
-
-Underfull \hbox (badness 3701) in paragraph at lines 335--335
-[]|\T5/cmr/m/n/10.95 Mean, me-dian, IQR,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 335--335
-[]|\T5/cmr/m/n/10.95 Quantitative Dis-
- []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -4002,185 +3893,132 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-22.92618pt}.
 
 [121]
-Underfull \hbox (badness 10000) in paragraph at lines 361--361
+<images/ch3/heart_disease_age_raw_vs_cleaned.png, id=2254, 867.24pt x 361.35pt>
+
+File: images/ch3/heart_disease_age_raw_vs_cleaned.png Graphic file (type png)
+<use images/ch3/heart_disease_age_raw_vs_cleaned.png>
+Package pdftex.def Info: images/ch3/heart_disease_age_raw_vs_cleaned.png  used 
+on input line 175.
+(pdftex.def)             Requested size: 405.7355pt x 169.05708pt.
+<images/ch3/excel_heart_age_raw_vs_cleaned_preview.png, id=2255, 867.24pt x 325
+.215pt>
+File: images/ch3/excel_heart_age_raw_vs_cleaned_preview.png Graphic file (type 
+png)
+<use images/ch3/excel_heart_age_raw_vs_cleaned_preview.png>
+Package pdftex.def Info: images/ch3/excel_heart_age_raw_vs_cleaned_preview.png 
+ used on input line 183.
+(pdftex.def)             Requested size: 405.7355pt x 152.15137pt.
+ [122 <./images/ch3/heart_disease_chest_pain_bar.png> <./images/ch3/excel_heart
+_cp_bar_preview.png>]
+<images/ch3/heart_disease_cholesterol_boxplot.png, id=2263, 578.16pt x 361.35pt
+>
+File: images/ch3/heart_disease_cholesterol_boxplot.png Graphic file (type png)
+<use images/ch3/heart_disease_cholesterol_boxplot.png>
+Package pdftex.def Info: images/ch3/heart_disease_cholesterol_boxplot.png  used
+ on input line 197.
+(pdftex.def)             Requested size: 405.7355pt x 253.58287pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.92618pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.92618pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.92618pt}.
+
+[123 <./images/ch3/heart_disease_age_raw_vs_cleaned.png> <./images/ch3/excel_he
+art_age_raw_vs_cleaned_preview.png>]
+<images/ch3/heart_disease_age_thalach_scatter.png, id=2272, 578.16pt x 361.35pt
+>
+File: images/ch3/heart_disease_age_thalach_scatter.png Graphic file (type png)
+<use images/ch3/heart_disease_age_thalach_scatter.png>
+Package pdftex.def Info: images/ch3/heart_disease_age_thalach_scatter.png  used
+ on input line 210.
+(pdftex.def)             Requested size: 405.7355pt x 253.58287pt.
+<images/ch3/excel_heart_age_thalach_scatter_preview.png, id=2273, 505.89pt x 30
+3.534pt>
+File: images/ch3/excel_heart_age_thalach_scatter_preview.png Graphic file (type
+ png)
+<use images/ch3/excel_heart_age_thalach_scatter_preview.png>
+Package pdftex.def Info: images/ch3/excel_heart_age_thalach_scatter_preview.png
+  used on input line 218.
+(pdftex.def)             Requested size: 405.7355pt x 243.44351pt.
+ [124 <./images/ch3/heart_disease_cholesterol_boxplot.png>]
+<images/ch3/heart_disease_target_distribution.png, id=2280, 578.16pt x 361.35pt
+>
+File: images/ch3/heart_disease_target_distribution.png Graphic file (type png)
+<use images/ch3/heart_disease_target_distribution.png>
+Package pdftex.def Info: images/ch3/heart_disease_target_distribution.png  used
+ on input line 234.
+(pdftex.def)             Requested size: 405.7355pt x 253.58287pt.
+<images/ch3/excel_heart_target_distribution_preview.png, id=2281, 505.89pt x 30
+3.534pt>
+File: images/ch3/excel_heart_target_distribution_preview.png Graphic file (type
+ png)
+<use images/ch3/excel_heart_target_distribution_preview.png>
+Package pdftex.def Info: images/ch3/excel_heart_target_distribution_preview.png
+  used on input line 242.
+(pdftex.def)             Requested size: 405.7355pt x 243.44351pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.92618pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.92618pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.92618pt}.
+
+[125 <./images/ch3/heart_disease_age_thalach_scatter.png> <./images/ch3/excel_h
+eart_age_thalach_scatter_preview.png>]
+<images/ch3/heart_disease_correlation_heatmap.png, id=2289, 722.7pt x 578.16pt>
+
+File: images/ch3/heart_disease_correlation_heatmap.png Graphic file (type png)
+<use images/ch3/heart_disease_correlation_heatmap.png>
+Package pdftex.def Info: images/ch3/heart_disease_correlation_heatmap.png  used
+ on input line 256.
+(pdftex.def)             Requested size: 379.27551pt x 303.42386pt.
+ [126 <./images/ch3/heart_disease_target_distribution.png> <./images/ch3/excel_
+heart_target_distribution_preview.png>]
+Underfull \hbox (badness 4254) in paragraph at lines 267--267
+[]\T5/cmr/m/n/12 B£ng 4.6: |So s°nh d˙ liªu thÊ v† d˙ liªu s§ch Heart Dis-ease.
+ Source:
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.92618pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.92618pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.92618pt}.
+
+[127 <./images/ch3/heart_disease_correlation_heatmap.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 305--305
+[]|\T5/cmr/m/n/10.95 Quantitative Dis-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 331--331
 []\T5/cmr/m/n/12 B£ng 4.9: |B£ng t¶n sußt bi∏n \T5/cmtt/m/n/12 HighBP \T5/cmr/m
 /n/12 trong CDC Di-a-betes. Source:
  []
 
 
-Underfull \hbox (badness 3029) in paragraph at lines 376--376
+Underfull \hbox (badness 3029) in paragraph at lines 346--346
 []\T5/cmr/m/n/12 B£ng 4.10: |So s°nh d˙ liªu thÊ v† d˙ liªu s§ch CDC Di-a-betes
 . Source:
  []
 
-<images/ch3/cdc_diabetes_highbp_bar.png, id=2141, 505.89pt x 303.534pt>
+[128]
+<images/ch3/cdc_diabetes_highbp_bar.png, id=2307, 505.89pt x 303.534pt>
 File: images/ch3/cdc_diabetes_highbp_bar.png Graphic file (type png)
 <use images/ch3/cdc_diabetes_highbp_bar.png>
 Package pdftex.def Info: images/ch3/cdc_diabetes_highbp_bar.png  used on input 
-line 397.
+line 367.
 (pdftex.def)             Requested size: 396.91325pt x 238.15428pt.
-<images/ch3/excel_cdc_highbp_bar_preview.png, id=2142, 505.89pt x 303.534pt>
+<images/ch3/excel_cdc_highbp_bar_preview.png, id=2308, 505.89pt x 303.534pt>
 File: images/ch3/excel_cdc_highbp_bar_preview.png Graphic file (type png)
 <use images/ch3/excel_cdc_highbp_bar_preview.png>
 Package pdftex.def Info: images/ch3/excel_cdc_highbp_bar_preview.png  used on i
-nput line 403.
+nput line 373.
 (pdftex.def)             Requested size: 396.91325pt x 238.15428pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [122]
-<images/ch3/cdc_diabetes_bmi_raw_vs_cleaned.png, id=2148, 867.24pt x 361.35pt>
-File: images/ch3/cdc_diabetes_bmi_raw_vs_cleaned.png Graphic file (type png)
-<use images/ch3/cdc_diabetes_bmi_raw_vs_cleaned.png>
-Package pdftex.def Info: images/ch3/cdc_diabetes_bmi_raw_vs_cleaned.png  used o
-n input line 419.
-(pdftex.def)             Requested size: 396.91325pt x 165.37941pt.
-<images/ch3/excel_cdc_bmi_raw_vs_cleaned_preview.png, id=2149, 542.025pt x 325.
-215pt>
-File: images/ch3/excel_cdc_bmi_raw_vs_cleaned_preview.png Graphic file (type pn
-g)
-<use images/ch3/excel_cdc_bmi_raw_vs_cleaned_preview.png>
-Package pdftex.def Info: images/ch3/excel_cdc_bmi_raw_vs_cleaned_preview.png  u
-sed on input line 425.
-(pdftex.def)             Requested size: 396.91325pt x 238.1543pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 34.92618pt, for example:
-(fancyhdr)                \setlength{\headheight}{34.92618pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-22.92618pt}.
-
-[123 <./images/ch3/cdc_diabetes_highbp_bar.png> <./images/ch3/excel_cdc_highbp_
-bar_preview.png>]
-<images/ch3/cdc_diabetes_bmi_boxplot_by_target.png, id=2157, 578.16pt x 361.35p
-t>
-File: images/ch3/cdc_diabetes_bmi_boxplot_by_target.png Graphic file (type png)
-
-<use images/ch3/cdc_diabetes_bmi_boxplot_by_target.png>
-Package pdftex.def Info: images/ch3/cdc_diabetes_bmi_boxplot_by_target.png  use
-d on input line 441.
-(pdftex.def)             Requested size: 396.91325pt x 248.06912pt.
-<images/ch3/excel_cdc_bmi_boxplot_preview.png, id=2158, 505.89pt x 303.534pt>
-File: images/ch3/excel_cdc_bmi_boxplot_preview.png Graphic file (type png)
-<use images/ch3/excel_cdc_bmi_boxplot_preview.png>
-Package pdftex.def Info: images/ch3/excel_cdc_bmi_boxplot_preview.png  used on 
-input line 447.
-(pdftex.def)             Requested size: 396.91325pt x 238.15428pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [124 <./images/ch3/cdc_diabetes_bmi_raw_vs_cleaned.png> <./images/ch3/excel_cd
-c_bmi_raw_vs_cleaned_preview.png>]
-<images/ch3/cdc_diabetes_age_bmi_scatter.png, id=2166, 578.16pt x 361.35pt>
-File: images/ch3/cdc_diabetes_age_bmi_scatter.png Graphic file (type png)
-<use images/ch3/cdc_diabetes_age_bmi_scatter.png>
-Package pdftex.def Info: images/ch3/cdc_diabetes_age_bmi_scatter.png  used on i
-nput line 463.
-(pdftex.def)             Requested size: 396.91325pt x 248.06912pt.
-<images/ch3/excel_cdc_age_bmi_scatter_preview.png, id=2167, 505.89pt x 303.534p
-t>
-File: images/ch3/excel_cdc_age_bmi_scatter_preview.png Graphic file (type png)
-<use images/ch3/excel_cdc_age_bmi_scatter_preview.png>
-Package pdftex.def Info: images/ch3/excel_cdc_age_bmi_scatter_preview.png  used
- on input line 469.
-(pdftex.def)             Requested size: 396.91325pt x 238.15428pt.
-
-Underfull \vbox (badness 1038) has occurred while \output is active []
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 34.92618pt, for example:
-(fancyhdr)                \setlength{\headheight}{34.92618pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-22.92618pt}.
-
-[125 <./images/ch3/cdc_diabetes_bmi_boxplot_by_target.png> <./images/ch3/excel_
-cdc_bmi_boxplot_preview.png>]
-<images/ch3/cdc_diabetes_target_distribution.png, id=2175, 578.16pt x 361.35pt>
-
-File: images/ch3/cdc_diabetes_target_distribution.png Graphic file (type png)
-<use images/ch3/cdc_diabetes_target_distribution.png>
-Package pdftex.def Info: images/ch3/cdc_diabetes_target_distribution.png  used 
-on input line 485.
-(pdftex.def)             Requested size: 396.91325pt x 248.06912pt.
-<images/ch3/excel_cdc_target_distribution_preview.png, id=2176, 505.89pt x 303.
-534pt>
-File: images/ch3/excel_cdc_target_distribution_preview.png Graphic file (type p
-ng)
-<use images/ch3/excel_cdc_target_distribution_preview.png>
-Package pdftex.def Info: images/ch3/excel_cdc_target_distribution_preview.png  
-used on input line 491.
-(pdftex.def)             Requested size: 396.91325pt x 238.15428pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [126 <./images/ch3/cdc_diabetes_age_bmi_scatter.png> <./images/ch3/excel_cdc_a
-ge_bmi_scatter_preview.png>]
-<images/ch3/cdc_diabetes_correlation_heatmap.png, id=2184, 722.7pt x 578.16pt>
-File: images/ch3/cdc_diabetes_correlation_heatmap.png Graphic file (type png)
-<use images/ch3/cdc_diabetes_correlation_heatmap.png>
-Package pdftex.def Info: images/ch3/cdc_diabetes_correlation_heatmap.png  used 
-on input line 507.
-(pdftex.def)             Requested size: 379.27551pt x 303.42386pt.
-<images/ch3/excel_cdc_corr_heatmap_preview.png, id=2185, 448.074pt x 375.804pt>
-
-File: images/ch3/excel_cdc_corr_heatmap_preview.png Graphic file (type png)
-<use images/ch3/excel_cdc_corr_heatmap_preview.png>
-Package pdftex.def Info: images/ch3/excel_cdc_corr_heatmap_preview.png  used on
- input line 513.
-(pdftex.def)             Requested size: 379.27551pt x 318.10455pt.
-
-
-LaTeX Warning: Float too large for page by 76.7936pt on input line 521.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 34.92618pt, for example:
-(fancyhdr)                \setlength{\headheight}{34.92618pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-22.92618pt}.
-
-[127 <./images/ch3/cdc_diabetes_target_distribution.png> <./images/ch3/excel_cd
-c_target_distribution_preview.png>] [128 <./images/ch3/cdc_diabetes_correlation
-_heatmap.png> <./images/ch3/excel_cdc_corr_heatmap_preview.png>]
-Overfull \hbox (8.27634pt too wide) in paragraph at lines 529--530
-\T5/cmr/m/n/12 bi∏n ^^_˜Òc chÂn gÁm \T5/cmtt/m/n/12 radius1\T5/cmr/m/n/12 , \T5
-/cmtt/m/n/12 texture1\T5/cmr/m/n/12 , \T5/cmtt/m/n/12 perimeter1\T5/cmr/m/n/12 
-, \T5/cmtt/m/n/12 area1\T5/cmr/m/n/12 , \T5/cmtt/m/n/12 smoothness1\T5/cmr/m/n/
-12 , \T5/cmtt/m/n/12 concavity1\T5/cmr/m/n/12 ;
- []
-
-
-Underfull \hbox (badness 4927) in paragraph at lines 552--552
-[]\T5/cmr/m/n/12 B£ng 4.12: |B£ng t¶n sußt bi∏n \T5/cmtt/m/n/12 Diagnosis \T5/c
-mr/m/n/12 trong Breast Can-cer. Source:
- []
-
-<images/ch3/breast_cancer_target_distribution.png, id=2200, 578.16pt x 361.35pt
->
-File: images/ch3/breast_cancer_target_distribution.png Graphic file (type png)
-<use images/ch3/breast_cancer_target_distribution.png>
-Package pdftex.def Info: images/ch3/breast_cancer_target_distribution.png  used
- on input line 589.
-(pdftex.def)             Requested size: 396.91325pt x 248.06912pt.
-<images/ch3/excel_breast_target_distribution_preview.png, id=2201, 505.89pt x 3
-03.534pt>
-File: images/ch3/excel_breast_target_distribution_preview.png Graphic file (typ
-e png)
-<use images/ch3/excel_breast_target_distribution_preview.png>
-Package pdftex.def Info: images/ch3/excel_breast_target_distribution_preview.pn
-g  used on input line 595.
-(pdftex.def)             Requested size: 396.91325pt x 238.15428pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 600--600
-\T5/cmr/m/n/10 Excel source/workbook: \T5/cmtt/m/n/10 src/create_excel_visualiz
-ations.py\T5/cmr/m/n/10 ,
- []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -4190,118 +4028,172 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-22.92618pt}.
 
 [129]
-<images/ch3/breast_cancer_radius1_hist.png, id=2207, 542.025pt x 325.215pt>
+<images/ch3/cdc_diabetes_bmi_raw_vs_cleaned.png, id=2315, 867.24pt x 361.35pt>
+File: images/ch3/cdc_diabetes_bmi_raw_vs_cleaned.png Graphic file (type png)
+<use images/ch3/cdc_diabetes_bmi_raw_vs_cleaned.png>
+Package pdftex.def Info: images/ch3/cdc_diabetes_bmi_raw_vs_cleaned.png  used o
+n input line 389.
+(pdftex.def)             Requested size: 396.91325pt x 165.37941pt.
+<images/ch3/excel_cdc_bmi_raw_vs_cleaned_preview.png, id=2316, 542.025pt x 325.
+215pt>
+File: images/ch3/excel_cdc_bmi_raw_vs_cleaned_preview.png Graphic file (type pn
+g)
+<use images/ch3/excel_cdc_bmi_raw_vs_cleaned_preview.png>
+Package pdftex.def Info: images/ch3/excel_cdc_bmi_raw_vs_cleaned_preview.png  u
+sed on input line 395.
+(pdftex.def)             Requested size: 396.91325pt x 238.1543pt.
+ [130 <./images/ch3/cdc_diabetes_highbp_bar.png> <./images/ch3/excel_cdc_highbp
+_bar_preview.png>]
+<images/ch3/cdc_diabetes_bmi_boxplot_by_target.png, id=2324, 578.16pt x 361.35p
+t>
+File: images/ch3/cdc_diabetes_bmi_boxplot_by_target.png Graphic file (type png)
+
+<use images/ch3/cdc_diabetes_bmi_boxplot_by_target.png>
+Package pdftex.def Info: images/ch3/cdc_diabetes_bmi_boxplot_by_target.png  use
+d on input line 409.
+(pdftex.def)             Requested size: 396.91325pt x 248.06912pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.92618pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.92618pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.92618pt}.
+
+[131 <./images/ch3/cdc_diabetes_bmi_raw_vs_cleaned.png> <./images/ch3/excel_cdc
+_bmi_raw_vs_cleaned_preview.png>]
+<images/ch3/cdc_diabetes_age_bmi_scatter.png, id=2332, 578.16pt x 361.35pt>
+File: images/ch3/cdc_diabetes_age_bmi_scatter.png Graphic file (type png)
+<use images/ch3/cdc_diabetes_age_bmi_scatter.png>
+Package pdftex.def Info: images/ch3/cdc_diabetes_age_bmi_scatter.png  used on i
+nput line 422.
+(pdftex.def)             Requested size: 396.91325pt x 248.06912pt.
+<images/ch3/excel_cdc_age_bmi_scatter_preview.png, id=2333, 505.89pt x 303.534p
+t>
+File: images/ch3/excel_cdc_age_bmi_scatter_preview.png Graphic file (type png)
+<use images/ch3/excel_cdc_age_bmi_scatter_preview.png>
+Package pdftex.def Info: images/ch3/excel_cdc_age_bmi_scatter_preview.png  used
+ on input line 428.
+(pdftex.def)             Requested size: 396.91325pt x 238.15428pt.
+ [132 <./images/ch3/cdc_diabetes_bmi_boxplot_by_target.png>]
+<images/ch3/cdc_diabetes_target_distribution.png, id=2340, 578.16pt x 361.35pt>
+
+File: images/ch3/cdc_diabetes_target_distribution.png Graphic file (type png)
+<use images/ch3/cdc_diabetes_target_distribution.png>
+Package pdftex.def Info: images/ch3/cdc_diabetes_target_distribution.png  used 
+on input line 444.
+(pdftex.def)             Requested size: 396.91325pt x 248.06912pt.
+<images/ch3/excel_cdc_target_distribution_preview.png, id=2341, 505.89pt x 303.
+534pt>
+File: images/ch3/excel_cdc_target_distribution_preview.png Graphic file (type p
+ng)
+<use images/ch3/excel_cdc_target_distribution_preview.png>
+Package pdftex.def Info: images/ch3/excel_cdc_target_distribution_preview.png  
+used on input line 450.
+(pdftex.def)             Requested size: 396.91325pt x 238.15428pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.92618pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.92618pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.92618pt}.
+
+[133 <./images/ch3/cdc_diabetes_age_bmi_scatter.png> <./images/ch3/excel_cdc_ag
+e_bmi_scatter_preview.png>]
+<images/ch3/cdc_diabetes_correlation_heatmap.png, id=2349, 722.7pt x 578.16pt>
+File: images/ch3/cdc_diabetes_correlation_heatmap.png Graphic file (type png)
+<use images/ch3/cdc_diabetes_correlation_heatmap.png>
+Package pdftex.def Info: images/ch3/cdc_diabetes_correlation_heatmap.png  used 
+on input line 464.
+(pdftex.def)             Requested size: 379.27551pt x 303.42386pt.
+ [134 <./images/ch3/cdc_diabetes_target_distribution.png> <./images/ch3/excel_c
+dc_target_distribution_preview.png>]
+Overfull \hbox (8.27634pt too wide) in paragraph at lines 477--478
+\T5/cmr/m/n/12 bi∏n ^^_˜Òc chÂn gÁm \T5/cmtt/m/n/12 radius1\T5/cmr/m/n/12 , \T5
+/cmtt/m/n/12 texture1\T5/cmr/m/n/12 , \T5/cmtt/m/n/12 perimeter1\T5/cmr/m/n/12 
+, \T5/cmtt/m/n/12 area1\T5/cmr/m/n/12 , \T5/cmtt/m/n/12 smoothness1\T5/cmr/m/n/
+12 , \T5/cmtt/m/n/12 concavity1\T5/cmr/m/n/12 ;
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.92618pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.92618pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.92618pt}.
+
+[135 <./images/ch3/cdc_diabetes_correlation_heatmap.png>]
+Underfull \hbox (badness 4927) in paragraph at lines 500--500
+[]\T5/cmr/m/n/12 B£ng 4.12: |B£ng t¶n sußt bi∏n \T5/cmtt/m/n/12 Diagnosis \T5/c
+mr/m/n/12 trong Breast Can-cer. Source:
+ []
+
+<images/ch3/breast_cancer_target_distribution.png, id=2363, 578.16pt x 361.35pt
+>
+File: images/ch3/breast_cancer_target_distribution.png Graphic file (type png)
+<use images/ch3/breast_cancer_target_distribution.png>
+Package pdftex.def Info: images/ch3/breast_cancer_target_distribution.png  used
+ on input line 537.
+(pdftex.def)             Requested size: 396.91325pt x 248.06912pt.
+<images/ch3/excel_breast_target_distribution_preview.png, id=2364, 505.89pt x 3
+03.534pt>
+File: images/ch3/excel_breast_target_distribution_preview.png Graphic file (typ
+e png)
+<use images/ch3/excel_breast_target_distribution_preview.png>
+Package pdftex.def Info: images/ch3/excel_breast_target_distribution_preview.pn
+g  used on input line 543.
+(pdftex.def)             Requested size: 396.91325pt x 238.15428pt.
+[136]
+<images/ch3/breast_cancer_radius1_hist.png, id=2370, 542.025pt x 325.215pt>
 File: images/ch3/breast_cancer_radius1_hist.png Graphic file (type png)
 <use images/ch3/breast_cancer_radius1_hist.png>
 Package pdftex.def Info: images/ch3/breast_cancer_radius1_hist.png  used on inp
-ut line 610.
+ut line 559.
 (pdftex.def)             Requested size: 396.91325pt x 238.1543pt.
-<images/ch3/excel_breast_radius_hist_preview.png, id=2208, 542.025pt x 325.215p
+<images/ch3/excel_breast_radius_hist_preview.png, id=2371, 542.025pt x 325.215p
 t>
 File: images/ch3/excel_breast_radius_hist_preview.png Graphic file (type png)
 <use images/ch3/excel_breast_radius_hist_preview.png>
 Package pdftex.def Info: images/ch3/excel_breast_radius_hist_preview.png  used 
-on input line 616.
+on input line 565.
 (pdftex.def)             Requested size: 396.91325pt x 238.1543pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 621--621
-\T5/cmr/m/n/10 Excel source/workbook: \T5/cmtt/m/n/10 src/create_excel_visualiz
-ations.py\T5/cmr/m/n/10 ,
- []
 
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.92618pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.92618pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.92618pt}.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [130 <./images/ch3/breast_cancer_target_distribution.png> <./images/ch3/excel_
-breast_target_distribution_preview.png>]
-<images/ch3/breast_cancer_radius1_boxplot_by_target.png, id=2216, 578.16pt x 36
+[137 <./images/ch3/breast_cancer_target_distribution.png> <./images/ch3/excel_b
+reast_target_distribution_preview.png>]
+<images/ch3/breast_cancer_radius1_boxplot_by_target.png, id=2379, 578.16pt x 36
 1.35pt>
 File: images/ch3/breast_cancer_radius1_boxplot_by_target.png Graphic file (type
  png)
 <use images/ch3/breast_cancer_radius1_boxplot_by_target.png>
 Package pdftex.def Info: images/ch3/breast_cancer_radius1_boxplot_by_target.png
-  used on input line 631.
+  used on input line 579.
 (pdftex.def)             Requested size: 396.91325pt x 248.06912pt.
-<images/ch3/excel_breast_radius_boxplot_preview.png, id=2217, 505.89pt x 303.53
-4pt>
-File: images/ch3/excel_breast_radius_boxplot_preview.png Graphic file (type png
-)
-<use images/ch3/excel_breast_radius_boxplot_preview.png>
-Package pdftex.def Info: images/ch3/excel_breast_radius_boxplot_preview.png  us
-ed on input line 637.
-(pdftex.def)             Requested size: 396.91325pt x 238.15428pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 642--642
-\T5/cmr/m/n/10 Excel source/workbook: \T5/cmtt/m/n/10 src/create_excel_visualiz
-ations.py\T5/cmr/m/n/10 ,
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 34.92618pt, for example:
-(fancyhdr)                \setlength{\headheight}{34.92618pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-22.92618pt}.
-
-[131 <./images/ch3/breast_cancer_radius1_hist.png> <./images/ch3/excel_breast_r
-adius_hist_preview.png>]
-<images/ch3/breast_cancer_radius_texture_scatter.png, id=2225, 505.89pt x 303.5
+ [138 <./images/ch3/breast_cancer_radius1_hist.png> <./images/ch3/excel_breast_
+radius_hist_preview.png>]
+<images/ch3/breast_cancer_radius_texture_scatter.png, id=2387, 505.89pt x 303.5
 34pt>
 File: images/ch3/breast_cancer_radius_texture_scatter.png Graphic file (type pn
 g)
 <use images/ch3/breast_cancer_radius_texture_scatter.png>
 Package pdftex.def Info: images/ch3/breast_cancer_radius_texture_scatter.png  u
-sed on input line 652.
+sed on input line 592.
 (pdftex.def)             Requested size: 396.91325pt x 238.15428pt.
-<images/ch3/excel_breast_radius_texture_scatter_preview.png, id=2226, 505.89pt 
+<images/ch3/excel_breast_radius_texture_scatter_preview.png, id=2388, 505.89pt 
 x 303.534pt>
 File: images/ch3/excel_breast_radius_texture_scatter_preview.png Graphic file (
 type png)
 <use images/ch3/excel_breast_radius_texture_scatter_preview.png>
 Package pdftex.def Info: images/ch3/excel_breast_radius_texture_scatter_preview
-.png  used on input line 658.
+.png  used on input line 598.
 (pdftex.def)             Requested size: 396.91325pt x 238.15428pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 663--663
-\T5/cmr/m/n/10 Excel source/workbook: \T5/cmtt/m/n/10 src/create_excel_visualiz
-ations.py\T5/cmr/m/n/10 ,
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [132 <./images/ch3/breast_cancer_radius1_boxplot_by_target.png> <./images/ch3/
-excel_breast_radius_boxplot_preview.png>]
-<images/ch3/breast_cancer_correlation_heatmap.png, id=2234, 650.43pt x 505.89pt
->
-File: images/ch3/breast_cancer_correlation_heatmap.png Graphic file (type png)
-<use images/ch3/breast_cancer_correlation_heatmap.png>
-Package pdftex.def Info: images/ch3/breast_cancer_correlation_heatmap.png  used
- on input line 673.
-(pdftex.def)             Requested size: 379.27551pt x 294.99884pt.
-<images/ch3/excel_breast_corr_heatmap_preview.png, id=2235, 448.074pt x 375.804
-pt>
-File: images/ch3/excel_breast_corr_heatmap_preview.png Graphic file (type png)
-<use images/ch3/excel_breast_corr_heatmap_preview.png>
-Package pdftex.def Info: images/ch3/excel_breast_corr_heatmap_preview.png  used
- on input line 679.
-(pdftex.def)             Requested size: 379.27551pt x 318.10455pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 684--684
-\T5/cmr/m/n/10 Excel source/workbook: \T5/cmtt/m/n/10 src/create_excel_visualiz
-ations.py\T5/cmr/m/n/10 ,
- []
-
-
-LaTeX Warning: Float too large for page by 65.61856pt on input line 686.
-
-
-Underfull \vbox (badness 1769) has occurred while \output is active []
-
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -4310,10 +4202,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-22.92618pt}.
 
-[133 <./images/ch3/breast_cancer_radius_texture_scatter.png> <./images/ch3/exce
-l_breast_radius_texture_scatter_preview.png>] [134 <./images/ch3/breast_cancer_
-correlation_heatmap.png> <./images/ch3/excel_breast_corr_heatmap_preview.png>]
-Overfull \hbox (23.59398pt too wide) in paragraph at lines 699--700
+[139 <./images/ch3/breast_cancer_radius1_boxplot_by_target.png>]
+<images/ch3/breast_cancer_correlation_heatmap.png, id=2395, 650.43pt x 505.89pt
+>
+File: images/ch3/breast_cancer_correlation_heatmap.png Graphic file (type png)
+<use images/ch3/breast_cancer_correlation_heatmap.png>
+Package pdftex.def Info: images/ch3/breast_cancer_correlation_heatmap.png  used
+ on input line 612.
+(pdftex.def)             Requested size: 379.27551pt x 294.99884pt.
+ [140 <./images/ch3/breast_cancer_radius_texture_scatter.png> <./images/ch3/exc
+el_breast_radius_texture_scatter_preview.png>]
+Overfull \hbox (23.59398pt too wide) in paragraph at lines 630--631
 \T5/cmtt/m/n/12 Appliances\T5/cmr/m/n/12 , \T5/cmtt/m/n/12 lights\T5/cmr/m/n/12
  , \T5/cmtt/m/n/12 T1\T5/cmr/m/n/12 , \T5/cmtt/m/n/12 RH_1\T5/cmr/m/n/12 , \T5/
 cmtt/m/n/12 T_out\T5/cmr/m/n/12 ; ngo†i ra dÚng \T5/cmtt/m/n/12 Appliances_log1
@@ -4321,46 +4220,52 @@ p\T5/cmr/m/n/12 , \T5/cmtt/m/n/12 Appliances_diff
  []
 
 
-Underfull \hbox (badness 1412) in paragraph at lines 703--703
+Underfull \hbox (badness 1412) in paragraph at lines 634--634
 []\T5/cmr/m/n/12 B£ng 4.14: |ThËng k∂ mÊ t£ c°c chuÈi ti∂u bi∫u Ap-pli-ances En
 -ergy. Source:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 721--721
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.92618pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.92618pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.92618pt}.
+
+[141 <./images/ch3/breast_cancer_correlation_heatmap.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 652--652
 []\T5/cmr/m/n/12 B£ng 4.15: |ThÊng tin thÌi gian cıa chuÈi Ap-pli-ances En-ergy
 . Source:
  []
 
-<images/ch3/appliances_energy_daily_line.png, id=2250, 794.97pt x 361.35pt>
+<images/ch3/appliances_energy_daily_line.png, id=2409, 794.97pt x 361.35pt>
 File: images/ch3/appliances_energy_daily_line.png Graphic file (type png)
 <use images/ch3/appliances_energy_daily_line.png>
 Package pdftex.def Info: images/ch3/appliances_energy_daily_line.png  used on i
-nput line 737.
+nput line 668.
 (pdftex.def)             Requested size: 396.91325pt x 180.42091pt.
-<images/ch3/excel_appliances_daily_line_preview.png, id=2251, 578.16pt x 303.53
+<images/ch3/excel_appliances_daily_line_preview.png, id=2410, 578.16pt x 303.53
 4pt>
 File: images/ch3/excel_appliances_daily_line_preview.png Graphic file (type png
 )
 <use images/ch3/excel_appliances_daily_line_preview.png>
 Package pdftex.def Info: images/ch3/excel_appliances_daily_line_preview.png  us
-ed on input line 739.
+ed on input line 670.
 (pdftex.def)             Requested size: 396.91325pt x 208.37805pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 741--741
+Underfull \hbox (badness 10000) in paragraph at lines 672--672
 \T5/cmr/m/n/10 Python source: \T5/cmtt/m/n/10 src/analyze_appliances_energy.py\
 T5/cmr/m/n/10 . Ex-cel source/workbook:
  []
 
+[142]
+<images/ch3/appliances_energy_rolling_trend.png, id=2416, 650.43pt x 325.215pt>
 
-Underfull \hbox (badness 10000) in paragraph at lines 741--741
-\T5/cmtt/m/n/10 src/create_excel_visualizations.py\T5/cmr/m/n/10 , \T5/cmtt/m/n
-/10 excel/excel_visualization_comparison.xlsx
- []
-
-
-Underfull \vbox (badness 1902) has occurred while \output is active []
-
+File: images/ch3/appliances_energy_rolling_trend.png Graphic file (type png)
+<use images/ch3/appliances_energy_rolling_trend.png>
+Package pdftex.def Info: images/ch3/appliances_energy_rolling_trend.png  used o
+n input line 678.
+(pdftex.def)             Requested size: 396.91325pt x 198.46025pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -4369,150 +4274,48 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-22.92618pt}.
 
-[135]
-<images/ch3/appliances_energy_rolling_trend.png, id=2257, 650.43pt x 325.215pt>
-
-File: images/ch3/appliances_energy_rolling_trend.png Graphic file (type png)
-<use images/ch3/appliances_energy_rolling_trend.png>
-Package pdftex.def Info: images/ch3/appliances_energy_rolling_trend.png  used o
-n input line 747.
-(pdftex.def)             Requested size: 396.91325pt x 198.46025pt.
-<images/ch3/excel_appliances_rolling_trend_preview.png, id=2258, 650.43pt x 325
-.215pt>
-File: images/ch3/excel_appliances_rolling_trend_preview.png Graphic file (type 
-png)
-<use images/ch3/excel_appliances_rolling_trend_preview.png>
-Package pdftex.def Info: images/ch3/excel_appliances_rolling_trend_preview.png 
- used on input line 749.
-(pdftex.def)             Requested size: 396.91325pt x 198.46025pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 752--752
-\T5/cmr/m/n/10 Python source: \T5/cmtt/m/n/10 scripts/generate_group_b_figures.
-py\T5/cmr/m/n/10 . Ex-cel source/workbook:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 752--752
-\T5/cmtt/m/n/10 scripts/generate_group_b_figures.py\T5/cmr/m/n/10 , \T5/cmtt/m/
-n/10 excel/excel_visualization_comparison.xlsx
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [136 <./images/ch3/appliances_energy_daily_line.png> <./images/ch3/excel_appli
-ances_daily_line_preview.png>]
-<images/ch3/appliances_energy_missing_interpolation_ffill.png, id=2266, 650.43p
+[143 <./images/ch3/appliances_energy_daily_line.png> <./images/ch3/excel_applia
+nces_daily_line_preview.png>]
+<images/ch3/appliances_energy_missing_interpolation_ffill.png, id=2424, 650.43p
 t x 325.215pt>
 File: images/ch3/appliances_energy_missing_interpolation_ffill.png Graphic file
  (type png)
 <use images/ch3/appliances_energy_missing_interpolation_ffill.png>
 Package pdftex.def Info: images/ch3/appliances_energy_missing_interpolation_ffi
-ll.png  used on input line 758.
+ll.png  used on input line 686.
 (pdftex.def)             Requested size: 396.91325pt x 198.46025pt.
-<images/ch3/excel_appliances_missing_interpolation_ffill_preview.png, id=2267, 
-650.43pt x 325.215pt>
-File: images/ch3/excel_appliances_missing_interpolation_ffill_preview.png Graph
-ic file (type png)
-<use images/ch3/excel_appliances_missing_interpolation_ffill_preview.png>
-Package pdftex.def Info: images/ch3/excel_appliances_missing_interpolation_ffil
-l_preview.png  used on input line 760.
-(pdftex.def)             Requested size: 396.91325pt x 198.46025pt.
-
-Underfull \hbox (badness 1867) in paragraph at lines 763--763
-\T5/cmr/m/n/12 ward fill. \T5/cmr/m/n/10 Python source: \T5/cmtt/m/n/10 scripts
-/generate_group_b_figures.py\T5/cmr/m/n/10 . Ex-cel source/workbook:
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 34.92618pt, for example:
-(fancyhdr)                \setlength{\headheight}{34.92618pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-22.92618pt}.
-
-[137 <./images/ch3/appliances_energy_rolling_trend.png> <./images/ch3/excel_app
-liances_rolling_trend_preview.png>]
-<images/ch3/appliances_energy_distribution_raw_vs_log.png, id=2275, 867.24pt x 
+<images/ch3/appliances_energy_distribution_raw_vs_log.png, id=2426, 867.24pt x 
 361.35pt>
 File: images/ch3/appliances_energy_distribution_raw_vs_log.png Graphic file (ty
 pe png)
 <use images/ch3/appliances_energy_distribution_raw_vs_log.png>
 Package pdftex.def Info: images/ch3/appliances_energy_distribution_raw_vs_log.p
-ng  used on input line 769.
+ng  used on input line 694.
 (pdftex.def)             Requested size: 396.91325pt x 165.37941pt.
-<images/ch3/excel_appliances_raw_vs_log_hist_preview.png, id=2276, 867.24pt x 3
+<images/ch3/excel_appliances_raw_vs_log_hist_preview.png, id=2427, 867.24pt x 3
 25.215pt>
 File: images/ch3/excel_appliances_raw_vs_log_hist_preview.png Graphic file (typ
 e png)
 <use images/ch3/excel_appliances_raw_vs_log_hist_preview.png>
 Package pdftex.def Info: images/ch3/excel_appliances_raw_vs_log_hist_preview.pn
-g  used on input line 771.
+g  used on input line 696.
 (pdftex.def)             Requested size: 396.91325pt x 148.84146pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 774--774
-[]\T5/cmr/m/n/12 Hºnh 4.21: |Bi∏n ^^_Íi \T5/cmtt/m/n/12 log1p \T5/cmr/m/n/12 ^^
-_∫ gi£m lªch ph£i cıa \T5/cmtt/m/n/12 Appliances\T5/cmr/m/n/12 .
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 774--774
+Underfull \hbox (badness 10000) in paragraph at lines 698--698
 \T5/cmr/m/n/10 Python source: \T5/cmtt/m/n/10 src/analyze_appliances_energy.py\
 T5/cmr/m/n/10 . Ex-cel source/workbook:
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 774--774
-\T5/cmtt/m/n/10 src/create_excel_visualizations.py\T5/cmr/m/n/10 , \T5/cmtt/m/n
-/10 excel/excel_visualization_comparison.xlsx
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [138 <./images/ch3/appliances_energy_missing_interpolation_ffill.png> <./image
-s/ch3/excel_appliances_missing_interpolation_ffill_preview.png>]
-<images/ch3/appliances_energy_differencing_line.png, id=2284, 650.43pt x 325.21
+[144 <./images/ch3/appliances_energy_rolling_trend.png> <./images/ch3/appliance
+s_energy_missing_interpolation_ffill.png>]
+<images/ch3/appliances_energy_differencing_line.png, id=2435, 650.43pt x 325.21
 5pt>
 File: images/ch3/appliances_energy_differencing_line.png Graphic file (type png
 )
 <use images/ch3/appliances_energy_differencing_line.png>
 Package pdftex.def Info: images/ch3/appliances_energy_differencing_line.png  us
-ed on input line 780.
+ed on input line 704.
 (pdftex.def)             Requested size: 396.91325pt x 198.46025pt.
-<images/ch3/excel_appliances_differencing_line_preview.png, id=2285, 650.43pt x
- 325.215pt>
-File: images/ch3/excel_appliances_differencing_line_preview.png Graphic file (t
-ype png)
-<use images/ch3/excel_appliances_differencing_line_preview.png>
-Package pdftex.def Info: images/ch3/excel_appliances_differencing_line_preview.
-png  used on input line 782.
-(pdftex.def)             Requested size: 396.91325pt x 198.46025pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 785--785
-[]\T5/cmr/m/n/12 Hºnh 4.22: |Sai ph•n b™c mÎt cıa \T5/cmtt/m/n/12 Appliances\T5
-/cmr/m/n/12 . \T5/cmr/m/n/10 Python
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 785--785
-\T5/cmr/m/n/10 source: \T5/cmtt/m/n/10 scripts/generate_group_b_figures.py\T5/c
-mr/m/n/10 . Ex-cel source/workbook:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 785--785
-\T5/cmtt/m/n/10 scripts/generate_group_b_figures.py\T5/cmr/m/n/10 , \T5/cmtt/m/
-n/10 excel/excel_visualization_comparison.xlsx
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -4521,161 +4324,43 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-22.92618pt}.
 
-[139 <./images/ch3/appliances_energy_distribution_raw_vs_log.png> <./images/ch3
+[145 <./images/ch3/appliances_energy_distribution_raw_vs_log.png> <./images/ch3
 /excel_appliances_raw_vs_log_hist_preview.png>]
-<images/ch3/appliances_energy_monthly_ridgeline.png, id=2294, 722.7pt x 433.62p
+<images/ch3/appliances_energy_monthly_ridgeline.png, id=2443, 722.7pt x 433.62p
 t>
 File: images/ch3/appliances_energy_monthly_ridgeline.png Graphic file (type png
 )
 <use images/ch3/appliances_energy_monthly_ridgeline.png>
 Package pdftex.def Info: images/ch3/appliances_energy_monthly_ridgeline.png  us
-ed on input line 791.
+ed on input line 712.
 (pdftex.def)             Requested size: 396.91325pt x 238.14767pt.
-<images/ch3/excel_appliances_ridgeline_preview.png, id=2295, 578.16pt x 303.534
-pt>
-File: images/ch3/excel_appliances_ridgeline_preview.png Graphic file (type png)
 
-<use images/ch3/excel_appliances_ridgeline_preview.png>
-Package pdftex.def Info: images/ch3/excel_appliances_ridgeline_preview.png  use
-d on input line 793.
-(pdftex.def)             Requested size: 396.91325pt x 208.37805pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 796--796
+Underfull \hbox (badness 10000) in paragraph at lines 715--715
 []\T5/cmr/m/n/12 Hºnh 4.23: |Ph•n phËi \T5/cmtt/m/n/12 log1p(Appliances) \T5/cm
-r/m/n/12 theo th°ng. \T5/cmr/m/n/10 Python
+r/m/n/12 theo th°ng. \T5/cmr/m/n/10 Python source:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 796--796
-\T5/cmr/m/n/10 source: \T5/cmtt/m/n/10 src/analyze_appliances_energy.py\T5/cmr/
-m/n/10 . Ex-cel source/workbook:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 796--796
-\T5/cmtt/m/n/10 src/create_excel_visualizations.py\T5/cmr/m/n/10 , \T5/cmtt/m/n
-/10 excel/excel_visualization_comparison.xlsx
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [140 <./images/ch3/appliances_energy_differencing_line.png> <./images/ch3/exce
-l_appliances_differencing_line_preview.png>]
-Overfull \hbox (96.30386pt too wide) in paragraph at lines 803--804
+Overfull \hbox (96.30386pt too wide) in paragraph at lines 721--722
 \T5/cmr/m/n/12 chÂn ^^_∫ ph•n tΩch gÁm \T5/cmtt/m/n/12 f001_tBodyAcc-mean()-X\T
 5/cmr/m/n/12 , \T5/cmtt/m/n/12 f002_tBodyAcc-mean()-Y\T5/cmr/m/n/12 , \T5/cmtt/
 m/n/12 f003_tBodyAcc-mean()-Z\T5/cmr/m/n/12 ,
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 34.92618pt, for example:
-(fancyhdr)                \setlength{\headheight}{34.92618pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-22.92618pt}.
-
-[141 <./images/ch3/appliances_energy_monthly_ridgeline.png> <./images/ch3/excel
-_appliances_ridgeline_preview.png>]
-<images/ch3/har_activity_distribution.png, id=2309, 650.43pt x 361.35pt>
+[146 <./images/ch3/appliances_energy_differencing_line.png> <./images/ch3/appli
+ances_energy_monthly_ridgeline.png>]
+<images/ch3/har_activity_distribution.png, id=2451, 650.43pt x 361.35pt>
 File: images/ch3/har_activity_distribution.png Graphic file (type png)
 <use images/ch3/har_activity_distribution.png>
 Package pdftex.def Info: images/ch3/har_activity_distribution.png  used on inpu
-t line 806.
+t line 724.
 (pdftex.def)             Requested size: 396.91325pt x 220.5114pt.
-<images/ch3/excel_har_activity_distribution_preview.png, id=2310, 650.43pt x 36
-1.35pt>
-File: images/ch3/excel_har_activity_distribution_preview.png Graphic file (type
- png)
-<use images/ch3/excel_har_activity_distribution_preview.png>
-Package pdftex.def Info: images/ch3/excel_har_activity_distribution_preview.png
-  used on input line 808.
-(pdftex.def)             Requested size: 396.91325pt x 220.5114pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 811--811
-[]\T5/cmr/m/n/12 Hºnh 4.24: |T¶n sußt c°c ho§t ^^_Îng trong HAR. \T5/cmr/m/n/10
- Python source:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 811--811
-\T5/cmtt/m/n/10 src/analyze_har.py\T5/cmr/m/n/10 . Ex-cel source/workbook: \T5/
-cmtt/m/n/10 scripts/generate_group_b_figures.py\T5/cmr/m/n/10 ,
- []
-
-[142 <./images/ch3/har_activity_distribution.png> <./images/ch3/excel_har_activ
-ity_distribution_preview.png>]
-<images/ch3/har_selected_feature_line.png, id=2318, 650.43pt x 325.215pt>
+<images/ch3/har_selected_feature_line.png, id=2453, 650.43pt x 325.215pt>
 File: images/ch3/har_selected_feature_line.png Graphic file (type png)
 <use images/ch3/har_selected_feature_line.png>
 Package pdftex.def Info: images/ch3/har_selected_feature_line.png  used on inpu
-t line 817.
+t line 732.
 (pdftex.def)             Requested size: 396.91325pt x 198.46025pt.
-<images/ch3/excel_har_selected_feature_line_preview.png, id=2319, 650.43pt x 32
-5.215pt>
-File: images/ch3/excel_har_selected_feature_line_preview.png Graphic file (type
- png)
-<use images/ch3/excel_har_selected_feature_line_preview.png>
-Package pdftex.def Info: images/ch3/excel_har_selected_feature_line_preview.png
-  used on input line 819.
-(pdftex.def)             Requested size: 396.91325pt x 198.46025pt.
-
-Underfull \hbox (badness 7486) in paragraph at lines 822--822
-[]\T5/cmr/m/n/12 Hºnh 4.25: |Line chart theo in-dex m®u cıa 5 fea-ture HAR ^^_¢
- chÂn.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 822--822
-\T5/cmr/m/n/10 Python source: \T5/cmtt/m/n/10 scripts/generate_group_b_figures.
-py\T5/cmr/m/n/10 . Ex-cel source/workbook:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 822--822
-\T5/cmtt/m/n/10 scripts/generate_group_b_figures.py\T5/cmr/m/n/10 , \T5/cmtt/m/
-n/10 excel/excel_visualization_comparison.xlsx
- []
-
-<images/ch3/har_five_feature_boxplot.png, id=2321, 722.7pt x 361.35pt>
-File: images/ch3/har_five_feature_boxplot.png Graphic file (type png)
-<use images/ch3/har_five_feature_boxplot.png>
-Package pdftex.def Info: images/ch3/har_five_feature_boxplot.png  used on input
- line 828.
-(pdftex.def)             Requested size: 396.91325pt x 198.45639pt.
-<images/ch3/excel_har_five_feature_boxplot_preview.png, id=2322, 722.7pt x 361.
-35pt>
-File: images/ch3/excel_har_five_feature_boxplot_preview.png Graphic file (type 
-png)
-<use images/ch3/excel_har_five_feature_boxplot_preview.png>
-Package pdftex.def Info: images/ch3/excel_har_five_feature_boxplot_preview.png 
- used on input line 830.
-(pdftex.def)             Requested size: 396.91325pt x 198.45639pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 833--833
-[]\T5/cmr/m/n/12 Hºnh 4.26: |Box-plot 5 fea-ture HAR theo ho§t ^^_Îng. \T5/cmr/
-m/n/10 Python
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 833--833
-\T5/cmr/m/n/10 source: \T5/cmtt/m/n/10 scripts/generate_group_b_figures.py\T5/c
-mr/m/n/10 . Ex-cel source/workbook:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 833--833
-\T5/cmtt/m/n/10 scripts/generate_group_b_figures.py\T5/cmr/m/n/10 , \T5/cmtt/m/
-n/10 excel/excel_visualization_comparison.xlsx
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -4684,247 +4369,270 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-22.92618pt}.
 
-[143 <./images/ch3/har_selected_feature_line.png> <./images/ch3/excel_har_selec
-ted_feature_line_preview.png>]
-<images/ch3/har_selected_feature_correlation_heatmap.png, id=2330, 505.89pt x 3
+[147 <./images/ch3/har_activity_distribution.png>]
+<images/ch3/har_five_feature_boxplot.png, id=2461, 722.7pt x 361.35pt>
+File: images/ch3/har_five_feature_boxplot.png Graphic file (type png)
+<use images/ch3/har_five_feature_boxplot.png>
+Package pdftex.def Info: images/ch3/har_five_feature_boxplot.png  used on input
+ line 740.
+(pdftex.def)             Requested size: 396.91325pt x 198.45639pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 743--743
+[]\T5/cmr/m/n/12 Hºnh 4.26: |Box-plot 5 fea-ture HAR theo ho§t ^^_Îng. \T5/cmr/
+m/n/10 Python source:
+ []
+
+<images/ch3/har_selected_feature_correlation_heatmap.png, id=2463, 505.89pt x 3
 61.35pt>
 File: images/ch3/har_selected_feature_correlation_heatmap.png Graphic file (typ
 e png)
 <use images/ch3/har_selected_feature_correlation_heatmap.png>
 Package pdftex.def Info: images/ch3/har_selected_feature_correlation_heatmap.pn
-g  used on input line 839.
-(pdftex.def)             Requested size: 396.91325pt x 283.51701pt.
-<images/ch3/excel_har_corr_heatmap_preview.png, id=2331, 505.89pt x 361.35pt>
-File: images/ch3/excel_har_corr_heatmap_preview.png Graphic file (type png)
-<use images/ch3/excel_har_corr_heatmap_preview.png>
-Package pdftex.def Info: images/ch3/excel_har_corr_heatmap_preview.png  used on
- input line 841.
+g  used on input line 748.
 (pdftex.def)             Requested size: 396.91325pt x 283.51701pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 844--844
+Underfull \hbox (badness 10000) in paragraph at lines 751--751
 []\T5/cmr/m/n/12 Hºnh 4.27: |Heatmap t˜Ïng quan 5 fea-ture HAR. \T5/cmr/m/n/10 
-Python
+Python source:
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 844--844
-\T5/cmr/m/n/10 source: \T5/cmtt/m/n/10 scripts/generate_group_b_figures.py\T5/c
-mr/m/n/10 . Ex-cel source/workbook:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 844--844
-\T5/cmtt/m/n/10 scripts/generate_group_b_figures.py\T5/cmr/m/n/10 , \T5/cmtt/m/
-n/10 excel/excel_visualization_comparison.xlsx
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [144 <./images/ch3/har_five_feature_boxplot.png> <./images/ch3/excel_har_five_
-feature_boxplot_preview.png>]
-Overfull \vbox (6.34912pt too high) has occurred while \output is active []
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 34.92618pt, for example:
-(fancyhdr)                \setlength{\headheight}{34.92618pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-22.92618pt}.
-
-[145 <./images/ch3/har_selected_feature_correlation_heatmap.png> <./images/ch3/
-excel_har_corr_heatmap_preview.png>]
-<images/ch3/mhealth_activity_distribution.png, id=2346, 650.43pt x 361.35pt>
+[148 <./images/ch3/har_selected_feature_line.png> <./images/ch3/har_five_featur
+e_boxplot.png>]
+<images/ch3/mhealth_activity_distribution.png, id=2471, 650.43pt x 361.35pt>
 File: images/ch3/mhealth_activity_distribution.png Graphic file (type png)
 <use images/ch3/mhealth_activity_distribution.png>
 Package pdftex.def Info: images/ch3/mhealth_activity_distribution.png  used on 
-input line 854.
-(pdftex.def)             Requested size: 396.91325pt x 220.5114pt.
-<images/ch3/excel_mhealth_activity_distribution_preview.png, id=2347, 650.43pt 
-x 361.35pt>
-File: images/ch3/excel_mhealth_activity_distribution_preview.png Graphic file (
-type png)
-<use images/ch3/excel_mhealth_activity_distribution_preview.png>
-Package pdftex.def Info: images/ch3/excel_mhealth_activity_distribution_preview
-.png  used on input line 856.
+input line 760.
 (pdftex.def)             Requested size: 396.91325pt x 220.5114pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 859--859
+Underfull \hbox (badness 10000) in paragraph at lines 763--763
 []\T5/cmr/m/n/12 Hºnh 4.28: |T¶n sußt ho§t ^^_Îng trong m®u MHEALTH. \T5/cmr/m/
 n/10 Python source:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 859--859
-\T5/cmtt/m/n/10 src/analyze_mhealth.py\T5/cmr/m/n/10 . Ex-cel source/workbook: 
-\T5/cmtt/m/n/10 scripts/generate_group_b_figures.py\T5/cmr/m/n/10 ,
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [146]
-<images/ch3/mhealth_selected_sensor_line.png, id=2353, 650.43pt x 325.215pt>
-File: images/ch3/mhealth_selected_sensor_line.png Graphic file (type png)
-<use images/ch3/mhealth_selected_sensor_line.png>
-Package pdftex.def Info: images/ch3/mhealth_selected_sensor_line.png  used on i
-nput line 865.
-(pdftex.def)             Requested size: 396.91325pt x 198.46025pt.
-<images/ch3/excel_mhealth_selected_sensor_line_preview.png, id=2354, 650.43pt x
- 325.215pt>
-File: images/ch3/excel_mhealth_selected_sensor_line_preview.png Graphic file (t
-ype png)
-<use images/ch3/excel_mhealth_selected_sensor_line_preview.png>
-Package pdftex.def Info: images/ch3/excel_mhealth_selected_sensor_line_preview.
-png  used on input line 867.
-(pdftex.def)             Requested size: 396.91325pt x 198.46025pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 870--870
-[]\T5/cmr/m/n/12 Hºnh 4.29: |Line chart theo in-dex m®u cıa 6 sen-sor MHEALTH.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 870--870
-\T5/cmr/m/n/10 Python source: \T5/cmtt/m/n/10 scripts/generate_group_b_figures.
-py\T5/cmr/m/n/10 . Ex-cel source/workbook:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 870--870
-\T5/cmtt/m/n/10 scripts/generate_group_b_figures.py\T5/cmr/m/n/10 , \T5/cmtt/m/
-n/10 excel/excel_visualization_comparison.xlsx
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 34.92618pt, for example:
 (fancyhdr)                \setlength{\headheight}{34.92618pt}.
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-22.92618pt}.
 
-[147 <./images/ch3/mhealth_activity_distribution.png> <./images/ch3/excel_mheal
-th_activity_distribution_preview.png>]
-<images/ch3/mhealth_sensor_boxplot.png, id=2362, 722.7pt x 361.35pt>
+[149 <./images/ch3/har_selected_feature_correlation_heatmap.png>]
+<images/ch3/mhealth_selected_sensor_line.png, id=2478, 650.43pt x 325.215pt>
+File: images/ch3/mhealth_selected_sensor_line.png Graphic file (type png)
+<use images/ch3/mhealth_selected_sensor_line.png>
+Package pdftex.def Info: images/ch3/mhealth_selected_sensor_line.png  used on i
+nput line 768.
+(pdftex.def)             Requested size: 396.91325pt x 198.46025pt.
+<images/ch3/mhealth_sensor_boxplot.png, id=2480, 722.7pt x 361.35pt>
 File: images/ch3/mhealth_sensor_boxplot.png Graphic file (type png)
 <use images/ch3/mhealth_sensor_boxplot.png>
 Package pdftex.def Info: images/ch3/mhealth_sensor_boxplot.png  used on input l
-ine 876.
-(pdftex.def)             Requested size: 396.91325pt x 198.45639pt.
-<images/ch3/excel_mhealth_sensor_boxplot_preview.png, id=2363, 722.7pt x 361.35
-pt>
-File: images/ch3/excel_mhealth_sensor_boxplot_preview.png Graphic file (type pn
-g)
-<use images/ch3/excel_mhealth_sensor_boxplot_preview.png>
-Package pdftex.def Info: images/ch3/excel_mhealth_sensor_boxplot_preview.png  u
-sed on input line 878.
+ine 776.
 (pdftex.def)             Requested size: 396.91325pt x 198.45639pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 881--881
+Underfull \hbox (badness 10000) in paragraph at lines 779--779
 []\T5/cmr/m/n/12 Hºnh 4.30: |Box-plot sen-sor theo ho§t ^^_Îng MHEALTH. \T5/cmr
 /m/n/10 Python source:
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 881--881
-\T5/cmtt/m/n/10 src/analyze_mhealth.py\T5/cmr/m/n/10 . Ex-cel source/workbook: 
-\T5/cmtt/m/n/10 scripts/generate_group_b_figures.py\T5/cmr/m/n/10 ,
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [148 <./images/ch3/mhealth_selected_sensor_line.png> <./images/ch3/excel_mheal
-th_selected_sensor_line_preview.png>]
-<images/ch3/mhealth_sensor_rolling_diff.png, id=2371, 650.43pt x 325.215pt>
+[150 <./images/ch3/mhealth_activity_distribution.png> <./images/ch3/mhealth_sel
+ected_sensor_line.png>]
+<images/ch3/mhealth_sensor_rolling_diff.png, id=2488, 650.43pt x 325.215pt>
 File: images/ch3/mhealth_sensor_rolling_diff.png Graphic file (type png)
 <use images/ch3/mhealth_sensor_rolling_diff.png>
 Package pdftex.def Info: images/ch3/mhealth_sensor_rolling_diff.png  used on in
-put line 887.
-(pdftex.def)             Requested size: 396.91325pt x 198.46025pt.
-<images/ch3/excel_mhealth_rolling_diff_preview.png, id=2372, 650.43pt x 325.215
-pt>
-File: images/ch3/excel_mhealth_rolling_diff_preview.png Graphic file (type png)
-
-<use images/ch3/excel_mhealth_rolling_diff_preview.png>
-Package pdftex.def Info: images/ch3/excel_mhealth_rolling_diff_preview.png  use
-d on input line 889.
+put line 784.
 (pdftex.def)             Requested size: 396.91325pt x 198.46025pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 892--892
+Underfull \hbox (badness 10000) in paragraph at lines 787--787
 []\T5/cmr/m/n/12 Hºnh 4.31: |Rolling mean v† sai ph•n cıa \T5/cmtt/m/n/12 senso
-r_01\T5/cmr/m/n/12 . \T5/cmr/m/n/10 Python
+r_01\T5/cmr/m/n/12 . \T5/cmr/m/n/10 Python source:
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 892--892
-\T5/cmr/m/n/10 source: \T5/cmtt/m/n/10 scripts/generate_group_b_figures.py\T5/c
-mr/m/n/10 . Ex-cel source/workbook:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 892--892
-\T5/cmtt/m/n/10 scripts/generate_group_b_figures.py\T5/cmr/m/n/10 , \T5/cmtt/m/
-n/10 excel/excel_visualization_comparison.xlsx
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 34.92618pt, for example:
-(fancyhdr)                \setlength{\headheight}{34.92618pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-22.92618pt}.
-
-[149 <./images/ch3/mhealth_sensor_boxplot.png> <./images/ch3/excel_mhealth_sens
-or_boxplot_preview.png>]
-<images/ch3/mhealth_sensor_correlation_heatmap.png, id=2380, 505.89pt x 361.35p
+<images/ch3/mhealth_sensor_correlation_heatmap.png, id=2490, 505.89pt x 361.35p
 t>
 File: images/ch3/mhealth_sensor_correlation_heatmap.png Graphic file (type png)
 
 <use images/ch3/mhealth_sensor_correlation_heatmap.png>
 Package pdftex.def Info: images/ch3/mhealth_sensor_correlation_heatmap.png  use
-d on input line 898.
-(pdftex.def)             Requested size: 396.91325pt x 283.51701pt.
-<images/ch3/excel_mhealth_corr_heatmap_preview.png, id=2381, 505.89pt x 361.35p
-t>
-File: images/ch3/excel_mhealth_corr_heatmap_preview.png Graphic file (type png)
-
-<use images/ch3/excel_mhealth_corr_heatmap_preview.png>
-Package pdftex.def Info: images/ch3/excel_mhealth_corr_heatmap_preview.png  use
-d on input line 900.
+d on input line 792.
 (pdftex.def)             Requested size: 396.91325pt x 283.51701pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 903--903
-[]\T5/cmr/m/n/12 Hºnh 4.32: |Heatmap t˜Ïng quan c°c sen-sor MHEALTH ^^_¢ chÂn.
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.92618pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.92618pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.92618pt}.
+
+[151 <./images/ch3/mhealth_sensor_boxplot.png> <./images/ch3/mhealth_sensor_rol
+ling_diff.png>]
+Overfull \hbox (8.25716pt too wide) in paragraph at lines 799--799
+|[]\T5/cmr/bx/n/14.4 ^^^Ëi s°nh cÊng cˆ ph•n tΩch: Ex-cel/Spreadsheet v† Python
+| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 903--903
-\T5/cmr/m/n/10 Python source: \T5/cmtt/m/n/10 scripts/generate_group_b_figures.
-py\T5/cmr/m/n/10 . Ex-cel source/workbook:
+Overfull \hbox (10.79674pt too wide) in paragraph at lines 799--799
+\T5/cmr/m/n/12 work-book $\T5/cmtt/m/n/12 excel / excel _ visualization _ compa
+rison _ native . xlsx$\T5/cmr/m/n/12 ; tuy∏n Python dÚng
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 903--903
-\T5/cmtt/m/n/10 scripts/generate_group_b_figures.py\T5/cmr/m/n/10 , \T5/cmtt/m/
-n/10 excel/excel_visualization_comparison.xlsx
+Underfull \hbox (badness 10000) in paragraph at lines 799--799
+[]|\T5/cmr/m/n/10.95 Minh ch˘ng Ex-
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 799--799
+[]|$\T5/cmtt/m/n/10.95 excel / excel _
+ []
 
- [150 <./images/ch3/mhealth_sensor_rolling_diff.png> <./images/ch3/excel_mhealt
-h_rolling_diff_preview.png>]
-Overfull \vbox (6.34912pt too high) has occurred while \output is active []
 
+Underfull \hbox (badness 10000) in paragraph at lines 799--799
+\T5/cmtt/m/n/10.95 visualization _
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 799--799
+\T5/cmtt/m/n/10.95 comparison _ native .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 799--799
+\T5/cmtt/m/n/10.95 xlsx$\T5/cmr/m/n/10.95 : sheet \T5/cmtt/m/n/10.95 Heart
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 799--799
+\T5/cmtt/m/n/10.95 Frequency\T5/cmr/m/n/10.95 , \T5/cmtt/m/n/10.95 Heart Age
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 799--799
+\T5/cmtt/m/n/10.95 Hist\T5/cmr/m/n/10.95 , \T5/cmtt/m/n/10.95 Heart Scatter\T5/
+cmr/m/n/10.95 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 799--799
+\T5/cmtt/m/n/10.95 Heart Target\T5/cmr/m/n/10.95 , \T5/cmtt/m/n/10.95 Heart
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 799--799
+[]|\T5/cmr/m/n/10.95 Appliances En-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 799--799
+[]|$\T5/cmtt/m/n/10.95 excel / excel _
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 799--799
+\T5/cmtt/m/n/10.95 visualization _
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 799--799
+\T5/cmtt/m/n/10.95 comparison _ native .
+ []
+
+
+Underfull \hbox (badness 4193) in paragraph at lines 799--799
+\T5/cmtt/m/n/10.95 xlsx$\T5/cmr/m/n/10.95 : sheet \T5/cmtt/m/n/10.95 Appliances
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 799--799
+\T5/cmtt/m/n/10.95 Daily\T5/cmr/m/n/10.95 , \T5/cmtt/m/n/10.95 Appliances
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 799--799
+\T5/cmtt/m/n/10.95 Histogram\T5/cmr/m/n/10.95 , \T5/cmtt/m/n/10.95 Appliances
+ []
+
+[152 <./images/ch3/mhealth_sensor_correlation_heatmap.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 799--799
+[]|\T5/cmr/m/n/8 Thao t°c trong Ex-
+ []
+
+
+Underfull \hbox (badness 6927) in paragraph at lines 799--799
+\T5/cmr/m/n/8 b£ng t¶n sußt \T5/cmtt/m/n/8 cp\T5/cmr/m/n/8 ; sheet
+ []
+
+
+Underfull \hbox (badness 1648) in paragraph at lines 799--799
+\T5/cmtt/m/n/8 Heart Stats \T5/cmr/m/n/8 dÚng \T5/cmtt/m/n/8 AVERAGE\T5/cmr/m/n
+/8 ,
+ []
+
+
+Underfull \hbox (badness 2020) in paragraph at lines 799--799
+\T5/cmtt/m/n/8 MEDIAN\T5/cmr/m/n/8 , \T5/cmtt/m/n/8 STDEV.S\T5/cmr/m/n/8 , \T5/
+cmtt/m/n/8 MIN\T5/cmr/m/n/8 , \T5/cmtt/m/n/8 MAX\T5/cmr/m/n/8 ,
+ []
+
+
+Underfull \hbox (badness 5954) in paragraph at lines 799--799
+\T5/cmtt/m/n/8 QUARTILE.INC\T5/cmr/m/n/8 ; sheet \T5/cmtt/m/n/8 Heart
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 799--799
+\T5/cmtt/m/n/8 Scatter \T5/cmr/m/n/8 d¸ng ^^_i∫m \T5/cmtt/m/n/8 age\T5/cmr/m/n/
+8 --
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 799--799
+[]|$\T5/cmtt/m/n/8 src / analyze _ heart _
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 799--799
+\T5/cmtt/m/n/8 disease . py$ \T5/cmr/m/n/8 l†m s§ch d˙
+ []
+
+
+Underfull \hbox (badness 4416) in paragraph at lines 799--799
+\T5/cmr/m/n/8 liªu, tΩnh b£ng t¶n sußt,
+ []
+
+
+Underfull \hbox (badness 8094) in paragraph at lines 799--799
+\T5/cmr/m/n/8 v† sinh hºnh b¨ng pan-
+ []
+
+
+Underfull \hbox (badness 2302) in paragraph at lines 799--799
+\T5/cmtt/m/n/8 Appliances Histogram \T5/cmr/m/n/8 d¸ng
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 799--799
+[]|$\T5/cmtt/m/n/8 src / analyze _ appliances _
+ []
+
+
+Underfull \hbox (badness 6961) in paragraph at lines 799--799
+\T5/cmtt/m/n/8 energy . py$ \T5/cmr/m/n/8 gi˙ in-dex thÌi
+ []
+
+
+Underfull \hbox (badness 2521) in paragraph at lines 799--799
+\T5/cmr/m/n/8 gian, tΩnh re-sam-pling theo
+ []
+
+
+Overfull \hbox (20.06273pt too wide) in paragraph at lines 799--799
+\T5/cmr/m/n/12 v®n t§o ^^_˜Òc line chart theo ng†y v† his-togram ph•n phËi \T5/
+cmtt/m/n/12 Appliances\T5/cmr/m/n/12 /\T5/cmtt/m/n/12 log1p(Appliances)
+ []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -4933,126 +4641,125 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-22.92618pt}.
 
-[151 <./images/ch3/mhealth_sensor_correlation_heatmap.png> <./images/ch3/excel_
-mhealth_corr_heatmap_preview.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 929--929
+[153]
+Underfull \hbox (badness 10000) in paragraph at lines 799--799
+[]|\T5/cmr/m/n/10.95 Kh£ n´ng ki∫m
+ []
+
+[154]
+Underfull \hbox (badness 10000) in paragraph at lines 822--822
 []|\T5/cmtt/m/n/10.95 mean_intensity\T5/cmr/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 934--934
-[]\T5/cmr/m/n/12 B£ng 4.17: |ThËng k∂ ^^_∞c tr˜ng £nh HAM10000. Source:
+Underfull \hbox (badness 10000) in paragraph at lines 827--827
+[]\T5/cmr/m/n/12 B£ng 4.20: |ThËng k∂ ^^_∞c tr˜ng £nh HAM10000. Source:
  []
 
-<images/ch3/ham10000_image_dimensions_histogram.png, id=2396, 578.16pt x 361.35
+<images/ch3/ham10000_image_dimensions_histogram.png, id=2535, 578.16pt x 361.35
 pt>
 File: images/ch3/ham10000_image_dimensions_histogram.png Graphic file (type png
 )
 <use images/ch3/ham10000_image_dimensions_histogram.png>
 Package pdftex.def Info: images/ch3/ham10000_image_dimensions_histogram.png  us
-ed on input line 955.
+ed on input line 848.
 (pdftex.def)             Requested size: 211.68661pt x 132.30243pt.
-<images/ch3/ham10000_mean_intensity_boxplot.png, id=2397, 650.43pt x 361.35pt>
+<images/ch3/ham10000_mean_intensity_boxplot.png, id=2536, 650.43pt x 361.35pt>
 File: images/ch3/ham10000_mean_intensity_boxplot.png Graphic file (type png)
 <use images/ch3/ham10000_mean_intensity_boxplot.png>
 Package pdftex.def Info: images/ch3/ham10000_mean_intensity_boxplot.png  used o
-n input line 961.
+n input line 854.
 (pdftex.def)             Requested size: 211.68661pt x 117.60277pt.
 
-Underfull \hbox (badness 7116) in paragraph at lines 964--964
+Underfull \hbox (badness 7116) in paragraph at lines 857--857
 []\T5/cmr/m/n/12 Hºnh 4.33: |SË h‚a v† tr¸c quan h‚a £nh HAM10000. Python sourc
 e:
  []
 
 
-Underfull \vbox (badness 2245) has occurred while \output is active []
-
- [152]
-Overfull \hbox (9.24867pt too wide) in paragraph at lines 968--969
-\T5/cmr/m/n/12 thÊng tin ph•n biªt lÓp; ph¶n h˙u Ωch hÏn n¨m  ^^_∞c tr˜ng c˜Ìn
-g ^^_Î nh˜ \T5/cmtt/m/n/12 mean_intensity
- []
-
-<images/ch3/ham10000_class_distribution.png, id=2403, 650.43pt x 361.35pt>
-File: images/ch3/ham10000_class_distribution.png Graphic file (type png)
-<use images/ch3/ham10000_class_distribution.png>
-Package pdftex.def Info: images/ch3/ham10000_class_distribution.png  used on in
-put line 974.
-(pdftex.def)             Requested size: 211.68661pt x 117.60277pt.
-<images/ch3/ham10000_localization_bar.png, id=2404, 794.97pt x 361.35pt>
-File: images/ch3/ham10000_localization_bar.png Graphic file (type png)
-<use images/ch3/ham10000_localization_bar.png>
-Package pdftex.def Info: images/ch3/ham10000_localization_bar.png  used on inpu
-t line 980.
-(pdftex.def)             Requested size: 211.68661pt x 96.22044pt.
-<images/ch3/ham10000_age_histogram.png, id=2406, 650.43pt x 361.35pt>
-File: images/ch3/ham10000_age_histogram.png Graphic file (type png)
-<use images/ch3/ham10000_age_histogram.png>
-Package pdftex.def Info: images/ch3/ham10000_age_histogram.png  used on input l
-ine 991.
-(pdftex.def)             Requested size: 343.99329pt x 191.11208pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 34.92618pt, for example:
 (fancyhdr)                \setlength{\headheight}{34.92618pt}.
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-22.92618pt}.
 
-[153 <./images/ch3/ham10000_image_dimensions_histogram.png> <./images/ch3/ham10
+[155]
+Overfull \hbox (9.24867pt too wide) in paragraph at lines 861--862
+\T5/cmr/m/n/12 thÊng tin ph•n biªt lÓp; ph¶n h˙u Ωch hÏn n¨m  ^^_∞c tr˜ng c˜Ìn
+g ^^_Î nh˜ \T5/cmtt/m/n/12 mean_intensity
+ []
+
+<images/ch3/ham10000_class_distribution.png, id=2542, 650.43pt x 361.35pt>
+File: images/ch3/ham10000_class_distribution.png Graphic file (type png)
+<use images/ch3/ham10000_class_distribution.png>
+Package pdftex.def Info: images/ch3/ham10000_class_distribution.png  used on in
+put line 867.
+(pdftex.def)             Requested size: 211.68661pt x 117.60277pt.
+<images/ch3/ham10000_localization_bar.png, id=2543, 794.97pt x 361.35pt>
+File: images/ch3/ham10000_localization_bar.png Graphic file (type png)
+<use images/ch3/ham10000_localization_bar.png>
+Package pdftex.def Info: images/ch3/ham10000_localization_bar.png  used on inpu
+t line 873.
+(pdftex.def)             Requested size: 211.68661pt x 96.22044pt.
+<images/ch3/ham10000_age_histogram.png, id=2545, 650.43pt x 361.35pt>
+File: images/ch3/ham10000_age_histogram.png Graphic file (type png)
+<use images/ch3/ham10000_age_histogram.png>
+Package pdftex.def Info: images/ch3/ham10000_age_histogram.png  used on input l
+ine 884.
+(pdftex.def)             Requested size: 343.99329pt x 191.11208pt.
+[156 <./images/ch3/ham10000_image_dimensions_histogram.png> <./images/ch3/ham10
 000_mean_intensity_boxplot.png> <./images/ch3/ham10000_class_distribution.png> 
 <./images/ch3/ham10000_localization_bar.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1017--1017
+Underfull \hbox (badness 10000) in paragraph at lines 910--910
 []|\T5/cmtt/m/n/10.95 primary_topic\T5/cmr/m/n/10.95 , \T5/cmtt/m/n/10.95 topic
 s\T5/cmr/m/n/10.95 ,
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.92618pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.92618pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-22.92618pt}.
 
- [154 <./images/ch3/ham10000_age_histogram.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1022--1022
-[]\T5/cmr/m/n/12 B£ng 4.19: |ThËng k∂ ^^_∞c tr˜ng v´n b£n Reuters-21578. Source
+[157 <./images/ch3/ham10000_age_histogram.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 915--915
+[]\T5/cmr/m/n/12 B£ng 4.22: |ThËng k∂ ^^_∞c tr˜ng v´n b£n Reuters-21578. Source
 :
  []
 
-<images/ch3/reuters_word_count_histogram.png, id=2421, 578.16pt x 361.35pt>
+<images/ch3/reuters_word_count_histogram.png, id=2560, 578.16pt x 361.35pt>
 File: images/ch3/reuters_word_count_histogram.png Graphic file (type png)
 <use images/ch3/reuters_word_count_histogram.png>
 Package pdftex.def Info: images/ch3/reuters_word_count_histogram.png  used on i
-nput line 1039.
+nput line 932.
 (pdftex.def)             Requested size: 211.68661pt x 132.30243pt.
-<images/ch3/reuters_top_topics.png, id=2422, 650.43pt x 361.35pt>
+<images/ch3/reuters_top_topics.png, id=2561, 650.43pt x 361.35pt>
 File: images/ch3/reuters_top_topics.png Graphic file (type png)
 <use images/ch3/reuters_top_topics.png>
 Package pdftex.def Info: images/ch3/reuters_top_topics.png  used on input line 
-1045.
+938.
 (pdftex.def)             Requested size: 211.68661pt x 117.60277pt.
 
-Underfull \hbox (badness 1117) in paragraph at lines 1048--1048
+Underfull \hbox (badness 1117) in paragraph at lines 941--941
 []\T5/cmr/m/n/12 Hºnh 4.36: |SË h‚a v† tr¸c quan h‚a v´n b£n Reuters-21578. Pyt
 hon source:
  []
 
-<images/ch3/reuters_char_count_histogram.png, id=2424, 578.16pt x 361.35pt>
+<images/ch3/reuters_char_count_histogram.png, id=2563, 578.16pt x 361.35pt>
 File: images/ch3/reuters_char_count_histogram.png Graphic file (type png)
 <use images/ch3/reuters_char_count_histogram.png>
 Package pdftex.def Info: images/ch3/reuters_char_count_histogram.png  used on i
-nput line 1058.
+nput line 951.
 (pdftex.def)             Requested size: 211.68661pt x 132.30243pt.
-<images/ch3/reuters_word_char_scatter.png, id=2425, 578.16pt x 361.35pt>
+<images/ch3/reuters_word_char_scatter.png, id=2564, 578.16pt x 361.35pt>
 File: images/ch3/reuters_word_char_scatter.png Graphic file (type png)
 <use images/ch3/reuters_word_char_scatter.png>
 Package pdftex.def Info: images/ch3/reuters_word_char_scatter.png  used on inpu
-t line 1064.
+t line 957.
 (pdftex.def)             Requested size: 211.68661pt x 132.30243pt.
-
-Underfull \vbox (badness 6493) has occurred while \output is active []
-
-
+[158 <./images/ch3/reuters_word_count_histogram.png> <./images/ch3/reuters_top_
+topics.png>]) (parts/chapter4_machine_learning.tex
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 34.92618pt, for example:
@@ -5060,92 +4767,90 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-22.92618pt}.
 
-[155 <./images/ch3/reuters_word_count_histogram.png> <./images/ch3/reuters_top_
-topics.png>]) (parts/chapter4_machine_learning.tex [156 <./images/ch3/reuters_c
-har_count_histogram.png> <./images/ch3/reuters_word_char_scatter.png>]
+[159 <./images/ch3/reuters_char_count_histogram.png> <./images/ch3/reuters_word
+_char_scatter.png>]
 Ch\uhorn \ohorn ng 5.
-(main.ptc)
-Underfull \vbox (badness 10000) has occurred while \output is active []
+(main.ptc [160
 
- [157
+])
+Overfull \hbox (53.4419pt too wide) in paragraph at lines 12--13
+\T5/cmtt/m/n/12 StandardScaler\T5/cmr/m/n/12 ), \T5/cmtt/m/n/12 statsmodels \T5
+/cmr/m/n/12 (ARIMA), \T5/cmtt/m/n/12 xgboost \T5/cmr/m/n/12 (XG-Boost Re-gres-s
+or), \T5/cmtt/m/n/12 matplotlib\T5/cmr/m/n/12 /\T5/cmtt/m/n/12 seaborn
+ []
 
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 17.97173pt, for example:
+(fancyhdr)                \setlength{\headheight}{17.97173pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
+
+[161] [162]
+Overfull \hbox (1.92493pt too wide) in paragraph at lines 61--62
+[]\T5/cmr/bx/n/12 Target 3 -- CDC Di-a-betes Health In-di-ca-tors\T5/cmr/m/n/12
+ : ph•n lÓp \T5/cmr/bx/n/12 3 m˘c \T5/cmtt/m/n/12 Diabetes_012
+ []
+
+
+Overfull \hbox (81.98027pt too wide) in paragraph at lines 83--100
+ [][] 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 17.97173pt, for example:
+(fancyhdr)                \setlength{\headheight}{17.97173pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
+
+[163]
+Overfull \hbox (10.1485pt too wide) in paragraph at lines 102--103
+\T5/cmr/m/n/12 Nh™n x≤t tÍng quan: SVM (RBF) cho k∏t qu£ tËt nhßt tr∂n bÎ Breas
+t Can-cer (F1=0,8966)
+ []
+
+<images/ch4_ml/fig1_cm_breastcancer.png, id=2633, 1011.78pt x 310.761pt>
+File: images/ch4_ml/fig1_cm_breastcancer.png Graphic file (type png)
+<use images/ch4_ml/fig1_cm_breastcancer.png>
+Package pdftex.def Info: images/ch4_ml/fig1_cm_breastcancer.png  used on input 
+line 108.
+(pdftex.def)             Requested size: 441.01773pt x 135.45496pt.
+[164 <./images/ch4_ml/fig1_cm_breastcancer.png>]
+<images/ch4_ml/fig2_cm_heart.png, id=2639, 1011.78pt x 310.761pt>
+File: images/ch4_ml/fig2_cm_heart.png Graphic file (type png)
+<use images/ch4_ml/fig2_cm_heart.png>
+Package pdftex.def Info: images/ch4_ml/fig2_cm_heart.png  used on input line 11
+7.
+(pdftex.def)             Requested size: 441.01773pt x 135.45496pt.
+<images/ch4_ml/fig3_cm_diabetes.png, id=2640, 1011.78pt x 310.761pt>
+File: images/ch4_ml/fig3_cm_diabetes.png Graphic file (type png)
+<use images/ch4_ml/fig3_cm_diabetes.png>
+Package pdftex.def Info: images/ch4_ml/fig3_cm_diabetes.png  used on input line
+ 126.
+(pdftex.def)             Requested size: 441.01773pt x 135.45496pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 17.97173pt, for example:
+(fancyhdr)                \setlength{\headheight}{17.97173pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
+
+[165 <./images/ch4_ml/fig2_cm_heart.png> <./images/ch4_ml/fig3_cm_diabetes.png>
 ]
-Overfull \hbox (99.74597pt too wide) in paragraph at lines 20--21
-\T5/cmr/m/n/12 t§i \T5/cmtt/m/n/12 outputs/tables/ml_classification_metrics.csv
-\T5/cmr/m/n/12 , \T5/cmtt/m/n/12 outputs/tables/ml_regression_metrics.csv
- []
-
-
-Overfull \hbox (215.6262pt too wide) in paragraph at lines 20--21
-\T5/cmr/m/n/12 v† \T5/cmtt/m/n/12 outputs/tables/ml_baseline_metrics.csv\T5/cmr
-/m/n/12 . Con-fu-sion ma-trix n¨m trong \T5/cmtt/m/n/12 outputs/figures/ml_*_co
-nfusion_matrix.png\T5/cmr/m/n/12 . 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-[]\T5/cmr/m/n/12 B£ng 5.1: |K∏t qu£ clas-si-fi-ca-tion nh‚m A. Source:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T5/cmtt/m/n/12 outputs/tables/ml_classification_metrics.csv\T5/cmr/m/n/12 ; co
-de:
- []
-
-[158]
-<../outputs/figures/ml_heart_disease_random_forest_confusion_matrix.png, id=246
-0, 361.35pt x 289.08pt>
-File: ../outputs/figures/ml_heart_disease_random_forest_confusion_matrix.png Gr
-aphic file (type png)
-<use ../outputs/figures/ml_heart_disease_random_forest_confusion_matrix.png>
-Package pdftex.def Info: ../outputs/figures/ml_heart_disease_random_forest_conf
-usion_matrix.png  used on input line 54.
-(pdftex.def)             Requested size: 141.12889pt x 112.90395pt.
-<../outputs/figures/ml_cdc_diabetes_sampled_svm_rbf_confusion_matrix.png, id=24
-61, 361.35pt x 289.08pt>
-File: ../outputs/figures/ml_cdc_diabetes_sampled_svm_rbf_confusion_matrix.png G
-raphic file (type png)
-<use ../outputs/figures/ml_cdc_diabetes_sampled_svm_rbf_confusion_matrix.png>
-Package pdftex.def Info: ../outputs/figures/ml_cdc_diabetes_sampled_svm_rbf_con
-fusion_matrix.png  used on input line 60.
-(pdftex.def)             Requested size: 141.12889pt x 112.90395pt.
-<../outputs/figures/ml_breast_cancer_svm_rbf_confusion_matrix.png, id=2462, 361
-.35pt x 289.08pt>
-File: ../outputs/figures/ml_breast_cancer_svm_rbf_confusion_matrix.png Graphic 
-file (type png)
-<use ../outputs/figures/ml_breast_cancer_svm_rbf_confusion_matrix.png>
-Package pdftex.def Info: ../outputs/figures/ml_breast_cancer_svm_rbf_confusion_
-matrix.png  used on input line 66.
-(pdftex.def)             Requested size: 141.12889pt x 112.90395pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 69--69
-[]\T5/cmr/m/n/12 Hºnh 5.1: |Con-fu-sion ma-trix cho ba b†i to°n clas-si-fi-ca-t
-ion
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 69--69
-\T5/cmr/m/n/12 nh‚m A. Python source: \T5/cmtt/m/n/12 src/run_ml_baselines.py\T
-5/cmr/m/n/12 ; fig-ure paths:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 69--69
-\T5/cmtt/m/n/12 outputs/figures/ml_heart_disease_random_forest_confusion_matrix
-.png\T5/cmr/m/n/12 ,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 69--69
-\T5/cmtt/m/n/12 outputs/figures/ml_cdc_diabetes_sampled_svm_rbf_confusion_matri
-x.png\T5/cmr/m/n/12 ,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 81--81
-[]\T5/cmr/m/n/12 B£ng 5.2: |K∏t qu£ re-gres-sion tr∂n Ap-pli-ances En-ergy. Sou
-rce:
+<images/ch4_ml/fig4_perclass_recall_diabetes.png, id=2649, 433.62pt x 325.215pt
+>
+File: images/ch4_ml/fig4_perclass_recall_diabetes.png Graphic file (type png)
+<use images/ch4_ml/fig4_perclass_recall_diabetes.png>
+Package pdftex.def Info: images/ch4_ml/fig4_perclass_recall_diabetes.png  used 
+on input line 156.
+(pdftex.def)             Requested size: 264.61333pt x 198.47018pt.
+ [166 <./images/ch4_ml/fig4_perclass_recall_diabetes.png>]
+Overfull \hbox (37.98033pt too wide) in paragraph at lines 179--180
+[]\T5/cmtt/m/n/12 lag_1 \T5/cmr/m/n/12 (gi° tr‡ giÌ li∑n tr˜Óc), \T5/cmtt/m/n/1
+2 lag_24 \T5/cmr/m/n/12 (gi° tr‡ cÚng giÌ ng†y hÊm tr˜Óc), \T5/cmtt/m/n/12 roll
+ing_mean_24
  []
 
 
@@ -5155,154 +4860,55 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
-[159 <../outputs/figures/ml_heart_disease_random_forest_confusion_matrix.png> <
-../outputs/figures/ml_cdc_diabetes_sampled_svm_rbf_confusion_matrix.png> <../ou
-tputs/figures/ml_breast_cancer_svm_rbf_confusion_matrix.png>]
-<../outputs/figures/ml_appliances_energy_prediction_sample.png, id=2472, 867.24
-pt x 433.62pt>
-File: ../outputs/figures/ml_appliances_energy_prediction_sample.png Graphic fil
-e (type png)
-<use ../outputs/figures/ml_appliances_energy_prediction_sample.png>
-Package pdftex.def Info: ../outputs/figures/ml_appliances_energy_prediction_sam
-ple.png  used on input line 98.
-(pdftex.def)             Requested size: 379.27551pt x 189.6355pt.
+[167]
+<images/ch4_ml/fig5_forecast_full_test.png, id=2660, 939.51pt x 325.215pt>
+File: images/ch4_ml/fig5_forecast_full_test.png Graphic file (type png)
+<use images/ch4_ml/fig5_forecast_full_test.png>
+Package pdftex.def Info: images/ch4_ml/fig5_forecast_full_test.png  used on inp
+ut line 209.
+(pdftex.def)             Requested size: 441.01773pt x 152.65753pt.
+<images/ch4_ml/fig6_forecast_zoom7days.png, id=2661, 939.51pt x 325.215pt>
+File: images/ch4_ml/fig6_forecast_zoom7days.png Graphic file (type png)
+<use images/ch4_ml/fig6_forecast_zoom7days.png>
+Package pdftex.def Info: images/ch4_ml/fig6_forecast_zoom7days.png  used on inp
+ut line 217.
+(pdftex.def)             Requested size: 441.01773pt x 152.65753pt.
+ [168 <./images/ch4_ml/fig5_forecast_full_test.png>]
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--99
-[]\T5/cmr/m/n/12 Hºnh 5.2: |So s°nh gi° tr‡ th¸c t∏ v† d¸ b°o m®u tr∂n Ap-pli-
- []
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 17.97173pt, for example:
+(fancyhdr)                \setlength{\headheight}{17.97173pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
+[169 <./images/ch4_ml/fig6_forecast_zoom7days.png>]
+<images/ch4_ml/fig7_scatter_actual_vs_pred.png, id=2675, 1011.78pt x 310.761pt>
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--99
-\T5/cmr/m/n/12 ances En-ergy. Python source: \T5/cmtt/m/n/12 src/run_ml_baselin
-es.py\T5/cmr/m/n/12 ; fig-ure path:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 118--118
-[]|\T5/cmr/m/n/10.95 A:
- []
-
-
-Overfull \hbox (13.79373pt too wide) in paragraph at lines 118--118
-\T5/cmr/m/n/10.95 Heart/Breast/CDC| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 118--118
-[]|\T5/cmr/m/n/10.95 K-Means, Hi-er-ar-chi-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 118--119
-[]|\T5/cmr/m/n/10.95 So s°nh
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 118--119
-\T5/cmr/m/n/10.95 mean/median
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 119--119
-[]|\T5/cmr/m/n/10.95 B: Ap-pli-
- []
-
-
-Overfull \hbox (37.60416pt too wide) in paragraph at lines 119--119
-\T5/cmr/m/n/10.95 ances/HAR/MHEALTH| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 119--119
-[]|\T5/cmr/m/n/10.95 Bi∏n c£m bi∏n,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 119--119
-[]|\T5/cmr/m/n/10.95 K-Means, Hi-er-ar-chi-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 120--120
-[]|\T5/cmr/m/n/10.95 C:
- []
-
-
-Overfull \hbox (16.65219pt too wide) in paragraph at lines 120--120
-\T5/cmr/m/n/10.95 HAM10000/Reuters| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 120--120
-[]|\T5/cmr/m/n/10.95 K-Means, Hi-er-ar-chi-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 120--121
-[]|\T5/cmr/m/n/10.95 Cˆm theo
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 120--121
-\T5/cmr/m/n/10.95 ^^_Î s°ng/kΩch
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 120--121
-\T5/cmr/m/n/10.95 th˜Óc/topic sau
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [160 <../outputs/figures/ml_appliances_energy_prediction_sample.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 140--140
-[]|\T5/cmr/m/n/10.95 Logistic Re-gres-sion,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 140--140
-\T5/cmr/m/n/10.95 instance-based learn-ing,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 140--140
-\T5/cmr/m/n/10.95 Ran-dom For-est/SVM
- []
-
-
-Underfull \hbox (badness 3019) in paragraph at lines 140--140
-\T5/cmr/m/n/10.95 th˜Ìng dÚng cho ch©n
- []
-
-
-Underfull \hbox (badness 8113) in paragraph at lines 141--141
-[]|\T5/cmr/m/n/10.95 C°c mÊ hºnh tab-u-lar
- []
-
-
-Underfull \hbox (badness 1184) in paragraph at lines 141--141
-\T5/cmr/m/n/10.95 th˜Ìng ch‡u £nh h˜ng
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 143--143
-[]|\T5/cmr/m/n/10.95 Appliances En-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 143--143
-[]|\T5/cmr/m/n/10.95 D¸ b°o n´ng l˜Òng
- []
-
-
-Underfull \hbox (badness 1092) in paragraph at lines 143--143
-\T5/cmr/m/n/10.95 th˜Ìng c¶n lag, rolling,
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+File: images/ch4_ml/fig7_scatter_actual_vs_pred.png Graphic file (type png)
+<use images/ch4_ml/fig7_scatter_actual_vs_pred.png>
+Package pdftex.def Info: images/ch4_ml/fig7_scatter_actual_vs_pred.png  used on
+ input line 235.
+(pdftex.def)             Requested size: 441.01773pt x 135.45496pt.
+<images/ch4_ml/fig8_residual_xgboost.png, id=2676, 794.97pt x 310.761pt>
+File: images/ch4_ml/fig8_residual_xgboost.png Graphic file (type png)
+<use images/ch4_ml/fig8_residual_xgboost.png>
+Package pdftex.def Info: images/ch4_ml/fig8_residual_xgboost.png  used on input
+ line 242.
+(pdftex.def)             Requested size: 441.01773pt x 172.40326pt.
+<images/ch4_ml/fig9_feature_importance.png, id=2677, 505.89pt x 325.215pt>
+File: images/ch4_ml/fig9_feature_importance.png Graphic file (type png)
+<use images/ch4_ml/fig9_feature_importance.png>
+Package pdftex.def Info: images/ch4_ml/fig9_feature_importance.png  used on inp
+ut line 249.
+(pdftex.def)             Requested size: 308.71106pt x 198.46025pt.
+ [170 <./images/ch4_ml/fig7_scatter_actual_vs_pred.png> <./images/ch4_ml/fig8_r
+esidual_xgboost.png> <./images/ch4_ml/fig9_feature_importance.png>]
+<images/ch4_ml/fig10_elbow_sil_bc.png, id=2689, 794.97pt x 310.761pt>
+File: images/ch4_ml/fig10_elbow_sil_bc.png Graphic file (type png)
+<use images/ch4_ml/fig10_elbow_sil_bc.png>
+Package pdftex.def Info: images/ch4_ml/fig10_elbow_sil_bc.png  used on input li
+ne 267.
+(pdftex.def)             Requested size: 441.01773pt x 172.40326pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -5311,17 +4917,322 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
-[161]) (parts/conclusion.tex [162]
+[171]
+<images/ch4_ml/fig12_elbow_sil_energy.png, id=2695, 794.97pt x 310.761pt>
+File: images/ch4_ml/fig12_elbow_sil_energy.png Graphic file (type png)
+<use images/ch4_ml/fig12_elbow_sil_energy.png>
+Package pdftex.def Info: images/ch4_ml/fig12_elbow_sil_energy.png  used on inpu
+t line 274.
+(pdftex.def)             Requested size: 441.01773pt x 172.40326pt.
+<images/ch4_ml/fig14_elbow_sil_ham.png, id=2696, 794.97pt x 310.761pt>
+File: images/ch4_ml/fig14_elbow_sil_ham.png Graphic file (type png)
+<use images/ch4_ml/fig14_elbow_sil_ham.png>
+Package pdftex.def Info: images/ch4_ml/fig14_elbow_sil_ham.png  used on input l
+ine 281.
+(pdftex.def)             Requested size: 441.01773pt x 172.40326pt.
+ [172 <./images/ch4_ml/fig10_elbow_sil_bc.png> <./images/ch4_ml/fig12_elbow_sil
+_energy.png> <./images/ch4_ml/fig14_elbow_sil_ham.png>]
+Overfull \hbox (173.00012pt too wide) in paragraph at lines 321--329
+ [][] 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 17.97173pt, for example:
+(fancyhdr)                \setlength{\headheight}{17.97173pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
+
+[173]
+Overfull \hbox (40.80582pt too wide) in paragraph at lines 339--347
+ [][] 
+ []
+
+
+Overfull \hbox (87.84865pt too wide) in paragraph at lines 357--365
+ [][] 
+ []
+
+[174]
+<images/ch4_ml/fig11_pca_bc.png, id=2716, 867.24pt x 361.35pt>
+File: images/ch4_ml/fig11_pca_bc.png Graphic file (type png)
+<use images/ch4_ml/fig11_pca_bc.png>
+Package pdftex.def Info: images/ch4_ml/fig11_pca_bc.png  used on input line 371
+.
+(pdftex.def)             Requested size: 441.01773pt x 183.75674pt.
+<images/ch4_ml/fig13_pca_energy.png, id=2717, 433.62pt x 361.35pt>
+File: images/ch4_ml/fig13_pca_energy.png Graphic file (type png)
+<use images/ch4_ml/fig13_pca_energy.png>
+Package pdftex.def Info: images/ch4_ml/fig13_pca_energy.png  used on input line
+ 378.
+(pdftex.def)             Requested size: 264.61333pt x 220.52243pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 17.97173pt, for example:
+(fancyhdr)                \setlength{\headheight}{17.97173pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
+
+[175 <./images/ch4_ml/fig11_pca_bc.png>]
+<images/ch4_ml/fig15_pca_ham.png, id=2723, 867.24pt x 361.35pt>
+File: images/ch4_ml/fig15_pca_ham.png Graphic file (type png)
+<use images/ch4_ml/fig15_pca_ham.png>
+Package pdftex.def Info: images/ch4_ml/fig15_pca_ham.png  used on input line 38
+5.
+(pdftex.def)             Requested size: 441.01773pt x 183.75674pt.
+ [176 <./images/ch4_ml/fig13_pca_energy.png> <./images/ch4_ml/fig15_pca_ham.png
+>]
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+[]|\T5/cmr/bx/n/12 Nghi∂n c˘u
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+[]|\T5/cmr/bx/n/12 K∏t qu£
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+[]|\T5/cmr/m/n/12 Bazazeh &
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+\T5/cmr/m/n/12 Shubair (2016);
+ []
+
+
+Underfull \hbox (badness 3815) in paragraph at lines 413--413
+[]|\T5/cmr/m/n/12 SVM/RF tr∂n
+ []
+
+
+Underfull \hbox (badness 1796) in paragraph at lines 413--413
+[]|\T5/cmr/m/n/12 Accuracy 95--
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+[]|\T5/cmr/m/n/12 Accuracy
+ []
+
+
+Underfull \hbox (badness 1953) in paragraph at lines 413--413
+\T5/cmr/m/n/12 92,11% (SVM,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+[]|\T5/cmr/m/n/12 "Empirical anal-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+\T5/cmr/m/n/12 y-sis of pre-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+\T5/cmr/m/n/12 dict-ing heart
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+\T5/cmr/m/n/12 dis-ease"(2025,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+[]|\T5/cmr/m/n/12 Random For-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+\T5/cmr/m/n/12 est, 13 ^^_∞c
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+[]|\T5/cmr/m/n/12 Accuracy
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+[]|\T5/cmr/m/n/12 Accuracy
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+\T5/cmr/m/n/12 90,16% (Ran-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+[]|\T5/cmr/bx/n/12 G¶n nh˜
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+[]|\T5/cmr/m/n/12 CopulaSMOTE
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+\T5/cmr/m/n/12 (arXiv
+ []
+
+
+Overfull \hbox (14.92984pt too wide) in paragraph at lines 413--413
+[]|\T5/cmr/m/n/12 RF/LR/XGBoost,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+\T5/cmr/m/n/12 ch˜a dÚng
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+\T5/cmr/m/n/12 over-sam-pling
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+[]|\T5/cmr/m/n/12 F1-macro
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+[]|\T5/cmr/m/n/12 CÚng
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+\T5/cmr/m/n/12 kho£ng,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+\T5/cmr/m/n/12 ph£n °nh
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+\T5/cmr/m/n/12 kh‚ kh´n
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+[]|\T5/cmr/m/n/12 Appliances
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+\T5/cmr/m/n/12 En-ergy Pre-
+ []
+
+
+Underfull \hbox (badness 1472) in paragraph at lines 413--413
+[]|\T5/cmr/m/n/12 GBM tr∂n d˙
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+[]|\T5/cmr/m/n/12 RMSE=66,65;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+\T5/cmr/m/n/12 MAE=35,22;
+ []
+
+
+Overfull \hbox (1.38757pt too wide) in paragraph at lines 413--413
+\T5/cmr/m/n/12 MAPE=38,3%| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+[]|\T5/cmr/m/n/12 RMSE=21,11;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+\T5/cmr/m/n/12 MAE=14,50;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+\T5/cmr/m/n/12 MAPE=17,7%
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+\T5/cmr/m/n/12 (XG-Boost,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+[]|\T5/cmr/m/n/12 TËt hÏn
+ []
+
+
+Underfull \hbox (badness 5050) in paragraph at lines 413--413
+\T5/cmr/m/it/12 biªt ph˜Ïng
+ []
+
+
+Underfull \hbox (badness 1314) in paragraph at lines 413--413
+\T5/cmr/m/it/12 ph°p, khÊng
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+\T5/cmr/m/it/12 ph£i kh°c
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 17.97173pt, for example:
+(fancyhdr)                \setlength{\headheight}{17.97173pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
+
+[177]
+Overfull \hbox (16.10687pt too wide) in paragraph at lines 422--423
+\T5/cmr/m/n/12 F1 m† nghi∂n c˘u Cop-u-laS-MOTE (2025) cÊng bË cho c°c ph˜Ïng ph
+°p SMOTE/ADASYN
+ []
+
+
+Overfull \hbox (6.30484pt too wide) in paragraph at lines 424--425
+\T5/cmr/bx/n/12 ph˜Ïng ph°p lu™n, khÊng ph£i mÊ hºnh v˜Òt trÎi: \T5/cmr/m/n/12 
+K∏t qu£ cıa nh‚m (MAE=14,50
+ []
+
+[178]
+Overfull \hbox (44.73643pt too wide) in paragraph at lines 438--439
+\T5/cmr/m/n/12 tr˜ng, qu≤t $\OML/cmm/m/it/12 K \OT1/cmr/m/n/12 = 2\OML/cmm/m/it
+/12 ::\OT1/cmr/m/n/12 8$ \T5/cmr/m/n/12 ^^_∫ tΩnh El-bow/Silhouette, hußn luyªn
+ KMeans/Agglomerative/GMM
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 17.97173pt, for example:
+(fancyhdr)                \setlength{\headheight}{17.97173pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
+
+[179]) (parts/conclusion.tex [180]
 Ch\uhorn \ohorn ng 6.
 
 Overfull \hbox (33.196pt too wide) in paragraph at lines 1--1
 |\T5/cmr/m/sc/24.88 KòT LUäN VÄ H◊ŒNG PHÅT TRIöN| 
  []
 
-(main.ptc)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [163
+(main.ptc) [181
 
 ]
 Overfull \hbox (4.33437pt too wide) in paragraph at lines 29--30
@@ -5329,7 +5240,7 @@ Overfull \hbox (4.33437pt too wide) in paragraph at lines 29--30
 g mean, bi∏n giÌ/ng†y/th˘,
  []
 
-[164]
+[182]
 Overfull \hbox (94.59543pt too wide) in paragraph at lines 40--41
 []\T5/cmr/m/n/12 Script ph•n tΩch v† hÂc m°y: \T5/cmtt/m/n/12 src/analyze_heart
 _disease.py\T5/cmr/m/n/12 , \T5/cmtt/m/n/12 src/analyze_tabular_health.py\T5/cm
@@ -5340,7 +5251,13 @@ r/m/n/12 ,
 Overfull \hbox (84.9022pt too wide) in paragraph at lines 40--41
 \T5/cmtt/m/n/12 src/analyze_appliances_energy.py\T5/cmr/m/n/12 , \T5/cmtt/m/n/1
 2 src/analyze_ham10000.py\T5/cmr/m/n/12 , \T5/cmtt/m/n/12 src/run_ml_baselines.
-py\T5/cmr/m/n/12 . 
+py\T5/cmr/m/n/12 ,
+ []
+
+
+Overfull \hbox (24.50565pt too wide) in paragraph at lines 44--45
+[]\T5/cmr/m/n/12 Workbook Ex-cel ^^_Ëi chi∏u: \T5/cmtt/m/n/12 excel/excel_visua
+lization_comparison_native.xlsx\T5/cmr/m/n/12 ;
  []
 
 )
@@ -5351,10 +5268,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-5.97173pt}.
 
-[165] [166
+[183] [184
 
-] [167]
-Overfull \hbox (0.79262pt too wide) in paragraph at lines 222--222
+]
+Overfull \hbox (0.79262pt too wide) in paragraph at lines 295--295
 []\T5/cmr/m/n/12 Michael Smith. \T5/cmr/m/it/12 Di-a-betes Health In-di-ca-tors
  Dataset\T5/cmr/m/n/12 . UCI Ma-chine Learn-ing Repos-
  []
@@ -5377,22 +5294,29 @@ Package minitoc(hints) Warning: W0024
 \tf@ptc=\write10
 \openout10 = `main.ptc'.
 
-[168] (main.aux)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 17.97171pt, for example:
+(fancyhdr)                \setlength{\headheight}{17.97171pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-5.97171pt}.
+
+[185] (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 3AAEFF107E2B1D6CA1652DB7F5A0A7C8;32403.
+(rerunfilecheck)             Checksum: 2AC009761943A4AFDAD2E36B21D18FED;38971.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45009 strings out of 474486
- 913699 string characters out of 5743754
- 1950542 words of memory out of 5000000
- 65957 multiletter control sequences out of 15000+600000
+ 45107 strings out of 474486
+ 910802 string characters out of 5743754
+ 1952542 words of memory out of 5000000
+ 65982 multiletter control sequences out of 15000+600000
  590801 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,14n,87p,2491b,2309s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -5421,9 +5345,9 @@ nr/vnti12.pfb><C:/Users/Hello/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/v
 nr/vntt10.pfb><C:/Users/Hello/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/v
 nr/vntt12.pfb><C:/Users/Hello/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/v
 nr/vntt8.pfb>
-Output written on main.pdf (186 pages, 9010133 bytes).
+Output written on main.pdf (201 pages, 9563943 bytes).
 PDF statistics:
- 2782 PDF objects out of 2984 (max. 8388607)
- 670 named destinations out of 1000 (max. 500000)
- 1686 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3070 PDF objects out of 3580 (max. 8388607)
+ 743 named destinations out of 1000 (max. 500000)
+ 1796 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,10 @@
+Dataset,Algorithm,K,Silhouette
+Breast Cancer,KMeans,2,0.38161967346185804
+Breast Cancer,Agglomerative,2,0.3995460248919755
+Breast Cancer,Gaussian Mixture,2,0.2686431329267397
+Appliances Energy,KMeans,2,0.22316576427250392
+Appliances Energy,Agglomerative,2,0.19336084691651634
+Appliances Energy,Gaussian Mixture,2,0.2028410796136002
+HAM10000,KMeans,2,0.24475668635844514
+HAM10000,Agglomerative,2,0.2062070352834409
+HAM10000,Gaussian Mixture,2,0.11863032900362819

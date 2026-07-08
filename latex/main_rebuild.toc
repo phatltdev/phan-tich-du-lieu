@@ -1,0 +1,130 @@
+\babel@toc {english}{}\relax 
+\babel@toc {vietnamese}{}\relax 
+\contentsline {chapter}{Mục lục}{ii}{chapter*.1}%
+\contentsline {chapter}{Danh sách Hình}{v}{chapter*.2}%
+\contentsline {chapter}{Danh sách Bảng}{viii}{chapter*.3}%
+\contentsline {chapter}{\numberline {1}GIỚI THIỆU}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}CƠ SỞ LÝ THUYẾT}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Các số đo xu hướng trung tâm}{6}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Mean (Trung bình cộng)}{6}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Median (Trung vị)}{7}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Mode (Giá trị xuất hiện nhiều nhất)}{8}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Percentiles (Phân vị)}{10}{subsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.1.5}Trimmed Mean (Trung bình cắt ngọn)}{11}{subsection.2.1.5}%
+\contentsline {subsection}{\numberline {2.1.6}Geometric Mean (Trung bình nhân)}{13}{subsection.2.1.6}%
+\contentsline {section}{\numberline {2.2}Các số đo độ phân tán}{14}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Range (Khoảng biến thiên)}{14}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Variance (Phương sai) và Standard Deviation (Độ lệch chuẩn)}{15}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Coefficient of Variation (Hệ số biến thiên)}{16}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Interquartile Range (Khoảng tứ phân vị)}{17}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}Mean Absolute Deviation (MAD)}{18}{subsection.2.2.5}%
+\contentsline {subsection}{\numberline {2.2.6}Median Absolute Deviation (MAD - Độ lệch tuyệt đối trung vị)}{19}{subsection.2.2.6}%
+\contentsline {subsection}{\numberline {2.2.7}Bảng tần suất và tần suất tương đối}{20}{subsection.2.2.7}%
+\contentsline {subsection}{\numberline {2.2.8}Z-score (Điểm chuẩn hóa)}{21}{subsection.2.2.8}%
+\contentsline {section}{\numberline {2.3}Minh họa tính toán chi tiết trên hai biến thực tế}{22}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Biến \texttt {chol} trong Heart Disease (nhóm A)}{22}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Biến \texttt {Appliances} trong Appliances Energy Prediction (nhóm B)}{26}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.4}Hệ thống biểu đồ trực quan hóa và tác dụng phân tích}{30}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Quy trình chung khi vẽ và phân tích biểu đồ}{30}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Nhóm biểu đồ phân phối}{31}{subsection.2.4.2}%
+\contentsline {subsubsection}{Histogram (Biểu đồ tần suất)}{32}{subsubsection*.28}%
+\contentsline {subsubsection}{Boxplot (Biểu đồ hộp): phát hiện dữ liệu bất thường dựa trên IQR}{34}{subsubsection*.33}%
+\contentsline {subsection}{\numberline {2.4.3}Nhóm biểu đồ tương quan và cơ cấu}{36}{subsection.2.4.3}%
+\contentsline {subsubsection}{Scatter plot (Biểu đồ phân tán): tìm liên hệ tuyến tính/phi tuyến}{37}{subsubsection*.38}%
+\contentsline {subsubsection}{Bar chart/Pie chart (Biểu đồ cột/tròn): cơ cấu định tính}{41}{subsubsection*.43}%
+\contentsline {subsection}{\numberline {2.4.4}Các dạng biểu đồ khác}{43}{subsection.2.4.4}%
+\contentsline {subsubsection}{Line chart (Biểu đồ đường) cho chuỗi thời gian}{44}{subsubsection*.49}%
+\contentsline {subsubsection}{Correlation heatmap (Bản đồ nhiệt tương quan): tương quan nhiều biến định lượng}{46}{subsubsection*.54}%
+\contentsline {subsection}{\numberline {2.4.5}Một số dạng biểu đồ bổ sung phù hợp với bài toán}{47}{subsection.2.4.5}%
+\contentsline {subsubsection}{Raincloud plot (Biểu đồ mưa-mây) cho phân phối theo lớp}{48}{subsubsection*.59}%
+\contentsline {subsubsection}{Ridgeline plot (Biểu đồ sống núi) cho nhiều phân phối song song}{49}{subsubsection*.60}%
+\contentsline {subsubsection}{Hexbin plot (Biểu đồ tổ ong) cho dữ liệu hai biến dày điểm}{50}{subsubsection*.62}%
+\contentsline {section}{\numberline {2.5}Các phép biến đổi và tiền xử lý cơ bản}{51}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Điền khuyết}{52}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Chuẩn hóa thang đo}{52}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}Log transform và differencing cho chuỗi thời gian}{53}{subsection.2.5.3}%
+\contentsline {section}{\numberline {2.6}Quy trình phân tích khám phá dữ liệu}{54}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Nguyên tắc chọn biểu đồ theo câu hỏi phân tích}{55}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Diễn giải thống kê trong bối cảnh dữ liệu}{56}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Các sai lệch thường gặp khi đọc biểu đồ}{57}{section.2.9}%
+\contentsline {section}{\numberline {2.10}Minh họa tính toán trên Heart Disease}{57}{section.2.10}%
+\contentsline {section}{\numberline {2.11}Liên kết lý thuyết với các chương sau}{61}{section.2.11}%
+\contentsline {chapter}{\numberline {3}THU THẬP, MÔ TẢ VÀ TỔNG QUAN CÁC BỘ DỮ LIỆU}{62}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Tiêu chí lựa chọn dữ liệu}{64}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Chiến lược thu thập và kiểm chứng dữ liệu}{64}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Nhóm A: Dữ liệu dạng bảng}{67}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Heart Disease}{67}{subsection.3.3.1}%
+\contentsline {subsubsection}{Giới thiệu bộ dữ liệu}{67}{subsubsection*.79}%
+\contentsline {subsubsection}{Các nghiên cứu liên quan}{68}{subsubsection*.81}%
+\contentsline {subsubsection}{Phép toán thống kê mô tả và trực quan hóa}{69}{subsubsection*.83}%
+\contentsline {subsubsection}{Ứng dụng vào mô hình học máy}{76}{subsubsection*.98}%
+\contentsline {subsection}{\numberline {3.3.2}CDC Diabetes Health Indicators}{77}{subsection.3.3.2}%
+\contentsline {subsubsection}{Giới thiệu bộ dữ liệu}{77}{subsubsection*.100}%
+\contentsline {subsubsection}{Các nghiên cứu liên quan}{78}{subsubsection*.102}%
+\contentsline {subsubsection}{Phép toán thống kê mô tả và trực quan hóa}{78}{subsubsection*.104}%
+\contentsline {subsubsection}{Ứng dụng vào mô hình học máy}{83}{subsubsection*.114}%
+\contentsline {subsection}{\numberline {3.3.3}Breast Cancer Wisconsin Diagnostic}{83}{subsection.3.3.3}%
+\contentsline {subsubsection}{Giới thiệu bộ dữ liệu}{83}{subsubsection*.116}%
+\contentsline {subsubsection}{Các nghiên cứu liên quan}{85}{subsubsection*.118}%
+\contentsline {subsubsection}{Phép toán thống kê mô tả và trực quan hóa}{85}{subsubsection*.120}%
+\contentsline {subsubsection}{Ứng dụng vào mô hình học máy}{89}{subsubsection*.130}%
+\contentsline {section}{\numberline {3.4}Nhóm B: Dữ liệu chuỗi thời gian và cảm biến}{90}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}B1 - Appliances Energy Prediction}{91}{subsection.3.4.1}%
+\contentsline {subsubsection}{Giới thiệu bộ dữ liệu}{91}{subsubsection*.133}%
+\contentsline {subsubsection}{Các nghiên cứu liên quan}{92}{subsubsection*.134}%
+\contentsline {subsubsection}{Phép toán thống kê mô tả và trực quan hóa}{92}{subsubsection*.136}%
+\contentsline {subsubsection}{Ứng dụng vào mô hình học máy}{94}{subsubsection*.143}%
+\contentsline {subsection}{\numberline {3.4.2}B2 - Human Activity Recognition Using Smartphones}{95}{subsection.3.4.2}%
+\contentsline {subsubsection}{Giới thiệu bộ dữ liệu}{95}{subsubsection*.145}%
+\contentsline {subsubsection}{Các nghiên cứu liên quan}{96}{subsubsection*.147}%
+\contentsline {subsubsection}{Phép toán thống kê mô tả và trực quan hóa}{96}{subsubsection*.149}%
+\contentsline {subsubsection}{Ứng dụng vào mô hình học máy}{99}{subsubsection*.155}%
+\contentsline {subsection}{\numberline {3.4.3}B3 - MHEALTH Dataset}{99}{subsection.3.4.3}%
+\contentsline {subsubsection}{Giới thiệu bộ dữ liệu}{99}{subsubsection*.156}%
+\contentsline {subsubsection}{Các nghiên cứu liên quan}{100}{subsubsection*.157}%
+\contentsline {subsubsection}{Phép toán thống kê mô tả và trực quan hóa}{100}{subsubsection*.159}%
+\contentsline {subsubsection}{Ứng dụng vào mô hình học máy}{102}{subsubsection*.166}%
+\contentsline {section}{\numberline {3.5}Nhóm C: Dữ liệu đa phương tiện}{103}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}C1 - HAM10000}{103}{subsection.3.5.1}%
+\contentsline {subsubsection}{Giới thiệu bộ dữ liệu}{103}{subsubsection*.169}%
+\contentsline {subsubsection}{Các nghiên cứu liên quan}{105}{subsubsection*.171}%
+\contentsline {subsubsection}{Phép toán thống kê mô tả và trực quan hóa}{105}{subsubsection*.173}%
+\contentsline {subsubsection}{Ứng dụng vào mô hình học máy}{107}{subsubsection*.179}%
+\contentsline {subsection}{\numberline {3.5.2}C2 - Reuters-21578 Text Categorization}{107}{subsection.3.5.2}%
+\contentsline {subsubsection}{Giới thiệu bộ dữ liệu}{107}{subsubsection*.180}%
+\contentsline {subsubsection}{Các nghiên cứu liên quan}{108}{subsubsection*.182}%
+\contentsline {subsubsection}{Phép toán thống kê mô tả và trực quan hóa}{109}{subsubsection*.184}%
+\contentsline {subsubsection}{Ứng dụng vào mô hình học máy}{111}{subsubsection*.190}%
+\contentsline {section}{\numberline {3.6}Đánh giá chất lượng dữ liệu và rủi ro phân tích}{113}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Liên hệ giữa nguồn dữ liệu và yêu cầu bài toán}{113}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Các dữ liệu và nội dung cần bổ sung tiếp}{114}{section.3.8}%
+\contentsline {section}{\numberline {3.9}Đường dẫn minh chứng và tái sử dụng}{115}{section.3.9}%
+\contentsline {chapter}{\numberline {4}PHÂN TÍCH ĐẶC ĐIỂM DỮ LIỆU QUA THỐNG KÊ VÀ TRỰC QUAN HÓA}{116}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Phân tích chi tiết dữ liệu cấu trúc}{119}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Nhóm A: dữ liệu dạng bảng}{119}{subsection.4.1.1}%
+\contentsline {subsubsection}{Heart Disease}{119}{subsubsection*.196}%
+\contentsline {subsubsection}{CDC Diabetes Health Indicators}{128}{subsubsection*.207}%
+\contentsline {subsubsection}{Breast Cancer Wisconsin Diagnostic}{135}{subsubsection*.218}%
+\contentsline {subsection}{\numberline {4.1.2}Nhóm B: dữ liệu chuỗi thời gian và cảm biến}{141}{subsection.4.1.2}%
+\contentsline {subsubsection}{Appliances Energy Prediction}{141}{subsubsection*.227}%
+\contentsline {subsubsection}{Human Activity Recognition Using Smartphones}{147}{subsubsection*.236}%
+\contentsline {subsubsection}{MHEALTH}{149}{subsubsection*.241}%
+\contentsline {subsection}{\numberline {4.1.3}Đối sánh công cụ phân tích: Excel/Spreadsheet và Python}{152}{subsection.4.1.3}%
+\contentsline {section}{\numberline {4.2}Số hóa, thống kê và trực quan hóa dữ liệu đa phương tiện}{155}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Bộ dữ liệu ảnh: HAM10000}{155}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Bộ dữ liệu văn bản: Reuters-21578}{157}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Kết luận chương}{159}{section.4.3}%
+\contentsline {chapter}{\numberline {5}PHÂN TÍCH DỮ LIỆU VỚI HỌC MÁY VÀ ĐỐI SÁNH KẾT QUẢ}{160}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Quy trình học máy và minh chứng}{160}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Classification trên nhóm A}{161}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Regression và dự báo trên nhóm B}{162}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Clustering trên nhóm A, B và C}{163}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Đối sánh với nghiên cứu liên quan}{165}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Kết luận Chương 4}{166}{section.5.6}%
+\contentsline {chapter}{\numberline {6}KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN}{167}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Kết luận}{167}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Hạn chế}{168}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Hướng phát triển}{168}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Minh chứng tái lập}{169}{section.6.4}%
+\contentsline {chapter}{Tài liệu tham khảo}{171}{chapter*.266}%
+\contentsfinish 
