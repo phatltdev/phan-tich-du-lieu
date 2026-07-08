@@ -124,6 +124,8 @@ def save_plots(df: pd.DataFrame, cleaned: pd.DataFrame) -> None:
     plt.title("Daily mean appliances energy consumption")
     plt.xlabel("Date")
     plt.ylabel("Appliances energy (Wh)")
+    # Aligned y-axis shared with the Excel preview (daily mean ranges 37.5-188.54).
+    plt.ylim(0, 200)
     plt.tight_layout()
     plt.savefig(FIGURES / "appliances_energy_daily_line.png", dpi=180)
     plt.close()
@@ -133,9 +135,30 @@ def save_plots(df: pd.DataFrame, cleaned: pd.DataFrame) -> None:
     axes[0].set_title("Raw Appliances distribution")
     sns.histplot(cleaned["Appliances_log1p"], bins=40, kde=True, ax=axes[1], color="#54A24B")
     axes[1].set_title("Log1p Appliances distribution")
+    # Aligned limits shared with the Excel preview so the two versions can be
+    # compared on the same axes.
+    axes[0].set_xlim(0, 1100)
+    axes[0].set_ylim(0, 11000)
+    axes[1].set_xlim(2.0, 7.5)
+    axes[1].set_ylim(0, 5000)
     fig.tight_layout()
     fig.savefig(FIGURES / "appliances_energy_distribution_raw_vs_log.png", dpi=180)
     plt.close(fig)
+
+    # Phiên bản tách: mỗi histogram một ảnh riêng để dễ trình bày trong báo cáo.
+    plt.figure(figsize=(7, 5))
+    sns.histplot(df["Appliances"], bins=40, kde=True, color="#F58518")
+    plt.title("Raw Appliances distribution")
+    plt.tight_layout()
+    plt.savefig(FIGURES / "appliances_energy_distribution_raw.png", dpi=180)
+    plt.close()
+
+    plt.figure(figsize=(7, 5))
+    sns.histplot(cleaned["Appliances_log1p"], bins=40, kde=True, color="#54A24B")
+    plt.title("Log1p Appliances distribution")
+    plt.tight_layout()
+    plt.savefig(FIGURES / "appliances_energy_distribution_log1p.png", dpi=180)
+    plt.close()
 
     plt.figure(figsize=(8, 5))
     sns.boxplot(y=cleaned["Appliances"], color="#B279A2")
@@ -157,7 +180,9 @@ def save_plots(df: pd.DataFrame, cleaned: pd.DataFrame) -> None:
     months = sorted(ridgeline["month"].dropna().unique())
     plt.figure(figsize=(10, 6))
     palette = sns.color_palette("viridis", n_colors=len(months))
-    bins = np.linspace(ridgeline["Appliances_log1p"].min(), ridgeline["Appliances_log1p"].max(), 80)
+    # Shared x-axis range with the Excel preview so the two versions align.
+    ridgeline_xlim = (2.0, 7.5)
+    bins = np.linspace(ridgeline_xlim[0], ridgeline_xlim[1], 80)
     centers = (bins[:-1] + bins[1:]) / 2
     kernel = np.array([1, 2, 3, 2, 1], dtype=float)
     kernel = kernel / kernel.sum()
@@ -174,6 +199,7 @@ def save_plots(df: pd.DataFrame, cleaned: pd.DataFrame) -> None:
     plt.xlabel("log1p(Appliances)")
     plt.ylabel("Month")
     plt.title("Ridgeline plot of Appliances consumption by month")
+    plt.xlim(ridgeline_xlim)
     plt.tight_layout()
     plt.savefig(FIGURES / "appliances_energy_monthly_ridgeline.png", dpi=180)
     plt.close()

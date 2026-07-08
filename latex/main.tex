@@ -79,25 +79,21 @@
 []
 
 %command to print the acutal minitoc
+% The minitoc lists both sections and subsections (tocdepth >= 2). It is no
+% longer wrapped in a tikzpicture/minipage node (which cannot break across
+% pages), so a long chapter (e.g. 36 entries in Chapter 2) can flow naturally
+% onto the next page while still starting under the chapter title. The top and
+% bottom rule are drawn directly so the visual frame is preserved.
 \newcommand{\printmyminitoc}[1]{%
-	\noindent\hspace{1cm}%
 	\colorlet{chpnumbercolor}{black}%
-	\begin{tikzpicture}
-	\node(s){
-		\begin{minipage}{.9\linewidth}%minipage trick
-		\printcontents[chapters]{}{1}{}
-		\end{minipage}
-	};
-	{
-		\color{yourcolor}
-		\draw(s.north west)--(s.north east) (s.south west)--(s.south east);
-	}
-	\end{tikzpicture}
+	\noindent\textcolor{yourcolor}{\rule{\linewidth}{1pt}}\par
+	\vspace*{1ex}%
+	\hspace*{1cm}\printcontents[chapters]{}{1}{}%
+	\vspace*{1ex}\par
+	\noindent\textcolor{yourcolor}{\rule{\linewidth}{1pt}}\par
 	\vspace*{3ex}
-	
+
 	#1
-	\vfill
-	\pagebreak
 }
 
 
@@ -128,7 +124,7 @@
 	
 		\begin{center}
 			\begin{tabular}{c@{\hskip 0.1cm}c}
-				\includegraphics[height=2cm]{images/logoCTU.png} 
+				\includegraphics[height=2cm]{images/assets/logoCTU.png} 
 			\end{tabular}
 		\end{center}
 	
@@ -214,6 +210,7 @@
 
 \fancyhead[RO]{\leftmark}
 
+\input{parts/chapter0_introduction.tex}
 \input{parts/chapter1_theory.tex}
 \input{parts/chapter2_datasets.tex}
 \input{parts/chapter3_statistics_visualization.tex}

@@ -2,798 +2,856 @@
 
 \startcontents[chapters]
 \printmyminitoc{
-Chương này trình bày kết quả thống kê mô tả, bảng tần suất, trực quan hóa và so sánh trước/sau tiền xử lý dữ liệu. Mỗi hình và bảng đều được gắn với đường dẫn source code tương đối để có thể tái lập kết quả khi nộp kèm thư mục dự án.
-}
+Chương này là phần thực hành trọng tâm của báo cáo: dữ liệu đã thu thập ở Chương 2 được phân loại biến, thống kê mô tả, trực quan hóa và so sánh trước--sau tiền xử lý. Nội dung bám theo yêu cầu trong \texttt{docments/chuong\_4.md}: nhóm A và B phải chọn tối thiểu 5 biến cho mỗi bộ dữ liệu; nhóm B phải thể hiện đặc thù chuỗi thời gian/cảm biến; nhóm C phải số hóa dữ liệu đa phương tiện thành đặc trưng Quantitative trước khi thống kê. Ngoài biểu đồ tạo bằng Python, chương còn đối chiếu một số biểu đồ tương ứng được tạo trong Excel để chứng minh tính nhất quán của kết quả.}
 
-\section{Phần lý thuyết: thống kê mô tả và trực quan hóa}
+\section*{Quy trình phân tích và bản đồ minh chứng}
 
-Yêu cầu 2 tập trung vào việc hiểu dữ liệu bằng hai nhóm công cụ bổ trợ nhau: \textbf{thống kê mô tả} cho biết đặc điểm định lượng của biến, còn \textbf{trực quan hóa} giúp nhìn nhanh phân phối, ngoại lệ, quan hệ và xu hướng. Trong chương này, bộ dữ liệu Heart Disease thuộc nhóm A được chọn làm ví dụ minh họa chính cho phần lý thuyết vì có cả biến định tính như \texttt{cp}, \texttt{sex}, \texttt{target} và biến định lượng như \texttt{age}, \texttt{chol}, \texttt{thalach}, \texttt{oldpeak}. Ngoài ra, Appliances Energy thuộc nhóm B và HAM10000/Reuters thuộc nhóm C được dùng để minh họa thêm cho dữ liệu chuỗi thời gian, ảnh và văn bản.
+Mỗi bộ dữ liệu trong chương được xử lý theo bốn bước thống nhất:
 
-\subsection{Các thông số thống kê mô tả}
+\begingroup
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.75\baselineskip}
+
+\textbf{Bước 1. Phân loại bản chất biến:} xác định biến Qualitative hay Quantitative; với biến Quantitative, phân biệt Discrete và Continuous.
+
+\textbf{Bước 2. Lập bảng tần suất và thống kê mô tả:} biến Qualitative dùng tần suất, tần suất tương đối và mode; biến Quantitative dùng mean, median, mode, percentile, range, variance, standard deviation, coefficient of variation (CV) và interquartile range (IQR).
+
+\textbf{Bước 3. Trực quan hóa:} nhóm A dùng histogram, boxplot, scatter plot, bar/pie chart; nhóm B dùng thêm line chart để đọc xu hướng và mùa vụ; nhóm C dùng các biểu đồ theo đặc trưng đã số hóa.
+
+\textbf{Bước 4. So sánh trước--sau tiền xử lý:} đặt dữ liệu thô cạnh dữ liệu sạch để đánh giá tác động của điền khuyết, xử lý ngoại lai, chuẩn hóa, log-transform, differencing hoặc nội suy theo thời gian.
+\endgroup
 
 \begin{table}[H]
 \centering
-\caption{Ý nghĩa các thông số thống kê khi phân tích dữ liệu}
-\label{tab:chapter3_statistical_meaning}
-\scriptsize
-\setlength{\tabcolsep}{3pt}
-\renewcommand{\arraystretch}{1.18}
-\begin{tabularx}{\textwidth}{>{\RaggedRight\arraybackslash}p{0.20\textwidth}>{\RaggedRight\arraybackslash}p{0.24\textwidth}Y}
+\vspace*{1.2\baselineskip}
+\caption{Bản đồ minh chứng dùng trong Chương 4}
+\label{tab:ch4_artifact_map}
+\footnotesize
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.22}
+\begin{tabularx}{\textwidth}{>{\RaggedRight\arraybackslash}p{0.16\textwidth}>{\RaggedRight\arraybackslash}p{0.27\textwidth}>{\RaggedRight\arraybackslash}p{0.37\textwidth}Y}
 \toprule
-Thông số & Công thức/khái niệm & Ý nghĩa khi phân tích dữ liệu \\
+Hạng mục & Source code & Output chính & Vai trò \\
 \midrule
-Sample Mean & $\bar{x}=\frac{1}{n}\sum_{i=1}^{n}x_i$ & Giá trị trung bình mẫu; dùng để mô tả mức điển hình của biến định lượng. Nhạy với outlier nên cần so sánh với median. \\
-Median & Giá trị ở vị trí giữa sau khi sắp xếp & Đại diện trung tâm bền vững hơn mean khi dữ liệu lệch hoặc có outlier, ví dụ \texttt{oldpeak}. \\
-Mode & Giá trị xuất hiện nhiều nhất & Phù hợp cho biến định tính hoặc biến rời rạc; dùng để biết nhóm phổ biến nhất như loại đau ngực \texttt{cp}. \\
-Percentiles & Mốc $P_k$ sao cho $k\%$ quan sát không vượt quá mốc đó & Cho biết vị trí tương đối của quan sát; dùng để chia nhóm thấp--trung bình--cao và đặt ngưỡng kiểm tra. \\
-Range & $\max(x)-\min(x)$ & Độ trải toàn phần của dữ liệu; dễ hiểu nhưng rất nhạy với giá trị cực trị. \\
-Variance & $s^2=\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})^2$ & Đo mức phân tán quanh mean; đơn vị bị bình phương nên thường diễn giải cùng standard deviation. \\
-Standard deviation & $s=\sqrt{s^2}$ & Cho biết dữ liệu dao động trung bình bao xa quanh mean; hữu ích để so sánh biến sau chuẩn hóa. \\
-Coefficient of variation & $CV=\frac{s}{\bar{x}}$ & Đo độ biến động tương đối; dùng khi cần so sánh mức phân tán giữa các biến khác đơn vị. \\
-Interquartile range & $IQR=Q_3-Q_1$ & Khoảng giữa 50\% dữ liệu trung tâm; dùng phát hiện outlier theo ngưỡng $Q_1-1.5IQR$ và $Q_3+1.5IQR$. \\
+Heart Disease & \path{src/analyze_heart_disease.py} & \path{outputs/tables/heart_disease_*.csv} & Nhóm A, minh họa đầy đủ 4 bước \\
+CDC Diabetes & \path{src/analyze_cdc_diabetes.py} & \path{outputs/tables/cdc_diabetes_*.csv} & Nhóm A, dữ liệu lớn và mất cân bằng lớp \\
+Breast Cancer & \path{src/analyze_tabular_health.py} & \path{outputs/tables/breast_cancer_*.csv} & Nhóm A, biến y khoa có lực phân tách cao \\
+Appliances Energy & \path{src/analyze_appliances_energy.py} & \path{outputs/tables/appliances_energy_*.csv} & Nhóm B, chuỗi thời gian hồi quy \\
+HAR và MHEALTH & \path{src/analyze_har.py}; \path{src/analyze_mhealth.py} & \path{outputs/tables/har_*.csv}; \path{outputs/tables/mhealth_*.csv} & Nhóm B, chuỗi cảm biến \\
+HAM10000 & \path{src/analyze_ham10000.py} & \path{outputs/tables/ham10000_*.csv} & Nhóm C, ảnh \\
+Reuters-21578 & \path{src/analyze_reuters.py} & \path{outputs/tables/reuters_*.csv} & Nhóm C, văn bản \\
+Excel & \path{src/create_excel_visualizations.py} & \path{excel/excel_visualization_comparison.xlsx} & Đối chiếu Excel và Python \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-Các thông số trên không nên đọc riêng lẻ. Nếu mean lớn hơn median rõ rệt, dữ liệu có thể lệch phải; nếu range rất lớn nhưng IQR nhỏ, phần lớn dữ liệu tập trung nhưng có vài outlier; nếu CV cao, biến có mức dao động lớn so với giá trị trung bình. Ví dụ trong Heart Disease, \texttt{oldpeak} có mean lớn hơn median nên cần histogram để kiểm tra lệch phải; \texttt{chol} có range rộng nên cần boxplot để kiểm tra outlier cholesterol.
+\section{Phân tích chi tiết dữ liệu cấu trúc}
 
-\subsection{Các loại biểu đồ dùng trong phân tích dữ liệu}
+\subsection{Nhóm A: dữ liệu dạng bảng}
 
-\begin{table}[H]
-\centering
-\caption{Ý nghĩa các loại biểu đồ phổ biến}
-\label{tab:chapter3_chart_meaning}
-\scriptsize
-\setlength{\tabcolsep}{3pt}
-\renewcommand{\arraystretch}{1.18}
-\begin{tabularx}{\textwidth}{>{\RaggedRight\arraybackslash}p{0.18\textwidth}>{\RaggedRight\arraybackslash}p{0.27\textwidth}Y}
-\toprule
-Biểu đồ & Dữ liệu phù hợp & Ý nghĩa/tác dụng \\
-\midrule
-Histogram & Biến định lượng liên tục/rời rạc nhiều mức & Quan sát hình dạng phân phối, độ lệch, nhiều đỉnh, khoảng giá trị tập trung; dùng cho \texttt{age}, \texttt{chol}, \texttt{oldpeak}. \\
-Boxplot & Biến định lượng, có thể chia theo lớp & Tóm tắt median, quartile, IQR và outlier; phù hợp so sánh trước--sau tiền xử lý hoặc giữa target 0/1. \\
-Bar chart & Biến định tính hoặc ordinal & So sánh tần suất/tỷ lệ các nhóm; dùng cho \texttt{cp}, \texttt{target}, nhãn bệnh trong HAM10000. \\
-Pie chart & Biến định tính ít nhóm & Minh họa cơ cấu tỷ lệ; chỉ nên dùng khi số nhóm ít và cần nhấn mạnh thành phần. \\
-Scatter plot & Hai biến định lượng & Phát hiện quan hệ tuyến tính/phi tuyến, cụm điểm hoặc điểm bất thường; dùng cho \texttt{age}--\texttt{thalach}. \\
-Line chart & Dữ liệu thời gian/thứ tự & Thể hiện xu hướng, dao động và chu kỳ; phù hợp Appliances Energy theo thời gian. \\
-Heatmap & Ma trận tương quan hoặc bảng chéo & Nhìn nhanh cặp biến liên hệ mạnh/yếu; hỗ trợ chọn feature và phát hiện đa cộng tuyến. \\
-Density plot & Biến định lượng & Làm mượt phân phối, dễ so sánh nhiều nhóm hơn histogram khi chồng lớp. \\
-\bottomrule
-\end{tabularx}
-\end{table}
+Nhóm A gồm Heart Disease, CDC Diabetes Health Indicators và Breast Cancer Wisconsin Diagnostic. Cả ba bộ dữ liệu đều có trên 100 mẫu và trên 5 thuộc tính, phù hợp với yêu cầu về dữ liệu dạng bảng. Điểm chung của nhóm A là nhiều biến có ý nghĩa lâm sàng hoặc hành vi sức khỏe, nhưng bản chất biến không đồng nhất: có biến Qualitative nhị phân, biến thứ bậc, biến Quantitative Discrete và biến Quantitative Continuous. Vì vậy, bước phân loại biến là điều kiện bắt buộc trước khi tính toán.
 
-Như vậy, histogram trả lời câu hỏi ``biến phân phối như thế nào'', boxplot trả lời ``có outlier không'', bar chart trả lời ``nhóm nào chiếm ưu thế'', scatter plot trả lời ``hai biến có liên hệ không'', line chart trả lời ``dữ liệu thay đổi theo thời gian ra sao'', và heatmap trả lời ``cặp biến nào tương quan mạnh''. Các biểu đồ này được dùng xuyên suốt Chương 3 để minh họa lý thuyết bằng ít nhất một bộ dữ liệu thuộc nhóm A, đồng thời mở rộng sang nhóm B và C.
+\subsubsection{Heart Disease}
 
-\section{Quy trình phân tích và minh chứng}
-
-Yêu cầu của đề bài không chỉ là vẽ biểu đồ, mà phải chỉ ra biểu đồ được tính từ đâu, công thức nào được áp dụng và kết quả có ý nghĩa gì. Vì vậy, chương này dùng quy trình bốn bước:
-
-\begin{enumerate}
-    \item Chọn biến cần phân tích và phân loại bản chất biến: định tính, định lượng rời rạc, định lượng liên tục hoặc chỉ số thời gian.
-    \item Tính bảng tần suất hoặc thống kê mô tả bằng Python, sau đó lưu kết quả thành file CSV.
-    \item Vẽ biểu đồ bằng Python và tạo thêm workbook Excel có chart gốc để đối chiếu công cụ.
-    \item Ghi nhận xét dựa trên số liệu: không chỉ mô tả hình dạng biểu đồ, mà giải thích vì sao biểu đồ đó quan trọng cho tiền xử lý và học máy.
-\end{enumerate}
-
-Bảng \ref{tab:chapter3_artifact_map} tóm tắt các artifact chính được dùng trong chương này. Các đường dẫn đều là đường dẫn tương đối trong thư mục nộp bài. Cách tổ chức này bám trực tiếp tài liệu yêu cầu trong \texttt{docments/mo\_ta\_yeu\_cau.md}: nhóm A và B phải chọn tối thiểu 5 biến, phân loại bản chất biến, tính tần suất/thống kê mô tả, vẽ biểu đồ phù hợp và so sánh dữ liệu trước--sau tiền xử lý; nhóm C phải số hóa dữ liệu thô thành đặc trưng định lượng trước khi thống kê.
+Heart Disease có 303 mẫu, 13 biến giải thích và biến mục tiêu \texttt{num}. Sáu biến đại diện được chọn là \texttt{age}, \texttt{cp}, \texttt{trestbps}, \texttt{chol}, \texttt{thalach} và \texttt{oldpeak}; nhóm biến này bao phủ tuổi, triệu chứng đau ngực, huyết áp, cholesterol, nhịp tim tối đa và độ chênh ST khi gắng sức.
 
 \begin{table}[H]
 \centering
-\caption{Ma trận bám yêu cầu phân tích của Chương 3}
-\label{tab:chapter3_rubric_matrix}
-\scriptsize
-\setlength{\tabcolsep}{3pt}
-\renewcommand{\arraystretch}{1.15}
-\begin{tabularx}{\textwidth}{>{\RaggedRight\arraybackslash}p{0.22\textwidth}>{\RaggedRight\arraybackslash}p{0.30\textwidth}Y}
+\caption{Phân loại biến tiêu biểu trong Heart Disease}
+\label{tab:ch4_heart_variable_types}
+\small
+\begin{tabularx}{\textwidth}{p{0.18\textwidth}p{0.27\textwidth}p{0.25\textwidth}Y}
 \toprule
-Yêu cầu trong đề bài & Cách thực hiện trong báo cáo & Minh chứng/ý nghĩa \\
+Biến & Bản chất & Thống kê dùng & Biểu đồ phù hợp \\
 \midrule
-Phân loại biến & Ghi rõ định tính, định lượng rời rạc, định lượng liên tục, chuỗi thời gian & Tránh dùng sai thống kê; biến định tính dùng tần suất, biến định lượng dùng mean/median/IQR \\
-Tính thống kê/tần suất & CSV trong \texttt{outputs/tables/} & Có số liệu kiểm tra lại, không chỉ nhìn biểu đồ \\
-Vẽ histogram/boxplot/scatter/bar/line & PNG trong \texttt{outputs/figures/} & Mỗi biểu đồ trả lời một câu hỏi: phân phối, outlier, tương quan, cơ cấu, xu hướng \\
-So sánh thô--sạch & Heart Disease và Appliances dùng IQR/log/interpolation/chuẩn hóa tùy loại biến & Chứng minh tiền xử lý làm giảm nhiễu hoặc ổn định phân phối \\
-Excel vs Python & Workbook \texttt{excel/excel\_visualization\_comparison.xlsx} & Kiểm chứng công thức và chart bằng hai công cụ \\
-Số hóa multimedia & HAM10000 và Reuters chuyển ảnh/văn bản thành đặc trưng số & Đáp ứng nguyên tắc dữ liệu C phải thống kê được sau feature extraction \\
+\texttt{age} & Quantitative Discrete & Mean, median, SD, IQR & Histogram, boxplot \\
+\texttt{cp} & Qualitative (nominal) & Tần suất, tần suất tương đối, mode & Bar chart, pie chart \\
+\texttt{trestbps} & Quantitative Continuous & Range, SD, IQR & Histogram, boxplot \\
+\texttt{chol} & Quantitative Continuous & Outlier theo IQR & Boxplot thô--sạch \\
+\texttt{thalach} & Quantitative Continuous & Tương quan với tuổi/target & Scatter plot \\
+\texttt{oldpeak} & Quantitative Continuous & Độ lệch phải, CV & Histogram, boxplot \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
 \begin{table}[H]
 \centering
-\caption{Minh chứng source code và output cho Chương 3}
-\label{tab:chapter3_artifact_map}
-\scriptsize
-\setlength{\tabcolsep}{3pt}
-\renewcommand{\arraystretch}{1.15}
-\begin{tabularx}{\textwidth}{>{\RaggedRight\arraybackslash}p{0.16\textwidth}>{\RaggedRight\arraybackslash}p{0.25\textwidth}>{\RaggedRight\arraybackslash}p{0.34\textwidth}Y}
-\toprule
-Nhãn mục & Source code & Output bảng/hình & Vai trò \\
-\midrule
-Heart Disease & \texttt{src/analyze\_heart\_disease.py} & \texttt{outputs/tables/heart\_disease\_summary.csv} & Nhóm A: thô/sạch \\
-CDC/Breast Cancer & \texttt{src/analyze\_tabular\_health.py} & \texttt{outputs/figures/cdc\_diabetes\_*.png}, \texttt{breast\_cancer\_*.png} & Nhóm A mở rộng \\
-Appliances & \texttt{src/analyze\_appliances\_energy.py} & \texttt{outputs/tables/appliances\_energy\_summary.csv} & Nhóm B: chuỗi thời gian \\
-HAR/MHEALTH & \texttt{src/analyze\_har.py}, \texttt{src/analyze\_mhealth.py} & \texttt{outputs/tables/har\_feature\_summary\_extended.csv}, \texttt{mhealth\_sensor\_summary\_extended.csv} & Nhóm B: cảm biến \\
-HAM10000/Reuters & \texttt{src/analyze\_ham10000.py}, \texttt{src/analyze\_reuters.py} & \texttt{outputs/figures/ham10000\_*.png}, \texttt{reuters\_*.png} & Nhóm C: đa phương tiện \\
-Excel charts & \texttt{src/create\_excel\_visualizations.py} & \texttt{excel/excel\_visualization\_comparison.xlsx} & Đối chiếu Excel/Python \\
-\bottomrule
-\end{tabularx}
-\end{table}
-
-\section{Nhóm A: dữ liệu bảng}
-
-Mục này được làm lại theo bốn bước: (1) phân loại Qualitative/Quantitative và Continuous/Discrete; (2) lập bảng tần suất và tính mean, median, mode, percentile, range, variance, standard deviation, CV, IQR; (3) vẽ histogram, boxplot, scatter plot, line chart và biểu đồ bổ sung; (4) đặt song song dữ liệu thô và dữ liệu sạch để nhận xét tác dụng tiền xử lý.
-
-\subsection{Dữ liệu Nhóm A: Phân tích Heart Disease}
-
-\subsubsection{Bước 1: Phân loại bản chất biến và lựa chọn biến}
-
-Với Heart Disease, chương này chọn 6 biến tiêu biểu: \texttt{age}, \texttt{cp}, \texttt{trestbps}, \texttt{chol}, \texttt{thalach} và \texttt{oldpeak}. Lý do chọn là các biến này đại diện cho cả định tính, định lượng rời rạc và định lượng liên tục. Biến \texttt{cp} được phân tích bằng bảng tần suất, trong khi các biến còn lại được tính mean, median, standard deviation, IQR và coefficient of variation.
-
-\begin{table}[H]
-\centering
-\caption{Phân loại bản chất biến Heart Disease được chọn}
-\label{tab:chapter3_heart_variable_types}
-\scriptsize
-\setlength{\tabcolsep}{3pt}
-\renewcommand{\arraystretch}{1.12}
-\begin{tabularx}{\textwidth}{>{\RaggedRight\arraybackslash}p{0.16\textwidth}>{\RaggedRight\arraybackslash}p{0.23\textwidth}>{\RaggedRight\arraybackslash}p{0.30\textwidth}Y}
-\toprule
-Biến & Bản chất & Vai trò thống kê & Biểu đồ dùng \\
-\midrule
-\texttt{age} & Định lượng rời rạc & Mean, median, SD, IQR & Histogram, boxplot \\
-\texttt{cp} & Định tính nominal & Tần suất, tần suất tương đối, mode & Bar chart/pie chart \\
-\texttt{trestbps} & Định lượng liên tục & Phân tán, outlier huyết áp & Histogram, boxplot \\
-\texttt{chol} & Định lượng liên tục & Outlier cholesterol & Boxplot thô--sạch \\
-\texttt{thalach} & Định lượng liên tục & Quan hệ với tuổi/target & Scatter plot \\
-\texttt{oldpeak} & Định lượng liên tục & Lệch phải, điểm cực trị & Histogram, boxplot \\
-\bottomrule
-\end{tabularx}
-\end{table}
-
-Bảng \ref{tab:chapter3_heart_variable_types} là bước bắt buộc trước khi tính toán: cùng một dataset có cả biến định tính và định lượng nên không thể áp dụng một công thức cho tất cả cột. Đây cũng là cơ sở để giải thích vì sao \texttt{cp} dùng tần suất, còn \texttt{chol} và \texttt{oldpeak} dùng IQR để phát hiện outlier.
-
-Với biến định tính \texttt{cp}, tần suất tuyệt đối và tần suất tương đối được tính theo:
-
-\begin{equation}
-f_j = \sum_{i=1}^{n} I(cp_i=j), \quad p_j = \frac{f_j}{n}
-\end{equation}
-
-Với biến định lượng, các chỉ số chính gồm:
-
-\begin{equation}
-\bar{x}=\frac{1}{n}\sum_{i=1}^{n}x_i, \quad
-s=\sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})^2}, \quad
-IQR=Q_3-Q_1
-\end{equation}
-
-\begin{table}[H]
-\centering
-\caption[Thống kê mô tả một số biến Heart Disease sau tiền xử lý]{Thống kê mô tả một số biến Heart Disease sau tiền xử lý. Source: \texttt{outputs/tables/heart\_disease\_summary.csv}; code: \texttt{src/analyze\_heart\_disease.py}.}
-\label{tab:chapter3_heart_stats}
-\scriptsize
-\setlength{\tabcolsep}{4pt}
-\renewcommand{\arraystretch}{1.08}
-\begin{tabular}{lrrrrrr}
-\toprule
-Biến & Mean & Median & Std & Min & Max & IQR \\
-\midrule
-age & 54.44 & 56.00 & 9.04 & 29.00 & 77.00 & 13.00 \\
-trestbps & 131.35 & 130.00 & 16.65 & 94.00 & 170.00 & 20.00 \\
-chol & 245.58 & 241.00 & 47.56 & 126.00 & 371.00 & 64.00 \\
-thalach & 149.65 & 153.00 & 22.73 & 84.75 & 202.00 & 32.50 \\
-oldpeak & 1.02 & 0.80 & 1.11 & 0.00 & 4.00 & 1.60 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Bảng \ref{tab:chapter3_heart_stats} cho thấy \texttt{chol} và \texttt{thalach} có độ lệch chuẩn lớn hơn các biến còn lại, nên hai biến này cần được kiểm tra bằng boxplot và scatter plot. Biến \texttt{oldpeak} có mean 1.02 nhưng median 0.80 và min bằng 0, cho thấy phân phối có xu hướng lệch phải: nhiều bệnh nhân có giá trị thấp, một số ít có ST depression cao.
-
-\subsubsection{Bước 2: Bảng tần suất và thông số thống kê}
-
-\begin{table}[H]
-\centering
-\caption[Bảng tần suất biến \texttt{cp} trong Heart Disease]{Bảng tần suất biến \texttt{cp} trong Heart Disease. Source: \texttt{outputs/tables/heart\_disease\_frequency\_cp.csv}; code: \texttt{src/analyze\_heart\_disease.py}.}
-\label{tab:chapter3_cp_frequency}
+\caption[Bảng tần suất biến \texttt{cp} trong Heart Disease]{Bảng tần suất biến \texttt{cp} trong Heart Disease. Source: \texttt{outputs/tables/heart\_disease\_frequency\_cp.csv}.}
+\label{tab:ch4_cp_frequency}
 \small
 \begin{tabular}{lrr}
 \toprule
-Loại đau ngực \texttt{cp} & Tần suất & Tần suất tương đối \\
+Loại đau ngực \texttt{cp} & Tần suất tuyệt đối & Tần suất tương đối \\
 \midrule
-4.0 & 144 & 47.52\% \\
-3.0 & 86 & 28.38\% \\
-2.0 & 50 & 16.50\% \\
-1.0 & 23 & 7.59\% \\
+4.0 (không triệu chứng) & 144 & 47.52\% \\
+3.0 (đau không điển hình) & 86 & 28.38\% \\
+2.0 (đau điển hình) & 50 & 16.50\% \\
+1.0 (đau thắt ngực điển hình) & 23 & 7.59\% \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\textbf{Lý do chọn biểu đồ.} Biến \texttt{cp} là biến định tính/rời rạc, vì vậy bar chart phù hợp hơn histogram. Bar chart giúp so sánh trực tiếp số mẫu giữa các loại đau ngực và phát hiện lớp nào chiếm ưu thế.
-
-\textbf{Cách tính.} Chiều cao mỗi cột được tính bằng $f_j=count(cp=j)$; tỷ lệ phần trăm được tính bằng $p_j=f_j/n$.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.72\textwidth]{../outputs/figures/heart_disease_chest_pain_bar.png}
-\caption[Bar chart tần suất loại đau ngực Heart Disease]{Bar chart tần suất loại đau ngực Heart Disease. Python source: \texttt{src/analyze\_heart\_disease.py}; figure path: \texttt{outputs/figures/heart\_disease\_chest\_pain\_bar.png}.}
-\label{fig:chapter3_python_cp_bar}
-\end{figure}
-
-\textbf{Nhận xét.} Hình \ref{fig:chapter3_python_cp_bar} cho thấy \texttt{cp=4} chiếm tỷ lệ cao nhất, gần một nửa số mẫu. Điều này nói rằng dữ liệu không phân bố đều theo loại đau ngực. Tuy nhiên, biểu đồ cột chưa đủ để kết luận \texttt{cp=4} gây bệnh tim; nó chỉ cho biết cấu trúc của biến đầu vào. Ở Chương 4, biến này cần được đưa vào mô hình phân loại và đánh giá qua confusion matrix, precision, recall và F1-score.
-
-\subsubsection{Bước 3: Histogram, boxplot và so sánh biến thô--sạch}
-
-Tiền xử lý Heart Disease gồm chuyển ký hiệu \texttt{?} thành missing value, điền khuyết và cắt outlier theo quy tắc IQR. Với mỗi biến định lượng, ngưỡng cắt được tính theo:
-
-\begin{equation}
-Lower=Q_1-1.5\times IQR, \quad Upper=Q_3+1.5\times IQR
-\end{equation}
+Bảng \ref{tab:ch4_cp_frequency} cho thấy mode của \texttt{cp} là lớp 4.0; gần một nửa bệnh nhân thuộc nhóm không có triệu chứng đau ngực điển hình. Đây là tín hiệu quan trọng: một biến triệu chứng nếu nhìn riêng lẻ có thể gây đánh giá thấp rủi ro bệnh tim, do đó cần kết hợp với \texttt{thalach}, \texttt{oldpeak}, \texttt{trestbps} và các biến lâm sàng khác.
 
 \begin{table}[H]
 \centering
-\caption[Ảnh hưởng của tiền xử lý trên Heart Disease]{Ảnh hưởng của tiền xử lý trên Heart Disease. Source: \texttt{outputs/tables/heart\_disease\_preprocessing\_comparison.csv}; code: \texttt{src/analyze\_heart\_disease.py}.}
-\label{tab:chapter3_preprocess_effect}
-\small
-\begin{tabular}{lrrrr}
-\toprule
-Biến & Max thô & Max sạch & Std thô & Std sạch \\
-\midrule
-trestbps & 200.00 & 170.00 & 17.60 & 16.65 \\
-chol & 564.00 & 371.00 & 51.78 & 47.56 \\
-thalach & 202.00 & 202.00 & 22.88 & 22.73 \\
-oldpeak & 6.20 & 4.00 & 1.16 & 1.11 \\
-ca & 3.00 & 2.50 & 0.94 & 0.86 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Bảng \ref{tab:chapter3_preprocess_effect} cho thấy tiền xử lý làm giảm giá trị cực trị và độ lệch chuẩn ở các biến có outlier. Trường hợp rõ nhất là \texttt{chol}: max giảm từ 564 xuống 371, std giảm từ 51.78 xuống 47.56. Điều này có ý nghĩa thực hành: khi train mô hình dựa trên khoảng cách hoặc regularization, outlier rất cao có thể làm lệch thang đo đặc trưng.
-
-\textbf{Lý do chọn biểu đồ.} Histogram được dùng để quan sát hình dạng phân phối của \texttt{age}; boxplot được dùng để phát hiện outlier của \texttt{chol}. Hai biểu đồ này bổ sung cho nhau: histogram nói về toàn bộ phân phối, còn boxplot nhấn mạnh median, IQR và điểm ngoại lai.
-
-\textbf{Cách tính.} Histogram chia miền giá trị thành các khoảng rồi đếm số quan sát trong từng khoảng. Boxplot dùng $Q_1$, $Q_2$, $Q_3$ và IQR; điểm nằm ngoài $[Q_1-1.5IQR, Q_3+1.5IQR]$ được xem là ứng viên outlier.
-
-\begin{figure}[H]
-\centering
-\begin{subfigure}{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{../outputs/figures/heart_disease_age_raw_vs_cleaned.png}
-    \caption{Histogram tuổi}
-\end{subfigure}
-\hfill
-\begin{subfigure}{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{../outputs/figures/heart_disease_cholesterol_boxplot.png}
-    \caption{Boxplot cholesterol}
-\end{subfigure}
-\caption[Kiểm tra phân phối và outlier trên Heart Disease]{Kiểm tra phân phối và outlier trên Heart Disease. Python source: \texttt{src/analyze\_heart\_disease.py}; figure paths: \texttt{outputs/figures/heart\_disease\_age\_raw\_vs\_cleaned.png}, \texttt{outputs/figures/heart\_disease\_cholesterol\_boxplot.png}.}
-\label{fig:chapter3_heart_distribution_outlier}
-\end{figure}
-
-\textbf{Nhận xét.} Hình \ref{fig:chapter3_heart_distribution_outlier} cho thấy histogram tuổi không thay đổi sau tiền xử lý vì biến \texttt{age} không có outlier cần cắt. Ngược lại, boxplot cholesterol cho phép nhìn trực quan các điểm nằm xa hộp IQR. Khi hộp của hai nhóm target chồng lắp nhiều, riêng cholesterol khó có khả năng phân loại độc lập; nó nên được dùng chung với \texttt{cp}, \texttt{thalach}, \texttt{oldpeak} và các biến khác.
-
-\subsubsection{Bước 4: Scatter plot, heatmap và nhận xét đa biến}
-
-Scatter plot giữa \texttt{age} và \texttt{thalach} được tạo từ các cặp điểm $(age_i, thalach_i)$. Để định lượng xu hướng, có thể tính hệ số Pearson:
-
-\begin{equation}
-r=\frac{\sum_{i=1}^{n}(age_i-\overline{age})(thalach_i-\overline{thalach})}{\sqrt{\sum_{i=1}^{n}(age_i-\overline{age})^2}\sqrt{\sum_{i=1}^{n}(thalach_i-\overline{thalach})^2}}
-\end{equation}
-
-Kết quả trên dữ liệu sạch cho $r \approx -0.394$, biểu thị tương quan âm vừa phải: tuổi cao có xu hướng đi kèm nhịp tim tối đa thấp hơn.
-
-\textbf{Lý do chọn biểu đồ.} Scatter plot phù hợp khi cần xem quan hệ giữa hai biến định lượng. Correlation heatmap phù hợp khi cần xem nhanh nhiều cặp biến cùng lúc. Đây là hai bước thăm dò quan trọng trước khi chọn feature cho mô hình học máy.
-
-\begin{figure}[H]
-\centering
-\begin{subfigure}{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{../outputs/figures/heart_disease_age_thalach_scatter.png}
-    \caption{Age và thalach}
-\end{subfigure}
-\hfill
-\begin{subfigure}{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{../outputs/figures/heart_disease_correlation_heatmap.png}
-    \caption{Heatmap tương quan}
-\end{subfigure}
-\caption[Phân tích quan hệ đa biến trên Heart Disease]{Phân tích quan hệ đa biến trên Heart Disease. Python source: \texttt{src/analyze\_heart\_disease.py}; figure paths: \texttt{outputs/figures/heart\_disease\_age\_thalach\_scatter.png}, \texttt{outputs/figures/heart\_disease\_correlation\_heatmap.png}.}
-\label{fig:chapter3_heart_scatter_corr}
-\end{figure}
-
-\textbf{Nhận xét.} Hình \ref{fig:chapter3_heart_scatter_corr} cho thấy các điểm phân tán theo hướng giảm nhẹ: khi tuổi tăng, \texttt{thalach} có xu hướng giảm. Heatmap bổ sung góc nhìn tổng quát hơn, giúp phát hiện cặp biến nào có liên hệ tuyến tính mạnh. Trong bước học máy, các biến tương quan cao với nhau cần được theo dõi để tránh thông tin lặp lại qua nhiều feature.
-
-\subsection{Dữ liệu Nhóm A: Phân tích CDC Diabetes Health Indicators}
-
-CDC Diabetes là bộ dữ liệu bảng lớn từ khảo sát sức khỏe, có 253680 mẫu, 21 biến đầu vào và target nhị phân \texttt{Diabetes\_binary}. Để trình bày song song với mục Heart Disease, phần này cũng đi theo bốn bước: phân loại biến, lập bảng tần suất/thống kê mô tả, trực quan hóa phân phối--outlier, sau đó phân tích scatter plot và heatmap.
-
-\subsubsection{Bước 1: Phân loại bản chất biến và lựa chọn biến}
-
-Các biến được chọn gồm \texttt{Diabetes\_binary}, \texttt{BMI}, \texttt{HighBP}, \texttt{HighChol}, \texttt{GenHlth}, \texttt{MentHlth}, \texttt{PhysHlth}, \texttt{Age} và \texttt{Income}. Nhóm biến này đại diện cho target, biến định tính nhị phân, biến định lượng liên tục, biến định lượng rời rạc và biến thứ bậc. Source code chính của phần này là \texttt{src/analyze\_cdc\_diabetes.py}; dữ liệu sạch được lưu tại \texttt{outputs/cleaned/cdc\_diabetes\_cleaned.csv}.
-
-\begin{table}[H]
-\centering
-\caption{Phân loại bản chất biến CDC Diabetes được chọn}
-\label{tab:chapter3_cdc_variable_types}
-\scriptsize
-\setlength{\tabcolsep}{3pt}
-\renewcommand{\arraystretch}{1.12}
-\begin{tabularx}{\textwidth}{>{\RaggedRight\arraybackslash}p{0.18\textwidth}>{\RaggedRight\arraybackslash}p{0.23\textwidth}>{\RaggedRight\arraybackslash}p{0.29\textwidth}Y}
-\toprule
-Biến & Bản chất & Vai trò thống kê & Biểu đồ dùng \\
-\midrule
-\texttt{Diabetes\_binary} & Định tính nhị phân & Target, tần suất lớp & Bar chart \\
-\texttt{BMI} & Định lượng liên tục & Mean, median, SD, IQR, outlier & Histogram, boxplot \\
-\texttt{HighBP} & Định tính nhị phân & Tần suất huyết áp cao & Bar chart theo target \\
-\texttt{HighChol} & Định tính nhị phân & Tần suất cholesterol cao & Bar chart theo target \\
-\texttt{GenHlth} & Thứ bậc rời rạc & Tự đánh giá sức khỏe 1--5 & Histogram, heatmap \\
-\texttt{MentHlth} & Định lượng rời rạc & Số ngày sức khỏe tinh thần kém & Histogram, IQR \\
-\texttt{PhysHlth} & Định lượng rời rạc & Số ngày sức khỏe thể chất kém & Histogram, IQR \\
-\texttt{Age} & Thứ bậc rời rạc & Nhóm tuổi mã hóa 1--13 & Scatter plot, heatmap \\
-\texttt{Income} & Thứ bậc rời rạc & Nhóm thu nhập mã hóa 1--8 & Histogram, heatmap \\
-\bottomrule
-\end{tabularx}
-\end{table}
-
-Bảng \ref{tab:chapter3_cdc_variable_types} cho thấy CDC Diabetes khác Heart Disease ở chỗ phần lớn biến là nhị phân hoặc ordinal. Vì vậy, khi tiền xử lý không được cắt outlier tùy tiện trên tất cả cột; báo cáo chỉ áp dụng IQR cho \texttt{BMI}, \texttt{MentHlth} và \texttt{PhysHlth}, còn \texttt{Age}, \texttt{Education}, \texttt{Income}, \texttt{GenHlth} được giữ như mã thứ bậc.
-
-\subsubsection{Bước 2: Bảng tần suất và thông số thống kê}
-
-Với biến nhị phân, tần suất tuyệt đối và tương đối được tính như trong Heart Disease:
-
-\begin{equation}
-f_j = \sum_{i=1}^{n} I(x_i=j), \quad p_j = \frac{f_j}{n}
-\end{equation}
-
-\begin{table}[H]
-\centering
-\caption[Bảng tần suất các biến nhị phân chính trong CDC Diabetes]{Bảng tần suất các biến nhị phân chính trong CDC Diabetes. Source: \texttt{outputs/tables/cdc\_diabetes\_frequency\_*.csv}; code: \texttt{src/analyze\_cdc\_diabetes.py}.}
-\label{tab:chapter3_cdc_frequency}
-\small
-\begin{tabular}{llrr}
-\toprule
-Biến & Giá trị & Tần suất & Tần suất tương đối \\
-\midrule
-\texttt{Diabetes\_binary} & 0 & 218334 & 86.07\% \\
-\texttt{Diabetes\_binary} & 1 & 35346 & 13.93\% \\
-\texttt{HighBP} & 0 & 144851 & 57.10\% \\
-\texttt{HighBP} & 1 & 108829 & 42.90\% \\
-\texttt{HighChol} & 0 & 146089 & 57.59\% \\
-\texttt{HighChol} & 1 & 107591 & 42.41\% \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Bảng \ref{tab:chapter3_cdc_frequency} cho thấy target mất cân bằng mạnh: nhóm không tiểu đường chiếm 86.07\%, nhóm tiền tiểu đường/tiểu đường chỉ chiếm 13.93\%. Do đó, nếu chỉ dùng accuracy ở Chương 4 sẽ dễ đánh giá sai mô hình; cần xem thêm precision, recall và F1-score.
-
-\begin{table}[H]
-\centering
-\caption[Thống kê mô tả một số biến CDC Diabetes sau tiền xử lý]{Thống kê mô tả một số biến CDC Diabetes sau tiền xử lý. Source: \texttt{outputs/tables/cdc\_diabetes\_summary.csv}; code: \texttt{src/analyze\_cdc\_diabetes.py}.}
-\label{tab:chapter3_cdc_stats}
+\caption[Phân phối tần suất các biến Qualitative Heart Disease]{Phân phối tần suất (Frequency Distribution) các biến Qualitative tiêu biểu trong Heart Disease: tần suất tuyệt đối, tần suất tương đối và Mode. Source: \texttt{outputs/tables/heart\_disease\_frequency\_*.csv}.}
+\label{tab:ch4_heart_qualitative_freq}
 \scriptsize
 \setlength{\tabcolsep}{4pt}
-\renewcommand{\arraystretch}{1.08}
+\begin{tabular}{llrrr}
+\toprule
+Biến & Lớp & Tần suất tuyệt đối & Tần suất tương đối & Mode \\
+\midrule
+\texttt{sex} & 1 (nam) & 206 & 67.99\% & \multirow{4}{*}{1 (nam)} \\
+ & 0 (nữ) & 97 & 32.01\% & \\
+\texttt{fbs} & 0 ($\leq$ 120 mg/dl) & 258 & 85.15\% & \multirow{4}{*}{0} \\
+ & 1 ($>$ 120 mg/dl) & 45 & 14.85\% & \\
+\texttt{restecg} & 0 (bình thường) & 151 & 49.83\% & \multirow{6}{*}{0} \\
+ & 2 (LV hypertrophy) & 148 & 48.84\% & \\
+ & 1 (ST-T bất thường) & 4 & 1.32\% & \\
+\texttt{exang} & 0 (không) & 204 & 67.33\% & \multirow{4}{*}{0} \\
+ & 1 (có) & 99 & 32.67\% & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\par\vspace*{1.2\baselineskip}
+\noindent
+
+\textbf{Nhận xét.} Với biến Qualitative, Mean/Median không có ý nghĩa, nên công cụ mô tả duy nhất là bảng phân phối tần suất và Mode. Bảng \ref{tab:ch4_heart_qualitative_freq} cho thấy mẫu Heart Disease mất cân bằng giới: 67.99\% là nam (mode = 1). Đa số bệnh nhân không có đường huyết lúc đói cao (\texttt{fbs} mode = 0, 85.15\%) và không bị đau thắt ngực khi gắng sức (\texttt{exang} mode = 0, 67.33\%). Đáng chú ý, \texttt{restecg} có phân phối gần như nhị phân giữa lớp 0 (49.83\%) và lớp 2 (48.84\%), trong khi lớp 1 gần như vắng mặt (1.32\%) -- đặc điểm này cần lưu ý khi mã hóa one-hot cho mô hình học máy.
+
+\begin{table}[H]
+\centering
+\caption[Thống kê mô tả Heart Disease sau tiền xử lý]{Thống kê mô tả Heart Disease sau tiền xử lý: số đo xu hướng trung tâm (Mean, Median, Mode, Percentile) và độ phân tán (Range, Variance, Std, CV, IQR). Source: \texttt{outputs/tables/heart\_disease\_summary.csv}.}
+\label{tab:ch4_heart_stats}
+\footnotesize
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{lrrrrrrrrrr}
+\toprule
+Biến & Mean & Med & Mode & P25 & P75 & Range & Var & Std & CV & IQR \\
+\midrule
+\texttt{age} & 54.44 & 56.00 & 58 & 48.00 & 61.00 & 48.00 & 81.70 & 9.04 & 0.166 & 13.00 \\
+\texttt{trestbps} & 131.35 & 130.00 & 120 & 120.00 & 140.00 & 76.00 & 277.18 & 16.65 & 0.127 & 20.00 \\
+\texttt{chol} & 245.58 & 241.00 & 197 & 211.00 & 275.00 & 245.00 & 2261.84 & 47.56 & 0.194 & 64.00 \\
+\texttt{thalach} & 149.65 & 153.00 & 162 & 133.50 & 166.00 & 117.25 & 516.73 & 22.73 & 0.152 & 32.50 \\
+\texttt{oldpeak} & 1.02 & 0.80 & 0.0 & 0.00 & 1.60 & 4.00 & 1.23 & 1.11 & 1.084 & 1.60 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Nhận xét về hình dáng phân phối.} Quan hệ giữa mean, median và mode cho phép đọc nhanh hướng lệch: nếu $\text{Mean} > \text{Median} > \text{Mode}$ thì phân phối lệch phải, ngược lại lệch trái. Trong Heart Disease, \texttt{age} có mean 54.44 \textless{} median 56 \textless{} mode 58, tức phân phối \emph{lệch trái nhẹ} -- tập mẫu nghiêng về nhóm tuổi trung--lão niên. \texttt{chol} và \texttt{oldpeak} đều có mean lớn hơn median (\texttt{oldpeak}: 1.02 vs 0.80, mode 0), cho thấy \emph{lệch phải}; riêng \texttt{oldpeak} lệch rất mạnh vì phần lớn bệnh nhân có ST depression bằng 0, kéo mode xuống đáy. \texttt{thalach} có mean 149.65 \textless{} median 153 \textless{} mode 162 nên cũng lệch trái, phản ánh một số bệnh nhân đạt nhịp tim tối đa thấp. Về độ phân tán, CV của \texttt{oldpeak} đạt 1.084, cao hơn rõ rệt so với \texttt{age}, \texttt{trestbps} và \texttt{thalach} (0.13--0.17); IQR của \texttt{chol} (64) lớn nhất trong các biến lâm sàng, vì vậy boxplot là biểu đồ bắt buộc để phát hiện ca cholesterol cực trị. Nhìn chung, các biến liên tục có IQR hẹp nhưng range rộng (ví dụ \texttt{chol}: IQR 64 vs range 245), nghĩa là phần lớn dữ liệu tập trung quanh trung tâm nhưng vẫn tồn tại đuôi dài -- đặc trưng của dữ liệu y tế thực tế.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/heart_disease_chest_pain_bar.png}
+ \caption{Python -- Bar chart \texttt{cp}}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/excel_heart_cp_bar_preview.png}
+ \caption{Excel -- Column chart \texttt{cp}}
+\end{subfigure}
+\captionsetup{justification=raggedright,singlelinecheck=false}
+\caption[Bar chart tần suất \texttt{cp}: Python và Excel]{Tần suất loại đau ngực Heart Disease vẽ bằng Python và Excel.\\
+\footnotesize Python source: \texttt{src/analyze\_heart\_disease.py}.\\
+Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (\texttt{Heart Frequency}).}
+\label{fig:ch4_cp_bar}
+\end{figure}
+
+\textbf{Nhận xét Hình \ref{fig:ch4_cp_bar}.} Hai phiên bản Python và Excel cho cùng một thông điệp: \texttt{cp=4} là nhóm có tần suất cao nhất, vượt rõ các nhóm còn lại. Vì \texttt{cp} là biến Qualitative nominal, biểu đồ cột là lựa chọn phù hợp hơn histogram; kết quả này cũng xác nhận mode trong Bảng \ref{tab:ch4_cp_frequency}.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/heart_disease_age_raw_vs_cleaned.png}
+ \caption{Python -- Histogram tuổi thô/sạch}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/excel_heart_age_raw_vs_cleaned_preview.png}
+ \caption{Excel -- Histogram tuổi thô/sạch}
+\end{subfigure}
+
+\vspace{0.8\baselineskip}
+
+\begin{subfigure}{0.48\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/heart_disease_cholesterol_boxplot.png}
+ \caption{Python -- Boxplot cholesterol}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/excel_heart_chol_boxplot_preview.png}
+ \caption{Excel -- Boxplot cholesterol}
+\end{subfigure}
+\captionsetup{justification=raggedright,singlelinecheck=false}
+\caption[Histogram và boxplot Heart Disease: Python và Excel]{Histogram tuổi thô/sạch và boxplot cholesterol trên Heart Disease, đối chiếu giữa Python và Excel.\\
+\footnotesize Python source: \texttt{src/analyze\_heart\_disease.py}.\\
+Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (\texttt{Heart Age Hist}, \texttt{Heart Boxplot}).}
+\label{fig:ch4_heart_hist_box}
+\end{figure}
+
+\textbf{Nhận xét Hình \ref{fig:ch4_heart_hist_box}.} Phân phối tuổi gần như không thay đổi sau tiền xử lý, nghĩa là biến \texttt{age} không có ngoại lai đáng kể và có thể giữ nguyên. Ngược lại, boxplot cholesterol cho thấy nhiều điểm nằm xa hộp IQR; do đó tiền xử lý Heart Disease không nên áp dụng cơ học cho mọi biến, mà cần tập trung vào các biến có đuôi dài như \texttt{chol}, \texttt{trestbps} và \texttt{oldpeak}.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/heart_disease_age_thalach_scatter.png}
+ \caption{Python -- \texttt{age} và \texttt{thalach}}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/excel_heart_age_thalach_scatter_preview.png}
+ \caption{Excel -- \texttt{age} và \texttt{thalach}}
+\end{subfigure}
+\captionsetup{justification=raggedright,singlelinecheck=false}
+\caption[Scatter plot \texttt{age}--\texttt{thalach}: Python và Excel]{Scatter plot giữa tuổi và nhịp tim tối đa.\\
+\footnotesize Python source: \texttt{src/analyze\_heart\_disease.py}.\\
+Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (\texttt{Heart Scatter}).}
+\label{fig:ch4_heart_scatter}
+\end{figure}
+
+\textbf{Nhận xét Hình \ref{fig:ch4_heart_scatter}.} Scatter plot cho thấy quan hệ âm giữa \texttt{age} và \texttt{thalach}: bệnh nhân lớn tuổi thường đạt nhịp tim tối đa thấp hơn trong kiểm tra gắng sức. Đây là quan hệ phù hợp với trực giác sinh lý và giúp giải thích vì sao mô hình phân loại ở chương học máy cần dùng đồng thời biến tuổi và biến đáp ứng tim mạch.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/heart_disease_target_distribution.png}
+ \caption{Phân bố target}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/heart_disease_correlation_heatmap.png}
+ \caption{Heatmap tương quan}
+\end{subfigure}
+\caption[Target và tương quan Heart Disease]{Phân bố target và heatmap tương quan các biến định lượng Heart Disease. Python source: \texttt{src/analyze\_heart\_disease.py}.}
+\label{fig:ch4_heart_target_corr}
+\end{figure}
+
+\textbf{Nhận xét Hình \ref{fig:ch4_heart_target_corr}.} Phân bố target cho thấy hai lớp bệnh/không bệnh tương đối cân bằng hơn nhiều bộ dữ liệu y tế khác, nên accuracy có thể dùng như chỉ báo ban đầu nhưng vẫn cần precision, recall và F1. Heatmap tương quan cho thấy \texttt{thalach} có tương quan âm với \texttt{target\_binary}, còn \texttt{oldpeak} có tương quan dương; vì vậy một biến mô tả khả năng gắng sức và một biến mô tả bất thường ST cung cấp tín hiệu bổ sung cho phân loại.
+
+\begin{table}[H]
+\centering
+\caption[So sánh dữ liệu thô và dữ liệu sạch Heart Disease]{So sánh dữ liệu thô và dữ liệu sạch Heart Disease. Source: \texttt{outputs/tables/heart\_disease\_preprocessing\_comparison.csv}.}
+\label{tab:ch4_heart_preprocess}
+\small
 \begin{tabular}{lrrrrrr}
 \toprule
-Biến & Mean & Median & Std & Min & Max & IQR \\
+Biến & Max thô & Max sạch & Std thô & Std sạch & Range thô & Range sạch \\
 \midrule
-BMI & 28.11 & 27.00 & 5.56 & 13.50 & 41.50 & 7.00 \\
-GenHlth & 2.51 & 2.00 & 1.07 & 1.00 & 5.00 & 1.00 \\
-MentHlth & 1.18 & 0.00 & 1.95 & 0.00 & 5.00 & 2.00 \\
-PhysHlth & 1.85 & 0.00 & 2.89 & 0.00 & 7.50 & 3.00 \\
-Age & 8.03 & 8.00 & 3.05 & 1.00 & 13.00 & 4.00 \\
-Income & 6.05 & 7.00 & 2.07 & 1.00 & 8.00 & 3.00 \\
+\texttt{age} & 77.00 & 77.00 & 9.04 & 9.04 & 48.00 & 48.00 \\
+\texttt{trestbps} & 200.00 & 170.00 & 17.60 & 16.65 & 106.00 & 76.00 \\
+\texttt{chol} & 564.00 & 371.00 & 51.78 & 47.56 & 438.00 & 245.00 \\
+\texttt{thalach} & 202.00 & 202.00 & 22.88 & 22.73 & 131.00 & 117.25 \\
+\texttt{oldpeak} & 6.20 & 4.00 & 1.16 & 1.11 & 6.20 & 4.00 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Bảng \ref{tab:chapter3_cdc_stats} cho thấy \texttt{BMI} có mean 28.11 và median 27.00 sau tiền xử lý, phản ánh phân phối lệch phải nhẹ. Hai biến \texttt{MentHlth} và \texttt{PhysHlth} có median bằng 0, nghĩa là phần lớn người trả lời không báo cáo ngày sức khỏe kém; tuy nhiên vẫn có nhóm nhỏ có giá trị cao nên cần kiểm tra outlier.
+Bảng \ref{tab:ch4_heart_preprocess} chứng minh hiệu quả của xử lý ngoại lai theo IQR: \texttt{chol} giảm max từ 564 xuống 371 và range giảm gần một nửa; \texttt{trestbps} cũng giảm max từ 200 xuống 170. Tuy nhiên, các chỉ số trung tâm không bị đảo chiều, cho thấy tiền xử lý làm dữ liệu ổn định hơn mà không phá vỡ cấu trúc chính.
 
-\subsubsection{Bước 3: Histogram, boxplot và so sánh biến thô--sạch}
+\subsubsection{CDC Diabetes Health Indicators}
 
-Tiền xử lý CDC Diabetes gồm kiểm tra missing value, điền giá trị thiếu nếu có và cắt outlier bằng IQR cho các biến có ý nghĩa định lượng trực tiếp. Công thức ngưỡng IQR vẫn là:
-
-\begin{equation}
-Lower=Q_1-1.5\times IQR, \quad Upper=Q_3+1.5\times IQR
-\end{equation}
+CDC Diabetes có 253\,680 mẫu và 21 biến giải thích, là bộ dữ liệu lớn nhất của nhóm A. Cấu trúc phân tích được giữ tương tự Heart Disease: trước hết phân loại biến, sau đó lập bảng tần suất cho biến Qualitative, tính thống kê mô tả cho biến Quantitative/ordinal, trực quan hóa phân phối và cuối cùng so sánh trước--sau tiền xử lý.
 
 \begin{table}[H]
 \centering
-\caption[Ảnh hưởng của tiền xử lý trên CDC Diabetes]{Ảnh hưởng của tiền xử lý trên CDC Diabetes. Source: \texttt{outputs/tables/cdc\_diabetes\_preprocessing\_comparison.csv}; code: \texttt{src/analyze\_cdc\_diabetes.py}.}
-\label{tab:chapter3_cdc_preprocess_effect}
+\caption{Phân loại biến tiêu biểu trong CDC Diabetes}
+\label{tab:ch4_cdc_variable_types}
 \small
-\begin{tabular}{lrrrr}
+\begin{tabularx}{\textwidth}{p{0.18\textwidth}p{0.27\textwidth}p{0.25\textwidth}Y}
 \toprule
-Biến & Max thô & Max sạch & Std thô & Std sạch \\
+Biến & Bản chất & Thống kê dùng & Biểu đồ phù hợp \\
 \midrule
-BMI & 98.00 & 41.50 & 6.61 & 5.56 \\
-MentHlth & 30.00 & 5.00 & 7.41 & 1.95 \\
-PhysHlth & 30.00 & 7.50 & 8.72 & 2.89 \\
-Age & 13.00 & 13.00 & 3.05 & 3.05 \\
-Income & 8.00 & 8.00 & 2.07 & 2.07 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Bảng \ref{tab:chapter3_cdc_preprocess_effect} cho thấy tác động rõ nhất ở \texttt{BMI}, \texttt{MentHlth} và \texttt{PhysHlth}. Ví dụ \texttt{BMI} giảm max từ 98 xuống 41.5, còn \texttt{MentHlth} giảm max từ 30 xuống 5. Việc này làm giảm ảnh hưởng của giá trị cực trị nhưng không thay đổi các biến ordinal như \texttt{Age} và \texttt{Income}.
-
-\textbf{Lý do chọn biểu đồ.} Histogram raw--cleaned cho \texttt{BMI} giúp nhìn tác động tiền xử lý trên biến liên tục. Boxplot theo target giúp so sánh phân phối BMI giữa nhóm không tiểu đường và nhóm có nguy cơ/tiểu đường.
-
-\begin{figure}[H]
-\centering
-\begin{subfigure}{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{../outputs/figures/cdc_diabetes_bmi_raw_vs_cleaned.png}
-    \caption{Histogram BMI thô--sạch}
-\end{subfigure}
-\hfill
-\begin{subfigure}{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{../outputs/figures/cdc_diabetes_bmi_boxplot_by_target.png}
-    \caption{Boxplot BMI theo target}
-\end{subfigure}
-\caption[Kiểm tra phân phối và outlier trên CDC Diabetes]{Kiểm tra phân phối và outlier trên CDC Diabetes. Python source: \texttt{src/analyze\_cdc\_diabetes.py}; figure paths: \texttt{outputs/figures/cdc\_diabetes\_bmi\_raw\_vs\_cleaned.png}, \texttt{outputs/figures/cdc\_diabetes\_bmi\_boxplot\_by\_target.png}.}
-\label{fig:chapter3_cdc_distribution_outlier}
-\end{figure}
-
-\textbf{Nhận xét.} Hình \ref{fig:chapter3_cdc_distribution_outlier} cho thấy phân phối BMI sau xử lý bớt kéo dài ở đuôi phải. Boxplot theo target cho phép so sánh trực quan BMI giữa hai nhóm \texttt{Diabetes\_binary}; nhóm dương tính thường có BMI cao hơn, nhưng hai phân phối vẫn chồng lắp nên BMI đơn lẻ không đủ để phân loại.
-
-\subsubsection{Bước 4: Scatter plot, heatmap và nhận xét đa biến}
-
-Scatter plot giữa \texttt{Age} và \texttt{BMI} được dùng để kiểm tra quan hệ giữa nhóm tuổi và chỉ số cơ thể. Vì CDC có hơn 253 nghìn dòng, biểu đồ scatter được lấy mẫu ngẫu nhiên để tránh chồng điểm và giảm kích thước file hình.
-
-\textbf{Lý do chọn biểu đồ.} Scatter plot phù hợp để xem mối quan hệ giữa hai biến định lượng/ordinal; heatmap tương quan giúp tổng hợp quan hệ tuyến tính giữa \texttt{BMI}, \texttt{GenHlth}, \texttt{MentHlth}, \texttt{PhysHlth}, \texttt{Age}, \texttt{Education}, \texttt{Income} và \texttt{Diabetes\_binary}.
-
-\begin{figure}[H]
-\centering
-\begin{subfigure}{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{../outputs/figures/cdc_diabetes_age_bmi_scatter.png}
-    \caption{Age và BMI}
-\end{subfigure}
-\hfill
-\begin{subfigure}{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{../outputs/figures/cdc_diabetes_correlation_heatmap.png}
-    \caption{Heatmap tương quan}
-\end{subfigure}
-\caption[Phân tích quan hệ đa biến trên CDC Diabetes]{Phân tích quan hệ đa biến trên CDC Diabetes. Python source: \texttt{src/analyze\_cdc\_diabetes.py}; figure paths: \texttt{outputs/figures/cdc\_diabetes\_age\_bmi\_scatter.png}, \texttt{outputs/figures/cdc\_diabetes\_correlation\_heatmap.png}.}
-\label{fig:chapter3_cdc_scatter_corr}
-\end{figure}
-
-\textbf{Nhận xét.} Hình \ref{fig:chapter3_cdc_scatter_corr} cho thấy BMI có độ phân tán rộng ở nhiều nhóm tuổi, còn heatmap cho thấy \texttt{GenHlth}, \texttt{BMI}, \texttt{Age}, \texttt{PhysHlth} có liên hệ nhất định với target. Điều này phù hợp với bản chất dữ liệu khảo sát: nguy cơ tiểu đường không đến từ một biến đơn lẻ mà là tổ hợp sức khỏe nền, hành vi và nhân khẩu học.
-
-\begin{figure}[H]
-\centering
-\begin{subfigure}{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{../outputs/figures/cdc_diabetes_highbp_by_target.png}
-    \caption{HighBP}
-\end{subfigure}
-\hfill
-\begin{subfigure}{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{../outputs/figures/cdc_diabetes_highchol_by_target.png}
-    \caption{HighChol}
-\end{subfigure}
-\hfill
-\begin{subfigure}{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{../outputs/figures/cdc_diabetes_physactivity_by_target.png}
-    \caption{PhysActivity}
-\end{subfigure}
-\caption[Bar chart tỷ lệ tiểu đường theo biến sức khỏe/hành vi]{Bar chart tỷ lệ tiểu đường theo biến sức khỏe/hành vi trong CDC Diabetes. Python source: \texttt{src/analyze\_cdc\_diabetes.py}.}
-\label{fig:chapter3_cdc_binary_by_target}
-\end{figure}
-
-\textbf{Nhận xét bổ sung.} Hình \ref{fig:chapter3_cdc_binary_by_target} cho thấy tỷ lệ \texttt{Diabetes\_binary=1} thay đổi theo nhóm huyết áp cao, cholesterol cao và hoạt động thể chất. Đây là cơ sở để đưa các biến nhị phân vào mô hình phân loại ở Chương 4 thay vì chỉ dùng các biến liên tục.
-
-\subsection{Breast Cancer Wisconsin Diagnostic}
-
-Breast Cancer là dữ liệu bảng y sinh với nhiều đặc trưng định lượng liên tục đo từ ảnh tế bào. Các biến chọn gồm \texttt{Diagnosis}, \texttt{radius1}, \texttt{texture1}, \texttt{perimeter1}, \texttt{area1}, \texttt{smoothness1}, \texttt{concavity1}.
-
-\begin{table}[H]
-\centering
-\caption{Phân loại biến chính của Breast Cancer}
-\label{tab:chapter3_breast_variable_types}
-\scriptsize
-\setlength{\tabcolsep}{3pt}
-\renewcommand{\arraystretch}{1.12}
-\begin{tabularx}{\textwidth}{>{\RaggedRight\arraybackslash}p{0.20\textwidth}>{\RaggedRight\arraybackslash}p{0.22\textwidth}>{\RaggedRight\arraybackslash}p{0.22\textwidth}Y}
-\toprule
-Biến & Bản chất & Kiểu chi tiết & Vai trò phân tích \\
-\midrule
-\texttt{Diagnosis} & Qualitative & Binary nominal & Target B/M, frequency table \\
-\texttt{radius1} & Quantitative & Continuous & Histogram, boxplot theo target \\
-\texttt{texture1} & Quantitative & Continuous & Thống kê mô tả \\
-\texttt{perimeter1} & Quantitative & Continuous & Tương quan với radius/area \\
-\texttt{area1} & Quantitative & Continuous & Outlier, phân tán mạnh \\
-\texttt{smoothness1} & Quantitative & Continuous & Đặc trưng hình thái \\
-\texttt{concavity1} & Quantitative & Continuous & Khả năng tách lớp \\
+\texttt{BMI} & Quantitative Continuous & Mean, median, IQR, outlier & Histogram, boxplot \\
+\texttt{Age} & Quantitative Discrete/ordinal & Tần suất, median, IQR & Bar chart, scatter \\
+\texttt{GenHlth} & Ordinal & Mode, median, IQR & Bar chart, histogram rời rạc \\
+\texttt{MentHlth} & Quantitative Discrete & Mean, median, CV & Histogram, boxplot \\
+\texttt{PhysHlth} & Quantitative Discrete & Mean, median, CV & Histogram, boxplot \\
+\texttt{HighBP} & Qualitative binary & Tần suất, tỷ lệ, mode & Bar chart theo target \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-Các bảng nguồn gồm \texttt{breast\_cancer\_summary.csv}, \texttt{breast\_cancer\_variable\_types.csv}, \texttt{breast\_cancer\_missing\_values.csv} và \texttt{breast\_cancer\_frequency\_Diagnosis.csv}. Hình \ref{fig:chapter3_group_a_extra} cũng minh họa Breast Cancer bằng boxplot theo target. Nhiều đặc trưng kích thước như \texttt{radius1}, \texttt{perimeter1}, \texttt{area1} có tương quan mạnh; do đó Chương 4 cần chú ý đa cộng tuyến hoặc dùng chuẩn hóa phù hợp. File sạch \texttt{outputs/cleaned/breast\_cancer\_cleaned.csv} giữ nhãn \texttt{Diagnosis} và xử lý dữ liệu thiếu/outlier trước khi mô hình hóa.
-
-
-\section{Nhóm B: dữ liệu chuỗi thời gian và cảm biến}
-
-\subsection{Appliances Energy}
-
-\subsubsection{Bước 1: Phân loại bản chất biến và cấu trúc chuỗi thời gian}
-
-Appliances Energy có 19,735 mẫu, thu thập từ 2016-01-11 17:00:00 đến 2016-05-27 18:00:00, tần suất phổ biến 10 phút/mẫu. Biến target là \texttt{Appliances}, biểu diễn mức tiêu thụ năng lượng của thiết bị. Các biến giải thích gồm nhiệt độ, độ ẩm trong nhà, điều kiện ngoài trời, áp suất, gió và tầm nhìn.
-
-Với chuỗi thời gian, công thức trung bình ngày được dùng để làm mượt line chart:
-
-\begin{equation}
-\bar{y}_{d}=\frac{1}{n_d}\sum_{t \in d}y_t
-\end{equation}
-
-Trong đó $d$ là ngày, $n_d$ là số mẫu trong ngày và $y_t$ là giá trị \texttt{Appliances} tại thời điểm $t$. Biểu đồ phân phối dùng thêm biến log-transform:
-
-\begin{equation}
-y'_t=\ln(1+y_t)
-\end{equation}
+Năm biến định lượng/thứ bậc được chọn gồm \texttt{BMI}, \texttt{GenHlth}, \texttt{MentHlth}, \texttt{PhysHlth}, \texttt{Age}; các biến nhị phân \texttt{HighBP}, \texttt{HighChol}, \texttt{PhysActivity}, \texttt{Smoker} được dùng để đọc cấu trúc tần suất và quan hệ với \texttt{Diabetes\_binary}.
 
 \begin{table}[H]
 \centering
-\caption[Thống kê mô tả một số biến Appliances Energy]{Thống kê mô tả một số biến Appliances Energy. Source: \texttt{outputs/tables/appliances\_energy\_summary.csv}; code: \texttt{src/analyze\_appliances\_energy.py}.}
-\label{tab:chapter3_appliances_stats}
+\caption[Thống kê mô tả các biến tiêu biểu CDC Diabetes]{Thống kê mô tả các biến Quantitative tiêu biểu CDC Diabetes: xu hướng trung tâm và độ phân tán. Source: \texttt{outputs/tables/cdc\_diabetes\_summary.csv}.}
+\label{tab:ch4_cdc_stats}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrrrrrrrr}
+\toprule
+Biến & Mean & Med & Mode & P25 & P75 & Range & Var & Std & CV & IQR \\
+\midrule
+\texttt{BMI} & 28.38 & 27.00 & 27.00 & 24.00 & 31.00 & 86.00 & 43.67 & 6.61 & 0.233 & 7.00 \\
+\texttt{GenHlth} & 2.51 & 2.00 & 2.00 & 2.00 & 3.00 & 4.00 & 1.14 & 1.07 & 0.425 & 1.00 \\
+\texttt{MentHlth} & 3.18 & 0.00 & 0.00 & 0.00 & 2.00 & 30.00 & 54.95 & 7.41 & 2.328 & 2.00 \\
+\texttt{PhysHlth} & 4.24 & 0.00 & 0.00 & 0.00 & 3.00 & 30.00 & 76.00 & 8.72 & 2.055 & 3.00 \\
+\texttt{Age} & 8.03 & 8.00 & 9.00 & 6.00 & 10.00 & 12.00 & 9.33 & 3.05 & 0.380 & 4.00 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption[Bảng tần suất biến \texttt{HighBP} trong CDC Diabetes]{Bảng tần suất biến \texttt{HighBP} trong CDC Diabetes. Source: \texttt{outputs/tables/cdc\_diabetes\_frequency\_HighBP.csv}.}
+\label{tab:ch4_cdc_frequency}
+\small
+\begin{tabular}{lrr}
+\toprule
+\texttt{HighBP} & Tần suất tuyệt đối & Tần suất tương đối \\
+\midrule
+0 (không huyết áp cao) & 144\,851 & 57.10\% \\
+1 (có huyết áp cao) & 108\,829 & 42.90\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption[So sánh dữ liệu thô và sạch CDC Diabetes]{So sánh dữ liệu thô và dữ liệu sạch CDC Diabetes. Source: \texttt{outputs/tables/cdc\_diabetes\_preprocessing\_comparison.csv}.}
+\label{tab:ch4_cdc_preprocess}
+\small
+\begin{tabular}{lrrrrrr}
+\toprule
+Biến & Mean thô & Mean sạch & Std thô & Std sạch & Max thô & Max sạch \\
+\midrule
+\texttt{BMI} & 28.38 & 28.11 & 6.61 & 5.56 & 98.0 & 41.5 \\
+\texttt{GenHlth} & 2.51 & 2.51 & 1.07 & 1.07 & 5.0 & 5.0 \\
+\texttt{MentHlth} & 3.18 & 1.18 & 7.41 & 1.95 & 30.0 & 5.0 \\
+\texttt{PhysHlth} & 4.24 & 1.85 & 8.72 & 2.89 & 30.0 & 7.5 \\
+\texttt{Age} & 8.03 & 8.03 & 3.05 & 3.05 & 13.0 & 13.0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/cdc_diabetes_bmi_raw_vs_cleaned.png}
+ \caption{\texttt{BMI} thô và sạch}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/cdc_diabetes_correlation_heatmap.png}
+ \caption{Heatmap tương quan}
+\end{subfigure}
+\caption[Trực quan hóa CDC Diabetes]{Trực quan hóa phân phối \texttt{BMI} và tương quan biến trong CDC Diabetes. Python source: \texttt{src/analyze\_cdc\_diabetes.py}.}
+\label{fig:ch4_cdc_visuals}
+\end{figure}
+
+\textbf{Nhận xét Hình \ref{fig:ch4_cdc_visuals}.} Histogram \texttt{BMI} cho thấy tiền xử lý làm đuôi phải ngắn hơn: max giảm từ 98 xuống 41.5 và độ lệch chuẩn giảm từ 6.61 xuống 5.56. Heatmap tương quan cho thấy các biến hành vi và sức khỏe không độc lập hoàn toàn; đặc biệt nhóm \texttt{HighBP}, \texttt{HighChol}, \texttt{GenHlth}, \texttt{BMI} cần được giữ cùng nhau khi xây dựng mô hình vì chúng mô tả các khía cạnh khác nhau của nguy cơ chuyển hóa.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/cdc_diabetes_age_bmi_scatter.png}
+ \caption{Scatter \texttt{Age}--\texttt{BMI}}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/cdc_diabetes_highbp_by_target.png}
+ \caption{Bar chart \texttt{HighBP} theo target}
+\end{subfigure}
+\caption[Scatter và bảng chéo trực quan CDC Diabetes]{Scatter \texttt{Age}--\texttt{BMI} và biểu đồ \texttt{HighBP} theo \texttt{Diabetes\_binary}. Python source: \texttt{src/analyze\_cdc\_diabetes.py}.}
+\label{fig:ch4_cdc_scatter_corr}
+\end{figure}
+
+\textbf{Nhận xét Hình \ref{fig:ch4_cdc_scatter_corr}.} Scatter \texttt{Age}--\texttt{BMI} cho thấy dữ liệu phủ rộng ở nhiều nhóm tuổi, nhưng các điểm BMI cao xuất hiện ở hầu hết các nhóm tuổi thay vì chỉ tập trung ở một nhóm. Biểu đồ \texttt{HighBP} theo target cho thấy tỷ lệ huyết áp cao tăng rõ ở nhóm có tiểu đường; đây là tín hiệu định tính quan trọng, phù hợp với hiểu biết y tế về hội chứng chuyển hóa.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/cdc_diabetes_selected_histograms.png}
+ \caption{Histogram các biến chọn lọc}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/cdc_diabetes_target_distribution.png}
+ \caption{Phân bố \texttt{Diabetes\_binary}}
+\end{subfigure}
+\caption[Phân phối biến chọn lọc CDC Diabetes]{Phân phối các biến chọn lọc và phân bố target trong CDC Diabetes. Python source: \texttt{src/analyze\_cdc\_diabetes.py}.}
+\label{fig:ch4_cdc_hist_target}
+\end{figure}
+
+\textbf{Nhận xét Hình \ref{fig:ch4_cdc_hist_target}.} Các histogram xác nhận \texttt{MentHlth} và \texttt{PhysHlth} có phân phối zero-inflated: phần lớn quan sát bằng 0, còn một nhóm nhỏ kéo dài đến 30 ngày. Phân bố target cho thấy lớp không tiểu đường chiếm ưu thế, vì vậy các thí nghiệm học máy cần báo cáo precision, recall và F1 thay vì chỉ dùng accuracy.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.32\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/cdc_diabetes_bmi_boxplot_by_target.png}
+ \caption{\texttt{BMI} theo target}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.32\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/cdc_diabetes_highchol_by_target.png}
+ \caption{\texttt{HighChol} theo target}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.32\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/cdc_diabetes_physactivity_by_target.png}
+ \caption{\texttt{PhysActivity} theo target}
+\end{subfigure}
+\caption[Biểu đồ theo target CDC Diabetes]{Đối chiếu \texttt{BMI}, \texttt{HighChol} và \texttt{PhysActivity} theo \texttt{Diabetes\_binary}. Python source: \texttt{src/analyze\_cdc\_diabetes.py}.}
+\label{fig:ch4_cdc_target_panels}
+\end{figure}
+
+\textbf{Nhận xét Hình \ref{fig:ch4_cdc_target_panels}.} Boxplot \texttt{BMI} theo target cho thấy nhóm có tiểu đường có trung vị BMI cao hơn, dù hai phân phối vẫn chồng lấn nhiều. \texttt{HighChol} tăng ở nhóm bệnh, trong khi \texttt{PhysActivity} có xu hướng thấp hơn; điều này cho thấy CDC Diabetes phù hợp với mô hình đa biến, không nên kết luận từ một biến đơn lẻ.
+
+\textbf{Nhận xét về hình dáng phân phối.} \texttt{BMI} có mean 28.38 \textgreater{} median 27 \textgreater{} mode 27 và range lên tới 86 (min 12, max 98), tức phân phối \emph{lệch phải} với đuôi dài về nhóm béo phì cực đoan; do đó cần kiểm tra ngoại lai và có thể winsorize/cắt theo IQR khi dùng cho mô hình. \texttt{MentHlth} và \texttt{PhysHlth} là ví dụ điển hình của phân phối lệch phải mạnh: median và mode đều bằng 0 (P75 chỉ là 2--3 ngày), nhưng max bằng 30 khiến CV rất cao (2.33 và 2.06); điều này phản ánh thực tế đa số người trả lời không có ngày sức khỏe kém, trong khi một nhóm nhỏ có tình trạng kéo dài cả tháng -- Mean bị kéo lên bởi nhóm đuôi này nên không đại diện cho phần lớn mẫu. \texttt{GenHlth} và \texttt{Age} là biến thứ bậc (ordinal) nên mean chỉ có ý nghĩa tham chiếu; IQR hẹp (1--4) cho thấy câu trả lời tập trung vào một vài mức. Với biến mục tiêu \texttt{Diabetes\_binary}, dữ liệu mất cân bằng lớp rõ rệt, vì vậy khi đánh giá mô hình không nên chỉ nhìn accuracy.
+
+\subsubsection{Breast Cancer Wisconsin Diagnostic}
+
+Breast Cancer có 569 mẫu và 30 đặc trưng Quantitative Continuous từ ảnh tế bào. Các biến được chọn gồm \texttt{radius1}, \texttt{texture1}, \texttt{perimeter1}, \texttt{area1}, \texttt{smoothness1}, \texttt{concavity1}; biến target là \texttt{Diagnosis} (B/M).
+
+\begin{table}[H]
+\centering
+\caption{Phân loại biến tiêu biểu trong Breast Cancer}
+\label{tab:ch4_breast_variable_types}
+\small
+\begin{tabularx}{\textwidth}{p{0.18\textwidth}p{0.27\textwidth}p{0.25\textwidth}Y}
+\toprule
+Biến & Bản chất & Thống kê dùng & Biểu đồ phù hợp \\
+\midrule
+\texttt{Diagnosis} & Qualitative binary & Tần suất, mode & Bar chart \\
+\texttt{radius1} & Quantitative Continuous & Mean, median, IQR & Histogram, boxplot \\
+\texttt{texture1} & Quantitative Continuous & Mean, std, range & Histogram \\
+\texttt{perimeter1} & Quantitative Continuous & Mean, median, IQR & Histogram, heatmap \\
+\texttt{area1} & Quantitative Continuous & Range, variance, CV & Histogram, boxplot \\
+\texttt{concavity1} & Quantitative Continuous & CV, skewness proxy & Histogram, boxplot \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption[Bảng tần suất \texttt{Diagnosis} trong Breast Cancer]{Bảng tần suất biến \texttt{Diagnosis} trong Breast Cancer. Source: \texttt{outputs/tables/breast\_cancer\_frequency\_Diagnosis.csv}.}
+\label{tab:ch4_breast_frequency}
+\small
+\begin{tabular}{lrr}
+\toprule
+\texttt{Diagnosis} & Tần suất tuyệt đối & Tần suất tương đối \\
+\midrule
+B (lành tính) & 357 & 62.74\% \\
+M (ác tính) & 212 & 37.26\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption[Thống kê mô tả Breast Cancer]{Thống kê mô tả Breast Cancer: xu hướng trung tâm và độ phân tán. Source: \texttt{outputs/tables/breast\_cancer\_summary.csv}.}
+\label{tab:ch4_breast_stats}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrrrrrrrr}
+\toprule
+Biến & Mean & Med & Mode & P25 & P75 & Range & Var & Std & CV & IQR \\
+\midrule
+\texttt{radius1} & 14.13 & 13.37 & 12.34 & 11.70 & 15.78 & 21.13 & 12.42 & 3.52 & 0.249 & 4.08 \\
+\texttt{texture1} & 19.29 & 18.84 & 14.93 & 16.17 & 21.80 & 29.57 & 18.50 & 4.30 & 0.223 & 5.63 \\
+\texttt{perimeter1} & 91.97 & 86.24 & 82.61 & 75.17 & 104.10 & 144.71 & 590.44 & 24.30 & 0.264 & 28.93 \\
+\texttt{area1} & 654.89 & 551.10 & 512.20 & 420.30 & 782.70 & 2357.50 & 123843.6 & 351.91 & 0.537 & 362.40 \\
+\texttt{concavity1} & 0.089 & 0.062 & 0.000 & 0.030 & 0.131 & 0.427 & 0.006 & 0.080 & 0.898 & 0.101 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/breast_cancer_radius1_boxplot_by_target.png}
+ \caption{Boxplot \texttt{radius1} theo B/M}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/breast_cancer_target_distribution.png}
+ \caption{Phân bố \texttt{Diagnosis}}
+\end{subfigure}
+\caption[Boxplot và target Breast Cancer]{Boxplot \texttt{radius1} theo chẩn đoán và phân bố lớp trong Breast Cancer. Python source: \texttt{src/analyze\_tabular\_health.py}.}
+\label{fig:ch4_breast_box}
+\end{figure}
+
+\textbf{Nhận xét Hình \ref{fig:ch4_breast_box}.} Boxplot \texttt{radius1} cho thấy nhóm ác tính (M) có trung vị và khoảng phân vị cao hơn nhóm lành tính (B), đồng thời hai hộp tách khá rõ. Biểu đồ target cho thấy dữ liệu không cân bằng nhẹ nhưng không quá cực đoan: lớp B chiếm 62.74\%, lớp M chiếm 37.26\%, vẫn đủ để huấn luyện mô hình phân loại có giám sát.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/breast_cancer_selected_histograms.png}
+ \caption{Histogram các biến chọn lọc}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/breast_cancer_correlation_heatmap.png}
+ \caption{Heatmap tương quan}
+\end{subfigure}
+\caption[Histogram và heatmap Breast Cancer]{Histogram các đặc trưng hình thái và heatmap tương quan trong Breast Cancer. Python source: \texttt{src/analyze\_tabular\_health.py}.}
+\label{fig:ch4_breast_hist_corr}
+\end{figure}
+
+\textbf{Nhận xét Hình \ref{fig:ch4_breast_hist_corr}.} Histogram các biến hình thái cho thấy \texttt{area1}, \texttt{perimeter1}, \texttt{radius1} và \texttt{concavity1} đều lệch phải, phù hợp với bảng thống kê mô tả. Heatmap tương quan thường cho thấy nhóm biến kích thước (\texttt{radius1}, \texttt{perimeter1}, \texttt{area1}) tương quan rất mạnh, vì vậy khi mô hình tuyến tính hóa hoặc giảm chiều cần chú ý đa cộng tuyến.
+
+\textbf{Nhận xét về hình dáng phân phối.} Tất cả các biến kích thước khối u đều có Mean \textgreater{} Median \textgreater{} Mode, dấu hiệu của phân phối \emph{lệch phải}: ví dụ \texttt{radius1} (14.13 \textgreater{} 13.37 \textgreater{} 12.34), \texttt{perimeter1} (91.97 \textgreater{} 86.24 \textgreater{} 82.61) và \texttt{area1} (654.89 \textgreater{} 551.10 \textgreater{} 512.20). Đặc biệt \texttt{area1} có Range 2357.50 và Variance tới 123\,843.6 -- đơn vị diện tích khuếch đại chênh lệch hình học, kéo CV lên 0.537 và Var lên cao nhất nhóm. \texttt{concavity1} lệch phải mạnh nhất: mode = 0 với Mean 0.089 \textgreater{} Median 0.062, CV 0.898, cho thấy nhiều khối u lành tính gần tròn (concavity thấp). Boxplot \texttt{radius1} theo chẩn đoán cho thấy hai nhóm B/M tách khá rõ, do đó đây là bộ dữ liệu có tín hiệu phân lớp mạnh hơn Heart Disease.
+
+\subsection{Nhóm B: dữ liệu chuỗi thời gian và cảm biến}
+
+Nhóm B gồm Appliances Energy Prediction, Human Activity Recognition Using Smartphones (HAR) và MHEALTH. Điểm khác biệt so với nhóm A là thứ tự thời gian hoặc thứ tự quan sát cảm biến có ý nghĩa phân tích. Vì vậy, ngoài histogram và boxplot, nhóm B cần line chart, biểu đồ theo hoạt động và các phép biến đổi như log-transform, nội suy, rolling statistics hoặc differencing.
+
+\subsubsection{Appliances Energy Prediction}
+
+Appliances Energy có 19\,735 quan sát, mỗi quan sát cách nhau 10 phút. Năm biến được chọn gồm \texttt{Appliances}, \texttt{lights}, \texttt{T1}, \texttt{RH\_1}, \texttt{T\_out}, ngoài ra \texttt{Windspeed} và \texttt{RH\_out} được dùng để đọc tương quan môi trường.
+
+\begin{table}[H]
+\centering
+\caption[Thống kê mô tả Appliances Energy]{Thống kê mô tả các biến Quantitative Appliances Energy: xu hướng trung tâm và độ phân tán. Source: \texttt{outputs/tables/appliances\_energy\_summary.csv}.}
+\label{tab:ch4_appliances_stats}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrrrrrrrr}
+\toprule
+Biến & Mean & Med & Mode & P25 & P75 & Range & Var & Std & CV & IQR \\
+\midrule
+\texttt{Appliances} & 97.69 & 60.00 & 50.00 & 50.00 & 100.00 & 1070.00 & 10511.35 & 102.52 & 1.049 & 50.00 \\
+\texttt{lights} & 3.80 & 0.00 & 0.00 & 0.00 & 0.00 & 70.00 & 62.98 & 7.94 & 2.087 & 0.00 \\
+\texttt{T1} & 21.69 & 21.60 & 21.00 & 20.76 & 22.60 & 9.47 & 2.58 & 1.61 & 0.074 & 1.84 \\
+\texttt{RH\_1} & 40.26 & 39.66 & 39.09 & 37.33 & 43.07 & 36.34 & 15.83 & 3.98 & 0.099 & 5.73 \\
+\texttt{T\_out} & 7.41 & 6.92 & 10.10 & 3.67 & 10.40 & 31.10 & 28.29 & 5.32 & 0.717 & 6.73 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/appliances_energy_daily_line.png}
+ \caption{Python -- Line chart theo ngày}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/excel_appliances_daily_line_preview.png}
+ \caption{Excel -- Line chart theo ngày}
+\end{subfigure}
+\captionsetup{justification=raggedright,singlelinecheck=false}
+\caption[Line chart Appliances Energy: Python và Excel]{Xu hướng trung bình ngày của \texttt{Appliances} vẽ bằng Python và Excel.\\
+\footnotesize Python source: \texttt{src/analyze\_appliances\_energy.py}.\\
+Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (\texttt{Appliances Daily}).}
+\label{fig:ch4_appliances_visuals}
+\end{figure}
+
+\textbf{Nhận xét Hình \ref{fig:ch4_appliances_visuals}.} Line chart cho thấy mức tiêu thụ điện trung bình ngày dao động mạnh, có nhiều đỉnh ngắn thay vì xu hướng tăng/giảm tuyến tính ổn định. Vì đây là dữ liệu chuỗi thời gian, các điểm liền kề có quan hệ theo thứ tự thời gian; do đó khi dự báo không được chia train/test ngẫu nhiên mà phải tách theo mốc thời gian hoặc dùng TimeSeriesSplit.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/appliances_energy_distribution_raw_vs_log.png}
+ \caption{Python -- Histogram thô/log1p}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/excel_appliances_raw_vs_log_hist_preview.png}
+ \caption{Excel -- Histogram thô/log1p}
+\end{subfigure}
+\captionsetup{justification=raggedright,singlelinecheck=false}
+\caption[Histogram Appliances Energy: Python và Excel]{Phân phối thô và log1p của \texttt{Appliances} vẽ bằng Python và Excel.\\
+\footnotesize Python source: \texttt{src/analyze\_appliances\_energy.py}.\\
+Excel source/workbook: \texttt{src/create\_excel\_visualizations.py}, \texttt{excel/excel\_visualization\_comparison.xlsx} (\texttt{Appliances Hist}).}
+\label{fig:ch4_appliances_excel}
+\end{figure}
+
+\textbf{Nhận xét Hình \ref{fig:ch4_appliances_excel}.} Histogram thô của \texttt{Appliances} lệch phải rất mạnh: phần lớn giá trị nằm ở vùng tiêu thụ thấp, nhưng một số đỉnh lớn kéo dài đuôi phải. Sau biến đổi \texttt{log1p}, phân phối cân bằng hơn và dễ đọc hơn, giúp các mô hình tuyến tính hoặc khoảng cách không bị chi phối quá mức bởi các đỉnh tiêu thụ cực lớn.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/appliances_energy_target_boxplot.png}
+ \caption{Boxplot \texttt{Appliances}}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/appliances_energy_correlation_heatmap.png}
+ \caption{Heatmap tương quan}
+\end{subfigure}
+\caption[Boxplot và tương quan Appliances Energy]{Boxplot target và heatmap tương quan biến môi trường trong Appliances Energy. Python source: \texttt{src/analyze\_appliances\_energy.py}.}
+\label{fig:ch4_appliances_box_corr}
+\end{figure}
+
+\textbf{Nhận xét Hình \ref{fig:ch4_appliances_box_corr}.} Boxplot \texttt{Appliances} xác nhận target có rất nhiều điểm tiêu thụ cao nằm ngoài vùng IQR, nghĩa là các đỉnh sử dụng điện là hiện tượng quan trọng chứ không chỉ là nhiễu. Heatmap tương quan cho thấy các biến nhiệt độ và độ ẩm trong/ngoài nhà có liên hệ với nhau, nhưng tương quan tuyến tính với \texttt{Appliances} không quá mạnh; vì vậy mô hình dự báo cần thêm đặc trưng thời gian như giờ, ngày, lag và rolling mean.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.86\textwidth]{images/ch3/appliances_energy_monthly_ridgeline.png}
+\caption[Phân phối tiêu thụ điện theo tháng]{Ridgeline plot phân phối \texttt{log1p(Appliances)} theo tháng trong Appliances Energy. Python source: \texttt{src/analyze\_appliances\_energy.py}.}
+\label{fig:ch4_appliances_monthly_ridgeline}
+\end{figure}
+
+\textbf{Nhận xét Hình \ref{fig:ch4_appliances_monthly_ridgeline}.} Ridgeline theo tháng cho thấy hình dạng phân phối tiêu thụ điện không cố định theo thời gian: có tháng tập trung mạnh ở mức tiêu thụ thấp, có tháng xuất hiện đuôi phải rõ hơn. Đây là dấu hiệu mùa vụ/cấu trúc thời gian, củng cố yêu cầu không trộn ngẫu nhiên dữ liệu khi đánh giá mô hình hồi quy chuỗi thời gian.
+
+\textbf{Nhận xét về hình dáng phân phối.} \texttt{Appliances} là ví dụ điển hình của phân phối \emph{lệch phải rất mạnh}: Mean 97.69 \textgreater{} Median 60.00 \textgreater{} Mode 50.00, P75 chỉ 100 nhưng max tới 1080 (Range 1070), dẫn tới Variance 10511.35 và CV 1.049 (độ lệch còn lớn hơn cả Mean). Điều này có ý nghĩa vật lý: tiêu thụ điện cơ bản thấp, nhưng có các đỉnh ngắn khi bật nhiều thiết bị cùng lúc. \texttt{lights} lệch phải mạnh hơn nữa (mode 0, median 0, IQR 0 -- phần lớn thời gian đèn tắt), trong khi \texttt{T1}, \texttt{RH\_1} có CV rất thấp (0.07--0.10), gần như phân phối đối xứng và ổn định.
+
+\subsubsection{HAR và MHEALTH}
+
+HAR có 10\,299 mẫu và 561 đặc trưng trích xuất từ cảm biến điện thoại; MHEALTH có hơn 1.2 triệu dòng tín hiệu từ nhiều cảm biến đeo trên cơ thể. Với hai bộ dữ liệu này, nhãn hoạt động được dùng để phân tích tần suất, còn các biến cảm biến như gia tốc kế và con quay hồi chuyển được xem là biến Quantitative Continuous.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/har_activity_distribution.png}
+ \caption{HAR -- phân bố hoạt động}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/mhealth_activity_distribution.png}
+ \caption{MHEALTH -- phân bố hoạt động}
+\end{subfigure}
+\caption[Phân bố hoạt động HAR và MHEALTH]{Bảng/tần suất hoạt động trong hai bộ dữ liệu cảm biến. Python sources: \texttt{src/analyze\_har.py}, \texttt{src/analyze\_mhealth.py}.}
+\label{fig:ch4_sensor_activity}
+\end{figure}
+
+\textbf{Nhận xét Hình \ref{fig:ch4_sensor_activity}.} Phân bố hoạt động giúp kiểm tra cân bằng nhãn trước khi huấn luyện. HAR có cấu trúc nhãn gọn hơn vì dữ liệu đã được trích đặc trưng, còn MHEALTH có nhiều mẫu cảm biến liên tục nên cần lấy mẫu/ghép cửa sổ để tránh một số hoạt động dài chi phối quá trình học.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/har_selected_feature_boxplot.png}
+ \caption{HAR -- boxplot đặc trưng chọn lọc}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/mhealth_sensor_boxplot.png}
+ \caption{MHEALTH -- boxplot cảm biến}
+\end{subfigure}
+\caption[Boxplot cảm biến HAR và MHEALTH]{Boxplot các đặc trưng cảm biến sau khi chuẩn hóa/ghép mẫu. Python sources: \texttt{src/analyze\_har.py}, \texttt{src/analyze\_mhealth.py}.}
+\label{fig:ch4_sensor_box}
+\end{figure}
+
+\textbf{Nhận xét Hình \ref{fig:ch4_sensor_box}.} Boxplot cho thấy các cảm biến có thang đo khác nhau và có nhiều ngoại lai ngắn hạn; vì vậy chuẩn hóa Z-score là cần thiết trước khi tính khoảng cách hoặc gom cụm. Với cảm biến, một điểm ngoại lai không nhất thiết là lỗi nhập liệu; nó có thể là một chuyển động mạnh hoặc chuyển trạng thái, nên việc cắt ngoại lai phải thận trọng hơn dữ liệu bảng.
+
+\subsection{Đối sánh công cụ phân tích: Excel và Python}
+
+Theo yêu cầu, báo cáo phải dùng ít nhất một bộ dữ liệu nhóm A và một bộ dữ liệu nhóm B để so sánh Excel/Spreadsheet với lập trình Python. Trong dự án này, Heart Disease đại diện cho nhóm A và Appliances Energy đại diện cho nhóm B.
+
+\begin{table}[H]
+\centering
+\caption{So sánh vai trò của Python và Excel trong phân tích}
+\label{tab:ch4_excel_python_compare}
+\small
+\begin{tabularx}{\textwidth}{p{0.22\textwidth}YY}
+\toprule
+Tiêu chí & Python & Excel/Spreadsheet \\
+\midrule
+Tái lập kết quả & Mạnh; toàn bộ pipeline nằm trong \texttt{src/} và có output cố định & Phụ thuộc thao tác workbook, phù hợp kiểm tra thủ công \\
+Dữ liệu lớn & Xử lý tốt CDC Diabetes, Reuters, MHEALTH & Phù hợp mẫu nhỏ hoặc bảng tổng hợp \\
+Biểu đồ & Xuất PNG trực tiếp cho LaTeX & Dễ trình bày, dễ kiểm tra công thức và chart \\
+Kiểm soát tiền xử lý & Tốt cho IQR, log-transform, scaling, parsing & Tốt để minh họa từng bước tính toán \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Kết quả đối chiếu cho thấy Excel và Python thống nhất về xu hướng chính: bar chart \texttt{cp} đều xác nhận lớp đau ngực 4 chiếm ưu thế; scatter \texttt{age}--\texttt{thalach} đều cho quan hệ âm; line chart Appliances đều thể hiện chu kỳ tiêu thụ điện theo thời gian. Vì vậy, Python được dùng làm công cụ chính để tái lập và xử lý dữ liệu lớn, còn Excel đóng vai trò kiểm chứng trực quan và minh bạch hóa các phép tính cơ bản.
+
+\section{Số hóa, thống kê và trực quan hóa dữ liệu đa phương tiện (Nhóm C)}
+
+Quy tắc cốt lõi của nhóm C là dữ liệu thô không thể đưa trực tiếp vào bảng thống kê. Ảnh, văn bản, âm thanh hoặc video phải được chuyển thành đặc trưng Quantitative trước: kích thước, cường độ pixel, độ dài văn bản, số ký tự, topic, TF-IDF, RMS energy, motion intensity, v.v. Dự án này chọn hai bộ dữ liệu nhóm C: HAM10000 (ảnh) và Reuters-21578 (văn bản).
+
+\subsection{Bộ dữ liệu ảnh: HAM10000}
+
+HAM10000 gồm 10\,015 ảnh da liễu cùng metadata chẩn đoán. Trong phân tích thống kê, ảnh được số hóa thành các biến \texttt{width}, \texttt{height}, \texttt{mean\_intensity}, \texttt{std\_intensity}, kết hợp với metadata \texttt{age}, \texttt{sex}, \texttt{localization}, \texttt{dx}.
+
+\begin{table}[H]
+\centering
+\caption{Phân loại biến số hóa từ HAM10000}
+\label{tab:ch4_ham_variable_types}
+\small
+\begin{tabularx}{\textwidth}{p{0.30\textwidth}p{0.32\textwidth}Y}
+\toprule
+Loại biến & Ví dụ & Ý nghĩa phân tích \\
+\midrule
+Quantitative Continuous & \texttt{mean\_intensity}, \texttt{std\_intensity} & Độ sáng, độ tương phản, mức phân tán sắc độ \\
+Quantitative Discrete & \texttt{width}, \texttt{height}, tổng số pixel & Kích thước hình học của ảnh \\
+Qualitative & \texttt{dx}, \texttt{dx\_type}, \texttt{localization}, \texttt{sex} & Nhãn chẩn đoán và metadata \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption[Thống kê đặc trưng ảnh HAM10000]{Thống kê đặc trưng ảnh HAM10000. Source: \texttt{outputs/tables/ham10000\_numeric\_summary.csv}.}
+\label{tab:ch4_ham_stats}
 \scriptsize
 \setlength{\tabcolsep}{4pt}
-\renewcommand{\arraystretch}{1.08}
-\begin{tabular}{lrrrrrr}
+\begin{tabular}{lrrrrrrrr}
 \toprule
-Biến & Mean & Median & Std & Min & Max & IQR \\
+Biến & Mean & Median & Std & Min & Max & CV & IQR & n \\
 \midrule
-Appliances & 97.69 & 60.00 & 102.52 & 10.00 & 1080.00 & 50.00 \\
-lights & 3.80 & 0.00 & 7.94 & 0.00 & 70.00 & 0.00 \\
-T1 & 21.69 & 21.60 & 1.61 & 16.79 & 26.26 & 1.84 \\
-RH\_1 & 40.26 & 39.66 & 3.98 & 27.02 & 63.36 & 5.73 \\
-T\_out & 7.41 & 6.92 & 5.32 & -5.00 & 26.10 & 6.73 \\
-Windspeed & 4.04 & 3.67 & 2.45 & 0.00 & 14.00 & 3.50 \\
+\texttt{width} & 600.00 & 600.00 & 0.00 & 600 & 600 & 0.000 & 0.00 & 1000 \\
+\texttt{height} & 450.00 & 450.00 & 0.00 & 450 & 450 & 0.000 & 0.00 & 1000 \\
+\texttt{mean\_intensity} & 156.73 & 156.93 & 18.94 & 93.88 & 215.91 & 0.121 & 25.05 & 1000 \\
+\texttt{std\_intensity} & 27.97 & 25.83 & 11.37 & 6.46 & 73.23 & 0.407 & 14.16 & 1000 \\
+\texttt{age} & 53.08 & 50.00 & 16.75 & 0 & 85 & 0.316 & 25.00 & 990 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Bảng \ref{tab:chapter3_appliances_stats} cho thấy target \texttt{Appliances} lệch phải rất mạnh: median chỉ 60 nhưng mean 97.69 và max 1080. Standard deviation 102.52 lớn hơn mean, CV xấp xỉ 1.05. Điều này giải thích vì sao log-transform cần được xem xét trước khi regression.
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/ham10000_image_dimensions_histogram.png}
+ \caption{Histogram kích thước ảnh}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/ham10000_mean_intensity_boxplot.png}
+ \caption{Boxplot độ sáng theo lớp}
+\end{subfigure}
+\caption[Số hóa ảnh HAM10000]{Số hóa và trực quan hóa ảnh HAM10000. Python source: \texttt{src/analyze\_ham10000.py}.}
+\label{fig:ch4_ham_dataset}
+\end{figure}
 
-\textbf{Lý do chọn biểu đồ.} Line chart là biểu đồ bắt buộc với chuỗi thời gian vì giữ được thứ tự thời gian. Histogram raw-vs-log được dùng để kiểm tra mức độ lệch phải của target và tác dụng của phép biến đổi log.
-
-\textbf{Cách tính.} Line chart dùng trung bình ngày $\bar{y}_d$. Histogram raw đếm trực tiếp \texttt{Appliances}; histogram log đếm giá trị $y'_t=\ln(1+y_t)$.
+\textbf{Nhận xét Hình \ref{fig:ch4_ham_dataset}.} Kích thước ảnh gần như đồng nhất nên không tạo nhiều thông tin phân biệt lớp; phần hữu ích hơn nằm ở đặc trưng cường độ như \texttt{mean\_intensity} và \texttt{std\_intensity}. Boxplot độ sáng theo lớp cho thấy có chồng lấn lớn, vì vậy đặc trưng thống kê ảnh đơn giản chỉ nên xem là bước mô tả, không đủ thay thế đặc trưng màu/texture hoặc transfer learning.
 
 \begin{figure}[H]
 \centering
 \begin{subfigure}{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{../outputs/figures/appliances_energy_daily_line.png}
-    \caption{Trung bình ngày}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/ham10000_class_distribution.png}
+ \caption{Phân bố lớp \texttt{dx}}
 \end{subfigure}
 \hfill
 \begin{subfigure}{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{../outputs/figures/appliances_energy_distribution_raw_vs_log.png}
-    \caption{Raw và log1p}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/ham10000_localization_bar.png}
+ \caption{Vị trí tổn thương}
 \end{subfigure}
-\caption[Trực quan hóa target Appliances Energy]{Trực quan hóa target Appliances Energy. Python source: \texttt{src/analyze\_appliances\_energy.py}; figure paths: \texttt{outputs/figures/appliances\_energy\_daily\_line.png}, \texttt{outputs/figures/appliances\_energy\_distribution\_raw\_vs\_log.png}.}
-\label{fig:chapter3_appliances_python}
+\caption[Phân tích class-level HAM10000]{Phân tích theo lớp và vị trí tổn thương trong HAM10000. Python source: \texttt{src/analyze\_ham10000.py}.}
+\label{fig:ch4_ham_class}
 \end{figure}
 
-\textbf{Nhận xét.} Hình \ref{fig:chapter3_appliances_python} cho thấy mức tiêu thụ năng lượng dao động theo thời gian, nên không nên chia train/test ngẫu nhiên. Histogram raw bị lệch phải rõ, trong khi histogram sau $\ln(1+y)$ gom dữ liệu về khoảng hẹp hơn. Do đó, khi huấn luyện mô hình regression, nên thử nghiệm cả target gốc và target biến đổi log.
-
-\subsection{HAR: Human Activity Recognition}
-
-HAR là dữ liệu cảm biến đã được biến đổi thành vector đặc trưng từ accelerometer/gyroscope. Các biến chọn gồm \texttt{tBodyAcc-mean()-X}, \texttt{tBodyAcc-mean()-Y}, \texttt{tBodyAcc-mean()-Z}, \texttt{tBodyAcc-std()-X}, \texttt{tGravityAcc-mean()-X} và \texttt{Activity}.
+\textbf{Nhận xét Hình \ref{fig:ch4_ham_class}.} Phân bố lớp \texttt{dx} mất cân bằng mạnh, đặc biệt lớp \texttt{nv} chiếm tỷ trọng lớn; vì vậy accuracy có thể đánh lừa nếu mô hình chỉ dự đoán lớp phổ biến. Biểu đồ vị trí tổn thương cho thấy một số vùng cơ thể xuất hiện nhiều hơn, nhưng vị trí không đủ để thay thế thông tin ảnh vì nhiều lớp bệnh có thể cùng xuất hiện ở một vùng.
 
 \begin{figure}[H]
 \centering
-\begin{subfigure}{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{../outputs/figures/har_selected_feature_boxplot.png}
-    \caption{HAR: boxplot feature theo activity}
-\end{subfigure}
-\hfill
-\begin{subfigure}{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{../outputs/figures/mhealth_sensor_boxplot.png}
-    \caption{MHEALTH: boxplot cảm biến theo activity}
-\end{subfigure}
-\caption[Phân tích cảm biến HAR và MHEALTH]{Phân tích cảm biến HAR và MHEALTH. Sources: \texttt{src/analyze\_har.py}, \texttt{src/analyze\_mhealth.py}; tables: \texttt{outputs/tables/har\_feature\_summary\_extended.csv}, \texttt{outputs/tables/mhealth\_sensor\_summary\_extended.csv}.}
-\label{fig:chapter3_har_mhealth_boxplot}
+\includegraphics[width=0.78\textwidth]{images/ch3/ham10000_age_histogram.png}
+\caption[Phân phối tuổi bệnh nhân HAM10000]{Phân phối tuổi bệnh nhân trong metadata HAM10000. Python source: \texttt{src/analyze\_ham10000.py}.}
+\label{fig:ch4_ham_age}
 \end{figure}
 
-\begin{figure}[H]
-\centering
-\begin{subfigure}{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{../outputs/figures/har_activity_distribution.png}
-    \caption{HAR: phân bố activity}
-\end{subfigure}
-\hfill
-\begin{subfigure}{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{../outputs/figures/mhealth_activity_distribution.png}
-    \caption{MHEALTH: phân bố activity}
-\end{subfigure}
-\caption[Phân bố nhãn hoạt động trong HAR và MHEALTH]{Phân bố nhãn hoạt động trong HAR và MHEALTH. Sources: \texttt{src/analyze\_har.py}, \texttt{src/analyze\_mhealth.py}.}
-\label{fig:chapter3_har_mhealth_activity}
-\end{figure}
+\textbf{Nhận xét Hình \ref{fig:ch4_ham_age}.} Histogram tuổi cho thấy mẫu HAM10000 tập trung nhiều ở nhóm trung niên và lớn tuổi, phù hợp với bối cảnh bệnh da liễu thường được ghi nhận nhiều hơn ở nhóm tuổi cao. Khi dùng metadata cho mô hình, tuổi có thể là biến hỗ trợ, nhưng không nên thay thế thông tin ảnh vì cùng một độ tuổi vẫn có thể xuất hiện nhiều lớp chẩn đoán khác nhau.
 
-Hình \ref{fig:chapter3_har_mhealth_boxplot} cho thấy feature HAR có phân phối khác nhau giữa các activity. Bảng nguồn gồm \texttt{har\_feature\_summary\_extended.csv}, \texttt{har\_activity\_distribution.csv}, \texttt{har\_variable\_types.csv}. Tiền xử lý HAR gồm windowing tín hiệu, chuẩn hóa feature, giữ train/test theo subject để tránh rò rỉ dữ liệu.
+\textbf{Nhận xét tổng hợp HAM10000.} Kích thước ảnh đồng nhất ở 600$\times$450 nên không cần xử lý resize khi thống kê hình học. \texttt{mean\_intensity} dao động từ 93.88 đến 215.91, cho thấy sắc độ ảnh có đủ biến thiên để dùng làm đặc trưng mô tả. Tuy nhiên, các đặc trưng cường độ pixel đơn lẻ không đủ để phân loại ổn định, mà cần kết hợp đặc trưng sâu hoặc mô hình ảnh ở phần học máy.
 
-\subsection{MHEALTH}
+\subsection{Bộ dữ liệu văn bản: Reuters-21578}
 
-MHEALTH là dữ liệu cảm biến sức khỏe theo subject/activity. Các biến chọn đại diện cho accelerometer, gyroscope và magnetometer, kèm nhãn \texttt{Activity}. Các bảng nguồn gồm \texttt{mhealth\_sensor\_summary\_extended.csv}, \texttt{mhealth\_selected\_sensor\_summary.csv}, \texttt{mhealth\_activity\_distribution\_sample.csv} và \texttt{mhealth\_variable\_types.csv}. Hình \ref{fig:chapter3_har_mhealth_boxplot} và \ref{fig:chapter3_har_mhealth_activity} cho thấy phân phối cảm biến và phân bố nhãn của MHEALTH. Tiền xử lý phù hợp gồm loại/đánh dấu activity 0 nếu là trạng thái không hoạt động, chuẩn hóa z-score theo sensor, kiểm tra mất cân bằng nhãn và tách dữ liệu theo subject.
-
-\section{Đối sánh công cụ phân tích: Excel và Python}
-
-\subsubsection{Workbook Excel được tạo}
-
-Theo yêu cầu đề bài, ngoài hình vẽ bằng Python, báo cáo tạo thêm workbook Excel tại \path{excel/excel_visualization_comparison.xlsx}. Workbook này được sinh bằng script \path{src/create_excel_visualizations.py} và gồm các sheet:
-
-\begin{itemize}
-    \item \texttt{README}: ghi đường dẫn dữ liệu, source code và ghi chú công thức.
-    \item \texttt{Heart Frequency}: bảng tần suất \texttt{cp} và chart cột Excel.
-    \item \texttt{Heart Stats}: các công thức Excel \texttt{AVERAGE}, \texttt{MEDIAN}, \texttt{STDEV.S}, \texttt{MIN}, \texttt{MAX}, \texttt{QUARTILE.INC}.
-    \item \texttt{Heart Scatter}: chart scatter Excel giữa \texttt{age} và \texttt{thalach}.
-    \item \texttt{Appliances Daily}: chart line Excel cho trung bình ngày.
-    \item \texttt{Appliances Histogram}: chart cột Excel cho phân phối raw và log1p.
-\end{itemize}
-
-Bảng index của các chart Excel được lưu tại \path{outputs/tables/excel_visualization_index.csv}; log tạo file nằm tại \path{outputs/logs/create_excel_visualizations.log}.
+Reuters-21578 gồm 21\,578 văn bản tin tức. Văn bản được số hóa thành \texttt{word\_count}, \texttt{char\_count}, \texttt{primary\_topic} và danh sách topic đa nhãn. Các đặc trưng nâng cao như TF-IDF có thể dùng ở chương học máy, còn chương này tập trung vào thống kê độ dài và phân bố topic.
 
 \begin{table}[H]
 \centering
-\caption[Danh sách biểu đồ Excel đã tạo]{Danh sách biểu đồ Excel đã tạo. Source: \texttt{outputs/tables/excel\_visualization\_index.csv}; code: \texttt{src/create\_excel\_visualizations.py}.}
-\label{tab:chapter3_excel_chart_index}
-\scriptsize
-\setlength{\tabcolsep}{3pt}
-\renewcommand{\arraystretch}{1.12}
-\begin{tabularx}{\textwidth}{>{\RaggedRight\arraybackslash}p{0.30\textwidth}>{\RaggedRight\arraybackslash}p{0.13\textwidth}>{\RaggedRight\arraybackslash}p{0.20\textwidth}Y}
+\caption{Phân loại biến số hóa từ Reuters-21578}
+\label{tab:ch4_reuters_variable_types}
+\small
+\begin{tabularx}{\textwidth}{p{0.30\textwidth}p{0.32\textwidth}Y}
 \toprule
-Chart & Dataset & Sheet Excel & Cách tính \\
+Loại biến & Ví dụ & Ý nghĩa phân tích \\
 \midrule
-\texttt{excel\_heart\_cp\_bar} & Heart & Heart Frequency & $f_j=count(cp=j)$ \\
-\texttt{excel\_heart\_age\_thalach} & Heart & Heart Scatter & $(age_i, thalach_i)$ \\
-\texttt{excel\_appliances\_daily} & Appliances & Appliances Daily & $\bar{y}_d=mean(y_t)$ \\
-\texttt{excel\_appliances\_hist} & Appliances & Appliances Histogram & $y'_t=\ln(1+y_t)$ \\
+Quantitative Continuous & Điểm cảm xúc, mật độ stop words & Đặc trưng ngữ nghĩa mở rộng \\
+Quantitative Discrete & \texttt{word\_count}, \texttt{char\_count}, số câu & Độ dài và độ phức tạp văn bản \\
+Qualitative & \texttt{primary\_topic}, \texttt{topics}, ngôn ngữ & Nhãn phân loại chủ đề \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-\subsubsection{Biểu đồ Excel cho Heart Disease}
-
-\textbf{Lý do chọn biểu đồ.} Hai chart Excel cho Heart Disease được chọn để đối chiếu với Python ở hai dạng dữ liệu khác nhau: bar chart cho biến định tính \texttt{cp}, scatter chart cho hai biến định lượng \texttt{age} và \texttt{thalach}. Cách chọn này giúp chứng minh Excel có thể kiểm tra lại cả bảng tần suất và quan hệ hai biến.
-
-\begin{figure}[H]
-\centering
-\begin{subfigure}{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{../outputs/figures/excel_heart_cp_bar_preview.png}
-    \caption{Excel column chart}
-\end{subfigure}
-\hfill
-\begin{subfigure}{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{../outputs/figures/excel_heart_age_thalach_scatter_preview.png}
-    \caption{Excel scatter chart}
-\end{subfigure}
-\caption[Preview các biểu đồ Excel cho Heart Disease]{Preview các biểu đồ Excel cho Heart Disease. Excel workbook: \texttt{excel/excel\_visualization\_comparison.xlsx}; Excel sheets: \texttt{Heart Frequency}, \texttt{Heart Scatter}; source: \texttt{src/create\_excel\_visualizations.py}.}
-\label{fig:chapter3_excel_heart}
-\end{figure}
-
-\textbf{Nhận xét.} Hình \ref{fig:chapter3_excel_heart} là bản preview để chèn vào LaTeX; chart gốc nằm trong workbook Excel. Biểu đồ cột được tính từ bảng tần suất, vì vậy kết quả phải khớp với Bảng \ref{tab:chapter3_cp_frequency}. Biểu đồ scatter dùng cùng cặp điểm với Hình \ref{fig:chapter3_heart_scatter_corr}. Nếu biểu đồ Python và Excel cùng cho xu hướng tuổi tăng thì \texttt{thalach} giảm, có thể xem kết quả trực quan hóa là ổn định theo công cụ.
-
-\subsubsection{Biểu đồ Excel cho Appliances Energy}
-
-\textbf{Lý do chọn biểu đồ.} Với dữ liệu chuỗi thời gian, line chart trong Excel cho phép người đọc mở workbook và kiểm tra trực tiếp chuỗi trung bình ngày. Histogram Excel cho raw và log1p giúp kiểm chứng phép biến đổi log bằng một công cụ khác Python.
-
-\begin{figure}[H]
-\centering
-\begin{subfigure}{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{../outputs/figures/excel_appliances_daily_line_preview.png}
-    \caption{Excel line chart}
-\end{subfigure}
-\hfill
-\begin{subfigure}{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{../outputs/figures/excel_appliances_raw_vs_log_hist_preview.png}
-    \caption{Excel histogram preview}
-\end{subfigure}
-\caption[Preview các biểu đồ Excel cho Appliances Energy]{Preview các biểu đồ Excel cho Appliances Energy. Excel workbook: \texttt{excel/excel\_visualization\_comparison.xlsx}; Excel sheets: \texttt{Appliances Daily}, \texttt{Appliances Histogram}; source: \texttt{src/create\_excel\_visualizations.py}.}
-\label{fig:chapter3_excel_appliances}
-\end{figure}
-
-\textbf{Nhận xét.} Hình \ref{fig:chapter3_excel_appliances} cho thấy Excel và Python đều dẫn đến cùng một kết luận: chuỗi Appliances có biến động theo ngày và target lệch phải. Trung bình ngày thấp nhất khoảng 37.50 vào 2016-01-28, cao nhất khoảng 188.54 vào 2016-04-04. Biểu đồ log1p làm phân phối gọn hơn, standard deviation của target gốc là 102.52 trong khi standard deviation của \texttt{log1p(Appliances)} chỉ khoảng 0.65. Đây là bằng chứng định lượng cho việc biến đổi log trước khi dự báo.
-
-\subsubsection{So sánh Excel và Python}
-
 \begin{table}[H]
 \centering
-\caption{So sánh vai trò của Python và Excel trong phân tích.}
-\label{tab:chapter3_python_excel_compare}
-\scriptsize
-\setlength{\tabcolsep}{3pt}
-\renewcommand{\arraystretch}{1.12}
-\begin{tabularx}{\textwidth}{>{\RaggedRight\arraybackslash}p{0.20\textwidth}>{\RaggedRight\arraybackslash}p{0.37\textwidth}Y}
+\caption[Thống kê đặc trưng văn bản Reuters-21578]{Thống kê đặc trưng văn bản Reuters-21578. Source: \texttt{outputs/tables/reuters\_text\_summary.csv}.}
+\label{tab:ch4_reuters_stats}
+\small
+\begin{tabular}{lrrrrrrrr}
 \toprule
-Tiêu chí & Python & Excel \\
+Biến & Mean & Median & Std & Min & Max & CV & IQR & n \\
 \midrule
-Tái lập kết quả & Cao, chạy lại script trong \texttt{src/} & Cao nếu workbook và công thức được giữ \\
-Xử lý dữ liệu lớn & Phù hợp với 253k và 1.2M mẫu & Giới hạn hơn, nên dùng mẫu/tổng hợp \\
-Công thức thống kê & Linh hoạt với pandas/numpy & Dễ kiểm tra bằng công thức ở cell \\
-Biểu đồ & Tự động xuất PNG cho LaTeX & Dễ mở workbook và kiểm tra chart \\
-Kiểm soát pipeline & Mạnh, có log và file output & Tốt cho đối chiếu và trình bày \\
+\texttt{word\_count} & 132.86 & 93.00 & 139.70 & 0 & 2\,381 & 1.051 & 111 & 21\,578 \\
+\texttt{char\_count} & 762.06 & 534.00 & 819.74 & 0 & 9\,910 & 1.076 & 672 & 21\,578 \\
 \bottomrule
-\end{tabularx}
+\end{tabular}
 \end{table}
 
-Từ Bảng \ref{tab:chapter3_python_excel_compare}, có thể kết luận Python nên là công cụ chính để xử lý dữ liệu lớn, lập script và sinh hàng loạt artifact. Excel phù hợp để kiểm tra công thức, minh họa cách tính và cho người đọc tự thao tác trên workbook. Trong báo cáo này, hai công cụ không thay thế nhau mà bổ sung cho nhau: Python bảo đảm tái lập, Excel bảo đảm tính minh bạch của các phép tính cơ bản.
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/reuters_word_count_histogram.png}
+ \caption{Histogram số từ}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/reuters_top_topics.png}
+ \caption{Top topic}
+\end{subfigure}
+\caption[Số hóa văn bản Reuters-21578]{Số hóa và trực quan hóa văn bản Reuters-21578. Python source: \texttt{src/analyze\_reuters.py}.}
+\label{fig:ch4_reuters_dataset}
+\end{figure}
 
-
-\section{Nhóm C: dữ liệu đa phương tiện}
-
-\subsection{HAM10000: dữ liệu ảnh}
-
-Quy tắc cốt lõi trong tài liệu là dữ liệu đa phương tiện phải được số hóa thành thuộc tính định lượng. Với HAM10000, ảnh da liễu được chuyển thành các đặc trưng như chiều rộng, chiều cao, số pixel, nhãn \texttt{dx}, vị trí \texttt{localization} và độ sáng trung bình. Các bảng nguồn gồm \texttt{ham10000\_dataset\_summary.csv}, \texttt{ham10000\_variable\_types.csv}, \texttt{ham10000\_age\_summary.csv}, \texttt{ham10000\_frequency\_dx.csv} và \texttt{ham10000\_image\_feature\_sample.csv}.
+\textbf{Nhận xét Hình \ref{fig:ch4_reuters_dataset}.} Histogram \texttt{word\_count} cho thấy phân phối lệch phải rất mạnh: đa số tin ngắn, một số ít tin rất dài. Biểu đồ top topic cho thấy \texttt{earn} và \texttt{acq} chiếm ưu thế, trong khi nhiều topic chuyên ngành có ít mẫu; khi dùng Reuters cho phân loại văn bản, macro-F1 sẽ có ý nghĩa hơn accuracy vì phản ánh tốt hơn hiệu năng trên các lớp nhỏ.
 
 \begin{figure}[H]
 \centering
 \begin{subfigure}{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{../outputs/figures/ham10000_image_dimensions_histogram.png}
-    \caption{Kích thước ảnh HAM10000}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/reuters_char_count_histogram.png}
+ \caption{Histogram số ký tự}
 \end{subfigure}
 \hfill
 \begin{subfigure}{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{../outputs/figures/ham10000_mean_intensity_boxplot.png}
-    \caption{Độ sáng trung bình theo lớp}
+ \centering
+ \includegraphics[width=\textwidth]{images/ch3/reuters_word_char_scatter.png}
+ \caption{Scatter số từ--số ký tự}
 \end{subfigure}
-\caption[Số hóa và trực quan hóa dữ liệu ảnh HAM10000]{Số hóa và trực quan hóa dữ liệu ảnh HAM10000. Python source: \texttt{src/analyze\_ham10000.py}.}
-\label{fig:chapter3_ham10000_digitized}
+\caption[Phân tích độ dài văn bản Reuters-21578]{Phân tích độ dài văn bản Reuters-21578 theo số ký tự và quan hệ số từ--số ký tự. Python source: \texttt{src/analyze\_reuters.py}.}
+\label{fig:ch4_reuters_length}
 \end{figure}
 
-Hình \ref{fig:chapter3_ham10000_digitized} minh họa hai cấp độ phân tích nhóm C: dataset-level và class-level. Histogram kích thước kiểm tra tính đồng nhất hình học của ảnh; boxplot độ sáng theo lớp kiểm tra liệu đặc trưng sắc độ có khác biệt giữa các nhóm bệnh hay không. Ngoài ra, \texttt{ham10000\_class\_distribution.png}, \texttt{ham10000\_age\_histogram.png} và \texttt{ham10000\_localization\_bar.png} kiểm tra mất cân bằng lớp, phân bố tuổi và vị trí tổn thương. Đây là bước tiền đề trước khi dùng ảnh trong mô hình học máy, vì mô hình cần vector đặc trưng số.
+\textbf{Nhận xét Hình \ref{fig:ch4_reuters_length}.} Histogram số ký tự xác nhận kết luận từ \texttt{word\_count}: phần lớn bản tin ngắn, nhưng vẫn có đuôi phải gồm các văn bản dài. Scatter số từ--số ký tự gần như tạo thành một dải tuyến tính, nghĩa là hai đặc trưng độ dài chứa thông tin trùng lặp đáng kể; khi xây dựng mô hình, nên chuẩn hóa hoặc chọn một đại diện độ dài để tránh làm mô hình quá thiên về kích thước văn bản thay vì nội dung.
 
-\subsection{Reuters-21578: dữ liệu văn bản}
+\section{Kết luận chương}
 
-Với Reuters-21578, văn bản được chuyển thành số từ, số ký tự, tần suất từ, topic/label và các đặc trưng TF-IDF nếu dùng cho học máy. Các bảng nguồn gồm \texttt{reuters\_variable\_types.csv}, \texttt{reuters\_text\_summary.csv}, \texttt{reuters\_text\_features.csv} và \texttt{reuters\_top\_topics.csv}.
+Chương này đã triển khai đầy đủ yêu cầu thống kê và trực quan hóa trên ba nhóm dữ liệu. Với nhóm A, Heart Disease cho thấy vai trò của phân loại biến và xử lý ngoại lai; CDC Diabetes nhấn mạnh dữ liệu lớn, biến thứ bậc và mất cân bằng lớp; Breast Cancer thể hiện các biến Quantitative có lực phân tách rõ. Với nhóm B, Appliances Energy chứng minh cần đọc xu hướng bằng line chart và dùng log-transform cho phân phối lệch phải; HAR/MHEALTH cho thấy dữ liệu cảm biến cần chuẩn hóa trước khi tính khoảng cách hoặc gom cụm. Với nhóm C, HAM10000 và Reuters-21578 chứng minh nguyên tắc số hóa dữ liệu đa phương tiện thành đặc trưng Quantitative trước khi thống kê.
 
-\begin{figure}[H]
-\centering
-\begin{subfigure}{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{../outputs/figures/reuters_word_count_histogram.png}
-    \caption{Reuters: histogram số từ}
-\end{subfigure}
-\hfill
-\begin{subfigure}{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{../outputs/figures/reuters_top_topics.png}
-    \caption{Reuters: top topics}
-\end{subfigure}
-\caption[Số hóa và trực quan hóa dữ liệu văn bản Reuters]{Số hóa và trực quan hóa dữ liệu văn bản Reuters. Python source: \texttt{src/analyze\_reuters.py}; tables: \texttt{outputs/tables/reuters\_variable\_types.csv}, \texttt{outputs/tables/reuters\_text\_summary.csv}, \texttt{outputs/tables/reuters\_top\_topics.csv}.}
-\label{fig:chapter3_reuters_digitized}
-\end{figure}
-
-Hình \ref{fig:chapter3_reuters_digitized} minh họa bộ dữ liệu đa phương tiện thứ hai ở dạng văn bản. Văn bản thô được số hóa thành số từ, số ký tự, nhãn topic và có thể mở rộng sang TF-IDF. Histogram số từ giúp phát hiện văn bản quá ngắn/quá dài; biểu đồ top topics cho biết mức mất cân bằng lớp. Nếu một topic chiếm ưu thế quá lớn, mô hình phân loại văn bản ở Chương 4 cần đánh giá bằng macro-F1 thay vì chỉ accuracy.
-
-\section{Kết luận từ phân tích trực quan}
-
-Từ các biểu đồ và bảng thống kê trong chương này, có bốn kết luận chính:
-
-\begin{itemize}
-    \item Heart Disease có một số biến có outlier, đặc biệt \texttt{chol}, \texttt{trestbps}, \texttt{oldpeak}; tiền xử lý IQR làm giảm biến động cực trị nhưng không làm mất cấu trúc trung tâm.
-    \item Biến \texttt{cp} có phân phối không đều, \texttt{cp=4} chiếm 47.52\%; đây là biến định tính cần được đưa vào mô hình classification và đánh giá bằng confusion matrix.
-    \item CDC Diabetes và Breast Cancer bổ sung hai kiểu dữ liệu bảng khác nhau: một bộ nhiều biến sức khỏe dạng nhị phân/ordinal, một bộ nhiều biến liên tục hình học. Điều này đáp ứng yêu cầu nhóm A phải có ít nhất ba dataset và tối thiểu năm biến phân tích.
-    \item Appliances Energy là chuỗi thời gian có target lệch phải, mean lớn hơn median và max rất cao; log-transform là phép biến đổi cần thiết để thu hẹp phân phối.
-    \item HAR và MHEALTH đã được phân tích bằng bảng thống kê cảm biến, boxplot theo activity và biểu đồ phân bố nhãn; các artifact nằm trong \texttt{outputs/tables/} và \texttt{outputs/figures/}.
-    \item HAM10000 chứng minh nguyên tắc số hóa multimedia: ảnh được chuyển thành kích thước, số pixel, độ sáng trung bình và nhãn lớp trước khi thống kê.
-    \item Reuters chứng minh nguyên tắc số hóa văn bản: văn bản được chuyển thành số từ, số ký tự, topic và đặc trưng có thể mở rộng sang TF-IDF; phân bố topic cần được kiểm tra để tránh đánh giá lệch do mất cân bằng lớp.
-    \item Kết quả Excel và Python thống nhất về xu hướng chính, đồng thời tạo được bằng chứng phụ lục trong \texttt{src/}, \texttt{excel/} và \texttt{outputs/tables/}.
-\end{itemize}
-
-Những kết luận này là cơ sở cho Chương 4. Classification nhóm A cần chú ý đến outlier, mất cân bằng lớp và các cặp biến tương quan. Regression nhóm B cần tách train/test theo thời gian, cần xem xét biến đổi log và các đặc trưng lag/rolling mean để bắt xu hướng.
+Các kết quả này là nền tảng trực tiếp cho chương học máy: phân loại nhóm A phải chú ý mất cân bằng và ngoại lai; dự báo nhóm B phải tách theo thời gian; gom cụm nhóm A/B/C phải chuẩn hóa đặc trưng và ẩn nhãn trước khi đánh giá cấu trúc tự nhiên của dữ liệu.

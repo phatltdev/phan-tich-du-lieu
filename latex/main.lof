@@ -1,53 +1,79 @@
 \babel@toc {english}{}\relax 
 \babel@toc {vietnamese}{}\relax 
 \addvspace {10\p@ }
-\contentsline {xchapter}{CƠ SỞ LÝ THUYẾT}{2}{chapter.1}%
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Minh họa histogram Python}}{32}{figure.caption.34}%
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Minh họa histogram Excel}}{33}{figure.caption.35}%
-\contentsline {figure}{\numberline {1.3}{\ignorespaces Minh họa boxplot Heart Disease}}{35}{figure.caption.39}%
-\contentsline {figure}{\numberline {1.4}{\ignorespaces Minh họa scatter plot Python}}{37}{figure.caption.44}%
-\contentsline {figure}{\numberline {1.5}{\ignorespaces Minh họa scatter plot Excel}}{38}{figure.caption.45}%
-\contentsline {figure}{\numberline {1.6}{\ignorespaces Minh họa bar chart Python}}{39}{figure.caption.49}%
-\contentsline {figure}{\numberline {1.7}{\ignorespaces Minh họa bar chart Excel}}{40}{figure.caption.50}%
-\contentsline {figure}{\numberline {1.8}{\ignorespaces Minh họa line chart Python}}{42}{figure.caption.55}%
-\contentsline {figure}{\numberline {1.9}{\ignorespaces Minh họa line chart Excel}}{43}{figure.caption.56}%
-\contentsline {figure}{\numberline {1.10}{\ignorespaces Minh họa correlation heatmap Heart Disease}}{45}{figure.caption.60}%
-\contentsline {figure}{\numberline {1.11}{\ignorespaces Minh họa dữ liệu cho raincloud plot}}{48}{figure.caption.66}%
-\contentsline {figure}{\numberline {1.12}{\ignorespaces Minh họa dữ liệu cho hexbin plot}}{48}{figure.caption.67}%
-\contentsline {figure}{\numberline {1.13}{\ignorespaces Minh họa ridgeline plot Appliances Energy}}{49}{figure.caption.68}%
-\contentsline {figure}{\numberline {1.14}{\ignorespaces Ví dụ histogram tuổi trên Heart Disease}}{56}{figure.caption.74}%
-\contentsline {figure}{\numberline {1.15}{\ignorespaces Ví dụ boxplot cholesterol trên Heart Disease}}{57}{figure.caption.75}%
-\contentsline {figure}{\numberline {1.16}{\ignorespaces Ví dụ scatter plot trên Heart Disease}}{58}{figure.caption.76}%
-\contentsline {figure}{\numberline {1.17}{\ignorespaces Ví dụ correlation heatmap trên Heart Disease}}{59}{figure.caption.77}%
+\contentsline {xchapter}{GIỚI THIỆU}{1}{chapter.1}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{THU THẬP, MÔ TẢ VÀ TỔNG QUAN CÁC BỘ DỮ LIỆU}{61}{chapter.2}%
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Minh họa Heart Disease}}{67}{figure.caption.84}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Minh họa CDC Diabetes}}{70}{figure.caption.87}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Minh họa cấu trúc số của Breast Cancer}}{73}{figure.caption.90}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Minh họa đặc trưng chuỗi thời gian của Appliances Energy}}{76}{figure.caption.93}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Minh họa HAR Smartphones}}{79}{figure.caption.96}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Minh họa MHEALTH}}{81}{figure.caption.99}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Minh họa phân tích dữ liệu ảnh HAM10000 sau khi số hóa}}{84}{figure.caption.104}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Minh họa Reuters-21578}}{87}{figure.caption.107}%
+\contentsline {xchapter}{CƠ SỞ LÝ THUYẾT}{3}{chapter.2}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Minh họa histogram raw Python}}{32}{figure.caption.31}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Minh họa histogram Excel}}{33}{figure.caption.32}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Minh họa boxplot Heart Disease}}{34}{figure.caption.36}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Phiên bản Excel boxplot cholesterol}}{35}{figure.caption.37}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Minh họa scatter plot Python}}{38}{figure.caption.42}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Minh họa scatter plot Excel}}{39}{figure.caption.43}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Minh họa bar chart Python}}{40}{figure.caption.47}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Minh họa bar chart Excel}}{41}{figure.caption.48}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Minh họa line chart Python}}{43}{figure.caption.53}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Minh họa line chart Excel}}{44}{figure.caption.54}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Minh họa correlation heatmap Heart Disease}}{46}{figure.caption.58}%
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Phiên bản Excel correlation heatmap}}{47}{figure.caption.59}%
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Minh họa ridgeline Appliances Energy}}{49}{figure.caption.63}%
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Phiên bản Excel ridgeline Appliances Energy}}{50}{figure.caption.64}%
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Minh họa dữ liệu cho raincloud plot}}{51}{figure.caption.67}%
+\contentsline {figure}{\numberline {2.16}{\ignorespaces Minh họa dữ liệu cho hexbin plot}}{52}{figure.caption.68}%
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Ví dụ histogram tuổi trên Heart Disease}}{59}{figure.caption.74}%
+\contentsline {figure}{\numberline {2.18}{\ignorespaces Ví dụ boxplot cholesterol trên Heart Disease}}{60}{figure.caption.75}%
+\contentsline {figure}{\numberline {2.19}{\ignorespaces Ví dụ scatter plot trên Heart Disease}}{61}{figure.caption.76}%
+\contentsline {figure}{\numberline {2.20}{\ignorespaces Ví dụ correlation heatmap trên Heart Disease}}{61}{figure.caption.77}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{PHÂN TÍCH ĐẶC ĐIỂM DỮ LIỆU QUA THỐNG KÊ VÀ TRỰC QUAN HÓA}{93}{chapter.3}%
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Bar chart tần suất loại đau ngực Heart Disease}}{98}{figure.caption.121}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Kiểm tra phân phối và outlier trên Heart Disease}}{100}{figure.caption.124}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Phân tích quan hệ đa biến trên Heart Disease}}{101}{figure.caption.126}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Kiểm tra phân phối và outlier trên CDC Diabetes}}{104}{figure.caption.134}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Phân tích quan hệ đa biến trên CDC Diabetes}}{105}{figure.caption.136}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Bar chart tỷ lệ tiểu đường theo biến sức khỏe/hành vi}}{105}{figure.caption.137}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Trực quan hóa target Appliances Energy}}{107}{figure.caption.141}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Phân tích cảm biến HAR và MHEALTH}}{108}{figure.caption.142}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Phân bố nhãn hoạt động trong HAR và MHEALTH}}{108}{figure.caption.143}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Preview các biểu đồ Excel cho Heart Disease}}{110}{figure.caption.147}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Preview các biểu đồ Excel cho Appliances Energy}}{110}{figure.caption.149}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Số hóa và trực quan hóa dữ liệu ảnh HAM10000}}{112}{figure.caption.152}%
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Số hóa và trực quan hóa dữ liệu văn bản Reuters}}{112}{figure.caption.153}%
+\contentsline {xchapter}{THU THẬP, MÔ TẢ VÀ TỔNG QUAN CÁC BỘ DỮ LIỆU}{63}{chapter.3}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Phân tích biến age}}{70}{figure.caption.88}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Phân tích biến chol}}{71}{figure.caption.90}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Phân tích biến thalach}}{72}{figure.caption.92}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Phân tích biến oldpeak}}{73}{figure.caption.94}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Tần suất loại đau ngực (cp) theo nhóm bệnh (Heart Disease).}}{73}{figure.caption.95}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Phân tích biến BMI}}{77}{figure.caption.105}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Phân tích biến PhysHlth}}{78}{figure.caption.107}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Phân tích biến GenHlth}}{78}{figure.caption.108}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Phân tích biến radius1}}{82}{figure.caption.118}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Phân tích biến area1}}{82}{figure.caption.120}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Phân tích biến concavity1}}{83}{figure.caption.121}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Phân tích biến Appliances}}{86}{figure.caption.131}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Phân tích biến T\_out}}{87}{figure.caption.132}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Phân tích biến tBodyAcc-std()-X}}{90}{figure.caption.142}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Phân tích biến tGravityAcc-mean()-X}}{90}{figure.caption.143}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Phân tích biến sensor\_01}}{92}{figure.caption.150}%
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Phân tích biến sensor\_04 (ECG)}}{93}{figure.caption.151}%
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Phân tích biến age}}{96}{figure.caption.162}%
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Tần suất vị trí tổn thương theo nhóm chẩn đoán (HAM10000).}}{96}{figure.caption.163}%
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Phân tích biến word\_count}}{99}{figure.caption.172}%
+\contentsline {figure}{\numberline {3.21}{\ignorespaces Top 10 topic chính trong Reuters-21578.}}{100}{figure.caption.173}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{PHÂN TÍCH DỮ LIỆU VỚI HỌC MÁY VÀ ĐỐI SÁNH KẾT QUẢ}{115}{chapter.4}%
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Confusion matrix cho ba bài toán classification nhóm A}}{117}{figure.caption.155}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces So sánh giá trị thực tế và dự báo mẫu trên Appliances Energy}}{118}{figure.caption.157}%
+\contentsline {xchapter}{PHÂN TÍCH ĐẶC ĐIỂM DỮ LIỆU QUA THỐNG KÊ VÀ TRỰC QUAN HÓA}{105}{chapter.4}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Bar chart tần suất \texttt {cp}: Python và Excel}}{110}{figure.caption.186}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Histogram và boxplot Heart Disease: Python và Excel}}{110}{figure.caption.187}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Scatter plot \texttt {age}--\texttt {thalach}: Python và Excel}}{111}{figure.caption.188}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Target và tương quan Heart Disease}}{111}{figure.caption.189}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Trực quan hóa CDC Diabetes}}{114}{figure.caption.196}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Scatter và bảng chéo trực quan CDC Diabetes}}{114}{figure.caption.197}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Phân phối biến chọn lọc CDC Diabetes}}{115}{figure.caption.198}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Biểu đồ theo target CDC Diabetes}}{115}{figure.caption.199}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Boxplot và target Breast Cancer}}{117}{figure.caption.204}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Histogram và heatmap Breast Cancer}}{117}{figure.caption.205}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Line chart Appliances Energy: Python và Excel}}{118}{figure.caption.208}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Histogram Appliances Energy: Python và Excel}}{119}{figure.caption.209}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Boxplot và tương quan Appliances Energy}}{119}{figure.caption.210}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Phân phối tiêu thụ điện theo tháng}}{120}{figure.caption.211}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Phân bố hoạt động HAR và MHEALTH}}{121}{figure.caption.213}%
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Boxplot cảm biến HAR và MHEALTH}}{121}{figure.caption.214}%
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Số hóa ảnh HAM10000}}{123}{figure.caption.218}%
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Phân tích class-level HAM10000}}{124}{figure.caption.219}%
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Phân phối tuổi bệnh nhân HAM10000}}{124}{figure.caption.220}%
+\contentsline {figure}{\numberline {4.20}{\ignorespaces Số hóa văn bản Reuters-21578}}{125}{figure.caption.223}%
+\contentsline {figure}{\numberline {4.21}{\ignorespaces Phân tích độ dài văn bản Reuters-21578}}{126}{figure.caption.224}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN}{121}{chapter.5}%
+\contentsline {xchapter}{PHÂN TÍCH DỮ LIỆU VỚI HỌC MÁY VÀ ĐỐI SÁNH KẾT QUẢ}{127}{chapter.5}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Confusion matrix cho ba bài toán classification nhóm A}}{129}{figure.caption.226}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces So sánh giá trị thực tế và dự báo mẫu trên Appliances Energy}}{130}{figure.caption.228}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN}{133}{chapter.6}%
 \contentsfinish 

@@ -1,0 +1,5 @@
+cp,target_0,target_1,total,target_0_pct_within_group,target_1_pct_within_group
+1.0,16,7,23,9.76,5.04
+2.0,41,9,50,25.0,6.47
+3.0,68,18,86,41.46,12.95
+4.0,39,105,144,23.78,75.54

@@ -17,7 +17,7 @@ Kết quả trên phù hợp với phân tích dữ liệu: bộ Breast Cancer c
 
 \section{Hạn chế}
 
-Báo cáo vẫn còn một số hạn chế. Thứ nhất, artifact phân tích sâu hiện tập trung nhiều vào Heart Disease, Appliances Energy, HAM10000 và các baseline nhóm A; HAR, MHEALTH và Reuters-21578 cần được mở rộng thêm bảng thống kê, hình và mô hình. Thứ hai, phần clustering mới dừng ở thiết kế pipeline vì repository chưa có bảng kết quả clustering chính thức trong \texttt{outputs/tables/}. Thứ ba, đối sánh với nghiên cứu liên quan mới ở mức định tính; cần bổ sung trích dẫn chuẩn IEEE/APA và số liệu từ bài báo để so sánh định lượng. Thứ tư, báo cáo chưa đạt mức độ mở rộng rất lớn như yêu cầu cuối kỳ về số trang, nên cần tiếp tục phát triển phụ lục và phân tích chi tiết.
+Báo cáo vẫn còn một số hạn chế. Thứ nhất, artifact phân tích sâu hiện tập trung nhiều vào Heart Disease, Appliances Energy, HAM10000 và các baseline nhóm A; HAR, MHEALTH và Reuters-21578 cần được mở rộng thêm bảng thống kê, hình và mô hình. Thứ hai, phần clustering mới dừng ở thiết kế pipeline vì repository chưa có bảng kết quả clustering chính thức trong \texttt{outputs/tables/}. Thứ ba, đối sánh với nghiên cứu liên quan mới ở mức định tính; cần bổ sung trích dẫn chuẩn IEEE/APA và số liệu từ bài báo để so sánh định lượng. Thứ tư, phạm vi báo cáo hiện tại còn gọn, nên cần tiếp tục phát triển phụ lục và phân tích chi tiết để mở rộng độ sâu của nghiên cứu.
 
 \section{Hướng phát triển}
 
@@ -27,7 +27,7 @@ Các hướng phát triển tiếp theo gồm:
     \item Hoàn thiện phân tích thống kê cho HAR, MHEALTH và Reuters-21578: chọn tối thiểu 5 biến/đặc trưng, lập bảng tần suất, tính đầy đủ các chỉ số mô tả và sinh biểu đồ.
     \item Bổ sung clustering trên A, B, C bằng K-Means, Hierarchical và DBSCAN; chọn số cụm bằng Elbow/Silhouette; diễn giải cụm bằng mean, median, mode và bảng tần suất.
     \item Cải thiện regression Appliances bằng lag features, rolling mean, biến giờ/ngày/thứ, log-transform target, TimeSeriesSplit và thử ARIMA/SARIMA/XGBoost.
-    \item Chuẩn hóa tài liệu tham khảo theo IEEE hoặc APA, đặc biệt các nghiên cứu dùng cùng dataset để đối sánh Chương 4.
+    \item Chuẩn hóa tài liệu tham khảo theo IEEE hoặc APA, đặc biệt các nghiên cứu dùng cùng dataset để đối sánh Chương 5.
     \item Tạo phụ lục minh chứng đầy đủ gồm đường dẫn dữ liệu, source code, log chạy, bảng kết quả, hình PNG và workbook Excel.
 \end{enumerate}
 

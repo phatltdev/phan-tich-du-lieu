@@ -89,6 +89,35 @@ def main() -> None:
     plt.savefig(FIGURES / "reuters_word_count_histogram.png", dpi=200)
     plt.close()
 
+    plt.figure(figsize=(8, 5))
+    sns.histplot(df.loc[df["char_count"] > 0, "char_count"].clip(upper=6000), bins=40, color="#4C78A8")
+    plt.title("Reuters document character-count distribution (clipped at 6000)")
+    plt.xlabel("char_count")
+    plt.tight_layout()
+    plt.savefig(FIGURES / "reuters_char_count_histogram.png", dpi=200)
+    plt.close()
+
+    sample = df[(df["word_count"] > 0) & (df["char_count"] > 0)].sample(
+        min(5000, len(df[(df["word_count"] > 0) & (df["char_count"] > 0)])),
+        random_state=42,
+    )
+    plt.figure(figsize=(8, 5))
+    sns.scatterplot(
+        data=sample,
+        x=sample["word_count"].clip(upper=1000),
+        y=sample["char_count"].clip(upper=6000),
+        hue="primary_topic",
+        legend=False,
+        alpha=0.35,
+        s=14,
+    )
+    plt.title("Reuters word count vs character count")
+    plt.xlabel("word_count (clipped at 1000)")
+    plt.ylabel("char_count (clipped at 6000)")
+    plt.tight_layout()
+    plt.savefig(FIGURES / "reuters_word_char_scatter.png", dpi=200)
+    plt.close()
+
     logging.info("Reuters docs=%s", len(df))
 
 

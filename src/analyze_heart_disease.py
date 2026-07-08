@@ -212,6 +212,8 @@ def save_plots(df: pd.DataFrame, cleaned: pd.DataFrame) -> None:
     plt.title("Cleaned cholesterol by disease presence")
     plt.xlabel("0 = absent, 1 = present")
     plt.ylabel("Serum cholesterol")
+    # Aligned y-axis shared with the Excel preview (chol ranges 126-564).
+    plt.ylim(0, 600)
     plt.tight_layout()
     plt.savefig(FIGURES_DIR / "heart_disease_cholesterol_boxplot.png", dpi=180)
     plt.close()
@@ -221,26 +223,104 @@ def save_plots(df: pd.DataFrame, cleaned: pd.DataFrame) -> None:
     plt.title("Age vs maximum heart rate")
     plt.xlabel("Age")
     plt.ylabel("Maximum heart rate achieved")
+    # Aligned limits shared with the Excel preview (create_excel_visualizations.py)
+    # so the two versions can be compared on the same axes.
+    plt.xlim(28, 78)
+    plt.ylim(80, 205)
     plt.tight_layout()
     plt.savefig(FIGURES_DIR / "heart_disease_age_thalach_scatter.png", dpi=180)
     plt.close()
 
     plt.figure(figsize=(10, 8))
     corr = cleaned[NUMERIC_FOR_STATS + ["target_binary"]].corr()
-    sns.heatmap(corr, annot=True, fmt=".2f", cmap="vlag", center=0, square=True)
+    # Aligned color scale and colormap with the Excel preview (RdBu_r, vmin=-1, vmax=1)
+    # so both versions read the correlation on the same color axis.
+    sns.heatmap(corr, annot=True, fmt=".2f", cmap="RdBu_r", vmin=-1, vmax=1, center=0, square=True)
     plt.title("Heart Disease Correlation Heatmap")
     plt.tight_layout()
     plt.savefig(FIGURES_DIR / "heart_disease_correlation_heatmap.png", dpi=180)
     plt.close()
 
     plt.figure(figsize=(8, 5))
-    sns.countplot(data=df, x="cp", hue="target_binary", palette="Set2")
-    plt.title("Chest pain type by disease presence")
+    sns.countplot(data=df, x="cp", color="#4e79a7")
+    plt.title("Heart Disease - Chest pain type frequency")
     plt.xlabel("Chest pain type")
     plt.ylabel("Sample count")
+    # Aligned y-axis shared with the Excel preview (max total count is 144 for
+    # cp=4). x-axis keeps seaborn's default categorical range so all four cp
+    # levels remain visible.
+    plt.ylim(0, 150)
     plt.tight_layout()
     plt.savefig(FIGURES_DIR / "heart_disease_chest_pain_bar.png", dpi=180)
     plt.close()
+
+
+GROUP_STATS_VARIABLES = ["chol", "thalach"]
+
+
+def describe_by_group(df: pd.DataFrame, variables: list[str]) -> pd.DataFrame:
+    """Compute central, dispersion, and shape statistics per target_binary group.
+
+    Extends the per-group mean/median table with extra measures (std, variance, CV,
+    IQR, MAD, range, skewness) so that "statistics by target group" is shown to apply
+    beyond mean/median. All values are computed from the raw frame on non-missing
+    observations of each variable.
+    """
+    rows = []
+    for variable in variables:
+        for group, subset in df.groupby("target_binary"):
+            series = subset[variable].dropna()
+            mean = series.mean()
+            median = series.median()
+            q1 = series.quantile(0.25)
+            q3 = series.quantile(0.75)
+            std = series.std(ddof=1)
+            mad = np.median(np.abs(series - median))
+            rows.append(
+                {
+                    "variable": variable,
+                    "target_binary": int(group),
+                    "group_label": "khong benh" if int(group) == 0 else "co benh",
+                    "n": int(series.count()),
+                    "mean": round(mean, 4),
+                    "median": round(median, 4),
+                    "mean_minus_median": round(mean - median, 4),
+                    "std": round(std, 4),
+                    "variance": round(series.var(ddof=1), 4),
+                    "cv": round(std / mean, 4) if mean != 0 else np.nan,
+                    "iqr": round(q3 - q1, 4),
+                    "mad": round(mad, 4),
+                    "range": round(series.max() - series.min(), 4),
+                    "min": round(series.min(), 4),
+                    "max": round(series.max(), 4),
+                    "skew": round(series.skew(), 4),
+                    "kurtosis": round(series.kurtosis(), 4),
+                }
+            )
+    return pd.DataFrame(rows)
+
+
+def cross_tab_categorical(df: pd.DataFrame, column: str) -> pd.DataFrame:
+    """Build a crosstab of a categorical variable vs target_binary with row/col totals
+    and within-group proportions, so frequency/mode-style measures by target group are
+    also demonstrated (not only mean/median for quantitative variables)."""
+    ct = pd.crosstab(df[column], df["target_binary"])
+    ct.columns = [f"target_{int(c)}" for c in ct.columns]
+    ct = ct.reset_index().rename(columns={column: column})
+    ct["total"] = ct[[c for c in ct.columns if c.startswith("target_")]].sum(axis=1)
+    for col in [c for c in ct.columns if c.startswith("target_")]:
+        group_total = ct[col].sum()
+        ct[f"{col}_pct_within_group"] = (ct[col] / group_total * 100).round(2) if group_total else np.nan
+    return ct
+
+
+def save_group_tables(df: pd.DataFrame) -> None:
+    """Persist per-group descriptive tables used by Chapter 1 (theory) and Chapter 3."""
+    group_stats = describe_by_group(df, GROUP_STATS_VARIABLES)
+    group_stats.to_csv(TABLES_DIR / "heart_disease_group_stats.csv", index=False)
+
+    cp_cross = cross_tab_categorical(df, "cp")
+    cp_cross.to_csv(TABLES_DIR / "heart_disease_cp_by_target.csv", index=False)
 
 
 def save_evidence_index() -> None:
@@ -271,6 +351,7 @@ def main() -> None:
     cleaned = clean_data(df)
     save_metadata_tables(df, cleaned)
     save_plots(df, cleaned)
+    save_group_tables(df)
     save_evidence_index()
 
     logging.info("Raw shape: %s rows x %s columns", df.shape[0], df.shape[1])
