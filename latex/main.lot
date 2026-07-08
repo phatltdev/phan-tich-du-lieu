@@ -9,120 +9,120 @@
 \contentsline {table}{\numberline {2.2}{\ignorespaces Bảng ví dụ Mean trên một số đặc tính Heart Disease}}{7}{table.caption.10}%
 \contentsline {table}{\numberline {2.3}{\ignorespaces Bảng ví dụ Median trên một số đặc tính Heart Disease}}{8}{table.caption.11}%
 \contentsline {table}{\numberline {2.4}{\ignorespaces Bảng tổng hợp ví dụ kết quả Mode trên một số đặc tính Heart Disease}}{9}{table.caption.12}%
-\contentsline {table}{\numberline {2.5}{\ignorespaces Bảng ví dụ Percentiles trên một số đặc tính Heart Disease}}{10}{table.caption.13}%
+\contentsline {table}{\numberline {2.5}{\ignorespaces Bảng ví dụ Percentiles trên một số đặc tính Heart Disease}}{11}{table.caption.13}%
 \contentsline {table}{\numberline {2.6}{\ignorespaces So sánh Mean, Trimmed Mean và Median trên một số đặc tính Heart Disease}}{12}{table.caption.14}%
 \contentsline {table}{\numberline {2.7}{\ignorespaces So sánh Mean, Geometric Mean và Median trên các đặc tính dương của Heart Disease}}{13}{table.caption.15}%
 \contentsline {table}{\numberline {2.8}{\ignorespaces Bảng ví dụ Range trên một số đặc tính Heart Disease}}{14}{table.caption.16}%
-\contentsline {table}{\numberline {2.9}{\ignorespaces Bảng ví dụ Variance và Standard Deviation trên một số đặc tính Heart Disease}}{15}{table.caption.17}%
+\contentsline {table}{\numberline {2.9}{\ignorespaces Bảng ví dụ Variance và Standard Deviation trên một số đặc tính Heart Disease}}{16}{table.caption.17}%
 \contentsline {table}{\numberline {2.10}{\ignorespaces Bảng ví dụ Coefficient of Variation trên một số đặc tính Heart Disease}}{16}{table.caption.18}%
 \contentsline {table}{\numberline {2.11}{\ignorespaces Bảng ví dụ IQR trên một số đặc tính Heart Disease}}{17}{table.caption.19}%
 \contentsline {table}{\numberline {2.12}{\ignorespaces So sánh Standard Deviation và Mean Absolute Deviation trên một số đặc tính Heart Disease}}{18}{table.caption.20}%
-\contentsline {table}{\numberline {2.13}{\ignorespaces So sánh Standard Deviation, $D_{\text {mean}}$ và $\hat {\sigma }_{\text {MAD}}$ trên một số đặc tính Heart Disease}}{19}{table.caption.21}%
-\contentsline {table}{\numberline {2.14}{\ignorespaces Bảng ví dụ tần suất và tần suất tương đối của biến \texttt {cp}}}{20}{table.caption.22}%
-\contentsline {table}{\numberline {2.15}{\ignorespaces Bảng ví dụ Z-score của một số giá trị cholesterol}}{21}{table.caption.23}%
-\contentsline {table}{\numberline {2.16}{\ignorespaces Minh họa thống kê mô tả biến \texttt {chol} Heart Disease}}{24}{table.caption.24}%
-\contentsline {table}{\numberline {2.17}{\ignorespaces Minh họa thống kê mô tả biến \texttt {Appliances} Appliances Energy Prediction}}{27}{table.caption.25}%
-\contentsline {table}{\numberline {2.18}{\ignorespaces Cách đọc nhanh hình dạng biểu đồ và ý nghĩa phân tích}}{30}{table.caption.26}%
-\contentsline {table}{\numberline {2.19}{\ignorespaces Nhóm biểu đồ phân phối: ý nghĩa, hạn chế và trường hợp áp dụng}}{31}{table.caption.27}%
-\contentsline {table}{\numberline {2.20}{\ignorespaces Dữ liệu mẫu cho histogram Appliances Energy}}{31}{table.caption.29}%
-\contentsline {table}{\numberline {2.21}{\ignorespaces Tính tần suất trước khi vẽ histogram Appliances}}{32}{table.caption.30}%
-\contentsline {table}{\numberline {2.22}{\ignorespaces Dữ liệu mẫu cho boxplot cholesterol theo nhóm bệnh tim}}{33}{table.caption.34}%
-\contentsline {table}{\numberline {2.23}{\ignorespaces Tính toán trước khi vẽ boxplot cholesterol}}{34}{table.caption.35}%
-\contentsline {table}{\numberline {2.24}{\ignorespaces Nhóm biểu đồ tương quan và cơ cấu: ý nghĩa, hạn chế và trường hợp áp dụng}}{36}{table.caption.38}%
-\contentsline {table}{\numberline {2.25}{\ignorespaces Dữ liệu mẫu cho scatter plot tuổi và nhịp tim tối đa}}{36}{table.caption.40}%
-\contentsline {table}{\numberline {2.26}{\ignorespaces Tính tọa độ trước khi vẽ scatter plot}}{37}{table.caption.41}%
-\contentsline {table}{\numberline {2.27}{\ignorespaces Dữ liệu mẫu cho bar chart loại đau ngực}}{40}{table.caption.45}%
-\contentsline {table}{\numberline {2.28}{\ignorespaces Tính toán trước khi vẽ bar chart/pie chart biến \texttt {cp}}}{40}{table.caption.46}%
-\contentsline {table}{\numberline {2.29}{\ignorespaces Các dạng biểu đồ khác: ý nghĩa, hạn chế và trường hợp áp dụng}}{42}{table.caption.49}%
-\contentsline {table}{\numberline {2.30}{\ignorespaces Dữ liệu mẫu cho line chart Appliances Energy theo thời gian}}{43}{table.caption.51}%
-\contentsline {table}{\numberline {2.31}{\ignorespaces Tính tọa độ và rolling mean trước khi vẽ line chart}}{43}{table.caption.52}%
-\contentsline {table}{\numberline {2.32}{\ignorespaces Dữ liệu mẫu cho correlation heatmap Heart Disease}}{45}{table.caption.56}%
-\contentsline {table}{\numberline {2.33}{\ignorespaces Tính toán tương quan trước khi vẽ heatmap}}{45}{table.caption.57}%
-\contentsline {table}{\numberline {2.34}{\ignorespaces Đề xuất 3 biểu đồ mới: ưu điểm, nhược điểm và phạm vi áp dụng}}{48}{table.caption.60}%
-\contentsline {table}{\numberline {2.35}{\ignorespaces Dữ liệu mẫu minh họa ba biểu đồ mới}}{51}{table.caption.66}%
-\contentsline {table}{\numberline {2.36}{\ignorespaces Tóm tắt phạm vi áp dụng các phép tiền xử lý cơ bản}}{55}{table.caption.69}%
-\contentsline {table}{\numberline {2.37}{\ignorespaces Quy trình EDA và sản phẩm đầu ra cần lưu}}{56}{table.caption.70}%
-\contentsline {table}{\numberline {2.38}{\ignorespaces Chọn biểu đồ theo loại câu hỏi phân tích}}{57}{table.caption.71}%
-\contentsline {table}{\numberline {2.39}{\ignorespaces Ví dụ thống kê mô tả trên một số biến Heart Disease}}{58}{table.caption.72}%
-\contentsline {table}{\numberline {2.40}{\ignorespaces So sánh trước và sau tiền xử lý trên Heart Disease}}{59}{table.caption.73}%
+\contentsline {table}{\numberline {2.13}{\ignorespaces So sánh Standard Deviation, $D_{\text {mean}}$ và $\hat {\sigma }_{\text {MAD}}$ trên một số đặc tính Heart Disease}}{20}{table.caption.21}%
+\contentsline {table}{\numberline {2.14}{\ignorespaces Bảng ví dụ tần suất và tần suất tương đối của biến \texttt {cp}}}{21}{table.caption.22}%
+\contentsline {table}{\numberline {2.15}{\ignorespaces Bảng ví dụ Z-score của một số giá trị cholesterol}}{22}{table.caption.23}%
+\contentsline {table}{\numberline {2.16}{\ignorespaces Minh họa thống kê mô tả biến \texttt {chol} Heart Disease}}{25}{table.caption.24}%
+\contentsline {table}{\numberline {2.17}{\ignorespaces Minh họa thống kê mô tả biến \texttt {Appliances} Appliances Energy Prediction}}{28}{table.caption.25}%
+\contentsline {table}{\numberline {2.18}{\ignorespaces Cách đọc nhanh hình dạng biểu đồ và ý nghĩa phân tích}}{31}{table.caption.26}%
+\contentsline {table}{\numberline {2.19}{\ignorespaces Nhóm biểu đồ phân phối: ý nghĩa, hạn chế và trường hợp áp dụng}}{32}{table.caption.27}%
+\contentsline {table}{\numberline {2.20}{\ignorespaces Dữ liệu mẫu cho histogram Appliances Energy}}{32}{table.caption.29}%
+\contentsline {table}{\numberline {2.21}{\ignorespaces Tính tần suất trước khi vẽ histogram Appliances}}{33}{table.caption.30}%
+\contentsline {table}{\numberline {2.22}{\ignorespaces Dữ liệu mẫu cho boxplot cholesterol theo nhóm bệnh tim}}{34}{table.caption.34}%
+\contentsline {table}{\numberline {2.23}{\ignorespaces Tính toán trước khi vẽ boxplot cholesterol}}{35}{table.caption.35}%
+\contentsline {table}{\numberline {2.24}{\ignorespaces Nhóm biểu đồ tương quan và cơ cấu: ý nghĩa, hạn chế và trường hợp áp dụng}}{37}{table.caption.38}%
+\contentsline {table}{\numberline {2.25}{\ignorespaces Dữ liệu mẫu cho scatter plot tuổi và nhịp tim tối đa}}{37}{table.caption.40}%
+\contentsline {table}{\numberline {2.26}{\ignorespaces Tính tọa độ trước khi vẽ scatter plot}}{38}{table.caption.41}%
+\contentsline {table}{\numberline {2.27}{\ignorespaces Dữ liệu mẫu cho bar chart loại đau ngực}}{41}{table.caption.45}%
+\contentsline {table}{\numberline {2.28}{\ignorespaces Tính toán trước khi vẽ bar chart/pie chart biến \texttt {cp}}}{41}{table.caption.46}%
+\contentsline {table}{\numberline {2.29}{\ignorespaces Các dạng biểu đồ khác: ý nghĩa, hạn chế và trường hợp áp dụng}}{43}{table.caption.49}%
+\contentsline {table}{\numberline {2.30}{\ignorespaces Dữ liệu mẫu cho line chart Appliances Energy theo thời gian}}{44}{table.caption.51}%
+\contentsline {table}{\numberline {2.31}{\ignorespaces Tính tọa độ và rolling mean trước khi vẽ line chart}}{44}{table.caption.52}%
+\contentsline {table}{\numberline {2.32}{\ignorespaces Dữ liệu mẫu cho correlation heatmap Heart Disease}}{46}{table.caption.56}%
+\contentsline {table}{\numberline {2.33}{\ignorespaces Tính toán tương quan trước khi vẽ heatmap}}{46}{table.caption.57}%
+\contentsline {table}{\numberline {2.34}{\ignorespaces Đề xuất 3 biểu đồ mới: ưu điểm, nhược điểm và phạm vi áp dụng}}{49}{table.caption.60}%
+\contentsline {table}{\numberline {2.35}{\ignorespaces Dữ liệu mẫu minh họa ba biểu đồ mới}}{52}{table.caption.66}%
+\contentsline {table}{\numberline {2.36}{\ignorespaces Tóm tắt phạm vi áp dụng các phép tiền xử lý cơ bản}}{56}{table.caption.69}%
+\contentsline {table}{\numberline {2.37}{\ignorespaces Quy trình EDA và sản phẩm đầu ra cần lưu}}{57}{table.caption.70}%
+\contentsline {table}{\numberline {2.38}{\ignorespaces Chọn biểu đồ theo loại câu hỏi phân tích}}{58}{table.caption.71}%
+\contentsline {table}{\numberline {2.39}{\ignorespaces Ví dụ thống kê mô tả trên một số biến Heart Disease}}{59}{table.caption.72}%
+\contentsline {table}{\numberline {2.40}{\ignorespaces So sánh trước và sau tiền xử lý trên Heart Disease}}{60}{table.caption.73}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{THU THẬP, MÔ TẢ VÀ TỔNG QUAN CÁC BỘ DỮ LIỆU}{63}{chapter.3}%
-\contentsline {table}{\numberline {3.1}{\ignorespaces Vai trò của từng bộ dữ liệu trong toàn bộ báo cáo}}{65}{table.caption.78}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces Đối chiếu bộ dữ liệu với yêu cầu đề bài}}{66}{table.caption.79}%
-\contentsline {table}{\numberline {3.3}{\ignorespaces Tổng hợp các bộ dữ liệu sử dụng trong báo cáo}}{66}{table.caption.80}%
-\contentsline {table}{\numberline {3.4}{\ignorespaces Tổng hợp yêu cầu mô tả dữ liệu bảng nhóm A}}{67}{table.caption.81}%
-\contentsline {table}{\numberline {3.5}{\ignorespaces Các biến chính trong Heart Disease}}{68}{table.caption.83}%
-\contentsline {table}{\numberline {3.6}{\ignorespaces Tổng hợp các nghiên cứu sử dụng thuật toán học máy trên nhóm dữ liệu bệnh tim}}{69}{table.caption.85}%
-\contentsline {table}{\numberline {3.7}{\ignorespaces Thống kê mô tả biến age theo nhóm bệnh và toàn bộ dữ liệu}}{69}{table.caption.87}%
-\contentsline {table}{\numberline {3.8}{\ignorespaces Thống kê mô tả biến chol theo nhóm bệnh và toàn bộ dữ liệu}}{70}{table.caption.89}%
-\contentsline {table}{\numberline {3.9}{\ignorespaces Thống kê mô tả biến thalach theo nhóm bệnh và toàn bộ dữ liệu}}{71}{table.caption.91}%
-\contentsline {table}{\numberline {3.10}{\ignorespaces Thống kê mô tả biến oldpeak theo nhóm bệnh và toàn bộ dữ liệu}}{72}{table.caption.93}%
-\contentsline {table}{\numberline {3.11}{\ignorespaces Thống kê mô tả các thuộc tính chính của Heart Disease (toàn bộ dữ liệu)}}{73}{table.caption.96}%
-\contentsline {table}{\numberline {3.12}{\ignorespaces Kết quả phân lớp trên Heart Disease (đã nhị phân hóa target)}}{74}{table.caption.98}%
-\contentsline {table}{\numberline {3.13}{\ignorespaces Nhóm biến tiêu biểu trong CDC Diabetes}}{75}{table.caption.100}%
-\contentsline {table}{\numberline {3.14}{\ignorespaces Tổng hợp các nghiên cứu trên dữ liệu CDC Diabetes / BRFSS}}{76}{table.caption.102}%
-\contentsline {table}{\numberline {3.15}{\ignorespaces Thống kê mô tả biến BMI theo nhóm tiểu đường}}{76}{table.caption.104}%
-\contentsline {table}{\numberline {3.16}{\ignorespaces Thống kê mô tả biến PhysHlth theo nhóm tiểu đường}}{77}{table.caption.106}%
-\contentsline {table}{\numberline {3.17}{\ignorespaces Thống kê mô tả các thuộc tính chính của CDC Diabetes (toàn bộ dữ liệu)}}{79}{table.caption.109}%
-\contentsline {table}{\numberline {3.18}{\ignorespaces Kết quả phân lớp trên CDC Diabetes}}{79}{table.caption.111}%
-\contentsline {table}{\numberline {3.19}{\ignorespaces Danh sách feature tiêu biểu của Breast Cancer}}{80}{table.caption.113}%
-\contentsline {table}{\numberline {3.20}{\ignorespaces Tổng hợp các nghiên cứu trên dữ liệu Breast Cancer Wisconsin Diagnostic}}{81}{table.caption.115}%
-\contentsline {table}{\numberline {3.21}{\ignorespaces Thống kê mô tả biến radius1 theo nhóm chẩn đoán}}{81}{table.caption.117}%
-\contentsline {table}{\numberline {3.22}{\ignorespaces Thống kê mô tả biến area1 theo nhóm chẩn đoán}}{82}{table.caption.119}%
-\contentsline {table}{\numberline {3.23}{\ignorespaces Thống kê mô tả các thuộc tính chính của Breast Cancer (toàn bộ dữ liệu)}}{83}{table.caption.122}%
-\contentsline {table}{\numberline {3.24}{\ignorespaces Kết quả phân lớp trên Breast Cancer}}{84}{table.caption.124}%
-\contentsline {table}{\numberline {3.25}{\ignorespaces Tổng hợp đặc trưng chuỗi thời gian của nhóm B}}{84}{table.caption.125}%
-\contentsline {table}{\numberline {3.26}{\ignorespaces Tổng hợp các nghiên cứu trên dữ liệu Appliances Energy}}{85}{table.caption.128}%
-\contentsline {table}{\numberline {3.27}{\ignorespaces Thống kê mô tả biến Appliances theo thời đoạn}}{86}{table.caption.130}%
-\contentsline {table}{\numberline {3.28}{\ignorespaces Thống kê mô tả các thuộc tính chính của Appliances Energy (toàn bộ dữ liệu)}}{87}{table.caption.133}%
-\contentsline {table}{\numberline {3.29}{\ignorespaces Kết quả hồi quy trên Appliances Energy (tách theo thời gian)}}{87}{table.caption.135}%
-\contentsline {table}{\numberline {3.30}{\ignorespaces Cấu trúc nhãn hoạt động trong HAR}}{88}{table.caption.137}%
-\contentsline {table}{\numberline {3.31}{\ignorespaces Tổng hợp các nghiên cứu trên dữ liệu HAR Smartphones}}{89}{table.caption.139}%
-\contentsline {table}{\numberline {3.32}{\ignorespaces Thống kê mô tả biến tBodyAcc-std()-X theo nhóm hoạt động}}{89}{table.caption.141}%
-\contentsline {table}{\numberline {3.33}{\ignorespaces Tổng hợp các nghiên cứu trên dữ liệu MHEALTH}}{92}{table.caption.147}%
-\contentsline {table}{\numberline {3.34}{\ignorespaces Thống kê mô tả biến sensor\_01 theo nhóm hoạt động}}{92}{table.caption.149}%
-\contentsline {table}{\numberline {3.35}{\ignorespaces So sánh hai bộ dữ liệu cảm biến nhóm B}}{93}{table.caption.152}%
-\contentsline {table}{\numberline {3.36}{\ignorespaces Thông tin file gốc và đặc trưng trích xuất của nhóm C}}{94}{table.caption.154}%
-\contentsline {table}{\numberline {3.37}{\ignorespaces Phương pháp trích xuất đặc trưng cho dữ liệu đa phương tiện}}{94}{table.caption.155}%
-\contentsline {table}{\numberline {3.38}{\ignorespaces Phân phối lớp chẩn đoán trong HAM10000}}{95}{table.caption.157}%
-\contentsline {table}{\numberline {3.39}{\ignorespaces Tổng hợp các nghiên cứu trên dữ liệu HAM10000 / ảnh da liễu}}{95}{table.caption.159}%
-\contentsline {table}{\numberline {3.40}{\ignorespaces Thống kê mô tả biến age theo nhóm chẩn đoán}}{96}{table.caption.161}%
-\contentsline {table}{\numberline {3.41}{\ignorespaces Thống kê mô tả các thuộc tính chính của HAM10000 (toàn bộ dữ liệu)}}{97}{table.caption.164}%
-\contentsline {table}{\numberline {3.42}{\ignorespaces Kế hoạch số hóa dữ liệu text Reuters-21578}}{98}{table.caption.167}%
-\contentsline {table}{\numberline {3.43}{\ignorespaces Tổng hợp các nghiên cứu trên dữ liệu Reuters-21578}}{98}{table.caption.169}%
-\contentsline {table}{\numberline {3.44}{\ignorespaces Thống kê mô tả biến word\_count theo nhóm topic}}{99}{table.caption.171}%
-\contentsline {table}{\numberline {3.45}{\ignorespaces Thống kê mô tả các thuộc tính chính của Reuters-21578 (toàn bộ dữ liệu)}}{100}{table.caption.174}%
-\contentsline {table}{\numberline {3.46}{\ignorespaces Đối sánh nghiên cứu liên quan và baseline dùng cho Chương 5}}{101}{table.caption.176}%
-\contentsline {table}{\numberline {3.47}{\ignorespaces Baseline học máy nhóm A dùng làm mốc cho Chương 5}}{101}{table.caption.177}%
-\contentsline {table}{\numberline {3.48}{\ignorespaces Rủi ro chất lượng dữ liệu và hướng xử lý}}{102}{table.caption.178}%
-\contentsline {table}{\numberline {3.49}{\ignorespaces Liên hệ dataset với mục tiêu phân tích của báo cáo}}{103}{table.caption.179}%
+\contentsline {xchapter}{THU THẬP, MÔ TẢ VÀ TỔNG QUAN CÁC BỘ DỮ LIỆU}{65}{chapter.3}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Vai trò của từng bộ dữ liệu trong toàn bộ báo cáo}}{68}{table.caption.78}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Đối chiếu bộ dữ liệu với yêu cầu đề bài}}{69}{table.caption.79}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Tổng hợp các bộ dữ liệu sử dụng trong báo cáo}}{69}{table.caption.80}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces Tổng hợp yêu cầu mô tả dữ liệu bảng nhóm A}}{70}{table.caption.81}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces Các biến chính trong Heart Disease}}{71}{table.caption.83}%
+\contentsline {table}{\numberline {3.6}{\ignorespaces Tổng hợp các nghiên cứu sử dụng thuật toán học máy trên nhóm dữ liệu bệnh tim}}{72}{table.caption.85}%
+\contentsline {table}{\numberline {3.7}{\ignorespaces Thống kê mô tả biến age theo nhóm bệnh và toàn bộ dữ liệu}}{72}{table.caption.87}%
+\contentsline {table}{\numberline {3.8}{\ignorespaces Thống kê mô tả biến chol theo nhóm bệnh và toàn bộ dữ liệu}}{73}{table.caption.89}%
+\contentsline {table}{\numberline {3.9}{\ignorespaces Thống kê mô tả biến thalach theo nhóm bệnh và toàn bộ dữ liệu}}{74}{table.caption.91}%
+\contentsline {table}{\numberline {3.10}{\ignorespaces Thống kê mô tả biến oldpeak theo nhóm bệnh và toàn bộ dữ liệu}}{75}{table.caption.93}%
+\contentsline {table}{\numberline {3.11}{\ignorespaces Thống kê mô tả các thuộc tính chính của Heart Disease (toàn bộ dữ liệu)}}{76}{table.caption.96}%
+\contentsline {table}{\numberline {3.12}{\ignorespaces Kết quả phân lớp trên Heart Disease (đã nhị phân hóa target)}}{77}{table.caption.98}%
+\contentsline {table}{\numberline {3.13}{\ignorespaces Nhóm biến tiêu biểu trong CDC Diabetes}}{78}{table.caption.100}%
+\contentsline {table}{\numberline {3.14}{\ignorespaces Tổng hợp các nghiên cứu trên dữ liệu CDC Diabetes / BRFSS}}{79}{table.caption.102}%
+\contentsline {table}{\numberline {3.15}{\ignorespaces Thống kê mô tả biến BMI theo nhóm tiểu đường}}{79}{table.caption.104}%
+\contentsline {table}{\numberline {3.16}{\ignorespaces Thống kê mô tả biến PhysHlth theo nhóm tiểu đường}}{80}{table.caption.106}%
+\contentsline {table}{\numberline {3.17}{\ignorespaces Thống kê mô tả các thuộc tính chính của CDC Diabetes (toàn bộ dữ liệu)}}{82}{table.caption.109}%
+\contentsline {table}{\numberline {3.18}{\ignorespaces Kết quả phân lớp trên CDC Diabetes}}{82}{table.caption.111}%
+\contentsline {table}{\numberline {3.19}{\ignorespaces Danh sách feature tiêu biểu của Breast Cancer}}{83}{table.caption.113}%
+\contentsline {table}{\numberline {3.20}{\ignorespaces Tổng hợp các nghiên cứu trên dữ liệu Breast Cancer Wisconsin Diagnostic}}{84}{table.caption.115}%
+\contentsline {table}{\numberline {3.21}{\ignorespaces Thống kê mô tả biến radius1 theo nhóm chẩn đoán}}{84}{table.caption.117}%
+\contentsline {table}{\numberline {3.22}{\ignorespaces Thống kê mô tả biến area1 theo nhóm chẩn đoán}}{85}{table.caption.119}%
+\contentsline {table}{\numberline {3.23}{\ignorespaces Thống kê mô tả các thuộc tính chính của Breast Cancer (toàn bộ dữ liệu)}}{86}{table.caption.122}%
+\contentsline {table}{\numberline {3.24}{\ignorespaces Kết quả phân lớp trên Breast Cancer}}{87}{table.caption.124}%
+\contentsline {table}{\numberline {3.25}{\ignorespaces Tổng hợp đặc trưng chuỗi thời gian của nhóm B}}{87}{table.caption.125}%
+\contentsline {table}{\numberline {3.26}{\ignorespaces Tổng hợp các nghiên cứu trên dữ liệu Appliances Energy}}{88}{table.caption.128}%
+\contentsline {table}{\numberline {3.27}{\ignorespaces Thống kê mô tả biến Appliances theo thời đoạn}}{89}{table.caption.130}%
+\contentsline {table}{\numberline {3.28}{\ignorespaces Thống kê mô tả các thuộc tính chính của Appliances Energy (toàn bộ dữ liệu)}}{90}{table.caption.133}%
+\contentsline {table}{\numberline {3.29}{\ignorespaces Kết quả hồi quy trên Appliances Energy (tách theo thời gian)}}{90}{table.caption.135}%
+\contentsline {table}{\numberline {3.30}{\ignorespaces Cấu trúc nhãn hoạt động trong HAR}}{91}{table.caption.137}%
+\contentsline {table}{\numberline {3.31}{\ignorespaces Tổng hợp các nghiên cứu trên dữ liệu HAR Smartphones}}{92}{table.caption.139}%
+\contentsline {table}{\numberline {3.32}{\ignorespaces Thống kê mô tả biến tBodyAcc-std()-X theo nhóm hoạt động}}{92}{table.caption.141}%
+\contentsline {table}{\numberline {3.33}{\ignorespaces Tổng hợp các nghiên cứu trên dữ liệu MHEALTH}}{95}{table.caption.147}%
+\contentsline {table}{\numberline {3.34}{\ignorespaces Thống kê mô tả biến sensor\_01 theo nhóm hoạt động}}{95}{table.caption.149}%
+\contentsline {table}{\numberline {3.35}{\ignorespaces So sánh hai bộ dữ liệu cảm biến nhóm B}}{96}{table.caption.152}%
+\contentsline {table}{\numberline {3.36}{\ignorespaces Thông tin file gốc và đặc trưng trích xuất của nhóm C}}{97}{table.caption.154}%
+\contentsline {table}{\numberline {3.37}{\ignorespaces Phương pháp trích xuất đặc trưng cho dữ liệu đa phương tiện}}{97}{table.caption.155}%
+\contentsline {table}{\numberline {3.38}{\ignorespaces Phân phối lớp chẩn đoán trong HAM10000}}{98}{table.caption.157}%
+\contentsline {table}{\numberline {3.39}{\ignorespaces Tổng hợp các nghiên cứu trên dữ liệu HAM10000 / ảnh da liễu}}{98}{table.caption.159}%
+\contentsline {table}{\numberline {3.40}{\ignorespaces Thống kê mô tả biến age theo nhóm chẩn đoán}}{99}{table.caption.161}%
+\contentsline {table}{\numberline {3.41}{\ignorespaces Thống kê mô tả các thuộc tính chính của HAM10000 (toàn bộ dữ liệu)}}{100}{table.caption.164}%
+\contentsline {table}{\numberline {3.42}{\ignorespaces Kế hoạch số hóa dữ liệu text Reuters-21578}}{101}{table.caption.167}%
+\contentsline {table}{\numberline {3.43}{\ignorespaces Tổng hợp các nghiên cứu trên dữ liệu Reuters-21578}}{101}{table.caption.169}%
+\contentsline {table}{\numberline {3.44}{\ignorespaces Thống kê mô tả biến word\_count theo nhóm topic}}{102}{table.caption.171}%
+\contentsline {table}{\numberline {3.45}{\ignorespaces Thống kê mô tả các thuộc tính chính của Reuters-21578 (toàn bộ dữ liệu)}}{103}{table.caption.174}%
+\contentsline {table}{\numberline {3.46}{\ignorespaces Đối sánh nghiên cứu liên quan và baseline dùng cho Chương 5}}{104}{table.caption.176}%
+\contentsline {table}{\numberline {3.47}{\ignorespaces Baseline học máy nhóm A dùng làm mốc cho Chương 5}}{104}{table.caption.177}%
+\contentsline {table}{\numberline {3.48}{\ignorespaces Rủi ro chất lượng dữ liệu và hướng xử lý}}{105}{table.caption.178}%
+\contentsline {table}{\numberline {3.49}{\ignorespaces Liên hệ dataset với mục tiêu phân tích của báo cáo}}{106}{table.caption.179}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{PHÂN TÍCH ĐẶC ĐIỂM DỮ LIỆU QUA THỐNG KÊ VÀ TRỰC QUAN HÓA}{105}{chapter.4}%
-\contentsline {table}{\numberline {4.1}{\ignorespaces Bản đồ minh chứng dùng trong Chương 4}}{107}{table.caption.180}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Phân loại biến tiêu biểu trong Heart Disease}}{108}{table.caption.182}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces Bảng tần suất biến \texttt {cp} trong Heart Disease}}{108}{table.caption.183}%
-\contentsline {table}{\numberline {4.4}{\ignorespaces Phân phối tần suất các biến Qualitative Heart Disease}}{108}{table.caption.184}%
-\contentsline {table}{\numberline {4.5}{\ignorespaces Thống kê mô tả Heart Disease sau tiền xử lý}}{109}{table.caption.185}%
-\contentsline {table}{\numberline {4.6}{\ignorespaces So sánh dữ liệu thô và dữ liệu sạch Heart Disease}}{112}{table.caption.190}%
-\contentsline {table}{\numberline {4.7}{\ignorespaces Phân loại biến tiêu biểu trong CDC Diabetes}}{112}{table.caption.192}%
-\contentsline {table}{\numberline {4.8}{\ignorespaces Thống kê mô tả các biến tiêu biểu CDC Diabetes}}{113}{table.caption.193}%
-\contentsline {table}{\numberline {4.9}{\ignorespaces Bảng tần suất biến \texttt {HighBP} trong CDC Diabetes}}{113}{table.caption.194}%
-\contentsline {table}{\numberline {4.10}{\ignorespaces So sánh dữ liệu thô và sạch CDC Diabetes}}{113}{table.caption.195}%
-\contentsline {table}{\numberline {4.11}{\ignorespaces Phân loại biến tiêu biểu trong Breast Cancer}}{116}{table.caption.201}%
-\contentsline {table}{\numberline {4.12}{\ignorespaces Bảng tần suất \texttt {Diagnosis} trong Breast Cancer}}{116}{table.caption.202}%
-\contentsline {table}{\numberline {4.13}{\ignorespaces Thống kê mô tả Breast Cancer}}{116}{table.caption.203}%
-\contentsline {table}{\numberline {4.14}{\ignorespaces Thống kê mô tả Appliances Energy}}{118}{table.caption.207}%
-\contentsline {table}{\numberline {4.15}{\ignorespaces So sánh vai trò của Python và Excel trong phân tích}}{122}{table.caption.215}%
-\contentsline {table}{\numberline {4.16}{\ignorespaces Phân loại biến số hóa từ HAM10000}}{123}{table.caption.216}%
-\contentsline {table}{\numberline {4.17}{\ignorespaces Thống kê đặc trưng ảnh HAM10000}}{123}{table.caption.217}%
-\contentsline {table}{\numberline {4.18}{\ignorespaces Phân loại biến số hóa từ Reuters-21578}}{125}{table.caption.221}%
-\contentsline {table}{\numberline {4.19}{\ignorespaces Thống kê đặc trưng văn bản Reuters-21578}}{125}{table.caption.222}%
+\contentsline {xchapter}{PHÂN TÍCH ĐẶC ĐIỂM DỮ LIỆU QUA THỐNG KÊ VÀ TRỰC QUAN HÓA}{109}{chapter.4}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Bản đồ minh chứng dùng trong Chương 4}}{111}{table.caption.180}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Phân loại biến tiêu biểu trong Heart Disease}}{112}{table.caption.182}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Bảng tần suất biến \texttt {cp} trong Heart Disease}}{112}{table.caption.183}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Phân phối tần suất các biến Qualitative Heart Disease}}{112}{table.caption.184}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces Thống kê mô tả Heart Disease sau tiền xử lý}}{113}{table.caption.185}%
+\contentsline {table}{\numberline {4.6}{\ignorespaces So sánh dữ liệu thô và dữ liệu sạch Heart Disease}}{121}{table.caption.193}%
+\contentsline {table}{\numberline {4.7}{\ignorespaces Phân loại biến tiêu biểu trong CDC Diabetes}}{121}{table.caption.195}%
+\contentsline {table}{\numberline {4.8}{\ignorespaces Thống kê mô tả các biến tiêu biểu CDC Diabetes}}{122}{table.caption.196}%
+\contentsline {table}{\numberline {4.9}{\ignorespaces Bảng tần suất biến \texttt {HighBP} trong CDC Diabetes}}{122}{table.caption.197}%
+\contentsline {table}{\numberline {4.10}{\ignorespaces So sánh dữ liệu thô và sạch CDC Diabetes}}{122}{table.caption.198}%
+\contentsline {table}{\numberline {4.11}{\ignorespaces Phân loại biến tiêu biểu trong Breast Cancer}}{129}{table.caption.206}%
+\contentsline {table}{\numberline {4.12}{\ignorespaces Bảng tần suất \texttt {Diagnosis} trong Breast Cancer}}{129}{table.caption.207}%
+\contentsline {table}{\numberline {4.13}{\ignorespaces Thống kê mô tả Breast Cancer}}{129}{table.caption.208}%
+\contentsline {table}{\numberline {4.14}{\ignorespaces Thống kê mô tả Appliances Energy}}{135}{table.caption.215}%
+\contentsline {table}{\numberline {4.15}{\ignorespaces Thông tin thời gian Appliances Energy}}{135}{table.caption.216}%
+\contentsline {table}{\numberline {4.16}{\ignorespaces Phân loại biến số hóa từ HAM10000}}{152}{table.caption.234}%
+\contentsline {table}{\numberline {4.17}{\ignorespaces Thống kê đặc trưng ảnh HAM10000}}{152}{table.caption.235}%
+\contentsline {table}{\numberline {4.18}{\ignorespaces Phân loại biến số hóa từ Reuters-21578}}{155}{table.caption.239}%
+\contentsline {table}{\numberline {4.19}{\ignorespaces Thống kê đặc trưng văn bản Reuters-21578}}{155}{table.caption.240}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{PHÂN TÍCH DỮ LIỆU VỚI HỌC MÁY VÀ ĐỐI SÁNH KẾT QUẢ}{127}{chapter.5}%
-\contentsline {table}{\numberline {5.1}{\ignorespaces Kết quả classification nhóm A}}{128}{table.caption.225}%
-\contentsline {table}{\numberline {5.2}{\ignorespaces Kết quả regression trên Appliances Energy}}{129}{table.caption.227}%
-\contentsline {table}{\numberline {5.3}{\ignorespaces Thiết kế clustering theo yêu cầu tài liệu}}{131}{table.caption.229}%
-\contentsline {table}{\numberline {5.4}{\ignorespaces Đối sánh định tính giữa baseline của báo cáo và xu hướng nghiên cứu liên quan}}{132}{table.caption.230}%
+\contentsline {xchapter}{PHÂN TÍCH DỮ LIỆU VỚI HỌC MÁY VÀ ĐỐI SÁNH KẾT QUẢ}{157}{chapter.5}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Kết quả classification nhóm A}}{158}{table.caption.243}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Kết quả regression trên Appliances Energy}}{159}{table.caption.245}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces Thiết kế clustering theo yêu cầu tài liệu}}{161}{table.caption.247}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces Đối sánh định tính giữa baseline của báo cáo và xu hướng nghiên cứu liên quan}}{162}{table.caption.248}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN}{133}{chapter.6}%
+\contentsline {xchapter}{KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN}{163}{chapter.6}%
 \contentsfinish 
