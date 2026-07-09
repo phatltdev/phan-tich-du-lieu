@@ -64,60 +64,78 @@
 \contentsline {figure}{\numberline {3.39}{\ignorespaces Top 10 topic chính trong Reuters-21578.}}{110}{figure.caption.188}%
 \addvspace {10\p@ }
 \contentsline {xchapter}{PHÂN TÍCH ĐẶC ĐIỂM DỮ LIỆU QUA THỐNG KÊ VÀ TRỰC QUAN HÓA}{116}{chapter.4}%
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Bar chart tần suất \texttt {cp}: Python và Excel}}{122}{figure.caption.200}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Histogram tuổi Heart Disease: Python và Excel}}{123}{figure.caption.201}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Boxplot cholesterol Heart Disease}}{124}{figure.caption.202}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Scatter plot \texttt {age}--\texttt {thalach}: Python và Excel}}{125}{figure.caption.203}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Phân bố target Heart Disease: Python và Excel}}{126}{figure.caption.204}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Heatmap tương quan Heart Disease}}{127}{figure.caption.205}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Bar chart \texttt {HighBP} CDC Diabetes: Python và Excel}}{130}{figure.caption.212}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Histogram \texttt {BMI} CDC Diabetes: Python và Excel}}{131}{figure.caption.213}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Boxplot \texttt {BMI} CDC Diabetes}}{132}{figure.caption.214}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Scatter \texttt {Age}--\texttt {BMI} CDC Diabetes: Python và Excel}}{133}{figure.caption.215}%
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Phân bố target CDC Diabetes: Python và Excel}}{134}{figure.caption.216}%
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Heatmap tương quan CDC Diabetes}}{135}{figure.caption.217}%
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Phân bố target Breast Cancer: Python và Excel}}{137}{figure.caption.222}%
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Histogram \texttt {radius1} Breast Cancer: Python và Excel}}{138}{figure.caption.223}%
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Boxplot \texttt {radius1} Breast Cancer}}{139}{figure.caption.224}%
-\contentsline {figure}{\numberline {4.16}{\ignorespaces Scatter Breast Cancer: Python và Excel}}{140}{figure.caption.225}%
-\contentsline {figure}{\numberline {4.17}{\ignorespaces Heatmap tương quan Breast Cancer}}{141}{figure.caption.226}%
-\contentsline {figure}{\numberline {4.18}{\ignorespaces Line chart Appliances Energy: Python và Excel}}{143}{figure.caption.230}%
-\contentsline {figure}{\numberline {4.19}{\ignorespaces Rolling statistics Appliances Energy}}{144}{figure.caption.231}%
-\contentsline {figure}{\numberline {4.20}{\ignorespaces Điền khuyết thời gian Appliances Energy}}{144}{figure.caption.232}%
-\contentsline {figure}{\numberline {4.21}{\ignorespaces Log-transform Appliances Energy: Python và Excel}}{145}{figure.caption.233}%
-\contentsline {figure}{\numberline {4.22}{\ignorespaces Differencing Appliances Energy}}{146}{figure.caption.234}%
-\contentsline {figure}{\numberline {4.23}{\ignorespaces Mùa vụ Appliances Energy}}{146}{figure.caption.235}%
-\contentsline {figure}{\numberline {4.24}{\ignorespaces Phân bố hoạt động HAR}}{147}{figure.caption.237}%
-\contentsline {figure}{\numberline {4.25}{\ignorespaces Line chart HAR}}{148}{figure.caption.238}%
-\contentsline {figure}{\numberline {4.26}{\ignorespaces Boxplot HAR}}{148}{figure.caption.239}%
-\contentsline {figure}{\numberline {4.27}{\ignorespaces Heatmap HAR}}{149}{figure.caption.240}%
-\contentsline {figure}{\numberline {4.28}{\ignorespaces Phân bố hoạt động MHEALTH}}{150}{figure.caption.242}%
-\contentsline {figure}{\numberline {4.29}{\ignorespaces Line chart MHEALTH}}{150}{figure.caption.243}%
-\contentsline {figure}{\numberline {4.30}{\ignorespaces Boxplot MHEALTH}}{151}{figure.caption.244}%
-\contentsline {figure}{\numberline {4.31}{\ignorespaces Rolling và differencing MHEALTH}}{151}{figure.caption.245}%
-\contentsline {figure}{\numberline {4.32}{\ignorespaces Heatmap MHEALTH}}{152}{figure.caption.246}%
-\contentsline {figure}{\numberline {4.33}{\ignorespaces Số hóa ảnh HAM10000}}{156}{figure.caption.252}%
-\contentsline {figure}{\numberline {4.34}{\ignorespaces Phân tích class-level HAM10000}}{156}{figure.caption.253}%
-\contentsline {figure}{\numberline {4.35}{\ignorespaces Phân phối tuổi bệnh nhân HAM10000}}{157}{figure.caption.254}%
-\contentsline {figure}{\numberline {4.36}{\ignorespaces Số hóa văn bản Reuters-21578}}{158}{figure.caption.257}%
-\contentsline {figure}{\numberline {4.37}{\ignorespaces Phân tích độ dài văn bản Reuters-21578}}{159}{figure.caption.258}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Boxplot \texttt {chol} thô Heart Disease}}{121}{figure.caption.198}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Boxplot \texttt {chol} sạch Heart Disease}}{122}{figure.caption.199}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Bar chart tần suất \texttt {cp}: Python và Excel}}{125}{figure.caption.204}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Histogram tuổi Heart Disease: Python và Excel}}{126}{figure.caption.205}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Boxplot cholesterol Heart Disease}}{127}{figure.caption.206}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Histogram \texttt {chol} thô/sạch Heart Disease}}{128}{figure.caption.207}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Scatter \texttt {age}--\texttt {thalach} thô/sạch Heart Disease}}{128}{figure.caption.208}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Boxplot \texttt {chol} theo target thô/sạch Heart Disease}}{129}{figure.caption.209}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Scatter plot \texttt {age}--\texttt {thalach}: Python và Excel}}{130}{figure.caption.210}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Phân bố target Heart Disease: Python và Excel}}{131}{figure.caption.211}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Heatmap tương quan Heart Disease}}{132}{figure.caption.212}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Boxplot \texttt {BMI} thô CDC Diabetes}}{134}{figure.caption.215}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Boxplot \texttt {BMI} sạch CDC Diabetes}}{135}{figure.caption.216}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Bar chart \texttt {HighBP} CDC Diabetes: Python và Excel}}{137}{figure.caption.221}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Histogram \texttt {BMI} CDC Diabetes: Python và Excel}}{138}{figure.caption.222}%
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Boxplot \texttt {BMI} CDC Diabetes}}{139}{figure.caption.223}%
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Scatter \texttt {Age}--\texttt {BMI} thô/sạch CDC Diabetes}}{140}{figure.caption.224}%
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Boxplot \texttt {BMI} theo target thô/sạch CDC Diabetes}}{140}{figure.caption.225}%
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Scatter \texttt {Age}--\texttt {BMI} CDC Diabetes: Python và Excel}}{141}{figure.caption.226}%
+\contentsline {figure}{\numberline {4.20}{\ignorespaces Phân bố target CDC Diabetes: Python và Excel}}{142}{figure.caption.227}%
+\contentsline {figure}{\numberline {4.21}{\ignorespaces Heatmap tương quan CDC Diabetes}}{143}{figure.caption.228}%
+\contentsline {figure}{\numberline {4.22}{\ignorespaces Boxplot \texttt {area1} thô Breast Cancer}}{145}{figure.caption.231}%
+\contentsline {figure}{\numberline {4.23}{\ignorespaces Boxplot \texttt {area1} sạch Breast Cancer}}{146}{figure.caption.232}%
+\contentsline {figure}{\numberline {4.24}{\ignorespaces Phân bố target Breast Cancer: Python và Excel}}{149}{figure.caption.237}%
+\contentsline {figure}{\numberline {4.25}{\ignorespaces Histogram \texttt {radius1} Breast Cancer: Python và Excel}}{150}{figure.caption.238}%
+\contentsline {figure}{\numberline {4.26}{\ignorespaces Boxplot \texttt {radius1} Breast Cancer}}{151}{figure.caption.239}%
+\contentsline {figure}{\numberline {4.27}{\ignorespaces Scatter Breast Cancer: Python và Excel}}{152}{figure.caption.240}%
+\contentsline {figure}{\numberline {4.28}{\ignorespaces Histogram \texttt {radius1} thô/sạch Breast Cancer}}{153}{figure.caption.241}%
+\contentsline {figure}{\numberline {4.29}{\ignorespaces Scatter \texttt {radius1}--\texttt {texture1} thô/sạch Breast Cancer}}{154}{figure.caption.242}%
+\contentsline {figure}{\numberline {4.30}{\ignorespaces Boxplot \texttt {radius1} theo Diagnosis thô/sạch Breast Cancer}}{154}{figure.caption.243}%
+\contentsline {figure}{\numberline {4.31}{\ignorespaces Heatmap tương quan Breast Cancer}}{155}{figure.caption.244}%
+\contentsline {figure}{\numberline {4.32}{\ignorespaces Boxplot \texttt {Appliances} thô}}{157}{figure.caption.246}%
+\contentsline {figure}{\numberline {4.33}{\ignorespaces Boxplot \texttt {Appliances} sạch}}{158}{figure.caption.247}%
+\contentsline {figure}{\numberline {4.34}{\ignorespaces Line chart Appliances Energy: Python và Excel}}{160}{figure.caption.251}%
+\contentsline {figure}{\numberline {4.35}{\ignorespaces Rolling statistics Appliances Energy}}{161}{figure.caption.252}%
+\contentsline {figure}{\numberline {4.36}{\ignorespaces Điền khuyết thời gian Appliances Energy}}{161}{figure.caption.253}%
+\contentsline {figure}{\numberline {4.37}{\ignorespaces Log-transform Appliances Energy: Python và Excel}}{162}{figure.caption.254}%
+\contentsline {figure}{\numberline {4.38}{\ignorespaces Differencing Appliances Energy}}{163}{figure.caption.255}%
+\contentsline {figure}{\numberline {4.39}{\ignorespaces Mùa vụ Appliances Energy}}{163}{figure.caption.256}%
+\contentsline {figure}{\numberline {4.40}{\ignorespaces Phân bố hoạt động HAR}}{165}{figure.caption.258}%
+\contentsline {figure}{\numberline {4.41}{\ignorespaces Line chart HAR}}{165}{figure.caption.259}%
+\contentsline {figure}{\numberline {4.42}{\ignorespaces Boxplot HAR}}{166}{figure.caption.260}%
+\contentsline {figure}{\numberline {4.43}{\ignorespaces Heatmap HAR}}{166}{figure.caption.261}%
+\contentsline {figure}{\numberline {4.44}{\ignorespaces Phân bố hoạt động MHEALTH}}{168}{figure.caption.263}%
+\contentsline {figure}{\numberline {4.45}{\ignorespaces Line chart MHEALTH}}{168}{figure.caption.264}%
+\contentsline {figure}{\numberline {4.46}{\ignorespaces Boxplot MHEALTH}}{169}{figure.caption.265}%
+\contentsline {figure}{\numberline {4.47}{\ignorespaces Rolling và differencing MHEALTH}}{169}{figure.caption.266}%
+\contentsline {figure}{\numberline {4.48}{\ignorespaces Heatmap MHEALTH}}{170}{figure.caption.267}%
+\contentsline {figure}{\numberline {4.49}{\ignorespaces Histogram kích thước ảnh HAM10000}}{174}{figure.caption.273}%
+\contentsline {figure}{\numberline {4.50}{\ignorespaces Boxplot độ sáng theo lớp HAM10000}}{174}{figure.caption.274}%
+\contentsline {figure}{\numberline {4.51}{\ignorespaces Phân bố lớp \texttt {dx} HAM10000}}{175}{figure.caption.275}%
+\contentsline {figure}{\numberline {4.52}{\ignorespaces Vị trí tổn thương HAM10000}}{175}{figure.caption.276}%
+\contentsline {figure}{\numberline {4.53}{\ignorespaces Phân phối tuổi bệnh nhân HAM10000}}{176}{figure.caption.277}%
+\contentsline {figure}{\numberline {4.54}{\ignorespaces Số hóa văn bản Reuters-21578}}{177}{figure.caption.280}%
+\contentsline {figure}{\numberline {4.55}{\ignorespaces Phân tích độ dài văn bản Reuters-21578}}{178}{figure.caption.281}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{PHÂN TÍCH DỮ LIỆU VỚI HỌC MÁY VÀ ĐỐI SÁNH KẾT QUẢ}{160}{chapter.5}%
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Ma trận nhầm lẫn - Breast Cancer (Diagnosis)}}{164}{figure.caption.260}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Ma trận nhầm lẫn - Heart Disease (Target)}}{165}{figure.caption.261}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Ma trận nhầm lẫn - CDC Diabetes (3 lớp)}}{165}{figure.caption.262}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Recall theo từng lớp - CDC Diabetes (Random Forest)}}{166}{figure.caption.264}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Dự báo Appliances: Thực tế vs 3 mô hình (toàn bộ 654 giờ tập test)}}{168}{figure.caption.266}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Dự báo Appliances - phóng to 7 ngày đầu tập test}}{169}{figure.caption.267}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Scatter Thực tế vs Dự đoán của 3 mô hình}}{170}{figure.caption.268}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Phân tích Residual của mô hình XGBoost (tốt nhất)}}{170}{figure.caption.269}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Mức độ quan trọng đặc trưng (XGBoost)}}{170}{figure.caption.270}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Elbow Method và Silhouette Score - Breast Cancer (Data A)}}{172}{figure.caption.271}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Elbow Method và Silhouette Score - Appliances Energy (Data B)}}{172}{figure.caption.272}%
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Elbow Method và Silhouette Score - HAM10000 (Data C)}}{172}{figure.caption.273}%
-\contentsline {figure}{\numberline {5.13}{\ignorespaces PCA 2D: cụm KMeans (trái) vs nhãn chẩn đoán thật (phải) - Breast Cancer}}{175}{figure.caption.281}%
-\contentsline {figure}{\numberline {5.14}{\ignorespaces PCA 2D: cụm KMeans - Appliances Energy}}{176}{figure.caption.282}%
-\contentsline {figure}{\numberline {5.15}{\ignorespaces PCA 2D: cụm KMeans (trái) vs nhãn nhóm thật (phải) - HAM10000}}{176}{figure.caption.283}%
+\contentsline {xchapter}{PHÂN TÍCH DỮ LIỆU VỚI HỌC MÁY VÀ ĐỐI SÁNH KẾT QUẢ}{179}{chapter.5}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Ma trận nhầm lẫn - Breast Cancer (Diagnosis)}}{183}{figure.caption.283}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Ma trận nhầm lẫn - Heart Disease (Target)}}{184}{figure.caption.284}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Ma trận nhầm lẫn - CDC Diabetes (3 lớp)}}{184}{figure.caption.285}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Recall theo từng lớp - CDC Diabetes (Random Forest)}}{185}{figure.caption.287}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Dự báo Appliances: Thực tế vs 3 mô hình (toàn bộ 654 giờ tập test)}}{187}{figure.caption.289}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Dự báo Appliances - phóng to 7 ngày đầu tập test}}{188}{figure.caption.290}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Scatter Thực tế vs Dự đoán của 3 mô hình}}{189}{figure.caption.291}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Phân tích Residual của mô hình XGBoost (tốt nhất)}}{189}{figure.caption.292}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Mức độ quan trọng đặc trưng (XGBoost)}}{189}{figure.caption.293}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Elbow Method và Silhouette Score - Breast Cancer (Data A)}}{191}{figure.caption.294}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Elbow Method và Silhouette Score - Appliances Energy (Data B)}}{191}{figure.caption.295}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Elbow Method và Silhouette Score - HAM10000 (Data C)}}{191}{figure.caption.296}%
+\contentsline {figure}{\numberline {5.13}{\ignorespaces PCA 2D: cụm KMeans (trái) vs nhãn chẩn đoán thật (phải) - Breast Cancer}}{194}{figure.caption.304}%
+\contentsline {figure}{\numberline {5.14}{\ignorespaces PCA 2D: cụm KMeans - Appliances Energy}}{195}{figure.caption.305}%
+\contentsline {figure}{\numberline {5.15}{\ignorespaces PCA 2D: cụm KMeans (trái) vs nhãn nhóm thật (phải) - HAM10000}}{195}{figure.caption.306}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN}{181}{chapter.6}%
+\contentsline {xchapter}{KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN}{200}{chapter.6}%
 \contentsfinish 

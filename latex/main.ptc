@@ -2,7 +2,7 @@
 \babel@toc {vietnamese}{}\relax 
 \contentsline {chapter}{Mục lục}{iii}{chapter*.1}%
 \contentsline {chapter}{Danh sách Hình}{vi}{chapter*.2}%
-\contentsline {chapter}{Danh sách Bảng}{ix}{chapter*.3}%
+\contentsline {chapter}{Danh sách Bảng}{x}{chapter*.3}%
 \contentsline {chapter}{\numberline {1}GIỚI THIỆU}{1}{chapter.1}%
 \contentsline {chapter}{\numberline {2}CƠ SỞ LÝ THUYẾT}{3}{chapter.2}%
 \ttl@starttoc {chapters@1}
@@ -106,53 +106,53 @@
 \ttl@stoptoc {chapters@2}
 \ttl@starttoc {chapters@3}
 \contentsline {section}{\numberline {4.1}Phân tích chi tiết dữ liệu cấu trúc}{119}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Nhóm A: dữ liệu dạng bảng}{119}{subsection.4.1.1}%
-\contentsline {subsubsection}{Heart Disease}{119}{subsubsection*.196}%
-\contentsline {subsubsection}{CDC Diabetes Health Indicators}{128}{subsubsection*.207}%
-\contentsline {subsubsection}{Breast Cancer Wisconsin Diagnostic}{135}{subsubsection*.218}%
-\contentsline {subsection}{\numberline {4.1.2}Nhóm B: dữ liệu chuỗi thời gian và cảm biến}{141}{subsection.4.1.2}%
-\contentsline {subsubsection}{Appliances Energy Prediction}{141}{subsubsection*.227}%
-\contentsline {subsubsection}{Human Activity Recognition Using Smartphones}{147}{subsubsection*.236}%
-\contentsline {subsubsection}{MHEALTH}{149}{subsubsection*.241}%
-\contentsline {subsection}{\numberline {4.1.3}Đối sánh công cụ phân tích: Excel/Spreadsheet và Python}{152}{subsection.4.1.3}%
-\contentsline {section}{\numberline {4.2}Số hóa, thống kê và trực quan hóa dữ liệu đa phương tiện}{155}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Bộ dữ liệu ảnh: HAM10000}{155}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Bộ dữ liệu văn bản: Reuters-21578}{157}{subsection.4.2.2}%
-\contentsline {section}{\numberline {4.3}Kết luận chương}{159}{section.4.3}%
-\contentsline {chapter}{\numberline {5}PHÂN TÍCH DỮ LIỆU VỚI HỌC MÁY VÀ ĐỐI SÁNH KẾT QUẢ}{160}{chapter.5}%
+\contentsline {subsection}{\numberline {4.1.1}Nhóm A: dữ liệu dạng bảng}{120}{subsection.4.1.1}%
+\contentsline {subsubsection}{Heart Disease}{120}{subsubsection*.196}%
+\contentsline {subsubsection}{CDC Diabetes Health Indicators}{133}{subsubsection*.214}%
+\contentsline {subsubsection}{Breast Cancer Wisconsin Diagnostic}{144}{subsubsection*.230}%
+\contentsline {subsection}{\numberline {4.1.2}Nhóm B: dữ liệu chuỗi thời gian và cảm biến}{156}{subsection.4.1.2}%
+\contentsline {subsubsection}{Appliances Energy Prediction}{156}{subsubsection*.245}%
+\contentsline {subsubsection}{Human Activity Recognition Using Smartphones}{164}{subsubsection*.257}%
+\contentsline {subsubsection}{MHEALTH}{167}{subsubsection*.262}%
+\contentsline {subsection}{\numberline {4.1.3}Đối sánh công cụ phân tích: Excel/Spreadsheet và Python}{170}{subsection.4.1.3}%
+\contentsline {section}{\numberline {4.2}Số hóa, thống kê và trực quan hóa dữ liệu đa phương tiện}{173}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Bộ dữ liệu ảnh: HAM10000}{173}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Bộ dữ liệu văn bản: Reuters-21578}{176}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Kết luận chương}{178}{section.4.3}%
+\contentsline {chapter}{\numberline {5}PHÂN TÍCH DỮ LIỆU VỚI HỌC MÁY VÀ ĐỐI SÁNH KẾT QUẢ}{179}{chapter.5}%
 \ttl@stoptoc {chapters@3}
 \ttl@starttoc {chapters@4}
-\contentsline {section}{\numberline {5.1}Môi trường cài đặt và cách đánh giá}{161}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Thiết lập môi trường thực nghiệm}{161}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Các độ đo đánh giá}{162}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Bài toán dự đoán phân lớp (Classification) trên Data A}{163}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Quy trình thực nghiệm}{163}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Bảng so sánh hiệu năng các thuật toán}{164}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Phân tích ma trận nhầm lẫn}{164}{subsection.5.2.3}%
-\contentsline {subsection}{\numberline {5.2.4}Nhận xét chuyên sâu về bài toán dữ liệu mất cân bằng}{165}{subsection.5.2.4}%
-\contentsline {section}{\numberline {5.3}Bài toán dự đoán hồi quy (Regression) trên Data B}{167}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Xây dựng đặc trưng và chia dữ liệu theo Time Series Split}{167}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Kết quả thực nghiệm}{168}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}Phân tích khả năng bắt kịp xu hướng và tính mùa vụ}{169}{subsection.5.3.3}%
-\contentsline {section}{\numberline {5.4}Bài toán gom cụm (Clustering) trên Data A, B, C}{171}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Quy trình và lựa chọn số cụm K tối ưu}{171}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Đọc vị bản chất các cụm dữ liệu}{173}{subsection.5.4.2}%
-\contentsline {subsubsection}{Data A -- Breast Cancer Wisconsin}{173}{subsubsection*.275}%
-\contentsline {subsubsection}{Data B -- Appliances Energy (theo giờ)}{174}{subsubsection*.277}%
-\contentsline {subsubsection}{Data C -- HAM10000}{174}{subsubsection*.279}%
-\contentsline {section}{\numberline {5.5}Thảo luận và đối sánh với các nghiên cứu cùng dataset}{177}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}Bảng tổng hợp so sánh}{177}{subsection.5.5.1}%
-\contentsline {subsection}{\numberline {5.5.2}Biện luận chi tiết từng trường hợp}{177}{subsection.5.5.2}%
-\contentsline {subsection}{\numberline {5.5.3}Kết luận chung}{178}{subsection.5.5.3}%
-\contentsline {section}{\numberline {5.6}Giới thiệu chương trình cài đặt từ phương pháp đề xuất}{179}{section.5.6}%
-\contentsline {subsection}{\numberline {5.6.1}Giới thiệu chương trình để huấn luyện mô hình}{179}{subsection.5.6.1}%
-\contentsline {subsection}{\numberline {5.6.2}Giới thiệu chương trình triển khai mô hình máy học đã huấn luyện}{179}{subsection.5.6.2}%
-\contentsline {chapter}{\numberline {6}KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN}{181}{chapter.6}%
+\contentsline {section}{\numberline {5.1}Môi trường cài đặt và cách đánh giá}{180}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Thiết lập môi trường thực nghiệm}{180}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Các độ đo đánh giá}{181}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Bài toán dự đoán phân lớp (Classification) trên Data A}{182}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Quy trình thực nghiệm}{182}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Bảng so sánh hiệu năng các thuật toán}{183}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Phân tích ma trận nhầm lẫn}{183}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}Nhận xét chuyên sâu về bài toán dữ liệu mất cân bằng}{184}{subsection.5.2.4}%
+\contentsline {section}{\numberline {5.3}Bài toán dự đoán hồi quy (Regression) trên Data B}{186}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Xây dựng đặc trưng và chia dữ liệu theo Time Series Split}{186}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Kết quả thực nghiệm}{187}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Phân tích khả năng bắt kịp xu hướng và tính mùa vụ}{188}{subsection.5.3.3}%
+\contentsline {section}{\numberline {5.4}Bài toán gom cụm (Clustering) trên Data A, B, C}{190}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Quy trình và lựa chọn số cụm K tối ưu}{190}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Đọc vị bản chất các cụm dữ liệu}{192}{subsection.5.4.2}%
+\contentsline {subsubsection}{Data A -- Breast Cancer Wisconsin}{192}{subsubsection*.298}%
+\contentsline {subsubsection}{Data B -- Appliances Energy (theo giờ)}{193}{subsubsection*.300}%
+\contentsline {subsubsection}{Data C -- HAM10000}{193}{subsubsection*.302}%
+\contentsline {section}{\numberline {5.5}Thảo luận và đối sánh với các nghiên cứu cùng dataset}{196}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Bảng tổng hợp so sánh}{196}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Biện luận chi tiết từng trường hợp}{196}{subsection.5.5.2}%
+\contentsline {subsection}{\numberline {5.5.3}Kết luận chung}{197}{subsection.5.5.3}%
+\contentsline {section}{\numberline {5.6}Giới thiệu chương trình cài đặt từ phương pháp đề xuất}{198}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Giới thiệu chương trình để huấn luyện mô hình}{198}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}Giới thiệu chương trình triển khai mô hình máy học đã huấn luyện}{198}{subsection.5.6.2}%
+\contentsline {chapter}{\numberline {6}KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN}{200}{chapter.6}%
 \ttl@stoptoc {chapters@4}
 \ttl@starttoc {chapters@5}
-\contentsline {section}{\numberline {6.1}Kết luận}{181}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Hạn chế}{182}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Hướng phát triển}{182}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Minh chứng tái lập}{183}{section.6.4}%
-\contentsline {chapter}{Tài liệu tham khảo}{185}{chapter*.285}%
+\contentsline {section}{\numberline {6.1}Kết luận}{200}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Hạn chế}{201}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Hướng phát triển}{201}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Minh chứng tái lập}{202}{section.6.4}%
+\contentsline {chapter}{Tài liệu tham khảo}{204}{chapter*.308}%
 \contentsfinish 
